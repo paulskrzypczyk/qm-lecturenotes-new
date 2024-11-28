@@ -26,7 +26,7 @@ Ae^{2\pi i x / \lambda}
 ``` 
 where $A$ is the amplitude (which we take to be real out of convenience for the moment, and will come back to shortly). This is depicted in the following:
 ```{figure} ./Pictures/complex-circ.svg
-:name: discrete-poisitions
+:name: f-complex-plane-wave
 :alt: Picture of a quantum particle now in one of eight possible locations
 :width: 500px
 :align: center
@@ -92,3 +92,34 @@ Nevertheless, just as it is extremely **useful** to use position states $\ket{x}
 
 ## The momentum operator
 
+One use of the states $\ket{p}$ is that they allow us to define the **momentum operator** $\hat{P}$. Recall that, **by definition**, this is the operator for which the momentum states $\ket{p}$ are **eigenstates**, with corresponding momentum eigenvalue $p$, 
+````{card}
+```{math}
+\hat{P}\ket{p} = p\ket{p}.
+```
+````
+We will return to the momentum operator shortly, and find its associated operator $\op{P}$. Before doing so, we will first introduce the **momentum wavefunction**.
+
+## The momentum wavefunction
+
+Just as we can write any quantum state $\ket{\psi}$ as a **superposition of position states** $\ket{x}$ using the **spatial wavefunction** \psi(x)$, we can also write it as a **superposition of momentum states** $\ket{p}$, 
+````{card}
+```{math}
+\ket{\psi} = \infint \tilde{\psi}(p) \ket{p} dp,
+```
+````
+where $\tilde{\psi}(p)$ is called the **momentum wavefunction**. 
+```{aside}
+We will typically refer to $\psi(x)$ as just 'the wavefunction' since it is the wavefunction we will spend the majority of our time studying. When it is important to be clear, we will refer to it more precisely as the 'spatial wavefunction'. Similarly, we will mostly refer to $\tilde{\psi}(p)$ as the 'momentum wavefunction'. If it is clear from context, we will also just refer to this as the wavefunction. $\ket{x}$ and $\ket{p}$ are two different (continuous!) bases, and the wavefunctions are just the coefficients of the quantum state $\ket{\psi}$ in these two different bases. 
+```
+Just as we saw in [](#e-norm-wavefunction), the normalisation of the quantum state, $\| \ket{\psi} \| = 1$ implies that
+```{math}
+\infint |\tilde{\psi}(p)|^2 = 1.
+```
+We also know that this is related to the normalisation of **momentum measurements**. In particular, if we were to **measure the momentum of a quantum particle** (i.e. measure $\hat{P}$), then the **probability density** to obtain the outcome $p$ is
+````{card}
+```{math}
+p(p) = |\tilde{\psi}(p)|^2
+```
+````
+However, just as we saw that idealised position measurements are impossible, **so too are ideal momentum measurements**. These would need to have infinite resolution, which is impossible. In reality, we can also only perform **coarse-grained** momentum measurements, determining the momentum of the particle up to some level of precision. Nevertheless, it is very instructive to consider the momentum probability density $p(p) = |\tilde{\psi}(p)|^2$ that would arise from such idealised measurements. 
