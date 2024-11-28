@@ -137,6 +137,7 @@ and that under a **change of scale**
 We see that in the final line of [](#e-norm-calc-1), if the inner integral (in square brackets) were equal to $\psi(x')$ then we would arrive at the desired expression [](#e-norm-wavefunction). We will achieve this, using the defining equation of the Dirac Delta function [](#e-delta-defining-eq), if 
 ````{card}
 ```{math}
+:label: e-position-norm
 \langle x' | x \rangle = \delta(x-x').
 ```
 ````
