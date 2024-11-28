@@ -1,6 +1,6 @@
 ---
 title: "Chapter 1: The position of a quantum particle" 
-short_title: "Ch. 1: position"
+short_title: "Ch. 1: Position"
 numbering:
   enumerator: 1.%s
 ---

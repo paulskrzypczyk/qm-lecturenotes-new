@@ -1,6 +1,6 @@
 ---
 title: "Chapter 2: The momentum of a quantum particle" 
-short_title: "Ch. 2: momentum"
+short_title: "Ch. 2: Momentum"
 numbering:
   enumerator: 2.%s
 ---
