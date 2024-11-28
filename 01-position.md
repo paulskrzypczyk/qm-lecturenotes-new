@@ -90,7 +90,7 @@ Recall that we need quantum states to be **normalised**. Mathematically, this co
 :label: e-normalisation
 \| \ket{\psi} \| = 1,
 ```
-and physically, this ensured that when performing a measurement, the probability of the outcomes always add up to 1, as they must. While we have now moved from discrete superpositions to continuous superpositions of the form [](#e-general-quantum-state), the quantum state nevertheless must remain normalised, and the normalisation condition **remains the same**. Previously we knew that [](#e-normalisation) lead to the modulus squared of the coefficients summing up to one (i.e. $\|\ket{\psi} \|^2 = \langle \psi | \psi \rangle = \sum_k |\alpha_k|^2 = 1$). For the continuous case, the generalisation of this is simply
+and physically, this ensured that when performing a measurement, the probability of the outcomes always add up to 1, as they must. While we have now moved from discrete superpositions to continuous superpositions of the form [](#e-general-quantum-state), the quantum state nevertheless must remain normalised, and the normalisation condition **remains the same**. Previously we knew that [](#e-normalisation) lead to the modulus squared of the coefficients summing up to one (i.e. $\|\ket{\psi} \|^2 = \inner{\psi}{\psi} = \sum_k |\alpha_k|^2 = 1$). For the continuous case, the generalisation of this is simply
 ````{card}
 ```{math}
 :label: e-norm-wavefunction
@@ -100,9 +100,9 @@ and physically, this ensured that when performing a measurement, the probability
 We need to check that this is what we arrive at starting from [](#e-general-quantum-state). We see that
 ```{math}
 :label: e-norm-calc-1
-\| \ket{\psi} \|^2 &= \langle \psi | \psi \rangle,\\
+\| \ket{\psi} \|^2 &= \inner{\psi}{\psi},\\
 &= \left(\int_{-\infty}^{\infty} \psi^*(x')\bra{x'}dx'\right)\left(\int_{-\infty}^{\infty} \psi(x)\ket{x}dx\right),\\
-&= \int_{-\infty}^{\infty} \psi^*(x')\left[\int_{-\infty}^{\infty} \psi(x) \langle x' | x \rangle dx\right]dx'.
+&= \int_{-\infty}^{\infty} \psi^*(x')\left[\int_{-\infty}^{\infty} \psi(x) \inner{x'}{x} dx\right]dx'.
 ```
 To simplify this expression, we need to recall the definition of the Dirac delta function, which we give below for convenience (along with its key properties, for later reference). 
 ````{topic} Dirac Delta Function
@@ -138,13 +138,13 @@ We see that in the final line of [](#e-norm-calc-1), if the inner integral (in s
 ````{card}
 ```{math}
 :label: e-position-norm
-\langle x' | x \rangle = \delta(x-x').
+\inner{x'}{x} = \delta(x-x').
 ```
 ````
 This is a remarkable equation. What is shows is that **positions states have infinite normalisation!**:
 ```{math}
 :label: e-norm-position-state
-\| \ket{x} \|^2 = \langle x | x \rangle = \delta(0) = \infty.
+\| \ket{x} \|^2 = \inner{x}{x} = \delta(0) = \infty.
 ``` 
 However, we know that physically valid quantum states must be normalised. This leads us to an extremely important conclusion:
 

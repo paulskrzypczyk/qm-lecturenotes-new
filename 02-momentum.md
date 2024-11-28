@@ -48,6 +48,7 @@ is the so-called **reduced Planck constant** or simply '**h-bar**' for short.
 Putting everything together, in quantum mechanics, **particles that have a definite momentum $p$ have wavefunctions $v_p(x)$ given by
 ````{card}
 ```{math}
+:label: e-momentum-state-wavefunction
 v_p(x) = A e^{ipx/\hbar},
 ```
 ````
@@ -55,13 +56,14 @@ corresponding to **complex plane waves** of wavelength $\lambda = h/p$. We will 
 
 Using [](#e-general-quantum-state), i.e. the general relationship between a quantum state and a wavefunction, this means we can **directly write down** quantum states of definite momentum, which we will denote by $\ket{p}$ and refer to as `momentum states' (in analogy to our notation $\ket{x}$ for position states). These are
 ```{math}
+:label: e-momentum-state-1
 \ket{p} = \infint v_p(x) \ket{x} dx = A\infint e^{ipx/\hbar} \ket{x} dx.
 ```
 We still have some ambiguity here: we haven't specified what the `amplitude' $A$ should be. We can fix this by analogy to position states. Recall that in [](#e-position-norm) we normalised position states using the Dirac delta function. Here, we will demand that momentum states satisfy the same normalisation condition:
 ````{card}
 ```{math}
 :label: e-momentum-norm
-\langle p' | p \rangle = \delta(p-p').
+\inner{p'}{p} = \delta(p-p').
 ```
 ````
 As an exercise, you will show that this fixes $A = \frac{1}{\sqrt{2\pi \hbar}}$. We thus have
@@ -102,9 +104,10 @@ We will return to the momentum operator shortly, and find its associated operato
 
 ## The momentum wavefunction
 
-Just as we can write any quantum state $\ket{\psi}$ as a **superposition of position states** $\ket{x}$ using the **spatial wavefunction** \psi(x)$, we can also write it as a **superposition of momentum states** $\ket{p}$, 
+Just as we can write any quantum state $\ket{\psi}$ as a **superposition of position states** $\ket{x}$ using the **spatial wavefunction** $\psi(x)$, we can also write it as a **superposition of momentum states** $\ket{p}$, 
 ````{card}
 ```{math}
+:label: e-general-state-momentum
 \ket{\psi} = \infint \tilde{\psi}(p) \ket{p} dp,
 ```
 ````
@@ -123,3 +126,50 @@ p(p) = |\tilde{\psi}(p)|^2
 ```
 ````
 However, just as we saw that idealised position measurements are impossible, **so too are ideal momentum measurements**. These would need to have infinite resolution, which is impossible. In reality, we can also only perform **coarse-grained** momentum measurements, determining the momentum of the particle up to some level of precision. Nevertheless, it is very instructive to consider the momentum probability density $p(p) = |\tilde{\psi}(p)|^2$ that would arise from such idealised measurements. 
+
+## Relationship between the spatial & momentum wavefunctions
+
+It will prove useful to be able to go **directly** between the spatial wavefunction $\psi(x)$ and the momentum wavefunction $\tilde{\psi}(p)$ associated to the same quantum state $\ket{\psi}$. For example, in many situations we will specify a wavefunction $\psi(x)$, and if we want to consider e.g. measuring the momentum of the particle, we will need to calculate $\tilde{\psi}(p)$ in order to do this. Luckily there is a nice way to go between the two. 
+
+To see how, first let us consider a state $\ket{\psi}$ written as a superposition of momentum states, as in [](#e-general-state-momentum). If we consider the scalar product of $\ket{\psi}$ with a momentum state $\ket{p'}$, we find
+```{math}
+\vph \inner{p'}{\psi} &= \infint \tilde{\psi}(p) \inner{p'}{p} dp,\\
+&= \infint \tilde{\psi}(p) \delta(p-p') dp,\\
+&= \tilde{\psi}(p').
+```
+What this shows is a very important relation:
+````{card}
+```{math}
+\inner{p}{\psi} = \tilde{\psi}(p).
+```
+````
+Starting from $\ket{\psi}$ written as a superposition of position states as in [](#e-general-quantum-state), we similarly arrive at
+````{card}
+```{math}
+:label: e-x-scalar
+\inner{x}{\psi} = \psi(x).
+```
+````
+We can now uses these facts in an interesting way. We start again with a quantum state written in the form [](#e-general-state-momentum), but we now take the scalar product with $\ket{x}$, leading to
+```{math}
+\inner{x}{\psi} &= \bra{x}\left(\infint \tilde{\psi}(p) \ket{p} dp \right),\\
+\psi(x) &= \infint \tilde{\psi}(p) \inner{x}{p}dp,\\
+&= \infint \tilde{\psi}(p) v_p(x) dp,
+```
+where in the third line we have used [](#e-x-scalar), for the quantum state $\ket{\psi'} = \ket{p}$, a state of definite momentum, and used [](#e-momentum-state-1), to recall that for such states, the wavefunction is $v_p(x)$, as we saw at the beginning of this Chapter. Substituting in [](#e-momentum-state-wavefunction) (with correct choice for $A$!), we finally obtain
+````{card}
+```{math}
+\psi(x) = \frac{1}{\sqrt{2\pi\hbar}}\infint \tilde{\psi}(p) e^{ipx/\hbar} dp.
+```
+````
+This gives the spatial wavefunction in terms of the momentum wavefunction. As an exercise, using the fact that $\inner{p}{x} = \left(\inner{x}{p}\right)^*, you will show that we can also obtain the other direction, 
+````{card}
+```{math}
+\tilde\psi(p) = \frac{1}{\sqrt{2\pi\hbar}}\infint \psi(x) e^{-ipx/\hbar} dx,
+```
+````
+which gives the momentum wavefunction in terms of the spatial wavefunction. It is important to note the symmetry between these two expressions. One key **distinction** is that in the former, the exponential comes with a plus-sign, while in the latter it comes with a minus-sign. Getting this sign wrong is a very easy and common mistake!
+
+You have encountered these type of equations before — this is nothing but the **Fourier transform** and its inverse! That is, the spatial wavefunction is the Fourier transform of the momentum wavefunction, and conversely the momentum wavefunction is the inverse Fourier transform of the spatial wavefunction! The reason why this might look unfamiliar is that instead of using the usual variable $k$, we are using the physical variable — the momentum — instead. What is $k$ usually? It is the **wavenumber** of a wave, which we can recall is related to the wavelength via $k = 2\pi/\lambda$. Substituting this into de Broglie relation [](#e-de-Broglie), we see that $2\pi / k = h / p$, which after re-arranging gives $p = \hbar k$! A simple change of variable then takes us back to the 'standard' Fourier transform.
+
+In hindsight, it is clear that this **had** to be the relation between the spatial and momentum wavefunctions. Why? Our starting point of this Chapter was to realise that states of definite momentum correspond to complex plane waves. A Fourier transform is precisely the way of transforming a function $f(x)$, represented in the normal fashion, as a value at each point $x$, into a superposition of plane waves, where $\tilde{f}(k)$ is the amplitude to have wavenumber $k$ (and hence wavelength $\lambda = 2\pi/k$). The only new ingredient for us is to realise that a wavenumber of $k$ corresponds to a momentum of $\hbar k$, and hence when we Fourier transform the wavefunction of a particle, we directly get its momentum wavefunction $\tilde{\psi}(p)$ — the 'amplitude' for it to have momentum $p$. 
