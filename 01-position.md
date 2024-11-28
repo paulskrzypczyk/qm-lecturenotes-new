@@ -14,7 +14,7 @@ We will be able to learn most of the important lessons about the quantum descrip
 
 Consider the case previously studied, where a particle can be found in one of four possible locations, as summarised in the following figure:
 
-```{figure} ./Pictures/discrete-position-1.svg
+```{figure}  ./Pictures/thumbnail
 :name: discrete-poisitions
 :alt: Picture of a quantum particle in one of four possible locations
 :width: 500px
@@ -30,8 +30,8 @@ where $\alpha_k$ are complex numbers satisfying the normalisation condition $\su
 
 Let us imagine therefore dividing each region into two, to obtain a more **fine-grained** description of the position of the particle. In this case, we would have the following situation 
 
-```{figure} ./Pictures/discrete-position-2.svg
-:name: discrete-poisitions
+```{figure}  ./Pictures/thumbnail
+:name: discrete-poisitions-2
 :alt: Picture of a quantum particle now in one of eight possible locations
 :width: 500px
 :align: center
@@ -46,7 +46,7 @@ Notice that our precision has now increased. Whereas before we could only specif
 
 We can imagine continuing this process of dividing each region in two **indefinitely** until we have infinite precision, and such that each state now represented an actual position for the particle $\ket{x}$. As a figure, this would now give us a **continuous line**, as depicted below:
 
-```{figure} ./Pictures/continuous-position.svg
+```{figure} ./Pictures/thumbnail
 :name: continuous-poisition
 :alt: Picture of a quantum particle now anywhere on a line between $x=-2$ and $x=2$.
 :width: 500px
@@ -61,8 +61,8 @@ In [](#e-contin-position), in comparison to [](#e-discrete-position), apart from
 
 In this example so far, we have ended up with a quantum mechanical particle which can be in the region $-2\leq x \leq 2$. There was nothing special about this region, and in general, we can **extend to arbitrary positions**, so that the particle can be found anywhere. In this case we would have 
 
-```{figure} ./Pictures/continuous-position-line.svg
-:name: continuous-poisition
+```{figure} ./Pictures/thumbnail
+:name: continuous-poisition-inf
 :alt: Picture of a quantum particle now anywhere on a line between $x=-\infty$ and $x=\infty$.
 :width: 500px
 :align: center
