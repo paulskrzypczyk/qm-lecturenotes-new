@@ -199,6 +199,7 @@ One advantage of using directly the probability density $\pd(x) = |\psi(x)|^2$ i
 ````
 i.e. we integrate the probability density, just as we would involving any question involving probability densities.
 
+(s-operators-on-wf)=
 ## Operators acting on wavefunctions
 
 As this unit progresses, we will see that it is **very often** useful to focus **exclusively** on the wavefunction $\psi(x)$, and leave it **implicit** that the quantum state of the particle is therefore as given by [](#e-general-quantum-state). The reason for this is that is can often be **overly cumbersome** to work with the full state $\ket{\psi}$, and it is much more convenient to just work with $\psi(x)$ instead.
@@ -209,6 +210,7 @@ In order to do this, there is one key ingredient we need to address, which is ho
 
 Consider the action of the position operator $\hat{X}$ on a quantum state $\ket{\psi}$:
 ```{math}
+:label: e-X-on-psi
 \hat{X}\ket{\psi} &= \hat{X}\int_{-\infty}^{\infty}\psi(x) \ket{x} dx, \nonumber \\
 &= \int_{-\infty}^{\infty}\psi(x) \hat{X}\ket{x} dx, \nonumber \\
 &= \int_{-\infty}^{\infty}\psi(x) x\ket{x} dx, \nonumber \\

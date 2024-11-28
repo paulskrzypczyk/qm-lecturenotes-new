@@ -97,6 +97,7 @@ Nevertheless, just as it is extremely **useful** to use position states $\ket{x}
 One use of the states $\ket{p}$ is that they allow us to define the **momentum operator** $\hat{P}$. Recall that, **by definition**, this is the operator for which the momentum states $\ket{p}$ are **eigenstates**, with corresponding momentum eigenvalue $p$, 
 ````{card}
 ```{math}
+:label: e-momentum-op
 \hat{P}\ket{p} = p\ket{p}.
 ```
 ````
@@ -159,12 +160,14 @@ We can now uses these facts in an interesting way. We start again with a quantum
 where in the third line we have used [](#e-x-scalar), for the quantum state $\ket{\psi'} = \ket{p}$, a state of definite momentum, and used [](#e-momentum-state-1), to recall that for such states, the wavefunction is $v_p(x)$, as we saw at the beginning of this Chapter. Substituting in [](#e-momentum-state-wavefunction) (with correct choice for $A$!), we finally obtain
 ````{card}
 ```{math}
+:label: e-psi-p-to-psi-x
 \psi(x) = \frac{1}{\sqrt{2\pi\hbar}}\infint \tilde{\psi}(p) e^{ipx/\hbar} dp.
 ```
 ````
 This gives the spatial wavefunction in terms of the momentum wavefunction. As an exercise, using the fact that $\inner{p}{x} = \left(\inner{x}{p}\right)^*, you will show that we can also obtain the other direction, 
 ````{card}
 ```{math}
+:label: e-psi-x-to-psi-p
 \tilde\psi(p) = \frac{1}{\sqrt{2\pi\hbar}}\infint \psi(x) e^{-ipx/\hbar} dx,
 ```
 ````
@@ -173,3 +176,66 @@ which gives the momentum wavefunction in terms of the spatial wavefunction. It i
 You have encountered these type of equations before — this is nothing but the **Fourier transform** and its inverse! That is, the spatial wavefunction is the Fourier transform of the momentum wavefunction, and conversely the momentum wavefunction is the inverse Fourier transform of the spatial wavefunction! The reason why this might look unfamiliar is that instead of using the usual variable $k$, we are using the physical variable — the momentum — instead. What is $k$ usually? It is the **wavenumber** of a wave, which we can recall is related to the wavelength via $k = 2\pi/\lambda$. Substituting this into de Broglie relation [](#e-de-Broglie), we see that $2\pi / k = h / p$, which after re-arranging gives $p = \hbar k$! A simple change of variable then takes us back to the 'standard' Fourier transform.
 
 In hindsight, it is clear that this **had** to be the relation between the spatial and momentum wavefunctions. Why? Our starting point of this Chapter was to realise that states of definite momentum correspond to complex plane waves. A Fourier transform is precisely the way of transforming a function $f(x)$, represented in the normal fashion, as a value at each point $x$, into a superposition of plane waves, where $\tilde{f}(k)$ is the amplitude to have wavenumber $k$ (and hence wavelength $\lambda = 2\pi/k$). The only new ingredient for us is to realise that a wavenumber of $k$ corresponds to a momentum of $\hbar k$, and hence when we Fourier transform the wavefunction of a particle, we directly get its momentum wavefunction $\tilde{\psi}(p)$ — the 'amplitude' for it to have momentum $p$. 
+
+## Momentum operator on spatial wavefunctions
+
+The final thing we would like to do in this chapter is find the operator $\op{P}$ associated to the momentum operator $\hat{P}$, that acts **directly** on the (spatial) wavefunction $\psi(x)$, as we studied in [](#s-operators-on-wf). What we would like to find is the operator $\op{P}$ such that
+```{math}
+\hat{P}\ket{\psi} = \infint \left(\op{P}\psi(x)\right)\ket{x}dx.
+```
+In order to find this, we will use the relationship between $\psi(x)$ and $\tilde{\psi}(p)$. Recall from [](#e-momentum-op), that by definition $\hat{P}\ket{p} = p\ket{p}$. If we apply the momentum operator to a state written as a superposition of momentum states as in [](#e-general-state-momentum), we therefore find
+```{math}
+\vph \hat{P}\ket{\psi} &= \hat{P}\infint \tilde{\psi}(p)\ket{p} dp, \\
+&= \infint \tilde{\psi}(p) \hat{P}\ket{p} dp, \\
+&= \infint \tilde{\psi}(p) p\ket{p} dp, \\
+&= \infint \tilde{\psi}'(p) \ket{p} dp, \\
+```
+where in the last line we have defined $\tilde{\psi}'(p) = p\tilde{\psi}(p)$. What this shows is that, just as the position operator mulitples a spatial wavefunction by $x$, as we saw in [](#e-X-on-psi), so too does the momentum operator multiple a momentum wavefunction by $p$. 
+
+The question we then need to answer is: if a momentum wavefunction changes from $\tilde{\psi}(p)$ to $\tilde{\psi}'(p) = p\tilde{\psi}(p)$, what happens to the associated spatial wavefunction $\psi(x)$? That is, what is the wavefunction $\psi'(x)$ associated to $\tilde{\psi}'(p)$, and how does it relate to $\psi(x)$?
+
+We can answer this using [](#e-psi-p-to-psi-x):
+```{math}
+:label: e-momentum-op-calc-1
+\vph\psi'(x) &= \frac{1}{\sqrt{2\pi\hbar}}\infint \tilde{\psi}'(p) e^{ipx/\hbar} dp,\\
+&= \frac{1}{\sqrt{2\pi\hbar}}\infint p\tilde{\psi}(p) e^{ipx/\hbar} dp.\\
+```
+At this stage we can use a fascinating 'trick'. We can notice that
+```{math}
+\vph\frac{\partial}{\partial x} e^{ipx/\hbar} = \frac{ip}{\hbar}e^{ipx/\hbar},
+```
+from which it follows that we can write
+```{math}
+\vph pe^{ipx/\hbar} = -i\hbar \frac{\partial}{\partial x} e^{ipx/\hbar}.
+```
+We can substitute this into [](#e-momentum-op-calc-1) to obtain
+```{math}
+\psi'(x) &= \frac{1}{\sqrt{2\pi\hbar}}\infint \tilde{\psi}(p) \left(-i\hbar \frac{\partial}{\partial x}\right) e^{ipx/\hbar} dp, \\
+&= -i\hbar \frac{\partial}{\partial x}\left(\frac{1}{\sqrt{2\pi\hbar}}\infint \tilde{\psi}(p)  e^{ipx/\hbar} dp\right),\\
+&= -i\hbar \frac{\partial}{\partial x}\psi(x),
+```
+where in the second line we used the fact that since $\tilde{\psi}(p)$ is independent of $x$, we can 'pull' the partial deriative through it, and in fact all the way out of the integral altogether, and in the final line we used the fact that the integral that remains is nothing but [](#e-psi-p-to-psi-x). What this shows is that multiplying a momentum wavefunction by $p$ **has the effect of differentiating the spatial wavefunction** (and multiplying it by $-i\hbar$)! This has thus answered our question, and we can see that
+````{card}
+```{math}
+\op{P}\psi(x) = -i\hbar \frac{\partial}{\partial x}\psi{x}.
+```
+````
+That is, the momentum operator $\op{P}$ is the the partial derivative multiplied by $-i\hbar$. In what is basically an abuse of notation, we will sometimes write $\op{P} = -i\hbar \frac{\partial}{\partial x}$. This is somewhat dangerous, as that partial derivative needs to act on something! Nevertheless, it is an operator in the sense that it acts on a function and returns a function.
+
+Finally, it is instructive to look at what we get if we apply the momentum operator $\op{P}$ onto the wavefunctions $v_p(x) = \frac{1}{\sqrt{2\pi\hbar}}e^{ipx/\hbar}$ associated to the momentum states $\ket{p}$. We see that
+```{math}
+\op{P}v_p(x) = -i\hbar \frac{\partial}{\partial x}\left(\frac{1}{\sqrt{2\pi\hbar}}e^{ipx/\hbar}\right),\\
+= -\frac{i\hbar}{\sqrt{2\pi\hbar}}\frac{ip}{\hbar}e^{ipx/\hbar},\\
+= p \frac{1}{\sqrt{2\pi\hbar}}e^{ipx/\hbar}.
+```
+Therefore we have
+````{card}
+```{math}
+\op{P} v_p(x) = pv_p(x),
+```
+````
+which is precisely an **eigenvalue equation** for wavefunctions of definite momentum. This is a very important form of **consistency**: the wavefunctions $v_p(x)$ which correspond to states of definite momentum are seen to be eigenstates of the operator $\op{P}$ which represents the momentum operator on wavefunctions. It is important to note that we could have in fact used $\op{P}$ to **find** the states $\ket{p}$. In particular, we could have first found the eigenfunctions $v_p(x)$ of $\op{P}$, and then **defined** $\ket{p} = \infint v_p(x) \ket{x}dx$, which would be eigenstates of $\hat{P}$ (a fact you will check as an exercise). 
+
+It is also important to realise that we could have in fact started this whole chapter in reverse, and **defined first** the momentum operator $\op{P}$, and used this to arrive at the momentum eigenfunctions $v_p(x)$, rather than postulate them as states of definite momentum as we did. Thanks to de Brogile, we didn't need to do this, as he already had the insight into what form the eigenfunctions should have, i.e. that they corresponded to plane waves. 
+
+However, for other physical properties, this won't be the case — we won't know in advance what form wavefunctions should have in order to have a definite value of a given property (e.g. to have a definite energy or angular momentum). Our general procedure in these cases will be precisely to go in the other direction: For a given operator $\hat{A}$, to start from an operator $\op{A}$ (acting on wavefunctions), find its eigenfunctions, and then use **these** to define quantum states with definite properties, that is, the eigenstates of $\hat{A}$. A key example will be to find states of definite energy (in which case the operator of interest is the **Hamiltonian** $\hat{H}$). We will study this extensively in the following chapters. 
