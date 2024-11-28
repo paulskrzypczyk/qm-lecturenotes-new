@@ -38,7 +38,7 @@ site:
   options:
     logo: ./Pictures/UoB_RGB_24.png
     logo_text: Quantum Mechanics
-    favicon: ./Pictures/logo.png
+    favicon: ./Pictures/favicon.ico
   nav: 
   domains: []
 
