@@ -5,6 +5,18 @@ numbering:
   enumerator: 1.%s
 ---
 
+```{exercise}
+:label: ex-1
+Consider the following wavefunction,
+   \begin{equation*} 
+  \Psi(x,t_0) = \begin{cases} \frac{\sqrt{15}}{4}(1-x^2)&  \text{if } |x| \leq 1, \\ 0  &\text{otherwise. } \end{cases} 
+  \end{equation*}
+   1. Show that this is a normalised wavefunction. 
+   1.  Sketch the wavefunction $\Psi(x,t_0)$ and the probability density $P(x,t_0)$.
+   1. What is the probability amplitude at $x = \frac{1}{2}$. 
+   1. Where is the probability density to find the particle largest? What is the probability density there? 
+```
+
 In your previous course on quantum theory, you considered a simplied situation where a particle could be found in one of a discrete number of locations — for example, either on the left-hand or right-hand side of a box. Here, we will now consider a more realistic and powerful situation, that considered in the context of **mechanics**, where a particle one degree of free (is constained to move in one dimension) has a **position** $x$. Our goal is to develop a quantum formalism to describe the motion of such a particle. This is then referred to as **quantum mechanics**. 
 
 We will be able to learn most of the important lessons about the quantum description of the mechanics of a particle by considering only motion in one dimension. This is advantageous, as it is simpler to consider this idealised scenario. At the end of this course, we will consider the more physically relevant case of motion in **three dimensions**. 
