@@ -17,20 +17,21 @@ Consider the following wavefunction,
    1. Where is the probability density to find the particle largest? What is the probability density there? 
 ```
 
-In your previous course on quantum theory, you considered a simplied situation where a particle could be found in one of a discrete number of locations — for example, either on the left-hand or right-hand side of a box. Here, we will now consider a more realistic and powerful situation, that considered in the context of **mechanics**, where a particle one degree of free (is constained to move in one dimension) has a **position** $x$. Our goal is to develop a quantum formalism to describe the motion of such a particle. This is then referred to as **quantum mechanics**. 
+In your previous course on quantum theory, you considered a simplied situation where a particle could be found in one of a discrete number of locations — for example, either on the left-hand or right-hand side of a box. Here, we will now consider a more realistic and powerful situation, that considered in the context of **mechanics**, where a particle with one degree of freedom (constained to move in one dimension) has a **position** $x$. Our goal is to develop the quantum formalism to describe the motion of such a particle. This is then referred to as **quantum mechanics**. 
 
-We will be able to learn most of the important lessons about the quantum description of the mechanics of a particle by considering only motion in one dimension. This is advantageous, as it is simpler to consider this idealised scenario. At the end of this course, we will consider the more physically relevant case of motion in **three dimensions**. 
+We will be able to learn most of the important lessons about the quantum description of the mechanics of a particle by considering only motion in one dimension. This is advantageous, as it is simpler to consider this idealised scenario. At the end of this course, we will consider the more physically relevant case of motion in **three dimensions**, which describes the universe we live in. 
 
 (s-position)=
 ## The position of a quantum particle
 
 Consider the case previously studied, where a particle can be found in one of four possible locations, as summarised in the following figure:
 
-```{figure}  ./Pictures/thumbnail
-:name: discrete-poisitions
+```{figure}  ./Pictures/discrete-positions-1
+:label: discrete-positions
 :alt: Picture of a quantum particle in one of four possible locations
-:width: 500px
+:width: 400px
 :align: center
+Quantum particle that can be in one of four possible locations. Depicted is the quantum particle in the state $\ket{0}$, in the second location. Under each possible location for the particle we have written the corresponding quantum state $\ket{k}$. 
 ```
 
 In this case, the general quantum state of the particle is given by
@@ -40,13 +41,14 @@ In this case, the general quantum state of the particle is given by
 ```
 where $\alpha_k$ are complex numbers satisfying the normalisation condition $\sum_k |\alpha_k|^2 = 1$, and $\ket{k}$ is the quantum state with the particle at location $k$. Here, we will now view the labels $k$ not as abstract labels, but really as telling us, in a **coarse-grained** fashion, the position of the particle. 
 
-Let us imagine therefore dividing each region into two, to obtain a more **fine-grained** description of the position of the particle. In this case, we would have the following situation 
+Let us imagine therefore dividing each region into two, to obtain a more **fine-grained** description of the position of the particle. In this case, we would have the following situation:
 
-```{figure}  ./Pictures/thumbnail
-:name: discrete-poisitions-2
+```{figure}  ./Pictures/discrete-positions-2
+:label: f-discrete-posiitions-2
 :alt: Picture of a quantum particle now in one of eight possible locations
-:width: 500px
+:width: 400px
 :align: center
+Quantum particle that can now be in one of 8 possible locations. Depicted is the quantum particle in the state $\ket{0}$, in the fourth location. As above, under each possible location for the particle we have written the corresponding quantum state $\ket{k}$.
 ```
 with a general quantum state of the particle now taking the form 
 ```{math}
@@ -58,11 +60,12 @@ Notice that our precision has now increased. Whereas before we could only specif
 
 We can imagine continuing this process of dividing each region in two **indefinitely** until we have infinite precision, and such that each state now represented an actual position for the particle $\ket{x}$. As a figure, this would now give us a **continuous line**, as depicted below:
 
-```{figure} ./Pictures/thumbnail
-:name: continuous-poisition
+```{figure} ./Pictures/continuous-position-1
+:label: continuous-poisition-1
 :alt: Picture of a quantum particle now anywhere on a line between $x=-2$ and $x=2$.
-:width: 500px
+:width: 400px
 :align: center
+A quantum particle that can now be anywhere in the region $-2\leq x \leq 2$, arrived at by continually dividing the regions from [](#f-discrete-posiitions-2) until they become infinitely small and continuous. Depicted is a quantum particle at $x = 0$.
 ```
 Since we have now ended up with a **continuous** position for the particle, the most general quantum state will no longer be a summation, but will become an **integral**,
 ```{math}
@@ -73,11 +76,12 @@ In [](#e-contin-position), in comparison to [](#e-discrete-position), apart from
 
 In this example so far, we have ended up with a quantum mechanical particle which can be in the region $-2\leq x \leq 2$. There was nothing special about this region, and in general, we can **extend to arbitrary positions**, so that the particle can be found anywhere. In this case we would have 
 
-```{figure} ./Pictures/thumbnail
-:name: continuous-poisition-inf
+```{figure} ./Pictures/continuous-position-2
+:label: f-continuous-poisition-inf
 :alt: Picture of a quantum particle now anywhere on a line between $x=-\infty$ and $x=\infty$.
-:width: 500px
+:width: 400px
 :align: center
+A quantum particle that can now be anywhere. Depicted is a quantum particle at an arbitrary position $x$.
 ```
 with a general quantum state
 ````{card}
@@ -122,7 +126,7 @@ To simplify this expression, we need to recall the definition of the Dirac delta
 The Dirac Delta function $\delta(y)$ is defined such that
 ```{math}
 :label: e-delta-defining-eq
-\infint  f(y) \delta(y-y_0) dy = f(y_0).
+\vph \infint  f(y) \delta(y-y_0) dy = f(y_0).
 ```
 One representation of the Dirac Delta function is
 ```{math}
@@ -133,7 +137,7 @@ The delta function is an infinitely thin, infinitely tall 'spike', as depicted b
 
 ```{image} ./Pictures/delta.svg
 :alt: 
-:width: 300px
+:width: 250px
 :align: center
 ```
 Two key properties of the delta function are that it is an **even** function,
@@ -169,6 +173,15 @@ Nevertheless, as we have seen in [](#e-general-quantum-state), quantum particles
 As you learnt in your previous unit on quantum theory, it is an inherently **probabilisitic** theory. That is, quantum particles do not have definite properties, but rather we must perform measurements to learn about the properties of a particle, and in general the results will be probabilistic. This is true for the position of a particle, just as with any other property. If we want to ask where a particle is, we have to measure the position operator $\hat{X}$ from [](#e-position-operator), where $x$ are the position eigenvalues and $\ket{x}$ the associated position eigenstates. 
 
 For a state $\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx$, what is the probability to find the particle at some location $x_0$? This question in fact **doesn't make sense** as stated: the position is **continuous**, and therefore there is in fact zero probability to find the particle (precisely) anywhere. As with **any** continuous quantity, we can no longer talk about probabilities, but must rather talk about **probability densities**. That is, we can ask the question: what is the probability to find the particle in a small region of `width' $dx$. This will be the probability density[^pdf] $\pd(x_0)$ multipled by $dx$, as depicted in the following figure:
+
+```{figure} ./Pictures/prob-density
+:label: f-prob-density
+:alt: Picture of a quantum particle now anywhere on a line between $x=-\infty$ and $x=\infty$.
+:width: 400px
+:align: center
+**Probability densities in quantum mechanics**. The probability density is given by $\pd(x) = |\psi(x)|^2$. The probability to find a particle in the small region $x_0 \leq x \leq x_0 + dx$ of width $dx$ around $x_0$ is $\pd(x_0)dx = |\psi(x_0)|^2dx$. In the above figure, this is the area of the shaded region. 
+```
+
 [^pdf]: Note that this is also referred to as the **probability density function (PDF)**. Here we will simply refer to it as the `probability density', but the two terms are interchangable. 
 
 
@@ -199,7 +212,7 @@ The resolution of this apparent problem is the following:
 That is, just like it was unphysical for a particle to have a definite position, it is also unphysical to perform a perfect measurement, which would determine the position of a particle (to infinite precision!). In reality, the best measurements we can perform will be **coarse-grained** and have a **finite resolution**. 
 
 Nevertheless, just as it is useful to consider position states $\ket{x}$ and write quantum states as a superposition of them (as in [](#e-general-quantum-state)), it is useful to consider the probability density $\pd(x) = |\psi(x)|^2$ that *would* arise from an idealised position measurement. We will consider this **directly** instead of the measurement. We will however **not consider the associated state after the measurement**. 
-```{aside} Sidenote: state after a position measurement
+```{aside} *State after a position measurement*
 *While it is possible to describe the state after a coarse-grained measurement, it is beyond the scope of this unit. One reason for this is that there is no **universal** way to do this — it will depend on precisely how the finite precision is taken into account. Roughly speaking however, we expect that right after measuring the position of a particle, its state will now correspond to one **localised** around where it was found. You will often see this referred to as the `collapse' of the wavefunction.*
 ``` 
 

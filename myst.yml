@@ -18,13 +18,14 @@ project:
     '\rI': '\mathrm{I}'
     '\rII': '\mathrm{II}'
     '\rIII': '\mathrm{III}'
-    '\pd': 'p'
+    '\pd': '\wp'
     '\prob' : '\mathrm{prob}'
     '\op' : '\hat{#1}_{\mathrm{w}}'
     '\inner' : '\langle #1 | #2 \rangle'
     '\av' : '\langle #1 \rangle'
   abbreviations:
     TISE: Time-independent Schrödinger Equation
+    HUP: Heisenberg Uncertainty Principle
   numbering:
     heading_1: true
     heading_2: true
