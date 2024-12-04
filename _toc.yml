@@ -5,9 +5,10 @@ parts:
     chapters:
      - file: 01-position
      - file: 02-momentum
-  # - caption: Problem Sheets
-  #   chapters:
- #     - file: PS7
+     - file: 03-Incompat-obs-HUP
+  - caption: Problem Sheets
+    chapters:
+     - file: 01-problems
  #     - file: PS8
  #     - file: PS9
  #     - file: PS10

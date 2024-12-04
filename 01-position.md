@@ -247,6 +247,7 @@ In this way, we see that if we are given a wavefunction $\psi(x)$, as a way of d
 More generally, we can apply the above procedure to **any quantum mechanical operator** $\hat{A}$: There will **always** be an associated operator $\op{A}$ acting on wavefunctions $\psi(x)$, such that
 ````{card}
 ```{math}
+:label: e-op-to-wf-op
 \hat{A}\ket{\psi} = \infint \left(\op{A}\psi(x)\right) \ket{x} dx.
 ```
 ````
