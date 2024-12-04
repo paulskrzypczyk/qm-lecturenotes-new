@@ -5,18 +5,6 @@ numbering:
   enumerator: 1.%s
 ---
 
-```{exercise}
-:label: ex-1
-Consider the following wavefunction,
-   \begin{equation*} 
-  \Psi(x,t_0) = \begin{cases} \frac{\sqrt{15}}{4}(1-x^2)&  \text{if } |x| \leq 1, \\ 0  &\text{otherwise. } \end{cases} 
-  \end{equation*}
-   1. Show that this is a normalised wavefunction. 
-   1.  Sketch the wavefunction $\Psi(x,t_0)$ and the probability density $P(x,t_0)$.
-   1. What is the probability amplitude at $x = \frac{1}{2}$. 
-   1. Where is the probability density to find the particle largest? What is the probability density there? 
-```
-
 In your previous course on quantum theory, you considered a simplied situation where a particle could be found in one of a discrete number of locations — for example, either on the left-hand or right-hand side of a box. Here, we will now consider a more realistic and powerful situation, that considered in the context of **mechanics**, where a particle with one degree of freedom (constained to move in one dimension) has a **position** $x$. Our goal is to develop the quantum formalism to describe the motion of such a particle. This is then referred to as **quantum mechanics**. 
 
 We will be able to learn most of the important lessons about the quantum description of the mechanics of a particle by considering only motion in one dimension. This is advantageous, as it is simpler to consider this idealised scenario. At the end of this course, we will consider the more physically relevant case of motion in **three dimensions**, which describes the universe we live in. 
@@ -265,3 +253,50 @@ More generally, we can apply the above procedure to **any quantum mechanical ope
 ```
 ````
 While this is abstract at this stage, it will hopefully become much clearer in the next Chapter, when we being to investigate the **momentum** of particle in quantum mechanics. Here we will find a more interesting relationship between the momentum operator $\hat{P}$ and the associated wavefunction momentum operator $\op{P}$. 
+
+## Exercises
+
+```{exercise}
+:label: ex-1-1
+Consider the following wavefunction,
+   \begin{equation*} 
+  \psi(x) = \begin{cases} \frac{\sqrt{15}}{4}(1-x^2)&  \text{if } |x| \leq 1, \\ 0  &\text{otherwise. } \end{cases} 
+  \end{equation*}
+   1. Show that this is a normalised wavefunction. 
+   1.  Sketch the wavefunction $\psi(x)$ and the probability density $\pd(x)$.
+   1. Where is a measurement of the position of the particle most likely to find it? What is the probability density at this location?
+```
+```{exercise}
+:label: ex-1-2
+Consider the following wavefunction,
+   \begin{equation*}
+   \psi(x) = \begin{cases}
+   A\left(1+\frac{x}{2}\right)&  \text{if } -2 \leq x \leq 0, \\
+   A\left(1-\frac{x}{2}\right)&  \text{if } 0 \leq x \leq 2, \\
+   0  &\text{otherwise, }
+   \end{cases}
+   \end{equation*}
+   where $A$ is a real constant. 
+   1. Normalise the wavefunction. That is, find the value of $A$ such that the wavefunction is normalised. 
+   1. Sketch the wavefunction $\psi(x)$, and the probability density $\pd(x)$. 
+   1. What is the probability that a measurement of the position of the particle will find it  between $x = 1$ and $x = 2$. 
+```
+```{exercise}
+:label: ex-1-3
+Consider the following wavefunction,
+   \begin{equation*}
+   \psi(x) = \begin{cases}
+   \frac{1}{\sqrt{a}}e^{2\pi x i /a} &  \text{if } 0 \leq x \leq a, \\
+   0  &\text{otherwise. }
+   \end{cases}
+   \end{equation*}
+   1. Sketch the wavefunction $\psi(x)$, taking care to plot both the real and imaginary parts. 
+   1. Show that this is a normalised wavefunction. 
+   1. Sketch the probability density $\pd(x)$. 
+   1. Where will a measurement of the position of the particle find it on average? That is, what is the expected location of the particle? 
+   ```{note} Hint
+   :class: dropdown
+   Recall that for a probability density $\pd(x)$, the expectation (or expected) value is defined by
+   $$  \langle x \rangle = \int_{-\infty}^{\infty} x \pd(x) dx,$$
+   which is the average, or mean, position where the particle will be found.
+```
