@@ -22,6 +22,7 @@ project:
     '\prob' : '\mathrm{prob}'
     '\op' : '\hat{#1}_{\mathrm{w}}'
     '\inner' : '\langle #1 | #2 \rangle'
+    '\av' : '\langle #1 \rangle'
   abbreviations:
     TISE: Time-independent Schrödinger Equation
   numbering:
