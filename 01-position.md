@@ -110,6 +110,7 @@ We need to check that this is what we arrive at starting from [](#e-general-quan
 ```
 To simplify this expression, we need to recall the definition of the Dirac delta function, which we give below for convenience (along with its key properties, for later reference). 
 ````{topic} Dirac Delta Function
+:label: dirac-delta-function
 :class: dropdown
 The Dirac Delta function $\delta(y)$ is defined such that
 ```{math}
@@ -256,40 +257,43 @@ While this is abstract at this stage, it will hopefully become much clearer in t
 
 ## Exercises
 
-```{exercise}
+````{exercise}
 :label: ex-1-1
-Consider the following wavefunction,
-   \begin{equation*} 
-  \psi(x) = \begin{cases} \frac{\sqrt{15}}{4}(1-x^2)&  \text{if } |x| \leq 1, \\ 0  &\text{otherwise. } \end{cases} 
-  \end{equation*}
-   1. Show that this is a normalised wavefunction. 
-   1.  Sketch the wavefunction $\psi(x)$ and the probability density $\pd(x)$.
-   1. Where is a measurement of the position of the particle most likely to find it? What is the probability density at this location?
+Consider a particle with the following wavefunction,
+```{math}
+:label: e-wf-ex-1-1
+\psi(x) = \begin{cases} \frac{\sqrt{15}}{4\sqrt{a}}\left(1-\frac{x^2}{a^2}\right)&  \text{if } |x| \leq a, \\ 0  &\text{otherwise. } \end{cases}
 ```
+where $a > 0$ is a constant, which sets the overall length scale. 
+1. Show that this is a normalised wavefunction. 
+1.  Sketch the wavefunction $\psi(x)$ and the probability density $\pd(x)$.
+1. Where is a measurement of the position of the particle most likely to find it? What is the probability density at this location?
+````
 ```{exercise}
 :label: ex-1-2
-Consider the following wavefunction,
+Consider a particle with the following wavefunction,
    \begin{equation*}
    \psi(x) = \begin{cases}
-   A\left(1+\frac{x}{2}\right)&  \text{if } -2 \leq x \leq 0, \\
-   A\left(1-\frac{x}{2}\right)&  \text{if } 0 \leq x \leq 2, \\
+   A\left(1+\frac{x}{2a}\right)&  \text{if } -2a \leq x \leq 0, \\
+   A\left(1-\frac{x}{2a}\right)&  \text{if } 0 \leq x \leq 2a, \\
    0  &\text{otherwise, }
    \end{cases}
    \end{equation*}
-   where $A$ is a real constant. 
+   where $A>0$ and $a>0$ are constants. 
    1. Normalise the wavefunction. That is, find the value of $A$ such that the wavefunction is normalised. 
    1. Sketch the wavefunction $\psi(x)$, and the probability density $\pd(x)$. 
-   1. What is the probability that a measurement of the position of the particle will find it  between $x = 1$ and $x = 2$. 
+   1. What is the probability that a measurement of the position of the particle will find it  between $x = a$ and $x = 2a$. 
 ```
 ```{exercise}
 :label: ex-1-3
-Consider the following wavefunction,
+Consider a particle with the following wavefunction,
    \begin{equation*}
    \psi(x) = \begin{cases}
    \frac{1}{\sqrt{a}}e^{2\pi x i /a} &  \text{if } 0 \leq x \leq a, \\
    0  &\text{otherwise. }
    \end{cases}
    \end{equation*}
+   where $a > 0$ is a constant.
    1. Sketch the wavefunction $\psi(x)$, taking care to plot both the real and imaginary parts. 
    1. Show that this is a normalised wavefunction. 
    1. Sketch the probability density $\pd(x)$. 
