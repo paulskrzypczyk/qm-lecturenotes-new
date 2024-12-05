@@ -8,7 +8,10 @@ numbering: false
 
 ## Preface
 
-In this unit you will continue your education of quantum theory, building upon your first year unit...
+In this unit you will continue your education of quantum theory, building upon your first year unit.
+
+We will used a flipped-classroom approach
+
 
 
 
