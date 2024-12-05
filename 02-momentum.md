@@ -282,6 +282,7 @@ are eigenstates of the momentum operator $\hat{P}$.
 Consider the particle from [](#ex-1-1), ![](#e-wf-ex-1-1)
   1. Show that the momentum wavefunction of the particle is 
    ```{math}
+  :label: e-mom-wf-1-1
    \tilde{\psi}(p) = \sqrt{\frac{15 a}{2\pi \hbar}}\left(\frac{\hbar^3}{a^3p^3}\sin (ap/\hbar) - \frac{\hbar^2}{a^2p^2}\cos(ap/\hbar)\right).
    ```
   ```{note} Hint 

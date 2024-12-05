@@ -11,11 +11,20 @@ In this Chapter we will learn about one of the basic aspects of quantum mechanic
 
 We can illustrate the main idea behind the incompatibility of position and momentum by considering a simple example — that of a **gaussian wavefunction**. Consider the following wavefunction 
 ```{math}
-\psi(x) = \sqrt{\frac{1}{a\sqrt{2\pi}}} e^{-x^2/4a^2}
+:label: e-gaussian-wf
+\psi(x) = \sqrt{\frac{1}{a\sqrt{2\pi}}} e^{-x^2/4a^2},
 ```
 with a parameter $a > 0$, which determines the **width** of the wavefunction, and where $\sqrt{\frac{1}{a\sqrt{2\pi}}}$ is a normalisation factor, which ensures that this is a normalised wavefunction (this is left as an [exercise](#ex-norm-gaussian)). This wavefunction is depicted below:
+```{figure}  ./Pictures/gaussian
+:label: f-gaussian
+:alt: Picture of a gaussian function
+:width: 400px
+:align: center
+A Gaussian wavefunction, as given by [](#e-gaussian-wf). The parameter $a>0$ determines the 'width' of the wavefunction. 
+```
 
-As we can see, it has the Bell-curve shape, and is centred at the origin. Direct calculations show that the expected position and standard deviation are 
+
+As we can see, it has the Bell-curve shape, and is centred at the origin. [Direct calculations](#ex-gaussian-mean-var) show that the expected position and standard deviation are 
 ```{math}
 :label: e-gaussian-x
 \av{x} &= 0,\\
@@ -27,9 +36,10 @@ The question we would now like to ask is what momentum does the particle have, a
 
 In an [exercise](#ex-mom-wf-gaussian), you will show that
 ```{math}
-\tilde{\psi}_a(p) = \sqrt{\frac{\sqrt{2}a}{\sqrt{2}\hbar}}e^{-a^2p/\hbar^2}.
+:label: e-gaussian-p
+\tilde{\psi}(p) = \sqrt{\frac{\sqrt{2}a}{\sqrt{\pi}\hbar}}e^{-a^2p^2/\hbar^2}.
 ```
-(Remarkably) this is **also a Gaussian**. However, the expected momentum and standard deviation of momentum are 
+(Remarkably) this is **also a Gaussian** (now in the variable $p$ instead of $x$). However, the expected momentum and standard deviation of momentum are 
 ```{math}
 :label: e-gaussian-p
 \av{p} &= 0,\\
@@ -130,12 +140,50 @@ Coming back to the big picture: we see in [](#e-canonical-comm) that $\hat{X}$ a
 
 ````{exercise}
 :label: ex-norm-gaussian
+Show that the Gaussian wavefunction ![](#e-gaussian-wf) where $a>0$ is a positive constant, is normalised. You may wish to make use of [](gaussian-integrals).
+````
+````{exercise}
+:label: ex-gaussian-mean-var
+Show that for the Gaussian wavefunction ![](#e-gaussian-wf) where $a>0$ is a positive constant, the expected position and standard deviation are ![](#e-gaussian-x)
+
 ````
 
 ````{exercise}
 :label: ex-mom-wf-gaussian
+Using [](#e-psi-x-to-psi-p), show that the momentum wavefunction associated to the Gaussian wavefunction ![](#e-gaussian-wf) is given by ![](#e-gaussian-p) You may wish to make use of [](gaussian-integrals).
 ````
 
 ````{exercise}
 :label: ex-x-p-comm
+In this exercise we prove the canonical commutation relation. Consider an arbitrary wavefunction $\psi(x)$.
+1. Calculate $\op{X}\left(\op{P}\psi(x)\right)$.
+1. Calculate $\op{P}\left(\op{X}\psi(x)\right)$.
+1. Using your answers to parts (1) and (2), calculate $[\op{X},\op{P}]\psi(x)$. 
+1. Explain why
+```{math}
+[\hat{X},\hat{P}]\ket{\psi} = \infint \left([\op{X},\op{P}]\psi(x)\right)\ket{x} dx.
+```
+1. Finally, using parts (3) and (4), find $[\hat{X},\hat{P}]$. 
+
+````{exercise}
+:label: ex-3-5
+Consider the particle from [](#ex-1-1), ![](#e-wf-ex-1-1) which we showed in [](#ex-mom-wf-1-1) had momentum wavefunction ![](#e-mom-wf-1-1)
+
+1. Show that both $\psi(x)$ and $\tilde{\psi}(p)$ are **even** functions. 
+```{note} Hint
+Recall that an even function is one such that $f(-y) = f(y)$.
+  ```
+2. Explain why this implies that both the average position and average momentum are zero,
+\begin{equation*}
+	\langle x \rangle &= 0,& \langle p \rangle &= 0.
+\end{equation*}
+3. Calculate the average square position of the particle, $\langle x^2 \rangle$, and the standard deviation, $\Delta x~=~\sqrt{\langle x^2\rangle - \langle x \rangle^2}$.
+
+It can be shown that the average square momentum of the particle is 
+\begin{equation*} 
+        \vph \langle p^2 \rangle = \frac{5\hbar^2}{2a^2}.
+\end{equation*}
+4. Calculate the standard deviation in the momentum of the particle, $\Delta p = \sqrt{\langle p^2 \rangle - \langle p \rangle^2}$.
+
+5. Show that the particle satisfies the HUP. How close is the particle to saturating the bound of the uncertainty principle?
 ````

@@ -6,6 +6,9 @@ parts:
      - file: 01-position
      - file: 02-momentum
      - file: 03-Incompat-obs-HUP
+  - caption: Appendices
+    chapters:
+     - file: gaussian-integrals 
   - caption: Problem Sheets
     chapters:
      - file: 01-problems
