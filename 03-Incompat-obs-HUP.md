@@ -164,6 +164,7 @@ In this exercise we prove the canonical commutation relation. Consider an arbitr
 [\hat{X},\hat{P}]\ket{\psi} = \infint \left([\op{X},\op{P}]\psi(x)\right)\ket{x} dx.
 ```
 1. Finally, using parts (3) and (4), find $[\hat{X},\hat{P}]$. 
+````
 
 ````{exercise}
 :label: ex-3-5
