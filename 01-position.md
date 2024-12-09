@@ -3,6 +3,9 @@ title: "Chapter 1: The position of a quantum particle"
 short_title: "Ch. 1: Position"
 numbering:
   enumerator: 1.%s
+authors:
+  - name: 
+    affiliations:
 ---
 
 In your previous course on quantum theory, you considered a simplied situation where a particle could be found in one of a discrete number of locations — for example, either on the left-hand or right-hand side of a box. Here, we will now consider a more realistic and powerful situation, that considered in the context of **mechanics**, where a particle with one degree of freedom (constained to move in one dimension) has a **position** $x$. Our goal is to develop the quantum formalism to describe the motion of such a particle. This is then referred to as **quantum mechanics**. 

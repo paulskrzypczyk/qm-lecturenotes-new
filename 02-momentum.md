@@ -3,6 +3,9 @@ title: "Chapter 2: The momentum of a quantum particle"
 short_title: "Ch. 2: Momentum"
 numbering:
   enumerator: 2.%s
+authors:
+  - name: 
+    affiliations:
 ---
 
 In the previous chapter we begin our investigation of the quantum mechanics of a particle moving in one dimension, focusing on the **position** of the particle. Here we will continue our development, by now considering how **momentum** is described quantum mechanically. We will see in this chapter that momentum is related to **wave-like** properties of a particle. 
@@ -154,7 +157,7 @@ Starting from $\ket{\psi}$ written as a superposition of position states as in [
 \inner{x}{\psi} = \psi(x).
 ```
 ````
-We can now uses these facts in an interesting way. We start again with a quantum state written in the form [](#e-general-state-momentum), but we now take the scalar product with $\ket{x}$, leading to
+We can now use these facts in an interesting way. We start again with a quantum state written in the form [](#e-general-state-momentum), but we now take the scalar product with $\ket{x}$, leading to
 ```{math}
 \inner{x}{\psi} &= \bra{x}\left(\infint \tilde{\psi}(p) \ket{p} dp \right),\\
 \psi(x) &= \infint \tilde{\psi}(p) \inner{x}{p}dp,\\

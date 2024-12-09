@@ -3,6 +3,9 @@ title: "Chapter 4: Energy and the Hamiltonian"
 short_title: "Ch. 4: Energy"
 numbering:
   enumerator: 4.%s
+authors:
+  - name: 
+    affiliations:
 ---
 
 In this Chapter we will consider now the final important physical property of a particle we will study in this unit — the energy. Not only is this one of the most important physical properties in nature, due to its **conservation law**, it is central to the **time evolution** in quantum mechanics, as we will begin investigating in the next chapter. 
@@ -80,11 +83,13 @@ That is, a particle cannot have both a well defined kinetic energy and a well de
 A quantum state where the particle has definite energy corresponds to an **eigenstate of the Hamiltonian** $\hat{H}$. That is, a state $\ket{E}$ of energy $E$ that satisfies the eigenvalue equation
 ````{card}
 ```{math}
+:label: e-E-eigenvalue-eq
 \hat{H}\ket{E} = E\ket{E}.
 ```
 ````
 As with momentum eigenstates, we can write these eigenstates in terms of their associated wavefunctions,
 ```{math}
+:label: e-eigenstate-wf
 \vph \ket{E} = \infint u_E(x) \ket{x} dx,
 ```
 where $u_E(x)$ are wavefunctions of the particle corresponding to states of definite energy. We call these the **energy eigenfunctions**. These wavefunctions will satisfy the associated eigenvalue equation
@@ -100,6 +105,7 @@ For reasons that will become clear in the following chapter, this equation is of
 
 We end this chapter with an important discussion about **qualitatively distinct** situations that can arise, and how this affects the allowed energies a particle can have, and the properties of their eigenstates. 
 
+(s-bound-states)=
 ### Bound states
 
 In situations where a particle does not have enough energy to leave a finite region of space we say that it is in a **bound state**. This is a very generic situation, which occurs across all of physics, ranging from planets in bounded orbits around stars, all the way down to electrons bound to a nucleus. What unites all such situations is that the object will be **stuck in the corresponding potential well** (whether that be the gravitational potential well of the star, or the electrostatic potential well of the nucleus). This is most readily depicted graphically:
@@ -124,7 +130,7 @@ In QM, when a particle is in a bound state, we find that **it can only have cert
 \inner{E_k}{E_\ell} = \begin{cases} 1 &\text{ if } k = \ell \\ 0 &\text{ if } k \neq \ell \end{cases} = \delta_{k,\ell}.
 ```
 ````
-
+(s-Non-bound-states)=
 ### Non-bound states
 
 The alernative situation is where a particle is **not confined** to one region of space, either because **it too much energy to be bound in the well** ($E > E_B$), or because **there are no forces**, i.e. $V(x) = 0$ and there is no well to be trapped in. Classically, this would correspond to non-closed orbits, such as asteroids passing a star, or an electron that isn't bound to a nucleus. In these cases, in principle, the object will eventually **escape to infinity** (travel as far as possible in some direction). 
@@ -134,6 +140,7 @@ In QM in this case we find that there is **no discretisation** (no energy levels
 However, in this case, just like for position and momentum states, the energy eigenstates are **unnormalisable** and therefore **unphysical**. We take them to satisfy the analogous condition as for position and momentum, namely
 ````{card}
 ```{math}
+:label: e-norm-non-bound-E
 \inner{E'}{E} = \delta(E-E'),
 ```
 ````

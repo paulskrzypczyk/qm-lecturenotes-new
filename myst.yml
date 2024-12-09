@@ -9,7 +9,7 @@ project:
   - name: Paul Skrzypczyk
     affiliations:
       - School of Physics, University of Bristol
-  license: CC-BY-4.0
+  license: CC-BY-NC-ND-4.0
   # github:
   # bibliography: []
   math:
@@ -23,8 +23,10 @@ project:
     '\op' : '\hat{#1}_{\mathrm{w}}'
     '\inner' : '\langle #1 | #2 \rangle'
     '\av' : '\langle #1 \rangle'
+    '\init': '\mathrm{in}'
   abbreviations:
     TISE: Time-independent Schrödinger Equation
+    SE: Schrödinger Equation
     HUP: Heisenberg Uncertainty Principle
     QM: Quantum Mechanics
   numbering:
@@ -32,10 +34,10 @@ project:
     heading_2: true
     heading_3: true
     heading_4: true
-  exports:
-  - format: pdf
-    template: plain_latex_book
-    output: exports/qm-lectures.pdf
+#  exports:
+#  - format: pdf
+#    template: plain_latex_book
+#    output: exports/qm-lectures.pdf
 site: 
   template: book-theme
   title: Quantum Mechanics
