@@ -221,6 +221,7 @@ We can substitute this into [](#e-momentum-op-calc-1) to obtain
 where in the second line we used the fact that since $\tilde{\psi}(p)$ is independent of $x$, we can 'pull' the partial deriative through it, and in fact all the way out of the integral altogether, and in the final line we used the fact that the integral that remains is nothing but [](#e-psi-p-to-psi-x). What this shows is that multiplying a momentum wavefunction by $p$ **has the effect of differentiating the spatial wavefunction** (and multiplying it by $-i\hbar$)! This has thus answered our question, and we can see that
 ````{card}
 ```{math}
+:label: e-op-P
 \op{P}\psi(x) = -i\hbar \frac{\partial}{\partial x}\psi(x).
 ```
 ````

@@ -109,6 +109,7 @@ We need to check that this is what we arrive at starting from [](#e-general-quan
 &= \int_{-\infty}^{\infty} \psi^*(x')\left[\int_{-\infty}^{\infty} \psi(x) \inner{x'}{x} dx\right]dx'.
 ```
 To simplify this expression, we need to recall the definition of the Dirac delta function, which we give below for convenience (along with its key properties, for later reference). 
+
 ````{topic} Dirac Delta Function
 :label: dirac-delta-function
 :class: dropdown
@@ -235,6 +236,7 @@ where in the last line we have defined $\psi'(x) = \psi(x)$.
 What this shows us is that the action of the position operator $\hat{X}$ is to send the wavefunction $\psi(x)$ to the wavefunction $\psi'(x) = x\psi(x)$. We see that this is **still a form of 'operation'** but now at the level of the wavefunction. That is, previously we saw that operators act on ket vectors, and transform them into other ket vectors. Here, in **direct analogy**, we saw that a wavefunction $\psi(x)$ was transformed into another wavefunction $\psi'(x)$, and so we can define an **associated position operator** which we will denote by $\op{X}$ (where the subscript w refers to `wavefunction') by
 ````{card}
 ```{math}
+:label: e-op-X
 \op{X}\psi(x) = x\psi(x).
 ```
 ````

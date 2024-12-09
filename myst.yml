@@ -26,6 +26,7 @@ project:
   abbreviations:
     TISE: Time-independent Schrödinger Equation
     HUP: Heisenberg Uncertainty Principle
+    QM: Quantum Mechanics
   numbering:
     heading_1: true
     heading_2: true
