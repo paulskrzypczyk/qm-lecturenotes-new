@@ -10,6 +10,7 @@ parts:
      - file: 05-time-evolution
   - caption: Appendices
     chapters:
+     - file: recap
      - file: gaussian-integrals 
   - caption: Problem Sheets
     chapters:
