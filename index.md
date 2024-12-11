@@ -10,7 +10,7 @@ numbering: false
 
 Welcome to the quantum mechanics section of the 2nd year core physics unit (From Classical to Modern Physics). In this part of the course we will investigate the quantum description of a particle moving in one and three dimensions. This is the quantum description of **mechanics** and is usually referred to as **quantum mechanics**. 
 
-This material will build upon the quantum physics material you learnt in the first year course physics unit (Classical, Quantum and Thermal Physics). We will not repeat any of the content from that unit. You should **refer back to the lecture notes for that course** where needed.
+This material will build upon the quantum physics material you learnt in the first year course physics unit (Classical, Quantum and Thermal Physics). I have provided a [brief recap video](recap.md) but will not repeat the content from that unit here. You should **refer back to the lecture notes for that course** where needed.
 
 Similarly, we will make use of the **probability and statistics** that you learnt as part of the **First Year Physics Laboratory**. You also hould refer back to the content on Blackboard where needed. 
 
@@ -33,6 +33,10 @@ As with any method of teaching, there is always a trade-off. Responding to commo
 
 - Lack of structure: Some students find it very helpful having scheduled lectures, and find the lack of structure in a flipped approach challenging. I strongly encourage you to keep to the weekly structure, and attend the problem classes, as these can be key to learning this material. If you need structure then **design your own**: schedule those times when you will watch the videos. Add these to your calendar, and don't allow yourself to miss them (even if you have other deadlines). 
 - Inability to ask questions: Students do ask questions during lectures, and so by having the content delivered via videos, this is no longer possible. If you have questions, **please make a note of them** and bring them to the problem classes, or email me. I definitely don't want to discourage questions, and I find that I have **more time** to answer your questions using a flipped approach, compared to a traditional lecture. It can also be the case that the ability to stop, pause, and think can help you answer your own questions, which is another one of the key skills we are aiming to teach you during your degree. 
+
+## Textbooks 
+
+While I am providing a set of lecture notes to accompany the course, **I want to encourage you to read beyond these notes, and consult other textbooks**. In particular, you can find a list of recommended textbooks in the University's [Resources List](https://rl.talis.com/3/bristol/lists/5F59CD9C-601C-E8BB-DF76-E2B8AA114FFE.html?lang=en-GB).
 
 ## Questions and comments
 
