@@ -8,9 +8,9 @@ authors:
     affiliations:
 ---
 
-In your previous course on quantum theory, you considered a simplied situation where a particle could be found in one of a discrete number of locations — for example, either on the left-hand or right-hand side of a box. Here, we will now consider a more realistic and powerful situation, that considered in the context of **mechanics**, where a particle with one degree of freedom (constained to move in one dimension) has a **position** $x$. Our goal is to develop the quantum formalism to describe the motion of such a particle. This is then referred to as **quantum mechanics**. 
+In your previous unit on quantum physics, you considered a simplied situation where a particle could be found in one of a discrete number of locations — for example, either on the left-hand or right-hand side of a box. Here, we will now consider a more realistic and powerful situation, that considered in the context of **mechanics**, where a particle with one degree of freedom (is constrained to move in one dimension) has a **position** $x$. Our goal is to develop the quantum formalism to describe the motion of such a particle. This is known as **quantum mechanics**. 
 
-We will be able to learn most of the important lessons about the quantum description of the mechanics of a particle by considering only motion in one dimension. This is advantageous, as it is simpler to consider this idealised scenario. At the end of this course, we will consider the more physically relevant case of motion in **three dimensions**, which describes the universe we live in. 
+We will be able to learn most of the important lessons about the quantum description of the mechanics of a particle by considering only motion in one dimension. This is advantageous, as it is simpler to consider this idealised scenario. At the end of this unit, we will consider the more physically relevant case of motion in **three dimensions**, which describes the universe we live in. 
 
 (s-position)=
 ## The position of a quantum particle
@@ -25,7 +25,7 @@ Consider the case previously studied, where a particle can be found in one of fo
 Quantum particle that can be in one of four possible locations. Depicted is the quantum particle in the state $\ket{0}$, in the second location. Under each possible location for the particle we have written the corresponding quantum state $\ket{k}$. 
 ```
 
-In this case, the general quantum state of the particle is given by
+In this case, the general quantum state of the particle is a superposition, given by
 ```{math}
 :label: e-quantum-state-discrete
 \ket{\psi} = \sum_{k=-1}^2\alpha_k \ket{k}, 
@@ -41,7 +41,7 @@ Let us imagine therefore dividing each region into two, to obtain a more **fine-
 :align: center
 Quantum particle that can now be in one of 8 possible locations. Depicted is the quantum particle in the state $\ket{0}$, in the fourth location. As above, under each possible location for the particle we have written the corresponding quantum state $\ket{k}$.
 ```
-with a general quantum state of the particle now taking the form 
+with a general quantum state of the particle now being a superposition of the form
 ```{math}
 :label: e-discrete-position
 \ket{\psi} = \sum_{k=-3}^2\alpha_k \ket{k/2}.
@@ -49,7 +49,7 @@ with a general quantum state of the particle now taking the form
 
 Notice that our precision has now increased. Whereas before we could only specify the position of the particle in integer steps, we now specify it in twice as many half-integer steps. 
 
-We can imagine continuing this process of dividing each region in two **indefinitely** until we have infinite precision, and such that each state now represented an actual position for the particle $\ket{x}$. As a figure, this would now give us a **continuous line**, as depicted below:
+We can imagine continuing this process of dividing each region in two **indefinitely** until we have infinite precision, such that each quantum state $\ket{x}$ now represents an actual position for the particle. As a figure, this would now give us a **continuous line**, as depicted below:
 
 ```{figure} ./Pictures/continuous-position-1
 :label: continuous-poisition-1
@@ -58,7 +58,7 @@ We can imagine continuing this process of dividing each region in two **indefini
 :align: center
 A quantum particle that can now be anywhere in the region $-2\leq x \leq 2$, arrived at by continually dividing the regions from [](#f-discrete-posiitions-2) until they become infinitely small and continuous. Depicted is a quantum particle at $x = 0$.
 ```
-Since we have now ended up with a **continuous** position for the particle, the most general quantum state will no longer be a summation, but will become an **integral**,
+Since we have now ended up with a **continuous** position for the particle, the most general quantum superposition will no longer be a summation, but will become an **integral**,
 ```{math}
 :label: e-contin-position
 \ket{\psi} = \int_{-2}^{2} \psi(x) \ket{x} dx.
@@ -74,14 +74,14 @@ In this example so far, we have ended up with a quantum mechanical particle whic
 :align: center
 A quantum particle that can now be anywhere. Depicted is a quantum particle at an arbitrary position $x$.
 ```
-with a general quantum state
+with a general quantum superposition 
 ````{card}
 ```{math}
 :label: e-general-quantum-state
-\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx.
+\vph \ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx.
 ```
 ````
-We interpret this state as a **superposition** of the particle having a position $x$, and refer to $\ket{x}$ as **position states**. Just as previously, e.g. in [](#e-quantum-state-discrete), these states are meant to represent a quantum particle which has — with certainty — position $x$ (we will see below that we have to be slightly careful with this!). 
+This state corresponds to a **superposition** of the particle having a position $x$, and we will refer to $\ket{x}$ as **position states**. Just as previously, e.g. in [](#e-quantum-state-discrete), these states are meant to represent a quantum particle which has — with certainty — position $x$ (we will see below that we have to be slightly careful with this!). 
 
 We can use these to introduce the **position operator** $\hat{X}$ of a particle. This will be the operator which has as eigenvalue the position $x$, with corresponding eigenstate the position state $\ket{x}$. Using the **same rule as before** except replacing a sum by an integral, the position operator is given by
 ````{card}
@@ -97,7 +97,7 @@ Recall that we need quantum states to be **normalised**. Mathematically, this co
 :label: e-normalisation
 \| \ket{\psi} \| = 1,
 ```
-and physically, this ensured that when performing a measurement, the probability of the outcomes always add up to 1, as they must. While we have now moved from discrete superpositions to continuous superpositions of the form [](#e-general-quantum-state), the quantum state nevertheless must remain normalised, and the normalisation condition **remains the same**. Previously we knew that [](#e-normalisation) lead to the modulus squared of the coefficients summing up to one (i.e. $\|\ket{\psi} \|^2 = \inner{\psi}{\psi} = \sum_k |\alpha_k|^2 = 1$). For the continuous case, the generalisation of this is simply
+and physically, this ensures that when performing a measurement, the probability of the outcomes always add up to 1, as they must. While we have now moved from discrete superpositions to continuous superpositions of the form [](#e-general-quantum-state), the quantum state nevertheless must remain normalised, and the normalisation condition **remains the same**. Previously we knew that [](#e-normalisation) lead to the modulus squared of the coefficients summing up to one (i.e. $\|\ket{\psi} \|^2 = \inner{\psi}{\psi} = \sum_k |\alpha_k|^2 = 1$). For the continuous case, the generalisation of this is simply
 ````{card}
 ```{math}
 :label: e-norm-wavefunction
@@ -124,7 +124,7 @@ The Dirac Delta function $\delta(y)$ is defined such that
 One representation of the Dirac Delta function is
 ```{math}
 :label: e-delta
-\delta(y)  = \frac{1}{2\pi} \infint e^{iay} da.
+\vph \delta(y)  = \frac{1}{2\pi} \infint e^{iay} da.
 ```
 The delta function is an infinitely thin, infinitely tall 'spike', as depicted below:
 
@@ -163,9 +163,9 @@ Nevertheless, as we have seen in [](#e-general-quantum-state), quantum particles
 
 ## Probabilities to find a particle somewhere
 
-As you learnt in your previous unit on quantum theory, it is an inherently **probabilisitic** theory. That is, quantum particles do not have definite properties, but rather we must perform measurements to learn about the properties of a particle, and in general the results will be probabilistic. This is true for the position of a particle, just as with any other property. If we want to ask where a particle is, we have to measure the position operator $\hat{X}$ from [](#e-position-operator), where $x$ are the position eigenvalues and $\ket{x}$ the associated position eigenstates. 
+As you learnt in your previous unit on quantum physics, it is an inherently **probabilisitic** theory. That is, quantum particles do not have definite properties, but rather we must perform measurements to learn about the properties of a particle, and in general the results will be probabilistic. This is true for the position of a particle, just as with any other property. If we want to ask where a particle is, we have to measure the position operator $\hat{X}$ from [](#e-position-operator), where $x$ are the position eigenvalues and $\ket{x}$ the associated position eigenstates. 
 
-For a state $\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx$, what is the probability to find the particle at some location $x_0$? This question in fact **doesn't make sense** as stated: the position is **continuous**, and therefore there is in fact zero probability to find the particle (precisely) anywhere. As with **any** continuous quantity, we can no longer talk about probabilities, but must rather talk about **probability densities**. That is, we can ask the question: what is the probability to find the particle in a small region of `width' $dx$. This will be the probability density[^pdf] $\pd(x_0)$ multipled by $dx$, as depicted in the following figure:
+For a state $\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx$, what is the probability to find the particle at some location $x_0$? This question in fact **doesn't make sense** as stated: the position is **continuous**, and therefore there is in fact zero probability to find the particle (precisely) somewhere. As with **any** continuous quantity, we can no longer talk about probabilities, but must rather talk about **probability densities**. That is, we can ask the question: *what is the probability to find the particle in a small region of `width' $dx$?*. This will be the probability density[^pdf] $\pd(x_0)$ multipled by $dx$, as depicted in the following figure:
 
 ```{figure} ./Pictures/prob-density
 :label: f-prob-density
@@ -209,10 +209,10 @@ Nevertheless, just as it is useful to consider position states $\ket{x}$ and wri
 *While it is possible to describe the state after a coarse-grained measurement, it is beyond the scope of this unit. One reason for this is that there is no **universal** way to do this — it will depend on precisely how the finite precision is taken into account. Roughly speaking however, we expect that right after measuring the position of a particle, its state will now correspond to one **localised** around where it was found. You will often see this referred to as the `collapse' of the wavefunction.*
 ``` 
 
-One advantage of using directly the probability density $\pd(x) = |\psi(x)|^2$ is that it allows us to answer natural physical questions easily. For example, a natural question we can ask about a quantum particle is: *What is the probability to find it in the region $x_a \leq x \leq x_b$?* (for example, we might be interested in an electron, and the region might be the region close to the proton in a Hydrogen atom ). We can answer this question directly: it is just the **total probability** that an idealised position measurement gives a result in this region. The answer is therefore
+One advantage of using directly the probability density $\pd(x) = |\psi(x)|^2$ is that it allows us to answer natural physical questions easily. For example, a natural question we can ask about a quantum particle is: *What is the probability to find it in the region $x_a \leq x \leq x_b$?* (for example, we might be interested in an electron, and the region might be the region close to the proton in a Hydrogen atom). We can answer this question directly: it is just the **total probability** that an idealised position measurement gives a result in this region. The answer is therefore
 ````{card}
 ```{math}
-\prob(x_a \leq x \leq x_b) = \int_{x_a}^{x_b} |\psi(x)|^2 dx,
+\vph \prob(x_a \leq x \leq x_b) = \int_{x_a}^{x_b} |\psi(x)|^2 dx,
 ```
 ````
 i.e. we integrate the probability density, just as we would involving any question involving probability densities.
@@ -220,7 +220,7 @@ i.e. we integrate the probability density, just as we would involving any questi
 (s-operators-on-wf)=
 ## Operators acting on wavefunctions
 
-As this unit progresses, we will see that it is **very often** useful to focus **exclusively** on the wavefunction $\psi(x)$, and leave it **implicit** that the quantum state of the particle is therefore as given by [](#e-general-quantum-state). The reason for this is that is can often be **overly cumbersome** to work with the full state $\ket{\psi}$, and it is much more convenient to just work with $\psi(x)$ instead.
+As this unit progresses, we will see that it is **very often** useful to focus **exclusively** on the wavefunction $\psi(x)$, and leave it **implicit** that the quantum state of the particle is as given by [](#e-general-quantum-state). The reason for this is that is can often be **overly cumbersome** to work with the full state $\ket{\psi}$, and it is much more convenient to just work with $\psi(x)$ instead.
 
 In fact, in many popular textbooks on quantum mechanics, the presentation often **begins** with the wavefunction $\psi(x)$, before introducing the full quantum state $\ket{\psi}$ later on. One disadvantage of this is that certain aspects of quantum theory are obscured without the link to the quantum state. Here, we have introduced the quantum state first, but would now like to develop the formalism which allows us to focus exclusively on the wavefunction. 
 
@@ -236,7 +236,7 @@ Consider the action of the position operator $\hat{X}$ on a quantum state $\ket{
 ```
 where in the last line we have defined $\psi'(x) = \psi(x)$. 
 
-What this shows us is that the action of the position operator $\hat{X}$ is to send the wavefunction $\psi(x)$ to the wavefunction $\psi'(x) = x\psi(x)$. We see that this is **still a form of 'operation'** but now at the level of the wavefunction. That is, previously we saw that operators act on ket vectors, and transform them into other ket vectors. Here, in **direct analogy**, we saw that a wavefunction $\psi(x)$ was transformed into another wavefunction $\psi'(x)$, and so we can define an **associated position operator** which we will denote by $\op{X}$ (where the subscript w refers to `wavefunction') by
+What this shows us is that the action of the position operator $\hat{X}$ is to transform the wavefunction $\psi(x)$ to the wavefunction $\psi'(x) = x\psi(x)$. We see that this is **still a form of 'operation'** but now at the level of the wavefunction. That is, previously we saw that operators act on ket vectors, and transform them into other ket vectors. Here, in **direct analogy**, we saw that a wavefunction $\psi(x)$ was transformed into another wavefunction $\psi'(x)$, and so we can define an **associated position operator** which we will denote by $\op{X}$ (where the subscript w refers to `wavefunction') by
 ````{card}
 ```{math}
 :label: e-op-X
@@ -258,7 +258,7 @@ More generally, we can apply the above procedure to **any quantum mechanical ope
 \hat{A}\ket{\psi} = \infint \left(\op{A}\psi(x)\right) \ket{x} dx.
 ```
 ````
-While this is abstract at this stage, it will hopefully become much clearer in the next Chapter, when we being to investigate the **momentum** of particle in quantum mechanics. Here we will find a more interesting relationship between the momentum operator $\hat{P}$ and the associated wavefunction momentum operator $\op{P}$. 
+While this is abstract at this stage, it will hopefully become much clearer in the next [Chapter](), when we being to investigate the **momentum** of particle in quantum mechanics. Here we will find a more interesting relationship between the momentum operator $\hat{P}$ and the associated wavefunction momentum operator $\op{P}$. 
 
 ## Exercises
 
