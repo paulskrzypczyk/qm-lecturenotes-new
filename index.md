@@ -6,6 +6,8 @@ short_title: Index
 numbering: false
 ---
 
+**Last update**: *Friday 13th December 2024* 
+
 ## Preface
 
 Welcome to the quantum mechanics section of the 2nd year core physics unit (From Classical to Modern Physics). In this part of the course we will investigate the quantum description of a particle moving in one and three dimensions. This is the quantum description of **mechanics** and is usually referred to as **quantum mechanics**. 
