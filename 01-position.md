@@ -273,8 +273,13 @@ where $a > 0$ is a constant, which sets the overall length scale.
 1. Show that this is a normalised wavefunction. 
 1.  Sketch the wavefunction $\psi(x)$ and the probability density $\pd(x)$.
 1. Where is a measurement of the position of the particle most likely to find it? What is the probability density at this location?
+```{dropdown} Answers
+1. n/a (show that)
+2. n/a (sketch)
+3. $x = 0$; $\pd(0) = \frac{15}{16a}$.
+```
 ````
-```{exercise}
+````{exercise}
 :label: ex-1-2
 Consider a particle with the following wavefunction,
    \begin{equation*}
@@ -288,8 +293,13 @@ Consider a particle with the following wavefunction,
    1. Normalise the wavefunction. That is, find the value of $A$ such that the wavefunction is normalised. 
    1. Sketch the wavefunction $\psi(x)$, and the probability density $\pd(x)$. 
    1. What is the probability that a measurement of the position of the particle will find it  between $x = a$ and $x = 2a$. 
-```
-```{exercise}
+   ```{dropdown} Answers
+   1. $A = \sqrt{\frac{3}{4a}}$.
+   2. n/a (sketch)
+   3. $\frac{1}{16}$
+   ```
+````
+````{exercise}
 :label: ex-1-3
 Consider a particle with the following wavefunction,
    \begin{equation*}
@@ -308,4 +318,11 @@ Consider a particle with the following wavefunction,
    Recall that for a probability density $\pd(x)$, the expectation (or expected) value is defined by
    $$  \langle x \rangle = \int_{-\infty}^{\infty} x \pd(x) dx,$$
    which is the average, or mean, position where the particle will be found.
-```
+   ```
+   ```{dropdown} Answers
+   1. n/a (sketch)
+   2. n/a (show that)
+   3. n/a (sketch)
+   4. $\frac{a}{2}$
+   ```
+````

@@ -144,16 +144,25 @@ Coming back to the big picture: we see in [](#e-canonical-comm) that $\hat{X}$ a
 ````{exercise}
 :label: ex-norm-gaussian
 Show that the Gaussian wavefunction ![](#e-gaussian-wf) where $a>0$ is a positive constant, is normalised. You may wish to make use of [](gaussian-integrals).
+```{dropdown} Answers
+n/a (show that)
+```
 ````
 ````{exercise}
 :label: ex-gaussian-mean-var
 Show that for the Gaussian wavefunction ![](#e-gaussian-wf) where $a>0$ is a positive constant, the expected position and standard deviation are ![](#e-gaussian-x)
+```{dropdown} Answers
+n/a (show that)
+```
 
 ````
 
 ````{exercise}
 :label: ex-mom-wf-gaussian
 Using [](#e-psi-x-to-psi-p), show that the momentum wavefunction associated to the Gaussian wavefunction ![](#e-gaussian-wf) is given by ![](#e-gaussian-p) You may wish to make use of [](gaussian-integrals).
+```{dropdown} Answers
+n/a (show that)
+```
 ````
 
 ````{exercise}
@@ -166,7 +175,14 @@ In this exercise we prove the canonical commutation relation. Consider an arbitr
 ```{math}
 [\hat{X},\hat{P}]\ket{\psi} = \infint \left([\op{X},\op{P}]\psi(x)\right)\ket{x} dx.
 ```
-1. Finally, using parts (3) and (4), find $[\hat{X},\hat{P}]$. 
+5. Finally, using parts (3) and (4), find $[\hat{X},\hat{P}]$. 
+```{dropdown} Answers
+1. $-i\hbar x \frac{\partial \psi}{\partial x}$. 
+2. $-i\hbar\psi(x) -i\hbar x \frac{\partial \psi}{\partial x}$.
+3. $i\hbar\psi(x)$.
+4. n/a (explanation).
+5. $i\hbar$
+```
 ````
 
 ````{exercise}
@@ -190,4 +206,11 @@ It can be shown that the average square momentum of the particle is
 4. Calculate the standard deviation in the momentum of the particle, $\Delta p = \sqrt{\langle p^2 \rangle - \langle p \rangle^2}$.
 
 5. Show that the particle satisfies the HUP. How close is the particle to saturating the bound of the uncertainty principle?
+```{dropdown} Answers
+1. n/a (show that)
+2. n/a (Explanation)
+3. $\langle x^2\rangle = \frac{a^2}{7}$; $\Delta x = \frac{a}{\sqrt{7}}$.
+4. $\frac{\hbar}{a}\sqrt{\frac{5}{2}}$.
+5. Approx 20\% larger than HUP limit. 
+```
 ````

@@ -251,17 +251,23 @@ However, for other physical properties, this won't be the case — we won't know
 
 ## Exercises
 
-```{exercise}
+````{exercise}
 :label: ex-norm-vp
 Show that in order for the wavefunctions $v_p(x)$ in [](#e-momentum-state-1) to be normalised, we must take $A = \frac{1}{\sqrt{2\pi\hbar}}$ (under the assumption that $A$ is real and positive). 
 
 (If we don't assume that $A$ is real and positive, what is the most general $A$ that we can take, such that $v_p(x)$ is normalised?)
+```{dropdown} Answers
+n/a (show that)
 ```
+````
 
-```{exercise}
+````{exercise}
 :label: ex-mom-normalsation
 Using the general form [](#e-general-state-momentum), show that the normalisation condition for quantum states, $\|\ket{\psi}\| = 1$, implies that the momentum wavefunction must satisfy the normalisation condition ![](#e-mom-wv-norm)
+```{dropdown} Answers
+n/a (show that)
 ```
+````
 ````{exercise}
 :label: ex-deriving-psi-x-to-psi-p
 1. Starting from a quantum state written in the form [](#e-general-quantum-state), show that the scalar product $\inner{p}{\psi}$ is given by
@@ -269,7 +275,11 @@ Using the general form [](#e-general-state-momentum), show that the normalisatio
 :label: e-deriving-psi-x-to-psi-p-1
 \inner{p}{\psi} = \infint \psi(x) v_p^*(x) dx.
 ```
-1. Use [](#e-deriving-psi-x-to-psi-p-1), along with [](#e-p-scalar) and the definition of $v_p(x)$, show that ![](#e-psi-x-to-psi-p)
+2. Use [](#e-deriving-psi-x-to-psi-p-1), along with [](#e-p-scalar) and the definition of $v_p(x)$, show that ![](#e-psi-x-to-psi-p)
+```{dropdown} Answers
+1. n/a (show that)
+1. n/a (show that)
+```
 ````
 
 ````{exercise}
@@ -278,7 +288,11 @@ Using [](#e-mom-eigenfunctions) and [](#e-mom-op-correspondence), show that the 
 ```{math}
 \ket{p} = \infint v_p(x) \ket{x} dx
 ```
-are eigenstates of the momentum operator $\hat{P}$. 
+are eigenstates of the momentum operator $\hat{P}$.
+```{dropdown} Answers
+n/a (show that)
+``` 
+
 ````
 
 ````{exercise}
@@ -298,6 +312,11 @@ Consider the particle from [](#ex-1-1), ![](#e-wf-ex-1-1)
   You may want to use a computer to help in this (i.e. Python, [desmos](https://www.desmos.com/calculator), etc.) and to plot in terms of $ap/\hbar$. 
   ```
   3. What is the probability density for the particle to have momentum $p = \frac{\pi \hbar}{a}$?
+```{dropdown} Answers
+1. n/a (show that)
+2. n/a (sketch)
+3. $\frac{15a}{2\hbar \pi^5}$
+``` 
 ````
 
 ````{exercise}
@@ -314,8 +333,14 @@ Consider two particles,  the first of which has wavefunction $\psi(x)$, and the 
   It may be useful to introduce the new variable $p' = p-\hbar k_0$ in your answer to part 1. 
 ```
 3. In a single plot, make representative sketches of $\pd(p) = |\tilde\psi(p)|^2$ and $\pd'(p) = |\tilde\psi'(p)|^2$ (e.g. assuming a generic 'Bell-shaped' momentum wavefunction). 
-1. Use your answers to part 2 and 3 to explain what property/properties of a particle change when we multiply the spatial wavefunction by $e^{ik_0x}$. 
-  ````
+1. Use your answers to part 2 and 3 to explain what property/properties of a particle change when we multiply the spatial wavefunction by $e^{ik_0x}$.
+```{dropdown} Answers
+1. $\tilde\psi'(p) = \frac{1}{\sqrt{2\pi\hbar}}\infint \psi'(x) e^{-ipx/\hbar} dx$
+2. n/a (show that)
+3. n/a (plot)
+4. The momentum increases by $\hbar k_0$. 
+``` 
+````
   
 ````{exercise}
 :label: ex-2-7
@@ -339,4 +364,15 @@ Consider a particle with the following momentum wavefunction,
   \begin{equation*} \psi'(x) = \sqrt{\frac{\Delta}{2\pi\hbar}}\mathrm{sinc}(x\Delta /2\hbar).\end{equation*}
     
 Use [](#ex-2-6) to **write down** (i.e. without calculating explicitly) the momentum wavefunction $\tilde{\psi}'(p)$. What is the centre and width of this wavefunction?
+```{dropdown} Answers
+1. n/a (show that)
+2. n/a (show that)
+3. \begin{equation*}
+    \tilde{\psi}(p) = \begin{cases}
+      \frac{1}{\sqrt{\Delta}} &  \text{if } -\frac{\Delta}{2} \leq p \leq \frac{\Delta}{2}, \\
+      0  &\text{otherwise. }
+    \end{cases}
+  \end{equation*}
+  Centre $0$, width $\Delta$. 
+```
 ````
