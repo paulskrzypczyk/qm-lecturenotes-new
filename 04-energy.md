@@ -8,9 +8,9 @@ authors:
     affiliations:
 ---
 
-In this Chapter we will consider now the final important physical property of a particle we will study in this unit — the energy. Not only is this one of the most important physical properties in nature, due to its **conservation law**, it is central to the **time evolution** in quantum mechanics, as we will begin investigating in the next chapter. 
+In this Chapter we will consider now the final important physical property of a particle we will study in this unit — the energy. Not only is this one of the most important physical properties in nature, due to its **conservation law**, it is central to the **time evolution** in quantum mechanics, as we will begin investigating in the next [Chapter](04-energy). 
 
-We will reintroduce the **Hamiltonian operator** (the total-energy operator), in the context of mechanics, its associated **eigenvalue equation** and discuss the important notion of **bound** and **non-bound** states, and their distinct description within quantum mechanics. 
+We will reintroduce the **Hamiltonian operator** (the total-energy operator), in the context of mechanics, its associated **eigenvalue equation**, and discuss the important notion of **bound** and **non-bound** states, and their distinct description within quantum mechanics. 
 
 ## The Hamiltonian
 
@@ -18,17 +18,17 @@ What different types of energy can a particle have? In the context of the mechan
 ```{math}
 H = K + V,
 ```
-where $T$ is the kinetic energy, and $V$ is the potential energy. 
+where $K$ is the kinetic energy, and $V$ is the potential energy. 
 ```{aside} *Other contributions to energy*
 *There are, of course, other contributions to the energy in general. For instance, thermal energy, rotational kinetic energy, etc. Here, as in classical mechanics, we focus on very simple situations, where we can safely **neglect** all of these other contributions, and focus exclusively on the kinetic and potential energies.*
 ```
-While it is more customary to write the kinetic energy as $K = \frac{1}{2}Mv^2$, where $M$ is the mass of the particle, and $v$ is the velocity, since $p = Mv$, we can alternatively write the kinetic energy as
+While up until now you may have found it more customary to write the kinetic energy as $K = \frac{1}{2}Mv^2$, where $M$ is the mass of the particle and $v$ is the velocity, since $p = Mv$, we can alternatively write the kinetic energy as
 ```{math}
 K = \frac{p^2}{2M},
 ```
 which turns out to be the 'correct' way to express the kinetic energy in QM. 
 
-The potential energy is associated to the **forces** acting on the particle, through $F = -\frac{\partial V}{\partial x}$. This highlights that the potential energy of a particle is usually a **function of its position** $V(x)$. For example, this might be the gravitational potential energy of a particle (associated to the force of gravity), or the energy stored in a spring for a particle undergoing harmonic motion (associated to the restorative force $F(x) = - kx$ (with $k$ the spring constant). 
+The potential energy is associated to the **forces** acting on the particle, through $F = -\frac{\partial V}{\partial x}$. This highlights that the potential energy of a particle is usually a **function of its position** $V(x)$. For example, this might be the gravitational potential energy of a particle (associated to the force of gravity), or the energy stored in a spring for a particle undergoing harmonic motion (associated to the restorative force $F(x) = - kx$, with $k$ the spring constant). 
 
 In quantum mechanics, we associate an **operator** with the total energy, the **Hamiltonian operator** which is given by
 ````{card}
@@ -69,7 +69,7 @@ that is, the potential energy operator multiplies the wavefunction at each posit
 Putting everything together, we can now write down the Hamiltonian operator acting on wavefunctions:
 ````{card}
 ```{math}
-\op{H} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} + V(x).
+\vph\op{H} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} + V(x).
 ```
 ````
 As you will show in an exercise, the kinetic energy and potential energy **do not commute**, $[\hat{K},\hat{V}] \neq 0$ in general. This leads to a profound aspect of quantum mechanics:
@@ -119,12 +119,12 @@ Two examples of potential wells. On the left, the well is symmetric. On the righ
 ```
 
 
-For any potential well $V(x)$ there will be a value $E_B$, such that if the energy of the particle is $E < E_B$, then it will not be able to escape from the well, and is hence trapped inside it / bound to it. 
+For any potential well $V(x)$ there will be a value $E_B$, such that if the energy of the particle is $E < E_B$, then it will not be able to escape from the well, and is hence trapped inside it / bound to it.
 ```{aside}
 *It could be that $E_B = \infty$, i.e. that the particle is **definitely** trapped in the well. We will encounter such situations in this unit, for example a harmonic oscillator, where the particle cannot escape the spring (assuming it doesn't snap!). In general, we expect that $E_B$ is finite, and we should always ask ourselves as a first question, whether particles are always bound, given a specific potential $V(x)$.* 
 ```
 
-In QM, when a particle is in a bound state, we find that **it can only have certain special and discrete energies** $E_k$. These are the famous **energy levels** (e.g. of atoms). More specifically and mathematically, what we will see is that in this case there are **only** physical solutions to the TISE [](#e-TISE) for specific values $E_k$. The corresponding eigenstates $\ket{E_k}$ are **normalised** and **orthogonal** to each other, 
+In QM, when a particle is in a bound state, we find that **it can only have certain special and discrete energies** $E_k$. These are the famous **energy levels** (e.g. of atoms). More specifically and mathematically,  we will see that in this case there are **only** physical solutions to the TISE [](#e-TISE) for specific values $E_k$. The corresponding eigenstates $\ket{E_k}$ are **normalised** and **orthogonal** to each other, 
 ````{card}
 ```{math}
 \inner{E_k}{E_\ell} = \begin{cases} 1 &\text{ if } k = \ell \\ 0 &\text{ if } k \neq \ell \end{cases} = \delta_{k,\ell}.
@@ -133,11 +133,11 @@ In QM, when a particle is in a bound state, we find that **it can only have cert
 (s-Non-bound-states)=
 ### Non-bound states
 
-The alernative situation is where a particle is **not confined** to one region of space, either because **it too much energy to be bound in the well** ($E > E_B$), or because **there are no forces**, i.e. $V(x) = 0$ and there is no well to be trapped in. Classically, this would correspond to non-closed orbits, such as asteroids passing a star, or an electron that isn't bound to a nucleus. In these cases, in principle, the object will eventually **escape to infinity** (travel as far as possible in some direction). 
+The alernative situation is where a particle is **not confined** to one region of space, either because **it has too much energy to be bound in the well** ($E > E_B$), or because **there are no forces**, i.e. $V(x) = 0$ and there is no well to be trapped in. Classically, this corresponds to **non-closed orbits**, such as asteroids passing a star, or an electron that isn't bound to a nucleus. In these cases, in principle, the object will eventually **escape to infinity** (travel as far as possible in some direction). 
 
 In QM in this case we find that there is **no discretisation** (no energy levels), but rather the particle can have **any energy** $E > E_B$ (just like it can have any momentum or position in general), and energy remains **continuous** as it is classically. 
 
-However, in this case, just like for position and momentum states, the energy eigenstates are **unnormalisable** and therefore **unphysical**. We take them to satisfy the analogous condition as for position and momentum, namely
+However, in this case, just like for position and momentum states, the energy eigenstates are **unnormalisable** and therefore **unphysical**. We take them to satisfy the analogous orthonormality condition as for [position](#e-position-norm) and [momentum](#e-momentum-norm), namely
 ````{card}
 ```{math}
 :label: e-norm-non-bound-E
@@ -146,4 +146,7 @@ However, in this case, just like for position and momentum states, the energy ei
 ````
 where $\delta(E-E')$ is the [Dirac delta function](#dirac-delta-function). Just as in those cases, even though the states $\ket{E}$ themselves are unphysical, they are a very useful **basis** of states, since **superpositions** can be normalised states. 
 
-We end by noting that in general, a quantum particle could be in a superposition of being **bound** and being **non-bound**. That is, it could have a superposition of energies, including energy levels below $E_B$ and energies above $E_B$. This is no problem. It will nevertheless be **easier** to study the two regimes **separately** at first, before combining them after, if required by the physical situation under consideration. 
+We end by noting that in general, a quantum particle could be in a superposition of being **bound** and being **non-bound**. That is, it could have a superposition of energies, including energy levels below $E_B$ and energies above $E_B$. This causes no problem. It will nevertheless be **easier** to study the two regimes **separately** at first, before combining them after, if required by the physical situation under consideration. 
+```{aside}
+*For example, it is possible, by carefully tuning a laser pulse, to create a superposition of having an atom ionised (exciting an electron, so that it has enough enough to escape the nucleus) and not (the electron still in a bound state).*
+```
