@@ -27,9 +27,10 @@ i\hbar \frac{d}{dt}\ket{\psi(t)} = \hat{H}\ket{\psi(t)}.
 ```` 
 If $\ket{\psi(t)}$ satisfies [](#e-SE) with the **initial condition** $\ket{\psi(0)} = \ket{\psi_\init}$, then this will be what the quantum state evolves into at time $t$. 
 
-*What is the SE in terms of the wavefunction $\psi(x,t)$?* We can find this by expressing $\ket{\psi(t)}$ as in [](#e-general-quantum-state), and taking the scalar product with $\bra{x'}$. As an exercise, you will show that this leads to
+*What is the SE in terms of the wavefunction $\psi(x,t)$?* We can find this by expressing $\ket{\psi(t)}$ as in [](#e-general-quantum-state), and taking the scalar product with $\bra{x'}$. As an [exercise](#ex-SE-wf), you will show that this leads to
 ````{card}
 ```{math}
+:label: e-SE-wf
 \vph i\hbar \frac{\partial}{\partial t} \psi(x,t) = \op{H} \psi(x,t).
 ```
 ````
@@ -40,6 +41,7 @@ You saw how to solve the SE last year for a $d$-dimensional quantum system. When
 
 In particular, let us assume that our initial state $\ket{\psi_\init}$ (at $t=0$) can be written as
 ```{math}
+:label: e-psi-init
 \ket{\psi_\init} = \sum_{k=1}^{d} \alpha_k \ket{E_k},
 ```
 where we consider an arbitrary Hamiltonian $\hat{H}$, with a potential $\hat{V}$ such that there are $d$ bound energy eigenstates — that satisfy $\hat{H}\ket{E_k} = E_k \ket{E_k}$ with $E_k < E_B$, and $\sum_{k} |\alpha_k|^2 = 1$ so that $\ket{\psi_\init}$ is a normalised quantum state. 
@@ -49,7 +51,7 @@ Then, according to what you learnt last year, the quantum state at time $t$ will
 :label: e:soln-to-SE-bound
 \ket{\psi(t)} = \sum_{k=1}^d \alpha_k e^{-iE_k t/\hbar}\ket{E_k},
 ```
-which we can directly see satisfies the initial condition $\ket{\psi(0)} = \ket{\psi_\init}$. We leave it as an exercise to confirm that [](#e:soln-to-SE-bound) solves the SE [](#e-SE).
+which we can directly see satisfies the initial condition $\ket{\psi(0)} = \ket{\psi_\init}$. We leave it as an [exercise](#ex-soln-to-SE-bound) to confirm that [](#e:soln-to-SE-bound) solves the SE [](#e-SE).
 
 Using [](#e-x-scalar), we can also see how the wavefunction evolves. In particular, the particle will have a wavefunction $\psi(x,t)$ at time $t$. The initial condition is that wavefunction is $\psi_\init(x) = \inner{x}{\psi_\init}$. Taking the scalar product with $\bra{x}$ on both sides of [](#e:soln-to-SE-bound), the wavefunction at time $t$ is given by
 ````{card}
@@ -107,6 +109,7 @@ which we can readily confirm satisfies the initial condition $\ket{\psi(0)} = \k
 
 Let us return for the moment to bound states, and consider a particularly simple initial condition: that the particle has a definite energy $E_\ell$. That is, the initial state is $\ket{\psi_\init} = \ket{E_\ell}$, and so $\alpha_\ell = 1$ and $\alpha_k = 0$ for $k \neq \ell$. According to [](#e:soln-to-SE-bound) the quantum state at time $t$ will be
 ```{math}
+:label: e-E-eigenstate-evolution
 \ket{\psi(t)} = e^{-iE_\ell t/\hbar}\ket{E_\ell}.
 ```
 That is, **in time, the state just aquires a *phase* $e^{-i E_\ell t/\hbar}$**. What we would now like to ask is *what properties of the particle change?*
@@ -134,7 +137,7 @@ where $u_{E_\ell}(x)$ is the wavefunction associated to the quantum state $\ket{
 ```
 which is **independent of time**. Therefore, no matter at what time we choose to measure the position of the particle, we obtain the same probabilities to find it in any given region. We thus see that **the particle is not moving**. 
 
-We reach a similar conclusion about the momentum, which we leave as an exercise. Namely, we find that the probability density for the particle to have momentum $p$ at time $t$ is also time-independent. 
+We reach a similar conclusion about the momentum, which we leave as an [exercise](#ex-stationary-p). Namely, we find that the probability density for the particle to have momentum $p$ at time $t$ is also time-independent. 
 
 In fact, **none of the physical properties of the particle change**! For this reason, we call energy eigenstates **stationary states**. The simple evolution of aquiring a phase doesn't change any property of the state. 
 
@@ -153,6 +156,7 @@ To understand what this is, we need to consider **two separate initial condition
 
 Now, the question is, *what would happen if we considered a third initial condition, which is a **superposition** of the above two initial conditions?* That is, how does the wavefunction 
 ```{math}
+:label: e-psi-superposition
 \psi_\init''(x) = \beta \psi_\init(x) + \gamma \psi_\init'(x),
 ```
 evolve in time, where $\beta$ and $\gamma$ are arbitrary complex numbers, such that $\psi_\init''(x)$ is a normalised wavefunction. 
@@ -163,9 +167,10 @@ The crucial insight is that **we can write down the answer immediately** because
 
 That is, since $\psi_\init''(x)$ is a superposition of $\psi_\init(x)$ and $\psi_\init'(x)$, and since we already know that $\psi_\init(x)$ evolves into $\psi(x,t)$ and $\psi'_\init(x)$ evolves into $\psi'(x,t)$, we are guaranteed that $\psi_\init''(x)$ evolves into the superposition of $\psi'_\init(x)$ and $\psi'(x,t)$. Namely, into
 ```{math}
+:label: e-psi-superposition-sol
 \psi''(x,t) = \beta \psi(x,t) + \gamma \psi'(x,t).
 ```
-This is very special, and **remarkably powerful**. You will show that it is true as an exercise. 
+This is very special, and **remarkably powerful**. You will show that it is true as an [exercise](#ex-superposition-principle). 
 
 We can now return to [](#e-wf-soln-to-SE-bound) and use the superposition principle to understand (and therefore hopefully remember!) it. We wrote the initial wavefunction as a **superposition** of energy eigenfunctions. Each energy eigenfunction evolves in a **simple** fashion, as we saw in [](#s-stationary): it only aquires a phase factor $e^{-iE_k t/\hbar}$ in time. [](#e-wf-soln-to-SE-bound) is then nothing but an application of the superposition principle: the evolution of the superposition is just the superposition of the **simple** evolutions! It is worthwhile taking time to internalise this, as it is one of the most important lessons about quantum mechanics. 
 
@@ -174,3 +179,45 @@ The same story is also true for [](#e-wf-soln-to-SE-non-bound), the only differe
 We thus arrive at a rather important realisation: quantum mechanical evolution is actually very simple: energy eigenstates evolve in very simple ways. We will nevertheless see that quantum mechanical evolution **appears complex**. Where does this complexity come from? It comes from **interference**, and the fact that in a superposition, we take **complex** multiples of energy eigenstates. 
 
 This is in fact similar to what we see in many situations, for example when considering **waves on a string**, or **coupled oscillators**. The motion is complex, but there are **modes** which evolve in simple ways, and the complex motion comes merely from interference between modes. The situation is similar in quantum mechanics, the only real distinction being the introduction of complex numbers, allowing for more interesting forms of interference. 
+
+## Exercises
+
+````{exercise}
+:label: ex-SE-wf
+In this exercise we will show that the SE for the quantum state [](#e-SE) implies the SE for wavefunctions [](#e-SE-wf). 
+1. Substitute [](#e-general-quantum-state) into [](#e-SE).
+1. Explain why we can take $\frac{d}{dt}$ inside the integral on the left-hand side, as long as we replace it by $\frac{\partial}{\partial t}$. 
+1. Use [](#e-op-to-wf-op) to express the right-hand side in terms of $\op{H}$ instead of $\hat{H}$. 
+1. Take the scalar product on both sides with $\bra{x'}$ and use [](#e-position-norm) to arrive at [](#e-SE-wf) (after finally changing variable from $x'$ to $x$). 
+````
+
+````{exercise}
+:label: ex-soln-to-SE-bound
+In this exercise we will confirm that $\ket{\psi(t)}$ from [](#e:soln-to-SE-bound) satisfies the SE [](#e-SE) with $\ket{\psi_\init}$ from [](#e-psi-init) as initial condition. 
+1. Calculate $i\hbar \frac{d}{dt}\ket{\psi(t)}$.
+1. Calculate $\hat{H} \ket{\psi(t)}$ and therefore confirm that $\ket{\psi(t)}$ satisfies the SE [](#e-SE).
+1. Confirm that $\ket{\psi(0)} = \ket{\psi_\init}$. 
+1. Re-carry out the above calculations in terms of $\psi(x,t) = \inner{x}{\psi(t)}$ and the SE [](#e-SE-wf). 
+
+````
+
+````{exercise}
+:label: ex-stationary-p
+In this exercise, we will show that for a particle whose initial state is an energy eigenstate, $\ket{\psi_\init} = \ket{E_\ell}$, the momentum of the particle does not change in time. 
+1. Using the definition of the momentum wavefunction [](#e-general-state-momentum), show that 
+$$ \inner{p}{E_\ell} = \tilde{u}_{E_\ell}(p),$$
+where $\tilde{u}_{E_\ell}(p)$ is the momentum wavefunction associated to $u_{E_\ell}(x)$, and $u_{E_\ell}(x) = \inner{x}{E_\ell}$ is the (spatial) energy eigenfunction corresponding to the energy level of energy $E_\ell$. 
+1. Using part 1 and [](#e-E-eigenstate-evolution), find the momentum wavefunction $\tilde{\psi}(p,t)$ of the particle at time $t$. 
+1. Hence show that the probability density $\pd(p,t)$ is independent of time. Why does this mean that the momentum of the particle isn't changing in time?
+````
+
+````{exercise} 
+:label: ex-superposition-principle
+In this exercise, we will show that the **superposition principle** holds. 
+Consider the initial wavefunction 
+![](#e-psi-superposition)
+where $\psi_\init(x)$ and $\psi_\init'(x)$ are two separate initial conditions, and $\beta$ and $\gamma$ are complex numbers, chosen so that $\ket{\psi''_\init}$ is a normalised quantum state. 
+
+Furthermore, assume that $\psi(x,t)$ and $\psi'(x,t)$ are, respectively, solutions to the SE [](#e-SE-wf) with initial wavefunctions at $t=0$ equal to $\psi_\init(x)$ and $\psi'_\init(x)$. 
+1. Show that ![](#e-psi-superposition-sol) satisfies the SE [](#e-SE-wf) and has [](#e-psi-superposition) as initial wavefunction at $t=0$. 
+````

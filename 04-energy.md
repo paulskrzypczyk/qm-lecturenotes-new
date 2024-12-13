@@ -72,7 +72,7 @@ Putting everything together, we can now write down the Hamiltonian operator acti
 \vph\op{H} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} + V(x).
 ```
 ````
-As you will show in an exercise, the kinetic energy and potential energy **do not commute**, $[\hat{K},\hat{V}] \neq 0$ in general. This leads to a profound aspect of quantum mechanics:
+As you will show in an [exercise](#ex-comm-K-V), the kinetic energy and potential energy **do not commute**, $[\hat{K},\hat{V}] \neq 0$ in general. This leads to a profound aspect of quantum mechanics:
 
 > The kinetic energy and potential energy of a quantum particle are incompatible properties.
 
@@ -150,3 +150,27 @@ We end by noting that in general, a quantum particle could be in a superposition
 ```{aside}
 *For example, it is possible, by carefully tuning a laser pulse, to create a superposition of having an atom ionised (exciting an electron, so that it has enough enough to escape the nucleus) and not (the electron still in a bound state).*
 ```
+
+## Exercises
+
+````{exercise}
+:label: ex-comm-K-V
+In this exercise we will show that in quantum mechanics, the kinetic energy and the potential energy are **incompatible** observables. In this question, we will consider an arbitrary wavefunction $\psi(x)$. 
+1. Calculate $\op{V}\op{K}\psi(x). $
+1. Calculate $\op{K}\op{V}\psi(x). $
+1. Using parts 1. and 2. show that 
+```{math}
+\vph[\op{K},\op{V}]\psi = -\frac{\hbar^2}{2M}\left(\frac{\partial^2 V}{\partial x^2}\psi(x) + 2 \frac{\partial V}{\partial X} \frac{\partial}{\partial x}\psi(x) \right)
+```
+We will denote by $\hat{V}'$ and $\hat{V}''$ the operators satisfying
+```{math}
+\hat{V}'\ket{\psi} &= \infint \frac{\partial V}{\partial X} \psi(x) \ket{x} dx,\\
+\hat{V}''\ket{\psi} &= \infint \frac{\partial^2 V}{\partial X^2} \psi(x) \ket{x} dx.
+```
+4. Hence, show that
+```{math}
+\vph[\hat{K},\hat{V}] = -\frac{\hbar^2}{2M}\hat{V}'' - \frac{i\hbar}{M}\hat{V}'\hat{P}.
+```
+5. The operators $\hat{V}'$ and $\hat{V''}$ can vanish (can satisfy $\hat{V}'\ket{\psi} = 0$). When does this happen? This is the only case in which $[\hat{K},\hat{V}] = 0$. Does this make sense physically?
+
+````

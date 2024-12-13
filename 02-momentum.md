@@ -89,7 +89,7 @@ We can understand this from a second perspective. Our requirement to have a defi
 ```
 This is a **uniform** probability density — we are equally likely to find the particle anywhere. If we then ask what is the **total** probability to find the particle somewhere, we see that
 ```{math}
-\infint p(x) dx = \infint \frac{1}{2\pi \hbar} dx = \infty. 
+\infint \pd(x) dx = \infint \frac{1}{2\pi \hbar} dx = \infty. 
 ```
 This is an unphysical result. Furthermore, we can't even 'fix' it by changing our normalisation $A$, since **any** non-zero choice of normalisation will lead to the same conclusion. We therefore see that it must be physically impossible to have a particle whose wavefunction is a (complex) plane wave, and therefore it is physically impossible to have a definite momentum. 
 
