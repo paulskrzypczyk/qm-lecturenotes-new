@@ -47,7 +47,7 @@ If you have any questions about the course, or anything above, please don't hesi
 Finally, this course has been extensively updated this year, with the lecture notes largely rewritten. If you find any **errors** or **mistakes** or something which isn't clear, please let me know, or fill in this anonymous form: 
 ```{card}
 :align: center
-[Subit an error/mistake/comment](https://forms.office.com/Pages/ResponsePage.aspx?id=MH_ksn3NTkql2rGM8aQVG7u7qKuEAWhMl3HixoDWNqZURVpZUEtZOFhNSldEVDFTQ1BORFJWUzVQMS4u)
+[Submit an error/mistake/comment](https://forms.office.com/Pages/ResponsePage.aspx?id=MH_ksn3NTkql2rGM8aQVG7u7qKuEAWhMl3HixoDWNqZURVpZUEtZOFhNSldEVDFTQ1BORFJWUzVQMS4u)
 ```
 
 
