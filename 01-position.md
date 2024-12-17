@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: Position of a quantum particle I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/da48530baf1c43e6bf10f2be7ad5a52c1d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-1-I.pdf
+:width: 100%
+```
+````
+`````
+
 In your previous unit on quantum physics, you considered a simplied situation where a particle could be found in one of a discrete number of locations — for example, either on the left-hand or right-hand side of a box. Here, we will now consider a more realistic and powerful situation, that considered in the context of **mechanics**, where a particle with one degree of freedom (is constrained to move in one dimension) has a **position** $x$. Our goal is to develop the quantum formalism to describe the motion of such a particle. This is known as **quantum mechanics**. 
 
 We will be able to learn most of the important lessons about the quantum description of the mechanics of a particle by considering only motion in one dimension. This is advantageous, as it is simpler to consider this idealised scenario. At the end of this unit, we will consider the more physically relevant case of motion in **three dimensions**, which describes the universe we live in. 
@@ -163,6 +176,19 @@ Nevertheless, as we have seen in [](#e-general-quantum-state), quantum particles
 
 ## Probabilities to find a particle somewhere
 
+`````{important} Video: Position of a quantum particle II
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/a150aacb62314e608f0fa23be49695751d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-1-II.pdf
+:width: 100%
+```
+````
+`````
+
 As you learnt in your previous unit on quantum physics, it is an inherently **probabilisitic** theory. That is, quantum particles do not have definite properties, but rather we must perform measurements to learn about the properties of a particle, and in general the results will be probabilistic. This is true for the position of a particle, just as with any other property. If we want to ask where a particle is, we have to measure the position operator $\hat{X}$ from [](#e-position-operator), where $x$ are the position eigenvalues and $\ket{x}$ the associated position eigenstates. 
 
 For a state $\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx$, what is the probability to find the particle at some location $x_0$? This question in fact **doesn't make sense** as stated: the position is **continuous**, and therefore there is in fact zero probability to find the particle (precisely) somewhere. As with **any** continuous quantity, we can no longer talk about probabilities, but must rather talk about **probability densities**. That is, we can ask the question: *what is the probability to find the particle in a small region of `width' $dx$?*. This will be the probability density[^pdf] $\pd(x_0)$ multipled by $dx$, as depicted in the following figure:
@@ -219,6 +245,19 @@ i.e. we integrate the probability density, just as we would involving any questi
 
 (s-operators-on-wf)=
 ## Operators acting on wavefunctions
+
+`````{important} Video: Position of a quantum particle III
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/3b72a2b176b84639ae91356a18c035031d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-1-III.pdf
+:width: 100%
+```
+````
+`````
 
 As this unit progresses, we will see that it is **very often** useful to focus **exclusively** on the wavefunction $\psi(x)$, and leave it **implicit** that the quantum state of the particle is as given by [](#e-general-quantum-state). The reason for this is that is can often be **overly cumbersome** to work with the full state $\ket{\psi}$, and it is much more convenient to just work with $\psi(x)$ instead.
 
