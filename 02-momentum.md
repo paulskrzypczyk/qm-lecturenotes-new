@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: Momentum of a quantum particle I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/ef0106b549d0459989740c3e22c1b8381d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-2-I.pdf
+:width: 100%
+```
+````
+`````
+
 In the previous chapter we began our investigation of the quantum mechanics of a particle moving in one dimension, focusing on the **position** of the particle. Here we will continue our development, by now considering how **momentum** is described quantum mechanically. We will see in this chapter that momentum is related to **wave-like** properties of a particle. 
 
 We will introduce the **momentum wavefunction** $\tilde{\psi}(p)$ (in analogy to the spatial wavefunction $\psi(x)$), and give the relationship to the latter, and also introduce the **momentum operator** $\hat{P}$ and its associated operator $\op{P}$ (that acts upon wavefunctions $\psi(x)$). 
@@ -134,6 +147,19 @@ We also know that this is related to the normalisation of **momentum measurement
 However, just as we saw that idealised position measurements are impossible, **so too are ideal momentum measurements**. These would need to have infinite resolution, which is impossible. In reality, we can also only perform **coarse-grained** momentum measurements, determining the momentum of the particle up to some level of precision. Nevertheless, it is very instructive to consider the momentum probability density $\pd(p) = |\tilde{\psi}(p)|^2$ that would arise from such idealised measurements. 
 
 ## Relationship between the spatial & momentum wavefunctions
+
+`````{important} Video: Momentum of a quantum particle II
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/d0f0aac768bc415988c50d89d6bb31681d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-2-II.pdf
+:width: 100%
+```
+````
+`````
 
 It will prove useful to be able to go **directly** between the spatial wavefunction $\psi(x)$ and the momentum wavefunction $\tilde{\psi}(p)$ associated to the same quantum state $\ket{\psi}$. For example, in many situations we will specify a wavefunction $\psi(x)$, and if we want to consider e.g. measuring the momentum of the particle, we will need to calculate $\tilde{\psi}(p)$ in order to do this. Luckily there is a nice way to go between the two. 
 
