@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: Incompatible observables & the Heisenberg uncertainty principle
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/1f1dbb02cab84e5fba0ff64e360add631d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-3.pdf
+:width: 100%
+```
+````
+`````
+
 In this Chapter we will learn about one of the basic aspects of quantum mechanics — **incompatible observables** . As we will see in more detail below, quantum mechanics predicts that it is **impossible for a particle to have multiple definite properties at the same time**. For example, a particle cannot have a definite position and a definite momentum simultaneously, or a definite energy and a definite position (as just two examples). In fact, we can say much more than this, and this is really the main lesson: there is a strong **trade-off** between **how well-defined** properties can be. That is, if a particle has a fairly well defined position, this necessitates it having a broad spread of momenta. This is the content of the famous **Heisenberg uncertainty principle** (HUP), which we will introduce here. This is a fundamental fact about nature, and shows that certain observable properties are **incompatible** with each other. 
 
 ## Gaussian example
