@@ -6,7 +6,7 @@ short_title: Index
 numbering: false
 ---
 
-**Last update**: *Friday 13th December 2024* 
+**Last update**: *Wed 18th December 2024* 
 
 ## Preface
 
