@@ -8,6 +8,7 @@ parts:
      - file: 03-Incompat-obs-HUP
      - file: 04-energy
      - file: 05-time-evolution
+     - file: 06-free-particle
   - caption: Appendices
     chapters:
      - file: recap
@@ -15,7 +16,7 @@ parts:
   - caption: Problem Sheets
     chapters:
      - file: 01-problems
- #     - file: PS8
+     - file: 02-problems
  #     - file: PS9
  #     - file: PS10
  #     - file: PS11

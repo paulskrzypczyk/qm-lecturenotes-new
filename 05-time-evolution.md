@@ -93,10 +93,12 @@ This is however **the same differential equation you solved previously**. The so
 \phi(E,t) = \phi_\init(E) e^{-iEt/\hbar}.
 ```
 Substituting this back into [](#e-non-bound-ansatze), the final solution is 
+````{card}
 ```{math}
 :label: e-non-bound-evolution
 \ket{\psi(t)} = \int_{E_B}^\infty \phi_\init(E)e^{-iEt/\hbar}\ket{E}dE,
 ```
+````
 which we can readily confirm satisfies the initial condition $\ket{\psi(0)} = \ket{\psi_\init}$, as required. In terms of wavefunctions, we have
 ````{card}
 ```{math}
@@ -221,3 +223,4 @@ where $\psi_\init(x)$ and $\psi_\init'(x)$ are two separate initial conditions, 
 Furthermore, assume that $\psi(x,t)$ and $\psi'(x,t)$ are, respectively, solutions to the SE [](#e-SE-wf) with initial wavefunctions at $t=0$ equal to $\psi_\init(x)$ and $\psi'_\init(x)$. 
 1. Show that ![](#e-psi-superposition-sol) satisfies the SE [](#e-SE-wf) and has [](#e-psi-superposition) as initial wavefunction at $t=0$. 
 ````
+
