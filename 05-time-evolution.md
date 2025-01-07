@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: Time evolution I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/4b53295f888744fd8a77eacc045f89721d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-5-I.pdf
+:width: 100%
+```
+````
+`````
+
 We are now ready to embark on one of the central physical questions that we are interested in: *how do quantum particles evolve in time?* 
 
 Up until now, we have just been discussing quantum states, and their **static** properties, without making any reference to time, or how the state changes in time. That is, when we have considered a particle with a state $\ket{\psi}$, we have really meant the state at some reference time, e.g. $t=0$. If we prepare a particle in some state, we don't expect it to **remain in that state**. For example, if the particle has momentum, we know it is moving, and so know its state should change, reflecting this non-zero momentum. 
@@ -106,6 +119,19 @@ which we can readily confirm satisfies the initial condition $\ket{\psi(0)} = \k
 ````
 (s-stationary)=
 ## Stationary states
+
+`````{important} Video: Time evolution II
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/8f7a46a98244416484cde519697fc2381d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-5-II.pdf
+:width: 100%
+```
+````
+`````
 
 Let us return for the moment to bound states, and consider a particularly simple initial condition: that the particle has a definite energy $E_\ell$. That is, the initial state is $\ket{\psi_\init} = \ket{E_\ell}$, and so $\alpha_\ell = 1$ and $\alpha_k = 0$ for $k \neq \ell$. According to [](#e:soln-to-SE-bound) the quantum state at time $t$ will be
 ```{math}
@@ -209,6 +235,23 @@ $$ \inner{p}{E_\ell} = \tilde{u}_{E_\ell}(p),$$
 where $\tilde{u}_{E_\ell}(p)$ is the momentum wavefunction associated to $u_{E_\ell}(x)$, and $u_{E_\ell}(x) = \inner{x}{E_\ell}$ is the (spatial) energy eigenfunction corresponding to the energy level of energy $E_\ell$. 
 1. Using part 1 and [](#e-E-eigenstate-evolution), find the momentum wavefunction $\tilde{\psi}(p,t)$ of the particle at time $t$. 
 1. Hence show that the probability density $\pd(p,t)$ is independent of time. Why does this mean that the momentum of the particle isn't changing in time?
+````
+
+````{exercise}
+:label: ex-bound-non-bound
+In this exercise, we will consider a particle that is in a superposition of bound and non-bound states. 
+Consider a particle with an initial state given by
+```{math}
+\ket{\psi_\init} = \sum_{k=1}^d \alpha_k \ket{E_k} + \int_{E_B}^\infty \phi_\init(E) \ket{E}dE,
+```
+where $\ket{E_k}$ are energy eigenstates with $E_k < E_B$, and $\ket{E}$ are eigenstates with $E > E_B$. Note that these states are **orthgonal**, $\inner{E}{E_k} = 0$. 
+1. Show that the normalisation condition for such superpositon states is
+```{math}
+\sum_{k=1}^d |\alpha_k|^2 + \int_{E_B}^\infty |\phi_\init(E)|^2 dE = 1.
+```
+2. Write down the state $\ket{\psi(t)}$ that $\ket{\psi_\init}$ evolves into at time $t$. 
+3. Substitute this into the SE [](#e-SE) to confirm that it is a solution. 
+4. Verify that $\ket{\psi(t)}$ satisfies the initial condition $\ket{\psi(0)} = \ket{\psi_\init}$. 
 ````
 
 ````{exercise} 

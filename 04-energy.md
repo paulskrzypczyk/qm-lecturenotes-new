@@ -8,7 +8,20 @@ authors:
     affiliations:
 ---
 
-In this Chapter we will consider now the final important physical property of a particle we will study in this unit — the energy. Not only is this one of the most important physical properties in nature, due to its **conservation law**, it is central to the **time evolution** in quantum mechanics, as we will begin investigating in the next [Chapter](04-energy). 
+`````{important} Video: Energy & the Hamiltonian
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/8865f29e8f794c908f46b422354613a01d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-4.pdf
+:width: 100%
+```
+````
+`````
+
+In this Chapter we will consider now the final important physical property of a particle we will study in this unit — the energy. Not only is this one of the most important physical properties in nature, due to its **conservation law**, it is central to the **time evolution** in quantum mechanics, as we will begin investigating in the next [Chapter](05-time-evolution). 
 
 We will reintroduce the **Hamiltonian operator** (the total-energy operator), in the context of mechanics, its associated **eigenvalue equation**, and discuss the important notion of **bound** and **non-bound** states, and their distinct description within quantum mechanics. 
 
