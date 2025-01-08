@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: Free particle I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/2a5a0f393212466d875ad8a2c6e6e73c1d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-6-I.pdf
+:width: 100%
+```
+````
+`````
+
 In this chapter we will investigate the simplest possible scenario one can consider in the context of mechanics — a **free particle** — one with no forces acting upon it whatsoever. We will see that, given everything we have learnt up until this point, that we can **directly** solve for the evolution of a free particle, since we can immeidately find the the energy eigenstates (the quantum states of a particle with a definite energy) in this simple setting. 
 
 We will see that quantum evolution is more intricate than classical evolution, ultimately due to the HUP. In particular, in a classical setting, if a particle has an initial position $x_0$ and an initial momentum $p_0$, then from the equation of motion — Newton's second law — the position of the particle at time $t$ will be
@@ -71,6 +84,19 @@ This equation restates what we already knew, but makes it much clearer. In parti
 
 ## Time evolution of a free particle II
 
+`````{important} Video: Free particle II
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/3204ccf2516a4a7da6c9b6578065e1061d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-6-II.pdf
+:width: 100%
+```
+````
+`````
+
 Equations [](#e-free-particle-evolution) and [](#e-free-particle-mom-evolution) in principle give a **complete solution** to the evolution of a free quantum particle. Hence, in principle, we could end the chapter here (after an example maybe). However, this isn't a particularly useful place to stop. The reason for this is that usually we are interested in the **spatial wavefunction** and **its** evolution in time. What we would really like to be able to do therefore is to specify an initial spatial wavefunction $\psi_\init(x)$, and find the wavefunction $\psi(x,t)$ that it evolves into. We will do this in this section. 
 
 We already have all the ingredients we need, we just need to put them all together. First, if the initial condition is specified by a spatial wavefunction $\psi_\init(x)$, then in order to use [](#e-free-particle-mom-evolution) we need to recall how to express $\tilde{\psi}_\init(p)$ in terms of it. This is through the (inverse) Fourier transform, [](#e-psi-x-to-psi-p). That is,
@@ -121,7 +147,7 @@ where $e^{i\phi(x,t)}$ is a **time-dependent phase factor** (which we won't actu
 
 This wavefunction is remarkably similar in form to [](#e-initial-gaussian), except for a couple of key differences:
 
-1. The gaussian becomes centred at $x - p_0t/M$ at time $t$. That is, the gaussian is moving with **constant velocity** $v = p_0/M$. This is similar to a **classical free particle** which moves with constant velocity!
+1. The gaussian becomes centred at $p_0t/M$ at time $t$. That is, the gaussian is moving with **constant velocity** $v = p_0/M$. This is similar to a **classical free particle** which moves with constant velocity!
 2.  The **width** of the gaussian changes in time. Recall that standard     deviation of the position of the particle was initially given by $\Delta x = a$. Given the form of the wavefunction [](#e-gaussian-time-t), we can read off that
     ```{math}
     :label: e-gaussian-spread
