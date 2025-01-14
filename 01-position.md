@@ -57,7 +57,7 @@ Quantum particle that can now be in one of 8 possible locations. Depicted is the
 with a general quantum state of the particle now being a superposition of the form
 ```{math}
 :label: e-discrete-position
-\ket{\psi} = \sum_{k=-3}^2\alpha_k \ket{k/2}.
+\ket{\psi} = \sum_{k=-3}^4\alpha_k \ket{k/2}.
 ```
 
 Notice that our precision has now increased. Whereas before we could only specify the position of the particle in integer steps, we now specify it in twice as many half-integer steps. 
