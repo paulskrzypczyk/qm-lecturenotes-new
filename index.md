@@ -50,6 +50,12 @@ Finally, this course has been extensively updated this year, with the lecture no
 [Submit an error/mistake/comment](https://forms.office.com/Pages/ResponsePage.aspx?id=MH_ksn3NTkql2rGM8aQVG7u7qKuEAWhMl3HixoDWNqZURVpZUEtZOFhNSldEVDFTQ1BORFJWUzVQMS4u)
 ```
 
+## Changelog
+
+- 14/01/2025: Fixed [](#e-discrete-position) upper limit on sum from 2 to 4 (Thanks anonymous)
+- 17/10/2025: Fixed typo on question form from 'subit' to 'submit'
+
+
 
 
 
