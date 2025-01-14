@@ -273,7 +273,7 @@ Consider the action of the position operator $\hat{X}$ on a quantum state $\ket{
 &= \int_{-\infty}^{\infty}\psi(x) x\ket{x} dx, \nonumber \\
 &= \int_{-\infty}^{\infty}\psi'(x) \ket{x} dx, \nonumber \\
 ```
-where in the last line we have defined $\psi'(x) = \psi(x)$. 
+where in the last line we have defined $\psi'(x) = x\psi(x)$. 
 
 What this shows us is that the action of the position operator $\hat{X}$ is to transform the wavefunction $\psi(x)$ to the wavefunction $\psi'(x) = x\psi(x)$. We see that this is **still a form of 'operation'** but now at the level of the wavefunction. That is, previously we saw that operators act on ket vectors, and transform them into other ket vectors. Here, in **direct analogy**, we saw that a wavefunction $\psi(x)$ was transformed into another wavefunction $\psi'(x)$, and so we can define an **associated position operator** which we will denote by $\op{X}$ (where the subscript w refers to `wavefunction') by
 ````{card}

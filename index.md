@@ -52,7 +52,8 @@ Finally, this course has been extensively updated this year, with the lecture no
 
 ## Changelog
 
-- 14/01/2025: Fixed [](#e-discrete-position) upper limit on sum from 2 to 4 (Thanks anonymous)
+- 14/01/2025: Fixed typo below [](#e-X-on-psi): $\psi'(x) = x\psi(x)$ (thanks anon!)
+- 14/01/2025: Fixed [](#e-discrete-position) upper limit on sum from 2 to 4 (thanks anon!)
 - 17/10/2025: Fixed typo on question form from 'subit' to 'submit'
 
 
