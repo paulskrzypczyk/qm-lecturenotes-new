@@ -140,6 +140,7 @@ For any potential well $V(x)$ there will be a value $E_B$, such that if the ener
 In QM, when a particle is in a bound state, we find that **it can only have certain special and discrete energies** $E_k$. These are the famous **energy levels** (e.g. of atoms). More specifically and mathematically,  we will see that in this case there are **only** physical solutions to the TISE [](#e-TISE) for specific values $E_k$. The corresponding eigenstates $\ket{E_k}$ are **normalised** and **orthogonal** to each other, 
 ````{card}
 ```{math}
+:label: e-energy-levels-orthonormal
 \inner{E_k}{E_\ell} = \begin{cases} 1 &\text{ if } k = \ell \\ 0 &\text{ if } k \neq \ell \end{cases} = \delta_{k,\ell}.
 ```
 ````
