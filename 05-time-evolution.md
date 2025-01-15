@@ -217,6 +217,12 @@ In this exercise we will show that the SE for the quantum state [](#e-SE) implie
 1. Explain why we can take $\frac{d}{dt}$ inside the integral on the left-hand side, as long as we replace it by $\frac{\partial}{\partial t}$. 
 1. Use [](#e-op-to-wf-op) to express the right-hand side in terms of $\op{H}$ instead of $\hat{H}$. 
 1. Take the scalar product on both sides with $\bra{x'}$ and use [](#e-position-norm) to arrive at [](#e-SE-wf) (after finally changing variable from $x'$ to $x$). 
+```{dropdown} Answers
+1. $i\hbar \frac{d}{dt}\infint \psi(x,t)\ket{x} dx = \hat{H} \infint \psi(x,t)\ket{x} dx$.
+2. We are only interested in change in time; we write $\frac{d}{dt}$ since $\ket{\psi(t)}$ is only a function of $t$. With wavefunction, there is also an $x$ dependence, and so we must write $\frac{\partial}{\partial t}$ to make it explicit that this is just the rate of change in time. 
+3. $\infint (\op{H}\psi(x,t))\ket{x} dx$.
+4. n/a (essentially a show that).
+```
 ````
 
 ````{exercise}
@@ -226,6 +232,12 @@ In this exercise we will confirm that $\ket{\psi(t)}$ from [](#e:soln-to-SE-boun
 1. Calculate $\hat{H} \ket{\psi(t)}$ and therefore confirm that $\ket{\psi(t)}$ satisfies the SE [](#e-SE).
 1. Confirm that $\ket{\psi(0)} = \ket{\psi_\init}$. 
 1. Re-carry out the above calculations in terms of $\psi(x,t) = \inner{x}{\psi(t)}$ and the SE [](#e-SE-wf). 
+```{dropdown} Answers
+1. $E_k\sum_{k=1}^d \alpha_k e^{-iE_k t/\hbar}\ket{E_k}$. 
+2. $E_k\sum_{k=1}^d \alpha_k e^{-iE_k t/\hbar}\ket{E_k}$. LHS = RHS, so solution. 
+3. n/a (essentially show that)
+4. Both sides equal $E_k\sum_{k=1}^d \alpha_k e^{-iE_k t/\hbar}u_{E_k}(x)$
+```
 
 ````
 
@@ -237,6 +249,10 @@ $$ \inner{p}{E_\ell} = \tilde{u}_{E_\ell}(p),$$
 where $\tilde{u}_{E_\ell}(p)$ is the momentum wavefunction associated to $u_{E_\ell}(x)$, and $u_{E_\ell}(x) = \inner{x}{E_\ell}$ is the (spatial) energy eigenfunction corresponding to the energy level of energy $E_\ell$. 
 1. Using part 1 and [](#e-E-eigenstate-evolution), find the momentum wavefunction $\tilde{\psi}(p,t)$ of the particle at time $t$. 
 1. Hence show that the probability density $\pd(p,t)$ is independent of time. Why does this mean that the momentum of the particle isn't changing in time?
+```{dropdown} Answers
+1. n/a (show that).
+2. $e^{iE_\ell t/\hbar}\tilde{u}_{E_\ell}(p)$. 
+3. $\pd(p,t) = |\tilde{u}_{E_\ell}(p)|^2$. This is independent of time. 
 ````
 
 ````{exercise}
@@ -254,6 +270,11 @@ where $\ket{E_k}$ are energy eigenstates with $E_k < E_B$, and $\ket{E}$ are eig
 2. Write down the state $\ket{\psi(t)}$ that $\ket{\psi_\init}$ evolves into at time $t$. 
 3. Substitute this into the SE [](#e-SE) to confirm that it is a solution. 
 4. Verify that $\ket{\psi(t)}$ satisfies the initial condition $\ket{\psi(0)} = \ket{\psi_\init}$. 
+```{dropdown} Answers
+1. n/a (show that).
+2. $\ket{\psi(t)} = \sum_{k=1}^d \alpha_k e^{-iE_kt/\hbar}\ket{E_k} + \int_{E_B}^\infty \phi_\init(E) e^{-iEt/\hbar}\ket{E}dE$
+3. Both sides evaluate to 2. $\ket{\psi(t)} = \sum_{k=1}^d E_k \alpha_k e^{-iE_kt/\hbar}\ket{E_k} + \int_{E_B}^\infty E \phi_\init(E) e^{-iEt/\hbar}\ket{E}dE$
+4. n/a (essentially a show that).
 ````
 
 ````{exercise} 
@@ -265,5 +286,8 @@ where $\psi_\init(x)$ and $\psi_\init'(x)$ are two separate initial conditions, 
 
 Furthermore, assume that $\psi(x,t)$ and $\psi'(x,t)$ are, respectively, solutions to the SE [](#e-SE-wf) with initial wavefunctions at $t=0$ equal to $\psi_\init(x)$ and $\psi'_\init(x)$. 
 1. Show that ![](#e-psi-superposition-sol) satisfies the SE [](#e-SE-wf) and has [](#e-psi-superposition) as initial wavefunction at $t=0$. 
+```{dropdown} Answers
+1. n/a (show that).
+```
 ````
 

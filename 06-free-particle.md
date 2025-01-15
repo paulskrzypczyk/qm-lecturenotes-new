@@ -188,6 +188,11 @@ Second, this also explains why the phase factor $e^{i\phi(x,t)}$ occurs (and has
 1. Show that for a free particle, the Hamiltonian and momentum operators commute, $[\hat{H},\hat{P}] = 0$. 
 2. Are energy and momentum compatible observables for a free particle? 
 3. Can a free particle have a definite energy and a definite momentum at the same time? 
+```{dropdown} Answers
+1. n/a (show that).
+2. yes.
+3. yes.
+```
 ````
 
 ````{exercise}
@@ -210,14 +215,25 @@ The momentum wavefunction of the first particle is
 3. If the first particle has average momentum $\av{p} = \overline{p}$, show that the second particle has average momentum $\av{p} = \overline{p} + p_0$. 
 4. If the first particle has standard deviation in momentum $\Delta p = \overline \Delta$, find the standard deviation of the second particle. 
 5. Explain why the second particle has momentum $p_0$ more than the first particle. 
+```{dropdown} Answers
+1. n/a (show that).
+2. n/a (show that).
+3. n/a (show that).
+4. n/a (show that).
+5. $\pd'(p) = \pd(p-p_0)$. The pdf is shifted by $p_0$ (with the density otherwise left unchanged in form). This is what it means to increase the momentum by $p_0$. 
+```
 ````
 
 ````{exercise}
 :label: ex-gaussian-momentum
 Consider the gaussian wavefunction from the main text, 
 ![](#e-initial-gaussian)
-1. Using [](#ex-shifted) or otherwise, find the momentum wavefunction $\tilde{\psi}_\init(p)$ of the particle.  
+1. Using [](#ex-shifted) and [](#e-gaussian-p), or otherwise, find the momentum wavefunction $\tilde{\psi}_\init(p)$ of the particle.  
 2. Using part 1, **write down** the momentum wavefunction of the particle at time $t$. 
+```{dropdown} Answers
+1. $\tilde{\psi}_\init(p) = \sqrt{\frac{\sqrt{2}a}{\sqrt{\pi}\hbar}}e^{-a^2(p-p_0)^2/\hbar^2}$
+2. $\tilde{\psi}(p,t) = \sqrt{\frac{\sqrt{2}a}{\sqrt{\pi}\hbar}}e^{-a^2(p-p_0)^2/\hbar^2}e^{-ip^2t/2M\hbar}$
+```
 ````
 
 ````{exercise}
@@ -234,5 +250,12 @@ where $N > 0$ is a normalisation constant.
 \vph\tilde{\psi}_\init(p) = 2\sqrt{\frac{3\ell}{\pi\hbar}}\left(\frac{\sin (p\ell/\hbar)}{p\ell/\hbar}\right)^2.
 ```
 4. Write down the wavefunction $\psi(x,t)$. This should be in the form of an integral over $p$ (you are not expected to evaluate this integral!)
-5. (*optional*) Numerically evalute the integral in part 4, to find the wavefunction $\psi(x,t)$ for $t = 1, 2, \ldots, 5$ (assuming $\ell = \hbar = M = 1$).  
+5. (*optional*) Numerically evalute the integral in part 4, to plot the probability density $\pd(x,t)$ for $t = 1, 2, \ldots, 5$ (assuming $\ell = \hbar = M = 1$). 
+```{dropdown} Answers
+1. n/a (show that).
+2. n/a (sketch).
+3. n/a (show that).
+4. $\psi(x,t) = \frac{\sqrt{6 \ell}}{\pi \hbar}\infint \left(\frac{\sin (p\ell/\hbar)}{p\ell/\hbar}\right)^2 e^{ipx/\hbar} e^{-ip^2 t/2M\hbar} dp$. 
+5. n/a (plot). 
+``` 
 ````

@@ -15,6 +15,7 @@ authors:
 ![](#ex-SE-wf)
 ![](#ex-soln-to-SE-bound)
 ![](#ex-stationary-p)
+![](#ex-bound-non-bound)
 ![](#ex-superposition-principle)
 
 [](06-free-particle)

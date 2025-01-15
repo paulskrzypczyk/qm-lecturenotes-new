@@ -186,5 +186,12 @@ We will denote by $\hat{V}'$ and $\hat{V}''$ the operators satisfying
 \vph[\hat{K},\hat{V}] = -\frac{\hbar^2}{2M}\hat{V}'' - \frac{i\hbar}{M}\hat{V}'\hat{P}.
 ```
 5. The operators $\hat{V}'$ and $\hat{V''}$ can vanish (can satisfy $\hat{V}'\ket{\psi} = 0$). When does this happen? This is the only case in which $[\hat{K},\hat{V}] = 0$. Does this make sense physically?
+```{dropdown} Answers
+1. $-\frac{\hbar^2}{2M}V(x)\frac{\partial^2 \psi}{\partial x^2}$
+2. $-\frac{\hbar^2}{2M}\left(\frac{\partial^2 V}{\partial x^2}\psi(x) + 2 \frac{\partial V}{\partial x}\frac{\partial \psi}{\partial x} + V(x)\frac{\partial^2 \psi}{\partial x^2}\right)$
+3. n/a (show that)
+4. n/a (show that)
+5. $\hat{V}' = 0$ if $V(x) =$ constant (in which case $\hat{V}'' = 0$ also). This does make sense, as if the potential is constant, the force vanishes, so the particle is free.
+   ```
 
 ````
