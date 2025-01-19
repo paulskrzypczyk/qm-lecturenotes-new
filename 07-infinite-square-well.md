@@ -1,5 +1,5 @@
 ---
-title: "Chapter 7: The Infinite square well" 
+title: "Chapter 7: The infinite square well" 
 short_title: "Ch. 7: Inf. sq. well"
 numbering:
   enumerator: 7.%s
@@ -143,7 +143,7 @@ Thus, putting everything together, the requirement of **continuity** has lead us
 ````{card}
 ```{math}
 :label: e-isw-energy-levels
-E_n &= \frac{\hbar^2 \pi^2 n^2}{2M L^2},& n &=1, 2, \ldots
+\vph E_n &= \frac{\hbar^2 \pi^2 n^2}{2M L^2},& n &=1, 2, \ldots
 ```
 ````
 These are the **only energies that the particle can have with certainty**. It is simply impossible for the particle to have any other energy! The energy levels are depicted below in [](#f-isw-levels)
@@ -203,6 +203,7 @@ We will start off assuming that **we know the amplitudes $\alpha_n$**, and come 
 As we saw in the previous two chapters, given in this form, we can immediately write down the wavefunction $\psi(x,t)$ that it will evolve into: this is once again an application of the superposition principle: *the evolution of the superpositon (of energy eigenfunctions) is just the superposition of the evolutions (of individual energy eigenfunctions)*. Each energy eigenfunction evolves in the usual simple way: by acquiring a phase $e^{-iE_n t/\hbar}$ in time. Thus the wavefunction at time $t$ will be
 ````{card}
 ```{math}
+:label: e-psi-x-t-isw-I
 \psi(x,t) = \sum_{n=1}^{\infty} \alpha_n e^{-iE_n t/\hbar} u_n(x),
 ```
 ````
@@ -218,7 +219,40 @@ and we recover [](#e-init-superposition-isw) from this, by taking the scalar pro
 
 If now however we take the scalar product on both sides with an energy eigenstate $\bra{E_m}$, recalling from [](#e-energy-levels-orthonormal) that the energy levels are **orthogonal quantum states**, then we see immediately that
 ```{math}
+:label: e-inner-Em-psi
 \inner{E_m}{\psi_\init} &= \sum_{n=1}^\infty \alpha_n \inner{E_m}{E_n},\\
 &= \sum_{n=1}^\infty \alpha_n \delta_{m,n},\\
 &= \alpha_m.
 ```
+On the other hand, we can use [](#e-general-quantum-state) to write 
+```{math}
+:label: e-psi-init-wf
+\ket{\psi_\init} = \infint \psi_\init(x)\ket{x}dx,
+```
+in terms of its wavefunction. Taking the scalar product on both sides of [](#e-psi-init-wf) with $\bra{E_n}$, we find
+```{math}
+:label: e-inner-Em-psi
+\inner{E_n}{\psi_\init} &= \infint \psi_\init(x) \inner{E_n}{x} dx, \\
+&= \infint \psi_\init(x) u_n^*(x) dx,
+```
+where in the second line we used the two facts that $\inner{x}{E_n} = u_n(x)$ by definition of the energy eigenfunctions, and that $\inner{E_n}{x} = \left(\inner{x}{E_n}\right)^*$. Combining [](#e-inner-Em-psi) and [](#e-inner-Em-psi), we finally arrive at
+````{card}
+```{math}
+:label: e-wf-to-energy
+\alpha_n = \infint \psi_\init(x) u_n^*(x) dx.
+```
+````
+```{aside} *Mathematical interpretation*
+*There is a nice mathematical way to understand [](#e-wf-to-energy): we can understand it as the **scalar product** between the initial wavefunction $\psi_\init(x)$, and the energy eigenfunction $u_n(x)$, when we treat the functions as vectors.*
+``` 
+
+We can use [](#e-wf-to-energy) to write $\psi_\init(x)$ in the form assumed in [](#e-init-superposition-isw). That is, if we aren't given the amplitudes $\alpha_n$ initially, we can use [](#e-wf-to-energy) to calculate them.
+
+Finally, just as we did for a free particle in [](#e-free-particle-evolution-space), we can substitute [](#e-wf-to-energy) into  [](#e-psi-x-t-isw-I), to obtain an expression for the wavefunction at time $t$ directly in terms of the initial wavefunction:
+````{card}
+```{math}
+:label: e-psi-x-t-isw-II
+\psi(x,t) = \sum_{n=1}^{\infty} \infint \psi_\init(x') u_n^*(x') u_n(x)e^{-iE_n t/\hbar} dx',
+```
+````
+This is once again a **formidible expression**, but one which is in fact very similarly to [](#e-free-particle-evolution-space). The difference is that whereas energy was **continuous** for a free particle, it is now **discrete** in the infinite square well, and we see this replaces one of the integrals with a summation. We also can realise that the factor $\frac{1}{2\pi \hbar} e^{ip(x-x')/\hbar}$ is really $v_p^*(x')v_p(x)$, where $v_p(x)$ is the momentum eigenfunction [](#e-momentum-state-wavefunction), which are the **energy eigenfunctions** of a free particle. Finally, the term $e^{-ip^2t/2M\hbar}$ is $e^{-iEt/\hbar}$, with $E = p^2/2M$ the energy eigenvalue of $v_p(x)$ for a free particle. Thus the form in both cases is in fact **identical**, up to the change from continuous to discrete energies. This is reassuring, as it shows that what we have done is the same, just in a different context here. 

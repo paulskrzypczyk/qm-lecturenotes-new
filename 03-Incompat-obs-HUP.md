@@ -101,6 +101,7 @@ The question we will answer in the next section is **how to determine whether tw
 
 We will explain what this means in the next section. 
 
+(s-commutation)=
 ## Commutation
 
 Recall that operators are things which 'act' on a quantum state. It is possible to act with **multiple** operators in a **sequence**. We can therefore ask a natural question: whether the **order** matters or not. That is, if we act with one operator and then a second, is this the same as first acting with the second operator, followed by the first? The answer in general is **no**. This is precisely what is captured by **commutation**: two operators commute if the two orders lead to the **same action**. On the other hand, two operators for which the two orders lead to different overall actions are said to **not commute**. 
