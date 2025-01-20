@@ -9,7 +9,7 @@ parts:
      - file: 04-energy
      - file: 05-time-evolution
      - file: 06-free-particle
-     # - file: 07-infinite-square-well
+      - file: 07-infinite-square-well
   - caption: Appendices
     chapters:
      - file: recap
