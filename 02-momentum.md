@@ -279,7 +279,7 @@ However, for other physical properties, this won't be the case — we won't know
 
 ````{exercise}
 :label: ex-norm-vp
-Show that in order for the wavefunctions $v_p(x)$ in [](#e-momentum-state-1) to be normalised, we must take $A = \frac{1}{\sqrt{2\pi\hbar}}$ (under the assumption that $A$ is real and positive). 
+Show that in order for the wavefunctions $v_p(x)$ in [](#e-momentum-state-1) to be appropriately normalised, i.e. satisfying [](#e-momentum-norm), we must take $A = \frac{1}{\sqrt{2\pi\hbar}}$ (under the assumption that $A$ is real and positive). 
 
 (If we don't assume that $A$ is real and positive, what is the most general $A$ that we can take, such that $v_p(x)$ is normalised?)
 ```{dropdown} Answers
