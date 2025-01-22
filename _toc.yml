@@ -10,7 +10,7 @@ parts:
      - file: 05-time-evolution
      - file: 06-free-particle
      - file: 07-infinite-square-well
-     #- file: 08-harmonic-oscillator
+     - file: 08-harmonic-oscillator
   - caption: Appendices
     chapters:
      - file: recap
