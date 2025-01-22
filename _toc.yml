@@ -19,7 +19,7 @@ parts:
     chapters:
      - file: 01-problems
      - file: 02-problems
- #     - file: PS9
+     - file: 03-problems
  #     - file: PS10
  #     - file: PS11
  #     - file: PS12

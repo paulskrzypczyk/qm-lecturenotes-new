@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: Infinite square well I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/1276f686b9b042248e32407c35334ae81d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-7-I.pdf
+:width: 100%
+```
+````
+`````
+
 In the previous [chapter](06-free-particle) we considered the simplest possible scenario, that of a **free particle** where there are no forces acting whatsoever. Here we will begin our exploration of how quantum particles behave when there are forces acting. This is a much more natural and common situation to consider, and is the generic one we encounter in physics. 
 
 As already discussed in [chapter](04-energy), there are two **distinct** situations which we can consider. The first is where the forces **confine the particle to a finite region of space**. In this case, we often say that it is **trapped inside a potential well**. As we already stated, in quantum mechanics, it is in this situation where we end up with the famous **quantisation of energy**, the most notable example being the energy levels of atoms, which arise due to the fact that electrons are bound within the potential well of the nucleas (via the electromagnetic attraction). 
@@ -88,7 +101,7 @@ However, as we also saw in [](06-free-particle), we have **degeneracy**, and the
 ```{math}
 \vph E' = \frac{\hbar^2(k')^2}{2M} =  \frac{\hbar^2(-k)^2}{2M} = \frac{\hbar^2 k^2}{2M} = E.
 ```
-Since $e^{ikx}$ and $e^{-ikx}$ are both eigenfunctions with the **same** eigenvalue, as you will confirm in an exercise, **any superposition** of these two functions is **also** an eigenfunction with the same eigenvalue $E = \frac{\hbar^2 k^2}{2M}$. At this stage, we don't yet know **what is the correct superposition** to consider, so we will keep things general, and say that the energy eigenfunction will be of the form
+Since $e^{ikx}$ and $e^{-ikx}$ are both eigenfunctions with the **same** eigenvalue, as you will confirm in an [exercise](#ex-superposition-eigenfunction), **any superposition** of these two functions is **also** an eigenfunction with the same eigenvalue $E = \frac{\hbar^2 k^2}{2M}$. At this stage, we don't yet know **what is the correct superposition** to consider, so we will keep things general, and say that the energy eigenfunction will be of the form
 ```{math}
 \vph u_E^\rII(x) = A e^{ikx} + B e^{-ikx},
 ```
@@ -156,9 +169,10 @@ These are the **only energies that the particle can have with certainty**. It is
 ````
 
 
-For the corresponding **energy eigenfunctions** $u_{E_n}(x)$, there is **one final detail to take care of**. We still appear to have one parameter left — $A$. This is however fixed by **normalisation**: we require $u_{E_n}(x)$ to be a normalised wavefunction. As an exercise, you show that the normalisation constant is $A = \frac{1}{2i}\sqrt{\frac{2}{L}}$ (independent of $n$). The **energy eigenfunctions** are thus given by
+For the corresponding **energy eigenfunctions** $u_{E_n}(x)$, there is **one final detail to take care of**. We still appear to have one parameter left — $A$. This is however fixed by **normalisation**: we require $u_{E_n}(x)$ to be a normalised wavefunction. As an [exercise](#ex-norm-ISW-eigenfunctions), you show that the normalisation constant is $A = \frac{1}{2i}\sqrt{\frac{2}{L}}$ (independent of $n$). The **energy eigenfunctions** are thus given by
 ````{card}
 ```{math}
+:label: e-energy-eigenfunctions-ISW
 u_n(x) = \begin{cases}
             \sqrt{\frac{2}{L}}\sin \frac{n\pi x}{L}&\text{if } 0 \leq x \leq L, \\
             0 &\text{if } x < 0 \text{ or } x > L.
@@ -166,6 +180,19 @@ u_n(x) = \begin{cases}
 ```
 ````
 Note that here we have **changed notation** from $u_{E_n}(x)$ to $u_{n}(x)$. There are two reasons for doing this. The first is for brevity. The second is that it is much more **common** to label the energy levels by $n$, and leave it **implicit** that the energy is $E_n$ as given by [](#e-isw-energy-levels). In fact $n$ is often referred to as a **quantum number**, and energy levels and energy eigenfunctions are labelled solely by the quantum number, in this case $E_n$ and $u_n(x)$. 
+
+`````{important} Video: Infinite square well II
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/e112393a5c7e4ae3a538e2700d85ae381d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-7-II.pdf
+:width: 100%
+```
+````
+`````
 
 We depict below in [](#f-isw-eigenfunctions) the first 6 energy eigenfunctions and in [](#f-isw-pd) the associated probability density functions. 
 
@@ -190,6 +217,8 @@ There is clearly some structure here, and also some surprises. The first surpris
 Maybe second most surprising is that when a particle has a definite energy, there are certain regions within the well where **it is very unlikely to find the particle**. For example, in the so-called **first excited state** $\ket{E_2}$ (with associated energy eigenfunction $u_2(x)$) it is very unlikely to find the particle close to the middle of the well! 
 
 ## Evolution of a particle inside an infinite square well
+
+
 
 Having obtained the energy eigenstates and energy eigenvalues, we now again have the ingredients we need in order to study the **evolution** of a particle inside the well. We will once again use the **superposition principle** to achieve this.
 
@@ -256,3 +285,100 @@ Finally, just as we did for a free particle in [](#e-free-particle-evolution-spa
 ```
 ````
 This is once again a **formidible expression**, but one which is in fact very similarly to [](#e-free-particle-evolution-space). The difference is that whereas energy was **continuous** for a free particle, it is now **discrete** in the infinite square well, and we see this replaces one of the integrals with a summation. We also can realise that the factor $\frac{1}{2\pi \hbar} e^{ip(x-x')/\hbar}$ is really $v_p^*(x')v_p(x)$, where $v_p(x)$ is the momentum eigenfunction [](#e-momentum-state-wavefunction), which are the **energy eigenfunctions** of a free particle. Finally, the term $e^{-ip^2t/2M\hbar}$ is $e^{-iEt/\hbar}$, with $E = p^2/2M$ the energy eigenvalue of $v_p(x)$ for a free particle. Thus the form in both cases is in fact **identical**, up to the change from continuous to discrete energies. This is reassuring, as it shows that what we have done is the same, just in a different context here. 
+
+## Exercises
+
+````{exercise}
+:label: ex-superposition-eigenfunction
+Show that any superposition of the form $Ae^{ikx} + Be^{-ikx}$, where $A$ and $B$ are arbitrary complex numbers, is an eigenfunction of $\op{H}$ in region II (inside the well), with eigenvalue $E = \hbar^2 k^2 / 2M$. 
+```{dropdown} Answer
+n/a (show that)
+```
+````
+
+````{exercise}
+:label: ex-norm-ISW-eigenfunctions
+Up until [](#e-energy-eigenfunctions-ISW), we know that the energy eignfunctions of the infinite square well take the form
+```{math}
+u_n(x) = \begin{cases}
+            2i A \sin \frac{n\pi x}{L}&\text{if } 0 \leq x \leq L, \\
+            0 &\text{if } x < 0 \text{ or } x > L.
+        \end{cases}
+```
+Show that in order to be **normalised** with a **real and positive** overall normalisation factor, we must take 
+$$A = \frac{1}{2i}\sqrt{\frac{2}{L}}.$$
+
+
+```{dropdown} Answer
+n/a (show that)
+```
+````
+
+````{exercise}
+:label: ex-7-3
+Consider a particle trapped inside an infinite square well potential, with initial wavefunction given by
+$$ \psi_\init(x) = \frac{1}{\sqrt{2}}\left(u_1(x) + u_2(x)\right).$$
+1. If the energy of the particle is measured, what energies does it have, and with what probabilities?
+2. Using the superposition principle, or otherwise, write down the state of the particle at time $t$, assuming that at $t = 0$ the wavefunction is $\psi(x,0) = \psi_\init(x)$. 
+3. Confirm that the wavefunction from part 2 satisfies the SE [](#e-SE-wf). 
+4. Calculate $\pd(x,t)$. It will be helpful to denote $\omega = (E_2 - E_1)/\hbar$. 
+5. The motion of the particle is periodic. What is the period $T$?
+6. Using your favourite sketching software, plot the probability density of the particle at $t = 0$, $t = T/4$, $T = T/2$ and $T = 3T/4$. 
+
+```{dropdown} Answers
+1. $E_1$ and $E_2$ only; $\prob(E_1) = \frac{1}{2}$ and $\prob(E_2) = \frac{1}{2}$.
+2. $\psi(x,t) = \frac{1}{\sqrt{2}}\left(e^{-iE_1t/\hbar}u_1(x) + u_2(x)e^{-iE_2t/\hbar}\right)$
+3. n/a (show that). 
+4. $\pd(x,t) = \frac{1}{2}\left(|u_1(x)|^2 + |u_2(x)|^2 + 2 u_1(x)u_2(x)\cos \omega t\right)$.
+5. $T = 2\pi /\omega$. 
+6. n/a (sketch).
+```
+````
+
+````{exercise}
+:label: ex-7-4
+1. Show that the momentum wavefunction $\tilde{u}_1(p)$ of the ground state of the infinite square well is 
+$$ \tilde{u}_1(p) = \sqrt{\frac{\pi L}{\hbar}}\frac{1}{\pi^2 - p^2 L^2/\hbar^2}(1+e^{-ipL/\hbar}). $$
+2. Using your favourite sketching software, plot the associated probability density $\pd(p) = |\tilde{u}_1(p)|^2$. 
+
+```{dropdown} Answers
+1. n/a (show that).
+2. n/a (sketch).
+```
+````
+
+````{exercise}
+:label: ex-7-5
+Consider a particle confined inside an infinite square well with wavefunction  
+$$	\psi_\init(x) = \begin{cases}
+			\sqrt{\frac{3}{L^3}}x&  \text{if } 0 \leq x < L, \\
+			0  &\text{otherwise. }
+	\end{cases}
+$$
+
+1. Sketch the wavefunction $\psi_\init(x)$ and confirm that it is normalised. 
+
+In this exercise we will write this wavefunction as a superposition of the energy eigenfunctions of the infinite square well, as in [](#e-init-superposition-isw). 
+
+2. Using [](#e-wf-to-energy), show that 
+$$ \alpha_n = - \frac{\sqrt{6} (-1)^n}{n\pi}.$$
+```{note} Hint
+:class: dropdown
+  1. You will need to integrate by parts
+  2. Note that $\cos(n\pi) = (-1)^n$.
+```
+
+3. If the energy of the particle is measured, what is the probability it has energies $E_1$, $E_2$ and $E_3$? 
+
+4. What is the total probability that the particle has energy at least $E_4$?
+
+5. Using the superposition principle, write down the wavefunction of the particle at time $t$, assuming that at $t = 0$ the wavefunction is $\psi(x,0) = \psi_\init(x)$. 
+```{dropdown} Answers
+1. n/a (sketch and show that).
+2. n/a (show that).
+3. $\prob(E_1) = \frac{6}{\pi^2}$, $\prob(E_2) = \frac{6}{4 \pi^2}$, $\prob(E_3) = \frac{6}{9\pi^2}$. 
+4. $\prob(E_4 \text{ or higher}) = 1-\frac{49}{6\pi^2}$
+5. $\psi(x,t) = -\frac{\sqrt{6}}{\pi}\sum_{n=1}^\infty \frac{(-1)^n}{n} e^{-iE_n t/\hbar} u_n(x).$
+```
+````
+

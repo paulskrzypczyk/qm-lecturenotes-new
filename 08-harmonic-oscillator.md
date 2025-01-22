@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: Quantum harmonic oscillator I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/0b4b085334a44dbaa8936cd4f819ba0e1d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-8-I.pdf
+:width: 100%
+```
+````
+`````
+
 We now turn our attention to arguably the most important system in all of quantum mechanics — the quantum harmonic oscillator. Here we will study the quantum mechanics of a particle whose force is of the form $F(x) = - kx$. That is, a restorative force proportional to the displacement from the origin. We know that in classical mechanics systems with such forces lead to simple harmonic motion. Our goal now is to understand the quantum mechanics of such systems.  
 
 Why is this one of the most important systems to study? The first reason is that it provides an approximation to the behaviour of **almost all** potential wells, as we outline briefly as an aside. Second, you will see later in your degree that the quantum harmonic oscillator reappears in a huge range of situations, from describing light in quantum field theory, to describing phonons in condensed matter physics and far beyond. 
@@ -104,6 +117,7 @@ In order to show [](#e-H-adag) holds, it is easiest to return to notion of the *
 ```
 At first sight this might not look too helpful. However, at this stage it is useful to determine $\hat{b}$. In [](#ex-comm-H-adag) below, by using the explicit form of $\hat{a}^\dagger$ from [](#e-creation-annihilation), as well as the explicit form of the Hamiltonian operator, with $\hat{V} = \frac{1}{2} M \omega^2 \hat{X}^2$ from [](#e-QHO-potential), and the two commutators
 ```{math}
+:label: e-comms-P2-X2
 [\hat{P}^2,\hat{X}] &= -2i\hbar \hat{P},& [\hat{X}^2, \hat{P}] = 2i\hbar \hat{X},
 ```
 both of which you prove as problems in problem classes, you will show that 
@@ -135,6 +149,19 @@ This shows that $(\hat{a}\ket{E_n})$ is an energy eigenstate of $\hat{H}$ with e
 We thus have a procedure, starting from any given energy level $\ket{E_n}$, to create any other energy level, by either successively applying the creation operator (to **'climb up'** the energy levels) or by applying $\hat{a}$ (to **'climb down'** them). All we need is a way to find **one** eigenstate, and then we have everything we need. We will now see how we can obtain the **ground state** of the oscillator.
 
 ## The ground state of the harmonic oscillator
+
+`````{important} Video: Quantum harmonic oscillator II
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/dfdf968d339f484c8d76aa5f354f57b91d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-8-II.pdf
+:width: 100%
+```
+````
+`````
 
 You might have noticed something strange in the above — we appear to be able to apply the annihilation operator as many times as we like, and continually create new energy levels of progressively lower energy. However, we know that at some point we **must** hit the state of lowest energy — the ground state. We seem to thus have a problem with this approach.
 
@@ -304,3 +331,59 @@ The energy eigenfunctions and corresponding probability densities of the first f
 **Probability densities of the eigenstates of the harmonic oscillator.** The probability densities for finding the particle at $x$ for the first six energy eigenstates of the harmonic oscillator. The markers again indicate where tunnelling starts.
 ````
 It is insightful to compare to corresponding plots for the eigenfunctions and probability densities of the infinite square well potential from the previous chapter, as given in [](#f-isw-eigenfunctions) and [](#f-isw-pd). Even though the **functional form** is very different, graphically they are **remarkably similar**! This is a type of **universality**: low energy states generically have similar energy eigenfunctions (even though the energies in general will be very different). 
+
+## Tunnelling and barrier penetration
+
+There is one new and very important aspect of quantum mechanics that arises for the harmonic oscillator, which isn't present in the infinite square well potential, known as **tunnelling** or alternatively **barrier penetration**. 
+
+Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from th origin its potential energy increases, quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#f-isw-eigenfunctions) and [](#f-isw-pd).
+
+Now, while the gaussian function decays rather rapidly, it is in fact non-zero **for all values of x**, and hence when a particle has a definite energy in the harmonic oscillator, there is a non-zero probability to find it in any region, no matter how far from the origin. 
+
+This is however very strange, as above we just noted that the energy increases as we move away from the origin. This means that, no matter what finite energy the particle has (and all the energy levels have finite energy), it has a chance of being found far away **in a region where the potential energy is larger than the total energy $E_n$ of the particle!**
+
+This is known as **tunnelling** or **barrier penetration**: a quantum particle manages to **enter a region** in which classically it does not have enough energy to enter! 
+
+Remarkably, this isn't even a small effect! In [](#f-isw-eigenfunctions) and [](#f-isw-pd) we have added vertical lines on the axis to denote the position where the potential energy $V(x) = E_n$. Beyond these points, classically the particle should not be found. As you can see, there is a significant probability to be found in the classically forbidden region, even in the ground state.
+
+Although we won't study it in this course, tunnelling is interesting and important, as if we have **two potential wells**, separated by an energy barrier, classically a particle can be trapped in one of them (for example, a planet can be bound in orbit around one star, even if there is a second star that it could equally be bound in orbit around). In quantum mechanics, **because a particles tunnel** it is able to move between the two wells. This effect is extremely important, for example explaining $\alpha$ decay in particle physics, and being utilised in **semiconductor devices**. 
+
+## Exercises
+
+````{exercise}
+:label: ex-length-mom-scales
+1. The three dimensionful quantities for the quantum harmonic are the mass of the particle $M$, the angular frequency $\omega$ (which specifies the spring constant $k = M\omega^2$), and $\hbar$. Write down the dimensions of each of these quantities.
+
+2. Find a combination of these quantities that has the dimension of length.  That is, let 
+$$ \vph \ell = M^\alpha \omega^\beta \hbar^\gamma, $$
+and find the exponents $\alpha$, $\beta$ and $\gamma$ that give $\ell$ the dimension of length. 
+2. Find a combination of $M$, $\omega$ and $\hbar$ that have the dimension of momentum.  That is, let 
+$$ \vph q = M^\mu \omega^\nu \hbar^\lambda, $$
+and find the exponents $\mu$, $\nu$ and $\lambda$ that give $q$ the dimension of momentum. 
+```{dropdown} Answers
+1. $[M] = \mathsf{M}$, $[\omega] = \mathsf{T}^{-1}$, $[\hbar] = \mathsf{M}\mathsf{L}^{2} \mathsf{T}^{-1}$.
+2. $\alpha = -\frac{1}{2}$, $\beta = -\frac{1}{2}$, $\gamma = \frac{1}{2}$. 
+3. $\mu = \frac{1}{2}$, $\nu = \frac{1}{2}$, $\lambda = \frac{1}{2}$. 
+```
+````
+````{exercise}
+:label: ex-comm-H-adag
+1. Show that for arbitrary operators $\hat{A}$, $\hat{B}$, $\hat{C}$ and $\hat{D}$ that
+$$ [\hat{A} + \hat{B}, \hat{C} + \hat{D}] = [\hat{A},\hat{C}] + [\hat{A},\hat{D}] + [\hat{B},\hat{C}] + [\hat{B}\,\hat{D}].$$
+2. Show that for arbitrary operators $\hat{A}$ and $\hat{B}$, and arbitrary complex constants $\alpha$ and $\beta$ that 
+$$ [\alpha \hat{A}, \beta \hat{B}] = \alpha\beta [\hat{A},\hat{B}].$$
+3. Using parts 1 and 2, and the explicit form of $\hat{H}$ and $\hat{a}^\dagger$, show that 
+$$\vph[\hat{H}, \hat{a}^\dagger] = \frac{1}{2\sqrt{2}M\ell}[\hat{P}^2,\hat{X}] - \frac{i\ell}{2\sqrt{2}M\hbar}[\hat{P}^2,\hat{P}] +\frac{M\omega^2}{2\sqrt{2}\ell}[\hat{X}^2,\hat{X}] - \frac{iM\omega^2 \ell}{2\sqrt{2}\hbar}[\hat{X}^2,\hat{P}].$$
+4. Use [](#e-comms-P2-X2), show that the other two commutators vanish, and use the definition of $\ell$ in [](#e-ell-QHO) to show that
+$$ [\hat{H},\hat{a}^\dagger] = \hbar \omega \hat{a}^\dagger.$$
+```{dropdown} Answers
+1. n/a (show that).
+2. n/a (show that).
+3. n/a (show that).
+4. n/a (show that).
+```
+````
+
+````{exercise}
+:label: ex-gs-E-QHO
+````
