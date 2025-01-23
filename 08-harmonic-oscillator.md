@@ -277,6 +277,20 @@ What is more interesting and useful however is to obtain the **energy eigenfunct
 u_n(x) = \frac{(\op{a}^\dagger)^n}{\sqrt{n!}}u_0(x).
 ```
 ````
+
+`````{important} Video: Quantum harmonic oscillator III
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/dfef2858fdd848d8af92eb69c750c31c1d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-8-III.pdf
+:width: 100%
+```
+````
+
+
 For example,
 ```{math}
 u_1(x) &= \frac{1}{\sqrt{2}}\left(\frac{\op{X}}{\ell} - i\frac{\ell \op{P}}{\hbar}\right)u_0(x),\\
@@ -336,17 +350,19 @@ It is insightful to compare to corresponding plots for the eigenfunctions and pr
 
 There is one new and very important aspect of quantum mechanics that arises for the harmonic oscillator, which isn't present in the infinite square well potential, known as **tunnelling** or alternatively **barrier penetration**. 
 
-Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from th origin its potential energy increases, quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#f-isw-eigenfunctions) and [](#f-isw-pd).
+Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from th origin, its potential energy increases quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#f-isw-eigenfunctions) and [](#f-isw-pd).
 
-Now, while the gaussian function decays rather rapidly, it is in fact non-zero **for all values of x**, and hence when a particle has a definite energy in the harmonic oscillator, there is a non-zero probability to find it in any region, no matter how far from the origin. 
+Now, while the gaussian function decays rather rapidly, it is in fact non-zero **for all values of x**, and hence when a particle has a definite energy in the harmonic oscillator, there is a non-zero probability to find it in any finite region, no matter how far from the origin. 
 
-This is however very strange, as above we just noted that the energy increases as we move away from the origin. This means that, no matter what finite energy the particle has (and all the energy levels have finite energy), it has a chance of being found far away **in a region where the potential energy is larger than the total energy $E_n$ of the particle!**
+This is however very strange, as above we just noted that the potential energy increases as we move away from the origin. This means that, no matter what finite energy the particle has (and all the energy levels have finite energy), it has a chance of being found far away **in a region where the potential energy is larger than the total energy $E_n$ of the particle!**
 
 This is known as **tunnelling** or **barrier penetration**: a quantum particle manages to **enter a region** in which classically it does not have enough energy to enter! 
 
 Remarkably, this isn't even a small effect! In [](#f-isw-eigenfunctions) and [](#f-isw-pd) we have added vertical lines on the axis to denote the position where the potential energy $V(x) = E_n$. Beyond these points, classically the particle should not be found. As you can see, there is a significant probability to be found in the classically forbidden region, even in the ground state.
 
-Although we won't study it in this course, tunnelling is interesting and important, as if we have **two potential wells**, separated by an energy barrier, classically a particle can be trapped in one of them (for example, a planet can be bound in orbit around one star, even if there is a second star that it could equally be bound in orbit around). In quantum mechanics, **because a particles tunnel** it is able to move between the two wells. This effect is extremely important, for example explaining $\alpha$ decay in particle physics, and being utilised in **semiconductor devices**. 
+Although we won't study it in this course, tunnelling is interesting and important. Consider for example that we have **two potential wells**, separated by an energy barrier. Classically a particle can be trapped in one of them (for example, a planet can be bound in orbit around one star, even if there is a second star that it could equally be bound in orbit around). In quantum mechanics, **because a particle tunnels**, it is able to move between the two wells. This effect is extremely important, for example explaining $\alpha$ decay in particle physics, and being utilised in **semiconductor devices**. 
+
+In this unit we won't go further into this fascinating effect, but just highlight its existence, and leave it for future courses to elaborate on the physical consequences of it. 
 
 ## Exercises
 
