@@ -18,3 +18,7 @@ authors:
 
 ![](#ex-length-mom-scales)
 ![](#ex-comm-H-adag)
+![](#ex-comm-H-a)
+![](#ex-H-a)
+![](#ex-gs-E-QHO)
+![](#ex-u2)
