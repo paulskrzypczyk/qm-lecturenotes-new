@@ -11,6 +11,7 @@ parts:
      - file: 06-free-particle
      - file: 07-infinite-square-well
      - file: 08-harmonic-oscillator
+#     - file: 09-scattering
   - caption: Appendices
     chapters:
      - file: recap
@@ -20,9 +21,6 @@ parts:
      - file: 01-problems
      - file: 02-problems
      - file: 03-problems
- #     - file: PS10
- #     - file: PS11
- #     - file: PS12
   - caption: Licence
     chapters:
     - file: licence

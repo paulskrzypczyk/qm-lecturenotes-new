@@ -84,7 +84,7 @@ Region III, when $x > L$ is **identical** to region I, in that the potential ene
 :label: e-isq-rIII
 \vph u_E^\rIII(x) = 0.
 ```
-
+(s-ISW-rII)=
 ### Energy eigenfunctions in Region II
 Region II is our primary region of interest, as this corresponds to $0\leq x\leq L$, inside the box. In this region $V(x) = 0$, and hence the Hamiltonian is simply
 ```{math}

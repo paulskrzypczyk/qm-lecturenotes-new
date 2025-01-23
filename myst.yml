@@ -24,6 +24,8 @@ project:
     '\inner' : '\langle #1 | #2 \rangle'
     '\av' : '\langle #1 \rangle'
     '\init': '\mathrm{in}'
+    '\rR': '\mathrm{R}'
+    '\rL': '\mathrm{L}'
   abbreviations:
     TISE: Time-independent Schrödinger Equation
     SE: Schrödinger Equation
