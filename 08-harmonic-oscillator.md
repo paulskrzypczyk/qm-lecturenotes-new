@@ -136,10 +136,11 @@ This means that $(\hat{a}^\dagger \ket{E_n})$ is an **energy eigenstate** of ene
 In a similar fashion, in [](#ex-comm-H-a) you will similarly show the commutation relation
 ````{card}
 ```{math}
+:label: e-comm-H-a
 [\hat{H},\hat{a}] = -\hbar \omega \hat{a},
 ```
 ````
-between the Hamiltonian and the **annihilation operator**. From this, you will also show that
+between the Hamiltonian and the **annihilation operator**. From this, you [will also show that](#ex-H-a)
 ```{math}
 :label: e-a-E-n
 \hat{H}\hat{a}\ket{E_n} = (E_n - \hbar \omega)\hat{a}\ket{E_n}.
@@ -182,6 +183,7 @@ It isn't too difficult to spot the solution to this: it is nothing but a Gaussia
 where $N_0$ is a normalisation constant, that we will fix below. This shows that the **ground state of the harmonic oscillator is a gaussian wavefunction**, with standard deviation $\Delta x = \ell/\sqrt{2}$ (i.e. confirming that, indeed, $\ell$ is really a characteristic length scale of the harmonic oscillator). We can thus use [](#e-gaussian-wf) to fix the normalisation, and so the ground state wavefunction is
 ````{card}
 ```{math}
+:label: e-gs-qho
 u_0(x) = \sqrt{\frac{1}{\ell\sqrt{\pi}}} e^{-x^2/2\ell^2}.
 ```
 ````
@@ -278,7 +280,7 @@ u_n(x) = \frac{(\op{a}^\dagger)^n}{\sqrt{n!}}u_0(x).
 ```
 ````
 
-`````{important} Video: Quantum harmonic oscillator III
+````{important} Video: Quantum harmonic oscillator III
 :class: dropdown
 ```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/dfef2858fdd848d8af92eb69c750c31c1d
 :width: 100%
@@ -290,9 +292,9 @@ u_n(x) = \frac{(\op{a}^\dagger)^n}{\sqrt{n!}}u_0(x).
 ```
 ````
 
-
 For example,
 ```{math}
+:label: e-u1-qho
 u_1(x) &= \frac{1}{\sqrt{2}}\left(\frac{\op{X}}{\ell} - i\frac{\ell \op{P}}{\hbar}\right)u_0(x),\\
 &=\frac{1}{\sqrt{2}}\left(\frac{x}{\ell} - \ell \frac{\partial}{\partial x}\right)\sqrt{\frac{1}{\ell\sqrt{\pi}}} e^{-x^2/2\ell^2},\\
 &=\frac{1}{\sqrt{2}}\left(\frac{x}{\ell} - \ell \left(-\frac{x}{\ell^2}\right)\right)\sqrt{\frac{1}{\ell\sqrt{\pi}}} e^{-x^2/2\ell^2},\\
@@ -401,5 +403,49 @@ $$ [\hat{H},\hat{a}^\dagger] = \hbar \omega \hat{a}^\dagger.$$
 ````
 
 ````{exercise}
+:label: ex-comm-H-a
+1. Using parts 1 and 2 from [](#ex-comm-H-adag), show that
+$$\vph[\hat{H}, \hat{a}] = \frac{1}{2\sqrt{2}M\ell}[\hat{P}^2,\hat{X}] + \frac{i\ell}{2\sqrt{2}M\hbar}[\hat{P}^2,\hat{P}] +\frac{M\omega^2}{2\sqrt{2}\ell}[\hat{X}^2,\hat{X}] + \frac{iM\omega^2 \ell}{2\sqrt{2}\hbar}[\hat{X}^2,\hat{P}].$$
+
+2. Thus show that
+$$ [\hat{H},\hat{a}] = -\hbar \omega \hat{a}.$$
+```{dropdown} Answers
+1. n/a (show that).
+2. n/a (show that).
+```
+````
+````{exercise}
+:label: ex-H-a
+1. Show that $\hat{H} \hat{a} = \hat{a}\hat{H} + [\hat{H}, \hat{a}]$. 
+2. Use part 1, and [](#e-comm-H-a), to show that 
+$$ \hat{H}\hat{a}\ket{E_n} = (E_n - \hbar \omega)\hat{a}\ket{E_n}.$$
+3. Explain why this shows that $\hat{a}\ket{E_n}$ is (proportional to) an energy eigenstate of lower energy. 
+```{dropdown} Answers
+1. n/a (show that).
+2. n/a (show that).
+3. Part 2 shows that $\hat{a}\ket{E_n}$ is an eigenstate (up to normalisation) of $\hat{H}$, with eigenvalue $E = (E_n - \hbar \omega) < E_n$. 
+```
+
+````
+
+
+
+````{exercise}
 :label: ex-gs-E-QHO
+1. Write down $\op{H}$ for the quantum harmonic oscillator.
+2. Compute $\op{H}u_0(x)$, where the ground state wavefunction $u_0(x)$ is given in [](#e-gs-qho). 
+3. Thus confirm that $E_0 = \frac{1}{2}\hbar \omega$. 
+
+```{dropdown} Answers
+1. $\op{H} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} + \frac{1}{2}M\omega^2 x^2$
+2. $\op{H}u_0(x) = \frac{1}{2}\hbar\omega u_0(x)$. 
+3. Part 2 shows that $u_0(x)$ is an eigenfunction of $\op{H}$, with eigenvalue $E_0 = \frac{1}{2}\hbar\omega$. 
+```
+````
+
+````{exercise}
+Starting from $u_1(x)$ as given in [](#e-u1-qho), use $\op{a}^\dagger$ to find explicitly the energy eigenfunction $u_2(x)$. 
+```{dropdown} Answers
+$$ u_2(x) = \sqrt{\frac{2}{\ell \sqrt{\pi}}}\left(\frac{x^2}{\ell^2} - \frac{1}{2}\right)e^{-x^2/2\ell^2}$$
+```
 ````
