@@ -57,7 +57,7 @@ In an [exercise](#ex-mom-wf-gaussian), you will show that
 ```
 (Remarkably) this is **also a Gaussian** (now in the variable $p$ instead of $x$). However, the expected momentum and standard deviation of momentum are 
 ```{math}
-:label: e-gaussian-p
+:label: e-gaussian-p-av-std
 \av{p} &= 0,\\
 \Delta p &= \sqrt{\av{p^2} - \av{p}^2} = \frac{\hbar}{2a}.
 ```

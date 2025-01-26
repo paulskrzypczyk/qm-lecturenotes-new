@@ -107,6 +107,7 @@ Since $e^{ikx}$ and $e^{-ikx}$ are both eigenfunctions with the **same** eigenva
 ```
 where $A$ and $B$ are **arbitrary (complex) constants** which we don't yet know, and $E = \frac{\hbar^2 k^2}{2M}$. 
 
+(s-continuity-isw)=
 ### Continuity of energy eigenfunctions & energy quantisation
 
 *Where have we made it to?* Well, summarising the above, we have analysed the TISE in each of the three regions separately, and so far can conclude that the energy eigenfunctions must have the form
@@ -260,11 +261,11 @@ On the other hand, we can use [](#e-general-quantum-state) to write
 ```
 in terms of its wavefunction. Taking the scalar product on both sides of [](#e-psi-init-wf) with $\bra{E_n}$, we find
 ```{math}
-:label: e-inner-Em-psi
+:label: e-inner-Em-psi-wf
 \inner{E_n}{\psi_\init} &= \infint \psi_\init(x) \inner{E_n}{x} dx, \\
 &= \infint \psi_\init(x) u_n^*(x) dx,
 ```
-where in the second line we used the two facts that $\inner{x}{E_n} = u_n(x)$ by definition of the energy eigenfunctions, and that $\inner{E_n}{x} = \left(\inner{x}{E_n}\right)^*$. Combining [](#e-inner-Em-psi) and [](#e-inner-Em-psi), we finally arrive at
+where in the second line we used the two facts that $\inner{x}{E_n} = u_n(x)$ by definition of the energy eigenfunctions, and that $\inner{E_n}{x} = \left(\inner{x}{E_n}\right)^*$. Combining [](#e-inner-Em-psi) and [](#e-inner-Em-psi-wf), we finally arrive at
 ````{card}
 ```{math}
 :label: e-wf-to-energy
