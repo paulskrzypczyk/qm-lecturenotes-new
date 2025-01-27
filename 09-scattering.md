@@ -93,7 +93,7 @@ where $C$ and $D$ are two new constants (that we will also need to determine in 
 ```
 Taking a step back (no pun intended), this makes **perfect sense**. Once the particle has passed the step, its potential energy has increased by $V_0$. The total energy is still $E$, and so the kinetic energy of the particle is now $E - V_0$. This is why we see that energy eigenfunction has exactly the same form as an energy eigenfunction with $E' = E - V_0$. 
 
-### Left-moving and Right-moving eigenstates
+### Right-moving and Left-moving eigenstates
 
 Putting everything together that we have learnt so far, we know that the energy eigenfunctions of the potential step have the form 
 ```{math}
@@ -229,4 +229,50 @@ It is most insightful to re-express this not in terms of $k$ and $k'$, but inste
 R = \left(\frac{\sqrt{\frac{E}{V_0}}-\sqrt{\frac{E}{V_0}-1}}{\sqrt{\frac{E}{V_0}}+\sqrt{\frac{E}{V_0}-1}}\right)^2
 ```
 ````
-We already saw that $B = 0$ when $V_0 = 0$, hence $R = |B|^2 = 0$, so the reflection coefficient can be as small as $0$. On the other hand, if $E$ becomes **very close** to $V_0$ (so that classically, it would only just be able to pass the barrier, after which it would then come to rest, having essentially no kinetic energy), $R$ will become very close to unity, since the second term in both the numerator and denominator will become very small. Thus, even though $E > V_0$, we can have **almost perfect reflection**! This is depicted in ... This is the **new quantum feature we discussed. 
+We already saw that $B = 0$ when $V_0 = 0$, hence $R = |B|^2 = 0$, so the reflection coefficient can be as small as $0$. On the other hand, if $E$ becomes **very close** to $V_0$ (so that classically, it would only just be able to pass the barrier, after which it would then come to rest, having essentially no kinetic energy), $R$ will become very close to unity, since the second term in both the numerator and denominator will become very small. Thus, even though $E > V_0$, we can have **almost perfect reflection**! This is depicted in ... This is the **new quantum feature we discussed in the introduction**.
+
+In an exercise, you will furthermore see that we have reflection **even when $V_0$ is negative** — where naively we would not expect to see any reflection at all, since the particle always has enough energy to pass the step. 
+
+## Evolution of wavefunctions
+
+Finally, we will briefly discuss how we can **use the energy eigenfunctions** in order to study the behaviour of **normalised wavefunctions**. The idea is very similar in fact to how we used the energy eigenstates of a free particle in order to study their evolution: although an individual energy eigenstate in that case was a momentum state, and therefore an unphysical and unnormalisable state, we nevertheless **use them** as a convenient **basis** from which we can form well-behaved **superpositions**.
+
+For the finite step potential, we can do **exactly the same**! In particular, we can form initial quantum states of the form
+```{math}
+:label: e-psi-in-scattering
+\ket{\psi_\init} = \vph \int_{V_0}^\infty \phi_\init(E) \ket{E^\rR} dE,
+```
+where 
+```{math}
+\ket{E^\rR} = \infint u_E^\rR(x) \ket{x} dx,
+```
+is the **right-moving** energy eigenstate of energy $E$ associated to the energy eigenfunction $u_E^\rR(x)$ in the usual way.
+
+*Why do we take only superpositions of right-moving eigenstates?* This isn't necessary, but it is very **natural**: we want to to consider sending in initial wavefunctions from the left, moving **towards the step** so that it **scatters off of it**. In order to study this, we just need to use the right-moving states. This is just like how we would only expect to use superpositions of **positive momentum** states if we were considering a free particle moving towards the right. 
+
+Now, just as in all previous cases, since in [](#e-psi-in-scattering) the initial state is written as a **superposition** of energy eigenstates, we can use the **superposition** principle to **write down** the quantum state at time $t$, assuming that the state at $t = 0$ is $\ket{\psi(0)} = \ket{\psi_\init}$. It will be
+````{card}
+```{math}
+\ket{\psi(t)} = \int_{V_0}^\infty \phi_\init(E) e^{-iEt/\hbar} \ket{E^\rR}dE.
+```
+```` 
+and the corresponding wavefunction will be 
+````{card}
+```{math}
+\psi(x,t) = \int_{V_0}^\infty \phi_\init(E) u_E^\rR(x) e^{-iEt/\hbar}  dE.
+```
+````
+In the small animation below, we show the evolution of a **Gaussian** wavefunction:
+```{figure} ./Pictures/finite-step-scattering.gif
+:name: scattering-gaussian
+:width: 600px
+:align: center
+
+**Scattering of a Gaussian wavepacket by a potential step.**  An animation of the scattering of a Gaussian wavepacket by a step potential. In the top plot, we show the wavefunction $|\psi(x,t)|$ using a colour plot. In the bottom plot, we show the associated probability density $\pd(x,t)$. The potential step is also plotted, for illustrative purposes only. The particle approaches the step from the left (with positive momentum), and energy larger than the potential height $V_0$. Nevertheless, the particle is partially reflected by the step, such that the final state of the particle is a superposition of a left-moving Gaussian after the step, and a right-moving Gaussian that has been reflected by the step.
+```
+
+We thus see that, as stated, the particle really does partially reflect and partially transmit. In the process, we also see some interesting dynamical features — in particular we see the presence of **interference fringes** during the period before the two distinct Gaussian components of the wavefunction emerge. 
+
+The above is just one example, but captures the most important features of scattering in quantum mechanics. We could of course also study more realistic changes in potential (i.e. different forces exerted by the scatterer), however then in general it isn't possible to solve everything analytically as we have done here. 
+
+This brings to a close our study of quantum mechanics in one dimension! In the next chapter, we will begin exploring the more physically relavant situation of the mechanics of a quantum particle in three dimensions. 

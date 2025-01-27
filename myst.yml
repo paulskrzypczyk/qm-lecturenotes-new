@@ -26,6 +26,10 @@ project:
     '\init': '\mathrm{in}'
     '\rR': '\mathrm{R}'
     '\rL': '\mathrm{L}'
+    '\ivec': '\boldsymbol{\hat{\imath}}'
+    '\jvec': '\boldsymbol{\hat{\jmath}}'
+    '\kvec': '\boldsymbol{\hat{k}}'
+    '\rvec': '\boldsymbol{r}'
   abbreviations:
     TISE: Time-independent Schrödinger Equation
     SE: Schrödinger Equation
