@@ -90,7 +90,7 @@ The approach we will take is to find a special **pair of operators** called the 
 \ell &= \sqrt{\frac{\hbar}{M\omega}},& q &= \frac{\hbar}{\ell} = \sqrt{M\hbar \omega}.
 ```
 ````
-With these defined, we can now define the creation and annihilation operators, which we denote by $\hat{a}$ and $\hat{a}^\dagger$ respectively, as
+With these defined, we can now define the annihilation and creation operators, which we denote by $\hat{a}$ and $\hat{a}^\dagger$ respectively, as
 ````{card}
 ```{math}
 :label: e-creation-annihilation
