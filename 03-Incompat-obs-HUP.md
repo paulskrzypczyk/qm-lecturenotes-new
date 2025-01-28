@@ -146,6 +146,7 @@ This is often referred to as the **canonical commutation relation** since it is 
 To arrive at [](#e-canonical-comm), we simply replaced everywhere $\op{X}$ and $\op{P}$ by $\hat{X}$ and $\hat{P}$, and removed the wavefunction. This is generally true. Namely, 
 ````{card}
 ```{math}
+:label: e-wf-comm-to-op-comm
 [\op{A},\op{B}]\psi(x) = \op{C}\psi(x) \implies [\hat{A},\hat{B}] = \hat{C}.
 ```
 ````

@@ -30,6 +30,7 @@ project:
     '\jvec': '\boldsymbol{\hat{\jmath}}'
     '\kvec': '\boldsymbol{\hat{k}}'
     '\rvec': '\boldsymbol{r}'
+    '\pvec': '\boldsymbol{p}'
   abbreviations:
     TISE: Time-independent Schrödinger Equation
     SE: Schrödinger Equation
