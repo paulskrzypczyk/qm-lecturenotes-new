@@ -66,3 +66,4 @@ From [](#e-coordinate-eigenstates), it is also straightforward to see that the t
 &= (xy - yx)\ket{\rvec},\\
 &= 0.
 ``` 
+
