@@ -103,8 +103,90 @@ i.e. **each component** of $\rvec$ is multiplied by the the wavefunction $\psi(\
 
 Finally, using the definitions of $\op{X}$, $\op{Y}$ and $\op{Z}$, it is also straightforward to see that the three coordinates are **compatible observables** that can therefore be **simultaneously measured** (in principle at least). Recall that the **mathematical** property behind compatibility is **commutativity**. We can easily check that the commutator of any two coordinate wavefunction operators vanishes, for example,
 ```{math}
-[\hat{X},\hat{Y}]\ket{\rvec} &= (\hat{X}\hat{Y} - \hat{Y}\hat{X})\ket{\rvec},\\
-&= \hat{X}(y\ket{\rvec}) - \hat{Y}(x\ket{\rvec}),\\
-&= (xy - yx)\ket{\rvec},\\
-&= 0.
+[\op{X},\op{Y}]\psi(\rvec) &= (\op{X}\op{Y} - \op{Y}\op{X})\psi(\rvec),\\
+&= \op{X}(y\psi(\rvec)) - \op{Y}(x\psi(\rvec)),\\
+&= (xy - yx)\psi(\rvec),\\
+&= 0,
 ``` 
+from which it follows that $[\hat{X}, \hat{Y}] = 0$, according to [](#e-wf-comm-to-op-comm). 
+
+### Probability to find a particle somewhere
+
+We can now think about measuring the **position of the particle** in 3D, and ask *what is the probability to find it in an (arbitrarily small) region around $\rvec$? That is, if we performed an arbitrarily good simultaneous measurement of the 3 coordinates of the particle? The answer is the direct generalisation of what we saw for a particle in one dimension: the **probability density** at position $\rvec$$ is precisely
+````{card}
+```{math}
+\pd(\rvec) = |\psi(\rvec)|^2,
+```
+````
+so that the probability to find the particle in a small region of volume $dV$ around the point $\rvec$ is $|\psi(\rvec)|^2 dV$. We can then ask similar questions about the probability of a measurement finding the particle in a finite region, and the **total** probability in any region is obtained by **integrating** the probability density over the region. 
+
+This then allows us to interpret the normalisation condition [](#e-norm-3D-wf) in a natural way: it says that the **total probability** to find the particle somewhere (in 3D now!) must be unity. 
+
+## The momentum of a particle in 3D
+
+Let us now turn our attention to the **momentum** of a particle in 3D. As with the position, the momentum is now a **vector** quantity, $\pvec = (p_x, p_y, p_z)$. In [](02-momentum) we saw that if a particle had a definite momentum $p_x$ in the $x$-direction, then the spatial wavefunction was the momentum eigenfunction $v_{p_x}(x) = \frac{1}{\sqrt{2\pi\hbar}} e^{ip_x x/\hbar}$. 
+
+Even though we are now in 3D, we still want this to be the **behaviour of the wavefunction as $x$ varies if the particle has a definite $x$ component of momentum**. We can apply the same logic along the $y$ and $z$ directions, and this suggests that **momentum eigenfunctions** of momentum $\pvec$ should be given by
+````{card}
+```{math}
+:label: e-3D-mom-eigenfunc
+v_{\pvec}(\rvec) &= \frac{1}{(\sqrt{2\pi\hbar})^3}e^{ip_x x/\hbar}e^{ip_y y/\hbar}e^{ip_z z/\hbar},\\
+&= \frac{1}{(2\pi\hbar)^{3/2}} e^{i\pvec \cdot \rvec / \hbar}
+```
+````
+where in the second line we have realised that $p_x x + p_y y + p_z z$ (that arises when combining the exponents of the three exponential functions) can be written as the **scalar product** between $\rvec$ and $\pvec$, i.e. as $\pvec \cdot \rvec$. 
+
+In what follows, we will see that **this is the correct definition of the 3D momentum eigenfunctions**. They correspond precisely to **3D complex plane waves** with wave vector $\mathbf{k} = \pvec/\hbar$, and **definite wavelength** $\lambda = 2\pi/|\mathbf{k}| = h/|\pvec|$. This is precisely the de Broglie relation, for a particle with momentum of magnitude $|\pvec|$. 
+
+Having defined the momentum eigenfunctions, we can now write down — using the standard prescription — the corresponding **3D momentum eigenstates**, 
+````{card}
+```{math}
+\ket{\pvec} &= \int_V v_{\pvec}(\rvec)\ket{\rvec}d^3\rvec,\\
+&= \frac{1}{(2\pi\hbar)^{3/2}} \int_V e^{i\pvec \cdot \rvec / \hbar} \ket{\rvec} d^3\rvec.
+```
+````
+
+These states are also **unphysical** and satisfy the same orthogonality-normalisation condition as the 3D position states $\ket{\rvec}$, namely
+````{card}
+```{math}
+\inner{\pvec'}{\pvec} = \delta^{(3)}(\pvec - \pvec').
+```
+````
+
+We can use the momentum eigenstates in order to introduce the **3D momentum wavefunction**, in exactly analogy to [](#e-general-state-momentum)
+````{card}
+```{math}
+\ket{\psi} = \int_V \tilde{\psi}(\pvec) \ket{\pvec} d^3 \pvec,
+```
+````
+i.e. it is the way that we can express an **arbitrary state** as a **superposition** of momentum states. 
+
+### Momentum operator
+
+Just as for the position, we will need to introduce **one momentum operator for each component of momentum**, and we can **collect these together** into a single **vector momentum operator**,
+````{card}
+```{math}
+\hat{\mathbf{P}} = (\hat{P}_x, \hat{P}_y, \hat{P}_z).
+```
+````
+Momentum eigenstates will then be — by definition — joint eigenstates of each component momentum operator, i.e. 
+```{math}
+\hat{P}_x \ket{\pvec} &= p_x \ket{\pvec},& \hat{P}_y \ket{\pvec} &= p_y \ket{\pvec},& \hat{P}_z \ket{\pvec} &= p_z \ket{\pvec}.
+```
+We can again write this in a succint way as
+```{math}
+\hat{\mathbf{P}}\ket{\pvec} &= \pvec \ket{\pvec},
+```
+just as we did in [](#e-R-eig-eq-vec) for the 3D position operator $\hat{\mathbf{R}}$. 
+
+*What about the wavefunction operator $\op{\mathbf{P}}$*? Well, for the position operator, we saw in [](#e-wf-op-R) that we in fact **kept the same wavefunction operator as we had in 1D**. Namely, we just multiplied by the coordinate. This suggests that for momentum we might have the same: that each component of the momentum operator should be specified the same way as in 1D, as in [](#e-op-P). We will thus take
+````{card}
+```{math}
+\op{\mathbf{P}} &= \left(-i\hbar \frac{\partial}{\partial x}, -i\hbar \frac{\partial}{\partial y}, -i\hbar \frac{\partial}{\partial z}\right),\\
+&= -i\hbar \boldsymbol{\nabla}.
+```
+````
+As an exercise, you will show that the 3D momentum eigenfunctions $v_{\pvec}(\rvec)$ from [](#e-3D-mom-eigenfunc) are indeed eigenfunctions of the 3D wavefunction momentum operator, 
+```{math}
+\op{\mathbf{P}}v_{\pvec}(\rvec) = \pvec v_{\pvec}(\rvec).
+```
