@@ -73,6 +73,7 @@ What is remarkable is that what we observed above **isn't just a special propert
 The famous **Heisenberg Uncertainty Principle** makes this statement **quantitative**: it says that the **product** of the uncertainties can never be smaller than a fundamental constant:
 ````{card}
 ```{math}
+:label: e-HUP
 \Delta x \Delta p \geq \frac{\hbar}{2}.
 ```
 ````

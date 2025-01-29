@@ -8,7 +8,7 @@ authors:
     affiliations:
 ---
 
-In this chapter we are now ready to move onto the study of quantum mechancis in three dimensions! Much of what we have learnt up until this stage will carry across in a rather straightforward manner, which is good news. Obviously the world around us is three dimensional, and so it is necessary to move broaden our application of quantum mechanics to three dimensions, so that we can go on to study real-world situations, for example, laying the foundations for the study of the **Hydrogen atom** — arugably the most famous quantum system of all, and one of its biggest early successes. While we won't get all the way there in this unit, we will nevertheless introduce the basics of quantum mechancis in 3D, so that you will be able to go straight there next year. 
+In this chapter we are now ready to move onto the study of quantum mechancis in three dimensions! Much of what we have learnt up until this stage will carry across in a rather straightforward manner, which is good news. Obviously the world around us is three dimensional, and so it is necessary to move broaden our application of quantum mechanics to three dimensions, so that we can go on to study real-world situations, for example, laying the foundations for the study of the **Hydrogen atom** — arguably the most famous quantum system of all, and one of its biggest early successes. While we won't get all the way there in this unit, we will nevertheless introduce the basics of quantum mechancis in 3D, so that you will be able to go straight there next year. 
 
 ## The position of a particle in 3D
 
@@ -19,6 +19,7 @@ We will largely follow the same path in 3D that we followed in 1D, and start off
 Just as before we associated a quantum state to each position $x$, we will now introduce a **3D position states** as $\ket{\rvec}$, and an associated **3D spatial wavefunction** $\psi(\rvec)$, such that a general quantum state of a particle in three dimensions can be written as
 ````{card}
 ```{math}
+:label: e-3D-spatial-wf
 \ket{\psi} = \infint \infint \infint \psi(\rvec) \ket{\rvec} d^3\rvec,
 ```
 ````
@@ -30,6 +31,7 @@ which should be compared to [](#e-general-quantum-state).
 
 *Finally, we will often simply write $\int_V f(\rvec) d^3\rvec$ in place of $\infint \infint \infint f(\rvec) d^3\rvec$, to indicate an integration over **all space** when this will not cause any confusion.*
 ```
+
 This state corresponds to a **superposition** of the particle being at position $\rvec$. The 3D position states $\ket{\rvec}$ are **unphysical states**, which satisfy the orthogonality and normalisation condition
 ````{card}
 ```{math}
@@ -48,6 +50,14 @@ i.e. it is the **product** of three delta functions, one for each coordinate. Us
 ```
 ````
 which should be compared to [](#e-norm-wavefunction).  The **interpretation** of this equation is in fact identical to the interpretation we gave to [](#e-norm-wavefunction). However, to arrive at this, we first need to introduce **operators** corresponding to the **coordinates** of the particle. 
+
+Finally, using the 3D Dirac delta function, as an exercise you will show that we have the direct analogue of [](#e-x-scalar) in 3D, namely 
+````{card}
+```{math}
+\inner{\rvec}{\psi} = \psi(\rvec),
+```
+````
+which shows that the wavefunction is nothing but the scalar product between a 3D position state and the quantum state itself.
 
 ### Position and coordinate operators
 
@@ -78,7 +88,7 @@ where to obtain the second line we have used [](#e-coordinate-eigenstates). Apar
 *You might be concerned by this, as it appears that we now have eigenvalues which are themselves vectors? Although this isn't a common way to view things, it does nevertheless make sense, and simply tells us in a succinct way that $\ket{\rvec}$ is a **simultaneous eigenstate** of $\hat{X}$, $\hat{Y}$ and $\hat{Z}$. So just as with many other uses of vectors, here we condense three separate equations into a **single** vector equation.* 
 ```
 
-We can also introduce the **coordinate operators acting on wavefunctions** using the same prescription as before, [](#e-op-to-wf-op). Using [](e-coordinate-eigenstates), we see for example that
+We can also introduce the **coordinate operators acting on wavefunctions** using the same prescription as before, [](#e-op-to-wf-op). Using [](#e-coordinate-eigenstates), we see for example that
 ```{math}
 \hat{X}\ket{\psi} = \int_V \psi(\rvec) x \ket{\rvec} d^3\rvec,
 ```
@@ -156,10 +166,16 @@ These states are also **unphysical** and satisfy the same orthogonality-normalis
 We can use the momentum eigenstates in order to introduce the **3D momentum wavefunction**, in exactly analogy to [](#e-general-state-momentum)
 ````{card}
 ```{math}
+:label: e-3D-momentum-wf
 \ket{\psi} = \int_V \tilde{\psi}(\pvec) \ket{\pvec} d^3 \pvec,
 ```
 ````
-i.e. it is the way that we can express an **arbitrary state** as a **superposition** of momentum states. 
+i.e. it is the way that we can express an **arbitrary state** as a **superposition** of momentum states. Just as we saw above for the spatial wavefunction, we can similarly directly show that the momentum wavefunction is the scalar product of the quantum state with a 3D momentum state, namely
+````{card}
+```{math}
+\inner{\pvec}{\psi} = \tilde{\psi}(\pvec).
+```
+````
 
 ### Momentum operator
 
@@ -169,12 +185,13 @@ Just as for the position, we will need to introduce **one momentum operator for 
 \hat{\mathbf{P}} = (\hat{P}_x, \hat{P}_y, \hat{P}_z).
 ```
 ````
-Momentum eigenstates will then be — by definition — joint eigenstates of each component momentum operator, i.e. 
+Momentum eigenstates will then be — by definition — joint eigenstates of each component of the momentum operator, i.e. 
 ```{math}
 \hat{P}_x \ket{\pvec} &= p_x \ket{\pvec},& \hat{P}_y \ket{\pvec} &= p_y \ket{\pvec},& \hat{P}_z \ket{\pvec} &= p_z \ket{\pvec}.
 ```
 We can again write this in a succint way as
 ```{math}
+:label: e-3D-P-eigenvalue-eq
 \hat{\mathbf{P}}\ket{\pvec} &= \pvec \ket{\pvec},
 ```
 just as we did in [](#e-R-eig-eq-vec) for the 3D position operator $\hat{\mathbf{R}}$. 
@@ -186,7 +203,105 @@ just as we did in [](#e-R-eig-eq-vec) for the 3D position operator $\hat{\mathbf
 &= -i\hbar \boldsymbol{\nabla}.
 ```
 ````
-As an exercise, you will show that the 3D momentum eigenfunctions $v_{\pvec}(\rvec)$ from [](#e-3D-mom-eigenfunc) are indeed eigenfunctions of the 3D wavefunction momentum operator, 
+As an exercise, you will show that the 3D momentum eigenfunctions $v_{\pvec}(\rvec)$ from [](#e-3D-mom-eigenfunc) are indeed eigenfunctions of the 3D wavefunction momentum operator, satisfying
 ```{math}
-\op{\mathbf{P}}v_{\pvec}(\rvec) = \pvec v_{\pvec}(\rvec).
+\op{\mathbf{P}}v_{\pvec}(\rvec) = \pvec v_{\pvec}(\rvec),
 ```
+which is the **same** eigenvalue equation for the momentum operator as [](#e-3D-P-eigenvalue-eq), just in terms of the wavefunction operator $\op{\mathbf{P}}$ instead of $\hat{\mathbf{P}}$. 
+
+Just as the three coordinate operators were **compatible** observables, so too are the three components of momentum. We can see that this is the case by using the wavefunction operators. For example, for the $x$-component and $y$-component of momentum, we have
+```{math}
+[\hat{P}_{x,\mathrm{w}},\hat{P}_{y,\mathrm{w}}]\psi(\rvec) &= (\hat{P}_{x,\mathrm{w}}\hat{P}_{y,\mathrm{w}} - \hat{P}_{y,\mathrm{w}}\hat{P}_{x,\mathrm{w}})\psi(\rvec),\\
+&= \left(-i\hbar \frac{\partial}{\partial x}\right)\left(-i\hbar \frac{\partial \psi(\rvec)}{\partial y}\right) - \left(-i\hbar \frac{\partial}{\partial y}\right)\left(-i\hbar \frac{\partial \psi(\rvec)}{\partial x}\right),\\
+&= -\hbar^2 \frac{\partial^2\psi(\rvec)}{\partial x \partial y} + \hbar^2 \frac{\partial^2\psi(\rvec)}{\partial x \partial y} \\
+&= 0,
+```
+where we used the fact in the third line that **we can take a partial derivative in either order** (i.e. partial differentiation commutes!). Similar calculations show that all components of momentum pairwise commute, and hence all 3 components are jointly compatible. This means it is (in principle) possible to measure the momentum $\pvec$ of a particle. Note that it isn't **a given**  that the components of a vector quantity are necessarily compatible — and is fact **not true** for the components of angular momentum, which is why the quantum mechanical treatment of angular momentum is in fact so rich an interesting (analogous somewhat to the incompatibility of kinetic and potential energy, and how this leads to interesting dynamics).  
+
+## Canonical commutation relations
+In [Chapter 3](03-Incompat-obs-HUP.md) we saw that the position and momentum operators are **incompatible observables** and satisfy the so-called **canonical commutation relation** [](#e-canonical-comm). In 3D we have already seen above in that the coordinates of a particle are compatible, and that the components of momentum are also compatible. *What about the coordinates and components of momentum?* It turns out that is only the **pairs** of coordinate and momentum component **in the same direction** that are **incompatible**, all of which obey the **canonical commutation relation**:
+````{card}
+```{math}
+[\hat{X},\hat{P}_x] &= i\hbar,& [\hat{Y},\hat{P}_y] &= i\hbar,& [\hat{Z},\hat{P}_z] &= i\hbar,
+```
+````
+while all other pairs are in fact **compatible**, 
+````{card}
+```{math}
+[\hat{Y},\hat{P}_x] &= 0,& [\hat{X},\hat{P}_y] &= 0,& [\hat{X},\hat{P}_z] &= 0,\\
+[\hat{Z},\hat{P}_x] &= 0,& [\hat{Z},\hat{P}_y] &= 0,& [\hat{Y},\hat{P}_z] &= 0,
+```
+````
+You will prove one example of the above as an exercise, from which all of the others follow by direct analogy. 
+
+The physical significance of the above is that we have analogues of the HUP [](#e-HUP) for all of the coordinates, namely
+````{card}
+```{math}
+\Delta x \Delta p_x &\geq \frac{\hbar}{2},& \Delta y \Delta p_y &\geq \frac{\hbar}{2},& \Delta z \Delta p_z &\geq \frac{\hbar}{2}, 
+```
+````
+and as such, a particle cannot have a very well-defined coordinate and momentum along the same axis at the same time. However, since for example the $x$-coordinate and the $y$-component of momentum commute, there is no uncertainty principle for them, and a particle can have a very well defined $x$-coordinate and a very well defined $y$-component of momentum at the same time! 
+
+## Relationship between 3D spatial & momentum wavefunctions
+In one dimension we saw in [](#e-psi-p-to-psi-x) and [](#e-psi-x-to-psi-p) that the relationship between the position and momentum wavefunctions was that they are a **Fourier transform pair**. This is very useful, as it provides a useful way of obtaining the momentum wavefunction from the spatial wavefunction and vice versa, **without having to go via the quantum state** $\ket{\psi}$. 
+
+In 3D (hopefully unexpectedly at this stage of the chapter!) **the same relationship holds**: The spatial and momentum wavefunctions are **3D Fourier transform pairs**. On the one hand, starting from [](#e-3D-momentum-wf), taking the scalar product with a 3D position state $\bra{\rvec}$, and using the fact that $\inner{\rvec}{\pvec} = v_{\pvec}(\rvec)$ (as given in [](#e-3D-mom-eigenfunc)), we readily obtain
+````{card}
+```{math}
+ \psi(\rvec) = \frac{1}{(2\pi\hbar)^{3/2}} \int_V \tilde{\psi}(\pvec) e^{i\pvec \cdot \rvec / \hbar} d^3\pvec.
+ ```
+ ````
+ Alternatively, starting from [](#e-3D-spatial-wf), taking the scalar product with a 3D momentum state $\bra{\pvec}$, and using the fact that $\inner{\pvec}{\rvec} = (\inner{\rvec}{\pvec})^* = v_{\pvec}^*(\rvec)$, we also readily obtain
+ ````{card}
+ ```{math}
+ \tilde{\psi}(\pvec) = \frac{1}{(2\pi\hbar)^{3/2}} \int_V \psi(\rvec) e^{-i\pvec \cdot \rvec / \hbar} d^3\rvec.
+ ```
+ ````
+
+ ## The energy of a particle in 3D
+Having covered the position and momentum of a particle above, we are now ready to consider the **energy** of a particle in 3D. The Hamiltonian still contains two contributions to the energy — kinetic and potential. The latter is rather straightforward, as we simply now have $V(\rvec)$, i.e. a potential which depends upon the (3D) position of the particle. We will study explicit examples later (e.g. a 3D 'box' and the 3D harmonic oscillator potential). 
+
+For the kinetic energy, the situation is slightly different, given that momentum is now a **vector** quantity in 3D. The kinetic energy depends only upon the **squared magnitude** of the momentum, that is (classically for the moment),
+```{math}
+K = \vph\frac{p_x^2 + p_y^2 + p_z^2}{2M}
+```
+We will thus form a kinetic energy operator by substituting each component of squared momentum by the corresponding **squared operator**, and thus arrive at the general **Hamiltonian operator**
+````{card}
+```{math}
+\hat{H} = \frac{\hat{P}_x^2 + \hat{P}_y^2 + \hat{P}_z^2}{2M} + \hat{V}.
+```
+````
+As always, a large part of our interest in 3D will be to find the eigenstates and eigenvalues of the Hamiltonian operator, in different physical situations, with different choices of $\hat{V}$ (specifying the forces acting on the particle). 
+
+The associated **operator acting on wavefunctions** is
+````{card}
+```{math}
+\op{H} &= \vph -\frac{\hbar^2}{2M}\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) + V(\rvec),
+\\
+&= -\frac{\hbar^2}{2M}\nabla^2 + V(\rvec).
+```
+````
+From this we arrive at the 3D TISE, 
+````{card}
+```{math}
+\op{H} u_E(\rvec) = Eu_E(\rvec),
+```
+````
+the **eigenvalue equation** for the Hamiltonian operator in terms of energy **eigenfunctions**. This is our **central tool** for finding the energy eigenstates in 3D, just as the 1D TISE was our central tool for finding energy eigenstates (via energy eigenfunctions) in 1D. 
+
+As in 1D, there are two **distinct** physical situations which we encounter, when a particle is either **bound** (remaining in a finite region of space), or **non-bound** (in which it can escape off to infinity). In 3D, there is a potential subtlety: what if the particle was **confined in one direction but not the others?** *what happens then?* In this case, the region that the particle can explore will **still be infinite in volume**, and as such we find that the energy of the particle varies **continuously**. Only if the particle is confined **in all three spatial dimensions** will we find **discrete energy levels**.
+
+One update is that previously we only ever encountered a **single quantum number $n$ per energy level**. That is, in both the [infinite square well](07-infinite-square-well) and the [harmonic oscillator](08-harmonic-oscillator) we were able to enumerate the energy levels using a **single** integer $n$. In 3D, in contrast, we will typically see that we have **multiple quantum numbers per energy level**. 
+
+A common case is to have **three quantum numbers**, one **per degree of freedom** (i.e. each **independent** direction of travel). We will label these by $n_x$, $n_y$ and $n_z$ respectively, and sometimes collect them into the vector $\mathbf{n} = (n_x,n_y,n_z)$. 
+
+## Evolution in 3D
+
+The equation of motion of a particle in 3D is no different from the equation of motion in 1D. It is given once again by the Schrödinger Equation, which takes an **identical form** to [](#e-SE) when written out abstractly, 
+![](#e-SE)
+
+In 1D we saw that we **never actually solve the SE directly** — we instead used the **superposition principle** and the fact that **energy eigenstates evolve simply** to solve it **indirectly**. In 3D, nothing will change on this front either! 
+
+For example, assuming that the particle is **bound** and therefore that there it has a discrete set of **energy levels** $\ket{E_\mathbf{n}}$ (specified by the vector of quantum numbers $\mathbf{n}$), 
+
+

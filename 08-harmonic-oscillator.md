@@ -246,7 +246,7 @@ where to obtain the second line we used [](#e-adag-a-En), and pulled $n$ out the
 \hat{a}\ket{E_n} = \sqrt{n} \ket{E_{n-1}}.
 ```
 ````
-To find out how $\hat{a}^\dagger$, we can apply $\hat{a}^\dagger$ to $(\hat{a}\ket{E_{n+1}})$. We see on the one hand that
+To find out how $\hat{a}^\dagger$ changes the norm of a state, we can apply $\hat{a}^\dagger$ to $(\hat{a}\ket{E_{n+1}})$. We see on the one hand that
 ```{math}
 :label: e-ad-on-En-step-1
 \hat{a}^\dagger \hat{a} \ket{E_{n+1}} = \hat{n}\ket{E_{n+1}} = (n+1)\ket{E_{n+1}}.
