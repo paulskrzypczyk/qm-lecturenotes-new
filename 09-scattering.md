@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: Quantum harmonic oscillator I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/dbf4313f257d40619f647ab6f08f44d51d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-I.pdf
+:width: 100%
+```
+````
+`````
+
 In the previous two chapters we have focused our attention on situations where a particle is bound inside a potential well. This is a situation which is very prevalent and important. In these cases, we saw that a particle can only have special discrete energies. 
 
 Prior to this we studied a free particle — when there were no forces acting, and so far this has been the only instance of a **non-bound** state that we have considered. In this final chapter considering quantum mechanics in 1D, we will now return to a situation where a particle is non-bound, but one that is more interesting and physical than the free particle.
@@ -144,6 +157,19 @@ In what follows, we will focus on **right-moving** particles, and leave the corr
 
 ### Continuity of eigenfunctions and their first derivatives
 
+`````{important} Video: Quantum harmonic oscillator I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/dc7050cc03e74c499bfe36d91aee87051d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-II.pdf
+:width: 100%
+```
+````
+`````
+
 We will now see how we can fix the unknown constants in the eigenfunctions. First, as we learnt in [](#s-continuity-isw), **energy eigenfunctions must be continuous**. We must apply this fact at the potential step ($x = 0$), as for general choices of $A$, $B$ and $C$ this won't be the case. In particular, from [](#e-eig-step-R) we see that at $x = 0$ $u_E^\rR(0) = C$ (since we include $x = 0$ in region II). If we approach the origin from region I, i.e. take $x \to 0$ from below, we find $u_E^\rR(0) = A + B$. In order for eigenfunction to be continuous, we must therefore have
 ```{math}
 A + B = C.
@@ -234,6 +260,19 @@ We already saw that $B = 0$ when $V_0 = 0$, hence $R = |B|^2 = 0$, so the reflec
 In an exercise, you will furthermore see that we have reflection **even when $V_0$ is negative** — where naively we would not expect to see any reflection at all, since the particle always has enough energy to pass the step. 
 
 ## Evolution of wavefunctions
+
+`````{important} Video: Quantum harmonic oscillator I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/7a28c68ce9264309b3841df1953092c01d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-III.pdf
+:width: 100%
+```
+````
+`````
 
 Finally, we will briefly discuss how we can **use the energy eigenfunctions** in order to study the behaviour of **normalised wavefunctions**. The idea is very similar in fact to how we used the energy eigenstates of a free particle in order to study their evolution: although an individual energy eigenstate in that case was a momentum state, and therefore an unphysical and unnormalisable state, we nevertheless **use them** as a convenient **basis** from which we can form well-behaved **superpositions**.
 
