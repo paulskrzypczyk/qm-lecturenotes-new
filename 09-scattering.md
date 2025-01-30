@@ -8,14 +8,14 @@ authors:
     affiliations:
 ---
 
-`````{important} Video: Quantum harmonic oscillator I
+`````{important} Video: Scattering I
 :class: dropdown
 ```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/dbf4313f257d40619f647ab6f08f44d51d
 :width: 100%
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-I.pdf
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-I.pdf
 :width: 100%
 ```
 ````
@@ -74,9 +74,10 @@ We will start off considering Region I, to the left of the step. In this region 
 ```
 and so, just as we were able to do there, we can **immediately write down the energy eigenfunction**, as this is the same Hamiltonian (and the same as the free particle also!). As we discussed in [](#s-ISW-rII), any function of the form
 ```{math}
+:label: e-scattering-rI
 \vph u_E^\rI(x) = A e^{ikx} + Be^{-ikx},
 ```
-will be a eigenfunction, where $A$ and $B$ are arbitrary complex numbers, where the corresponding energy eigenvalue is  
+will be an eigenfunction, where $A$ and $B$ are arbitrary complex numbers, where the corresponding energy eigenvalue is  
 ```{math}
 :label: e-k
 \vph E = \frac{\hbar^2 k^2}{2M}.
@@ -87,13 +88,14 @@ Just as in the case of the infinite square well, we **don't yet know which super
 
 We now turn our attention to Region II, to the right of the step. In this region $V(x) = V_0$. In this region $\op{H} = \frac{\op{P}^2}{2M} + V_0$, and the TISE we want to solve is
 ```{math}
+:label: e-scattering-TISE-rII
 \left(\frac{\op{P}^2}{2M} + V_0\right)u_E^\rII(x) = E u_E^\rII(x).
 ```
 We can move the term involving $V_0$ from the left-hand to the right-hand side, to express this as
 ```{math}
 \frac{\op{P}^2}{2M}u_E^\rII(x) = (E-V_0) u_E^\rII(x).
 ```
-Since $V_0$ is just a constant, this has again **exactly the same form as for a free particle** except we are looking for an eigenvalue of $E' = (E-V_0)$, instead of $E$. The only **subtlety** we need to be careful about is that previously we tacitly had $E\geq 0$. We will therefore **make the same assumption that $E' \geq 0$**, i.e that $E > V_0$. Physically this means we are going to consider situations where **the particle has enough energy to classically climb the potential step**. We will study the opposite situation as an exercise. 
+Since $V_0$ is just a constant, this has again **exactly the same form as for a free particle** except we are looking for an eigenvalue of $E' = (E-V_0)$, instead of $E$. The only **subtlety** we need to be careful about is that previously we tacitly had $E\geq 0$. We will therefore **make the same assumption that $E' \geq 0$**, i.e that $E > V_0$. Physically this means we are going to consider situations where **the particle has enough energy to classically climb the potential step**. We will study the opposite situation as an [exercise](#ex-E-below-V0). 
 
 Given the above, we can once again **write down the solution**! In particular, the energy eigenfunction in region II will be identical in form to an energy eigenfunction **without a potential** and with energy $E'$. The solution is therefore 
 ```{math}
@@ -153,18 +155,18 @@ C' e^{ik'x} + D'e^{-ik'x} &\text{ if } x \geq 0.
 ```
 (where we now use primes on the constants $B'$, $C'$ and $D'$, to highlight the fact that this is a **distinct** eigenfunction with distinct unknown parameters at this stage). 
 
-In what follows, we will focus on **right-moving** particles, and leave the corresponding analysis of **left-moving** particles as an [exercise]().
+In what follows, we will focus on **right-moving** particles, and leave the corresponding analysis of **left-moving** particles as an [exercise](#ex-left-moving).
 
 ### Continuity of eigenfunctions and their first derivatives
 
-`````{important} Video: Quantum harmonic oscillator I
+`````{important} Video: Scattering II
 :class: dropdown
 ```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/dc7050cc03e74c499bfe36d91aee87051d
 :width: 100%
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-II.pdf
+%```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-II.pdf
 :width: 100%
 ```
 ````
@@ -242,6 +244,7 @@ This is reassuring, but what about for $V_0 \neq 0$? Here we see that $B$ **depe
 The way this is usually studied is by introducing the so-called **reflection coefficient**: it is taken to be, by definition, the squared-modulus of $B$:
 ````{card}
 ```{math}
+:label: e-R-coeff
 R = |B|^2 = \vph \left(\frac{k-k'}{k+k'}\right)^2
 ```
 ````
@@ -249,19 +252,20 @@ R = |B|^2 = \vph \left(\frac{k-k'}{k+k'}\right)^2
 *It is a little subtle, but **essentially** this captures roughly the **probability** that a particle of energy $E$ will be reflected. This isn't strictly true, since energy eigenstates aren't physical states (being unnormalisable). More formally, one can define the notion of a **probability current** (which unfortunately we don't have time to do in this course). $R$ can then be shown to be exactly the **size** of the reflected probability current relative to the incoming probability current.*
 ```
 
-It is most insightful to re-express this not in terms of $k$ and $k'$, but instead in terms of the physical parameters: the **energy** $E$ and the height of the potential step $V_0$. As you will show in [an exercise](#ex-R-physical), 
+It is most insightful to re-express this not in terms of $k$ and $k'$, but instead in terms of the physical parameters: the **energy** $E$ and the height of the potential step $V_0$. As you will show in an [exercise](#ex-R-physical), 
 ````{card}
 ```{math}
+:label: e-R-coeff-phys
 R = \left(\frac{\sqrt{\frac{E}{V_0}}-\sqrt{\frac{E}{V_0}-1}}{\sqrt{\frac{E}{V_0}}+\sqrt{\frac{E}{V_0}-1}}\right)^2
 ```
 ````
 We already saw that $B = 0$ when $V_0 = 0$, hence $R = |B|^2 = 0$, so the reflection coefficient can be as small as $0$. On the other hand, if $E$ becomes **very close** to $V_0$ (so that classically, it would only just be able to pass the barrier, after which it would then come to rest, having essentially no kinetic energy), $R$ will become very close to unity, since the second term in both the numerator and denominator will become very small. Thus, even though $E > V_0$, we can have **almost perfect reflection**! This is depicted in ... This is the **new quantum feature we discussed in the introduction**.
 
-In an exercise, you will furthermore see that we have reflection **even when $V_0$ is negative** — where naively we would not expect to see any reflection at all, since the particle always has enough energy to pass the step. 
+In an [exercise](#ex-V0-neg-R), you will furthermore see that we have reflection **even when $V_0$ is negative** — where naively we would not expect to see any reflection at all, since the particle always has enough energy to pass the step. 
 
 ## Evolution of wavefunctions
 
-`````{important} Video: Quantum harmonic oscillator I
+`````{important} Video: Scattering III
 :class: dropdown
 ```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/7a28c68ce9264309b3841df1953092c01d
 :width: 100%
@@ -315,3 +319,86 @@ We thus see that, as stated, the particle really does partially reflect and part
 The above is just one example, but captures the most important features of scattering in quantum mechanics. We could of course also study more realistic changes in potential (i.e. different forces exerted by the scatterer), however then in general it isn't possible to solve everything analytically as we have done here. 
 
 This brings to a close our study of quantum mechanics in one dimension! In the next chapter, we will begin exploring the more physically relavant situation of the mechanics of a quantum particle in three dimensions. 
+
+## Exercises
+
+````{exercise}
+:label: ex-left-moving
+
+In this exercise we will find the **left-moving** energy eigenfunction of energy $E$. Our starting point is the general form identified in the main text, 
+![](#e-eig-step-L)
+1. Use continuity of the eigenfunction at $x = 0$ to show that $B' = C' + D'$. Use this to eliminate $B'$. 
+2. Calculate $\frac{\partial}{\partial x} u_E^\rL(x)$. 
+3. Use continuity of the first derivative of the eigenfunction at $x = 0$ to show that $kB' = k'(D'-C')$. 
+4. Using part 1 and part 3, show that  $ C' = \left(\frac{k'-k}{k'+k}\right)D'$ and $B' = \left(\frac{2k'}{k'+k}\right)D'$.
+5. $D'$ is an overall normalisation constant which we choose to be $D' = 1$. Find a final expression for the left-moving energy eigenfunction of energy $E$. 
+
+```{dropdown} Answers
+1. n/a (show that).
+2. $$ \frac{\partial u_E^\rL(x)}{\partial x} = \begin{cases}
+-ikB'e^{-ikx} &\text{ if } x < 0, \\
+ik'(C' e^{ik'x} - D'e^{-ik'x}) &\text{ if } x \geq 0.
+\end{cases} $$
+3. n/a (show that)
+4. n/a (show that)
+5. $$ u_E^\rL(x) = \begin{cases}
+\frac{2k'}{k'+k}e^{-ikx} &\text{ if } x < 0, \\
+\frac{k'-k}{k'+k} e^{ik'x} + e^{-ik'x} &\text{ if } x \geq 0.
+\end{cases}$$
+```
+````
+
+````{exercise}
+:label: ex-E-below-V0
+In this exercise we will find the energy eigenfunction when $0 < E < V_0$. In Region I the situation is identical to before, given by [](#e-scattering-rI). We will therefore begin by focusing on region II, $x \geq 0$.  
+1. Starting from the TISE in Region II (i.e. [](#e-scattering-TISE-rII)), substitute in for $\op{P}^2$, and re-arrange to show that it can be written as $$ \vph\frac{\partial^2 u_E^\rII}{\partial x^2} = \frac{2M}{\hbar^2}(V_0 - E)u_E^\rII(x).$$
+2. Since $(V-E_0)$ is now positive, define $\lambda^2 = 2M(V_0 - E)/\hbar^2$. Show that $e^{\lambda x}$ and $e^{-\lambda x}$ are both solutions to the TISE from part 1. 
+We will discount the solution $e^{\lambda x}$ on **physical grounds**: this would correspond to an exponentially increasing probability density to find the particle beyond the step, which is unreasonable. We will therefore take the solution in Region II to be $u_E^\rII(x) = Ce^{-\lambda x}$.
+3. Use continuity of the energy eigenfunction at $x = 0$ to show that $A + B = C$.
+4. Calculate $\frac{\partial}{\partial x} u_E(x)$.
+5. Use continuity of the first derivative of the eigenfunction at $x = 0$ to show that $ik(A-B) = -\lambda C$. 
+4. Using part 3 and part 5, show that  $ B = -\left(\frac{\lambda + ik}{\lambda - ik}\right)A$ and $C = -\left(\frac{2ik}{\lambda - ik}\right)A.$
+5. $A$ is an overall normalisation constant which we choose to be $A = 1$. Find a final expression for the energy eigenfunction of energy $E < V_0$. 
+6. Calculate the reflection coefficient $R = |B|^2$. Does your answer make physical sense?
+
+```{dropdown} Answers
+1. n/a (show that).
+2. n/a (show that).
+3. n/a (show that).
+4. $$ \frac{\partial u_E(x)}{\partial x} = \begin{cases}
+ik(A e^{ikx} - Be^{-ikx}) &\text{ if } x < 0, \\
+-\lambda C e^{-\lambda x} &\text{ if } x \geq 0.
+\end{cases} $$
+5. n/a (show that).
+6. n.a (show that).
+7. $$ u_E(x) = \begin{cases}
+e^{ikx} - \frac{\lambda + ik}{\lambda - ik}e^{-ikx} &\text{ if } x < 0, \\
+-\frac{2ik}{\lambda - ik}e^{-\lambda x} &\text{ if } x \geq 0.
+\end{cases}$$
+8. $R = 1$. This makes sense: the particle is definitely reflected (although it **tunnels** into the wall a little first!). 
+```
+````
+
+````{exercise}
+:label: ex-R-physical
+1. Starting from [](#e-k), write $k$ as a function of $E$.
+2. Starting from [](#e-kp), write $k'$ as a function of $E$ and $V_0$. 
+3. Substitute your answers from part 1 and part 2  into [](#e-R-coeff), to show that after appropriate simplification, you arrive at [](#e-R-coeff-phys). 
+```{dropdown} Answers
+1. $k = \sqrt{2ME}/\hbar$. 
+2. $k' = \sqrt{2M(E_V_0)}/\hbar$.
+3. n/a (show that). 
+```
+````
+
+````{exercise}
+:label: ex-V0-neg-R
+Equation [](#e-R-coeff-phys) is not valid if $V_0 < 0$, since then the terms inside the second square root in the numerator and denominator are negative. This is because when we divided by $V_0$, it was tacitly assumed that $V_0 > 0$. We will fix this in this exercise. 
+1. Starting from [](#e-R-coeff), and using parts 1 and 2 from [](#ex-R-physical), show that we can also write $R$ as
+$$ R = \left(\frac{\sqrt{E} - \sqrt{E-V_0}}{\sqrt{E} + \sqrt{E-V_0}}\right)^2.$$
+2. Assume $V_0 = -1$ (which fixes the overall energy scale). Plot $R$ as a function of $E$ (using e.g. Desmos), to show that we **still** have reflection for small energies. 
+```{dropdown} Answers
+1. n/a (show that). 
+2. n/a (plot). 
+```
+````

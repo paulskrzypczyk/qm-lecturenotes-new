@@ -35,6 +35,7 @@ which should be compared to [](#e-general-quantum-state).
 This state corresponds to a **superposition** of the particle being at position $\rvec$. The 3D position states $\ket{\rvec}$ are **unphysical states**, which satisfy the orthogonality and normalisation condition
 ````{card}
 ```{math}
+:label: e-scalar-prod-3D-r
 \inner{\rvec'}{\rvec} = \delta^{(3)}(\rvec-\rvec'),
 ```
 ````
@@ -42,7 +43,7 @@ where $\delta^{(3)}(\rvec-\rvec')$ is the **3D Dirac delta function**, given by
 ```{math}
 \delta^{(3)}(\rvec-\rvec') = \delta(x-x')\delta(y-y')\delta(z-z'),
 ```
-i.e. it is the **product** of three delta functions, one for each coordinate. Using the 3D delta function, as an exercise you will show that the normalisation condition $\| \ket{\psi} \|^2 = 1$, in terms of the wavefunction $\psi(\rvec)$ becomes
+i.e. it is the **product** of three delta functions, one for each coordinate. Using the 3D delta function, as an [exercise](#ex-norm-3D) you will show that the normalisation condition $\| \ket{\psi} \|^2 = 1$, in terms of the wavefunction $\psi(\rvec)$ becomes
 ````{card}
 ```{math}
 :label: e-norm-3D-wf
@@ -51,9 +52,10 @@ i.e. it is the **product** of three delta functions, one for each coordinate. Us
 ````
 which should be compared to [](#e-norm-wavefunction).  The **interpretation** of this equation is in fact identical to the interpretation we gave to [](#e-norm-wavefunction). However, to arrive at this, we first need to introduce **operators** corresponding to the **coordinates** of the particle. 
 
-Finally, using the 3D Dirac delta function, as an exercise you will show that we have the direct analogue of [](#e-x-scalar) in 3D, namely 
+Finally, using the 3D Dirac delta function, as an [exercise](#ex-scalar-wf-3D) you will show that we have the direct analogue of [](#e-x-scalar) in 3D, namely 
 ````{card}
 ```{math}
+:label: e-scalar-prod-wf-3D
 \inner{\rvec}{\psi} = \psi(\rvec),
 ```
 ````
@@ -199,12 +201,14 @@ just as we did in [](#e-R-eig-eq-vec) for the 3D position operator $\hat{\mathbf
 *What about the wavefunction operator $\op{\mathbf{P}}$*? Well, for the position operator, we saw in [](#e-wf-op-R) that we in fact **kept the same wavefunction operator as we had in 1D**. Namely, we just multiplied by the coordinate. This suggests that for momentum we might have the same: that each component of the momentum operator should be specified the same way as in 1D, as in [](#e-op-P). We will thus take
 ````{card}
 ```{math}
+:label: e-mom-wf-op-3D
 \op{\mathbf{P}} &= \left(-i\hbar \frac{\partial}{\partial x}, -i\hbar \frac{\partial}{\partial y}, -i\hbar \frac{\partial}{\partial z}\right),\\
 &= -i\hbar \boldsymbol{\nabla}.
 ```
 ````
-As an exercise, you will show that the 3D momentum eigenfunctions $v_{\pvec}(\rvec)$ from [](#e-3D-mom-eigenfunc) are indeed eigenfunctions of the 3D wavefunction momentum operator, satisfying
+As an [exercise](#ex-mom-eig-3D), you will show that the 3D momentum eigenfunctions $v_{\pvec}(\rvec)$ from [](#e-3D-mom-eigenfunc) are indeed eigenfunctions of the 3D wavefunction momentum operator, satisfying
 ```{math}
+:label: e-mom-wf-eig-3D
 \op{\mathbf{P}}v_{\pvec}(\rvec) = \pvec v_{\pvec}(\rvec),
 ```
 which is the **same** eigenvalue equation for the momentum operator as [](#e-3D-P-eigenvalue-eq), just in terms of the wavefunction operator $\op{\mathbf{P}}$ instead of $\hat{\mathbf{P}}$. 
@@ -232,7 +236,7 @@ while all other pairs are in fact **compatible**,
 [\hat{Z},\hat{P}_x] &= 0,& [\hat{Z},\hat{P}_y] &= 0,& [\hat{Y},\hat{P}_z] &= 0,
 ```
 ````
-You will prove one example of the above as an exercise, from which all of the others follow by direct analogy. 
+You will prove one example of the above as an [exercise](#ex-comm-3D), from which all of the others follow by direct analogy. 
 
 The physical significance of the above is that we have analogues of the HUP [](#e-HUP) for all of the coordinates, namely
 ````{card}
@@ -302,6 +306,112 @@ The equation of motion of a particle in 3D is no different from the equation of 
 
 In 1D we saw that we **never actually solve the SE directly** — we instead used the **superposition principle** and the fact that **energy eigenstates evolve simply** to solve it **indirectly**. In 3D, nothing will change on this front either! 
 
-For example, assuming that the particle is **bound** and therefore that there it has a discrete set of **energy levels** $\ket{E_\mathbf{n}}$ (specified by the vector of quantum numbers $\mathbf{n}$), 
+For example, assuming that the particle is **bound** and therefore that it has a discrete set of **energy levels** $\ket{E_\mathbf{n}}$ (specified by the vector of quantum numbers $\mathbf{n}$), this if this is the initial state of a particle at time $t = 0$, i.e. $\ket{\psi(t=0)} = \ket{E_\mathbf{n}}$, then the state at time $t$ will simply be
+```{math}
+\ket{\psi(t)} = e^{-iE_{\mathbf{n}}t/\hbar}\ket{E_\mathbf{n}},
+```
+as can be directly verified by substituting into the SE. 
+
+For an initial state $\ket{\psi_\init}$, it is again crucial to  write it as a superposition of energy eigenstates as
+```{math}
+:label: e-psi-init-3D
+\ket{\psi_\init} = \sum_{\mathbf{n}} \alpha_{\mathbf{n}} \ket{E_\mathbf{n}},
+```
+where the summation runs over all the possible values of $\mathbf{n}$, e.g. this is really **3 summations**, overs $n_x$, $n_y$ and $n_z$, all of which are potentially infinite. 
+
+In this form, we can **directly apply the superposition principle** to write down the evolution of the particle, which is given by
+````{card}
+```{math}
+\ket{\psi(t)} = \sum_{\mathbf{n}} \alpha_\mathbf{n} e^{-iE_\mathbf{n} t/\hbar} \ket{E_\mathbf{n}}.
+```
+````
+Taking the scalar product of both sides with $\bra{\rvec}$, we arrive at the evolution of the 3D wavefunction in time, 
+````{card}
+```{math}
+:label: e-psi-t-3D
+\psi(\rvec,t) = \sum_{\mathbf{n}} \alpha_\mathbf{n} e^{-iE_\mathbf{n} t/\hbar} u_\mathbf{n}(\rvec),
+```
+````
+where we have written the energy eigenfunction $u_\mathbf{n}(\rvec) = \inner{\rvec}{E_\mathbf{n}}$ of the energy level $E_\mathbf{n}$ in the same **shorthand notation** as previously (i.e. with a subscript $\mathbf{n}$ in place of $E_\mathbf{n}$, just as we did for the energy levels of the infinite square well and harmonic oscillator). 
+
+*How do we write an arbitrary initial quantum state $\ket{\psi_\init}$ in the form [](#e-psi-init-3D)?* That is, how do we determine $\alpha_\mathbf{n}$? We use the direct analogy of [](#e-wf-to-energy): 
+
+````{card}
+```{math}
+:label: e-alpha-n-3D
+\alpha_\mathbf{n} = \int_V \psi_\init(\rvec) u_\mathbf{n}^*(\rvec) d^3\rvec,
+```
+````
+where $\psi_\init(\rvec) = \inner{\rvec}{\psi_\init}$ is the 3D wavefunction of the initial state $\ket{\psi}$. We use this form, as typically it is the **energy eigenfunctions that we know explicitly**, and so this is the most useful form to have. 
+
+If we wanted to, we could combine [](#e-psi-t-3D) and [](#e-alpha-n-3D) to write the 3D wavefunction at time $t$ **directly** in terms of the intial wavefunction as 
+````{card}
+```{math}
+\psi(\rvec,t) = \sum_{\mathbf{n}} \int_V \psi_\init(\rvec') u_\mathbf{n}^*(\rvec')  u_\mathbf{n}(\rvec) e^{-iE_\mathbf{n} t/\hbar} d^3\rvec',
+```
+```` 
+where we have been **careful** to change our integration variable to $\rvec'$ (as always!), and where this should be compared to [](#e-psi-x-t-isw-II). This can be used to numerically solve for the quantum wavefunction at any time $t$, given any initial wavefunction. 
+
+## Exercises
+
+````{exercise}
+:label: ex-norm-3D
+1. Write down the bra-vector $\bra{\psi}$ associated to [](#e-3D-spatial-wf). 
+2. Use part 1 to find an expression for $\inner{\psi}{\psi}$ (being careful to introduce a second integration variable for either $\ket{\psi}$ or $\bra{\psi}$). 
+3. Use [](#e-scalar-prod-3D-r) to arrive at the normalisation condition for the 3D wavefunction as given in [](#e-norm-3D-wf). 
 
 
+```{dropdown} Answers
+1. $\bra{\psi} = \int_V \psi^*(\rvec') \bra{\rvec'}d^3 \rvec'$.
+2. $ \inner{\psi}{\psi} = \int_V \int_V \psi^*(\rvec)\psi(\rvec) \inner{\rvec'}{\rvec} d^3 \rvec' d^3 \rvec.$
+3. n/a (show that). 
+
+```
+````
+
+````{exercise}
+:label: ex-scalar-wf-3D
+
+Take the scalar product between a general quantum state of the form [](#e-3D-spatial-wf) and the 3D position state $\bra{\rvec'}$, and use [](#e-scalar-prod-3D-r) to show that [](#e-scalar-prod-wf-3D) holds. 
+
+```{dropdown} Answers
+n/a (show that). 
+```
+````
+
+````{exercise}
+:label: ex-degen-coordinate-ops
+In this exercise it will be convenient to write a position state $\ket{\rvec}$ more fully as $\ket{\rvec} = \ket{x,y,z}$, explicitly in terms of all 3 coordinates separately. 
+
+1. Does $\hat{X}\ket{x,y,z} = x \ket{x,y,z}$, hold for **any** choice of $y$ and $z$? If yes, explain why this implies that there are **infinitely many position states all with the same eigenvalue for $\hat{X}$.** 
+
+
+```{dropdown} Answers
+1. Yes it holds by the definition of $\hat{X}$ and its action on $\ket{\rvec}$. There are infinitely many states with the same $x$ coordinate, but different $y$ and $z$ coordinates. These are all eigenstates of $\hat{X}$, with the same eigenvalue. 
+```
+````
+
+````{exercise}
+:label: ex-mom-eig-3D
+Show that the 3D momentum eigenfunctions $v_{\pvec}(\rvec)$ [](#e-3D-mom-eigenfunc) are eigenfunctions of the 3D wavefunction momentum operator [](#e-mom-wf-op-3D), satisfying
+![](#e-mom-wf-eig-3D)
+
+
+```{dropdown} Answers
+n/a (show that)
+```
+````
+
+````{exercise}
+:label: ex-comm-3D
+1. Write down $\op{Y}$ and $\hat{P}_{z,\mathrm{w}}$. 
+2. Use part 1 to calculate $[\op{Y}, \hat{P}_{z,\mathrm{w}}]\psi(\rvec)$, and show that it vanishes.
+3. Explain why this implies that $[\hat{Y}, \hat{P}_{z}] = 0$. 
+
+
+```{dropdown} Answers
+1. $\op{Y} = y$. $\hat{P}_{z,\mathrm{w}} = -i\hbar \frac{\partial}{\partial z}$. 
+2. n/a (show that). 
+3. This follows from [](#e-wf-comm-to-op-comm).
+```
+````

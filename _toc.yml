@@ -19,9 +19,10 @@ parts:
      - file: gaussian-integrals 
   - caption: Problem Sheets
     chapters:
-     - file: 01-problems
-     - file: 02-problems
-     - file: 03-problems
+     - file: w13-problems
+     - file: w14-problems
+     - file: w15-problems
+    # - file: w16-problems
   - caption: Licence
     chapters:
     - file: licence
