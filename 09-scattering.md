@@ -259,9 +259,25 @@ It is most insightful to re-express this not in terms of $k$ and $k'$, but inste
 R = \left(\frac{\sqrt{\frac{E}{V_0}}-\sqrt{\frac{E}{V_0}-1}}{\sqrt{\frac{E}{V_0}}+\sqrt{\frac{E}{V_0}-1}}\right)^2
 ```
 ````
-We already saw that $B = 0$ when $V_0 = 0$, hence $R = |B|^2 = 0$, so the reflection coefficient can be as small as $0$. On the other hand, if $E$ becomes **very close** to $V_0$ (so that classically, it would only just be able to pass the barrier, after which it would then come to rest, having essentially no kinetic energy), $R$ will become very close to unity, since the second term in both the numerator and denominator will become very small. Thus, even though $E > V_0$, we can have **almost perfect reflection**! This is depicted in ... This is the **new quantum feature we discussed in the introduction**.
+We already saw that $B = 0$ when $V_0 = 0$, hence $R = |B|^2 = 0$, so the reflection coefficient can be as small as $0$. On the other hand, if $E$ becomes **very close** to $V_0$ (so that classically, it would only just be able to pass the barrier, after which it would then come to rest, having essentially no kinetic energy), $R$ will become very close to unity, since the second term in both the numerator and denominator will become very small. Thus, even though $E > V_0$, we can have **almost perfect reflection**! This is depicted in [](#R+T). This is the **new quantum feature we discussed in the introduction**.
+
+````{figure} ./Pictures/R-T.svg
+:name: R+T
+:width: 450px
+:align: center
+
+**Reflection and transmission coefficients**. Plot of reflection and transmission coefficients for the finite step, as given in [](#e-R-coeff-phys) and [](#e-R-coeff-phys). We see that the particle is perfectly reflected when $E = V_0$, and that the reflection coefficient is large only for $E$ close to $V_0$. For large values of $E/V_0$, the particle is transmitted with almost unit probability.
+````
 
 In an [exercise](#ex-V0-neg-R), you will furthermore see that we have reflection **even when $V_0$ is negative** — where naively we would not expect to see any reflection at all, since the particle always has enough energy to pass the step. 
+
+Finally, since we see in the graph that $0 \leq R \leq 1$, we can define the **transmission coefficient** in a very natural way, as $T = 1-R$, so that, by construction $R + T = 1$. That is, if the particle isn't reflected, than it is transmitted. With this definition, we have
+````{card}
+```{math}
+T = \frac{4\sqrt{\frac{E}{V_0}}\sqrt{\frac{E}{V_0}-1}}{\left(\sqrt{\frac{E}{V_0}}+\sqrt{\frac{E}{V_0}-1}\right)^2}
+```
+````
+This is also plotted in [](#R+T). 
 
 ## Evolution of wavefunctions
 

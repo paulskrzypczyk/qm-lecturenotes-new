@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: Quantum Mechanics in 3D I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/9796f6c4f69f4ea9897c2f7dd985cd0d1d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-10-I.pdf
+:width: 100%
+```
+````
+`````
+
 In this chapter we are now ready to move onto the study of quantum mechancis in three dimensions! Much of what we have learnt up until this stage will carry across in a rather straightforward manner, which is good news. Obviously the world around us is three dimensional, and so it is necessary to move broaden our application of quantum mechanics to three dimensions, so that we can go on to study real-world situations, for example, laying the foundations for the study of the **Hydrogen atom** — arguably the most famous quantum system of all, and one of its biggest early successes. While we won't get all the way there in this unit, we will nevertheless introduce the basics of quantum mechancis in 3D, so that you will be able to go straight there next year. 
 
 ## The position of a particle in 3D
@@ -135,6 +148,19 @@ so that the probability to find the particle in a small region of volume $dV$ ar
 This then allows us to interpret the normalisation condition [](#e-norm-3D-wf) in a natural way: it says that the **total probability** to find the particle somewhere (in 3D now!) must be unity. 
 
 ## The momentum of a particle in 3D
+
+`````{important} Video: Quantum Mechanics in 3D I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/d7f8d88b8ac34a44ac1ca4aaa7da967f1d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-10-I.pdf
+:width: 100%
+```
+````
+`````
 
 Let us now turn our attention to the **momentum** of a particle in 3D. As with the position, the momentum is now a **vector** quantity, $\pvec = (p_x, p_y, p_z)$. In [](02-momentum) we saw that if a particle had a definite momentum $p_x$ in the $x$-direction, then the spatial wavefunction was the momentum eigenfunction $v_{p_x}(x) = \frac{1}{\sqrt{2\pi\hbar}} e^{ip_x x/\hbar}$. 
 

@@ -11,8 +11,8 @@ parts:
      - file: 06-free-particle
      - file: 07-infinite-square-well
      - file: 08-harmonic-oscillator
-    # - file: 09-scattering
-    # - file: 10-QM-in-3D
+     - file: 09-scattering
+     - file: 10-QM-in-3D
   - caption: Appendices
     chapters:
      - file: recap
@@ -22,7 +22,7 @@ parts:
      - file: w13-problems
      - file: w14-problems
      - file: w15-problems
-    # - file: w16-problems
+     - file: w16-problems
   - caption: Licence
     chapters:
     - file: licence
