@@ -149,14 +149,14 @@ This then allows us to interpret the normalisation condition [](#e-norm-3D-wf) i
 
 ## The momentum of a particle in 3D
 
-`````{important} Video: Quantum Mechanics in 3D I
+`````{important} Video: Quantum Mechanics in 3D II
 :class: dropdown
 ```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/d7f8d88b8ac34a44ac1ca4aaa7da967f1d
 :width: 100%
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-10-I.pdf
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-10-II.pdf
 :width: 100%
 ```
 ````
