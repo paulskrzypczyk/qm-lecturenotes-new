@@ -314,6 +314,7 @@ The associated **operator acting on wavefunctions** is
 From this we arrive at the 3D TISE, 
 ````{card}
 ```{math}
+:label: e-3D-TISE
 \op{H} u_E(\rvec) = Eu_E(\rvec),
 ```
 ````
