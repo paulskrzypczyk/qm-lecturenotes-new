@@ -106,8 +106,87 @@ As an [exercise](#ex-check-eigenfunctions) you will confirm explicitly that thes
 E_\mathbf{n} = \frac{\hbar^2 \pi^2}{2ML^2} \left(n_x^2 + n_y^2 + n_z^2\right).
 ```
 ````
+In what follows, it will be convenient to give a name to the combination $\frac{\hbar^2 \pi^2}{2ML^2}$, which is a **common multiple** among all energy levels. We will denote this by
+```{math}
+\Ebox = \frac{\hbar^2\pi^2}{2ML^2}.
+```
+
+Although we won't prove it here, the energy eigenstates we have found in the above are in fact **all energy eigenstates**. That is, our educated guess in fact encompasses every energy level of the 3D infinite box, and doesn't miss anything out.
+
+## Degeneracy of the energy levels
+
+Having obtained all of the energy levels of the 3D infinite box, we will now turn our attention to the one new property that arises in 3D which is new compared to 1D — degeneracy. It will be most instructive to start **enumerating** all of the energy levels and their corresponding energies. In order to 
 
 
+We do this in the following table: 
 
+````{list-table} **Energy levels of the 3D infinite box**. We enumerate here the energy levels of the box, in increasing energy. As we can see, we have **degeneracy**: multiple distinct energy levels all with the same energy eigenvalue. **Note**: In the final column, we only write the form of the energy eigenfunction **inside** the box (and leave it **implicit** that outside the box the wavefunction vanishes). 
+:header-rows: 1
+:name: t-Hermite
+
+* - $\mathbf{n} = (n_x,n_y,n_z)$ 
+  - Energy $E_{\mathbf{n}}$ 
+  - Energy eigenfunction $u_\mathbf{n}(\rvec)$ 
+* - (1,1,1)
+  - $3\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{\pi x}{L}\sin \frac{\pi y}{L}\sin \frac{\pi z}{L}$
+* - (1,1,2)
+  - $6\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{\pi x}{L}\sin \frac{\pi y}{L}\sin \frac{2\pi z}{L}$
+* - (1,2,1)
+  - $6\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{\pi x}{L}\sin \frac{2\pi y}{L}\sin \frac{\pi z}{L}$
+* - (2,1,1)
+  - $6\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{2\pi x}{L}\sin \frac{\pi y}{L}\sin \frac{\pi z}{L}$
+* - (1,2,2)
+  - $9\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{\pi x}{L}\sin \frac{2\pi y}{L}\sin \frac{2\pi z}{L}$
+* - (2,1,2)
+  - $9\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{2\pi x}{L}\sin \frac{\pi y}{L}\sin \frac{2\pi z}{L}$
+* - (2,2,1)
+  - $9\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{2\pi x}{L}\sin \frac{2\pi y}{L}\sin \frac{\pi z}{L}$
+* - (1,1,3)
+  - $11\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{\pi x}{L}\sin \frac{\pi y}{L}\sin \frac{3\pi z}{L}$
+* - (1,3,1)
+  - $11\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{\pi x}{L}\sin \frac{3\pi y}{L}\sin \frac{\pi z}{L}$
+* - (3,1,1)
+  - $11\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{3\pi x}{L}\sin \frac{\pi y}{L}\sin \frac{\pi z}{L}$
+* - (2,2,2)
+  - $12\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{2\pi x}{L}\sin \frac{2\pi y}{L}\sin \frac{2\pi z}{L}$
+* - (1,2,3)
+  - $14\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{\pi x}{L}\sin \frac{2\pi y}{L}\sin \frac{3\pi z}{L}$
+* - (1,3,2)
+  - $14\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{\pi x}{L}\sin \frac{3\pi y}{L}\sin \frac{2\pi z}{L}$
+* - (2,1,3)
+  - $14\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{2\pi x}{L}\sin \frac{\pi y}{L}\sin \frac{3\pi z}{L}$
+* - (2,3,1)
+  - $14\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{2\pi x}{L}\sin \frac{3\pi y}{L}\sin \frac{\pi z}{L}$
+* - (3,1,2)
+  - $14\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{3\pi x}{L}\sin \frac{\pi y}{L}\sin \frac{2\pi z}{L}$
+* - (3,2,1)
+  - $14\Ebox$
+  - $\sqrt{\frac{8}{L^3}} \sin \frac{3\pi x}{L}\sin \frac{2\pi y}{L}\sin \frac{\pi z}{L}$
+````
+The reasons for including so many levels in this table is so that we can get a feeling for the **complexity** that arises. In particular, what we see is that the ground state is still a so-called **non-degenerate** energy level: there is a unique state of lowest energy (equal to $3\Ebox$), just like in 1D. 
+
+In contrast, the next two energies are both **triply degenerate**, at energy $6\Ebox$ and $9\Ebox$. *Where did this 3-fold degeneracy come from?* If we look at the structure of $\mathbf{n}$, we see it arises due to **combinatorics**: there are 3 vectors which have a single 2 and two 1s. With this insight, we see that **any level** of the form $\mathbf{n} = (n,n',n')$ (i.e. with a repetition in one of the quantum numbers) will be 3-fold degenerate, just as is the case for levels of energy $9\Ebox$. 
+
+The only other situation we can encounter is when $n_x \neq n_y \neq n_z$. This happens for the first time when the energy is $14\Ebox$. In this case, the combinatorics gives us **6 energy levels with the same energy**, as there are **6 permutations** of 3 numbers. 
+
+Finally, we also see that the level at energy $12\Ebox$ with $\mathbf{n} = (2,2,2)$ is non-degenerate, just like the ground state. This also follows from combinatorics: there is a single vector $\mathbf{n} = (n,n,n)$ for any integer $n$ (and no permutations). 
+
+A little thought shows that these are the **only possibilities**. That is, we will only find energy levels which are non-degenerate, 3-fold degenerate, or 6-fold degenerate. This is particular to the 3D infinite box, and moreover, to the **symmetric 3D infinite box** with all side lengths equal (to $L$). In other potentials — such as Hydrogren — we will have a different degeneracy structure, but this is the origin of the famous s, p and d **shells** that you may have already encountered, each being a different degenerate collection of energy levels. 
 
 
