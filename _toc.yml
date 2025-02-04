@@ -13,7 +13,7 @@ parts:
      - file: 08-harmonic-oscillator
      - file: 09-scattering
      - file: 10-QM-in-3D
-     - file: 11-3D-infinite-box
+    # - file: 11-3D-infinite-box
   - caption: Appendices
     chapters:
      - file: recap
