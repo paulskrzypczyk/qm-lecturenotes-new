@@ -349,13 +349,14 @@ where the summation runs over all the possible values of $\mathbf{n}$, e.g. this
 In this form, we can **directly apply the superposition principle** to write down the evolution of the particle, which is given by
 ````{card}
 ```{math}
+:label: e-psi-t-3D
 \ket{\psi(t)} = \sum_{\mathbf{n}} \alpha_\mathbf{n} e^{-iE_\mathbf{n} t/\hbar} \ket{E_\mathbf{n}}.
 ```
 ````
 Taking the scalar product of both sides with $\bra{\rvec}$, we arrive at the evolution of the 3D wavefunction in time, 
 ````{card}
 ```{math}
-:label: e-psi-t-3D
+:label: e-psi-t-3D-wf
 \psi(\rvec,t) = \sum_{\mathbf{n}} \alpha_\mathbf{n} e^{-iE_\mathbf{n} t/\hbar} u_\mathbf{n}(\rvec),
 ```
 ````
@@ -371,7 +372,7 @@ where we have written the energy eigenfunction $u_\mathbf{n}(\rvec) = \inner{\rv
 ````
 where $\psi_\init(\rvec) = \inner{\rvec}{\psi_\init}$ is the 3D wavefunction of the initial state $\ket{\psi}$. We use this form, as typically it is the **energy eigenfunctions that we know explicitly**, and so this is the most useful form to have. 
 
-If we wanted to, we could combine [](#e-psi-t-3D) and [](#e-alpha-n-3D) to write the 3D wavefunction at time $t$ **directly** in terms of the intial wavefunction as 
+If we wanted to, we could combine [](#e-psi-t-3D-wf) and [](#e-alpha-n-3D) to write the 3D wavefunction at time $t$ **directly** in terms of the intial wavefunction as 
 ````{card}
 ```{math}
 \psi(\rvec,t) = \sum_{\mathbf{n}} \int_V \psi_\init(\rvec') u_\mathbf{n}^*(\rvec')  u_\mathbf{n}(\rvec) e^{-iE_\mathbf{n} t/\hbar} d^3\rvec',

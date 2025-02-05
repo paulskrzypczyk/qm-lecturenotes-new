@@ -89,6 +89,7 @@ Now, we **aren't looking for eigenfunctions of an individual component of the ki
 
 ````{card}
 ```{math}
+:label: e-3D-box-eigenfunctions
 \vph u_\mathbf{n}(\rvec) &= u_{n_x}(x)u_{n_y}(y)u_{n_z}(z),\\
 &= \begin{cases} \sqrt{\frac{8}{L^3}} \sin \frac{n_x \pi x}{L}\sin \frac{n_y \pi y}{L}\sin \frac{n_z \pi z}{L} &\text{ if } 0 \leq x,y,z \leq L, \\
 0 &\text{ otherwise,} \end{cases}
@@ -122,7 +123,7 @@ We do this in the following table:
 
 ````{list-table} **Energy levels of the 3D infinite box**. We enumerate here the energy levels of the box, in increasing energy. As we can see, we have **degeneracy**: multiple distinct energy levels all with the same energy eigenvalue. **Note**: In the final column, we only write the form of the energy eigenfunction **inside** the box (and leave it **implicit** that outside the box the wavefunction vanishes). 
 :header-rows: 1
-:name: t-Hermite
+:name: t-3D-box-degeneracy
 
 * - $\mathbf{n} = (n_x,n_y,n_z)$ 
   - Energy $E_{\mathbf{n}}$ 
@@ -189,6 +190,84 @@ The only other situation we can encounter is when $n_x \neq n_y \neq n_z$. This 
 
 Finally, we also see that the level at energy $12\Ebox$ with $\mathbf{n} = (2,2,2)$ is non-degenerate, just like the ground state. This also follows from combinatorics: there is a single vector $\mathbf{n} = (n,n,n)$ for any integer $n$ (and no permutations). 
 
-A little thought shows that these are the **only possibilities**. That is, we will only find energy levels which are non-degenerate, 3-fold degenerate, or 6-fold degenerate. This is particular to the 3D infinite box, and moreover, to the **symmetric 3D infinite box** with all side lengths equal (to $L$). In other potentials — such as Hydrogren — we will have a different degeneracy structure, but this is the origin of the famous s, p and d **shells** that you may have already encountered, each being a different degenerate collection of energy levels. 
+All of the above degeneracies can be seen to arise due to **symmetries** — our ability to swap say $x$ and $y$ when $n_x$ and $n_y$ were equal. This didn't actually change the energy eigenfunction, and this is why the energy has to be the same. 
 
+There is in fact another type of degeneracy that can arise, which **isn't due to symmetry**, but is in fact just **accidental**. For example, the two levels $E_{(7,1,1)}$ and $E_{(5,5,1)}$ are degenerate, with energy $51\Ebox$, because $5^2 + 5^2 + 1^2$ happens to be equal to $7^2 + 1^2 + 1^2$. This has **nothing** to do with symmetry, and is just a particularity of the specific dependence of $E_\mathbf{n}$ on $\mathbf{n}$ (i.e. that it is the sum of the components squared). 
 
+In other potentials — such as Hydrogren — we will have a different degeneracy structure. It is important to realise however that it is precisely degeneracy that is the origin of the famous s, p and d **shells** that you may have already encountered, each being a different degenerate collection of energy levels. 
+
+## Evolution of particles inside a 3D box
+
+As a final topic, we will now look at the evolution of a particle confined inside a 3D box. While on the one hand, the situation is just another example of what we have already encountered (i.e. an application of the superposition principle!), we will see that studying motion in 3D allows us to see more **complex** features, such as **correlation** between the different coordinates of the particle in time. 
+
+In the previous chapter, we already gave the **general formulas** for time evolution in 3D. Specicially, we saw that an initial state of the form 
+![](#e-psi-init-3D) 
+evolves into
+![](#e-psi-t-3D)
+with corresponding wavefunction
+![](#e-psi-t-3D-wf)
+
+Therefore, here we will consider a simple example, and see how we can analyse the behaviour. To that end, consider the specific initial wavefunction
+```{math}
+\psi_\init(\rvec) = \frac{1}{\sqrt{2}}\left(u_{(1,1,1)}(\rvec) + u_{(2,2,1)}(\rvec)\right),
+```
+the wavefunction associated to an **equal superposition** of the ground state $\ket{E_{(1,1,1)}}$ of energy $E_{(1,1,1)} = 3\Ebox$ and the state $\ket{E_{(2,2,1)}}$ of energy $E_{(2,2,1)} = 9\Ebox$, from the 3rd energy level. This state has $\alpha_{(1,1,1)} = \frac{1}{\sqrt{2}}$, $\alpha_{(2,2,1)} = \frac{1}{\sqrt{2}}$, and all other $\alpha_{\mathbf{n}} = 0$. 
+
+Using the superposition principle, we can immediate write down the wavefunction of the particle at time $t$, which is given by
+```{math}
+\psi(\rvec,t) = \frac{1}{\sqrt{2}}\left(e^{-3i\Ebox t/\hbar}u_{(1,1,1)}(\rvec) + e^{-9i\Ebox t/\hbar} u_{(2,2,1)}(\rvec)\right).
+```
+We could stop here, but what is interesting is to analyse the properties of the particle. First, we can calculate the **probability density** $\pd(\rvec,t) = |\psi(\rvec,t)|^2$. As you will confirm in an [exercise], this is given by
+```{math}
+:label: e-3D-pd-box-ex
+\pd(\rvec,t) = \frac{1}{2}\left(|u_{(1,1,1)}(\rvec)|^2 + |u_{(2,2,1)}(\rvec)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_{(1,1,1)}(\rvec) u_{(2,2,1)}(\rvec)\right) 
+```
+This is the probability density in 3D, but there is nothing to stop as asking questions about the probability density of any given coordinate. This is formally a **marginal probability density**, and we can obtain it by **integrating out** the coordinates we aren't interested in (so that we get the **total probability density** for the remaining coordinate). For example, for the $x$ coordinate, we see have
+```{math}
+\pd(x,t) = \vph \infint \infint \pd(\rvec,t) dy dz, 
+```
+In order to evaluate this, it will be advantageous to use the fact that the energy eigenfunctions of the 3D box are **products** of the eigenfunctions of the **1D infinite square well** (as given in [](#e-3D-box-eigenfunctions)). Focusing first on the first term on the right-hand side of [](#e-3D-pd-box-ex), we see that
+```{math}
+\vph \infint \infint |u_{(1,1,1)}(\rvec)|^2 dy dz &= \infint \infint |u_1(x)|^2 |u_1(y)|^2 |u_1(z)|^2 dy dz, \\ 
+&= |u_1(x)|^2 \infint |u_1(y)|^2 dy \infint |u_1(z)|^2 dz, \\
+&= |u_1(x)|^2,
+```
+where in the first line we write the eigenfunction in terms of the eigenfunctions of the 1D infinite well, in the second line we have reorganised the integrals, and in the third line we have used the fact that the **energy eigenfunctions of the 1D infinite square well are normalised**, hence the integrals evaluate to unity (without having to do any work!). 
+
+We arrive at a similar conclusion for the second term on the right-hand side of [](#e-3D-pd-box-ex), and see that after integrating over $y$ and $z$, we are left with $|u_2(x)|^2$. For the last term, the situation is interesting. The relevant integral is 
+```{math}
+\vph \infint \infint u_{(1,1,1)}(\rvec)u_{(2,2,1)}(\rvec) dy dz & = u_1(x)u_2(x) \infint u_1(y)u_2(y) dy \infint u_1(z) u_1(z) dz, \\ 
+&= 0.
+```
+*Why is this zero?* It is because of the integral over y. We should recall that **the energy eigenfunctions of the infinite square are real**. This means we could equally write $u_1(y)$ as $u_1^*(y)$. The integral over $y$ is thus nothing but $\inner{E_1}{E_2}$ in disguise (as you have shown as an exercise in class, and where $\ket{E_1}$ and $\ket{E_2}$ refer to energy eigenstates of the 1D infinite square well). Since the energy levels are **orthogonal**, the integral over y vanishes.  
+
+Putting everything together, we therefore see that
+```{math}
+\pd(x) = \frac{1}{2}\left(|u_1(x)|^2 + |u_2(x)|^2\right), 
+```
+which is **independent of time**! That is, if we only keep track of the x coordinate of the particle, this doesn't change in time. Similar calculations, which you will do as an [exercise] show that similarly 
+```{math}
+\pd(y) &= \frac{1}{2}\left(|u_1(y)|^2 + |u_2(y)|^2\right),\\
+\pd(z) &= |u_1(z)|^2,
+```
+and are thus **also independent of time**. 
+
+*What is this telling us?* It actually shows that the **motion in the different coordinates must be correlated**, as the probability density $\pd(\rvec,t)$ is definite **not** independent of time. It is actually the $x$ and $y$ coordinates that are correlated. We can study these by integrating over $z$. As an exercise, you will show that
+```{math}
+:label: e-3D-example-pd-x-y
+\pd(x,y) &= \vph \infint \pd(\rvec, t) dz, \\
+&= \frac{1}{2}\left(|u_1(x)|^2 |u_1(y)|^2 + |u_2(x)|^2 |u_2(y)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_1(x)u_2(x)u_1(y)u_2(y)\right)
+```
+In the following animation, you can see what this marginal probability density looks like:
+
+```{figure} ./Pictures/3D box p-x-y.gif
+:name: 3D-example
+:width: 300px
+:align: center
+
+**Probability density in the $x$ and $y$ direction.**  An animation of probability density $\pd(x,y)$ as given in [](#e-3D-example-pd-x-y). The $z$ axis in this plot is $\pd(x,y)$ (and **not** the box!). That is, we are ignoring motion along the $z$ direction, just studying the motion of the particle in the $x$ and $y$ directions only. We see that the particle oscillates, between two distributions, each of which has two large peaks. If we look along only **one** direction, we can see how the individual probability densities $\pd(x)$ and $\pd(y)$ are time independent. 
+```
+
+As you can see, the particle **oscillates** back and forth, in a **correlated fashion**. In an [exercise], you will study this correlation using the so-called **covariance**, a measure for how **correlated** the two coordinates of the particle are, on average at any given time. You will see that the coordinates oscillate between being **correlated** (both being large and positive / negative at the same time) to being **anti-correlated** (having opposite signs at a given time). 
+
+The main message here is that even **simple superpositions** of energy eigenstates can exhibit **interesting correlated dynamics**. This example is articifial, but hopefully from it you can see a glimplse of the **rich dynamics** that quantum particles exhibit in 3D. 
