@@ -100,7 +100,7 @@ With these defined, we can now define the annihilation and creation operators, w
 ````
 That is, the creation operator is a **dimensionless** combination of the position and momentum operators, with the momentum operator multipled by the imaginary number $i$ (and an overall normalisation factor of $1/\sqrt{2}$). 
 
-*Why did we call the annihilation operator $\hat{a}^\dagger$?* Because it is indeed the **Hermitian conjugate operator to $\hat{a}$**: Recall that since position and momentum are **observable quantities** the operators $\hat{X}$ and $\hat{P}$ are **Hermitian**, satisfying $\hat{X}^\dagger = \hat{X}$ and $\hat{P}^\dagger = \hat{P}$. Thus, when we take the Hermitian conjugate of $\hat{a}$, the **only** change is to the sign of the imaginary number $i$, which is precisely the definition of $\hat{a}^\dagger$. 
+*Why did we call the creation operator $\hat{a}^\dagger$?* Because it is indeed the **Hermitian conjugate operator to $\hat{a}$**: Recall that since position and momentum are **observable quantities** the operators $\hat{X}$ and $\hat{P}$ are **Hermitian**, satisfying $\hat{X}^\dagger = \hat{X}$ and $\hat{P}^\dagger = \hat{P}$. Thus, when we take the Hermitian conjugate of $\hat{a}$, the **only** change is to the sign of the imaginary number $i$, which is precisely the definition of $\hat{a}^\dagger$. 
 
 *So, how do we see that these operators do as stated?* The claim is that if we act with the creation operator on an energy eigenstate $\ket{E_n}$ (of the quantum harmonic oscillator), then we will obtain (up to normalisation) **the energy eigenstate $\ket{E_{n+1}}$.** To be an energy eigenstate means that $\hat{H} \ket{E_n} = E_n \ket{E_n}$. Thus, the claim above, expressed mathematically, is that
 ```{math}

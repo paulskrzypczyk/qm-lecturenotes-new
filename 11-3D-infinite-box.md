@@ -183,6 +183,8 @@ The reasons for including so many levels in this table is so that we can get a f
 
 In contrast, the next two energies are both **triply degenerate**, at energy $6\Ebox$ and $9\Ebox$. *Where did this 3-fold degeneracy come from?* If we look at the structure of $\mathbf{n}$, we see it arises due to **combinatorics**: there are 3 vectors which have a single 2 and two 1s. With this insight, we see that **any level** of the form $\mathbf{n} = (n,n',n')$ (i.e. with a repetition in one of the quantum numbers) will be 3-fold degenerate, just as is the case for levels of energy $9\Ebox$. 
 
+It is important to note that even though these states have the same energy, as you'll confirm in an [exercise], they are still nevertheless **orthgonal states**, e.g. $\inner{E_{(1,1,2)}}{E_{(1,2,1)}} = 0$, because in the two cases the corresponding vector of quantum numbers is **different**. 
+
 The only other situation we can encounter is when $n_x \neq n_y \neq n_z$. This happens for the first time when the energy is $14\Ebox$. In this case, the combinatorics gives us **6 energy levels with the same energy**, as there are **6 permutations** of 3 numbers. 
 
 Finally, we also see that the level at energy $12\Ebox$ with $\mathbf{n} = (2,2,2)$ is non-degenerate, just like the ground state. This also follows from combinatorics: there is a single vector $\mathbf{n} = (n,n,n)$ for any integer $n$ (and no permutations). 
