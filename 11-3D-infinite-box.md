@@ -101,6 +101,10 @@ where, just as we did in 1D, we have **changed notation** from $u_E(\rvec)$ to $
 \mathbf{n} = (n_x, n_y, n_z).
 ```
 ````
+```{aside} *A note on notation*
+*Please note that there is a slightly confusing notation going on here: $u_\mathbf{n}(\rvec)$ are the **energy eigenfunctions of the 3D box**. On the other hand, $u_{n_x}(x)$, $u_{n_y}(y)$ and $u_{n_z}(z)$ are the eigenfunctions of the **1D infinite square well**. Since in 3D the eigenfunctions are a function of $\rvec$, and are labelled by the vector $\mathbf{n}$, while  in 1D they are functions of a single variable ($x$ or $y$ or $z$), and labelled by a single quantum number ($n_x$ or $n_y$ or $n_z$) there shouldn't be any ambiguity here. Nevertheless, I want to flag this up, in case the distinction gets missed and causes confusion.*
+```
+
 As an [exercise](#ex-check-eigenfunctions) you will confirm explicitly that these functions **satisfy the TISE** [](#e-TISE-3D-box) with energy eigenvalue 
 ````{card}
 ```{math}
@@ -184,7 +188,7 @@ The reasons for including so many levels in this table is so that we can get a f
 
 In contrast, the next two energies are both **triply degenerate**, at energy $6\Ebox$ and $9\Ebox$. *Where did this 3-fold degeneracy come from?* If we look at the structure of $\mathbf{n}$, we see it arises due to **combinatorics**: there are 3 vectors which have a single 2 and two 1s. With this insight, we see that **any level** of the form $\mathbf{n} = (n,n',n')$ (i.e. with a repetition in one of the quantum numbers) will be 3-fold degenerate, just as is the case for levels of energy $9\Ebox$. 
 
-It is important to note that even though these states have the same energy, as you'll confirm in an [exercise], they are still nevertheless **orthgonal states**, e.g. $\inner{E_{(1,1,2)}}{E_{(1,2,1)}} = 0$, because in the two cases the corresponding vector of quantum numbers is **different**. 
+It is important to note that even though these states have the same energy, as you'll confirm in an [exercise], they are still nevertheless **orthogonal states**, e.g. $\inner{E_{(1,1,2)}}{E_{(1,2,1)}} = 0$, because in the two cases the corresponding vector of quantum numbers is **different**. 
 
 The only other situation we can encounter is when $n_x \neq n_y \neq n_z$. This happens for the first time when the energy is $14\Ebox$. In this case, the combinatorics gives us **6 energy levels with the same energy**, as there are **6 permutations** of 3 numbers. 
 
@@ -204,7 +208,7 @@ In the previous chapter, we already gave the **general formulas** for time evolu
 ![](#e-psi-init-3D) 
 evolves into
 ![](#e-psi-t-3D)
-with corresponding wavefunction
+with corresponding wavefunction $\inner{\rvec}{\psi(t)}$, 
 ![](#e-psi-t-3D-wf)
 
 Therefore, here we will consider a simple example, and see how we can analyse the behaviour. To that end, consider the specific initial wavefunction
@@ -222,9 +226,9 @@ We could stop here, but what is interesting is to analyse the properties of the 
 :label: e-3D-pd-box-ex
 \pd(\rvec,t) = \frac{1}{2}\left(|u_{(1,1,1)}(\rvec)|^2 + |u_{(2,2,1)}(\rvec)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_{(1,1,1)}(\rvec) u_{(2,2,1)}(\rvec)\right) 
 ```
-This is the probability density in 3D, but there is nothing to stop as asking questions about the probability density of any given coordinate. This is formally a **marginal probability density**, and we can obtain it by **integrating out** the coordinates we aren't interested in (so that we get the **total probability density** for the remaining coordinate). For example, for the $x$ coordinate, we see have
+This is the probability density in 3D, but there is nothing to stop as asking questions about the probability density of any given coordinate. This is formally a **marginal probability density**, and we can obtain it by **integrating out** the coordinates we aren't interested in (so that we get the **total probability density** for the remaining coordinate). For example, for the $x$ coordinate, we have
 ```{math}
-\pd(x,t) = \vph \infint \infint \pd(\rvec,t) dy dz, 
+\pd(x,t) = \vph \infint \infint \pd(\rvec,t) dy dz. 
 ```
 In order to evaluate this, it will be advantageous to use the fact that the energy eigenfunctions of the 3D box are **products** of the eigenfunctions of the **1D infinite square well** (as given in [](#e-3D-box-eigenfunctions)). Focusing first on the first term on the right-hand side of [](#e-3D-pd-box-ex), we see that
 ```{math}
@@ -239,7 +243,7 @@ We arrive at a similar conclusion for the second term on the right-hand side of 
 \vph \infint \infint u_{(1,1,1)}(\rvec)u_{(2,2,1)}(\rvec) dy dz & = u_1(x)u_2(x) \infint u_1(y)u_2(y) dy \infint u_1(z) u_1(z) dz, \\ 
 &= 0.
 ```
-*Why is this zero?* It is because of the integral over y. We should recall that **the energy eigenfunctions of the infinite square are real**. This means we could equally write $u_1(y)$ as $u_1^*(y)$. The integral over $y$ is thus nothing but $\inner{E_1}{E_2}$ in disguise (as you have shown as an exercise in class, and where $\ket{E_1}$ and $\ket{E_2}$ refer to energy eigenstates of the 1D infinite square well). Since the energy levels are **orthogonal**, the integral over y vanishes.  
+*Why is this zero?* It is because of the integral over y. We should recall that **the energy eigenfunctions of the infinite square are real**. This means we could equally write $u_1(y)$ as $u_1^*(y)$. The integral over $y$ is thus nothing but $\inner{E_1}{E_2}$ in disguise (as you have shown as an exercise in class, and where $\ket{E_1}$ and $\ket{E_2}$ refer to energy eigenstates of the 1D infinite square well). Since the energy levels are **orthogonal** (see [](#e-energy-levels-orthonormal)), the integral over y vanishes.  
 
 Putting everything together, we therefore see that
 ```{math}
@@ -252,7 +256,7 @@ which is **independent of time**! That is, if we only keep track of the x coordi
 ```
 and are thus **also independent of time**. 
 
-*What is this telling us?* It actually shows that the **motion in the different coordinates must be correlated**, as the probability density $\pd(\rvec,t)$ is definite **not** independent of time. It is actually the $x$ and $y$ coordinates that are correlated. We can study these by integrating over $z$. As an exercise, you will show that
+*What is this telling us?* It actually shows that the **motion in the different coordinates must be correlated**, as the probability density $\pd(\rvec,t)$ is definitely **not** independent of time. It is actually the $x$ and $y$ coordinates that are correlated. We can study these by integrating over $z$. As an exercise, you will show that
 ```{math}
 :label: e-3D-example-pd-x-y
 \pd(x,y) &= \vph \infint \pd(\rvec, t) dz, \\
