@@ -85,7 +85,7 @@ u'(\rvec) &= u_n(y)f'(x,z)& \text{and }&& u''(\rvec) &= f''(x,y)u_n(z),
 ```
 would be eigenfunctions of $\hat{P}^2_{y,\mathrm{w}}/2M$ and $\hat{P}^2_{z,\mathrm{w}}/2M$ respectively, all with the same eigenvalue $E_n$, for arbitrary functions $f'(x,z)$ and $f''(y,z)$. 
 
-Now, we **aren't looking for eigenfunctions of an individual component of the kinetic energy**. However, what we have seen above shows us that there is a way to find a **joint eigenfunction** of all 3 components! In particular, we see that if we find a function such that the behaviour in $x$ is $u_n(x)$, the behaviour in $y$ is $u_n(y)$ and the behaviour in $z$ is $u_n(z)$, then **this will do the job**! It is easy to write down such a function — it is **just the product of the three individual functions**! We only need to be **careful** and realise that we **shouldn't repeat $n$ 3 times, but consider 3 different values of $n$**, which we will call $n_x$, $n_y$ and $n_z$ respectively. Thus, we arrive at the **educated guess** (also called **ansatz** frequently), that the energy eigenfunctions of the infinite box are of the form
+Now, we **aren't looking for eigenfunctions of an individual component of the kinetic energy**. However, what we have seen above shows us that there is a way to find a **joint eigenfunction** of all 3 components! In particular, we see that if we find a function such that the behaviour in $x$ is $u_n(x)$, the behaviour in $y$ is $u_n(y)$ and the behaviour in $z$ is $u_n(z)$, then **this will do the job**! It is easy to write down such a function — it is **just the product of the three individual functions**! We only need to be **careful** and realise that we **shouldn't repeat $n$ 3 times, but consider 3 different values of $n$**, which we will call $n_x$, $n_y$ and $n_z$ respectively. Thus, we arrive at the **educated guess** (also called **ansatz** frequently), that the energy eigenfunctions of the 3D box are of the form
 
 ````{card}
 ```{math}
@@ -108,6 +108,7 @@ where, just as we did in 1D, we have **changed notation** from $u_E(\rvec)$ to $
 As an [exercise](#ex-check-eigenfunctions) you will confirm explicitly that these functions **satisfy the TISE** [](#e-TISE-3D-box) with energy eigenvalue 
 ````{card}
 ```{math}
+:label: e-energy-eigenvalue-3D-box
 E_\mathbf{n} = \frac{\hbar^2 \pi^2}{2ML^2} \left(n_x^2 + n_y^2 + n_z^2\right).
 ```
 ````
@@ -188,7 +189,7 @@ The reasons for including so many levels in this table is so that we can get a f
 
 In contrast, the next two energies are both **triply degenerate**, at energy $6\Ebox$ and $9\Ebox$. *Where did this 3-fold degeneracy come from?* If we look at the structure of $\mathbf{n}$, we see it arises due to **combinatorics**: there are 3 vectors which have a single 2 and two 1s. With this insight, we see that **any level** of the form $\mathbf{n} = (n,n',n')$ (i.e. with a repetition in one of the quantum numbers) will be 3-fold degenerate, just as is the case for levels of energy $9\Ebox$. 
 
-It is important to note that even though these states have the same energy, as you'll confirm in an [exercise], they are still nevertheless **orthogonal states**, e.g. $\inner{E_{(1,1,2)}}{E_{(1,2,1)}} = 0$, because in the two cases the corresponding vector of quantum numbers is **different**. 
+It is important to note that even though these states have the same energy, as you'll confirm in an [exercise](#ex-3D-box-orthogonal), they are still nevertheless **orthogonal states**, e.g. $\inner{E_{(1,1,2)}}{E_{(1,2,1)}} = 0$, because in the two cases the corresponding vector of quantum numbers is **different**. 
 
 The only other situation we can encounter is when $n_x \neq n_y \neq n_z$. This happens for the first time when the energy is $14\Ebox$. In this case, the combinatorics gives us **6 energy levels with the same energy**, as there are **6 permutations** of 3 numbers. 
 
@@ -219,9 +220,10 @@ the wavefunction associated to an **equal superposition** of the ground state $\
 
 Using the superposition principle, we can immediate write down the wavefunction of the particle at time $t$, which is given by
 ```{math}
+:label: e-wf-3D-ex-t
 \psi(\rvec,t) = \frac{1}{\sqrt{2}}\left(e^{-3i\Ebox t/\hbar}u_{(1,1,1)}(\rvec) + e^{-9i\Ebox t/\hbar} u_{(2,2,1)}(\rvec)\right).
 ```
-We could stop here, but what is interesting is to analyse the properties of the particle. First, we can calculate the **probability density** $\pd(\rvec,t) = |\psi(\rvec,t)|^2$. As you will confirm in an [exercise], this is given by
+We could stop here, but what is interesting is to analyse the properties of the particle. First, we can calculate the **probability density** $\pd(\rvec,t) = |\psi(\rvec,t)|^2$. As you will confirm in an [exercise](#ex-3D-box-pd-ex), this is given by
 ```{math}
 :label: e-3D-pd-box-ex
 \pd(\rvec,t) = \frac{1}{2}\left(|u_{(1,1,1)}(\rvec)|^2 + |u_{(2,2,1)}(\rvec)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_{(1,1,1)}(\rvec) u_{(2,2,1)}(\rvec)\right) 
@@ -247,19 +249,21 @@ We arrive at a similar conclusion for the second term on the right-hand side of 
 
 Putting everything together, we therefore see that
 ```{math}
-\pd(x) = \frac{1}{2}\left(|u_1(x)|^2 + |u_2(x)|^2\right), 
+:label: e-pd-x-3D-ex
+\pd(x,t) = \frac{1}{2}\left(|u_1(x)|^2 + |u_2(x)|^2\right), 
 ```
-which is **independent of time**! That is, if we only keep track of the x coordinate of the particle, this doesn't change in time. Similar calculations, which you will do as an [exercise] show that similarly 
+which is **independent of time**! That is, if we only keep track of the x coordinate of the particle, this doesn't change in time. Similar calculations, which you will do as an [exercise](#ex-3D-box-marginal) show that similarly 
 ```{math}
-\pd(y) &= \frac{1}{2}\left(|u_1(y)|^2 + |u_2(y)|^2\right),\\
-\pd(z) &= |u_1(z)|^2,
+:label: e-pd-y-z-3D-ex
+\pd(y,t) &= \frac{1}{2}\left(|u_1(y)|^2 + |u_2(y)|^2\right),\\
+\pd(z,t) &= |u_1(z)|^2,
 ```
 and are thus **also independent of time**. 
 
-*What is this telling us?* It actually shows that the **motion in the different coordinates must be correlated**, as the probability density $\pd(\rvec,t)$ is definitely **not** independent of time. It is actually the $x$ and $y$ coordinates that are correlated. We can study these by integrating over $z$. As an exercise, you will show that
+*What is this telling us?* It actually shows that the **motion in the different coordinates must be correlated**, as the probability density $\pd(\rvec,t)$ is definitely **not** independent of time. It is actually the $x$ and $y$ coordinates that are correlated. We can study these by integrating over $z$. As part of [](#ex-3D-box-marginal), you will show that
 ```{math}
 :label: e-3D-example-pd-x-y
-\pd(x,y) &= \vph \infint \pd(\rvec, t) dz, \\
+\pd(x,y,t) &= \vph \infint \pd(\rvec, t) dz, \\
 &= \frac{1}{2}\left(|u_1(x)|^2 |u_1(y)|^2 + |u_2(x)|^2 |u_2(y)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_1(x)u_2(x)u_1(y)u_2(y)\right)
 ```
 In the following animation, you can see what this marginal probability density looks like:
@@ -269,9 +273,138 @@ In the following animation, you can see what this marginal probability density l
 :width: 300px
 :align: center
 
-**Probability density in the $x$ and $y$ direction.**  An animation of probability density $\pd(x,y)$ as given in [](#e-3D-example-pd-x-y). The $z$ axis in this plot is $\pd(x,y)$ (and **not** the box!). That is, we are ignoring motion along the $z$ direction, just studying the motion of the particle in the $x$ and $y$ directions only. We see that the particle oscillates, between two distributions, each of which has two large peaks. If we look along only **one** direction, we can see how the individual probability densities $\pd(x)$ and $\pd(y)$ are time independent. 
+**Probability density in the $x$ and $y$ direction.**  An animation of probability density $\pd(x,y,t)$ as given in [](#e-3D-example-pd-x-y). The $z$ axis in this plot is $\pd(x,y,t)$ (and **not** the box!). That is, we are ignoring motion along the $z$ direction, just studying the motion of the particle in the $x$ and $y$ directions only. We see that the particle oscillates, between two distributions, each of which has two large peaks. If we look along only **one** direction, we can see how the individual probability densities $\pd(x,t)$ and $\pd(y,t)$ are time independent. 
 ```
 
-As you can see, the particle **oscillates** back and forth, in a **correlated fashion**. In an [exercise], you will study this correlation using the so-called **covariance**, a measure for how **correlated** the two coordinates of the particle are, on average at any given time. You will see that the coordinates oscillate between being **correlated** (both being large and positive / negative at the same time) to being **anti-correlated** (having opposite signs at a given time). 
+As you can see, the particle **oscillates** back and forth, in a **correlated fashion**. In an [exercise](#ex-3D-box-cov), you will study this correlation using the so-called **covariance**, a measure for how **correlated** the two coordinates of the particle are, on average at any given time. You will see that the coordinates oscillate between being **correlated** (both being large and positive / negative at the same time) to being **anti-correlated** (having opposite signs at a given time). 
 
 The main message here is that even **simple superpositions** of energy eigenstates can exhibit **interesting correlated dynamics**. This example is articifial, but hopefully from it you can see a glimplse of the **rich dynamics** that quantum particles exhibit in 3D. 
+
+## Exercises
+
+````{exercise}
+:label: ex-check-eigenfunctions
+
+Confirm explicitly that the energy eigenfunctions of the 3D box potential 
+![](#e-3D-box-eigenfunctions) satisfy the TISE (inside the box) 
+![](#e-TISE-3D-box) 
+and that the energy eigenvalues are given by 
+![](#e-energy-eigenvalue-3D-box)
+
+```{dropdown} Answer
+n/a (show that)
+```
+````
+
+````{exercise}
+:label: ex-3D-box-orthogonal
+
+In this exercise we will confirm that two degenerate energy eigenstates are nevertheless **orthogonal**. 
+
+1. Write down the relationship between an energy eigenstate $\ket{E_\mathbf{n}}$ and the corresponding energy eigenfunction $u_\mathbf{n}(\rvec)$. 
+2. Use part 1 to show that scalar product in terms of wavefunctions is given by 
+```{math}
+\inner{E_{\mathbf{n}}}{E_{\mathbf{n}'}} = \int_V u_{\mathbf{n}}^*(\rvec) u_{\mathbf{n}'}(\rvec) d^3\rvec.
+``` 
+3. Use the fact that $u_\mathbf{n}(\rvec) = u_{n_x}(x)u_{n_y}(y)u_{n_z}(z)$ (where $u_{n_x}(x)$ are the energy eigenfunctions of the 1D infinite square well, etc), and part 2 (along with its 1D analogue), to show that
+  $$
+  \label{e-3D-1D-orthog-relation}
+  \inner{E_{\mathbf{n}}}{E_{\mathbf{n}'}} = \inner{E_{n_x}}{E_{n_x'}}\inner{E_{n_y}}{E_{n_y'}}\inner{E_{n_z}}{E_{n_z'}},
+  $$
+where $\ket{E_{n_x}}$ is the energy eigenstate of the 1D infinite square well associated to $u_{n_x}(x)$, etc. 
+4. Thus explain, using the orthogonality of the 1D eigenstates of the infinite square well, why energy eigenstates of the 3D box potential are orthogonal unless $\mathbf{n} = \mathbf{n}'$ (even if $\mathbf{n}$ and $\mathbf{n}'$ have component(s) in common).  
+
+```{dropdown} Answers
+1. $\ket{E_\mathbf{n}} = \int_V u_\mathbf{n}(\rvec) \ket{\rvec} d^3\rvec$.
+2. n/a (show that)
+3. n/a (show that)
+4. [](#e-3D-1D-orthog-relation) shows that $\inner{E_{\mathbf{n}}}{E_{\mathbf{n}'}} \neq 0$ **only if** $n_x = n_x'$, $n_y = n_y'$ and $n_z = n_z'$ simultaneously, i.e. $\mathbf{n} = \mathbf{n}'$. Even if one or two components are same, remaining component in product will vanish.  
+```
+````
+
+````{exercise}
+:label: ex-3-side-lengths
+In this exercise we will consider an **asymmetric box** with walls at $x = 0$ and $x = L_x$, $y = 0$ and $y = L_y$ and $z = 0$ and $z = L_z$. 
+1. Write down the energy eigenfunctions and eigenvalues of a 1D infinite square well, with walls at $x = 0$ and $x = L_x$. 
+2. Use part 1 to explain why a reasonable educated guess for the energy eigenfunctions of the asymmetric 3D box is 
+$$\label{e-3D-box-asym} \vph u_\mathbf{n}(\rvec) &=
+&= \begin{cases} \sqrt{\frac{8}{L_x L_y L_z}} \sin \frac{n_x \pi x}{L_x}\sin \frac{n_y \pi y}{L_y}\sin \frac{n_z \pi z}{L_z} &\text{ if } 0 \leq x,y,z \leq L, \\
+0 &\text{ otherwise,} \end{cases}
+$$
+3. Confirm that [](e-3D-box-asym) satisfies the TISE inside the asymmetric box, and determine the corresponding energy eigenvalues of the 3D box. 
+4. If $L_x = L$, $L_y = \sqrt{2}L$ and $L_z = \sqrt{3}L$, write down the first 5 lowest energy levels.  Are there any degeneracies? 
+```{dropdown} Answers
+1. $u_n(x) = \sqrt{\frac{2}{L_x}}\sin \frac{n \pi x}{L_x}$ when $0 \leq x \leq L_x$, and 0 otherwise; $E_n = \frac{\hbar^2 \pi^2 n^2}{2ML_x^2}$. 
+2. This is the direct generalisation of the symmetric case from notes, with same product structure.
+3. n/a (show that) for first part; $E_{\mathbf{n}} = \frac{\hbar^2 \pi^2}{2M}\left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} + \frac{n_z^2}{L_z^2}\right)$. 
+4. In order: $E_{(1,1,1)}$, $E_{(1,1,2)}$, $E_{(1,2,1)}$, $E_{(1,2,2)}$, $E_{(1,1,3)}$. No degeneracies. 
+```
+````
+
+````{exercise}
+:label: ex-3D-box-pd-ex
+
+Show that the probability density corresponding to the wavefunction
+![](#e-wf-3D-ex-t)
+is given by 
+![](#e-3D-pd-box-ex). 
+
+
+```{dropdown} Answer
+n/a (show that).
+```
+````
+
+````{exercise}
+:label: ex-3D-box-marginal
+1. Starting from the wavefunction 
+![](#e-wf-3D-ex-t)
+show that the **marginal** probability density over $x$ and $y$, 
+$$ \pd(x,y,t) = \vph\infint \pd(\rvec,t) dz,$$
+is given by  
+$$\label{e-3D-box-ex-pd-x-y}\pd(x,y,t) = \frac{1}{2}\left(|u_1(x)|^2 |u_1(y)|^2 + |u_2(x)|^2 |u_2(y)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_1(x)u_2(x)u_1(y)u_2(y)\right).$$
+2. Starting again from [](#e-wf-3D-ex-t), show that the marginal probability density over $z$, 
+$$ \pd(z) = \vph \infint \infint \pd(\rvec) dx dy, $$
+is given by
+$$ \pd(z) = |u_1(z)|^2.$$
+3. Write down an expression relating the marginal densities $\pd(y,t)$ and $\pd(x,y,t)$.
+4. Use part 3 to show that, starting from [](#e-3D-box-ex-pd-x-y), 
+$$\pd(y,t) = \frac{1}{2}\left(|u_1(y)|^2 + |u_2(y)|^2\right) $$
+
+```{dropdown} Answers
+1. n/a (show that). 
+2. n/a (show that).
+3. $\pd(y,t) = \infint \pd(x,y,t) dx$.
+4. n/a (show that). 
+```
+````
+
+````{exercise}
+:label: ex-3D-box-cov
+In this exercise we will explore a measure of **correlation** known as the **covariance**. It is defined as
+$$ \mathrm{cov}(x,y) = \av{xy}-\av{x}\av{y},$$
+where
+$$\av{xy} = \vph \infint \infint xy \pd(x,y,t) dx dy.$$ 
+The covariance is the difference between the expectation value of the product, and the product of the expectation values. 
+1. For the probability density 
+![](#e-pd-x-3D-ex)
+making reference to [](#f-isw-pd), explain why $\av{x} = \frac{L}{2}$. 
+
+From [](#e-pd-y-z-3D-ex), it is evident that $\pd(x,t)$ and $\pd(y,t)$ are identical in form, hence $\av{y} = \frac{L}{2}$ also. 
+
+2. Show that for 
+![](#e-3D-box-ex-pd-x-y)
+we have
+$$\av{xy} = \frac{L^2}{4} + \cos \frac{6\Ebox t}{\hbar} \infint x u_1(x) u_2(x) dx \infint y u_1(y) u_2(y) dy.$$
+3. Show that that
+$$ \frac{2}{L}\int_0^Lx \sin \frac{\pi x}{L} \sin \frac{2 \pi x}{L} = - \frac{16L}{9\pi^2}. $$
+4. Hence calculate $\mathrm{cov}(x,y)$ (as a function of time). 
+
+
+```{dropdown} Answers
+1. $\pd(x)$ is the average of the prob. density of $u_1(x)$ and $u_2(x)$. The average position of $\pd(x)$ is thus average position in ground state and first excited state. From figure, can see that prob. density is symmetric about centre of well for all eigenfunctions, so $\av{x} = \frac{L}{2}$. 
+2. n/a (show that).
+3. n/a (show that).
+4. $\mathrm{cov}(x,y) = \left(\frac{16L}{9\pi^2}\right)^2 \cos \frac{6\Ebox t}{\hbar}$
+```
+````
