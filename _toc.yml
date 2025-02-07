@@ -24,6 +24,7 @@ parts:
      - file: w14-problems
      - file: w15-problems
      - file: w16-problems
+     - file: w17-problems
   - caption: Licence
     chapters:
     - file: licence
