@@ -249,6 +249,20 @@ Just as the three coordinate operators were **compatible** observables, so too a
 where we used the fact in the third line that **we can take a partial derivative in either order** (i.e. partial differentiation commutes!). Similar calculations show that all components of momentum pairwise commute, and hence all 3 components are jointly compatible. This means it is (in principle) possible to measure the momentum $\pvec$ of a particle. Note that it isn't **a given**  that the components of a vector quantity are necessarily compatible — and is fact **not true** for the components of angular momentum, which is why the quantum mechanical treatment of angular momentum is in fact so rich an interesting (analogous somewhat to the incompatibility of kinetic and potential energy, and how this leads to interesting dynamics).  
 
 ## Canonical commutation relations
+
+`````{important} Video: Quantum Mechanics in 3D III
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/440d3bc01ff84c9ca7b51fc7ff91e2c81d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-10-III.pdf
+:width: 100%
+```
+````
+`````
+
 In [Chapter 3](03-Incompat-obs-HUP.md) we saw that the position and momentum operators are **incompatible observables** and satisfy the so-called **canonical commutation relation** [](#e-canonical-comm). In 3D we have already seen above in that the coordinates of a particle are compatible, and that the components of momentum are also compatible. *What about the coordinates and components of momentum?* It turns out that is only the **pairs** of coordinate and momentum component **in the same direction** that are **incompatible**, all of which obey the **canonical commutation relation**:
 ````{card}
 ```{math}
@@ -289,6 +303,20 @@ In 3D (hopefully unexpectedly at this stage of the chapter!) **the same relation
  ````
 
  ## The energy of a particle in 3D
+
+`````{important} Video: Quantum Mechanics in 3D IV
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/f81639eb47594dafae4b508b3d5373411d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-10-IV.pdf
+:width: 100%
+```
+````
+`````
+
 Having covered the position and momentum of a particle above, we are now ready to consider the **energy** of a particle in 3D. The Hamiltonian still contains two contributions to the energy — kinetic and potential. The latter is rather straightforward, as we simply now have $V(\rvec)$, i.e. a potential which depends upon the (3D) position of the particle. We will study explicit examples later (e.g. a 3D 'box' and the 3D harmonic oscillator potential). 
 
 For the kinetic energy, the situation is slightly different, given that momentum is now a **vector** quantity in 3D. The kinetic energy depends only upon the **squared magnitude** of the momentum, that is (classically for the moment),

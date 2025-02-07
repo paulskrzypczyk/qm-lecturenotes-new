@@ -8,6 +8,19 @@ authors:
     affiliations:
 ---
 
+`````{important} Video: The 3D infinite box I
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/e454721450f045928a47a1df1269213d1d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-11-I.pdf
+:width: 100%
+```
+````
+`````
+
 In this chapter we will apply what we learnt in the [previous chapter](10-QM-in-3D) to the mathematically simplest situation involving a particle confined in a three-dimensional potential well. The potential well we will consider is the direct generalisation of the **infinite square well** that we studied in [](07-infinite-square-well). We will refer to this as the **3D infinite box** potential. 
 
 As we explained in [](07-infinite-square-well), the idea that a particle could have an infinite potential energy in some region isn't particularly physical. Nevertheless, it provides us with a **clean mathematical** model which is easy to study, and it can be viewed as a fairly good approximation to a **very deep potential well**. 
@@ -121,6 +134,19 @@ Although we won't prove it here, the energy eigenstates we have found in the abo
 
 ## Degeneracy of the energy levels
 
+`````{important} Video: The 3D infinite box II
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/f7731f80051c47e19f804b891734e9281d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-11-II.pdf
+:width: 100%
+```
+````
+`````
+
 Having obtained all of the energy levels of the 3D infinite box, we will now turn our attention to the one new property that arises in 3D which is new compared to 1D — degeneracy. It will be most instructive to start **enumerating** all of the energy levels and their corresponding energies. In order to 
 
 
@@ -202,6 +228,19 @@ There is in fact another type of degeneracy that can arise, which **isn't due to
 In other potentials — such as Hydrogren — we will have a different degeneracy structure. It is important to realise however that it is precisely degeneracy that is the origin of the famous s, p and d **shells** that you may have already encountered, each being a different degenerate collection of energy levels. 
 
 ## Evolution of particles inside a 3D box
+
+`````{important} Video: The 3D infinite box III
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/01e2c8057602466caac13622dc3338841d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-11-III.pdf
+:width: 100%
+```
+````
+`````
 
 As a final topic, we will now look at the evolution of a particle confined inside a 3D box. While on the one hand, the situation is just another example of what we have already encountered (i.e. an application of the superposition principle!), we will see that studying motion in 3D allows us to see more **complex** features, such as **correlation** between the different coordinates of the particle in time. 
 
@@ -331,7 +370,7 @@ $$\label{e-3D-box-asym} \vph u_\mathbf{n}(\rvec) &=
 &= \begin{cases} \sqrt{\frac{8}{L_x L_y L_z}} \sin \frac{n_x \pi x}{L_x}\sin \frac{n_y \pi y}{L_y}\sin \frac{n_z \pi z}{L_z} &\text{ if } 0 \leq x,y,z \leq L, \\
 0 &\text{ otherwise,} \end{cases}
 $$
-3. Confirm that [](e-3D-box-asym) satisfies the TISE inside the asymmetric box, and determine the corresponding energy eigenvalues of the 3D box. 
+3. Confirm that [](#e-3D-box-asym) satisfies the TISE inside the asymmetric box, and determine the corresponding energy eigenvalues of the 3D box. 
 4. If $L_x = L$, $L_y = \sqrt{2}L$ and $L_z = \sqrt{3}L$, write down the first 5 lowest energy levels.  Are there any degeneracies? 
 ```{dropdown} Answers
 1. $u_n(x) = \sqrt{\frac{2}{L_x}}\sin \frac{n \pi x}{L_x}$ when $0 \leq x \leq L_x$, and 0 otherwise; $E_n = \frac{\hbar^2 \pi^2 n^2}{2ML_x^2}$. 
