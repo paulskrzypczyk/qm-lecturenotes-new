@@ -304,18 +304,6 @@ In 3D (hopefully unexpectedly at this stage of the chapter!) **the same relation
 
  ## The energy of a particle in 3D
 
-`````{important} Video: Quantum Mechanics in 3D IV
-:class: dropdown
-```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/f81639eb47594dafae4b508b3d5373411d
-:width: 100%
-```
-````{tip} Slides
-:class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-10-IV.pdf
-:width: 100%
-```
-````
-`````
 
 Having covered the position and momentum of a particle above, we are now ready to consider the **energy** of a particle in 3D. The Hamiltonian still contains two contributions to the energy — kinetic and potential. The latter is rather straightforward, as we simply now have $V(\rvec)$, i.e. a potential which depends upon the (3D) position of the particle. We will study explicit examples later (e.g. a 3D 'box' and the 3D harmonic oscillator potential). 
 
@@ -355,6 +343,19 @@ One update is that previously we only ever encountered a **single quantum number
 A common case is to have **three quantum numbers**, one **per degree of freedom** (i.e. each **independent** direction of travel). We will label these by $n_x$, $n_y$ and $n_z$ respectively, and sometimes collect them into the vector $\mathbf{n} = (n_x,n_y,n_z)$. 
 
 ## Evolution in 3D
+
+`````{important} Video: Quantum Mechanics in 3D IV
+:class: dropdown
+```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/f81639eb47594dafae4b508b3d5373411d
+:width: 100%
+```
+````{tip} Slides
+:class: dropdown
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-10-IV.pdf
+:width: 100%
+```
+````
+`````
 
 The equation of motion of a particle in 3D is no different from the equation of motion in 1D. It is given once again by the Schrödinger Equation, which takes an **identical form** to [](#e-SE) when written out abstractly, 
 ![](#e-SE)
