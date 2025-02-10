@@ -247,7 +247,7 @@ where $N > 0$ is a normalisation constant.
 2. Sketch the wavefunction. 
 3. Show that the initial momentum wavefunction of the particle is 
 ```{math}
-\vph\tilde{\psi}_\init(p) = 2\sqrt{\frac{3\ell}{\pi\hbar}}\left(\frac{\sin (p\ell/\hbar)}{p\ell/\hbar}\right)^2.
+\vph\tilde{\psi}_\init(p) = 2\sqrt{\frac{3\ell}{\pi\hbar}}\left(\frac{\sin (p\ell/2\hbar)}{p\ell/\hbar}\right)^2.
 ```
 4. Write down the wavefunction $\psi(x,t)$. This should be in the form of an integral over $p$ (you are not expected to evaluate this integral!)
 5. (*optional*) Numerically evalute the integral in part 4, to plot the probability density $\pd(x,t)$ for $t = 1, 2, \ldots, 5$ (assuming $\ell = \hbar = M = 1$). 
@@ -255,7 +255,7 @@ where $N > 0$ is a normalisation constant.
 1. n/a (show that).
 2. n/a (sketch).
 3. n/a (show that).
-4. $\psi(x,t) = \frac{\sqrt{6 \ell}}{\pi \hbar}\infint \left(\frac{\sin (p\ell/\hbar)}{p\ell/\hbar}\right)^2 e^{ipx/\hbar} e^{-ip^2 t/2M\hbar} dp$. 
+4. $\psi(x,t) = \frac{\sqrt{6 \ell}}{\pi \hbar}\infint \left(\frac{\sin (p\ell/2\hbar)}{p\ell/\hbar}\right)^2 e^{ipx/\hbar} e^{-ip^2 t/2M\hbar} dp$. 
 5. n/a (plot). 
 ``` 
 ````
