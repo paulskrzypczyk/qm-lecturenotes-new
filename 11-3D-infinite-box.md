@@ -122,7 +122,7 @@ As an [exercise](#ex-check-eigenfunctions) you will confirm explicitly that thes
 ````{card}
 ```{math}
 :label: e-energy-eigenvalue-3D-box
-E_\mathbf{n} = \frac{\hbar^2 \pi^2}{2ML^2} \left(n_x^2 + n_y^2 + n_z^2\right).
+\vph E_\mathbf{n} = \frac{\hbar^2 \pi^2}{2ML^2} \left(n_x^2 + n_y^2 + n_z^2\right).
 ```
 ````
 In what follows, it will be convenient to give a name to the combination $\frac{\hbar^2 \pi^2}{2ML^2}$, which is a **common multiple** among all energy levels. We will denote this by
@@ -367,7 +367,7 @@ In this exercise we will consider an **asymmetric box** with walls at $x = 0$ an
 1. Write down the energy eigenfunctions and eigenvalues of a 1D infinite square well, with walls at $x = 0$ and $x = L_x$. 
 2. Use part 1 to explain why a reasonable educated guess for the energy eigenfunctions of the asymmetric 3D box is 
 $$\label{e-3D-box-asym} \vph u_\mathbf{n}(\rvec) &=
-&= \begin{cases} \sqrt{\frac{8}{L_x L_y L_z}} \sin \frac{n_x \pi x}{L_x}\sin \frac{n_y \pi y}{L_y}\sin \frac{n_z \pi z}{L_z} &\text{ if } 0 \leq x,y,z \leq L, \\
+&= \begin{cases} \sqrt{\frac{8}{L_x L_y L_z}} \sin \frac{n_x \pi x}{L_x}\sin \frac{n_y \pi y}{L_y}\sin \frac{n_z \pi z}{L_z} &\text{ if } 0 \leq x\leq L_x, 0\leq y \leq L_y, 0 \leq z \leq L_z, \\
 0 &\text{ otherwise,} \end{cases}
 $$
 3. Confirm that [](#e-3D-box-asym) satisfies the TISE inside the asymmetric box, and determine the corresponding energy eigenvalues of the 3D box. 
@@ -403,9 +403,9 @@ $$ \pd(x,y,t) = \vph\infint \pd(\rvec,t) dz,$$
 is given by  
 $$\label{e-3D-box-ex-pd-x-y}\pd(x,y,t) = \frac{1}{2}\left(|u_1(x)|^2 |u_1(y)|^2 + |u_2(x)|^2 |u_2(y)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_1(x)u_2(x)u_1(y)u_2(y)\right).$$
 2. Starting again from [](#e-wf-3D-ex-t), show that the marginal probability density over $z$, 
-$$ \pd(z) = \vph \infint \infint \pd(\rvec) dx dy, $$
+$$ \pd(z,t) = \vph \infint \infint \pd(\rvec,t) dx dy, $$
 is given by
-$$ \pd(z) = |u_1(z)|^2.$$
+$$ \pd(z,t) = |u_1(z)|^2.$$
 3. Write down an expression relating the marginal densities $\pd(y,t)$ and $\pd(x,y,t)$.
 4. Use part 3 to show that, starting from [](#e-3D-box-ex-pd-x-y), 
 $$\pd(y,t) = \frac{1}{2}\left(|u_1(y)|^2 + |u_2(y)|^2\right) $$
