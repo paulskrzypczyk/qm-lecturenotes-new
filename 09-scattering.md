@@ -402,7 +402,7 @@ e^{ikx} - \frac{\lambda + ik}{\lambda - ik}e^{-ikx} &\text{ if } x < 0, \\
 3. Substitute your answers from part 1 and part 2  into [](#e-R-coeff), to show that after appropriate simplification, you arrive at [](#e-R-coeff-phys). 
 ```{dropdown} Answers
 1. $k = \sqrt{2ME}/\hbar$. 
-2. $k' = \sqrt{2M(E_V_0)}/\hbar$.
+2. $k' = \sqrt{2M(E V_0)}/\hbar$.
 3. n/a (show that). 
 ```
 ````
