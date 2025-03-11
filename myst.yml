@@ -53,7 +53,7 @@ site:
     logo: ./Pictures/UoB_RGB_24.png
     logo_text: Quantum Mechanics
     favicon: psi.png
-    style: ./style/style.css
+ #   style: ./style/style.css
   nav: 
   domains: []
 
