@@ -48,7 +48,7 @@ project:
 #    output: exports/qm-lectures.pdf
 site: 
   parts:
-    banner: My banner [content](https://mystmd.org)!
+    banner: Welcome to Quantum Mechanics 2026!
   template: book-theme
   title: Quantum Mechanics
   options:
