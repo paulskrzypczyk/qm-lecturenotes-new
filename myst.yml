@@ -47,6 +47,8 @@ project:
 #    template: plain_latex_book
 #    output: exports/qm-lectures.pdf
 site: 
+  parts:
+    banner: My banner [content](https://mystmd.org)!
   template: book-theme
   title: Quantum Mechanics
   options:
