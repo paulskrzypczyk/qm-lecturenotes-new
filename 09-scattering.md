@@ -3,9 +3,6 @@ title: "Chapter 9: Scattering"
 short_title: "Ch. 9: Scattering"
 numbering:
   enumerator: 9.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Scattering I

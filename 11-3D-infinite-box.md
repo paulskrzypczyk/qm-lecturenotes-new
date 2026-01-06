@@ -3,9 +3,6 @@ title: "Chapter 11: The 3D infinite box"
 short_title: "Ch. 11: 3D infinite box"
 numbering:
   enumerator: 11.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: The 3D infinite box I

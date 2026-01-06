@@ -3,9 +3,6 @@ title: "Chapter 3: Incompatible observables & the Heisenberg uncertainty princip
 short_title: "Ch. 3: Incomp. Obs. & HUP"
 numbering:
   enumerator: 3.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Incompatible observables & the Heisenberg uncertainty principle

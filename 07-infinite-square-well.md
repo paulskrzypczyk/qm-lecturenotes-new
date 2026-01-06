@@ -3,9 +3,6 @@ title: "Chapter 7: The infinite square well"
 short_title: "Ch. 7: Inf. sq. well"
 numbering:
   enumerator: 7.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Infinite square well I

@@ -3,9 +3,6 @@ title: "Chapter 6: Free particle"
 short_title: "Ch. 6: Free particle"
 numbering:
   enumerator: 6.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Free particle I

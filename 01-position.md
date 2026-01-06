@@ -3,9 +3,6 @@ title: "Chapter 1: The position of a quantum particle"
 short_title: "Ch. 1: Position"
 numbering:
   enumerator: 1.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Position of a quantum particle I

@@ -3,9 +3,6 @@ title: "Appendix 2: Gaussian integrals"
 short_title: "App. 2: Gauss. integrals"
 numbering:
   enumerator: A2.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 ````{card}

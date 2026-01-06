@@ -1,9 +1,6 @@
 ---
 title: "Problem Sheet: Week 17"
 short_title: "Prob. Sheet: Week 17"
-authors:
-  - name: 
-    affiliations:
 ---
 
 [](11-3D-infinite-box)

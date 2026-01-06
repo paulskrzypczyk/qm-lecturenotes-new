@@ -3,9 +3,6 @@ title: "Chapter 4: Energy and the Hamiltonian"
 short_title: "Ch. 4: Energy"
 numbering:
   enumerator: 4.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Energy & the Hamiltonian

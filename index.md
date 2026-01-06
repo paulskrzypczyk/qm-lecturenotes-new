@@ -4,9 +4,12 @@ title: Quantum Mechanics
 subtitle:
 short_title: Index
 numbering: false
+
+site:
+    hide_authors: false
 ---
 
-**Last update**: *Friday 28th Feb 2025* 
+**Last update**: *Tuesday 6th January 2026* 
 
 
 ```{toc} Table of Contents

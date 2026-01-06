@@ -3,9 +3,6 @@ title: "Chapter 5: Time evolution"
 short_title: "Ch. 5: Evolution"
 numbering:
   enumerator: 5.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Time evolution I

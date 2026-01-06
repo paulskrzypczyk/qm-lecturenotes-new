@@ -3,9 +3,6 @@ title: "Chapter 10: Quantum mechanics in three dimensions"
 short_title: "Ch. 10: QM in 3D"
 numbering:
   enumerator: 10.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Quantum Mechanics in 3D I
