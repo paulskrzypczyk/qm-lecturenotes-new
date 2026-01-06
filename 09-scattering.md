@@ -235,7 +235,7 @@ We will now analyse some of the interesting **physics** of these eigenfunctions,
 
 What we would like to understand now as quantitatively as possible, is the meaning of the superposition appearing in [](#e-eig-step-R-final). We will see how to do this in terms of so-called **reflection** and **transmission** coefficients. 
 
-The main point we would like to understand is what the significance of [](#e-B-f-A-scattering), namely how the **amplitude** of the **reflected** component $e^{-ikx}$ relates to the **amplitude** of the **incoming** component $e^{ikx}$ (which we have taken to be $A = 1$ for simplicity). 
+The main point we would like to understand is the significance of [](#e-B-f-A-scattering), namely how the **amplitude** of the **reflected** component $e^{-ikx}$ relates to the **amplitude** of the **incoming** component $e^{ikx}$ (which we have taken to be $A = 1$ for simplicity). 
 
 We can start by considering an extreme case: that if **no potential step**. That is, we can set $V_0 = 0$, and ask what happens to the energy eigenfunction. In this case, we know what we should hope to find, since this corresponds to a [](06-free-particle.md), and hence the energy eigenfunctions should just be **momentum eigenfunctions**. This is precisely what we find, since from [](#e-kp), in this case $k' = k$, and hence $B = 0$, leaving us with simply the component $e^{ikx}$ for all $x$, corresponding to a momentum eigenfunction with momentum $p = \hbar k$. 
 

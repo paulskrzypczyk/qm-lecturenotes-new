@@ -47,13 +47,15 @@ project:
 #    template: plain_latex_book
 #    output: exports/qm-lectures.pdf
 site: 
+  parts:
+    banner: Welcome to Quantum Mechanics 2026!
   template: book-theme
   title: Quantum Mechanics
   options:
     logo: ./Pictures/UoB_RGB_24.png
     logo_text: Quantum Mechanics
     favicon: psi.png
-    style: ./style/style.css
+ #   style: ./style/style.css
   nav: 
   domains: []
 
