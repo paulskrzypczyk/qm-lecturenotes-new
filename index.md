@@ -19,7 +19,7 @@ Welcome to the quantum mechanics section of the 2nd year core physics unit (From
 
 This material will build upon the quantum physics material you learnt in the first year course physics unit (Classical, Quantum and Thermal Physics). I have provided a [brief recap video](recap.md) but will not repeat the content from that unit here. You should **refer back to the lecture notes for that course** where needed.
 
-Similarly, we will make use of the **probability and statistics** that you learnt as part of the **First Year Physics Laboratory**. You also hould refer back to the content on Blackboard where needed. 
+Similarly, we will make use of the **probability and statistics** that you learnt as part of the **First Year Physics Laboratory**. You also should refer back to the content on Blackboard where needed. 
 
 ## Flipped-classroom
 

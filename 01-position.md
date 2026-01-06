@@ -297,7 +297,7 @@ More generally, we can apply the above procedure to **any quantum mechanical ope
 \hat{A}\ket{\psi} = \infint \left(\op{A}\psi(x)\right) \ket{x} dx.
 ```
 ````
-While this is abstract at this stage, it will hopefully become much clearer in the next [Chapter](02-momentum), when we being to investigate the **momentum** of particle in quantum mechanics. Here we will find a more interesting relationship between the momentum operator $\hat{P}$ and the associated wavefunction momentum operator $\op{P}$. 
+While this is abstract at this stage, it will hopefully become much clearer in the next [Chapter](02-momentum), when we begin to investigate the **momentum** of particle in quantum mechanics. Here we will find a more interesting relationship between the momentum operator $\hat{P}$ and the associated wavefunction momentum operator $\op{P}$. 
 
 ## Exercises
 
