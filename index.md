@@ -9,7 +9,7 @@ site:
     hide_authors: false
 ---
 
-**Last update**: *Tuesday 6th January 2026* 
+**Last update**: *Friday 9th January 2026* 
 
 
 ```{toc} Table of Contents
@@ -60,6 +60,7 @@ Finally, this course has been extensively updated this year, with the lecture no
 
 ## Changelog
 
+- 09/01/2025: general updates for new year; fixed lots of typos (thanks Sohyun). Added revision exercises. 
 - 11/03/2025: added TOC to index
 - 05/02/2025: Fixed typo below [](#e-creation-annihilation), where it said "annihilation" instead of "creation" (thanks Jack Eadie)
 - 14/01/2025: Fixed typo below [](#e-X-on-psi): $\psi'(x) = x\psi(x)$ (thanks anon!)
