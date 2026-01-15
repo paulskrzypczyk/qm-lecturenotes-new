@@ -3,9 +3,6 @@ title: "Chapter 4: Energy and the Hamiltonian"
 short_title: "Ch. 4: Energy"
 numbering:
   enumerator: 4.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Energy & the Hamiltonian
@@ -162,7 +159,7 @@ where $\delta(E-E')$ is the [Dirac delta function](#dirac-delta-function). Just 
 
 We end by noting that in general, a quantum particle could be in a superposition of being **bound** and being **non-bound**. That is, it could have a superposition of energies, including energy levels below $E_B$ and energies above $E_B$. This causes no problem. It will nevertheless be **easier** to study the two regimes **separately** at first, before combining them after, if required by the physical situation under consideration. 
 ```{aside}
-*For example, it is possible, by carefully tuning a laser pulse, to create a superposition of having an atom ionised (exciting an electron, so that it has enough enough to escape the nucleus) and not (the electron still in a bound state).*
+*For example, it is possible, by carefully tuning a laser pulse, to create a superposition of having an atom ionised (exciting an electron, so that it has enough energy to escape the nucleus) and not (the electron still in a bound state).*
 ```
 
 ## Exercises
@@ -174,7 +171,7 @@ In this exercise we will show that in quantum mechanics, the kinetic energy and 
 1. Calculate $\op{K}\op{V}\psi(x). $
 1. Using parts 1. and 2. show that 
 ```{math}
-\vph[\op{K},\op{V}]\psi = -\frac{\hbar^2}{2M}\left(\frac{\partial^2 V}{\partial x^2}\psi(x) + 2 \frac{\partial V}{\partial X} \frac{\partial}{\partial x}\psi(x) \right)
+\vph[\op{K},\op{V}]\psi = -\frac{\hbar^2}{2M}\left(\frac{\partial^2 V}{\partial x^2}\psi(x) + 2 \frac{\partial V}{\partial x} \frac{\partial}{\partial x}\psi(x) \right)
 ```
 We will denote by $\hat{V}'$ and $\hat{V}''$ the operators satisfying
 ```{math}

@@ -3,9 +3,6 @@ title: "Chapter 6: Free particle"
 short_title: "Ch. 6: Free particle"
 numbering:
   enumerator: 6.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Free particle I
@@ -179,7 +176,7 @@ Recall from the HUP, that any initial wavefunction we consider $\psi_\init(x)$, 
 
 If we consider a fixed time, we therefore see that the particle will have a superposition of **displacements**. This is precisely what **leads to the spreading of wavefunctions**. We can see two interesting hallmarks of this if we look carefully. First, from the HUP, we know that in order for a particle to have an initial wavefunction which is **more localised in space** (i.e. with a smaller $\Delta x$), then it will necessarily need to have a larger spread of momentum $\Delta p$. From the above discussion, we should therefore expect it to **spread faster** in time. This is precisely what we see analytically for the gaussian in [](#e-gaussian-spread): if we make $a$ smaller, then $\alpha(t)$ increases. 
 
-Second, this also explains why the phase factor $e^{i\phi(x,t)}$ occurs (and has a complicated form!). As we have explained above, the spreading is due to the superposition of momenta. It therefore follows that if the particle is further away (at the 'front' of the wavefunction) at later times, we would expect it to have higher momentum, and if it is closer to the initial localtion (at the 'back' of the wavefunction), we would expect it to have lower momentum. That is, **correlations build up in time between where the particle is and what momentum it has**. This is precisely what is captured by the phase factor, and why we should **always** expect to have some phase factor in time. 
+Second, this also explains why the phase factor $e^{i\phi(x,t)}$ occurs (and has a complicated form!). As we have explained above, the spreading is due to the superposition of momenta. It therefore follows that if the particle is further away (at the 'front' of the wavefunction) at later times, we would expect it to have higher momentum, and if it is closer to the initial location (at the 'back' of the wavefunction), we would expect it to have lower momentum. That is, **correlations build up in time between where the particle is and what momentum it has**. This is precisely what is captured by the phase factor, and why we should **always** expect to have some phase factor in time. 
 
 ## Exercises
 

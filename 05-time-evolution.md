@@ -3,9 +3,6 @@ title: "Chapter 5: Time evolution"
 short_title: "Ch. 5: Evolution"
 numbering:
   enumerator: 5.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Time evolution I
@@ -251,7 +248,7 @@ where $\tilde{u}_{E_\ell}(p)$ is the momentum wavefunction associated to $u_{E_\
 1. Hence show that the probability density $\pd(p,t)$ is independent of time. Why does this mean that the momentum of the particle isn't changing in time?
 ```{dropdown} Answers
 1. n/a (show that).
-2. $e^{iE_\ell t/\hbar}\tilde{u}_{E_\ell}(p)$. 
+2. $e^{-iE_\ell t/\hbar}\tilde{u}_{E_\ell}(p)$. 
 3. $\pd(p,t) = |\tilde{u}_{E_\ell}(p)|^2$. This is independent of time. 
 ````
 

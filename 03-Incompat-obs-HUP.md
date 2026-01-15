@@ -3,9 +3,6 @@ title: "Chapter 3: Incompatible observables & the Heisenberg uncertainty princip
 short_title: "Ch. 3: Incomp. Obs. & HUP"
 numbering:
   enumerator: 3.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Incompatible observables & the Heisenberg uncertainty principle
@@ -68,7 +65,7 @@ What we see is that the spread of momentum is now **inversely proportional** to 
 We often refer to these widths as **uncertainties**, since they tell us how uncertain our measurements of position and momentum will be. That is, how close or far we are from obtaining a very deterministic outcome when performing a measurement of that property of the particle. 
 
 What is remarkable is that what we observed above **isn't just a special property of Gaussian wavefunctions**, but is a general fact about quantum mechanics. In fact, 
-> It is impossible in quantum mechancis for a particle to simultaneously have a small uncertainty $\Delta x$ in position and a small uncertainty $\Delta p$ in momentum.
+> It is impossible in quantum mechanics for a particle to simultaneously have a small uncertainty $\Delta x$ in position and a small uncertainty $\Delta p$ in momentum.
 
 The famous **Heisenberg Uncertainty Principle** makes this statement **quantitative**: it says that the **product** of the uncertainties can never be smaller than a fundamental constant:
 ````{card}
@@ -92,7 +89,7 @@ that is, independent of $a$, a Gaussian wavefunction **saturates** the HUP: its 
 
 ## Incompatible Observables
 
-Because of the fact that position and momentum satisfy the HUP, we say that that are **incompatible observables**: these are two properties of a quantum particle that are somehow in *conflict* or *tension* with each other — such that having one property well defined precludes the other property being well defined too. This is a completely novel aspect of quantum mechanics compared to classical physics, where there is no such difficulty. For example, in classical mechanics, a particle has both a definite position and a definite momentum at all times.
+Because of the fact that position and momentum satisfy the HUP, we say that they are **incompatible observables**: these are two properties of a quantum particle that are somehow in *conflict* or *tension* with each other — such that having one property well defined precludes the other property being well defined too. This is a completely novel aspect of quantum mechanics compared to classical physics, where there is no such difficulty. For example, in classical mechanics, a particle has both a definite position and a definite momentum at all times.
 
 Crucially, it is not just position and momentum which are incompatible. In fact **most observable properties are incompatible in quantum mechanics!** That is, apart from some special cases, if we consider two distinct physical properties, it is very likely that they are incompatible, and that a particle cannot have definite values for both properties simultaneously.
 
@@ -122,7 +119,7 @@ This is because the commutator will vanish if $\hat{A}\hat{B} = \hat{B}\hat{A}$,
 *We note that there is something that is a little strange here, and can be misleading. While commutation is about the **order** of operators, this doesn't imply that imcompatibility of observables is **also** about order. This is a common misconception. The link is in fact a very mathematical one: commutation is a succinct way of determining whether two operators have common **eigenstates** (i.e. whether the eigenstates of one operator happen to coincide with the eigenstates of another operator or not). It is this property which is crucial for compatibility, and it happens that this will be the case only when operators commute.*
 ```
 
-In the context of **quantum mechanics**, we are usually interested not in the operators $\hat{A}$ and $\hat{B}$ directly, but rather thier associated operators $\op{A}$ and $\op{B}$ (that act on wavefunctions $\psi(x)$ rather than on quantum states $\ket{\psi}$). We will use the same notation to refer to the associated commutator in this context:
+In the context of **quantum mechanics**, we are usually interested not in the operators $\hat{A}$ and $\hat{B}$ directly, but rather their associated operators $\op{A}$ and $\op{B}$ (that act on wavefunctions $\psi(x)$ rather than on quantum states $\ket{\psi}$). We will use the same notation to refer to the associated commutator in this context:
 ````{card}
 ```{math}
 :label: e-commutator-wf

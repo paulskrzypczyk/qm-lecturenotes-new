@@ -3,9 +3,6 @@ title: "Appendix 1: Quantum Physics Recap"
 short_title: "App. 1: Recap"
 numbering:
   enumerator: A1.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 Here you will find a short video giving a brief recap of the key learning outcomes from the 1st year Quantum Physics content. If anything is unfamiliar or unclear, please refer back to the lecture notes and materials from last year. 

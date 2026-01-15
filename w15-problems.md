@@ -1,9 +1,6 @@
 ---
 title: "Problem Sheet: Week 15"
 short_title: "Prob. Sheet: Week 15"
-authors:
-  - name: 
-    affiliations:
 ---
 
 [](07-infinite-square-well)

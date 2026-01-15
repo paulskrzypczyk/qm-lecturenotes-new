@@ -3,9 +3,6 @@ title: "Chapter 8: The quantum harmonic oscillator"
 short_title: "Ch. 8: QHO"
 numbering:
   enumerator: 8.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: Quantum harmonic oscillator I

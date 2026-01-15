@@ -4,6 +4,9 @@ title: Quantum Mechanics
 subtitle:
 short_title: Index
 numbering: false
+
+site:
+    hide_authors: false
 ---
 
 ```{toc} Table of Contents
@@ -16,7 +19,7 @@ Welcome to the quantum mechanics section of the 2nd year core physics unit (From
 
 This material will build upon the quantum physics material you learnt in the first year course physics unit (Classical, Quantum and Thermal Physics). I have provided a [brief recap video](recap.md) but will not repeat the content from that unit here. You should **refer back to the lecture notes for that course** where needed.
 
-Similarly, we will make use of the **probability and statistics** that you learnt as part of the **First Year Physics Laboratory**. You also hould refer back to the content on Blackboard where needed. 
+Similarly, we will make use of the **probability and statistics** that you learnt as part of the **First Year Physics Laboratory**. You also should refer back to the content on Blackboard where needed. 
 
 ## Flipped-classroom
 
@@ -54,6 +57,7 @@ Finally, this course has been extensively updated this year, with the lecture no
 
 ## Changelog
 
+- 09/01/2025: general updates for new year; fixed lots of typos (thanks Sohyun). Added revision exercises. 
 - 11/03/2025: added TOC to index
 - 05/02/2025: Fixed typo below [](#e-creation-annihilation), where it said "annihilation" instead of "creation" (thanks Jack Eadie)
 - 14/01/2025: Fixed typo below [](#e-X-on-psi): $\psi'(x) = x\psi(x)$ (thanks anon!)

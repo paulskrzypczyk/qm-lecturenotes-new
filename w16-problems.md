@@ -1,9 +1,6 @@
 ---
 title: "Problem Sheet: Week 16"
 short_title: "Prob. Sheet: Week 16"
-authors:
-  - name: 
-    affiliations:
 ---
 
 [](09-scattering)

@@ -3,9 +3,6 @@ title: "Chapter 11: The 3D infinite box"
 short_title: "Ch. 11: 3D infinite box"
 numbering:
   enumerator: 11.%s
-authors:
-  - name: 
-    affiliations:
 ---
 
 `````{important} Video: The 3D infinite box I
@@ -307,7 +304,7 @@ and are thus **also independent of time**.
 ```
 In the following animation, you can see what this marginal probability density looks like:
 
-```{figure} ./Pictures/3D box p-x-y.gif
+```{figure} ./Pictures/3D-box-p-x-y.gif
 :name: 3D-example
 :width: 300px
 :align: center

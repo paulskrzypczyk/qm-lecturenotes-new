@@ -1,9 +1,6 @@
 ---
 title: "Problem Sheet: Week 14"
 short_title: "Prob. Sheet: Week 14"
-authors:
-  - name: 
-    affiliations:
 ---
 
 [](04-energy)

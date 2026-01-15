@@ -1,9 +1,6 @@
 ---
 title: "Problem Sheet: Week 13"
 short_title: "Prob. Sheet: Week 13"
-authors:
-  - name: 
-    affiliations:
 ---
 
 [](01-position)
