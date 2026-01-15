@@ -6,9 +6,6 @@ short_title: Index
 numbering: false
 ---
 
-**Last update**: *Friday 28th Feb 2025* 
-
-
 ```{toc} Table of Contents
 ```
 
