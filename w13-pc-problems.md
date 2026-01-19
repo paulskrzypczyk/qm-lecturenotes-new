@@ -11,7 +11,7 @@ I have included additional questions for you to attempt / discuss if you complet
 Consider a  particle confined to the region $x \geq 0$, with the following quantum state
 ```{math}
 :label: e-exp-wf
- \ket{\psi} = \sqrt{\frac{2}{L}}\int_0^\infty e^{-x/L} dx,
+ \ket{\psi} = \sqrt{\frac{2}{L}}\int_0^\infty e^{-x/L} \ket{x} dx,
  ```
 where $L > 0$ is a constant. 
 
@@ -33,7 +33,7 @@ where $L > 0$ is a constant.
 Consider a  particle confined to the region $x \geq 0$, with the following quantum state
 ```{math}
 :label: e-exp-wf-2
- \ket{\psi} = \sqrt{\frac{2}{L}}\int_0^\infty e^{-x/L} dx,
+ \ket{\psi} = \sqrt{\frac{2}{L}}\int_0^\infty e^{-x/L} \ket{x} dx,
  ```
 where $L > 0$ is a constant. 
 
