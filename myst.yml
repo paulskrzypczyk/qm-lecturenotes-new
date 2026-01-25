@@ -46,7 +46,7 @@ project:
     heading_4: true
 site: 
   parts:
-    banner: Welcome to Quantum Mechanics 2026! 
+#    banner: Welcome to Quantum Mechanics 2026! 
   template: book-theme
   title: Quantum Mechanics
   options:

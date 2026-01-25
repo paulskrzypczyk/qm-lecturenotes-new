@@ -21,6 +21,7 @@ parts:
   - caption: Problem Class Problems
     chapters:
      - file: w13-pc-problems.md
+     - file: w14-pc-problems.md
   - caption: Problem Sheets
     chapters:
      - file: revision-problems.md
