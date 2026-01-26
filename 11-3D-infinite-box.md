@@ -28,7 +28,7 @@ We will also see that even though we are now considering a 3D problem, **what we
 
 ## The 3D infinite box potential
 
-We are going to consider a situation where a particle is **perfectly confined** inside a 3D 'box' — of volumne $L^3$. That is, just like in 1D, that there are 'walls' at $x = 0$ and $x = L$, as well as at $y = 0$ and $y = L$ and $z = 0$ and $z = L$, leaving a perfectly **cubic** region in which the particle is confined. We can model this with the following potential energy function, the direct analogue of [](#e-infinite-square-well),
+We are going to consider a situation where a particle is **perfectly confined** inside a 3D 'box' — of volume $L^3$. That is, just like in 1D, that there are 'walls' at $x = 0$ and $x = L$, as well as at $y = 0$ and $y = L$ and $z = 0$ and $z = L$, leaving a perfectly **cubic** region in which the particle is confined. We can model this with the following potential energy function, the direct analogue of [](#e-infinite-square-well),
 
 ```{math}
 :label: e-infinite-3D-box
@@ -80,7 +80,7 @@ from which we confirm that the corresponding energy eigenvalue is $E_n = \frac{\
 ```{math}
 u(\rvec) = u_n(x) f(y,z),
 ```
-where $f(y,z)$ is some arbitrary function of $y$ and $z$ alone, then we see that we have essentially **identical behaviour**, and that, in fact, **any such function will be an eigenfunction of $\hat{P}^2_{x,\mathrm{w}}/2M$. Namely,
+where $f(y,z)$ is some arbitrary function of $y$ and $z$ alone, then we see that we have essentially **identical behaviour**, and that, in fact, **any such function will be an eigenfunction of $\hat{P}^2_{x,\mathrm{w}}/2M$**. Namely,
 ```{math}
 -\frac{\hbar^2}{2M} \frac{\partial^2}{\partial x^2} u(\rvec) &= 
 -\frac{\hbar^2}{2M} \frac{\partial^2}{\partial x^2} \left(\sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L}f(y,z)\right) \\ 
@@ -144,7 +144,7 @@ Although we won't prove it here, the energy eigenstates we have found in the abo
 ````
 `````
 
-Having obtained all of the energy levels of the 3D infinite box, we will now turn our attention to the one new property that arises in 3D which is new compared to 1D — degeneracy. It will be most instructive to start **enumerating** all of the energy levels and their corresponding energies. In order to 
+Having obtained all of the energy levels of the 3D infinite box, we will now turn our attention to the one new property that arises in 3D which is new compared to 1D — degeneracy. It will be most instructive to start **enumerating** all of the energy levels and their corresponding energies. 
 
 
 We do this in the following table: 
@@ -264,7 +264,7 @@ We could stop here, but what is interesting is to analyse the properties of the 
 :label: e-3D-pd-box-ex
 \pd(\rvec,t) = \frac{1}{2}\left(|u_{(1,1,1)}(\rvec)|^2 + |u_{(2,2,1)}(\rvec)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_{(1,1,1)}(\rvec) u_{(2,2,1)}(\rvec)\right) 
 ```
-This is the probability density in 3D, but there is nothing to stop as asking questions about the probability density of any given coordinate. This is formally a **marginal probability density**, and we can obtain it by **integrating out** the coordinates we aren't interested in (so that we get the **total probability density** for the remaining coordinate). For example, for the $x$ coordinate, we have
+This is the probability density in 3D, but there is nothing to stop us asking questions about the probability density of any given coordinate. This is formally a **marginal probability density**, and we can obtain it by **integrating out** the coordinates we aren't interested in (so that we get the **total probability density** for the remaining coordinate). For example, for the $x$ coordinate, we have
 ```{math}
 \pd(x,t) = \vph \infint \infint \pd(\rvec,t) dy dz. 
 ```
@@ -314,7 +314,7 @@ In the following animation, you can see what this marginal probability density l
 
 As you can see, the particle **oscillates** back and forth, in a **correlated fashion**. In an [exercise](#ex-3D-box-cov), you will study this correlation using the so-called **covariance**, a measure for how **correlated** the two coordinates of the particle are, on average at any given time. You will see that the coordinates oscillate between being **correlated** (both being large and positive / negative at the same time) to being **anti-correlated** (having opposite signs at a given time). 
 
-The main message here is that even **simple superpositions** of energy eigenstates can exhibit **interesting correlated dynamics**. This example is articifial, but hopefully from it you can see a glimplse of the **rich dynamics** that quantum particles exhibit in 3D. 
+The main message here is that even **simple superpositions** of energy eigenstates can exhibit **interesting correlated dynamics**. This example is articifial, but hopefully from it you can see a glimpse of the **rich dynamics** that quantum particles exhibit in 3D. 
 
 ## Exercises
 
@@ -432,13 +432,13 @@ From [](#e-pd-y-z-3D-ex), it is evident that $\pd(x,t)$ and $\pd(y,t)$ are ident
 ![](#e-3D-box-ex-pd-x-y)
 we have
 $$\av{xy} = \frac{L^2}{4} + \cos \frac{6\Ebox t}{\hbar} \infint x u_1(x) u_2(x) dx \infint y u_1(y) u_2(y) dy.$$
-3. Show that that
+3. Show that
 $$ \frac{2}{L}\int_0^Lx \sin \frac{\pi x}{L} \sin \frac{2 \pi x}{L} = - \frac{16L}{9\pi^2}. $$
 4. Hence calculate $\mathrm{cov}(x,y)$ (as a function of time). 
 
 
 ```{dropdown} Answers
-1. $\pd(x)$ is the average of the prob. density of $u_1(x)$ and $u_2(x)$. The average position of $\pd(x)$ is thus average position in ground state and first excited state. From figure, can see that prob. density is symmetric about centre of well for all eigenfunctions, so $\av{x} = \frac{L}{2}$. 
+1. $\pd(x)$ is the average of the prob. density of $u_1(x)$ and $u_2(x)$. The average position of $\pd(x)$ is thus the average position in the ground state and first excited state. From the figure, we can see that prob. density is symmetric about centre of well for all eigenfunctions, so $\av{x} = \frac{L}{2}$. 
 2. n/a (show that).
 3. n/a (show that).
 4. $\mathrm{cov}(x,y) = \left(\frac{16L}{9\pi^2}\right)^2 \cos \frac{6\Ebox t}{\hbar}$

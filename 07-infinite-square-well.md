@@ -24,15 +24,15 @@ As already discussed in [chapter](04-energy), there are two **distinct** situati
 
 In this chapter we will study the **simplest** example of a potential well, and see explicitly **how** the energy levels arise. This model isn't very **physical**, but it is mathematically simple, and serves as an ideal starting point from which to study potential wells in quantum mechanics. 
 
-The second situation we can encounter — as we did in the previous [chapter](06-free-particle) — is when the forces do not confine a particle to a finite region of space. We will return to more interesting examples — this time involving forces — in chapter x. 
+The second situation we can encounter — as we did in the previous [chapter](06-free-particle) — is when the forces do not confine a particle to a finite region of space. We will return to more interesting examples — this time involving forces — in [](09-scattering). 
 
-After introducing the infinite square well, we will show how to find the energy eigenfunctions. This will see that we need a new fact about energy eigenfuctions, relating to their **continuity**. Remarkably, it is in fact from this that the quantisation of energies will arise, as we will see in detail below. 
+After introducing the infinite square well, we will show how to find the energy eigenfunctions. This will see that we need a new fact about energy eigenfunctions, relating to their **continuity**. Remarkably, it is in fact from this that the quantisation of energies will arise, as we will see in detail below. 
 
 We will then consider a simple example of the evolution in time of a particle inside the infinite square well, seeing that it is very different from what we saw in the previous chapter, for a free particle. 
 
 ## The infinite square well potential
 
-We are going to consider a situation where a particle is **perfectly confined inside a box** of width $L$. We will assume that there are walls at $x = 0$ and $x = L$, and want to model these are being **perfectly elastic** so that the particle definite bounces off of these walls. We can model this using the following potential energy function,
+We are going to consider a situation where a particle is **perfectly confined inside a box** of width $L$. We will assume that there are walls at $x = 0$ and $x = L$, and want to model these are being **perfectly elastic** so that the particle definitely bounces off of these walls. We can model this using the following potential energy function,
 ```{math}
 :label: e-infinite-square-well
 V(x) = \begin{cases} 0 &\text{if }{0 \leq x \leq L,} \\
@@ -46,7 +46,7 @@ This potential well is depicted in [](#f-infinite-square-well).
 :width: 400px
 :align: center
 
-**Infinite square well potential.** The potential energy of the infinite square well. The potential vanishes for $0 \leq x \leq a$, and is infinite otherwise. This well is an idealisation for a situation where a particle is trapped inside a 'box', i.e. between two perfectly elastic and impenetrable walls.
+**Infinite square well potential.** The potential energy of the infinite square well. The potential vanishes for $0 \leq x \leq L$, and is infinite otherwise. This well is an idealisation for a situation where a particle is trapped inside a 'box', i.e. between two perfectly elastic and impenetrable walls.
 ````
 *Why do we take the potential energy to be infinite outside of the box?* Well, this means that the particle would have to have infinite energy to be outside. Thus, under the **physical assumption** that the particle can only have a **finite energy** then we see that this is a way of modelling a perfectly confined particle. This potential energy is itself unphysical, however we can take it as a **good approximation** to a **deep but finite well**. That is, one where the energy outside the well is $V_0$, which we take to be as large as we like. 
 
@@ -87,7 +87,7 @@ Region II is our primary region of interest, as this corresponds to $0\leq x\leq
 ```{math}
 \op{H} = \op{K} = \frac{\op{P}^2}{2M} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2}.
 ```
-That is, inside the well, **the potential energy vanishes** and hence the particle is **essentially free** with no forces acting. We are thus in a very similar situation to [](06-free-particle). We can use this to realise that we already what the energy eigenfunctions must be in region II: **they must coincide with momentum eigenfunctions** — i.e. they must be **complex plane waves**. We can check this directly. In particular, we can see that $e^{ikx}$ is an eigenfunction of $\op{H}$, for any value $k$, 
+That is, inside the well, **the potential energy vanishes** and hence the particle is **essentially free** with no forces acting. We are thus in a very similar situation to [](06-free-particle). We can use this to realise that we already know what the energy eigenfunctions must be in region II: **they must coincide with momentum eigenfunctions** — i.e. they must be **complex plane waves**. We can check this directly. In particular, we can see that $e^{ikx}$ is an eigenfunction of $\op{H}$, for any value $k$, 
 ```{math}
 \vph \op{H}e^{ikx} &= -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} e^{ikx},\\
 &= \frac{\hbar^2 k^2}{2M} e^{ikx},
@@ -125,7 +125,7 @@ Recall that a **continuous function** is one which doesn't have any **jumps**. T
 :width: 300px
 :align: center
 
-**Example of a discontinuous function.** The function which has a discontinuity (i.e. a jump), at $x = x_a$.  Energy eigenfuctions must be continuous functions, and cannot have jumps like in this example.
+**Example of a discontinuous function.** The function which has a discontinuity (i.e. a jump), at $x = x_a$.  Energy eigenfunctions must be continuous functions, and cannot have jumps like in this example.
 ```
 
 We need to use this fact **at the boundaries between the three regions** at the walls of the box, at $x = 0$ and $x = L$. In particular, because of the fact that the eigenfunctions vanish for $x < 0$, continuity means that the wavefunction **must also vanish at $x = 0$, at the wall.** Substituting $x = 0$ into [](#e-isw-eigenfunction-1), we can therefore conclude that
@@ -138,7 +138,7 @@ Turning now to the boundary between regions II and III, the right-hand wall, in 
 ```{math}
 2iA\sin kL = 0.
 ```
-One possible solution appears to be $A = 0$, however a little thought shows that this can't be correct. If $A = 0$, then $u_E(x) = 0$, and hence we have a **trivial mathematical solution**, but not an interesting physical one. In particular, we need energy eigenfunctions — as valid quantum wavefunctions — to be **normalised**. A wavefunction that vanishes everywhere certainty isn't normalised. Hence this isn't what we are looking for. 
+One possible solution appears to be $A = 0$, however a little thought shows that this can't be correct. If $A = 0$, then $u_E(x) = 0$, and hence we have a **trivial mathematical solution**, but not an interesting physical one. In particular, we need energy eigenfunctions — as valid quantum wavefunctions — to be **normalised**. A wavefunction that vanishes everywhere certainly isn't normalised. Hence this isn't what we are looking for. 
 
 The only other possibility is that $\sin kL = 0$. While this definitely **isn't true in general**, **there are special values of $k$ for which it will be true**! In particular, we know that $\sin \theta = 0$ if $\theta = 0$, $\pi$, $2\pi$, $3\pi$, $\ldots$, that is, if $\theta = n\pi$ for $n$ an integer. Thus, we must choose $k$ such that $kL = n\pi$, i.e.
 ````{card}
@@ -150,7 +150,7 @@ For these special values of $k$, we will have $\sin kL = 0$, so the eigenfunctio
 
 Before going on, we can realise quickly that $n$ should be a **positive integer**. First, if $n = 0$, then $k = 0$ and so we have $\sin kx = \sin 0 = 0$. This is just the same as taking $A = 0$, which we already saw was mathematically correct, but not physically meaningful. We therefore are not interested in $n = 0$. For $n = -m$ (with $m$ a positive integer), we can use the fact that sine is an **odd** function, $\sin (-\theta) = -\sin \theta$. This means that $\sin n\pi x/L$ = $-\sin m\pi x/L$ and we have the **same** eigenfunction **up to a minus sign**. Since $-1$ is just a **phase**, and since we saw previously in [](#s-stationary) that an overall phase doesn't change any of the physical properties of a quantum state, $n$ and $-n$ in fact **lead to the same energy eigenfunction**, hence we only need to keep one value of $n$. It is customary to keep the positive one. 
 
-Thus, putting everything together, the requirement of **continuity** has lead us to the conclusion that $k$ must be a **positive multiple of $\pi/L$**. Since the **energy eigenvalues** were nothing but $E = \hbar^2k^2/2M$, we therefore see that for a particle confined to an infinite square well, there are **discrete energy levels**
+Thus, putting everything together, the requirement of **continuity** has led us to the conclusion that $k$ must be a **positive multiple of $\pi/L$**. Since the **energy eigenvalues** were nothing but $E = \hbar^2k^2/2M$, we therefore see that for a particle confined to an infinite square well, there are **discrete energy levels**
 ````{card}
 ```{math}
 :label: e-isw-energy-levels
@@ -282,7 +282,7 @@ Finally, just as we did for a free particle in [](#e-free-particle-evolution-spa
 \psi(x,t) = \sum_{n=1}^{\infty} \infint \psi_\init(x') u_n^*(x') u_n(x)e^{-iE_n t/\hbar} dx',
 ```
 ````
-This is once again a **formidible expression**, but one which is in fact very similarly to [](#e-free-particle-evolution-space). The difference is that whereas energy was **continuous** for a free particle, it is now **discrete** in the infinite square well, and we see this replaces one of the integrals with a summation. We also can realise that the factor $\frac{1}{2\pi \hbar} e^{ip(x-x')/\hbar}$ is really $v_p^*(x')v_p(x)$, where $v_p(x)$ is the momentum eigenfunction [](#e-momentum-state-wavefunction), which are the **energy eigenfunctions** of a free particle. Finally, the term $e^{-ip^2t/2M\hbar}$ is $e^{-iEt/\hbar}$, with $E = p^2/2M$ the energy eigenvalue of $v_p(x)$ for a free particle. Thus the form in both cases is in fact **identical**, up to the change from continuous to discrete energies. This is reassuring, as it shows that what we have done is the same, just in a different context here. 
+This is once again a **formidible expression**, but one which is in fact very similar to [](#e-free-particle-evolution-space). The difference is that whereas energy was **continuous** for a free particle, it is now **discrete** in the infinite square well, and we see this replaces one of the integrals with a summation. We also can realise that the factor $\frac{1}{2\pi \hbar} e^{ip(x-x')/\hbar}$ is really $v_p^*(x')v_p(x)$, where $v_p(x)$ is the momentum eigenfunction [](#e-momentum-state-wavefunction), which are the **energy eigenfunctions** of a free particle. Finally, the term $e^{-ip^2t/2M\hbar}$ is $e^{-iEt/\hbar}$, with $E = p^2/2M$ the energy eigenvalue of $v_p(x)$ for a free particle. Thus the form in both cases is in fact **identical**, up to the change from continuous to discrete energies. This is reassuring, as it shows that what we have done is the same, just in a different context here. 
 
 ## Exercises
 
@@ -321,7 +321,7 @@ $$ \psi_\init(x) = \frac{1}{\sqrt{2}}\left(u_1(x) + u_2(x)\right).$$
 3. Confirm that the wavefunction from part 2 satisfies the SE [](#e-SE-wf). 
 4. Calculate $\pd(x,t)$. It will be helpful to denote $\omega = (E_2 - E_1)/\hbar$. 
 5. The motion of the particle is periodic. What is the period $T$?
-6. Using your favourite sketching software, plot the probability density of the particle at $t = 0$, $t = T/4$, $T = T/2$ and $T = 3T/4$. 
+6. Using your favourite sketching software, plot the probability density of the particle at $t = 0$, $t = T/4$, $t = T/2$ and $t = 3T/4$. 
 
 ```{dropdown} Answers
 1. $E_1$ and $E_2$ only; $\prob(E_1) = \frac{1}{2}$ and $\prob(E_2) = \frac{1}{2}$.

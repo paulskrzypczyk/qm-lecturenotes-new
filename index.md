@@ -57,8 +57,9 @@ Finally, this course has been extensively updated this year, with the lecture no
 
 ## Changelog
 
-- 09/01/2025: general updates for new year; fixed lots of typos (thanks Sohyun). Added revision exercises. 
-- 11/03/2025: added TOC to index
+- 26/01/2025: Fixed many more typos (huge thanks again to Sohyun). 
+- 09/01/2025: General updates for new year; fixed lots of typos (thanks Sohyun). Added revision exercises. 
+- 11/03/2025: Added TOC to index
 - 05/02/2025: Fixed typo below [](#e-creation-annihilation), where it said "annihilation" instead of "creation" (thanks Jack Eadie)
 - 14/01/2025: Fixed typo below [](#e-X-on-psi): $\psi'(x) = x\psi(x)$ (thanks anon!)
 - 14/01/2025: Fixed [](#e-discrete-position) upper limit on sum from 2 to 4 (thanks anon!)

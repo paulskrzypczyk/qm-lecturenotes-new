@@ -349,7 +349,7 @@ It is insightful to compare to corresponding plots for the eigenfunctions and pr
 
 There is one new and very important aspect of quantum mechanics that arises for the harmonic oscillator, which isn't present in the infinite square well potential, known as **tunnelling** or alternatively **barrier penetration**. 
 
-Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from th origin, its potential energy increases quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#f-isw-eigenfunctions) and [](#f-isw-pd).
+Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from the origin, its potential energy increases quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#f-isw-eigenfunctions) and [](#f-isw-pd).
 
 Now, while the gaussian function decays rather rapidly, it is in fact non-zero **for all values of x**, and hence when a particle has a definite energy in the harmonic oscillator, there is a non-zero probability to find it in any finite region, no matter how far from the origin. 
 
@@ -357,7 +357,7 @@ This is however very strange, as above we just noted that the potential energy i
 
 This is known as **tunnelling** or **barrier penetration**: a quantum particle manages to **enter a region** in which classically it does not have enough energy to enter! 
 
-Remarkably, this isn't even a small effect! In [](#f-isw-eigenfunctions) and [](#f-isw-pd) we have added vertical lines on the axis to denote the position where the potential energy $V(x) = E_n$. Beyond these points, classically the particle should not be found. As you can see, there is a significant probability to be found in the classically forbidden region, even in the ground state.
+Remarkably, this isn't even a small effect! In [](#wf-ho) and [](#pd-ho) we have added vertical lines on the axis to denote the position where the potential energy $V(x) = E_n$. Beyond these points, classically the particle should not be found. As you can see, there is a significant probability to be found in the classically forbidden region, even in the ground state.
 
 Although we won't study it in this course, tunnelling is interesting and important. Consider for example that we have **two potential wells**, separated by an energy barrier. Classically a particle can be trapped in one of them (for example, a planet can be bound in orbit around one star, even if there is a second star that it could equally be bound in orbit around). In quantum mechanics, **because a particle tunnels**, it is able to move between the two wells. This effect is extremely important, for example explaining $\alpha$ decay in particle physics, and being utilised in **semiconductor devices**. 
 
@@ -384,7 +384,7 @@ and find the exponents $\mu$, $\nu$ and $\lambda$ that give $q$ the dimension of
 ````{exercise}
 :label: ex-comm-H-adag
 1. Show that for arbitrary operators $\hat{A}$, $\hat{B}$, $\hat{C}$ and $\hat{D}$ that
-$$ [\hat{A} + \hat{B}, \hat{C} + \hat{D}] = [\hat{A},\hat{C}] + [\hat{A},\hat{D}] + [\hat{B},\hat{C}] + [\hat{B}\,\hat{D}].$$
+$$ [\hat{A} + \hat{B}, \hat{C} + \hat{D}] = [\hat{A},\hat{C}] + [\hat{A},\hat{D}] + [\hat{B},\hat{C}] + [\hat{B},\hat{D}].$$
 2. Show that for arbitrary operators $\hat{A}$ and $\hat{B}$, and arbitrary complex constants $\alpha$ and $\beta$ that 
 $$ [\alpha \hat{A}, \beta \hat{B}] = \alpha\beta [\hat{A},\hat{B}].$$
 3. Using parts 1 and 2, and the explicit form of $\hat{H}$ and $\hat{a}^\dagger$, show that 

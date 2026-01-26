@@ -224,9 +224,9 @@ This eigenfunction (for one choice of $E$) is depicted below in [](#right-moving
 **Right-moving energy eigenfunction of the potential step**. Colour plot of a right-moving energy eigenfunction, given in [](#e-eig-step-R-final). For illustrative purposes, we also plot the potential step, to highlight where it is in relation to the wavefunction (the height of the step has relation to the amplitude of the wavefunction). On the left of the step, where there is both the incoming and reflected component of the wavefunction, there is interference, leading to sinusoidal oscillations. On the right, where there is only the transmitted component, the modulus of the wavefunction is constant. 
 ````
 
-As a summary of what we have achieved: in [](#e-eig-step-R-final) we have found the wavefunction of the the quantum step Hamiltonian with constant energy $E$, that is 'right-moving', in the sense that when we look on the left of the step, we only have a positive momentum component. We found this by using two key **mathematical properties** of energy eigenfunctions: that they are **continuous** (as previously seen), and that they have a **continuous derivative** (which is new here). More informally, this ensured that the function has no 'jumps' and no 'kinks. Just as with the free particle, there is a **second degenerate energy eigenfunction of energy $E$**. This corresponds to a **left-moving** particle, and you will solve for it as an [exercise](#ex-left-moving) below. 
+As a summary of what we have achieved: in [](#e-eig-step-R-final) we have found the wavefunction of the quantum step Hamiltonian with constant energy $E$, that is 'right-moving', in the sense that when we look on the left of the step, we only have a positive momentum component. We found this by using two key **mathematical properties** of energy eigenfunctions: that they are **continuous** (as previously seen), and that they have a **continuous derivative** (which is new here). More informally, this ensured that the function has no 'jumps' and no 'kinks'. Just as with the free particle, there is a **second degenerate energy eigenfunction of energy $E$**. This corresponds to a **left-moving** particle, and you will solve for it as an [exercise](#ex-left-moving) below. 
 
-We will now analyse some of the interesting **physics** of these eigenfunctions, before briefly outlining how to **they can be used** to study the dynamics of particles (although you won't be expected to do this yourself, only to appreciate qualitatively what is found). 
+We will now analyse some of the interesting **physics** of these eigenfunctions, before briefly outlining how **they can be used** to study the dynamics of particles (although you won't be expected to do this yourself, only to appreciate qualitatively what is found). 
 
 ## Reflection and transmission coefficients
 
@@ -263,14 +263,15 @@ We already saw that $B = 0$ when $V_0 = 0$, hence $R = |B|^2 = 0$, so the reflec
 :width: 450px
 :align: center
 
-**Reflection and transmission coefficients**. Plot of reflection and transmission coefficients for the finite step, as given in [](#e-R-coeff-phys) and [](#e-R-coeff-phys). We see that the particle is perfectly reflected when $E = V_0$, and that the reflection coefficient is large only for $E$ close to $V_0$. For large values of $E/V_0$, the particle is transmitted with almost unit probability.
+**Reflection and transmission coefficients**. Plot of reflection and transmission coefficients for the finite step, as given in [](#e-R-coeff-phys) and [](#e-T-coeff-phys). We see that the particle is perfectly reflected when $E = V_0$, and that the reflection coefficient is large only for $E$ close to $V_0$. For large values of $E/V_0$, the particle is transmitted with almost unit probability.
 ````
 
 In an [exercise](#ex-V0-neg-R), you will furthermore see that we have reflection **even when $V_0$ is negative** — where naively we would not expect to see any reflection at all, since the particle always has enough energy to pass the step. 
 
-Finally, since we see in the graph that $0 \leq R \leq 1$, we can define the **transmission coefficient** in a very natural way, as $T = 1-R$, so that, by construction $R + T = 1$. That is, if the particle isn't reflected, than it is transmitted. With this definition, we have
+Finally, since we see in the graph that $0 \leq R \leq 1$, we can define the **transmission coefficient** in a very natural way, as $T = 1-R$, so that, by construction $R + T = 1$. That is, if the particle isn't reflected, then it is transmitted. With this definition, we have
 ````{card}
 ```{math}
+:label: e-T-coeff-phys
 T = \frac{4\sqrt{\frac{E}{V_0}}\sqrt{\frac{E}{V_0}-1}}{\left(\sqrt{\frac{E}{V_0}}+\sqrt{\frac{E}{V_0}-1}\right)^2}
 ```
 ````
@@ -399,7 +400,7 @@ e^{ikx} - \frac{\lambda + ik}{\lambda - ik}e^{-ikx} &\text{ if } x < 0, \\
 3. Substitute your answers from part 1 and part 2  into [](#e-R-coeff), to show that after appropriate simplification, you arrive at [](#e-R-coeff-phys). 
 ```{dropdown} Answers
 1. $k = \sqrt{2ME}/\hbar$. 
-2. $k' = \sqrt{2M(E V_0)}/\hbar$.
+2. $k' = \sqrt{2M(E - V_0)}/\hbar$.
 3. n/a (show that). 
 ```
 ````

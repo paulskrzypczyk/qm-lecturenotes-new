@@ -45,7 +45,7 @@ I have included **additional questions** for you to attempt / discuss if you com
    ```
 ````
 
-````{tip .simple} Problem 3
+````{tip .simple} Problem 4
 Consider the  particle from last week's problem class, **(initially)** confined to the region $x \geq 0$, with the following quantum state
 ```{math}
 :label: eq-pc14-wf

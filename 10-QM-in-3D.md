@@ -134,7 +134,7 @@ from which it follows that $[\hat{X}, \hat{Y}] = 0$, according to [](#e-wf-comm-
 
 ### Probability to find a particle somewhere
 
-We can now think about measuring the **position of the particle** in 3D, and ask *what is the probability to find it in an (arbitrarily small) region around $\rvec$? That is, if we performed an arbitrarily good simultaneous measurement of the 3 coordinates of the particle? The answer is the direct generalisation of what we saw for a particle in one dimension: the **probability density** at position $\rvec$$ is precisely
+We can now think about measuring the **position of the particle** in 3D, and ask *what is the probability to find it in an (arbitrarily small) region around $\rvec$?* That is, if we performed an arbitrarily good simultaneous measurement of the 3 coordinates of the particle? The answer is the direct generalisation of what we saw for a particle in one dimension: the **probability density** at position $\rvec$ is precisely
 ````{card}
 ```{math}
 \pd(\rvec) = |\psi(\rvec)|^2,
@@ -214,7 +214,7 @@ Momentum eigenstates will then be — by definition — joint eigenstates of eac
 ```{math}
 \hat{P}_x \ket{\pvec} &= p_x \ket{\pvec},& \hat{P}_y \ket{\pvec} &= p_y \ket{\pvec},& \hat{P}_z \ket{\pvec} &= p_z \ket{\pvec}.
 ```
-We can again write this in a succint way as
+We can again write this in a succinct way as
 ```{math}
 :label: e-3D-P-eigenvalue-eq
 \hat{\mathbf{P}}\ket{\pvec} &= \pvec \ket{\pvec},
@@ -359,7 +359,7 @@ The equation of motion of a particle in 3D is no different from the equation of 
 
 In 1D we saw that we **never actually solve the SE directly** — we instead used the **superposition principle** and the fact that **energy eigenstates evolve simply** to solve it **indirectly**. In 3D, nothing will change on this front either! 
 
-For example, assuming that the particle is **bound** and therefore that it has a discrete set of **energy levels** $\ket{E_\mathbf{n}}$ (specified by the vector of quantum numbers $\mathbf{n}$), this if this is the initial state of a particle at time $t = 0$, i.e. $\ket{\psi(t=0)} = \ket{E_\mathbf{n}}$, then the state at time $t$ will simply be
+For example, assuming that the particle is **bound** and therefore that it has a discrete set of **energy levels** $\ket{E_\mathbf{n}}$ (specified by the vector of quantum numbers $\mathbf{n}$), this is the initial state of a particle at time $t = 0$, i.e. $\ket{\psi(t=0)} = \ket{E_\mathbf{n}}$, then the state at time $t$ will simply be
 ```{math}
 \ket{\psi(t)} = e^{-iE_{\mathbf{n}}t/\hbar}\ket{E_\mathbf{n}},
 ```
@@ -417,7 +417,7 @@ where we have been **careful** to change our integration variable to $\rvec'$ (a
 
 ```{dropdown} Answers
 1. $\bra{\psi} = \int_V \psi^*(\rvec') \bra{\rvec'}d^3 \rvec'$.
-2. $ \inner{\psi}{\psi} = \int_V \int_V \psi^*(\rvec)\psi(\rvec) \inner{\rvec'}{\rvec} d^3 \rvec' d^3 \rvec.$
+2. $ \inner{\psi}{\psi} = \int_V \int_V \psi^*(\rvec')\psi(\rvec) \inner{\rvec'}{\rvec} d^3 \rvec' d^3 \rvec.$
 3. n/a (show that). 
 
 ```
