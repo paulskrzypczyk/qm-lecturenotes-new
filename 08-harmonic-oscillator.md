@@ -12,7 +12,7 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-8-I.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-8-I.pdf
 :width: 100%
 ```
 ````
@@ -155,7 +155,7 @@ We thus have a procedure, starting from any given energy level $\ket{E_n}$, to c
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-8-II.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-8-II.pdf
 :width: 100%
 ```
 ````
@@ -284,7 +284,7 @@ u_n(x) = \frac{(\op{a}^\dagger)^n}{\sqrt{n!}}u_0(x).
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-8-III.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-8-III.pdf
 :width: 100%
 ```
 ````

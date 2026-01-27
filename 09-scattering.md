@@ -12,7 +12,7 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-I.pdf
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-9-I.pdf
 :width: 100%
 ```
 ````
@@ -163,7 +163,7 @@ In what follows, we will focus on **right-moving** particles, and leave the corr
 ```
 ````{tip} Slides
 :class: dropdown
-%```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-II.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-9-II.pdf
 :width: 100%
 ```
 ````
@@ -286,7 +286,7 @@ This is also plotted in [](#R+T).
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-9-III.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-9-III.pdf
 :width: 100%
 ```
 ````

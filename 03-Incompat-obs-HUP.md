@@ -12,7 +12,7 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-3.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-3.pdf
 :width: 100%
 ```
 ````

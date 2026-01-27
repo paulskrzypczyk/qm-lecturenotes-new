@@ -12,7 +12,7 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-1-I.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-1-I.pdf
 :width: 100%
 ```
 ````
@@ -180,7 +180,7 @@ Nevertheless, as we have seen in [](#e-general-quantum-state), quantum particles
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-1-II.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-1-II.pdf
 :width: 100%
 ```
 ````
@@ -250,7 +250,7 @@ i.e. we integrate the probability density, just as we would involving any questi
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-1-III.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-1-III.pdf
 :width: 100%
 ```
 ````

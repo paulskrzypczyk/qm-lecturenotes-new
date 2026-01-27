@@ -12,7 +12,7 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-6-I.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-6-I.pdf
 :width: 100%
 ```
 ````
@@ -88,7 +88,7 @@ This equation restates what we already knew, but makes it much clearer. In parti
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/QM-6-II.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-6-II.pdf
 :width: 100%
 ```
 ````
