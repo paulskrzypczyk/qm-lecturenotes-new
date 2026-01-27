@@ -1,11 +1,15 @@
 ---
 title: "Problem Class Week 13 Problems"
 short_title: "Week 13"
+numbering: false
 ---
 
 These are the problems that we will solve during the problem class in week 13. **You are not expected to attempt these questions in advance of the problem class.** We will work through them in sequence, going through the solutions after everybody has time to attempt the questions.
 
-I have included additional questions for you to attempt / discuss if you complete the questions before we go over the solution. 
+I have included additional questions for you to attempt / discuss if you complete the questions before we go over the solution.
+
+
+## Problems
 
 ````{tip .simple} Problem 1
 Consider a  particle confined to the region $x \geq 0$, with the following quantum state
@@ -48,3 +52,25 @@ where $L > 0$ is a constant.
    ```
 ````
 
+## Solutions
+
+````{tip .simple} Solutions
+:class: dropdown
+Tuesday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2013%20Tues.pdf
+:width: 100%
+```
+Thursday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2013%20Thurs.pdf
+:width: 100%
+```
+````
+
+## Desmos
+
+````{tip .simple} Desmos
+:class: dropdown
+```{iframe} https://www.desmos.com/calculator/htrsqecccl?embed
+:width: 100%
+```
+````

@@ -49,7 +49,7 @@ While I am providing a set of lecture notes to accompany the course, **I want to
 
 If you have any questions about the course, or anything above, please don't hesitate to contact me, either by email (paul.skrzypczyk@bristol.ac.uk) or in a problem class. 
 
-Finally, this course has been extensively updated this year, with the lecture notes largely rewritten. If you find any **errors** or **mistakes** or something which isn't clear, please let me know, or fill in this anonymous form: 
+Finally, this course was extensively updated last year, with the lecture notes largely rewritten. If you find any **errors** or **mistakes** or something which isn't clear, please let me know, or fill in this anonymous form: 
 ```{card}
 :align: center
 [Submit an error/mistake/comment](https://forms.office.com/Pages/ResponsePage.aspx?id=MH_ksn3NTkql2rGM8aQVG7u7qKuEAWhMl3HixoDWNqZURVpZUEtZOFhNSldEVDFTQ1BORFJWUzVQMS4u)
@@ -57,6 +57,7 @@ Finally, this course has been extensively updated this year, with the lecture no
 
 ## Changelog
 
+- 27/01/2025: Fixed even more typos (thanks again Sohyun!). Also added solutions and demos to [](w13-pc-problems)
 - 26/01/2025: Fixed many more typos (huge thanks again to Sohyun). 
 - 09/01/2025: General updates for new year; fixed lots of typos (thanks Sohyun). Added revision exercises. 
 - 11/03/2025: Added TOC to index
