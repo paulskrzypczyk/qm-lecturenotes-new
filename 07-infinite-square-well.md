@@ -12,7 +12,7 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-7-I.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-7-I.pdf
 :width: 100%
 ```
 ````
@@ -186,7 +186,7 @@ Note that here we have **changed notation** from $u_{E_n}(x)$ to $u_{n}(x)$. The
 ```
 ````{tip} Slides
 :class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-7-II.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-7-II.pdf
 :width: 100%
 ```
 ````

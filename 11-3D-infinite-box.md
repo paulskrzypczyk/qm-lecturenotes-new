@@ -12,7 +12,7 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-11-I.pdf
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-11-I.pdf
 :width: 100%
 ```
 ````
@@ -138,7 +138,7 @@ Although we won't prove it here, the energy eigenstates we have found in the abo
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-11-II.pdf
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-11-II.pdf
 :width: 100%
 ```
 ````
@@ -233,7 +233,7 @@ In other potentials — such as Hydrogren — we will have a different degenerac
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/Lecture%20Slides/2024-5/QM-11-III.pdf
+ ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-11-III.pdf
 :width: 100%
 ```
 ````
