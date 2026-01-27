@@ -251,7 +251,7 @@ where in the second line we used the fact that since $\tilde{\psi}(p)$ is indepe
 \vph\op{P}\psi(x) = -i\hbar \frac{\partial}{\partial x}\psi(x).
 ```
 ````
-That is, the momentum operator $\op{P}$ is the the partial derivative multiplied by $-i\hbar$. In what is basically an abuse of notation, we will sometimes write $\op{P} = -i\hbar \frac{\partial}{\partial x}$. This is somewhat dangerous, as that partial derivative needs to act on something! (actually, it will act on **everything** to the right of it). Nevertheless, it is an **operator** in that it acts on a function and returns a function.
+That is, the momentum operator $\op{P}$ is the partial derivative multiplied by $-i\hbar$. In what is basically an abuse of notation, we will sometimes write $\op{P} = -i\hbar \frac{\partial}{\partial x}$. This is somewhat dangerous, as that partial derivative needs to act on something! (actually, it will act on **everything** to the right of it). Nevertheless, it is an **operator** in that it acts on a function and returns a function.
 
 Finally, it is instructive to look at what we get if we apply the momentum operator $\op{P}$ onto the wavefunctions $v_p(x) = \frac{1}{\sqrt{2\pi\hbar}}e^{ipx/\hbar}$ (the wavefunctions of definite momentum, associated to the momentum states $\ket{p}$). We see that
 ```{math}

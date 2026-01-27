@@ -18,7 +18,7 @@ numbering:
 ````
 `````
 
-In this chapter we will investigate the simplest possible scenario one can consider in the context of mechanics — a **free particle** — one with no forces acting upon it whatsoever. We will see that, given everything we have learnt up until this point, that we can **directly** solve for the evolution of a free particle, since we can immeidately find the the energy eigenstates (the quantum states of a particle with a definite energy) in this simple setting. 
+In this chapter we will investigate the simplest possible scenario one can consider in the context of mechanics — a **free particle** — one with no forces acting upon it whatsoever. We will see that, given everything we have learnt up until this point, that we can **directly** solve for the evolution of a free particle, since we can immediately find the the energy eigenstates (the quantum states of a particle with a definite energy) in this simple setting. 
 
 We will see that quantum evolution is more intricate than classical evolution, ultimately due to the HUP. In particular, in a classical setting, if a particle has an initial position $x_0$ and an initial momentum $p_0$, then from the equation of motion — Newton's second law — the position of the particle at time $t$ will be
 ```{math}
@@ -27,7 +27,7 @@ x(t) = x_0 + \frac{p_0}{M}t,
 (and the momentum is constant, $p(t) = p_0$). 
 
 
-In quantum mechanics, as we already saw, a particle must necessarily have a **superposition of momenta**. This means that it will be travelling with a superposition of speeds, and therefore after some time, it will be in a superposition of having different displacements from its initial position (i.e. of having travelled different distances). As we will see, this generically leads to **spreading out** of the wavefunction, so that at later times, a position measurement will generally have a **larger standard deviaition**. 
+In quantum mechanics, as we already saw, a particle must necessarily have a **superposition of momenta**. This means that it will be travelling with a superposition of speeds, and therefore after some time, it will be in a superposition of having different displacements from its initial position (i.e. of having travelled different distances). As we will see, this generically leads to **spreading out** of the wavefunction, so that at later times, a position measurement will generally have a **larger standard deviation**. 
 
 ## States of definite energy
 

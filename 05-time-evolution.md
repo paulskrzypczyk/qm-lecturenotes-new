@@ -28,7 +28,7 @@ In this chapter, after reintroducing the **equation of motion** of QM, we will s
 
 In general, if we prepare a quantum particle in the state $\ket{\psi_\init}$ at time $t = 0$, we are interested in determining its state at an arbitrary later time $t$, which we will denote by $\ket{\psi(t)}$. 
 
-The **equation of motion** in quantum physics called the Schrödinger Equation (SE), and is given by
+The **equation of motion** in quantum physics is called the Schrödinger Equation (SE), and is given by
 ````{card}
 ```{math}
 :label: e-SE
@@ -137,7 +137,7 @@ Let us return for the moment to bound states, and consider a particularly simple
 :label: e-E-eigenstate-evolution
 \ket{\psi(t)} = e^{-iE_\ell t/\hbar}\ket{E_\ell}.
 ```
-That is, **in time, the state just aquires a *phase* $e^{-i E_\ell t/\hbar}$**. What we would now like to ask is *what properties of the particle change?*
+That is, **in time, the state just acquires a *phase* $e^{-i E_\ell t/\hbar}$**. What we would now like to ask is *what properties of the particle change?*
 
 First of all, we can see that the **energy hasn't changed**. In particular, the particle started off with a definite energy $E_\ell$. While it has aquired a phase, **this doesn't change the energy of the particle**. One way to see this is to consider **measuring the energy**. Recall that if we had a general superposition of energy levels, $\sum_k \beta_k \ket{E_k}$, then the probability of the result $E_k$ would be 
 ```{math}
@@ -197,7 +197,7 @@ That is, since $\psi_\init''(x)$ is a superposition of $\psi_\init(x)$ and $\psi
 ```
 This is very special, and **remarkably powerful**. You will show that it is true as an [exercise](#ex-superposition-principle). 
 
-We can now return to [](#e-wf-soln-to-SE-bound) and use the superposition principle to understand (and therefore hopefully remember!) it. We wrote the initial wavefunction as a **superposition** of energy eigenfunctions. Each energy eigenfunction evolves in a **simple** fashion, as we saw in [](#s-stationary): it only aquires a phase factor $e^{-iE_k t/\hbar}$ in time. [](#e-wf-soln-to-SE-bound) is then nothing but an application of the superposition principle: the evolution of the superposition is just the superposition of the **simple** evolutions! It is worthwhile taking time to internalise this, as it is one of the most important lessons about quantum mechanics. 
+We can now return to [](#e-wf-soln-to-SE-bound) and use the superposition principle to understand (and therefore hopefully remember!) it. We wrote the initial wavefunction as a **superposition** of energy eigenfunctions. Each energy eigenfunction evolves in a **simple** fashion, as we saw in [](#s-stationary): it only acquires a phase factor $e^{-iE_k t/\hbar}$ in time. [](#e-wf-soln-to-SE-bound) is then nothing but an application of the superposition principle: the evolution of the superposition is just the superposition of the **simple** evolutions! It is worthwhile taking time to internalise this, as it is one of the most important lessons about quantum mechanics. 
 
 The same story is also true for [](#e-wf-soln-to-SE-non-bound), the only difference now is the form of the superposition (going from a discrete sum, to a continuous integral). 
 

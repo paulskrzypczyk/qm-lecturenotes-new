@@ -144,7 +144,7 @@ In QM, when a particle is in a bound state, we find that **it can only have cert
 (s-Non-bound-states)=
 ### Non-bound states
 
-The alernative situation is where a particle is **not confined** to one region of space, either because **it has too much energy to be bound in the well** ($E > E_B$), or because **there are no forces**, i.e. $V(x) = 0$ and there is no well to be trapped in. Classically, this corresponds to **non-closed orbits**, such as asteroids passing a star, or an electron that isn't bound to a nucleus. In these cases, in principle, the object will eventually **escape to infinity** (travel as far as possible in some direction). 
+The alternative situation is where a particle is **not confined** to one region of space, either because **it has too much energy to be bound in the well** ($E > E_B$), or because **there are no forces**, i.e. $V(x) = 0$ and there is no well to be trapped in. Classically, this corresponds to **non-closed orbits**, such as asteroids passing a star, or an electron that isn't bound to a nucleus. In these cases, in principle, the object will eventually **escape to infinity** (travel as far as possible in some direction). 
 
 In QM in this case we find that there is **no discretisation** (no energy levels), but rather the particle can have **any energy** $E > E_B$ (just like it can have any momentum or position in general), and energy remains **continuous** as it is classically. 
 

@@ -257,7 +257,7 @@ i.e. we integrate the probability density, just as we would involving any questi
 ````
 `````
 
-As this unit progresses, we will see that it is **very often** useful to focus **exclusively** on the wavefunction $\psi(x)$, and leave it **implicit** that the quantum state of the particle is as given by [](#e-general-quantum-state). The reason for this is that is can often be **overly cumbersome** to work with the full state $\ket{\psi}$, and it is much more convenient to just work with $\psi(x)$ instead.
+As this unit progresses, we will see that it is **very often** useful to focus **exclusively** on the wavefunction $\psi(x)$, and leave it **implicit** that the quantum state of the particle is as given by [](#e-general-quantum-state). The reason for this is that it can often be **overly cumbersome** to work with the full state $\ket{\psi}$, and it is much more convenient to just work with $\psi(x)$ instead.
 
 In fact, in many popular textbooks on quantum mechanics, the presentation often **begins** with the wavefunction $\psi(x)$, before introducing the full quantum state $\ket{\psi}$ later on. One disadvantage of this is that certain aspects of quantum theory are obscured without the link to the quantum state. Here, we have introduced the quantum state first, but would now like to develop the formalism which allows us to focus exclusively on the wavefunction. 
 
