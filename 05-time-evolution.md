@@ -230,10 +230,10 @@ In this exercise we will confirm that $\ket{\psi(t)}$ from [](#e:soln-to-SE-boun
 1. Confirm that $\ket{\psi(0)} = \ket{\psi_\init}$. 
 1. Re-carry out the above calculations in terms of $\psi(x,t) = \inner{x}{\psi(t)}$ and the SE [](#e-SE-wf). 
 ```{dropdown} Answers
-1. $E_k\sum_{k=1}^d \alpha_k e^{-iE_k t/\hbar}\ket{E_k}$. 
-2. $E_k\sum_{k=1}^d \alpha_k e^{-iE_k t/\hbar}\ket{E_k}$. LHS = RHS, so solution. 
+1. $\sum_{k=1}^d E_k \alpha_k e^{-iE_k t/\hbar}\ket{E_k}$. 
+2. $\sum_{k=1}^d E_k \alpha_k e^{-iE_k t/\hbar}\ket{E_k}$. LHS = RHS, so solution. 
 3. n/a (essentially show that)
-4. Both sides equal $E_k\sum_{k=1}^d \alpha_k e^{-iE_k t/\hbar}u_{E_k}(x)$
+4. Both sides equal $\sum_{k=1}^d E_k \alpha_k e^{-iE_k t/\hbar}u_{E_k}(x)$
 ```
 
 ````
