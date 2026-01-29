@@ -1,7 +1,10 @@
 ---
 title: "Problem Sheet: Week 13"
 short_title: "Prob. Sheet: Week 13"
+numbering: false
 ---
+
+## Exercises
 
 [](01-position)
 
@@ -26,3 +29,12 @@ short_title: "Prob. Sheet: Week 13"
 ![](#ex-mom-wf-gaussian)
 ![](#ex-x-p-comm)
 ![](#ex-3-5)
+
+## Solutions
+
+````{tip .simple} Solutions
+:class: dropdown
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Problem%20Sheets/Problem%20Sheet%20Week%2013%20Solutions.pdf
+:width: 100%
+```
+
