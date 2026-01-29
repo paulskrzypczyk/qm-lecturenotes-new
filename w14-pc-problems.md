@@ -1,11 +1,14 @@
 ---
 title: "Problem Class Week 14 Problems"
 short_title: "Week 14"
+numbering: false
 ---
 
 These are the problems that we will solve during the problem class in week 14. **You are not expected to attempt these questions in advance of the problem class.** We will work through them in sequence, going through the solutions after everybody has time to attempt the questions.
 
 I have included **additional questions** for you to attempt / discuss if you complete the questions before we go over the solution. If you also complete these, please work through [](w14-problems.md)
+
+## Problems
 
 ````{tip .simple} Problem 1
 1. What is the action of the operator $\hat{X}^2$ on a position state $\ket{x}$?
@@ -61,4 +64,18 @@ where $L > 0$ is a constant.  We will assume that **there are no forces acting o
    3. Write down (an integral) which gives the spatial wavefunction $\psi(x,t)$ of the particle.
    4. Think about how you might numerically integrate this, to see the evolution.
    ```
+````
+
+## Solutions
+
+````{tip .simple} Solutions
+:class: dropdown
+Tuesday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/pid-9787898-dt-content-rid-74975433_1/xid-74975433_1
+:width: 100%
+```
+Thursday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/pid-9787898-dt-content-rid-74975432_1/xid-74975432_1
+:width: 100%
+```
 ````
