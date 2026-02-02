@@ -56,18 +56,22 @@ $$ \psi_\mathrm{in}(x) = \sqrt{\frac{2}{3\ell \sqrt{\pi}}}\left(1+\frac{x}{\ell}
 ```
 ````
 
-%````{tip .simple} Problem 3
-% Consider two distinct particles, one confined in an **infinite square well** of width $L$ (with walls at $x = 0$ and $x = L$), and the second confined in an well of width $\mathcal{L} = L/2$ (with walls at $x = 0$ and $x = \mathcal{L}$). 
+````{tip .simple} Problem 3
+ Consider two distinct particles, one confined in an **infinite square well** of width $L$ (with walls at $x = 0$ and $x = L$), and the second confined in an well of width $\mathcal{L} = L/2$ (with walls at $x = 0$ and $x = \mathcal{L}$). 
 
-% In each case, we will consider a particle prepared in the $n^\mathrm{th}$ energy eigenstate of the well $\ket{E_n}$. 
+ In each case, we will consider a particle prepared in the $n^\mathrm{th}$ energy eigenstate of the well $\ket{E_n}$. 
 
-% 1. What is the energy of each particle? 
-% 2. How many times bigger is the energy of the particle in the well of width $\mathcal{L}$?
-% 3. For each well, **write down** an expression (as an integral) for the **average kinetic energy** of the particle $\langle K \rangle$, where $K =  
+ 1. What is the energy of each particle? 
+ 2. How many times bigger is the energy of the particle in the well of width $\mathcal{L}$?
+ 3. For each well, **write down** an expression (as an integral) for the **average squared-position** of the particle $\langle x^2 \rangle$ (you do not need to solve this integral!)
+ 4. How many times larger is $\langle x^2 \rangle$ for the particle in the well of width $L$ compared to the particle in the well of width $\mathcal{L} = L/2$. 
 
-%```{dropdown} Additional questions
-%```
-%````
+```{dropdown} Additional questions
+5. By considering what the probability densities look like for different energy eigenfunctions, **without calculation** determine the average position of the particle in each well. 
+6. Hence determine how the uncertainty (standard deviation) of the particle compares in the two wells.
+7. Consider now the QHO: assume that the first well has characteristic length $\ell$, while the second has $\ell' = \ell/2$. Determine out how the classical frequencies $\omega$ and $\omega'$ relate to each other, and also the average potential energies $\langle V \rangle = \langle \frac{1}{2}M\omega^2 x^2\rangle$ and $\langle V' \rangle = \langle \frac{1}{2}M\omega'^2 x^2\rangle$. 
+```
+````
 
 
 % ## Solutions
