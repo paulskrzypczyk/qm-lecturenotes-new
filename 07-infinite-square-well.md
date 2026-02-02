@@ -336,7 +336,10 @@ $$ \psi_\init(x) = \frac{1}{\sqrt{2}}\left(u_1(x) + u_2(x)\right).$$
 ````{exercise}
 :label: ex-7-4
 1. Show that the momentum wavefunction $\tilde{u}_1(p)$ of the ground state of the infinite square well is 
-$$ \tilde{u}_1(p) = \sqrt{\frac{\pi L}{\hbar}}\frac{1}{\pi^2 - p^2 L^2/\hbar^2}(1+e^{-ipL/\hbar}). $$
+```{math}
+:label: e-mom-wf-isw-eig
+ \tilde{u}_1(p) = \sqrt{\frac{\pi L}{\hbar}}\frac{1}{\pi^2 - p^2 L^2/\hbar^2}(1+e^{-ipL/\hbar}). 
+ ```
 2. Using your favourite sketching software, plot the associated probability density $\pd(p) = |\tilde{u}_1(p)|^2$. 
 
 ```{dropdown} Answers
