@@ -57,7 +57,7 @@ Finally, this course was extensively updated last year, with the lecture notes l
 
 ## Changelog
 
-- 27/01/2026: Fixed even more typos (thanks again Sohyun!). Also added solutions and demos to [](w13-pc-problems)
+- 27/01/2026: Fixed even more typos (thanks again Sohyun!). Also added solutions and desmos to [](w13-pc-problems)
 - 26/01/2026: Fixed many more typos (huge thanks again to Sohyun). 
 - 09/01/2026: General updates for new year; fixed lots of typos (thanks Sohyun). Added revision exercises. 
 - 11/03/2025: Added TOC to index
