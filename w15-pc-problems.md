@@ -73,5 +73,4 @@ $$ \psi_\mathrm{in}(x) = \sqrt{\frac{2}{3\ell \sqrt{\pi}}}\left(1+\frac{x}{\ell}
 ```
 ````
 
-
 % ## Solutions
