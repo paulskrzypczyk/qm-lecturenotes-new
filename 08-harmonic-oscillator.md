@@ -349,7 +349,7 @@ It is insightful to compare to corresponding plots for the eigenfunctions and pr
 
 There is one new and very important aspect of quantum mechanics that arises for the harmonic oscillator, which isn't present in the infinite square well potential, known as **tunnelling** or alternatively **barrier penetration**. 
 
-Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from the origin, its potential energy increases quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#f-isw-eigenfunctions) and [](#f-isw-pd).
+Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from the origin, its potential energy increases quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#wf-ho) and [](#pd-ho).
 
 Now, while the gaussian function decays rather rapidly, it is in fact non-zero **for all values of x**, and hence when a particle has a definite energy in the harmonic oscillator, there is a non-zero probability to find it in any finite region, no matter how far from the origin. 
 

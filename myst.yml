@@ -46,7 +46,7 @@ project:
     heading_4: true
 site: 
   parts:
-  #  banner: 'Update: Authentication issues should now be fixed for everybody (please let me know if you are still getting a problem after refreshing). Also, you can now find solutions and links to desmos for the [Week 13 problem class problems](w13-pc-problems)'
+    banner: I've had to hide the right-hand-side contents for the moment, as it was flashing on some browsers. I'll add it back in once this bug is fixed.
   template: book-theme
   title: Quantum Mechanics
   options:
@@ -55,6 +55,7 @@ site:
     favicon: psi.png
  #   style: ./style/style.css
     hide_authors: true
+    hide_outline: true
   nav: 
   domains: []
 

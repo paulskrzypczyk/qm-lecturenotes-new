@@ -43,7 +43,7 @@ $$ \psi_\mathrm{in}(x) = \sqrt{\frac{2}{3\ell \sqrt{\pi}}}\left(1+\frac{x}{\ell}
 
 1. **By inspection** (i.e. by comparing coefficients), write $\psi_\mathrm{in}(x)$ in the form $\psi_\mathrm{in}(x) = \alpha u_0(x) + \beta u_1(x)$, for suitable constants $\alpha$ and $\beta$. 
 
-2. Use part 1 to **write down** the quantum state $\ket{\psi_\mathrm{in}}$ of the particle, as a superposition of energy eigenstates $\ket{E_1}$ and $\ket{E_2}$. 
+2. Use part 1 to **write down** the quantum state $\ket{\psi_\mathrm{in}}$ of the particle, as a superposition of energy eigenstates $\ket{E_0}$ and $\ket{E_1}$. 
 
 3. If the energy of the particle is **measured**, what are the possible outcomes, and what are their corresponding **probabilities**?
 
