@@ -222,6 +222,7 @@ which shows how we can **express the Hamiltonian in terms of the creation and an
 We therefore call $\hat{a}^\dagger \hat{a}$ the **number operator**, 
 ````{card}
 ```{math}
+:label: e-number-op-def
 \hat{n} = \hat{a}^\dagger \hat{a},
 ```
 ```` 
@@ -231,12 +232,14 @@ such that $\ket{E_n}$ are **eigenstates**, with eigenvalue $n$ — the **quantum
 
 We can use the number operator to figure out how the creation and annihilation operators change the **norm** of a state. Consider that we have an energy eigenstate that is normalised, satisfying $\| \ket{E_n} \| = \sqrt{\inner{E_n}{E_n}} = 1$. Then, the norm of $\hat{a}\ket{E_n}$ will be
 ```{math}
+:label: e-norm-a-En
 \| \hat{a}\ket{E_n} \| &= \sqrt{(\bra{E_n}\hat{a}^\dagger)( \hat{a}\ket{E_n}}),\\
 &= \sqrt{\bra{E_n}\hat{a}^\dagger\hat{a}\ket{E_n}},\\
+&= \sqrt{\bra{E_n}\hat{n}\ket{E_n}},\\
 &= \sqrt{n\inner{E_n}{E_n}},\\
 &=\sqrt{n}
 ```
-where to obtain the second line we used [](#e-adag-a-En), and pulled $n$ out the front. Thus, combining this with [](#e-a-E-n), we can conclude that the action of $\hat{a}$ on an energy eigenstate is
+where to obtain the third line we used [](#e-number-op-def), and in the fourth we used this together with [](#e-adag-a-En) to replace the operator by the number $n$, and pulled it out the front. Thus, combining this with [](#e-a-E-n), we can conclude that the action of $\hat{a}$ on an energy eigenstate is
 ````{card}
 ```{math}
 :label: e-a-on-En
