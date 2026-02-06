@@ -74,3 +74,15 @@ $$ \psi_\mathrm{in}(x) = \sqrt{\frac{2}{3\ell \sqrt{\pi}}}\left(1+\frac{x}{\ell}
 ````
 
 % ## Solutions
+
+````{tip .simple} Solutions
+:class: dropdown
+Tuesday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2015%20Tues.pdf
+:width: 100%
+```
+Thursday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2015%20Thurs.pdf
+:width: 100%
+```
+````
