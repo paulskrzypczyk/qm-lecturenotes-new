@@ -23,6 +23,7 @@ parts:
      - file: w13-pc-problems.md
      - file: w14-pc-problems.md
      - file: w15-pc-problems.md
+     - file: w16-pc-problems.md
   - caption: Problem Sheets
     chapters:
      - file: revision-problems.md
