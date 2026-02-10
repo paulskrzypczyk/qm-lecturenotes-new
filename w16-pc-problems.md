@@ -11,7 +11,7 @@ I have included **additional questions** for you to attempt / discuss if you com
 ## Problems
 
 ````{tip .simple} Problem 1
-Consider a **classical** particle of mass $M$ undergoing simple harmonic motion under the force $F = -M\omega^2 x$, where $\omega$ is the frequency of the oscillator (i.e. we have written the spring constant as $k = -M\omega^2$).  
+Consider a **classical** particle of mass $M$ undergoing simple harmonic motion under the force $F = -M\omega^2 x$, where $\omega$ is the frequency of the oscillator (i.e. we have written the spring constant as $k = M\omega^2$).  
 
 1. Write down the potential energy of the particle, as a function of its position $x$.
 2. When the particle is at maximum displacement, what is its kinetic energy?
