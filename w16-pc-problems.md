@@ -17,11 +17,11 @@ Consider a **classical** particle of mass $M$ undergoing simple harmonic motion 
 2. When the particle is at maximum displacement, what is its kinetic energy?
 3. Use your answers to parts 1. and 2. to derive an equation which gives the amplitude of oscillation as a function of the energy of the particle. 
 
-Assume now that the energy of the particle is equal to the energy of the $n^\mathrm{th}$ energy eigenstate of the **quantum** harmonic oscillator, $E_n = \hbar \omega (n + \frac{1}{2})$. 
+Assume now that the energy of the particle is equal to the energy of the $n^\mathrm{th}$ energy level of the **quantum** harmonic oscillator, $E_n = \hbar \omega (n + \frac{1}{2})$. 
 
 4. Express the amplitude of the particle in terms of the **characteristic length** $\ell = \sqrt{\frac{\hbar}{M\omega}}$ of the quantum harmonic oscillator. 
 
-Consider now a **quantum** particle, confined within a harmonic oscillator potential well. Assume the particle is in the ground state $\ket{E_0}$. 
+Consider now a **quantum** particle, confined within a harmonic oscillator potential well (with the same $\omega$). Assume the particle is in the ground state $\ket{E_0}$. 
 
 5. What does it mean for a particle to be **tunnelling** in quantum mechanics? 
 
@@ -47,7 +47,7 @@ V(x) = \begin{cases}
 We will consider **scattering** off of the wall. We will write the energy eigenfunction (of energy $E$) as
 ```{math}
 u_E(x) = \begin{cases}
-u_E^\rI(x) &\text{ if } x \geq 0,\\ r_E^\rII(x) &\text{ if } x < 0.
+u_E^\rI(x) &\text{ if } x \geq 0,\\ u_E^\rII(x) &\text{ if } x < 0.
 \end{cases}
 ```
 
