@@ -32,6 +32,7 @@ project:
     '\jvec': '\boldsymbol{\hat{\jmath}}'
     '\kvec': '\boldsymbol{\hat{k}}'
     '\rvec': '\boldsymbol{r}'
+    '\Lvec': '\boldsymbol{L}'
     '\pvec': '\boldsymbol{p}'
     '\Ebox': 'E_{\text{box}}'
   abbreviations:
@@ -46,7 +47,7 @@ project:
     heading_4: true
 site: 
   parts:
-    banner: I've had to hide the right-hand-side contents for the moment, as it was flashing on some browsers. I'll add it back in once this bug is fixed.
+#    banner: I've had to hide the right-hand-side contents for the moment, as it was flashing on some browsers. I'll add it back in once this bug is fixed.
   template: book-theme
   title: Quantum Mechanics
   options:
@@ -55,7 +56,7 @@ site:
     favicon: psi.png
  #   style: ./style/style.css
     hide_authors: true
-    hide_outline: true
+ #   hide_outline: true
   nav: 
   domains: []
 

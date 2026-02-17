@@ -62,8 +62,16 @@ u_E^\rI(x) &\text{ if } x \geq 0,\\ u_E^\rII(x) &\text{ if } x < 0.
 7. How can you **use** the energy eigenfunctions to study the behaviour of e.g. a **Gaussian** wavefunction with **negative** average momentum?
 8. Use desmos (or some other numerical technique) to investigate this. 
 ```
-
-
 ````
 
-% ## Solutions
+````{tip .simple} Solutions
+:class: dropdown
+Tuesday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2016%20Tues.pdf
+:width: 100%
+```
+Thursday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2016%20Thurs.pdf
+:width: 100%
+```
+````
