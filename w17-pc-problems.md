@@ -29,8 +29,8 @@ In this question we will study **angular momentum** in 3D quantum mechanics.
 5. Use part 4 to **make a guess** (without calculation) for $[\hat{L}_y, \hat{L}_z]$ and $[\hat{L}_x, \hat{L}_z]$.
 
 ```{dropdown} Additional questions
-5. Write down $\hat{L}_{x,\mathrm{w}}$, $\hat{L}_{y,\mathrm{w}}$ and $\hat{L}_{z,\mathrm{w}}.$
-6. Calculate $[\hat{L}_{x,\mathrm{w}},\hat{L}_{y,\mathrm{w}}]\psi(x)$, and confirm that it agrees with your answer to part 4. 
+6. Write down $\hat{L}_{x,\mathrm{w}}$, $\hat{L}_{y,\mathrm{w}}$ and $\hat{L}_{z,\mathrm{w}}.$
+7. Calculate $[\hat{L}_{x,\mathrm{w}},\hat{L}_{y,\mathrm{w}}]\psi(x)$, and confirm that it agrees with your answer to part 4. 
 ```
 ````
 
@@ -47,7 +47,7 @@ Consider the **3D infinite box potential**, of volume $L^3$, with walls at $x = 
 
 5. Find all of the energy levels that have energy equal to $\frac{38 \hbar^2 \pi^2}{2ML^2}$, and hence determine the degeneracy of these levels. 
 
-6. Consider the state $\ket{\psi_\mathrm{in}} = \frac{1}{\sqrt{3}}(\ket{E_{(1,0,0)}} + \ket{E_{(0,1,0)}} + \ket{E_{(0,0,1)}})$. If this is the state of a particle at $t = 0$, use the **superposition principle** to write down the state $\ket{\psi(t)}$ at time $t$. 
+6. Consider the state $\ket{\psi_\mathrm{in}} = \frac{1}{\sqrt{3}}(\ket{E_{(2,1,1)}} + \ket{E_{(1,2,1)}} + \ket{E_{(1,1,2)}})$. If this is the state of a particle at $t = 0$, use the **superposition principle** to write down the state $\ket{\psi(t)}$ at time $t$. 
     
     Is this state a **stationary state**?
 
@@ -59,6 +59,6 @@ Consider the **3D infinite box potential**, of volume $L^3$, with walls at $x = 
 
 9. How might you code this, to find the degeneracy as a function of energy?
 
-10. Would anything change if the box were **assymetric**, with one side length twice that of the other two sides?
+10. Would anything change if the box were **asymmetric**, with one side length twice that of the other two sides?
 ```
 ````
