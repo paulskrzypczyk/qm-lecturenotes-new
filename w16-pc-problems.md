@@ -64,6 +64,8 @@ u_E^\rI(x) &\text{ if } x \geq 0,\\ u_E^\rII(x) &\text{ if } x < 0.
 ```
 ````
 
+## Solutions
+
 ````{tip .simple} Solutions
 :class: dropdown
 Tuesday:

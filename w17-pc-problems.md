@@ -62,3 +62,17 @@ Consider the **3D infinite box potential**, of volume $L^3$, with walls at $x = 
 10. Would anything change if the box were **asymmetric**, with one side length twice that of the other two sides?
 ```
 ````
+
+## Solutions
+
+````{tip .simple} Solutions
+:class: dropdown
+Tuesday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2017%20Tues.pdf
+:width: 100%
+```
+Thursday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2017%20Thurs.pdf
+:width: 100%
+```
+````

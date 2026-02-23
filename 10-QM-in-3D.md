@@ -18,7 +18,7 @@ numbering:
 ````
 `````
 
-In this chapter we are now ready to move onto the study of quantum mechancis in three dimensions! Much of what we have learnt up until this stage will carry across in a rather straightforward manner, which is good news. Obviously the world around us is three dimensional, and so it is necessary to move broaden our application of quantum mechanics to three dimensions, so that we can go on to study real-world situations, for example, laying the foundations for the study of the **Hydrogen atom** — arguably the most famous quantum system of all, and one of its biggest early successes. While we won't get all the way there in this unit, we will nevertheless introduce the basics of quantum mechancis in 3D, so that you will be able to go straight there next year. 
+In this chapter we are now ready to move onto the study of quantum mechanics in three dimensions! Much of what we have learnt up until this stage will carry across in a rather straightforward manner, which is good news. Obviously the world around us is three dimensional, and so it is necessary to move broaden our application of quantum mechanics to three dimensions, so that we can go on to study real-world situations, for example, laying the foundations for the study of the **Hydrogen atom** — arguably the most famous quantum system of all, and one of its biggest early successes. While we won't get all the way there in this unit, we will nevertheless introduce the basics of quantum mechanics in 3D, so that you will be able to go straight there next year. 
 
 ## The position of a particle in 3D
 
@@ -104,7 +104,7 @@ We can also introduce the **coordinate operators acting on wavefunctions** using
 ```{math}
 \hat{X}\ket{\psi} = \int_V \psi(\rvec) x \ket{\rvec} d^3\rvec,
 ```
-i.e. the action of the operator is to transform $\psi(\rvec)$ into $\psi'(\rvec) = x \psi(\rvec)$, and so we have $\op{X} = x$, just as before. That is, the $X$ coordinate operator multiplies a wavefunction by the coordinate $x$, as we should expect. We similarly have $\op{Y} = y$ and $\op{Z} = z$. Interesting, we can **also** combine these into a single **vector operator**. In particular, we see that
+i.e. the action of the operator is to transform $\psi(\rvec)$ into $\psi'(\rvec) = x \psi(\rvec)$, and so we have $\op{X} = x$, just as before. That is, the $X$ coordinate operator multiplies a wavefunction by the coordinate $x$, as we should expect. We similarly have $\op{Y} = y$ and $\op{Z} = z$. Interestingly, we can **also** combine these into a single **vector operator**. In particular, we see that
 ```{math}
 \hat{\mathbf{R}}\ket{\psi} &= \hat{\mathbf{R}} \int_V \psi(\rvec)\ket{\rvec} d^3\rvec, \\
 &= \int_V \psi(\rvec)\hat{\mathbf{R}} \ket{\rvec}d^3\rvec,\\
@@ -134,7 +134,7 @@ from which it follows that $[\hat{X}, \hat{Y}] = 0$, according to [](#e-wf-comm-
 
 ### Probability to find a particle somewhere
 
-We can now think about measuring the **position of the particle** in 3D, and ask *what is the probability to find it in an (arbitrarily small) region around $\rvec$?* That is, if we performed an arbitrarily good simultaneous measurement of the 3 coordinates of the particle? The answer is the direct generalisation of what we saw for a particle in one dimension: the **probability density** at position $\rvec$ is precisely
+We can now think about measuring the **position of the particle** in 3D, and ask *what is the probability to find it in an (arbitrarily small) region around $\rvec$?* That is, if we performed an arbitrarily good simultaneous measurement of the 3 coordinates of the particle. The answer is the direct generalisation of what we saw for a particle in one dimension: the **probability density** at position $\rvec$ is precisely
 ````{card}
 ```{math}
 \pd(\rvec) = |\psi(\rvec)|^2,
@@ -243,7 +243,7 @@ Just as the three coordinate operators were **compatible** observables, so too a
 &= -\hbar^2 \frac{\partial^2\psi(\rvec)}{\partial x \partial y} + \hbar^2 \frac{\partial^2\psi(\rvec)}{\partial x \partial y} \\
 &= 0,
 ```
-where we used the fact in the third line that **we can take a partial derivative in either order** (i.e. partial differentiation commutes!). Similar calculations show that all components of momentum pairwise commute, and hence all 3 components are jointly compatible. This means it is (in principle) possible to measure the momentum $\pvec$ of a particle. Note that it isn't **a given**  that the components of a vector quantity are necessarily compatible — and is fact **not true** for the components of angular momentum, which is why the quantum mechanical treatment of angular momentum is in fact so rich an interesting (analogous somewhat to the incompatibility of kinetic and potential energy, and how this leads to interesting dynamics).  
+where we used the fact in the third line that **we can take a partial derivative in either order** (i.e. partial differentiation commutes!). Similar calculations show that all components of momentum pairwise commute, and hence all 3 components are jointly compatible. This means it is (in principle) possible to measure the momentum $\pvec$ of a particle. Note that it isn't **a given**  that the components of a vector quantity are necessarily compatible — and is fact **not true** for the components of angular momentum, which is why the quantum mechanical treatment of angular momentum is in fact so rich and interesting (analogous somewhat to the incompatibility of kinetic and potential energy, and how this leads to interesting dynamics).  
 
 ## Canonical commutation relations
 
@@ -398,7 +398,7 @@ where we have written the energy eigenfunction $u_\mathbf{n}(\rvec) = \inner{\rv
 ````
 where $\psi_\init(\rvec) = \inner{\rvec}{\psi_\init}$ is the 3D wavefunction of the initial state $\ket{\psi}$. We use this form, as typically it is the **energy eigenfunctions that we know explicitly**, and so this is the most useful form to have. 
 
-If we wanted to, we could combine [](#e-psi-t-3D-wf) and [](#e-alpha-n-3D) to write the 3D wavefunction at time $t$ **directly** in terms of the intial wavefunction as 
+If we wanted to, we could combine [](#e-psi-t-3D-wf) and [](#e-alpha-n-3D) to write the 3D wavefunction at time $t$ **directly** in terms of the initial wavefunction as 
 ````{card}
 ```{math}
 \psi(\rvec,t) = \sum_{\mathbf{n}} \int_V \psi_\init(\rvec') u_\mathbf{n}^*(\rvec')  u_\mathbf{n}(\rvec) e^{-iE_\mathbf{n} t/\hbar} d^3\rvec',

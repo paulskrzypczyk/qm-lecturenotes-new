@@ -57,6 +57,7 @@ Finally, this course was extensively updated last year, with the lecture notes l
 
 ## Changelog
 
+- 23/02/2026: Fixed further typos (thanks Sohyun and Theo Bridges). 
 - 03/02/2026: Improved explanation in [](#e-norm-a-En) (Thanks Sohyun). 
 - 27/01/2026: Fixed even more typos (thanks again Sohyun!). Also added solutions and desmos to [](w13-pc-problems)
 - 26/01/2026: Fixed many more typos (huge thanks again to Sohyun). 
