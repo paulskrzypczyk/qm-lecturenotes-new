@@ -12,6 +12,14 @@ site:
 ```{toc} Table of Contents
 ```
 
+## Map of the course
+
+````{tip} Slides
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Map%20Of%20Quantum%20Mechanics.pdf
+:width: 100%
+```
+````
+
 
 ## Preface
 
@@ -20,6 +28,8 @@ Welcome to the quantum mechanics section of the 2nd year core physics unit (From
 This material will build upon the quantum physics material you learnt in the first year course physics unit (Classical, Quantum and Thermal Physics). I have provided a [brief recap video](recap.md) but will not repeat the content from that unit here. You should **refer back to the lecture notes for that course** where needed.
 
 Similarly, we will make use of the **probability and statistics** that you learnt as part of the **First Year Physics Laboratory**. You also should refer back to the content on Blackboard where needed. 
+
+
 
 ## Flipped-classroom
 
@@ -57,6 +67,7 @@ Finally, this course was extensively updated last year, with the lecture notes l
 
 ## Changelog
 
+- 27/02/2026: Added the map of quantum mechanics
 - 23/02/2026: Fixed further typos (thanks Sohyun and Theo Bridges). 
 - 03/02/2026: Improved explanation in [](#e-norm-a-En) (Thanks Sohyun). 
 - 27/01/2026: Fixed even more typos (thanks again Sohyun!). Also added solutions and desmos to [](w13-pc-problems)
