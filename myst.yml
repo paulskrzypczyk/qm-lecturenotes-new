@@ -11,7 +11,7 @@ project:
       - School of Physics, University of Bristol
   license: CC-BY-NC-ND-4.0
   plugins:
-    - https://github.com/jupyter-book/myst-plugins/releases/download/page-last-updated/page-last-updated.mjs
+    - https://github.com/jupyter-book/myst-plugins/releases/download/page-last-updatedv1.1/page-last-updated.mjs
   # github:
   # bibliography: []
   math:
