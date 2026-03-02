@@ -152,7 +152,7 @@ and that under a **change of scale**
 ```{math}
 :label: e-delta-scale
 \delta\left(by\right) = \frac{1}{|b|}\delta(y),
-````
+```
 We see that in the final line of [](#e-norm-calc-1), if the inner integral (in square brackets) were equal to $\psi(x')$ then we would arrive at the desired expression [](#e-norm-wavefunction). We will achieve this, using the defining equation of the Dirac Delta function [](#e-delta-defining-eq), if 
 ````{card}
 ```{math}
@@ -160,7 +160,7 @@ We see that in the final line of [](#e-norm-calc-1), if the inner integral (in s
 \inner{x'}{x} = \delta(x-x').
 ```
 ````
-This is a remarkable equation. What is shows is that **positions states have infinite normalisation!**:
+This is a remarkable equation. What it shows is that **positions states have infinite normalisation!**:
 ```{math}
 :label: e-norm-position-state
 \| \ket{x} \|^2 = \inner{x}{x} = \delta(0) = \infty.
