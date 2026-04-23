@@ -67,6 +67,7 @@ Finally, this course was extensively updated last year, with the lecture notes l
 
 ## Changelog
 
+- 23/04/2026: Fixed typo final line of in [](#e-u-fzy-eig) (Thanks anonymous)
 - 27/02/2026: Added the map of quantum mechanics
 - 23/02/2026: Fixed further typos (thanks Sohyun and Theo Bridges). 
 - 03/02/2026: Improved explanation in [](#e-norm-a-En) (Thanks Sohyun). 
