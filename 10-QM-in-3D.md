@@ -243,7 +243,7 @@ Just as the three coordinate operators were **compatible** observables, so too a
 &= -\hbar^2 \frac{\partial^2\psi(\rvec)}{\partial x \partial y} + \hbar^2 \frac{\partial^2\psi(\rvec)}{\partial x \partial y} \\
 &= 0,
 ```
-where we used the fact in the third line that **we can take a partial derivative in either order** (i.e. partial differentiation commutes!). Similar calculations show that all components of momentum pairwise commute, and hence all 3 components are jointly compatible. This means it is (in principle) possible to measure the momentum $\pvec$ of a particle. Note that it isn't **a given**  that the components of a vector quantity are necessarily compatible — and is fact **not true** for the components of angular momentum, which is why the quantum mechanical treatment of angular momentum is in fact so rich and interesting (analogous somewhat to the incompatibility of kinetic and potential energy, and how this leads to interesting dynamics).  
+where we used the fact in the third line that **we can take a partial derivative in either order** (i.e. partial differentiation commutes!). Similar calculations show that all components of momentum pairwise commute, and hence all 3 components are jointly compatible. This means it is (in principle) possible to measure the momentum $\pvec$ of a particle. Note that it isn't **a given**  that the components of a vector quantity are necessarily compatible — and is in fact **not true** for the components of angular momentum, which is why the quantum mechanical treatment of angular momentum is in fact so rich and interesting (analogous somewhat to the incompatibility of kinetic and potential energy, and how this leads to interesting dynamics).  
 
 ## Canonical commutation relations
 
