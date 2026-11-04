@@ -18,7 +18,7 @@ numbering:
 ````
 `````
 
-We now turn our attention to arguably the most important system in all of quantum mechanics — the quantum harmonic oscillator. Here we will study the quantum mechanics of a particle whose force is of the form $F(x) = - kx$. That is, a restorative force proportional to the displacement from the origin. We know that in classical mechanics systems with such forces lead to simple harmonic motion. Our goal now is to understand the quantum mechanics of such systems.  
+We now turn our attention to arguably the most important system in all of quantum mechanics — the quantum harmonic oscillator. Here we will study the quantum mechanics of a particle subject to a force of the form $F(x) = - kx$. That is, a restorative force proportional to the displacement from the origin. We know that in classical mechanics systems with such forces lead to simple harmonic motion. Our goal now is to understand the quantum mechanics of such systems.  
 
 Why is this one of the most important systems to study? The first reason is that it provides an approximation to the behaviour of **almost all** potential wells, as we outline briefly as an aside. Second, you will see later in your degree that the quantum harmonic oscillator reappears in a huge range of situations, from describing light in quantum field theory, to describing phonons in condensed matter physics and far beyond. 
 
@@ -32,7 +32,7 @@ The method we will use to find the energy eigenstates of the quantum harmonic os
 :align: center
 ```
 
-*What is the form of the potential when the particle is close to the bottom of the well?. We can **expand** the potential energy around the bottom, to obtain*
+*What is the form of the potential when the particle is close to the bottom of the well? We can **expand** the potential energy around the bottom, to obtain*
 \begin{equation}\vph
 V(x) \approx V_0 +  \frac{dV}{dx}\bigg|_{x_0}(x-x_0) + \frac{1}{2}  \frac{d^2V}{dx^2}\bigg|_{x_0}(x-x_0)^2
 \end{equation}
@@ -42,7 +42,7 @@ V(x) \approx V_0 +  \frac{dV}{dx}\bigg|_{x_0}(x-x_0) + \frac{1}{2}  \frac{d^2V}{
 \begin{equation}\vph
 V(x) \approx V_0 + \frac{1}{2} \frac{d^2V}{dx^2}\bigg|_{x_0}(x-x_0)^2.
 \end{equation}
-*We can finally make two simplifications without loss of generality: First, we can **redefine the zero of the energy scale**, so that $V_0 = V(x_0) = 0$. Second, we can change our co-ordinate so that the bottom of the well corresponds to $x_0 = 0$. With these two simplications, we arrive at*
+*We can finally make two simplifications without loss of generality: First, we can **redefine the zero of the energy scale**, so that $V_0 = V(x_0) = 0$. Second, we can change our co-ordinate so that the bottom of the well corresponds to $x_0 = 0$. With these two simplifications, we arrive at*
 \begin{equation}
 V(x) \approx \frac{1}{2}\frac{d^2V}{dx^2}\bigg|_{0}x^2 
 \end{equation}
@@ -95,7 +95,7 @@ With these defined, we can now define the annihilation and creation operators, w
 \hat{a}^\dagger &= \frac{1}{\sqrt{2}}\left(\frac{\hat{X}}{\ell} - i \frac{\hat{P}}{q}\right) = \frac{1}{\sqrt{2}}\left(\frac{\hat{X}}{\ell} - i \frac{\ell\hat{P}}{\hbar}\right)& &\text{creation op.}
 ```
 ````
-That is, the creation operator is a **dimensionless** combination of the position and momentum operators, with the momentum operator multipled by the imaginary number $i$ (and an overall normalisation factor of $1/\sqrt{2}$). 
+That is, the creation operator is a **dimensionless** combination of the position and momentum operators, with the momentum operator multiplied by the imaginary number $i$ (and an overall normalisation factor of $1/\sqrt{2}$). 
 
 *Why did we call the creation operator $\hat{a}^\dagger$?* Because it is indeed the **Hermitian conjugate operator to $\hat{a}$**: Recall that since position and momentum are **observable quantities** the operators $\hat{X}$ and $\hat{P}$ are **Hermitian**, satisfying $\hat{X}^\dagger = \hat{X}$ and $\hat{P}^\dagger = \hat{P}$. Thus, when we take the Hermitian conjugate of $\hat{a}$, the **only** change is to the sign of the imaginary number $i$, which is precisely the definition of $\hat{a}^\dagger$. 
 
@@ -106,7 +106,7 @@ That is, the creation operator is a **dimensionless** combination of the positio
 ```
 since if this equation is satisfied, it means that $\left(\hat{a}^\dagger\ket{E_n}\right)$ is an energy eigenstate of $\hat{H}$, with eigenvalue $E_{n+1}$, i.e. it is the next energy level. 
 
-In order to show [](#e-H-adag) holds, it is easiest to return to notion of the **commutator** that we introduced previously in [](#s-commutation). In particular, if we calculate $[\hat{H},\hat{a}^\dagger]$, and find that it is equal to the operator $\hat{b}$ (which we will come to below), then this would mean that $\hat{H}\hat{a}^\dagger - \hat{a}^\dagger \hat{H} = \hat{b}$, and so by re-arranging, $\hat{H}\hat{a}^\dagger = \hat{a}^\dagger \hat{H} + \hat{b}$. We can then substitute this into the left-hand side of [](#e-H-adag) to obtain
+In order to show [](#e-H-adag) holds, it is easiest to return to the notion of the **commutator** that we introduced previously in [](#s-commutation). In particular, if we calculate $[\hat{H},\hat{a}^\dagger]$, and find that it is equal to the operator $\hat{b}$ (which we will come to below), then this would mean that $\hat{H}\hat{a}^\dagger - \hat{a}^\dagger \hat{H} = \hat{b}$, and so by re-arranging, $\hat{H}\hat{a}^\dagger = \hat{a}^\dagger \hat{H} + \hat{b}$. We can then substitute this into the left-hand side of [](#e-H-adag) to obtain
 ```{math}
 :label: e-H-adag-1
 \hat{H} \hat{a}^\dagger \ket{E_n} &= \left(\hat{a}^\dagger \hat{H} + \hat{b}\right)\ket{E_n},\\
@@ -115,7 +115,7 @@ In order to show [](#e-H-adag) holds, it is easiest to return to notion of the *
 At first sight this might not look too helpful. However, at this stage it is useful to determine $\hat{b}$. In [](#ex-comm-H-adag) below, by using the explicit form of $\hat{a}^\dagger$ from [](#e-creation-annihilation), as well as the explicit form of the Hamiltonian operator, with $\hat{V} = \frac{1}{2} M \omega^2 \hat{X}^2$ from [](#e-QHO-potential), and the two commutators
 ```{math}
 :label: e-comms-P2-X2
-[\hat{P}^2,\hat{X}] &= -2i\hbar \hat{P},& [\hat{X}^2, \hat{P}] = 2i\hbar \hat{X},
+[\hat{P}^2,\hat{X}] &= -2i\hbar \hat{P},& [\hat{X}^2, \hat{P}] &= 2i\hbar \hat{X},
 ```
 both of which you prove as problems in problem classes, you will show that 
 ````{card}
@@ -126,11 +126,11 @@ both of which you prove as problems in problem classes, you will show that
 (i.e. $\hat{b} = \hbar \omega \hat{a}^\dagger$). Substituting this into [](#e-H-adag-1), we therefore see that
 ```{math}
 :label: e-H-adag-2
-\hat{H} \hat{a}^\dagger \ket{E_n} = (E_n + \hbar \omega) \hat{a}^\dagger \ket{E_n},
+\hat{H} \hat{a}^\dagger \ket{E_n} = (E_n + \hbar \omega) \hat{a}^\dagger \ket{E_n}.
 ```
 This means that $(\hat{a}^\dagger \ket{E_n})$ is an **energy eigenstate** of energy $(E_n + \hbar \omega)$ (up to normalisation). This is in fact the energy of the **next** energy level $E_{n+1}$. **We will not prove this here, but state it as a fact** (which has been shown to be true). One crucial point to note is that the **spacing between the energy levels of the harmonic oscillator is constant, and equal to $\hbar \omega$.** This is a special feature of the harmonic oscillator and for other potential wells, the spacing is not constant (e.g. as we saw for the infinite square well in [](#e-isw-energy-levels), the spacing **grows**). 
 
-In a similar fashion, in [](#ex-comm-H-a) you will similarly show the commutation relation
+In a similar fashion, in [](#ex-comm-H-a) you will show the commutation relation
 ````{card}
 ```{math}
 :label: e-comm-H-a
@@ -163,7 +163,7 @@ We thus have a procedure, starting from any given energy level $\ket{E_n}$, to c
 
 You might have noticed something strange in the above — we appear to be able to apply the annihilation operator as many times as we like, and continually create new energy levels of progressively lower energy. However, we know that at some point we **must** hit the state of lowest energy — the ground state. We seem to thus have a problem with this approach.
 
-A little thought shows that there is a way out of this problem: we pointed out a couple of times above that $\hat{a}\ket{E_n}$ isn't neccessarily **normalised**, and in fact we will see below that it isn't, and this is the key to escaping our problem. In particular, let us imagine that we have indeed found the ground state, which we will denote by $\ket{E_0}$. According to the above, $\hat{a}\ket{E_0}$ will be **proportional** to a state of energy $E_0 - \hbar \omega$. However, if the proportionality constant **vanishes**, then our sequence **terminates**. That is, if $\hat{a}\ket{E_0} = 0$, then we **don't** obtain a new state, and hence we can no longer climb down! 
+A little thought shows that there is a way out of this problem: we pointed out a couple of times above that $\hat{a}\ket{E_n}$ isn't necessarily **normalised**, and in fact we will see below that it isn't, and this is the key to escaping our problem. In particular, let us imagine that we have indeed found the ground state, which we will denote by $\ket{E_0}$. According to the above, $\hat{a}\ket{E_0}$ will be **proportional** to a state of energy $E_0 - \hbar \omega$. However, if the proportionality constant **vanishes**, then our sequence **terminates**. That is, if $\hat{a}\ket{E_0} = 0$, then we **don't** obtain a new state, and hence we can no longer climb down! 
 
 Remarkably, this insight **also allows us to find the ground state $\ket{E_0}$**. More precisely, we can use it to find the ground state eigenfunction $u_0(x)$. *How do we do this?* Well, we know that eigenfunctions satisfy the same equation as eigenstates, except we have to use operators on wavefunctions instead. Therefore, $\hat{a}\ket{E_0} = 0$ is equivalent to
 ```{math}
@@ -177,7 +177,7 @@ It isn't too difficult to spot the solution to this: it is nothing but a Gaussia
 ```{math}
 \frac{\partial}{\partial x} \left(N_0 e^{-x^2/2\ell^2}\right) = - \frac{x}{\ell^2} N_0 e^{-x^2/2\ell^2},
 ```
-where $N_0$ is a normalisation constant, that we will fix below. This shows that the **ground state of the harmonic oscillator is a gaussian wavefunction**, with standard deviation $\Delta x = \ell/\sqrt{2}$ (i.e. confirming that, indeed, $\ell$ is really a characteristic length scale of the harmonic oscillator). We can thus use [](#e-gaussian-wf) to fix the normalisation, and so the ground state wavefunction is
+where $N_0$ is a normalisation constant, that we will fix below. This shows that the **ground state of the harmonic oscillator is a Gaussian wavefunction**, with standard deviation $\Delta x = \ell/\sqrt{2}$ (i.e. confirming that, indeed, $\ell$ is really a characteristic length scale of the harmonic oscillator). We can thus use [](#e-gaussian-wf) to fix the normalisation, and so the ground state wavefunction is
 ````{card}
 ```{math}
 :label: e-gs-qho
@@ -198,7 +198,7 @@ Having found the energy of the ground state, and given that we saw above that th
 E_n &= \hbar \omega\left(n + \frac{1}{2}\right),& n&= 0,1,2,\ldots
 ```
 ````
-Note, that whereas for the energy levels of the [infinite square well](07-infinite-square-well) we took $n$ to start at $n = 1$, for the harmonic oscillator we take $n$ to start at $n = 0$. This is **standard** and somewhat unfortunate, but has reason (which we will explain below).
+Note, that whereas for the energy levels of the [infinite square well](07-infinite-square-well) we took $n$ to start at $n = 1$, for the harmonic oscillator we take $n$ to start at $n = 0$. This is **standard** and somewhat unfortunate, but there is a reason for it (which we will explain below).
 
 We can use [](#e-energy-levels-QHO) to learn something very interesting about the product operator $\hat{a}^\dagger \hat{a}$. Using the definitions [](#e-creation-annihilation), we see that
 ```{math}
@@ -233,7 +233,7 @@ such that $\ket{E_n}$ are **eigenstates**, with eigenvalue $n$ — the **quantum
 We can use the number operator to figure out how the creation and annihilation operators change the **norm** of a state. Consider that we have an energy eigenstate that is normalised, satisfying $\| \ket{E_n} \| = \sqrt{\inner{E_n}{E_n}} = 1$. Then, the norm of $\hat{a}\ket{E_n}$ will be
 ```{math}
 :label: e-norm-a-En
-\| \hat{a}\ket{E_n} \| &= \sqrt{(\bra{E_n}\hat{a}^\dagger)( \hat{a}\ket{E_n}}),\\
+\| \hat{a}\ket{E_n} \| &= \sqrt{(\bra{E_n}\hat{a}^\dagger)(\hat{a}\ket{E_n})},\\
 &= \sqrt{\bra{E_n}\hat{a}^\dagger\hat{a}\ket{E_n}},\\
 &= \sqrt{\bra{E_n}\hat{n}\ket{E_n}},\\
 &= \sqrt{n\inner{E_n}{E_n}},\\
@@ -264,7 +264,7 @@ Equating the right-hand side of [](#e-ad-on-En-step-1) and [](#e-ad-on-En-step-2
 ```
 ````
 
-We finally have everything we need in order to determine the energy eigenstates of the harmonic oscillator! We can generate the $n^\mathrm{th}$ energy eigenstate by applying $\hat{a}^\dagger$ $n$ times to the ground state $\ket{E_0}$ (which we have already found), and dividing $\sqrt{n!}$ (where $n! = 1\times 2 \times \cdots \times n$),
+We finally have everything we need in order to determine the energy eigenstates of the harmonic oscillator! We can generate the $n^\mathrm{th}$ energy eigenstate by applying $\hat{a}^\dagger$ $n$ times to the ground state $\ket{E_0}$ (which we have already found), and dividing by $\sqrt{n!}$ (where $n! = 1\times 2 \times \cdots \times n$),
 ````{card}
 ```{math}
 \ket{E_n} = \frac{(\hat{a}^\dagger)^n}{\sqrt{n!}}\ket{E_0}.
@@ -280,7 +280,7 @@ u_n(x) = \frac{(\op{a}^\dagger)^n}{\sqrt{n!}}u_0(x).
 ```
 ````
 
-````{important} Video: Quantum harmonic oscillator III
+`````{important} Video: Quantum harmonic oscillator III
 :class: dropdown
 ```{iframe} https://mediasite.bris.ac.uk/Mediasite/Play/dfef2858fdd848d8af92eb69c750c31c1d
 :width: 100%
@@ -291,6 +291,7 @@ u_n(x) = \frac{(\op{a}^\dagger)^n}{\sqrt{n!}}u_0(x).
 :width: 100%
 ```
 ````
+`````
 
 For example,
 ```{math}
@@ -354,7 +355,7 @@ There is one new and very important aspect of quantum mechanics that arises for 
 
 Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from the origin, its potential energy increases quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#wf-ho) and [](#pd-ho).
 
-Now, while the gaussian function decays rather rapidly, it is in fact non-zero **for all values of x**, and hence when a particle has a definite energy in the harmonic oscillator, there is a non-zero probability to find it in any finite region, no matter how far from the origin. 
+Now, while the Gaussian function decays rather rapidly, it is in fact non-zero **for all values of $x$**, and hence when a particle has a definite energy in the harmonic oscillator, there is a non-zero probability to find it in any finite region, no matter how far from the origin. 
 
 This is however very strange, as above we just noted that the potential energy increases as we move away from the origin. This means that, no matter what finite energy the particle has (and all the energy levels have finite energy), it has a chance of being found far away **in a region where the potential energy is larger than the total energy $E_n$ of the particle!**
 
@@ -370,12 +371,12 @@ In this unit we won't go further into this fascinating effect, but just highligh
 
 ````{exercise}
 :label: ex-length-mom-scales
-1. The three dimensionful quantities for the quantum harmonic are the mass of the particle $M$, the angular frequency $\omega$ (which specifies the spring constant $k = M\omega^2$), and $\hbar$. Write down the dimensions of each of these quantities.
+1. The three dimensionful quantities for the quantum harmonic oscillator are the mass of the particle $M$, the angular frequency $\omega$ (which specifies the spring constant $k = M\omega^2$), and $\hbar$. Write down the dimensions of each of these quantities.
 
 2. Find a combination of these quantities that has the dimension of length.  That is, let 
 $$ \vph \ell = M^\alpha \omega^\beta \hbar^\gamma, $$
 and find the exponents $\alpha$, $\beta$ and $\gamma$ that give $\ell$ the dimension of length. 
-2. Find a combination of $M$, $\omega$ and $\hbar$ that have the dimension of momentum.  That is, let 
+3. Find a combination of $M$, $\omega$ and $\hbar$ that has the dimension of momentum.  That is, let 
 $$ \vph q = M^\mu \omega^\nu \hbar^\lambda, $$
 and find the exponents $\mu$, $\nu$ and $\lambda$ that give $q$ the dimension of momentum. 
 ```{dropdown} Answers
@@ -392,7 +393,7 @@ $$ [\hat{A} + \hat{B}, \hat{C} + \hat{D}] = [\hat{A},\hat{C}] + [\hat{A},\hat{D}
 $$ [\alpha \hat{A}, \beta \hat{B}] = \alpha\beta [\hat{A},\hat{B}].$$
 3. Using parts 1 and 2, and the explicit form of $\hat{H}$ and $\hat{a}^\dagger$, show that 
 $$\vph[\hat{H}, \hat{a}^\dagger] = \frac{1}{2\sqrt{2}M\ell}[\hat{P}^2,\hat{X}] - \frac{i\ell}{2\sqrt{2}M\hbar}[\hat{P}^2,\hat{P}] +\frac{M\omega^2}{2\sqrt{2}\ell}[\hat{X}^2,\hat{X}] - \frac{iM\omega^2 \ell}{2\sqrt{2}\hbar}[\hat{X}^2,\hat{P}].$$
-4. Use [](#e-comms-P2-X2), show that the other two commutators vanish, and use the definition of $\ell$ in [](#e-ell-QHO) to show that
+4. Using [](#e-comms-P2-X2), show that the other two commutators vanish, and use the definition of $\ell$ in [](#e-ell-QHO) to show that
 $$ [\hat{H},\hat{a}^\dagger] = \hbar \omega \hat{a}^\dagger.$$
 ```{dropdown} Answers
 1. n/a (show that).

@@ -53,7 +53,7 @@ As previously, it will be very useful to introduce the associated operator $\op{
 \op{H} = \frac{\op{P}^2}{2M} + \op{V}.
 ```
 ````
-To understand the kinetic energy operator, we see can see that
+To understand the kinetic energy operator, we can see that
 ```{math}
 \frac{\op{P}^2}{2M}\psi(x) &= \frac{1}{2M}\op{P}\left(\op{P}\psi(x)\right),\\
 &= \frac{1}{2M}\left(-i\hbar \frac{\partial}{\partial x}\right)\left(-i\hbar \frac{\partial}{\partial x}\psi(x)\right),\\
@@ -86,7 +86,7 @@ As you will show in an [exercise](#ex-comm-K-V), the kinetic energy and potentia
 
 > The kinetic energy and potential energy of a quantum particle are incompatible properties.
 
-That is, a particle cannot have both a well defined kinetic energy and a well defined potential energy at the same time! One intuitive way to see why this **had** to be the case is because the kinetic energy depends only upon the **momentum** of the particle, while the potential energy depends only upon the **position**, and we already know that these two properties are incompatible. Much of the intricacies of how quantum particles behave derives, ultimately, from the fact that these two contributions to energy are incompatible with each other.
+That is, a particle cannot have both a well defined kinetic energy and a well defined potential energy at the same time! One intuitive way to see why this **had** to be the case is because the kinetic energy depends only upon the **momentum** of the particle, while the potential energy depends only upon the **position**, and we already know that these two properties are incompatible. Many of the intricacies of how quantum particles behave derive, ultimately, from the fact that these two contributions to energy are incompatible with each other.
 
 ## Energy eigenstates
 
@@ -122,10 +122,10 @@ In situations where a particle does not have enough energy to leave a finite reg
 
 ```{figure}  ./Pictures/potentials
 :label: f-potentials-1
-:alt: Picture of a two potential wells
+:alt: Picture of two potential wells
 :width: 400px
 :align: center
-Two examples of potential wells. On the left, the well is symmetric. On the right, the well is assymetric. If the energy of the particle is $E<E_B$, then the particle will be 'trapped' inside the well, which we call a bound state. In this case, in QM the particle will have discrete energy levels. If $E > E_B$ the particle is not bound to the well, but will escape to infinity (on the left in either direction; on the right, only towards the right). In QM, in this regime there is no discretisation of energies; energy is continuous but eigenstates becomes unphysical. 
+Two examples of potential wells. On the left, the well is symmetric. On the right, the well is asymmetric. If the energy of the particle is $E<E_B$, then the particle will be 'trapped' inside the well, which we call a bound state. In this case, in QM the particle will have discrete energy levels. If $E > E_B$ the particle is not bound to the well, but will escape to infinity (on the left in either direction; on the right, only towards the right). In QM, in this regime there is no discretisation of energies; energy is continuous but eigenstates become unphysical. 
 ```
 
 
@@ -141,7 +141,7 @@ In QM, when a particle is in a bound state, we find that **it can only have cert
 \inner{E_k}{E_\ell} = \begin{cases} 1 &\text{ if } k = \ell \\ 0 &\text{ if } k \neq \ell \end{cases} = \delta_{k,\ell}.
 ```
 ````
-(s-Non-bound-states)=
+(s-non-bound-states)=
 ### Non-bound states
 
 The alternative situation is where a particle is **not confined** to one region of space, either because **it has too much energy to be bound in the well** ($E > E_B$), or because **there are no forces**, i.e. $V(x) = 0$ and there is no well to be trapped in. Classically, this corresponds to **non-closed orbits**, such as asteroids passing a star, or an electron that isn't bound to a nucleus. In these cases, in principle, the object will eventually **escape to infinity** (travel as far as possible in some direction). 
@@ -171,18 +171,18 @@ In this exercise we will show that in quantum mechanics, the kinetic energy and 
 1. Calculate $\op{K}\op{V}\psi(x). $
 1. Using parts 1. and 2. show that 
 ```{math}
-\vph[\op{K},\op{V}]\psi = -\frac{\hbar^2}{2M}\left(\frac{\partial^2 V}{\partial x^2}\psi(x) + 2 \frac{\partial V}{\partial x} \frac{\partial}{\partial x}\psi(x) \right)
+\vph[\op{K},\op{V}]\psi(x) = -\frac{\hbar^2}{2M}\left(\frac{\partial^2 V}{\partial x^2}\psi(x) + 2 \frac{\partial V}{\partial x} \frac{\partial}{\partial x}\psi(x) \right)
 ```
 We will denote by $\hat{V}'$ and $\hat{V}''$ the operators satisfying
 ```{math}
-\hat{V}'\ket{\psi} &= \infint \frac{\partial V}{\partial X} \psi(x) \ket{x} dx,\\
-\hat{V}''\ket{\psi} &= \infint \frac{\partial^2 V}{\partial X^2} \psi(x) \ket{x} dx.
+\hat{V}'\ket{\psi} &= \infint \frac{\partial V}{\partial x} \psi(x) \ket{x} dx,\\
+\hat{V}''\ket{\psi} &= \infint \frac{\partial^2 V}{\partial x^2} \psi(x) \ket{x} dx.
 ```
 4. Hence, show that
 ```{math}
 \vph[\hat{K},\hat{V}] = -\frac{\hbar^2}{2M}\hat{V}'' - \frac{i\hbar}{M}\hat{V}'\hat{P}.
 ```
-5. The operators $\hat{V}'$ and $\hat{V''}$ can vanish (can satisfy $\hat{V}'\ket{\psi} = 0$). When does this happen? This is the only case in which $[\hat{K},\hat{V}] = 0$. Does this make sense physically?
+5. The operators $\hat{V}'$ and $\hat{V}''$ can vanish (can satisfy $\hat{V}'\ket{\psi} = 0$). When does this happen? This is the only case in which $[\hat{K},\hat{V}] = 0$. Does this make sense physically?
 ```{dropdown} Answers
 1. $-\frac{\hbar^2}{2M}V(x)\frac{\partial^2 \psi}{\partial x^2}$
 2. $-\frac{\hbar^2}{2M}\left(\frac{\partial^2 V}{\partial x^2}\psi(x) + 2 \frac{\partial V}{\partial x}\frac{\partial \psi}{\partial x} + V(x)\frac{\partial^2 \psi}{\partial x^2}\right)$

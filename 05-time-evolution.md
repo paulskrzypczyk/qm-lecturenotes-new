@@ -22,7 +22,7 @@ We are now ready to embark on one of the central physical questions that we are 
 
 Up until now, we have just been discussing quantum states, and their **static** properties, without making any reference to time, or how the state changes in time. That is, when we have considered a particle with a state $\ket{\psi}$, we have really meant the state at some reference time, e.g. $t=0$. If we prepare a particle in some state, we don't expect it to **remain in that state**. For example, if the particle has momentum, we know it is moving, and so know its state should change, reflecting this non-zero momentum. 
 
-In this chapter, after reintroducing the **equation of motion** of QM, we will see how writing a quantum state as a superposition of energy eigenstates allow us to **solve it directly** and **write down the state at time $t$**. 
+In this chapter, after reintroducing the **equation of motion** of QM, we will see how writing a quantum state as a superposition of energy eigenstates allows us to **solve it directly** and **write down the state at time $t$**. 
 
 ## The Schrödinger Equation
 
@@ -58,12 +58,12 @@ where we consider an arbitrary Hamiltonian $\hat{H}$, with a potential $\hat{V}$
 
 Then, according to what you learnt last year, the quantum state at time $t$ will be
 ```{math}
-:label: e:soln-to-SE-bound
+:label: e-soln-to-SE-bound
 \ket{\psi(t)} = \sum_{k=1}^d \alpha_k e^{-iE_k t/\hbar}\ket{E_k},
 ```
-which we can directly see satisfies the initial condition $\ket{\psi(0)} = \ket{\psi_\init}$. We leave it as an [exercise](#ex-soln-to-SE-bound) to confirm that [](#e:soln-to-SE-bound) solves the SE [](#e-SE).
+which we can directly see satisfies the initial condition $\ket{\psi(0)} = \ket{\psi_\init}$. We leave it as an [exercise](#ex-soln-to-SE-bound) to confirm that [](#e-soln-to-SE-bound) solves the SE [](#e-SE).
 
-Using [](#e-x-scalar), we can also see how the wavefunction evolves. In particular, the particle will have a wavefunction $\psi(x,t)$ at time $t$. The initial condition is that wavefunction is $\psi_\init(x) = \inner{x}{\psi_\init}$. Taking the scalar product with $\bra{x}$ on both sides of [](#e:soln-to-SE-bound), the wavefunction at time $t$ is given by
+Using [](#e-x-scalar), we can also see how the wavefunction evolves. In particular, the particle will have a wavefunction $\psi(x,t)$ at time $t$. The initial condition is that the wavefunction is $\psi_\init(x) = \inner{x}{\psi_\init}$. Taking the scalar product with $\bra{x}$ on both sides of [](#e-soln-to-SE-bound), the wavefunction at time $t$ is given by
 ````{card}
 ```{math}
 :label: e-wf-soln-to-SE-bound
@@ -79,16 +79,16 @@ We now turn our attention to the evolution of [**non-bound**](#s-non-bound-state
 :label: e-init-non-bound
 \ket{\psi_\init} = \int_{E_B}^\infty \phi_\init(E)\ket{E}dE,
 ```
-where now, since energies are **continuous** for [non-bound state](#s-Non-bound-states), we have to integrate rather than sum to form a superposition, and where we have changed to $\phi_\init(E)$ (from $\alpha_k$), which is now a **function of energy**, just as the position and momentum wavefunctions are functions, respectively, of position and momentum. The lower limit on the integral of $E_B$ is because only in this **energy range** is the particle not bound to the well. 
+where now, since energies are **continuous** for [non-bound states](#s-non-bound-states), we have to integrate rather than sum to form a superposition, and where we have changed to $\phi_\init(E)$ (from $\alpha_k$), which is now a **function of energy**, just as the position and momentum wavefunctions are functions, respectively, of position and momentum. The lower limit on the integral of $E_B$ is because only in this **energy range** is the particle not bound to the well. 
 
 Our goal now is to find the state $\ket{\psi(t)}$ which satisfies the SE [](#e-SE) and has [](#e-init-non-bound) as the initial condition. Let us **assume** that we can write $\ket{\psi(t)}$ in the same form as [](#e-init-non-bound), that is, in the form
 ```{math}
-:label: e-non-bound-ansatze
+:label: e-non-bound-ansatz
 \ket{\psi(t)} = \int_{E_B}^\infty \phi(E,t)\ket{E}dE,
 ```
-for some function $\phi(E,t)$ that we want to determine. Subtituting this into the SE [](#e-SE), we find
+for some function $\phi(E,t)$ that we want to determine. Substituting this into the SE [](#e-SE), we find
 ```{math}
-i\hbar \frac{d}{dt} \int_{E_B}^\infty \phi(E,t)\ket{E}dE &= \hat{H} \int_{E_B}^\infty \phi(E,t)\ket{E}dE,
+i\hbar \frac{d}{dt} \int_{E_B}^\infty \phi(E,t)\ket{E}dE &= \hat{H} \int_{E_B}^\infty \phi(E,t)\ket{E}dE.
 ```
 We can take $\frac{d}{dt}$ inside the integral on the left-hand side, as long as we write it as $\frac{\partial}{\partial t}$ (since inside the integral, we have **both** the variables $t$ and $E$), and similarly we can take $\hat{H}$ inside the integral on the right-hand side, and use the fact that $\ket{E}$ is an energy eigenstate, satisfying [](#e-E-eigenvalue-eq), to arrive at
 ```{math}
@@ -102,7 +102,7 @@ This is however **the same differential equation you solved previously**. The so
 ```{math}
 \phi(E,t) = \phi_\init(E) e^{-iEt/\hbar}.
 ```
-Substituting this back into [](#e-non-bound-ansatze), the final solution is 
+Substituting this back into [](#e-non-bound-ansatz), the final solution is 
 ````{card}
 ```{math}
 :label: e-non-bound-evolution
@@ -132,14 +132,14 @@ which we can readily confirm satisfies the initial condition $\ket{\psi(0)} = \k
 ````
 `````
 
-Let us return for the moment to bound states, and consider a particularly simple initial condition: that the particle has a definite energy $E_\ell$. That is, the initial state is $\ket{\psi_\init} = \ket{E_\ell}$, and so $\alpha_\ell = 1$ and $\alpha_k = 0$ for $k \neq \ell$. According to [](#e:soln-to-SE-bound) the quantum state at time $t$ will be
+Let us return for the moment to bound states, and consider a particularly simple initial condition: that the particle has a definite energy $E_\ell$. That is, the initial state is $\ket{\psi_\init} = \ket{E_\ell}$, and so $\alpha_\ell = 1$ and $\alpha_k = 0$ for $k \neq \ell$. According to [](#e-soln-to-SE-bound) the quantum state at time $t$ will be
 ```{math}
 :label: e-E-eigenstate-evolution
 \ket{\psi(t)} = e^{-iE_\ell t/\hbar}\ket{E_\ell}.
 ```
 That is, **in time, the state just acquires a *phase* $e^{-i E_\ell t/\hbar}$**. What we would now like to ask is *what properties of the particle change?*
 
-First of all, we can see that the **energy hasn't changed**. In particular, the particle started off with a definite energy $E_\ell$. While it has aquired a phase, **this doesn't change the energy of the particle**. One way to see this is to consider **measuring the energy**. Recall that if we had a general superposition of energy levels, $\sum_k \beta_k \ket{E_k}$, then the probability of the result $E_k$ would be 
+First of all, we can see that the **energy hasn't changed**. In particular, the particle started off with a definite energy $E_\ell$. While it has acquired a phase, **this doesn't change the energy of the particle**. One way to see this is to consider **measuring the energy**. Recall that if we had a general superposition of energy levels, $\sum_k \beta_k \ket{E_k}$, then the probability of the result $E_k$ would be 
 ```{math}
 \prob(E_k) = |\beta_k|^2.
 ``` 
@@ -148,9 +148,9 @@ Here we have $\beta_\ell = e^{-iE_\ell t/\hbar}$ (and $\beta_k = 0$ for $k \neq 
 \prob(E_\ell) = |e^{-iE_\ell t/\hbar}|^2 = 1.
 ``` 
 
-This is in fact what we know really **must** have been the case, since **energy is a conserved quantity** which **should not change in time**. If quantum mechanics would have predicted that the energy of a particle would change in time, then this would truly be a radical departure from classical physics! Luckily this isn't the case. 
+This is in fact what we know really **must** have been the case, since **energy is a conserved quantity** which **should not change in time**. If quantum mechanics had predicted that the energy of a particle would change in time, then this would truly be a radical departure from classical physics! Luckily this isn't the case. 
 
-*What about the position of the particle. Does this change in time?* From [](#e-wf-soln-to-SE-bound), we see that here
+*What about the position of the particle? Does this change in time?* From [](#e-wf-soln-to-SE-bound), we see that here
 ```{math}
 \psi(x,t) = e^{-iE_\ell t/\hbar} u_{E_\ell}(x),
 ```
@@ -164,14 +164,14 @@ which is **independent of time**. Therefore, no matter at what time we choose to
 
 We reach a similar conclusion about the momentum, which we leave as an [exercise](#ex-stationary-p). Namely, we find that the probability density for the particle to have momentum $p$ at time $t$ is also time-independent. 
 
-In fact, **none of the physical properties of the particle change**! For this reason, we call energy eigenstates **stationary states**. The simple evolution of aquiring a phase doesn't change any property of the state. 
+In fact, **none of the physical properties of the particle change**! For this reason, we call energy eigenstates **stationary states**. The simple evolution of acquiring a phase doesn't change any property of the state. 
 
 This follows from a more fundamental property of quantum mechanics:
 
 ```{card}
 > The states $\ket{\psi}$ and $e^{i\theta}\ket{\psi}$ lead to identical physical predictions in all situations.  
 ```
-In our example, the only difference in the quantum state of a particle with a definite energy $E_\ell$ between $t = 0$ and time $t$ is precisely a phase factor $e^{-i E_\ell t/\hbar}$. while this phase **changes in time**, it is a phase nevertheless, and hence the physical predictions are identical at all times.  
+In our example, the only difference in the quantum state of a particle with a definite energy $E_\ell$ between $t = 0$ and time $t$ is precisely a phase factor $e^{-i E_\ell t/\hbar}$. While this phase **changes in time**, it is a phase nevertheless, and hence the physical predictions are identical at all times.  
 
 ## Evolution of superpositions
 
@@ -190,7 +190,7 @@ The crucial insight is that **we can write down the answer immediately** because
 
 > The evolution of a superposition is just the superposition of evolutions.
 
-That is, since $\psi_\init''(x)$ is a superposition of $\psi_\init(x)$ and $\psi_\init'(x)$, and since we already know that $\psi_\init(x)$ evolves into $\psi(x,t)$ and $\psi'_\init(x)$ evolves into $\psi'(x,t)$, we are guaranteed that $\psi_\init''(x)$ evolves into the superposition of $\psi'_\init(x)$ and $\psi'(x,t)$. Namely, into
+That is, since $\psi_\init''(x)$ is a superposition of $\psi_\init(x)$ and $\psi_\init'(x)$, and since we already know that $\psi_\init(x)$ evolves into $\psi(x,t)$ and $\psi'_\init(x)$ evolves into $\psi'(x,t)$, we are guaranteed that $\psi_\init''(x)$ evolves into the superposition of $\psi(x,t)$ and $\psi'(x,t)$. Namely, into
 ```{math}
 :label: e-psi-superposition-sol
 \psi''(x,t) = \beta \psi(x,t) + \gamma \psi'(x,t).
@@ -224,7 +224,7 @@ In this exercise we will show that the SE for the quantum state [](#e-SE) implie
 
 ````{exercise}
 :label: ex-soln-to-SE-bound
-In this exercise we will confirm that $\ket{\psi(t)}$ from [](#e:soln-to-SE-bound) satisfies the SE [](#e-SE) with $\ket{\psi_\init}$ from [](#e-psi-init) as initial condition. 
+In this exercise we will confirm that $\ket{\psi(t)}$ from [](#e-soln-to-SE-bound) satisfies the SE [](#e-SE) with $\ket{\psi_\init}$ from [](#e-psi-init) as initial condition. 
 1. Calculate $i\hbar \frac{d}{dt}\ket{\psi(t)}$.
 1. Calculate $\hat{H} \ket{\psi(t)}$ and therefore confirm that $\ket{\psi(t)}$ satisfies the SE [](#e-SE).
 1. Confirm that $\ket{\psi(0)} = \ket{\psi_\init}$. 
@@ -250,6 +250,7 @@ where $\tilde{u}_{E_\ell}(p)$ is the momentum wavefunction associated to $u_{E_\
 1. n/a (show that).
 2. $e^{-iE_\ell t/\hbar}\tilde{u}_{E_\ell}(p)$. 
 3. $\pd(p,t) = |\tilde{u}_{E_\ell}(p)|^2$. This is independent of time. 
+```
 ````
 
 ````{exercise}
@@ -259,8 +260,8 @@ Consider a particle with an initial state given by
 ```{math}
 \ket{\psi_\init} = \sum_{k=1}^d \alpha_k \ket{E_k} + \int_{E_B}^\infty \phi_\init(E) \ket{E}dE,
 ```
-where $\ket{E_k}$ are energy eigenstates with $E_k < E_B$, and $\ket{E}$ are eigenstates with $E > E_B$. Note that these states are **orthgonal**, $\inner{E}{E_k} = 0$. 
-1. Show that the normalisation condition for such superpositon states is
+where $\ket{E_k}$ are energy eigenstates with $E_k < E_B$, and $\ket{E}$ are eigenstates with $E > E_B$. Note that these states are **orthogonal**, $\inner{E}{E_k} = 0$. 
+1. Show that the normalisation condition for such superposition states is
 ```{math}
 \sum_{k=1}^d |\alpha_k|^2 + \int_{E_B}^\infty |\phi_\init(E)|^2 dE = 1.
 ```
@@ -270,8 +271,9 @@ where $\ket{E_k}$ are energy eigenstates with $E_k < E_B$, and $\ket{E}$ are eig
 ```{dropdown} Answers
 1. n/a (show that).
 2. $\ket{\psi(t)} = \sum_{k=1}^d \alpha_k e^{-iE_kt/\hbar}\ket{E_k} + \int_{E_B}^\infty \phi_\init(E) e^{-iEt/\hbar}\ket{E}dE$
-3. Both sides evaluate to 2. $\ket{\psi(t)} = \sum_{k=1}^d E_k \alpha_k e^{-iE_kt/\hbar}\ket{E_k} + \int_{E_B}^\infty E \phi_\init(E) e^{-iEt/\hbar}\ket{E}dE$
+3. Both sides evaluate to $\sum_{k=1}^d E_k \alpha_k e^{-iE_kt/\hbar}\ket{E_k} + \int_{E_B}^\infty E \phi_\init(E) e^{-iEt/\hbar}\ket{E}dE$
 4. n/a (essentially a show that).
+```
 ````
 
 ````{exercise} 

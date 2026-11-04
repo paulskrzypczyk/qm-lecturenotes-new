@@ -14,6 +14,6 @@ short_title: "Prob. Sheet: Week 16"
 
 ![](#ex-norm-3D)
 ![](#ex-scalar-wf-3D)
-![](#ex-egen-coordinate-ops)
+![](#ex-degen-coordinate-ops)
 ![](#ex-mom-eig-3D)
 ![](#ex-comm-3D)

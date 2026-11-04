@@ -32,7 +32,7 @@ Our starting point for understanding the momentum of a quantum particle will in 
 where $h$ is **Planck's constant**. While this formula is part of '*old quantum theory*' it turns out that the basic insight is ultimately correct. More concretely, what is correct in quantum mechanics is 
 >  A quantum particle with definite momentum $p$ has a wavefunction with a definite wavelength $\lambda = h/p$. 
 
-*What is a wavefunction with a definite wavelength $\lambda$?* This could potentially mean a couple of things, for example $\cos(2\pi x/\lambda)$ or $\sin(2\pi x/\lambda)$? These are both examples of plane waves of wavelength $\lambda$. Neither of these happen to be the correct answer. What we actually mean is a **complex plane wave** 
+*What is a wavefunction with a definite wavelength $\lambda$?* This could potentially mean a couple of things, for example $\cos(2\pi x/\lambda)$ or $\sin(2\pi x/\lambda)$? These are both examples of plane waves of wavelength $\lambda$. Neither of these happens to be the correct answer. What we actually mean is a **complex plane wave** 
 ```{math}
 :label: e-complex-plane-wave
 Ae^{2\pi i x / \lambda}
@@ -40,10 +40,10 @@ Ae^{2\pi i x / \lambda}
 where $A$ is the amplitude (which we take to be real out of convenience for the moment, and will come back to shortly). This is depicted in the following:
 ```{figure} ./Pictures/complex-circ.svg
 :name: f-complex-plane-wave
-:alt: Picture of a quantum particle now in one of eight possible locations
+:alt: Three ways of visualising a complex plane wave
 :width: 500px
 :align: center
-**Complex plane waves** 3 different ways of visually representing a complex plane wave. (a) A plot of the real and imaginary parts of the function. We have $\mathrm{Re}(Ae^{2\pi i x/\lambda}) = A\cos (2\pi x/\lambda)$ and $\mathrm{Im}(Ae^{2\pi i x/\lambda}) = A\sin (2\pi x/\lambda)$. (b) A 3-D plot of this function, with the real and imaginary parts plotted along $y$ and $z$ axes respectively. In this representation, we see that a complex plane wave corresponds to a helix. (c) Polar representation of the function, where the phase is represented by colour. In this representation we have a stripy constant line. 
+**Complex plane waves.** 3 different ways of visually representing a complex plane wave. (a) A plot of the real and imaginary parts of the function. We have $\mathrm{Re}(Ae^{2\pi i x/\lambda}) = A\cos (2\pi x/\lambda)$ and $\mathrm{Im}(Ae^{2\pi i x/\lambda}) = A\sin (2\pi x/\lambda)$. (b) A 3-D plot of this function, with the real and imaginary parts plotted along $y$ and $z$ axes respectively. In this representation, we see that a complex plane wave corresponds to a helix. (c) Polar representation of the function, where the phase is represented by colour. In this representation we have a stripy constant line. 
 ```
 
 If we substitute the de Broglie relation [](#e-de-Broglie) into [](#e-complex-plane-wave), then we see that
@@ -91,7 +91,7 @@ are **quantum states of definite momentum**.
 Note that due to [](#e-momentum-norm), states of definite momentum have **infinite normalisation** (just like states of definite position). What this means is that they are, once again, **unphysical states**! We thus have another profound conclusion:
 > It is physically impossible in quantum mechanics for a particle to have a definite momentum.
 
-We can understand this from a second perspective. Our requirement to have a definite wavelength means that a particle has to be spread out **everywhere**. If this were possible, then what would be probability density $\pd(x)$ to find the particle at some location $x_0$? This would be
+We can understand this from a second perspective. Our requirement to have a definite wavelength means that a particle has to be spread out **everywhere**. If this were possible, then what would be the probability density $\pd(x)$ to find the particle at some location $x_0$? This would be
 ```{math}
 \vph \pd(x_0) = |v_p(x_0)|^2 &= \left| \frac{1}{\sqrt{2\pi \hbar}}e^{ipx_0/\hbar}\right|^2, \\
 &= \frac{1}{\sqrt{2\pi \hbar}}e^{-ipx_0/\hbar}\frac{1}{\sqrt{2\pi \hbar}}e^{ipx_0/\hbar}, \\
@@ -186,7 +186,7 @@ We can now use these facts in an interesting way. We start again with a quantum 
 \psi(x) &= \infint \tilde{\psi}(p) \inner{x}{p}dp,\\
 &= \infint \tilde{\psi}(p) v_p(x) dp,
 ```
-where in the third line we have used [](#e-x-scalar), for the quantum state $\ket{p}$, a state of definite momentum, and used [](#e-momentum-state-1), to recall that for such states, the wavefunction is $v_p(x)$, as we saw at the beginning of this Chapter. Substituting in [](#e-momentum-state-wavefunction) (with correct choice for $A$), we finally obtain
+where in the third line we have used [](#e-x-scalar), for the quantum state $\ket{p}$, a state of definite momentum, and used [](#e-momentum-state-1), to recall that for such states, the wavefunction is $v_p(x)$, as we saw at the beginning of this Chapter. Substituting in [](#e-momentum-state-wavefunction) (with the correct choice for $A$), we finally obtain
 ````{card}
 ```{math}
 :label: e-psi-p-to-psi-x
@@ -202,7 +202,7 @@ This gives the spatial wavefunction in terms of the momentum wavefunction. As an
 ````
 which gives the momentum wavefunction in terms of the spatial wavefunction. It is important to note the symmetry between these two expressions. One key **distinction** is that in the former, the exponential comes with a plus-sign, while in the latter it comes with a minus-sign. Getting this sign wrong is a very easy and common mistake!
 
-You have encountered the above type of equations before — this is nothing but the **Fourier transform** and its inverse! That is, the spatial wavefunction is the Fourier transform of the momentum wavefunction, and conversely the momentum wavefunction is the inverse Fourier transform of the spatial wavefunction! The reason why this might look unfamiliar is that instead of using the usual variable $k$, we are using the physical variable — the momentum — instead. What is $k$ usually? It is the **wavenumber** of a wave, which we can recall is related to the wavelength via $k = 2\pi/\lambda$. Substituting this into de Broglie relation [](#e-de-Broglie), we see that $2\pi / k = h / p$, which after re-arranging gives $p = \hbar k$! A simple change of variable then takes us back to the 'standard' Fourier transform.
+You have encountered the above type of equations before — this is nothing but the **Fourier transform** and its inverse! That is, the spatial wavefunction is the Fourier transform of the momentum wavefunction, and conversely the momentum wavefunction is the inverse Fourier transform of the spatial wavefunction! The reason why this might look unfamiliar is that instead of using the usual variable $k$, we are using the physical variable — the momentum — instead. What is $k$ usually? It is the **wavenumber** of a wave, which we can recall is related to the wavelength via $k = 2\pi/\lambda$. Substituting this into the de Broglie relation [](#e-de-Broglie), we see that $2\pi / k = h / p$, which after re-arranging gives $p = \hbar k$! A simple change of variable then takes us back to the 'standard' Fourier transform.
 
 In hindsight, it is clear that this **had** to be the relation between the spatial and momentum wavefunctions. Why? Our starting point of this Chapter was the fact that in quantum mechanics, states of definite momentum correspond to complex plane waves. A Fourier transform is precisely the way of transforming a function $f(x)$, represented in the normal fashion — as a value at each point $x$ — into a superposition of plane waves, where $\tilde{f}(k)$ is the amplitude to have wavenumber $k$ (and hence wavelength $\lambda = 2\pi/k$). The only new ingredient for us is that in quantum mechanics a wavenumber of $k$ corresponds to a momentum of $\hbar k$, and hence when we Fourier transform the wavefunction of a particle, we directly get its momentum wavefunction $\tilde{\psi}(p)$ — the 'probability amplitude' for it to have momentum $p$. 
 
@@ -244,7 +244,7 @@ We can substitute this into [](#e-momentum-op-calc-1) to obtain
 &= -i\hbar \frac{\partial}{\partial x}\left(\frac{1}{\sqrt{2\pi\hbar}}\infint \tilde{\psi}(p)  e^{ipx/\hbar} dp\right),\\
 &= -i\hbar \frac{\partial}{\partial x}\psi(x),
 ```
-where in the second line we used the fact that since $\tilde{\psi}(p)$ is independent of $x$, we can 'pull' the partial deriative through it, and in fact all the way out of the integral altogether, and in the final line we used the fact that the integral that remains is nothing but [](#e-psi-p-to-psi-x). What this shows is that multiplying a momentum wavefunction by $p$ **has the effect of differentiating the spatial wavefunction** (and multiplying it by $-i\hbar$)! This has thus answered our question, and we can see that
+where in the second line we used the fact that since $\tilde{\psi}(p)$ is independent of $x$, we can 'pull' the partial derivative through it, and in fact all the way out of the integral altogether, and in the final line we used the fact that the integral that remains is nothing but [](#e-psi-p-to-psi-x). What this shows is that multiplying a momentum wavefunction by $p$ **has the effect of differentiating the spatial wavefunction** (and multiplying it by $-i\hbar$)! This has thus answered our question, and we can see that
 ````{card}
 ```{math}
 :label: e-op-P
@@ -268,7 +268,7 @@ Therefore we have
 ````
 which is precisely an **eigenvalue equation** for wavefunctions of definite momentum. This is a very important form of **consistency**: the wavefunctions $v_p(x)$ which correspond to states of definite momentum are seen to be eigenstates of the operator $\op{P}$ which represents the momentum operator on wavefunctions. It is important to note that we could have in fact used $\op{P}$ to **find** the states $\ket{p}$. In particular, we could have first found the eigenfunctions $v_p(x)$ of $\op{P}$, and then **defined** $\ket{p} = \infint v_p(x) \ket{x}dx$, which would be eigenstates of $\hat{P}$ (a fact you will check as an [exercise](#ex-mom-eigenstates)). 
 
-It is also important to realise that we could have in fact started this whole chapter in reverse, and **defined first** the momentum operator $\op{P}$, and used this to arrive at the momentum eigenfunctions $v_p(x)$, rather than postulate them as states of definite momentum as we did. Thanks to de Brogile, we didn't need to do this, as he already had the insight into what form the eigenfunctions should have, i.e. that they corresponded to plane waves. 
+It is also important to realise that we could have in fact started this whole chapter in reverse, and **defined first** the momentum operator $\op{P}$, and used this to arrive at the momentum eigenfunctions $v_p(x)$, rather than postulate them as states of definite momentum as we did. Thanks to de Broglie, we didn't need to do this, as he already had the insight into what form the eigenfunctions should have, i.e. that they corresponded to plane waves. 
 
 However, for other physical properties, this won't be the case — we won't know in advance what form wavefunctions should have in order to have a definite value of a given property (e.g. to have a definite energy or angular momentum). Our general procedure in these cases will be precisely to go in the other direction: For a given operator $\hat{A}$, to start by considering the associated operator $\op{A}$ (acting on wavefunctions), find its eigenfunctions, and then use **these** to define quantum states with definite properties, that is, the eigenstates of $\hat{A}$. A key example will be to find states of definite energy (in which case the operator of interest is the **Hamiltonian** $\hat{H}$). We will study this extensively in the following chapters. 
 
@@ -285,7 +285,7 @@ n/a (show that)
 ````
 
 ````{exercise}
-:label: ex-mom-normalsation
+:label: ex-mom-normalisation
 Using the general form [](#e-general-state-momentum), show that the normalisation condition for quantum states, $\|\ket{\psi}\| = 1$, implies that the momentum wavefunction must satisfy the normalisation condition ![](#e-mom-wv-norm)
 ```{dropdown} Answers
 n/a (show that)
@@ -298,7 +298,7 @@ n/a (show that)
 :label: e-deriving-psi-x-to-psi-p-1
 \inner{p}{\psi} = \infint \psi(x) v_p^*(x) dx.
 ```
-2. Use [](#e-deriving-psi-x-to-psi-p-1), along with [](#e-p-scalar) and the definition of $v_p(x)$, show that ![](#e-psi-x-to-psi-p)
+2. Use [](#e-deriving-psi-x-to-psi-p-1), along with [](#e-p-scalar) and the definition of $v_p(x)$, to show that ![](#e-psi-x-to-psi-p)
 ```{dropdown} Answers
 1. n/a (show that)
 1. n/a (show that)
@@ -356,7 +356,7 @@ Consider two particles,  the first of which has wavefunction $\psi(x)$, and the 
   It may be useful to introduce the new variable $p' = p-\hbar k_0$ in your answer to part 1. 
 ```
 3. In a single plot, make representative sketches of $\pd(p) = |\tilde\psi(p)|^2$ and $\pd'(p) = |\tilde\psi'(p)|^2$ (e.g. assuming a generic 'Bell-shaped' momentum wavefunction). 
-1. Use your answers to part 2 and 3 to explain what property/properties of a particle change when we multiply the spatial wavefunction by $e^{ik_0x}$.
+1. Use your answers to parts 2 and 3 to explain what property/properties of a particle change when we multiply the spatial wavefunction by $e^{ik_0x}$.
 ```{dropdown} Answers
 1. $\tilde\psi'(p) = \frac{1}{\sqrt{2\pi\hbar}}\infint \psi'(x) e^{-ipx/\hbar} dx$
 2. n/a (show that)
@@ -374,7 +374,7 @@ Consider a particle with the following momentum wavefunction,
       0  &\text{otherwise. }
     \end{cases}
   \end{equation*}
-  where $p_a < p_b$. This wavefunction has the form of a ``box'', of width $\Delta = p_b - p_a$ and centre at $p_c = (p_a + p_b)/2$. 
+  where $p_a < p_b$. This wavefunction has the form of a 'box', of width $\Delta = p_b - p_a$ and centre at $p_c = (p_a + p_b)/2$. 
   1. Show that the spatial wavefunction $\psi(x)$ of the particle is 
   \begin{equation*} \psi(x) = \sqrt{\frac{\hbar}{2\pi (p_b - p_a)}} \frac{(e^{ip_bx/\hbar} - e^{ip_ax/\hbar})}{ix}.
   \end{equation*}	
@@ -391,7 +391,7 @@ Use [](#ex-2-6) to **write down** (i.e. without calculating explicitly) the mome
 1. n/a (show that)
 2. n/a (show that)
 3. \begin{equation*}
-    \tilde{\psi}(p) = \begin{cases}
+    \tilde{\psi}'(p) = \begin{cases}
       \frac{1}{\sqrt{\Delta}} &  \text{if } -\frac{\Delta}{2} \leq p \leq \frac{\Delta}{2}, \\
       0  &\text{otherwise. }
     \end{cases}

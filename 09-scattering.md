@@ -12,7 +12,7 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-9-I.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-9-I.pdf
 :width: 100%
 ```
 ````
@@ -26,7 +26,7 @@ We will consider the situation where a particle **scatters** off of a target, wh
 
 We will consider just one simple potential — an abrupt change. The motivation for studying this is somewhat similar to our motivation for studying the infinite square well. While this is far from realistic, it is simple enough that we can solve exactly for the energy eigenstates (which are now no longer momentum eigenstates, like for the free particle). We can then use these to numerically study what happens when a wavepacket scatters off of the step. 
 
-We will uncover one final new aspect of quantum mechanics, which is almost the complete **opposite** of tunnelling. Whereas in tunnelling a quantum particle enters a region of space it should not have enough energy to enter, in this chapter we will see that quantum particles **reflect** off of abrupt changes in potential — **whether those changes are positive or negative**. That is, quantum particle reflect off of cliff edges, and therefore **fail to enter a region that they would definitely enter**. 
+We will uncover one final new aspect of quantum mechanics, which is almost the complete **opposite** of tunnelling. Whereas in tunnelling a quantum particle enters a region of space it should not have enough energy to enter, in this chapter we will see that quantum particles **reflect** off of abrupt changes in potential — **whether those changes are positive or negative**. That is, quantum particles reflect off of cliff edges, and therefore **fail to enter a region that they would definitely enter**. 
 
 ## The finite step potential
 In this chapter we will consider the following potential function
@@ -44,12 +44,12 @@ depicted in [](#potential-step).
 :align: center
 
 **The potential step.**
-     The potential energy vanishes for $x < 0$, and is equal to $V_0$ for $x \geq 0$. In the figure we have taken $V_0 > 0$, although in the mathematics that follows, we make consider $V_0$ to be either positive or negative.  
+     The potential energy vanishes for $x < 0$, and is equal to $V_0$ for $x \geq 0$. In the figure we have taken $V_0 > 0$, although in the mathematics that follows, we may consider $V_0$ to be either positive or negative.  
 ````
 
 This corresponds to an abrupt change in potential from $V(x) = 0$ to $V(x) = V_0$ at the origin. It is important to note that $V_0$ could be either **positive** or **negative**, meaning that the potential energy either steps up or down. We will primarily keep in the back of our mind that $V_0 > 0$, but will also discuss what happens if $V_0 < 0$. 
 
-Our goal, as always, is to find the energy eigenstates of the potential well, which we will do by solving the TISE to find the energy eigenfunctions. Since the particle isn't bound, we expect that the energy should vary **continuously** and the eigenfunctions shouldn't be physical and normalisable. We will indeed see that this is the case below. 
+Our goal, as always, is to find the energy eigenstates of the potential step, which we will do by solving the TISE to find the energy eigenfunctions. Since the particle isn't bound, we expect that the energy should vary **continuously** and the eigenfunctions won't be physical or normalisable. We will indeed see that this is the case below. 
 
 ## Energy eigenfunctions of the potential step
 
@@ -74,7 +74,7 @@ and so, just as we were able to do there, we can **immediately write down the en
 :label: e-scattering-rI
 \vph u_E^\rI(x) = A e^{ikx} + Be^{-ikx},
 ```
-will be an eigenfunction, where $A$ and $B$ are arbitrary complex numbers, where the corresponding energy eigenvalue is  
+will be an eigenfunction, where $A$ and $B$ are arbitrary complex numbers, and the corresponding energy eigenvalue is  
 ```{math}
 :label: e-k
 \vph E = \frac{\hbar^2 k^2}{2M}.
@@ -92,7 +92,7 @@ We can move the term involving $V_0$ from the left-hand to the right-hand side, 
 ```{math}
 \frac{\op{P}^2}{2M}u_E^\rII(x) = (E-V_0) u_E^\rII(x).
 ```
-Since $V_0$ is just a constant, this has again **exactly the same form as for a free particle** except we are looking for an eigenvalue of $E' = (E-V_0)$, instead of $E$. The only **subtlety** we need to be careful about is that previously we tacitly had $E\geq 0$. We will therefore **make the same assumption that $E' \geq 0$**, i.e that $E > V_0$. Physically this means we are going to consider situations where **the particle has enough energy to classically climb the potential step**. We will study the opposite situation as an [exercise](#ex-E-below-V0). 
+Since $V_0$ is just a constant, this has again **exactly the same form as for a free particle** except we are looking for an eigenvalue of $E' = (E-V_0)$, instead of $E$. The only **subtlety** we need to be careful about is that previously we tacitly had $E\geq 0$. We will therefore **make the same assumption that $E' \geq 0$**, i.e. that $E > V_0$. Physically this means we are going to consider situations where **the particle has enough energy to classically climb the potential step**. We will study the opposite situation as an [exercise](#ex-E-below-V0). 
 
 Given the above, we can once again **write down the solution**! In particular, the energy eigenfunction in region II will be identical in form to an energy eigenfunction **without a potential** and with energy $E'$. The solution is therefore 
 ```{math}
@@ -103,7 +103,7 @@ where $C$ and $D$ are two new constants (that we will also need to determine in 
 :label: e-kp
 \vph E - V_0 = \frac{\hbar^2 k'^2}{2M}.
 ```
-Taking a step back (no pun intended), this makes **perfect sense**. Once the particle has passed the step, its potential energy has increased by $V_0$. The total energy is still $E$, and so the kinetic energy of the particle is now $E - V_0$. This is why we see that energy eigenfunction has exactly the same form as an energy eigenfunction with $E' = E - V_0$. 
+Taking a step back (no pun intended), this makes **perfect sense**. Once the particle has passed the step, its potential energy has increased by $V_0$. The total energy is still $E$, and so the kinetic energy of the particle is now $E - V_0$. This is why we see that the energy eigenfunction has exactly the same form as an energy eigenfunction with $E' = E - V_0$. 
 
 ### Right-moving and Left-moving eigenstates
 
@@ -119,7 +119,7 @@ where $A$, $B$, $C$ and $D$ are complex constants, that we need to determine,  a
 
 In order to make progress, we first need to cast our mind back to [](06-free-particle), and the fact that we found there **two degenerate eigenstates for each energy**. *What were the two degenerate eigenstates?* They were the two momentum eigenstates with equal and opposite momentum, $\ket{p}$ and $\ket{-p}$. 
 
-Here we are going to have something **very similar**. What we need to understand is **what are the analogue of these two eigenstates here?** The key insight is that a momentum eigenstate with **positive momentum** represents a particle moving to the right, while an eigenstate of **negative momentum** represents one moving to the left. We thus want to identify **right-moving** and **left-moving** eigenstates of the step, as the two basic states of interest. 
+Here we are going to have something **very similar**. What we need to understand is **what is the analogue of these two eigenstates here?** The key insight is that a momentum eigenstate with **positive momentum** represents a particle moving to the right, while an eigenstate of **negative momentum** represents one moving to the left. We thus want to identify **right-moving** and **left-moving** eigenstates of the step, as the two basic states of interest. 
 
 We will be able to do this, but we need to use a bit of **foresight**. In particular, as stated in the introduction, **quantum particles reflect off of abrupt changes in potential**, irrespective of whether that is a positive or negative change. *What does this imply about left-moving and right-moving states?* Let us start off by considering a right-moving state in region I, which would correspond to $e^{ikx}$ (since this has the same form as a positive momentum state in this region, if $k > 0$). When it reaches the step, it will reflect, creating a component $e^{-ikx}$ (essentially a negative momentum state), and also pass through, creating a component $e^{ik'x}$ in region II (with positive momentum). In region II however, there will be **no negative momentum component** (i.e. component of the form $e^{-ik'x}$). 
 
@@ -133,7 +133,7 @@ This is summarised graphically in [](#left-right-moving) (a).
 **Right-moving and Left-moving situations**. (a) In a 'right-moving' situation, a particle approaches the step from the left, with positive momentum. It is then partially reflected by the step, and partially transmitted. (b) In a 'left-moving' situation, everything is reversed. The particle approaches the step from the right with negative momentum. It is then partially reflected, and partially transmitted.
 ````
 
-This line of reasoning suggests that we should take $D = 0$ in [](#e-eig-step-1) when considering right-moving eigenfunctions. We will denote this eigenfunction by $u_E^\rR(x)$ ('R' for 'right-moving'), and their general form will be
+This line of reasoning suggests that we should take $D = 0$ in [](#e-eig-step-1) when considering right-moving eigenfunctions. We will denote this eigenfunction by $u_E^\rR(x)$ ('R' for 'right-moving'), and its general form will be
 ```{math}
 :label: e-eig-step-R
 u_E^\rR(x) = \begin{cases}
@@ -169,7 +169,7 @@ In what follows, we will focus on **right-moving** particles, and leave the corr
 ````
 `````
 
-We will now see how we can fix the unknown constants in the eigenfunctions. First, as we learnt in [](#s-continuity-isw), **energy eigenfunctions must be continuous**. We must apply this fact at the potential step ($x = 0$), as for general choices of $A$, $B$ and $C$ this won't be the case. In particular, from [](#e-eig-step-R) we see that at $x = 0$ $u_E^\rR(0) = C$ (since we include $x = 0$ in region II). If we approach the origin from region I, i.e. take $x \to 0$ from below, we find $u_E^\rR(0) = A + B$. In order for eigenfunction to be continuous, we must therefore have
+We will now see how we can fix the unknown constants in the eigenfunctions. First, as we learnt in [](#s-continuity-isw), **energy eigenfunctions must be continuous**. We must apply this fact at the potential step ($x = 0$), as for general choices of $A$, $B$ and $C$ this won't be the case. In particular, from [](#e-eig-step-R) we see that at $x = 0$, $u_E^\rR(0) = C$ (since we include $x = 0$ in region II). If we approach the origin from region I, i.e. take $x \to 0$ from below, we find $u_E^\rR(0) = A + B$. In order for the eigenfunction to be continuous, we must therefore have
 ```{math}
 A + B = C.
 ```
@@ -181,7 +181,7 @@ To fix another constant, we need to introduce one **further fact** about energy 
 
 Like many good rules, this one **has an exception**! There is only one situation where the spatial derivative of an energy eigenfunction doesn't have to be continuous, and this is **precisely the situation we encountered when studying the infinite square well**: it is when the **potential is infinite**. 
 
-We therefore didn't introduce this fact previously, as we happened to be in the one exceptional case. We are introducing **now** as for the potential step, the potential is **finite everywhere** and hence we do need to impose continuity of the spatial derivative.
+We therefore didn't introduce this fact previously, as we happened to be in the one exceptional case. We are introducing it **now**, as for the potential step the potential is **finite everywhere** and hence we do need to impose continuity of the spatial derivative.
 
 *What does it mean for a function to have a continuous derivative*? This means that there will be no **kinks** in the graph — no points where the function changes slope abruptly. Thus energy eigenfunctions cannot have jumps or kinks (except where the potential is infinite). 
 
@@ -195,7 +195,7 @@ ik'(A+B) e^{ik'x} &\text{ if } x \geq 0.
 \end{cases}
 ```
 
-(where we have substituted $C = A+B$ already). We then demand continuity just as did above. At $x = 0$, we have $\frac{\partial u_E^\rR}{\partial x}\big|_{x=0} = ik'(A+B)$. On the other hand, if we approach $0$ in region II from below, we find on  $\frac{\partial u_E^\rR}{\partial x}\big|_{x=0} = ik(A-B).$ Thus, in order to have a continuous first spatial derivative, we must have
+(where we have substituted $C = A+B$ already). We then demand continuity just as we did above. At $x = 0$, we have $\frac{\partial u_E^\rR}{\partial x}\big|_{x=0} = ik'(A+B)$. On the other hand, if we approach $0$ in region I from below, we find $\frac{\partial u_E^\rR}{\partial x}\big|_{x=0} = ik(A-B).$ Thus, in order to have a continuous first spatial derivative, we must have
 ```{math}
 ik'(A+B) = ik(A-B). 
 ```
@@ -221,7 +221,7 @@ This eigenfunction (for one choice of $E$) is depicted below in [](#right-moving
 :width: 600px
 :align: center
 
-**Right-moving energy eigenfunction of the potential step**. Colour plot of a right-moving energy eigenfunction, given in [](#e-eig-step-R-final). For illustrative purposes, we also plot the potential step, to highlight where it is in relation to the wavefunction (the height of the step has relation to the amplitude of the wavefunction). On the left of the step, where there is both the incoming and reflected component of the wavefunction, there is interference, leading to sinusoidal oscillations. On the right, where there is only the transmitted component, the modulus of the wavefunction is constant. 
+**Right-moving energy eigenfunction of the potential step**. Colour plot of a right-moving energy eigenfunction, given in [](#e-eig-step-R-final). For illustrative purposes, we also plot the potential step, to highlight where it is in relation to the wavefunction (the height of the step has no relation to the amplitude of the wavefunction). On the left of the step, where there is both the incoming and reflected component of the wavefunction, there is interference, leading to sinusoidal oscillations. On the right, where there is only the transmitted component, the modulus of the wavefunction is constant. 
 ````
 
 As a summary of what we have achieved: in [](#e-eig-step-R-final) we have found the wavefunction of the quantum step Hamiltonian with constant energy $E$, that is 'right-moving', in the sense that when we look on the left of the step, we only have a positive momentum component. We found this by using two key **mathematical properties** of energy eigenfunctions: that they are **continuous** (as previously seen), and that they have a **continuous derivative** (which is new here). More informally, this ensured that the function has no 'jumps' and no 'kinks'. Just as with the free particle, there is a **second degenerate energy eigenfunction of energy $E$**. This corresponds to a **left-moving** particle, and you will solve for it as an [exercise](#ex-left-moving) below. 
@@ -234,7 +234,7 @@ What we would like to understand now as quantitatively as possible, is the meani
 
 The main point we would like to understand is the significance of [](#e-B-f-A-scattering), namely how the **amplitude** of the **reflected** component $e^{-ikx}$ relates to the **amplitude** of the **incoming** component $e^{ikx}$ (which we have taken to be $A = 1$ for simplicity). 
 
-We can start by considering an extreme case: that if **no potential step**. That is, we can set $V_0 = 0$, and ask what happens to the energy eigenfunction. In this case, we know what we should hope to find, since this corresponds to a [](06-free-particle.md), and hence the energy eigenfunctions should just be **momentum eigenfunctions**. This is precisely what we find, since from [](#e-kp), in this case $k' = k$, and hence $B = 0$, leaving us with simply the component $e^{ikx}$ for all $x$, corresponding to a momentum eigenfunction with momentum $p = \hbar k$. 
+We can start by considering an extreme case: that of **no potential step**. That is, we can set $V_0 = 0$, and ask what happens to the energy eigenfunction. In this case, we know what we should hope to find, since this corresponds to a [free particle](06-free-particle.md), and hence the energy eigenfunctions should just be **momentum eigenfunctions**. This is precisely what we find, since from [](#e-kp), in this case $k' = k$, and hence $B = 0$, leaving us with simply the component $e^{ikx}$ for all $x$, corresponding to a momentum eigenfunction with momentum $p = \hbar k$. 
 
 This is reassuring, but what about for $V_0 \neq 0$? Here we see that $B$ **depends upon the energy relative to the step height**, since $E$ and $V_0$ specify $k$ and $k'$. This shows that the **reflected component** is energy dependent. 
 
@@ -305,12 +305,12 @@ where
 ```
 is the **right-moving** energy eigenstate of energy $E$ associated to the energy eigenfunction $u_E^\rR(x)$ in the usual way.
 
-*Why do we take only superpositions of right-moving eigenstates?* This isn't necessary, but it is very **natural**: we want to to consider sending in initial wavefunctions from the left, moving **towards the step** so that it **scatters off of it**. In order to study this, we just need to use the right-moving states. This is just like how we would only expect to use superpositions of **positive momentum** states if we were considering a free particle moving towards the right. 
+*Why do we take only superpositions of right-moving eigenstates?* This isn't necessary, but it is very **natural**: we want to consider sending in initial wavefunctions from the left, moving **towards the step** so that it **scatters off of it**. In order to study this, we just need to use the right-moving states. This is just like how we would only expect to use superpositions of **positive momentum** states if we were considering a free particle moving towards the right. 
 
 Now, just as in all previous cases, since in [](#e-psi-in-scattering) the initial state is written as a **superposition** of energy eigenstates, we can use the **superposition** principle to **write down** the quantum state at time $t$, assuming that the state at $t = 0$ is $\ket{\psi(0)} = \ket{\psi_\init}$. It will be
 ````{card}
 ```{math}
-\ket{\psi(t)} = \int_{V_0}^\infty \phi_\init(E) e^{-iEt/\hbar} \ket{E^\rR}dE.
+\ket{\psi(t)} = \int_{V_0}^\infty \phi_\init(E) e^{-iEt/\hbar} \ket{E^\rR}dE,
 ```
 ```` 
 and the corresponding wavefunction will be 
@@ -332,7 +332,7 @@ We thus see that, as stated, the particle really does partially reflect and part
 
 The above is just one example, but captures the most important features of scattering in quantum mechanics. We could of course also study more realistic changes in potential (i.e. different forces exerted by the scatterer), however then in general it isn't possible to solve everything analytically as we have done here. 
 
-This brings to a close our study of quantum mechanics in one dimension! In the next chapter, we will begin exploring the more physically relavant situation of the mechanics of a quantum particle in three dimensions. 
+This brings to a close our study of quantum mechanics in one dimension! In the next chapter, we will begin exploring the more physically relevant situation of the mechanics of a quantum particle in three dimensions. 
 
 ## Exercises
 
@@ -366,14 +366,14 @@ ik'(C' e^{ik'x} - D'e^{-ik'x}) &\text{ if } x \geq 0.
 :label: ex-E-below-V0
 In this exercise we will find the energy eigenfunction when $0 < E < V_0$. In Region I the situation is identical to before, given by [](#e-scattering-rI). We will therefore begin by focusing on region II, $x \geq 0$.  
 1. Starting from the TISE in Region II (i.e. [](#e-scattering-TISE-rII)), substitute in for $\op{P}^2$, and re-arrange to show that it can be written as $$ \vph\frac{\partial^2 u_E^\rII}{\partial x^2} = \frac{2M}{\hbar^2}(V_0 - E)u_E^\rII(x).$$
-2. Since $(V-E_0)$ is now positive, define $\lambda^2 = 2M(V_0 - E)/\hbar^2$. Show that $e^{\lambda x}$ and $e^{-\lambda x}$ are both solutions to the TISE from part 1. 
+2. Since $(V_0-E)$ is now positive, define $\lambda^2 = 2M(V_0 - E)/\hbar^2$. Show that $e^{\lambda x}$ and $e^{-\lambda x}$ are both solutions to the TISE from part 1. 
 We will discount the solution $e^{\lambda x}$ on **physical grounds**: this would correspond to an exponentially increasing probability density to find the particle beyond the step, which is unreasonable. We will therefore take the solution in Region II to be $u_E^\rII(x) = Ce^{-\lambda x}$.
 3. Use continuity of the energy eigenfunction at $x = 0$ to show that $A + B = C$.
 4. Calculate $\frac{\partial}{\partial x} u_E(x)$.
 5. Use continuity of the first derivative of the eigenfunction at $x = 0$ to show that $ik(A-B) = -\lambda C$. 
-4. Using part 3 and part 5, show that  $ B = -\left(\frac{\lambda + ik}{\lambda - ik}\right)A$ and $C = -\left(\frac{2ik}{\lambda - ik}\right)A.$
-5. $A$ is an overall normalisation constant which we choose to be $A = 1$. Find a final expression for the energy eigenfunction of energy $E < V_0$. 
-6. Calculate the reflection coefficient $R = |B|^2$. Does your answer make physical sense?
+6. Using part 3 and part 5, show that  $ B = -\left(\frac{\lambda + ik}{\lambda - ik}\right)A$ and $C = -\left(\frac{2ik}{\lambda - ik}\right)A.$
+7. $A$ is an overall normalisation constant which we choose to be $A = 1$. Find a final expression for the energy eigenfunction of energy $E < V_0$. 
+8. Calculate the reflection coefficient $R = |B|^2$. Does your answer make physical sense?
 
 ```{dropdown} Answers
 1. n/a (show that).
@@ -384,7 +384,7 @@ ik(A e^{ikx} - Be^{-ikx}) &\text{ if } x < 0, \\
 -\lambda C e^{-\lambda x} &\text{ if } x \geq 0.
 \end{cases} $$
 5. n/a (show that).
-6. n.a (show that).
+6. n/a (show that).
 7. $$ u_E(x) = \begin{cases}
 e^{ikx} - \frac{\lambda + ik}{\lambda - ik}e^{-ikx} &\text{ if } x < 0, \\
 -\frac{2ik}{\lambda - ik}e^{-\lambda x} &\text{ if } x \geq 0.

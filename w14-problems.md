@@ -20,7 +20,7 @@ numbering: false
 
 [](06-free-particle)
 
-![](#e-H-P-commute)
+![](#ex-H-P-commute)
 ![](#ex-shifted)
 ![](#ex-gaussian-momentum)
 ![](#ex-triangle)
@@ -32,3 +32,4 @@ numbering: false
 ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Problem%20Sheets/Problem%20Sheet%20Week%2014%20Solutions.pdf
 :width: 100%
 ```
+````

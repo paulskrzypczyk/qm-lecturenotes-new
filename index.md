@@ -27,7 +27,7 @@ I will be teaching this unit using a [Flipped Classroom](https://en.wikipedia.or
 
 Each week we will then have **extended (two-hour) problem classes**. Each class will only be attended by half of the cohort, so that there will be more time for interaction with myself and the teaching assistant. In these classes, I will set **unseen problems** which will apply ideas and concepts from the lecture material, and put it into context. You are encouraged to work in **small groups**, and I will go over the solutions to the problems in real time. You will then find a longer and more challenging set of **problems** to attempt as the remainder of your independent study. I provide the **answers** to these problems (the bottom line of the solution), so that you can check if you've got the right answer. The full solutions will be released a week later. 
 ```{aside}
-*I have seen that many students find it useful to have the answers up front, so that you will know when you have the right answer (although this doesn't necessarily mean that your solution will be correct!). As you mature as physicists, you should learn **not to need this**. That is, you should try to become less reliant on having access to answers, and this is a good way of checking that you are becoming a more mature learner. In reality, when we get to the problems that really count (i.e. in a job, or in research), there won't necessarily answers available, and so it is important to find methods to gain confidence in an answer. This is part of your general education in this degree.*
+*I have seen that many students find it useful to have the answers up front, so that you will know when you have the right answer (although this doesn't necessarily mean that your solution will be correct!). As you mature as physicists, you should learn **not to need this**. That is, you should try to become less reliant on having access to answers, and this is a good way of checking that you are becoming a more mature learner. In reality, when we get to the problems that really count (i.e. in a job, or in research), there won't necessarily be answers available, and so it is important to find methods to gain confidence in an answer. This is part of your general education in this degree.*
 ```
 I have been employing a flipped-classroom approach now for a number of years. I perceive many advantages to this methodology, over the more traditional methodology. These include
 
@@ -57,6 +57,7 @@ Finally, this course was extensively updated last year, with the lecture notes l
 
 ## Changelog
 
+- 04/11/2026: Fixed a large number of typos, grammatical slips, broken cross-references and small errors in equations across all chapters and problem sheets (thanks Claude!).
 - 03/02/2026: Improved explanation in [](#e-norm-a-En) (Thanks Sohyun). 
 - 27/01/2026: Fixed even more typos (thanks again Sohyun!). Also added solutions and desmos to [](w13-pc-problems)
 - 26/01/2026: Fixed many more typos (huge thanks again to Sohyun). 

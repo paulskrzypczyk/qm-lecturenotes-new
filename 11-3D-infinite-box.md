@@ -12,7 +12,7 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-11-I.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-11-I.pdf
 :width: 100%
 ```
 ````
@@ -22,9 +22,9 @@ In this chapter we will apply what we learnt in the [previous chapter](10-QM-in-
 
 As we explained in [](07-infinite-square-well), the idea that a particle could have an infinite potential energy in some region isn't particularly physical. Nevertheless, it provides us with a **clean mathematical** model which is easy to study, and it can be viewed as a fairly good approximation to a **very deep potential well**. 
 
-The main new ingredient we will encounter in this chapter is that in 3D **energy levels become degenerate**. This means that we will see that there are multiple different **distinct** energy eigenstates of the 3D infinite box, all with **the same energy**. While we have encountered energy degeneracy before in 1D, this only happened when the particle was **non-bound**. It is a new feature of 3D that we can have energy level degeneracy, and this is indeed a very important feature of nature (for example, the energy levels of Hydrogren are degenerate). 
+The main new ingredient we will encounter in this chapter is that in 3D **energy levels become degenerate**. This means that we will see that there are multiple different **distinct** energy eigenstates of the 3D infinite box, all with **the same energy**. While we have encountered energy degeneracy before in 1D, this only happened when the particle was **non-bound**. It is a new feature of 3D that we can have energy level degeneracy, and this is indeed a very important feature of nature (for example, the energy levels of Hydrogen are degenerate). 
 
-We will also see that even though we are now considering a 3D problem, **what we learnt in 1D is still highly relevant**. We will in particular see how the **1D energy eigenfunctions** in fact compose to give us the **3D eigenfunctions**. This is generically the case, and highlights the importance of studying 1D problems as a means for understanding the physics of more realisitic 3D problems. 
+We will also see that even though we are now considering a 3D problem, **what we learnt in 1D is still highly relevant**. We will in particular see how the **1D energy eigenfunctions** in fact compose to give us the **3D eigenfunctions**. This is generically the case, and highlights the importance of studying 1D problems as a means for understanding the physics of more realistic 3D problems. 
 
 ## The 3D infinite box potential
 
@@ -50,7 +50,7 @@ u_E(\rvec) = \begin{cases} u_E^{\rI}(\rvec) &\text{if }{0 \leq x,y,z \leq L} , \
                     0 &\text{otherwise,}
         \end{cases}
 ```
-where $u_E^\rI(\rvec)$ is the function we would like to find. Since studying the infinite square well in Chapter 7, we subsequently saw in [](08-harmonic-oscillator) that particles can **tunnel** into regions where they don't have enough energy to be classically. We might therefore now be concerned about our assumption that the wavefunction vanishes outside the box. Although we don't go further into this here, it can be shown that **due to the infinite nature of the potential** the wavefunction really does vanish outside of the box, and we are again in the exception circumstance where there is **no tunnelling or barrier penetration**. 
+where $u_E^\rI(\rvec)$ is the function we would like to find. Since studying the infinite square well in Chapter 7, we subsequently saw in [](08-harmonic-oscillator) that particles can **tunnel** into regions where they don't have enough energy to be classically. We might therefore now be concerned about our assumption that the wavefunction vanishes outside the box. Although we don't go further into this here, it can be shown that **due to the infinite nature of the potential** the wavefunction really does vanish outside of the box, and we are again in the exceptional circumstance where there is **no tunnelling or barrier penetration**. 
 
 We can therefore restrict our attention to the **inside** of the well. In this region, the Hamiltonian of the particle takes the simple form
 ```{math}
@@ -69,14 +69,14 @@ Instead of approaching this head-on, we will try to analyse the structure a litt
 
 In order to do so, let us first recall our solution to the 1D infinite square well. This was given in [](#e-energy-eigenfunctions-ISW), namely,
 ![](#e-energy-eigenfunctions-ISW)
-The fact that these are energy eigenfunctions mean that **inside** the infinite square well ($0 \leq x \leq L$) they satisfy the relevant TISE, namely
+The fact that these are energy eigenfunctions means that **inside** the infinite square well ($0 \leq x \leq L$) they satisfy the relevant TISE, namely
 ```{math}
 :label: e-TISE-3D-box-u
 -\frac{\hbar^2}{2M} \frac{\partial^2}{\partial x^2} \left(\sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L}\right) =  \frac{\hbar^2 n^2 \pi^2}{2ML^2} \sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L}
 ```
 from which we confirm that the corresponding energy eigenvalue is $E_n = \frac{\hbar^2 n^2 \pi^2}{2ML^2}$. 
 
-*Why is this relevant?* Well, if we consider just the **first** term on the left-hand side of [](#e-TISE-3D-box-u) — i.e. $\hat{P}^2_{x,\mathrm{w}}/2M$ — it is **identical** to the 1D TISE, except for the fact that in 1D the eigenfunctions were **only** a function of $x$, while now we have a 3D function, of $\rvec$. However, this isn't a big problem, since if we consider **any** function of the form 
+*Why is this relevant?* Well, if we consider just the **first** term on the left-hand side of [](#e-TISE-3D-box) — i.e. $\hat{P}^2_{x,\mathrm{w}}/2M$ — it is **identical** to the 1D TISE, except for the fact that in 1D the eigenfunctions were **only** a function of $x$, while now we have a 3D function, of $\rvec$. However, this isn't a big problem, since if we consider **any** function of the form 
 ```{math}
 u(\rvec) = u_n(x) f(y,z),
 ```
@@ -85,15 +85,15 @@ where $f(y,z)$ is some arbitrary function of $y$ and $z$ alone, then we see that
 -\frac{\hbar^2}{2M} \frac{\partial^2}{\partial x^2} u(\rvec) &= 
 -\frac{\hbar^2}{2M} \frac{\partial^2}{\partial x^2} \left(\sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L}f(y,z)\right) \\ 
 &=  \frac{\hbar^2 n^2 \pi^2}{2ML^2} \sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L}f(y,z),\\
-&= E_n u(\rvec) f(y,z),
+&= E_n u(\rvec),
 ```
-where we have used the fact that the **partial derivative** treats $f(y,z)$ essentially as a **constant**. The above confirms that $u(\rvec) = u_n(x) f(y,z)$ is an eigenfunction, with the eigenvalue $E_n$ as $u_n(x)$. 
+where we have used the fact that the **partial derivative** treats $f(y,z)$ essentially as a **constant**. The above confirms that $u(\rvec) = u_n(x) f(y,z)$ is an eigenfunction, with the same eigenvalue $E_n$ as $u_n(x)$. 
 
-*Why has this helped us?* Well, the next key step is to realise that we could make the **same argument**, but now focusing only on the $y$ component of the kinetic energy, $P^2_y/2M$, or the $z$ component of the kinetic energy, $P^2_z/2M$. In these two cases respectively, we would see that any functions of the form 
+*Why has this helped us?* Well, the next key step is to realise that we could make the **same argument**, but now focusing only on the $y$ component of the kinetic energy, $\hat{P}^2_{y,\mathrm{w}}/2M$, or the $z$ component of the kinetic energy, $\hat{P}^2_{z,\mathrm{w}}/2M$. In these two cases respectively, we would see that any functions of the form 
 ```{math}
 u'(\rvec) &= u_n(y)f'(x,z)& \text{and }&& u''(\rvec) &= f''(x,y)u_n(z),
 ```
-would be eigenfunctions of $\hat{P}^2_{y,\mathrm{w}}/2M$ and $\hat{P}^2_{z,\mathrm{w}}/2M$ respectively, all with the same eigenvalue $E_n$, for arbitrary functions $f'(x,z)$ and $f''(y,z)$. 
+would be eigenfunctions of $\hat{P}^2_{y,\mathrm{w}}/2M$ and $\hat{P}^2_{z,\mathrm{w}}/2M$ respectively, all with the same eigenvalue $E_n$, for arbitrary functions $f'(x,z)$ and $f''(x,y)$. 
 
 Now, we **aren't looking for eigenfunctions of an individual component of the kinetic energy**. However, what we have seen above shows us that there is a way to find a **joint eigenfunction** of all 3 components! In particular, we see that if we find a function such that the behaviour in $x$ is $u_n(x)$, the behaviour in $y$ is $u_n(y)$ and the behaviour in $z$ is $u_n(z)$, then **this will do the job**! It is easy to write down such a function — it is **just the product of the three individual functions**! We only need to be **careful** and realise that we **shouldn't repeat $n$ 3 times, but consider 3 different values of $n$**, which we will call $n_x$, $n_y$ and $n_z$ respectively. Thus, we arrive at the **educated guess** (also called **ansatz** frequently), that the energy eigenfunctions of the 3D box are of the form
 
@@ -138,13 +138,13 @@ Although we won't prove it here, the energy eigenstates we have found in the abo
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-11-II.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-11-II.pdf
 :width: 100%
 ```
 ````
 `````
 
-Having obtained all of the energy levels of the 3D infinite box, we will now turn our attention to the one new property that arises in 3D which is new compared to 1D — degeneracy. It will be most instructive to start **enumerating** all of the energy levels and their corresponding energies. 
+Having obtained all of the energy levels of the 3D infinite box, we will now turn our attention to the one new property that arises in 3D compared to 1D — degeneracy. It will be most instructive to start **enumerating** all of the energy levels and their corresponding energies. 
 
 
 We do this in the following table: 
@@ -208,7 +208,7 @@ We do this in the following table:
   - $14\Ebox$
   - $\sqrt{\frac{8}{L^3}} \sin \frac{3\pi x}{L}\sin \frac{2\pi y}{L}\sin \frac{\pi z}{L}$
 ````
-The reasons for including so many levels in this table is so that we can get a feeling for the **complexity** that arises. In particular, what we see is that the ground state is still a so-called **non-degenerate** energy level: there is a unique state of lowest energy (equal to $3\Ebox$), just like in 1D. 
+The reason for including so many levels in this table is so that we can get a feeling for the **complexity** that arises. In particular, what we see is that the ground state is still a so-called **non-degenerate** energy level: there is a unique state of lowest energy (equal to $3\Ebox$), just like in 1D. 
 
 In contrast, the next two energies are both **triply degenerate**, at energy $6\Ebox$ and $9\Ebox$. *Where did this 3-fold degeneracy come from?* If we look at the structure of $\mathbf{n}$, we see it arises due to **combinatorics**: there are 3 vectors which have a single 2 and two 1s. With this insight, we see that **any level** of the form $\mathbf{n} = (n,n',n')$ (i.e. with a repetition in one of the quantum numbers) will be 3-fold degenerate, just as is the case for levels of energy $9\Ebox$. 
 
@@ -222,7 +222,7 @@ All of the above degeneracies can be seen to arise due to **symmetries** — our
 
 There is in fact another type of degeneracy that can arise, which **isn't due to symmetry**, but is in fact just **accidental**. For example, the two levels $E_{(7,1,1)}$ and $E_{(5,5,1)}$ are degenerate, with energy $51\Ebox$, because $5^2 + 5^2 + 1^2$ happens to be equal to $7^2 + 1^2 + 1^2$. This has **nothing** to do with symmetry, and is just a particularity of the specific dependence of $E_\mathbf{n}$ on $\mathbf{n}$ (i.e. that it is the sum of the components squared). 
 
-In other potentials — such as Hydrogren — we will have a different degeneracy structure. It is important to realise however that it is precisely degeneracy that is the origin of the famous s, p and d **shells** that you may have already encountered, each being a different degenerate collection of energy levels. 
+In other potentials — such as Hydrogen — we will have a different degeneracy structure. It is important to realise however that it is precisely degeneracy that is the origin of the famous s, p and d **shells** that you may have already encountered, each being a different degenerate collection of energy levels. 
 
 ## Evolution of particles inside a 3D box
 
@@ -233,7 +233,7 @@ In other potentials — such as Hydrogren — we will have a different degenerac
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-11-III.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-11-III.pdf
 :width: 100%
 ```
 ````
@@ -241,7 +241,7 @@ In other potentials — such as Hydrogren — we will have a different degenerac
 
 As a final topic, we will now look at the evolution of a particle confined inside a 3D box. While on the one hand, the situation is just another example of what we have already encountered (i.e. an application of the superposition principle!), we will see that studying motion in 3D allows us to see more **complex** features, such as **correlation** between the different coordinates of the particle in time. 
 
-In the previous chapter, we already gave the **general formulas** for time evolution in 3D. Specicially, we saw that an initial state of the form 
+In the previous chapter, we already gave the **general formulas** for time evolution in 3D. Specifically, we saw that an initial state of the form 
 ![](#e-psi-init-3D) 
 evolves into
 ![](#e-psi-t-3D)
@@ -254,7 +254,7 @@ Therefore, here we will consider a simple example, and see how we can analyse th
 ```
 the wavefunction associated to an **equal superposition** of the ground state $\ket{E_{(1,1,1)}}$ of energy $E_{(1,1,1)} = 3\Ebox$ and the state $\ket{E_{(2,2,1)}}$ of energy $E_{(2,2,1)} = 9\Ebox$, from the 3rd energy level. This state has $\alpha_{(1,1,1)} = \frac{1}{\sqrt{2}}$, $\alpha_{(2,2,1)} = \frac{1}{\sqrt{2}}$, and all other $\alpha_{\mathbf{n}} = 0$. 
 
-Using the superposition principle, we can immediate write down the wavefunction of the particle at time $t$, which is given by
+Using the superposition principle, we can immediately write down the wavefunction of the particle at time $t$, which is given by
 ```{math}
 :label: e-wf-3D-ex-t
 \psi(\rvec,t) = \frac{1}{\sqrt{2}}\left(e^{-3i\Ebox t/\hbar}u_{(1,1,1)}(\rvec) + e^{-9i\Ebox t/\hbar} u_{(2,2,1)}(\rvec)\right).
@@ -281,14 +281,14 @@ We arrive at a similar conclusion for the second term on the right-hand side of 
 \vph \infint \infint u_{(1,1,1)}(\rvec)u_{(2,2,1)}(\rvec) dy dz & = u_1(x)u_2(x) \infint u_1(y)u_2(y) dy \infint u_1(z) u_1(z) dz, \\ 
 &= 0.
 ```
-*Why is this zero?* It is because of the integral over y. We should recall that **the energy eigenfunctions of the infinite square are real**. This means we could equally write $u_1(y)$ as $u_1^*(y)$. The integral over $y$ is thus nothing but $\inner{E_1}{E_2}$ in disguise (as you have shown as an exercise in class, and where $\ket{E_1}$ and $\ket{E_2}$ refer to energy eigenstates of the 1D infinite square well). Since the energy levels are **orthogonal** (see [](#e-energy-levels-orthonormal)), the integral over y vanishes.  
+*Why is this zero?* It is because of the integral over $y$. We should recall that **the energy eigenfunctions of the infinite square well are real**. This means we could equally write $u_1(y)$ as $u_1^*(y)$. The integral over $y$ is thus nothing but $\inner{E_1}{E_2}$ in disguise (as you have shown as an exercise in class, and where $\ket{E_1}$ and $\ket{E_2}$ refer to energy eigenstates of the 1D infinite square well). Since the energy levels are **orthogonal** (see [](#e-energy-levels-orthonormal)), the integral over $y$ vanishes.  
 
 Putting everything together, we therefore see that
 ```{math}
 :label: e-pd-x-3D-ex
 \pd(x,t) = \frac{1}{2}\left(|u_1(x)|^2 + |u_2(x)|^2\right), 
 ```
-which is **independent of time**! That is, if we only keep track of the x coordinate of the particle, this doesn't change in time. Similar calculations, which you will do as an [exercise](#ex-3D-box-marginal) show that similarly 
+which is **independent of time**! That is, if we only keep track of the $x$ coordinate of the particle, this doesn't change in time. Similar calculations, which you will do as an [exercise](#ex-3D-box-marginal) show that similarly 
 ```{math}
 :label: e-pd-y-z-3D-ex
 \pd(y,t) &= \frac{1}{2}\left(|u_1(y)|^2 + |u_2(y)|^2\right),\\
@@ -309,12 +309,12 @@ In the following animation, you can see what this marginal probability density l
 :width: 300px
 :align: center
 
-**Probability density in the $x$ and $y$ direction.**  An animation of probability density $\pd(x,y,t)$ as given in [](#e-3D-example-pd-x-y). The $z$ axis in this plot is $\pd(x,y,t)$ (and **not** the box!). That is, we are ignoring motion along the $z$ direction, just studying the motion of the particle in the $x$ and $y$ directions only. We see that the particle oscillates, between two distributions, each of which has two large peaks. If we look along only **one** direction, we can see how the individual probability densities $\pd(x,t)$ and $\pd(y,t)$ are time independent. 
+**Probability density in the $x$ and $y$ direction.**  An animation of the probability density $\pd(x,y,t)$ as given in [](#e-3D-example-pd-x-y). The $z$ axis in this plot is $\pd(x,y,t)$ (and **not** the box!). That is, we are ignoring motion along the $z$ direction, just studying the motion of the particle in the $x$ and $y$ directions only. We see that the particle oscillates, between two distributions, each of which has two large peaks. If we look along only **one** direction, we can see how the individual probability densities $\pd(x,t)$ and $\pd(y,t)$ are time independent. 
 ```
 
 As you can see, the particle **oscillates** back and forth, in a **correlated fashion**. In an [exercise](#ex-3D-box-cov), you will study this correlation using the so-called **covariance**, a measure for how **correlated** the two coordinates of the particle are, on average at any given time. You will see that the coordinates oscillate between being **correlated** (both being large and positive / negative at the same time) to being **anti-correlated** (having opposite signs at a given time). 
 
-The main message here is that even **simple superpositions** of energy eigenstates can exhibit **interesting correlated dynamics**. This example is articifial, but hopefully from it you can see a glimpse of the **rich dynamics** that quantum particles exhibit in 3D. 
+The main message here is that even **simple superpositions** of energy eigenstates can exhibit **interesting correlated dynamics**. This example is artificial, but hopefully from it you can see a glimpse of the **rich dynamics** that quantum particles exhibit in 3D. 
 
 ## Exercises
 
@@ -338,7 +338,7 @@ n/a (show that)
 In this exercise we will confirm that two degenerate energy eigenstates are nevertheless **orthogonal**. 
 
 1. Write down the relationship between an energy eigenstate $\ket{E_\mathbf{n}}$ and the corresponding energy eigenfunction $u_\mathbf{n}(\rvec)$. 
-2. Use part 1 to show that scalar product in terms of wavefunctions is given by 
+2. Use part 1 to show that the scalar product in terms of wavefunctions is given by 
 ```{math}
 \inner{E_{\mathbf{n}}}{E_{\mathbf{n}'}} = \int_V u_{\mathbf{n}}^*(\rvec) u_{\mathbf{n}'}(\rvec) d^3\rvec.
 ``` 
@@ -354,7 +354,7 @@ where $\ket{E_{n_x}}$ is the energy eigenstate of the 1D infinite square well as
 1. $\ket{E_\mathbf{n}} = \int_V u_\mathbf{n}(\rvec) \ket{\rvec} d^3\rvec$.
 2. n/a (show that)
 3. n/a (show that)
-4. [](#e-3D-1D-orthog-relation) shows that $\inner{E_{\mathbf{n}}}{E_{\mathbf{n}'}} \neq 0$ **only if** $n_x = n_x'$, $n_y = n_y'$ and $n_z = n_z'$ simultaneously, i.e. $\mathbf{n} = \mathbf{n}'$. Even if one or two components are same, remaining component in product will vanish.  
+4. [](#e-3D-1D-orthog-relation) shows that $\inner{E_{\mathbf{n}}}{E_{\mathbf{n}'}} \neq 0$ **only if** $n_x = n_x'$, $n_y = n_y'$ and $n_z = n_z'$ simultaneously, i.e. $\mathbf{n} = \mathbf{n}'$. Even if one or two components are the same, the remaining factor in the product will vanish.  
 ```
 ````
 
@@ -363,15 +363,14 @@ where $\ket{E_{n_x}}$ is the energy eigenstate of the 1D infinite square well as
 In this exercise we will consider an **asymmetric box** with walls at $x = 0$ and $x = L_x$, $y = 0$ and $y = L_y$ and $z = 0$ and $z = L_z$. 
 1. Write down the energy eigenfunctions and eigenvalues of a 1D infinite square well, with walls at $x = 0$ and $x = L_x$. 
 2. Use part 1 to explain why a reasonable educated guess for the energy eigenfunctions of the asymmetric 3D box is 
-$$\label{e-3D-box-asym} \vph u_\mathbf{n}(\rvec) &=
-&= \begin{cases} \sqrt{\frac{8}{L_x L_y L_z}} \sin \frac{n_x \pi x}{L_x}\sin \frac{n_y \pi y}{L_y}\sin \frac{n_z \pi z}{L_z} &\text{ if } 0 \leq x\leq L_x, 0\leq y \leq L_y, 0 \leq z \leq L_z, \\
+$$\label{e-3D-box-asym} \vph u_\mathbf{n}(\rvec) = \begin{cases} \sqrt{\frac{8}{L_x L_y L_z}} \sin \frac{n_x \pi x}{L_x}\sin \frac{n_y \pi y}{L_y}\sin \frac{n_z \pi z}{L_z} &\text{ if } 0 \leq x\leq L_x, 0\leq y \leq L_y, 0 \leq z \leq L_z, \\
 0 &\text{ otherwise,} \end{cases}
 $$
 3. Confirm that [](#e-3D-box-asym) satisfies the TISE inside the asymmetric box, and determine the corresponding energy eigenvalues of the 3D box. 
 4. If $L_x = L$, $L_y = \sqrt{2}L$ and $L_z = \sqrt{3}L$, write down the first 5 lowest energy levels.  Are there any degeneracies? 
 ```{dropdown} Answers
 1. $u_n(x) = \sqrt{\frac{2}{L_x}}\sin \frac{n \pi x}{L_x}$ when $0 \leq x \leq L_x$, and 0 otherwise; $E_n = \frac{\hbar^2 \pi^2 n^2}{2ML_x^2}$. 
-2. This is the direct generalisation of the symmetric case from notes, with same product structure.
+2. This is the direct generalisation of the symmetric case from the notes, with the same product structure.
 3. n/a (show that) for first part; $E_{\mathbf{n}} = \frac{\hbar^2 \pi^2}{2M}\left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} + \frac{n_z^2}{L_z^2}\right)$. 
 4. In order: $E_{(1,1,1)}$, $E_{(1,1,2)}$, $E_{(1,2,1)}$, $E_{(1,2,2)}$, $E_{(1,1,3)}$. No degeneracies. 
 ```
@@ -433,7 +432,7 @@ From [](#e-pd-y-z-3D-ex), it is evident that $\pd(x,t)$ and $\pd(y,t)$ are ident
 we have
 $$\av{xy} = \frac{L^2}{4} + \cos \frac{6\Ebox t}{\hbar} \infint x u_1(x) u_2(x) dx \infint y u_1(y) u_2(y) dy.$$
 3. Show that
-$$ \frac{2}{L}\int_0^Lx \sin \frac{\pi x}{L} \sin \frac{2 \pi x}{L} = - \frac{16L}{9\pi^2}. $$
+$$ \frac{2}{L}\int_0^Lx \sin \frac{\pi x}{L} \sin \frac{2 \pi x}{L} dx = - \frac{16L}{9\pi^2}. $$
 4. Hence calculate $\mathrm{cov}(x,y)$ (as a function of time). 
 
 

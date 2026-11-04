@@ -6,12 +6,12 @@ numbering: false
 
 These are the problems that we will solve during the problem class in week 16. **You are not expected to attempt these questions in advance of the problem class.** We will work through them in sequence, going through the solutions after everybody has time to attempt the questions.
 
-I have included **additional questions** for you to attempt / discuss if you complete the questions before we go over the solution. If you also complete these, please work through [](w16-problems.md)
+I have included **additional questions** for you to attempt / discuss if you complete the questions before we go over the solution. If you also complete these, please work through [](w16-problems.md).
 
 ## Problems
 
 ````{tip .simple} Problem 1
-Consider a **classical** particle of mass $M$ undergoing simple harmonic motion under the force $F = -M\omega^2 x$, where $\omega$ is the frequency of the oscillator (i.e. we have written the spring constant as $k = -M\omega^2$).  
+Consider a **classical** particle of mass $M$ undergoing simple harmonic motion under the force $F = -M\omega^2 x$, where $\omega$ is the frequency of the oscillator (i.e. we have written the spring constant as $k = M\omega^2$).  
 
 1. Write down the potential energy of the particle, as a function of its position $x$.
 2. When the particle is at maximum displacement, what is its kinetic energy?
@@ -25,9 +25,9 @@ Consider now a **quantum** particle, confined within a harmonic oscillator poten
 
 5. What does it mean for a particle to be **tunnelling** in quantum mechanics? 
 
-6. Use the previous parts of this question to determine the regions of space where the particle would be tunneling. 
+6. Use the previous parts of this question to determine the regions of space where the particle would be tunnelling. 
 
-7. Calculate the total probability that, upon measurement of the position of the particle, it will be within the tunnelling region (*you will need to evalute the integral **numerically***). 
+7. Calculate the total probability that, upon measurement of the position of the particle, it will be within the tunnelling region (*you will need to evaluate the integral **numerically***). 
 
 
 ```{dropdown} Additional questions
@@ -47,7 +47,7 @@ V(x) = \begin{cases}
 We will consider **scattering** off of the wall. We will write the energy eigenfunction (of energy $E$) as
 ```{math}
 u_E(x) = \begin{cases}
-u_E^\rI(x) &\text{ if } x \geq 0,\\ r_E^\rII(x) &\text{ if } x < 0.
+u_E^\rI(x) &\text{ if } x \geq 0,\\ u_E^\rII(x) &\text{ if } x < 0.
 \end{cases}
 ```
 

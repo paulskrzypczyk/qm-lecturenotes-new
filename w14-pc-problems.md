@@ -6,7 +6,7 @@ numbering: false
 
 These are the problems that we will solve during the problem class in week 14. **You are not expected to attempt these questions in advance of the problem class.** We will work through them in sequence, going through the solutions after everybody has time to attempt the questions.
 
-I have included **additional questions** for you to attempt / discuss if you complete the questions before we go over the solution. If you also complete these, please work through [](w14-problems.md)
+I have included **additional questions** for you to attempt / discuss if you complete the questions before we go over the solution. If you also complete these, please work through [](w14-problems.md).
 
 ## Problems
 
@@ -43,7 +43,7 @@ I have included **additional questions** for you to attempt / discuss if you com
 
 ```{dropdown} Additional questions
    4. Calculate $[\op{X}, \op{P}^2]\psi(x)$, and hence write down $[\hat{X}, \hat{P}^2]$. 
-   5. Use part 5. to make a guess for what the commutator $[\hat{X},\hat{P}^n]$ might be, where $n$ is a positive integer. 
+   5. Use part 4. to make a guess for what the commutator $[\hat{X},\hat{P}^n]$ might be, where $n$ is a positive integer. 
    6. Mathematically show that your guess from part 5 is correct.
    ```
 ````

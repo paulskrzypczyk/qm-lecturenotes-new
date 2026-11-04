@@ -26,7 +26,7 @@ Consider the complex number $z = 3e^{2i\pi/3}$.
 # Probabilities
 
 ````{exercise}
-Consider a standard 6-sided die. If we note a face by $x$, for $x = 1, \ldots, 6$, then $\prob(x) = 1/6$. 
+Consider a standard 6-sided die. If we denote a face by $x$, for $x = 1, \ldots, 6$, then $\prob(x) = 1/6$. 
 1. What is the probability of rolling an even number?
 1. What is the probability of rolling a prime number?
 1. What is the **expectation value** $\langle x \rangle$? Is this ever a physical outcome of the roll of the dice? If not, what is the significance of this value?

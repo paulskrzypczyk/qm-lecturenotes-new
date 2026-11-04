@@ -15,7 +15,7 @@ numbering: false
 [](02-momentum)
 
 ![](#ex-norm-vp)
-![](#ex-mom-normalsation)
+![](#ex-mom-normalisation)
 ![](#ex-deriving-psi-x-to-psi-p)
 ![](#ex-mom-eigenstates)
 ![](#ex-mom-wf-1-1)
@@ -37,4 +37,5 @@ numbering: false
 ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Problem%20Sheets/Problem%20Sheet%20Week%2013%20Solutions.pdf
 :width: 100%
 ```
+````
 

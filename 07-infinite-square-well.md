@@ -20,19 +20,19 @@ numbering:
 
 In the previous [chapter](06-free-particle) we considered the simplest possible scenario, that of a **free particle** where there are no forces acting whatsoever. Here we will begin our exploration of how quantum particles behave when there are forces acting. This is a much more natural and common situation to consider, and is the generic one we encounter in physics. 
 
-As already discussed in [chapter](04-energy), there are two **distinct** situations which we can consider. The first is where the forces **confine the particle to a finite region of space**. In this case, we often say that it is **trapped inside a potential well**. As we already stated, in quantum mechanics, it is in this situation where we end up with the famous **quantisation of energy**, the most notable example being the energy levels of atoms, which arise due to the fact that electrons are bound within the potential well of the nucleas (via the electromagnetic attraction). 
+As already discussed in [Chapter 4](04-energy), there are two **distinct** situations which we can consider. The first is where the forces **confine the particle to a finite region of space**. In this case, we often say that it is **trapped inside a potential well**. As we already stated, in quantum mechanics, it is in this situation where we end up with the famous **quantisation of energy**, the most notable example being the energy levels of atoms, which arise due to the fact that electrons are bound within the potential well of the nucleus (via the electromagnetic attraction). 
 
 In this chapter we will study the **simplest** example of a potential well, and see explicitly **how** the energy levels arise. This model isn't very **physical**, but it is mathematically simple, and serves as an ideal starting point from which to study potential wells in quantum mechanics. 
 
 The second situation we can encounter — as we did in the previous [chapter](06-free-particle) — is when the forces do not confine a particle to a finite region of space. We will return to more interesting examples — this time involving forces — in [](09-scattering). 
 
-After introducing the infinite square well, we will show how to find the energy eigenfunctions. This will see that we need a new fact about energy eigenfunctions, relating to their **continuity**. Remarkably, it is in fact from this that the quantisation of energies will arise, as we will see in detail below. 
+After introducing the infinite square well, we will show how to find the energy eigenfunctions. We will see that we need a new fact about energy eigenfunctions, relating to their **continuity**. Remarkably, it is in fact from this that the quantisation of energies will arise, as we will see in detail below. 
 
 We will then consider a simple example of the evolution in time of a particle inside the infinite square well, seeing that it is very different from what we saw in the previous chapter, for a free particle. 
 
 ## The infinite square well potential
 
-We are going to consider a situation where a particle is **perfectly confined inside a box** of width $L$. We will assume that there are walls at $x = 0$ and $x = L$, and want to model these are being **perfectly elastic** so that the particle definitely bounces off of these walls. We can model this using the following potential energy function,
+We are going to consider a situation where a particle is **perfectly confined inside a box** of width $L$. We will assume that there are walls at $x = 0$ and $x = L$, and want to model these as being **perfectly elastic** so that the particle definitely bounces off of these walls. We can model this using the following potential energy function,
 ```{math}
 :label: e-infinite-square-well
 V(x) = \begin{cases} 0 &\text{if }{0 \leq x \leq L,} \\
@@ -41,7 +41,7 @@ V(x) = \begin{cases} 0 &\text{if }{0 \leq x \leq L,} \\
 ```
 This potential well is depicted in [](#f-infinite-square-well).
 
-```{figure} ./Pictures/inf-square-well.svg
+````{figure} ./Pictures/inf-square-well.svg
 :name: f-infinite-square-well
 :width: 400px
 :align: center
@@ -54,9 +54,9 @@ This potential well is depicted in [](#f-infinite-square-well).
 
 The first question we would like to ask about the infinite square well is *what are the states of definite energy?* We are interested in this question, as always, since it is the first step towards understanding the dynamics of a particle confined inside our box. 
 
-We are thus interested in finding the energy eigenstates of Hamiltonian, i.e. of finding solutions to [](#e-E-eigenvalue-eq). Since we have a **potential energy which depends upon position**, we will find the energy eigenstates by solving the TISE [](#e-TISE) instead. As we learnt in [](04-energy), this is a completely equivalent way of finding the energy levels and energy eigenstates, and is the natural way to do so in this situation. 
+We are thus interested in finding the energy eigenstates of the Hamiltonian, i.e. of finding solutions to [](#e-E-eigenvalue-eq). Since we have a **potential energy which depends upon position**, we will find the energy eigenstates by solving the TISE [](#e-TISE) instead. As we learnt in [](04-energy), this is a completely equivalent way of finding the energy levels and energy eigenstates, and is the natural way to do so in this situation. 
 
-Because of the fact that the potential energy is specified **in pieces**, it means that the Hamiltonian operator $\op{H} = \op{K} + \op{V}$ will also be specified in pieces. What this means in practice is that **we will need to consider the different regions separately**, and then understand how to **put them together afterwards**. That is, we will need to consider the TISE in the region $x < 0$, the region $0 \leq x \leq L$, and the region $x > L$ separately. We will refer to these, respectively as **regions I, II and III**. If we denote a generic energy eigenfunction by $u_E(x)$, then we will specify this **in pieces** accordingly, via
+Because of the fact that the potential energy is specified **in pieces**, it means that the Hamiltonian operator $\op{H} = \op{K} + \op{V}$ will also be specified in pieces. What this means in practice is that **we will need to consider the different regions separately**, and then understand how to **put them together afterwards**. That is, we will need to consider the TISE in the region $x < 0$, the region $0 \leq x \leq L$, and the region $x > L$ separately. We will refer to these, respectively, as **regions I, II and III**. If we denote a generic energy eigenfunction by $u_E(x)$, then we will specify this **in pieces** accordingly, via
 ```{math}
 u_E(x) = \begin{cases} 
             u_E^\rI(x) &\text{if } x < 0, \\
@@ -74,9 +74,9 @@ Region I, when $x < 0$, is the region **outside and to the left** of the box. In
 \vph u_E^\rI(x) = 0.
 ```
 ```{aside} *Mathematical derivation*
-*You may feel slightly uncomfortable about this, as we haven't shown it mathematically, but just **stated** it as the answer. Furthermore, it isn't clear how we can verify it to satisfy the TISE $\op{H}u_E^\rI(x) = E u_E^\rI(x)$, since in region I $\op{H} = \infty$, and so we have an indeterminate expression on the left-hand side $\infty \cdot 0$. If we however consider that the potential energy is **finite** outside the well, and equal to $V_0$, we can then confirm that we trivially satisfy $0 = 0$ in the TISE. This is ultimately the root of the mathematical justification for the [](#e-isq-rI). We will however here accept it on intuitive grounds and not go into the mathematical details further.*
+*You may feel slightly uncomfortable about this, as we haven't shown it mathematically, but just **stated** it as the answer. Furthermore, it isn't clear how we can verify it to satisfy the TISE $\op{H}u_E^\rI(x) = E u_E^\rI(x)$, since in region I $\op{H} = \infty$, and so we have an indeterminate expression on the left-hand side $\infty \cdot 0$. If we however consider that the potential energy is **finite** outside the well, and equal to $V_0$, we can then confirm that we trivially satisfy $0 = 0$ in the TISE. This is ultimately the root of the mathematical justification for [](#e-isq-rI). We will however here accept it on intuitive grounds and not go into the mathematical details further.*
 ```
-Region III, when $x > L$ is **identical** to region I, in that the potential energy is also infinite here. For the same reasons, we must also take any energy eigenfunction to vanish in this region, and so have
+Region III, when $x > L$, is **identical** to region I, in that the potential energy is also infinite here. For the same reasons, we must also take any energy eigenfunction to vanish in this region, and so have
 ```{math}
 :label: e-isq-rIII
 \vph u_E^\rIII(x) = 0.
@@ -117,7 +117,7 @@ u_E(x) = \begin{cases}
 ```
 
 In order to make progress, we now need to use a new fact about energy eigenfunctions that we haven't needed to introduce until this point:
-> Energy eigenfunctions must be **continuous** 
+> Energy eigenfunctions must be **continuous**.
 
 Recall that a **continuous function** is one which doesn't have any **jumps**. That is, there cannot be two neighbouring points which differ by a finite amount. An example of a **discontinuous** function is shown in [](#f-discontinuous).
 ```{figure} ./Pictures/discontinuous.svg
@@ -148,7 +148,7 @@ k = \frac{n\pi}{L}.
 ````
 For these special values of $k$, we will have $\sin kL = 0$, so the eigenfunction vanishes at the right-hand wall. 
 
-Before going on, we can realise quickly that $n$ should be a **positive integer**. First, if $n = 0$, then $k = 0$ and so we have $\sin kx = \sin 0 = 0$. This is just the same as taking $A = 0$, which we already saw was mathematically correct, but not physically meaningful. We therefore are not interested in $n = 0$. For $n = -m$ (with $m$ a positive integer), we can use the fact that sine is an **odd** function, $\sin (-\theta) = -\sin \theta$. This means that $\sin n\pi x/L$ = $-\sin m\pi x/L$ and we have the **same** eigenfunction **up to a minus sign**. Since $-1$ is just a **phase**, and since we saw previously in [](#s-stationary) that an overall phase doesn't change any of the physical properties of a quantum state, $n$ and $-n$ in fact **lead to the same energy eigenfunction**, hence we only need to keep one value of $n$. It is customary to keep the positive one. 
+Before going on, we can realise quickly that $n$ should be a **positive integer**. First, if $n = 0$, then $k = 0$ and so we have $\sin kx = \sin 0 = 0$. This is just the same as taking $A = 0$, which we already saw was mathematically correct, but not physically meaningful. We therefore are not interested in $n = 0$. For $n = -m$ (with $m$ a positive integer), we can use the fact that sine is an **odd** function, $\sin (-\theta) = -\sin \theta$. This means that $\sin n\pi x/L = -\sin m\pi x/L$ and we have the **same** eigenfunction **up to a minus sign**. Since $-1$ is just a **phase**, and since we saw previously in [](#s-stationary) that an overall phase doesn't change any of the physical properties of a quantum state, $n$ and $-n$ in fact **lead to the same energy eigenfunction**, hence we only need to keep one value of $n$. It is customary to keep the positive one. 
 
 Thus, putting everything together, the requirement of **continuity** has led us to the conclusion that $k$ must be a **positive multiple of $\pi/L$**. Since the **energy eigenvalues** were nothing but $E = \hbar^2k^2/2M$, we therefore see that for a particle confined to an infinite square well, there are **discrete energy levels**
 ````{card}
@@ -157,7 +157,7 @@ Thus, putting everything together, the requirement of **continuity** has led us 
 \vph E_n &= \frac{\hbar^2 \pi^2 n^2}{2M L^2},& n &=1, 2, \ldots
 ```
 ````
-These are the **only energies that the particle can have with certainty**. It is simply impossible for the particle to have any other energy! The energy levels are depicted below in [](#f-isw-levels)
+These are the **only energies that the particle can have with certainty**. It is simply impossible for the particle to have any other energy! The energy levels are depicted below in [](#f-isw-levels).
 ````{figure} ./Pictures/energy-levels-inf-sq-well.svg
 :name: f-isw-levels
 :width: 400px
@@ -167,7 +167,7 @@ These are the **only energies that the particle can have with certainty**. It is
 ````
 
 
-For the corresponding **energy eigenfunctions** $u_{E_n}(x)$, there is **one final detail to take care of**. We still appear to have one parameter left — $A$. This is however fixed by **normalisation**: we require $u_{E_n}(x)$ to be a normalised wavefunction. As an [exercise](#ex-norm-ISW-eigenfunctions), you show that the normalisation constant is $A = \frac{1}{2i}\sqrt{\frac{2}{L}}$ (independent of $n$). The **energy eigenfunctions** are thus given by
+For the corresponding **energy eigenfunctions** $u_{E_n}(x)$, there is **one final detail to take care of**. We still appear to have one parameter left — $A$. This is however fixed by **normalisation**: we require $u_{E_n}(x)$ to be a normalised wavefunction. As an [exercise](#ex-norm-ISW-eigenfunctions), you will show that the normalisation constant is $A = \frac{1}{2i}\sqrt{\frac{2}{L}}$ (independent of $n$). The **energy eigenfunctions** are thus given by
 ````{card}
 ```{math}
 :label: e-energy-eigenfunctions-ISW
@@ -209,10 +209,10 @@ We depict below in [](#f-isw-eigenfunctions) the first 6 energy eigenfunctions a
 
 **Probability densities of the infinite square well.** The probability densities $\pd(x)$ for the first six energy eigenstates of the infinite square well. 
 ````
-There is clearly some structure here, and also some surprises. The first surprising feature is that the **minimum energy the particle can have is strictly bigger than the minimum of potential energy**. That is, the lowest energy state — referred to as the **ground state** $\ket{E_1}$ — has energy $E_1 = \frac{\hbar^2\pi^2}{2ML^2} > 0 = V(x)$ inside the well. This is in stark constrast to classical physics, where a particle can be **at rest** at the **minimum of a potential well**, and hence have energy **equal** to the minimum potential energy. In quantum mechanics, in contrast, a particle has **more** energy than this. This additional energy is called the **zero-point energy**. It arises due to the HUP, and the fact that the kinetic and potential energy of a particle are incompatible properties. In particular, because the particle is **confined within the well**, it necessarily has a spread of momenta, and hence a spread of kinetic energy. So the confinement of the particle in fact demands that it will have kinetic energy! The ground state is in fact a **balance** between minimising the potential energy, and minimising the kinetic energy. 
+There is clearly some structure here, and also some surprises. The first surprising feature is that the **minimum energy the particle can have is strictly bigger than the minimum of potential energy**. That is, the lowest energy state — referred to as the **ground state** $\ket{E_1}$ — has energy $E_1 = \frac{\hbar^2\pi^2}{2ML^2} > 0 = V(x)$ inside the well. This is in stark contrast to classical physics, where a particle can be **at rest** at the **minimum of a potential well**, and hence have energy **equal** to the minimum potential energy. In quantum mechanics, in contrast, a particle has **more** energy than this. This additional energy is called the **zero-point energy**. It arises due to the HUP, and the fact that the kinetic and potential energy of a particle are incompatible properties. In particular, because the particle is **confined within the well**, it necessarily has a spread of momenta, and hence a spread of kinetic energy. So the confinement of the particle in fact demands that it will have kinetic energy! The ground state is in fact a **balance** between minimising the potential energy, and minimising the kinetic energy. 
 
 
-Maybe second most surprising is that when a particle has a definite energy, there are certain regions within the well where **it is very unlikely to find the particle**. For example, in the so-called **first excited state** $\ket{E_2}$ (with associated energy eigenfunction $u_2(x)$) it is very unlikely to find the particle close to the middle of the well! 
+Perhaps the second most surprising feature is that when a particle has a definite energy, there are certain regions within the well where **it is very unlikely to find the particle**. For example, in the so-called **first excited state** $\ket{E_2}$ (with associated energy eigenfunction $u_2(x)$) it is very unlikely to find the particle close to the middle of the well! 
 
 ## Evolution of a particle inside an infinite square well
 
@@ -227,7 +227,7 @@ Consider a particle prepared initially at $t = 0$ with the wavefunction
 ```
 We will start off assuming that **we know the amplitudes $\alpha_n$**, and come back to the question of how we determine these shortly below. [](#e-init-superposition-isw) specifies the initial wavefunction as a **superposition** of energy eigenfunctions. 
 
-As we saw in the previous two chapters, given in this form, we can immediately write down the wavefunction $\psi(x,t)$ that it will evolve into: this is once again an application of the superposition principle: *the evolution of the superpositon (of energy eigenfunctions) is just the superposition of the evolutions (of individual energy eigenfunctions)*. Each energy eigenfunction evolves in the usual simple way: by acquiring a phase $e^{-iE_n t/\hbar}$ in time. Thus the wavefunction at time $t$ will be
+As we saw in the previous two chapters, given in this form, we can immediately write down the wavefunction $\psi(x,t)$ that it will evolve into: this is once again an application of the superposition principle: *the evolution of the superposition (of energy eigenfunctions) is just the superposition of the evolutions (of individual energy eigenfunctions)*. Each energy eigenfunction evolves in the usual simple way: by acquiring a phase $e^{-iE_n t/\hbar}$ in time. Thus the wavefunction at time $t$ will be
 ````{card}
 ```{math}
 :label: e-psi-x-t-isw-I
@@ -236,7 +236,7 @@ As we saw in the previous two chapters, given in this form, we can immediately w
 ````
 precisely as already given in [](#e-wf-soln-to-SE-bound) (except we updated our notation for energy eigenfunctions from $u_{E_n}(x)$ to $u_n(x)$, as explained above, and now we have infinitely many energy levels, rather than $d$). 
 
-Much like in the [previously chapter](06-free-particle), there is still a loose end that we should address, namely **how to determine $\alpha_n$ if we are only given $\psi_\init(x)$?** 
+Much like in the [previous chapter](06-free-particle), there is still a loose end that we should address, namely **how to determine $\alpha_n$ if we are only given $\psi_\init(x)$?** 
 
 In order to answer this, it is useful to go back to the full quantum state $\ket{\psi_\init}$. Written in terms of this, [](#e-init-superposition-isw) is 
 ```{math}
@@ -279,10 +279,10 @@ Finally, just as we did for a free particle in [](#e-free-particle-evolution-spa
 ````{card}
 ```{math}
 :label: e-psi-x-t-isw-II
-\psi(x,t) = \sum_{n=1}^{\infty} \infint \psi_\init(x') u_n^*(x') u_n(x)e^{-iE_n t/\hbar} dx',
+\psi(x,t) = \sum_{n=1}^{\infty} \infint \psi_\init(x') u_n^*(x') u_n(x)e^{-iE_n t/\hbar} dx'.
 ```
 ````
-This is once again a **formidible expression**, but one which is in fact very similar to [](#e-free-particle-evolution-space). The difference is that whereas energy was **continuous** for a free particle, it is now **discrete** in the infinite square well, and we see this replaces one of the integrals with a summation. We also can realise that the factor $\frac{1}{2\pi \hbar} e^{ip(x-x')/\hbar}$ is really $v_p^*(x')v_p(x)$, where $v_p(x)$ is the momentum eigenfunction [](#e-momentum-state-wavefunction), which are the **energy eigenfunctions** of a free particle. Finally, the term $e^{-ip^2t/2M\hbar}$ is $e^{-iEt/\hbar}$, with $E = p^2/2M$ the energy eigenvalue of $v_p(x)$ for a free particle. Thus the form in both cases is in fact **identical**, up to the change from continuous to discrete energies. This is reassuring, as it shows that what we have done is the same, just in a different context here. 
+This is once again a **formidable expression**, but one which is in fact very similar to [](#e-free-particle-evolution-space). The difference is that whereas energy was **continuous** for a free particle, it is now **discrete** in the infinite square well, and we see this replaces one of the integrals with a summation. We also can realise that the factor $\frac{1}{2\pi \hbar} e^{ip(x-x')/\hbar}$ is really $v_p^*(x')v_p(x)$, where $v_p(x)$ is the momentum eigenfunction [](#e-momentum-state-wavefunction), which are the **energy eigenfunctions** of a free particle. Finally, the term $e^{-ip^2t/2M\hbar}$ is $e^{-iEt/\hbar}$, with $E = p^2/2M$ the energy eigenvalue of $v_p(x)$ for a free particle. Thus the form in both cases is in fact **identical**, up to the change from continuous to discrete energies. This is reassuring, as it shows that what we have done is the same, just in a different context here. 
 
 ## Exercises
 
@@ -296,7 +296,7 @@ n/a (show that)
 
 ````{exercise}
 :label: ex-norm-ISW-eigenfunctions
-Up until [](#e-energy-eigenfunctions-ISW), we know that the energy eignfunctions of the infinite square well take the form
+Up until [](#e-energy-eigenfunctions-ISW), we know that the energy eigenfunctions of the infinite square well take the form
 ```{math}
 u_n(x) = \begin{cases}
             2i A \sin \frac{n\pi x}{L}&\text{if } 0 \leq x \leq L, \\

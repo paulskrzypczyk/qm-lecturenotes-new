@@ -12,13 +12,13 @@ numbering:
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-10-I.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-10-I.pdf
 :width: 100%
 ```
 ````
 `````
 
-In this chapter we are now ready to move onto the study of quantum mechancis in three dimensions! Much of what we have learnt up until this stage will carry across in a rather straightforward manner, which is good news. Obviously the world around us is three dimensional, and so it is necessary to move broaden our application of quantum mechanics to three dimensions, so that we can go on to study real-world situations, for example, laying the foundations for the study of the **Hydrogen atom** — arguably the most famous quantum system of all, and one of its biggest early successes. While we won't get all the way there in this unit, we will nevertheless introduce the basics of quantum mechancis in 3D, so that you will be able to go straight there next year. 
+In this chapter we are now ready to move onto the study of quantum mechanics in three dimensions! Much of what we have learnt up until this stage will carry across in a rather straightforward manner, which is good news. Obviously the world around us is three dimensional, and so it is necessary to broaden our application of quantum mechanics to three dimensions, so that we can go on to study real-world situations, for example, laying the foundations for the study of the **Hydrogen atom** — arguably the most famous quantum system of all, and one of its biggest early successes. While we won't get all the way there in this unit, we will nevertheless introduce the basics of quantum mechanics in 3D, so that you will be able to go straight there next year. 
 
 ## The position of a particle in 3D
 
@@ -26,7 +26,7 @@ We will largely follow the same path in 3D that we followed in 1D, and start off
 ```{math}
 \rvec = x \ivec + y \jvec + z \kvec = (x,y,z).
 ```
-Just as before we associated a quantum state to each position $x$, we will now introduce a **3D position states** as $\ket{\rvec}$, and an associated **3D spatial wavefunction** $\psi(\rvec)$, such that a general quantum state of a particle in three dimensions can be written as
+Just as before we associated a quantum state to each position $x$, we will now introduce **3D position states** $\ket{\rvec}$, and an associated **3D spatial wavefunction** $\psi(\rvec)$, such that a general quantum state of a particle in three dimensions can be written as
 ````{card}
 ```{math}
 :label: e-3D-spatial-wf
@@ -35,7 +35,7 @@ Just as before we associated a quantum state to each position $x$, we will now i
 ````
 which should be compared to [](#e-general-quantum-state). 
 ```{aside} *Notation for vectors and 3D integrals*
-*We will write mostly use the notation $\rvec = (x,y,z)$ as  convenient shorthand for 3D vectors, instead of $\rvec = x \ivec + y \jvec + z \kvec$, which proves more cumbersome in general. In this way, we can write $\psi(\rvec)$ and $\psi(x,y,z)$ interchangably, as both should make sense. We will exclusively use **boldface** in the lecture notes for vectors, instead of $\vec{r}$.*
+*We will mostly use the notation $\rvec = (x,y,z)$ as  convenient shorthand for 3D vectors, instead of $\rvec = x \ivec + y \jvec + z \kvec$, which proves more cumbersome in general. In this way, we can write $\psi(\rvec)$ and $\psi(x,y,z)$ interchangeably, as both should make sense. We will exclusively use **boldface** in the lecture notes for vectors, instead of $\vec{r}$.*
 
 *We will also use the notation $d^3\rvec$ for the **volume element** $dx dy dz$. Previously you have seen this as $d\tau$. Both are common (Griffiths for example uses the former, and we will follow their notation here).*
 
@@ -104,18 +104,18 @@ We can also introduce the **coordinate operators acting on wavefunctions** using
 ```{math}
 \hat{X}\ket{\psi} = \int_V \psi(\rvec) x \ket{\rvec} d^3\rvec,
 ```
-i.e. the action of the operator is to transform $\psi(\rvec)$ into $\psi'(\rvec) = x \psi(\rvec)$, and so we have $\op{X} = x$, just as before. That is, the $X$ coordinate operator multiplies a wavefunction by the coordinate $x$, as we should expect. We similarly have $\op{Y} = y$ and $\op{Z} = z$. Interesting, we can **also** combine these into a single **vector operator**. In particular, we see that
+i.e. the action of the operator is to transform $\psi(\rvec)$ into $\psi'(\rvec) = x \psi(\rvec)$, and so we have $\op{X} = x$, just as before. That is, the $X$ coordinate operator multiplies a wavefunction by the coordinate $x$, as we should expect. We similarly have $\op{Y} = y$ and $\op{Z} = z$. Interestingly, we can **also** combine these into a single **vector operator**. In particular, we see that
 ```{math}
 \hat{\mathbf{R}}\ket{\psi} &= \hat{\mathbf{R}} \int_V \psi(\rvec)\ket{\rvec} d^3\rvec, \\
 &= \int_V \psi(\rvec)\hat{\mathbf{R}} \ket{\rvec}d^3\rvec,\\
-&= \int_V \psi(\rvec)\rvec \ket{\rvec}d^3\rvec,
+&= \int_V \psi(\rvec)\rvec \ket{\rvec}d^3\rvec.
 ```
 Thus the action of the operator is to turn the wavefunction into the **vector**
 ```{math}
 :label: e-psi-r-vec
 \psi(\rvec)\rvec = (x\psi(\rvec), y\psi(\rvec), z\psi(\rvec)),
 ```
-i.e. **each component** of $\rvec$ is multiplied by the the wavefunction $\psi(\rvec)$ (which is itself just a **scalar** quantity, being a single complex number for each position $\rvec$). Given [](#e-psi-r-vec), we therefore write
+i.e. **each component** of $\rvec$ is multiplied by the wavefunction $\psi(\rvec)$ (which is itself just a **scalar** quantity, being a single complex number for each position $\rvec$). Given [](#e-psi-r-vec), we therefore write
 ````{card}
 ```{math}
 :label: e-wf-op-R
@@ -153,7 +153,7 @@ This then allows us to interpret the normalisation condition [](#e-norm-3D-wf) i
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-10-II.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-10-II.pdf
 :width: 100%
 ```
 ````
@@ -188,7 +188,7 @@ These states are also **unphysical** and satisfy the same orthogonality-normalis
 ```
 ````
 
-We can use the momentum eigenstates in order to introduce the **3D momentum wavefunction**, in exactly analogy to [](#e-general-state-momentum)
+We can use the momentum eigenstates in order to introduce the **3D momentum wavefunction**, in exact analogy to [](#e-general-state-momentum):
 ````{card}
 ```{math}
 :label: e-3D-momentum-wf
@@ -243,7 +243,7 @@ Just as the three coordinate operators were **compatible** observables, so too a
 &= -\hbar^2 \frac{\partial^2\psi(\rvec)}{\partial x \partial y} + \hbar^2 \frac{\partial^2\psi(\rvec)}{\partial x \partial y} \\
 &= 0,
 ```
-where we used the fact in the third line that **we can take a partial derivative in either order** (i.e. partial differentiation commutes!). Similar calculations show that all components of momentum pairwise commute, and hence all 3 components are jointly compatible. This means it is (in principle) possible to measure the momentum $\pvec$ of a particle. Note that it isn't **a given**  that the components of a vector quantity are necessarily compatible — and is fact **not true** for the components of angular momentum, which is why the quantum mechanical treatment of angular momentum is in fact so rich an interesting (analogous somewhat to the incompatibility of kinetic and potential energy, and how this leads to interesting dynamics).  
+where we used the fact in the third line that **we can take a partial derivative in either order** (i.e. partial differentiation commutes!). Similar calculations show that all components of momentum pairwise commute, and hence all 3 components are jointly compatible. This means it is (in principle) possible to measure the momentum $\pvec$ of a particle. Note that it isn't **a given**  that the components of a vector quantity are necessarily compatible — and is in fact **not true** for the components of angular momentum, which is why the quantum mechanical treatment of angular momentum is in fact so rich and interesting (analogous somewhat to the incompatibility of kinetic and potential energy, and how this leads to interesting dynamics).  
 
 ## Canonical commutation relations
 
@@ -254,13 +254,13 @@ where we used the fact in the third line that **we can take a partial derivative
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-10-III.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-10-III.pdf
 :width: 100%
 ```
 ````
 `````
 
-In [Chapter 3](03-Incompat-obs-HUP.md) we saw that the position and momentum operators are **incompatible observables** and satisfy the so-called **canonical commutation relation** [](#e-canonical-comm). In 3D we have already seen above in that the coordinates of a particle are compatible, and that the components of momentum are also compatible. *What about the coordinates and components of momentum?* It turns out that is only the **pairs** of coordinate and momentum component **in the same direction** that are **incompatible**, all of which obey the **canonical commutation relation**:
+In [Chapter 3](03-Incompat-obs-HUP.md) we saw that the position and momentum operators are **incompatible observables** and satisfy the so-called **canonical commutation relation** [](#e-canonical-comm). In 3D we have already seen above that the coordinates of a particle are compatible, and that the components of momentum are also compatible. *What about the coordinates and components of momentum?* It turns out that it is only the **pairs** of coordinate and momentum component **in the same direction** that are **incompatible**, all of which obey the **canonical commutation relation**:
 ````{card}
 ```{math}
 [\hat{X},\hat{P}_x] &= i\hbar,& [\hat{Y},\hat{P}_y] &= i\hbar,& [\hat{Z},\hat{P}_z] &= i\hbar,
@@ -270,7 +270,7 @@ while all other pairs are in fact **compatible**,
 ````{card}
 ```{math}
 [\hat{Y},\hat{P}_x] &= 0,& [\hat{X},\hat{P}_y] &= 0,& [\hat{X},\hat{P}_z] &= 0,\\
-[\hat{Z},\hat{P}_x] &= 0,& [\hat{Z},\hat{P}_y] &= 0,& [\hat{Y},\hat{P}_z] &= 0,
+[\hat{Z},\hat{P}_x] &= 0,& [\hat{Z},\hat{P}_y] &= 0,& [\hat{Y},\hat{P}_z] &= 0.
 ```
 ````
 You will prove one example of the above as an [exercise](#ex-comm-3D), from which all of the others follow by direct analogy. 
@@ -286,20 +286,20 @@ and as such, a particle cannot have a very well-defined coordinate and momentum 
 ## Relationship between 3D spatial & momentum wavefunctions
 In one dimension we saw in [](#e-psi-p-to-psi-x) and [](#e-psi-x-to-psi-p) that the relationship between the position and momentum wavefunctions was that they are a **Fourier transform pair**. This is very useful, as it provides a useful way of obtaining the momentum wavefunction from the spatial wavefunction and vice versa, **without having to go via the quantum state** $\ket{\psi}$. 
 
-In 3D (hopefully unexpectedly at this stage of the chapter!) **the same relationship holds**: The spatial and momentum wavefunctions are **3D Fourier transform pairs**. On the one hand, starting from [](#e-3D-momentum-wf), taking the scalar product with a 3D position state $\bra{\rvec}$, and using the fact that $\inner{\rvec}{\pvec} = v_{\pvec}(\rvec)$ (as given in [](#e-3D-mom-eigenfunc)), we readily obtain
+In 3D (hopefully not unexpectedly at this stage of the chapter!) **the same relationship holds**: The spatial and momentum wavefunctions are **3D Fourier transform pairs**. On the one hand, starting from [](#e-3D-momentum-wf), taking the scalar product with a 3D position state $\bra{\rvec}$, and using the fact that $\inner{\rvec}{\pvec} = v_{\pvec}(\rvec)$ (as given in [](#e-3D-mom-eigenfunc)), we readily obtain
 ````{card}
 ```{math}
- \psi(\rvec) = \frac{1}{(2\pi\hbar)^{3/2}} \int_V \tilde{\psi}(\pvec) e^{i\pvec \cdot \rvec / \hbar} d^3\pvec.
- ```
- ````
- Alternatively, starting from [](#e-3D-spatial-wf), taking the scalar product with a 3D momentum state $\bra{\pvec}$, and using the fact that $\inner{\pvec}{\rvec} = (\inner{\rvec}{\pvec})^* = v_{\pvec}^*(\rvec)$, we also readily obtain
- ````{card}
- ```{math}
- \tilde{\psi}(\pvec) = \frac{1}{(2\pi\hbar)^{3/2}} \int_V \psi(\rvec) e^{-i\pvec \cdot \rvec / \hbar} d^3\rvec.
- ```
- ````
+\psi(\rvec) = \frac{1}{(2\pi\hbar)^{3/2}} \int_V \tilde{\psi}(\pvec) e^{i\pvec \cdot \rvec / \hbar} d^3\pvec.
+```
+````
+Alternatively, starting from [](#e-3D-spatial-wf), taking the scalar product with a 3D momentum state $\bra{\pvec}$, and using the fact that $\inner{\pvec}{\rvec} = (\inner{\rvec}{\pvec})^* = v_{\pvec}^*(\rvec)$, we also readily obtain
+````{card}
+```{math}
+\tilde{\psi}(\pvec) = \frac{1}{(2\pi\hbar)^{3/2}} \int_V \psi(\rvec) e^{-i\pvec \cdot \rvec / \hbar} d^3\rvec.
+```
+````
 
- ## The energy of a particle in 3D
+## The energy of a particle in 3D
 
 
 Having covered the position and momentum of a particle above, we are now ready to consider the **energy** of a particle in 3D. The Hamiltonian still contains two contributions to the energy — kinetic and potential. The latter is rather straightforward, as we simply now have $V(\rvec)$, i.e. a potential which depends upon the (3D) position of the particle. We will study explicit examples later (e.g. a 3D 'box' and the 3D harmonic oscillator potential). 
@@ -333,7 +333,7 @@ From this we arrive at the 3D TISE,
 ````
 the **eigenvalue equation** for the Hamiltonian operator in terms of energy **eigenfunctions**. This is our **central tool** for finding the energy eigenstates in 3D, just as the 1D TISE was our central tool for finding energy eigenstates (via energy eigenfunctions) in 1D. 
 
-As in 1D, there are two **distinct** physical situations which we encounter, when a particle is either **bound** (remaining in a finite region of space), or **non-bound** (in which it can escape off to infinity). In 3D, there is a potential subtlety: what if the particle was **confined in one direction but not the others?** *what happens then?* In this case, the region that the particle can explore will **still be infinite in volume**, and as such we find that the energy of the particle varies **continuously**. Only if the particle is confined **in all three spatial dimensions** will we find **discrete energy levels**.
+As in 1D, there are two **distinct** physical situations which we encounter, when a particle is either **bound** (remaining in a finite region of space), or **non-bound** (in which it can escape off to infinity). In 3D, there is a potential subtlety: what if the particle was **confined in one direction but not the others?** *What happens then?* In this case, the region that the particle can explore will **still be infinite in volume**, and as such we find that the energy of the particle varies **continuously**. Only if the particle is confined **in all three spatial dimensions** will we find **discrete energy levels**.
 
 One update is that previously we only ever encountered a **single quantum number $n$ per energy level**. That is, in both the [infinite square well](07-infinite-square-well) and the [harmonic oscillator](08-harmonic-oscillator) we were able to enumerate the energy levels using a **single** integer $n$. In 3D, in contrast, we will typically see that we have **multiple quantum numbers per energy level**. 
 
@@ -348,7 +348,7 @@ A common case is to have **three quantum numbers**, one **per degree of freedom*
 ```
 ````{tip} Slides
 :class: dropdown
- ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-10-IV.pdf
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Lecture%20Slides/QM-10-IV.pdf
 :width: 100%
 ```
 ````
@@ -359,7 +359,7 @@ The equation of motion of a particle in 3D is no different from the equation of 
 
 In 1D we saw that we **never actually solve the SE directly** — we instead used the **superposition principle** and the fact that **energy eigenstates evolve simply** to solve it **indirectly**. In 3D, nothing will change on this front either! 
 
-For example, assuming that the particle is **bound** and therefore that it has a discrete set of **energy levels** $\ket{E_\mathbf{n}}$ (specified by the vector of quantum numbers $\mathbf{n}$), this is the initial state of a particle at time $t = 0$, i.e. $\ket{\psi(t=0)} = \ket{E_\mathbf{n}}$, then the state at time $t$ will simply be
+For example, assuming that the particle is **bound** and therefore that it has a discrete set of **energy levels** $\ket{E_\mathbf{n}}$ (specified by the vector of quantum numbers $\mathbf{n}$), if this is the initial state of a particle at time $t = 0$, i.e. $\ket{\psi(t=0)} = \ket{E_\mathbf{n}}$, then the state at time $t$ will simply be
 ```{math}
 \ket{\psi(t)} = e^{-iE_{\mathbf{n}}t/\hbar}\ket{E_\mathbf{n}},
 ```
@@ -370,7 +370,7 @@ For an initial state $\ket{\psi_\init}$, it is again crucial to  write it as a s
 :label: e-psi-init-3D
 \ket{\psi_\init} = \sum_{\mathbf{n}} \alpha_{\mathbf{n}} \ket{E_\mathbf{n}},
 ```
-where the summation runs over all the possible values of $\mathbf{n}$, e.g. this is really **3 summations**, overs $n_x$, $n_y$ and $n_z$, all of which are potentially infinite. 
+where the summation runs over all the possible values of $\mathbf{n}$, e.g. this is really **3 summations**, over $n_x$, $n_y$ and $n_z$, all of which are potentially infinite. 
 
 In this form, we can **directly apply the superposition principle** to write down the evolution of the particle, which is given by
 ````{card}
@@ -396,9 +396,9 @@ where we have written the energy eigenfunction $u_\mathbf{n}(\rvec) = \inner{\rv
 \alpha_\mathbf{n} = \int_V \psi_\init(\rvec) u_\mathbf{n}^*(\rvec) d^3\rvec,
 ```
 ````
-where $\psi_\init(\rvec) = \inner{\rvec}{\psi_\init}$ is the 3D wavefunction of the initial state $\ket{\psi}$. We use this form, as typically it is the **energy eigenfunctions that we know explicitly**, and so this is the most useful form to have. 
+where $\psi_\init(\rvec) = \inner{\rvec}{\psi_\init}$ is the 3D wavefunction of the initial state $\ket{\psi_\init}$. We use this form, as typically it is the **energy eigenfunctions that we know explicitly**, and so this is the most useful form to have. 
 
-If we wanted to, we could combine [](#e-psi-t-3D-wf) and [](#e-alpha-n-3D) to write the 3D wavefunction at time $t$ **directly** in terms of the intial wavefunction as 
+If we wanted to, we could combine [](#e-psi-t-3D-wf) and [](#e-alpha-n-3D) to write the 3D wavefunction at time $t$ **directly** in terms of the initial wavefunction as 
 ````{card}
 ```{math}
 \psi(\rvec,t) = \sum_{\mathbf{n}} \int_V \psi_\init(\rvec') u_\mathbf{n}^*(\rvec')  u_\mathbf{n}(\rvec) e^{-iE_\mathbf{n} t/\hbar} d^3\rvec',
@@ -437,7 +437,7 @@ n/a (show that).
 :label: ex-degen-coordinate-ops
 In this exercise it will be convenient to write a position state $\ket{\rvec}$ more fully as $\ket{\rvec} = \ket{x,y,z}$, explicitly in terms of all 3 coordinates separately. 
 
-1. Does $\hat{X}\ket{x,y,z} = x \ket{x,y,z}$, hold for **any** choice of $y$ and $z$? If yes, explain why this implies that there are **infinitely many position states all with the same eigenvalue for $\hat{X}$.** 
+1. Does $\hat{X}\ket{x,y,z} = x \ket{x,y,z}$ hold for **any** choice of $y$ and $z$? If yes, explain why this implies that there are **infinitely many position states all with the same eigenvalue for $\hat{X}$.** 
 
 
 ```{dropdown} Answers
