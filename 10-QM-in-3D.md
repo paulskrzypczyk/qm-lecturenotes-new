@@ -134,7 +134,7 @@ from which it follows that $[\hat{X}, \hat{Y}] = 0$, according to [](#e-wf-comm-
 
 ### Probability to find a particle somewhere
 
-We can now think about measuring the **position of the particle** in 3D, and ask *what is the probability to find it in an (arbitrarily small) region around $\rvec$?* That is, if we performed an arbitrarily good simultaneous measurement of the 3 coordinates of the particle? The answer is the direct generalisation of what we saw for a particle in one dimension: the **probability density** at position $\rvec$ is precisely
+We can now think about measuring the **position of the particle** in 3D, and ask *what is the probability to find it in an (arbitrarily small) region around $\rvec$?* That is, if we performed an arbitrarily good simultaneous measurement of the 3 coordinates of the particle. The answer is the direct generalisation of what we saw for a particle in one dimension: the **probability density** at position $\rvec$ is precisely
 ````{card}
 ```{math}
 \pd(\rvec) = |\psi(\rvec)|^2,

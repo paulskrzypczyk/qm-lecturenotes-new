@@ -17,11 +17,11 @@ Consider a **classical** particle of mass $M$ undergoing simple harmonic motion 
 2. When the particle is at maximum displacement, what is its kinetic energy?
 3. Use your answers to parts 1. and 2. to derive an equation which gives the amplitude of oscillation as a function of the energy of the particle. 
 
-Assume now that the energy of the particle is equal to the energy of the $n^\mathrm{th}$ energy eigenstate of the **quantum** harmonic oscillator, $E_n = \hbar \omega (n + \frac{1}{2})$. 
+Assume now that the energy of the particle is equal to the energy of the $n^\mathrm{th}$ energy level of the **quantum** harmonic oscillator, $E_n = \hbar \omega (n + \frac{1}{2})$. 
 
 4. Express the amplitude of the particle in terms of the **characteristic length** $\ell = \sqrt{\frac{\hbar}{M\omega}}$ of the quantum harmonic oscillator. 
 
-Consider now a **quantum** particle, confined within a harmonic oscillator potential well. Assume the particle is in the ground state $\ket{E_0}$. 
+Consider now a **quantum** particle, confined within a harmonic oscillator potential well (with the same $\omega$). Assume the particle is in the ground state $\ket{E_0}$. 
 
 5. What does it mean for a particle to be **tunnelling** in quantum mechanics? 
 
@@ -62,8 +62,18 @@ u_E^\rI(x) &\text{ if } x \geq 0,\\ u_E^\rII(x) &\text{ if } x < 0.
 7. How can you **use** the energy eigenfunctions to study the behaviour of e.g. a **Gaussian** wavefunction with **negative** average momentum?
 8. Use desmos (or some other numerical technique) to investigate this. 
 ```
-
-
 ````
 
-% ## Solutions
+## Solutions
+
+````{tip .simple} Solutions
+:class: dropdown
+Tuesday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2016%20Tues.pdf
+:width: 100%
+```
+Thursday:
+```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2016%20Thurs.pdf
+:width: 100%
+```
+````

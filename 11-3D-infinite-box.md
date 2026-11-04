@@ -82,6 +82,7 @@ u(\rvec) = u_n(x) f(y,z),
 ```
 where $f(y,z)$ is some arbitrary function of $y$ and $z$ alone, then we see that we have essentially **identical behaviour**, and that, in fact, **any such function will be an eigenfunction of $\hat{P}^2_{x,\mathrm{w}}/2M$**. Namely,
 ```{math}
+:label: e-u-fzy-eig
 -\frac{\hbar^2}{2M} \frac{\partial^2}{\partial x^2} u(\rvec) &= 
 -\frac{\hbar^2}{2M} \frac{\partial^2}{\partial x^2} \left(\sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L}f(y,z)\right) \\ 
 &=  \frac{\hbar^2 n^2 \pi^2}{2ML^2} \sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L}f(y,z),\\
