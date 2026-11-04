@@ -1,3 +1,5 @@
 _build/
 # MyST build outputs
 _build
+# PDF export: built by the GitHub Action (and by MYST_PDF=1 myst build --pdf locally)
+exports/

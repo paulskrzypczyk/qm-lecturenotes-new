@@ -12,6 +12,7 @@ project:
   license: CC-BY-NC-ND-4.0
   plugins:
     - https://github.com/jupyter-book/myst-plugins/releases/download/page-last-updatedv1.1/page-last-updated.mjs
+    - plugins/pdf-export.mjs
   # github:
   # bibliography: []
   math:
@@ -35,6 +36,40 @@ project:
     '\Lvec': '\boldsymbol{L}'
     '\pvec': '\boldsymbol{p}'
     '\Ebox': 'E_{\text{box}}'
+  exports:
+    # PDF of the notes in the style of the old LaTeX notes.
+    # Build with:  MYST_PDF=1 myst build --pdf   (the env var switches on plugins/pdf-export.mjs)
+    - id: pdf
+      format: pdf
+      template: ./templates/latex/qm-notes
+      output: exports/QM-lecture-notes.pdf
+      subtitle_text: Lecture Notes
+      year: 2025-26
+      articles:
+        - file: 01-position.md
+          level: 0
+        - file: 02-momentum.md
+          level: 0
+        - file: 03-Incompat-obs-HUP.md
+          level: 0
+        - file: 04-energy.md
+          level: 0
+        - file: 05-time-evolution.md
+          level: 0
+        - file: 06-free-particle.md
+          level: 0
+        - file: 07-infinite-square-well.md
+          level: 0
+        - file: 08-harmonic-oscillator.md
+          level: 0
+        - file: 09-scattering.md
+          level: 0
+        - file: 10-QM-in-3D.md
+          level: 0
+        - file: 11-3D-infinite-box.md
+          level: 0
+        - file: gaussian-integrals.md
+          level: 0
   abbreviations:
     TISE: Time-independent Schrödinger Equation
     SE: Schrödinger Equation

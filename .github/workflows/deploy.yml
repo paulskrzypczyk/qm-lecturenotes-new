@@ -1,10 +1,13 @@
 # This file was created automatically with `myst init --gh-pages` 🪄 💚
+# ... and extended to build the PDF of the notes (templates/latex/qm-notes) before the site,
+# so that the "Lecture notes (PDF)" download on every page is always up to date.
 
 name: MyST GitHub Pages Deploy
 on:
   push:
     # Runs on pushes targeting the default branch
     branches: [main]
+  workflow_dispatch:
 env:
   # `BASE_URL` determines the website is served from, including CSS & JS assets
   # You may need to change this to `BASE_URL: ''`
@@ -28,15 +31,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with: 
+        with:
           fetch-depth: 0
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 20.x
       - name: Install MyST Markdown
         run: npm install -g mystmd
+
+      # --- PDF of the notes -------------------------------------------------
+      # A minimal TeX Live with the packages used by templates/latex/qm-notes/template.tex
+      # (and the ones MyST itself adds). Cached, so only the first run is slow.
+      - name: Install TeX Live
+        uses: teatimeguest/setup-texlive-action@v3
+        with:
+          cache: true
+          package-file: templates/latex/qm-notes/texlive-packages.txt
+      - name: Build PDF of the notes
+        env:
+          MYST_PDF: '1'
+        run: |
+          myst build --pdf
+          ls -la exports/
+      - name: Upload PDF as a workflow artifact (handy for checking a build)
+        uses: actions/upload-artifact@v4
+        with:
+          name: QM-lecture-notes-pdf
+          path: exports/QM-lecture-notes.pdf
+      # ----------------------------------------------------------------------
+
       - name: Build HTML Assets
         run: myst build --html
       - name: Upload artifact

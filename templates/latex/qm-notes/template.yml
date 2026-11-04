@@ -1,0 +1,48 @@
+myst: v1
+title: QM Lecture Notes (Legrand style)
+description: Paul Skrzypczyk's lecture-notes style, adapted from the Legrand Orange Book template
+version: '0.1.0'
+authors:
+  - name: Paul Skrzypczyk
+license: CC-BY-NC-SA-3.0
+tags:
+  - book
+doc:
+  - id: title
+    required: true
+  - id: subtitle
+  - id: authors
+options:
+  - id: subtitle_text
+    type: string
+    description: Second line of the title banner
+    default: 'Lecture Notes'
+  - id: year
+    type: string
+    description: Academic year shown on the title page
+    default: '2025-26'
+build:
+  engine: -pdf
+files:
+  - template.tex
+packages:
+  - amsmath
+  - amssymb
+  - amsfonts
+  - amsthm
+  - graphicx
+  - xcolor
+  - hyperref
+  - geometry
+  - booktabs
+  - enumitem
+  - tikz
+  - mdframed
+  - titletoc
+  - fancyhdr
+  - microtype
+  - times
+  - avant
+  - fontenc
+  - inputenc
+  - xstring

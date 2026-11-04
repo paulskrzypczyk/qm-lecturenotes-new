@@ -1,0 +1,320 @@
+%----------------------------------------------------------------------------------------
+%  MyST LaTeX template for the QM lecture notes
+%  Style adapted from Paul Skrzypczyk's QM1 notes (2022), themselves based on
+%  "The Legrand Orange Book" by Mathias Legrand / Vel (CC BY-NC-SA 3.0, LaTeXTemplates.com)
+%----------------------------------------------------------------------------------------
+\documentclass[11pt,oneside,openany]{book}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage[shortlabels]{enumitem}
+\setlist{nolistsep}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{xstring}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{microtype}
+
+% Dirac notation as used on the website (KaTeX provides these natively)
+\providecommand{\ket}[1]{\lvert #1 \rangle}
+\providecommand{\bra}[1]{\langle #1 \rvert}
+\providecommand{\braket}[2]{\langle #1 \vert #2 \rangle}
+
+%----------------------------------------------------------------------------------------
+%	COLOURS
+%----------------------------------------------------------------------------------------
+\definecolor{brightblue}{HTML}{008DCC}
+\definecolor{brightred}{HTML}{C9002F}
+\definecolor{UoBred}{HTML}{B01C2E}
+\definecolor{UoBgrey}{HTML}{E5E6E5}
+\definecolor{UoBorange}{HTML}{EE7219}
+\definecolor{UoBbrightblue}{HTML}{0CC6DE}
+\definecolor{exuorange}{HTML}{FF582D}
+\definecolor{webblue}{HTML}{0076df}
+\colorlet{maincolor}{webblue}
+
+\newcommand\alert[1]{\textcolor{maincolor}{\textbf{#1}}}
+\newcommand\lesson[1]{\textcolor{maincolor}{\textit{#1}}}
+
+%----------------------------------------------------------------------------------------
+%	MARGINS
+%----------------------------------------------------------------------------------------
+\usepackage{geometry}
+\geometry{
+	paper=a4paper,
+	top=2.5cm,
+	bottom=2.5cm,
+	left=2.5cm,
+	right=2.5cm,
+	headheight=14pt,
+	footskip=0cm,
+	headsep=10pt,
+}
+
+%----------------------------------------------------------------------------------------
+%	FONTS: Times for the body, Avant Garde for headings
+%----------------------------------------------------------------------------------------
+\usepackage{times}
+\usepackage{avant}
+
+%----------------------------------------------------------------------------------------
+%	MAIN TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\usepackage{titletoc}
+\contentsmargin{0cm}
+
+\titlecontents{part}
+	[0cm]
+	{\addvspace{20pt}\bfseries}
+	{}
+	{}
+	{}
+
+\titlecontents{chapter}
+	[1.25cm]
+	{\addvspace{12pt}\large\sffamily\bfseries}
+	{\color{maincolor}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{maincolor}}
+	{\color{maincolor}}
+	{\color{maincolor}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage}
+
+\titlecontents{section}
+	[1.25cm]
+	{\addvspace{3pt}\sffamily\bfseries}
+	{\contentslabel[\thecontentslabel]{1.25cm}}
+	{}
+	{\hfill\color{black}\thecontentspage}
+
+\titlecontents{subsection}
+	[1.25cm]
+	{\addvspace{1pt}\sffamily\small}
+	{\contentslabel[\thecontentslabel]{1.25cm}}
+	{}
+	{\ \titlerule*[.5pc]{.}\;\thecontentspage}
+
+\makeatletter
+\newcommand*{\toccontents}{\@starttoc{toc}}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+%	HEADERS AND FOOTERS
+%----------------------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\color{maincolor}\chaptername\ \thechapter.\color{black}\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\color{maincolor}\thesection\color{black}\hspace{5pt}#1}{}}
+\fancyhf{}
+\fancyhead[R]{\sffamily\normalsize\thepage}
+\fancyhead[L]{\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}}
+
+%----------------------------------------------------------------------------------------
+%	THEOREM STYLES
+%----------------------------------------------------------------------------------------
+\makeatletter
+\newtheoremstyle{maincolornumbox}
+{0pt}{0pt}{\normalfont}{}
+{\small\bf\sffamily\color{maincolor}}{\;}{0.25em}
+{\small\sffamily\color{maincolor}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}%
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}}
+
+\newtheoremstyle{blacknumbox}
+{0pt}{0pt}{\normalfont}{}
+{\small\bf\sffamily}{\;}{0.25em}
+{\small\sffamily\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}%
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}
+\makeatother
+
+\theoremstyle{blacknumbox}
+\newtheorem{definitionT}{Definition}[chapter]
+\newtheorem*{eqT*}{}
+
+%----------------------------------------------------------------------------------------
+%	COLOURED BOXES
+%----------------------------------------------------------------------------------------
+\usepackage[framemethod=default]{mdframed}
+
+% Definition / key-statement box: thick blue bar on the left
+\newmdenv[skipabove=7pt,skipbelow=7pt,
+rightline=false,leftline=true,topline=false,bottomline=false,
+linecolor=maincolor,innerleftmargin=5pt,innerrightmargin=5pt,
+innertopmargin=0pt,innerbottommargin=0pt,leftmargin=0cm,rightmargin=0cm,
+linewidth=4pt]{dBox}
+
+% Equation box: grey background
+\newmdenv[skipabove=7pt,skipbelow=7pt,
+rightline=false,leftline=false,topline=false,bottomline=false,
+backgroundcolor=UoBgrey!50,linecolor=maincolor,
+innerleftmargin=5pt,innerrightmargin=5pt,innertopmargin=5pt,innerbottommargin=5pt,
+leftmargin=0cm,rightmargin=0cm,linewidth=4pt]{eqBox}
+
+\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
+\newenvironment{boxedeq}{\begin{eqBox}\begin{eqT*}}{\end{eqT*}\end{eqBox}}
+
+% Blockquotes (key statements in the notes) use the blue-barred box
+\renewenvironment{quote}{\begin{dBox}\itshape}{\end{dBox}}
+
+%----------------------------------------------------------------------------------------
+%	REMARK ENVIRONMENT  (used for MyST asides)
+%----------------------------------------------------------------------------------------
+\newenvironment{remark}{\par\vspace{10pt}\small
+\begin{list}{}{
+\leftmargin=35pt
+\rightmargin=25pt}\item\ignorespaces
+\makebox[{-2.5pt}]{\begin{tikzpicture}[overlay]
+\node[draw=maincolor,line width=1pt,circle,fill=UoBgrey!50,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){!};\end{tikzpicture}}
+\advance\baselineskip -1pt \itshape}{\end{list}\vskip5pt}
+
+%----------------------------------------------------------------------------------------
+%	SECTION NUMBERING IN THE MARGIN
+%----------------------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\llap{\textcolor{maincolor}{\csname the#1\endcsname}\hspace{1em}}}
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+{-4ex \@plus -1ex \@minus -.4ex}
+{1ex \@plus.2ex }
+{\normalfont\large\sffamily\bfseries}}
+\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
+{-3ex \@plus -0.1ex \@minus -.4ex}
+{0.5ex \@plus.2ex }
+{\normalfont\sffamily\bfseries}}
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+{-2ex \@plus -0.1ex \@minus -.2ex}
+{.2ex \@plus.2ex }
+{\normalfont\small\sffamily\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+{-2ex \@plus-.2ex \@minus .2ex}
+{.1ex}
+{\normalfont\small\sffamily\bfseries}}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER HEADINGS
+%----------------------------------------------------------------------------------------
+\newcommand{\autodot}{.}
+\newlength\chaptertitleheight
+\newsavebox\chaptertitlebox
+
+\def\@makechapterhead#1{%
+{\parindent \z@ \raggedright \normalfont
+\ifnum \c@secnumdepth >\m@ne
+\setbox\chaptertitlebox=\hbox{%
+\parbox{15cm}{\huge\sffamily\bfseries\color{black}\thechapter\autodot~#1\strut}}
+\setlength\chaptertitleheight{\dimexpr\ht\chaptertitlebox+\dp\chaptertitlebox}
+\if@mainmatter
+\begin{tikzpicture}[remember picture,overlay]
+	\node at (current page.north west){
+		\begin{tikzpicture}[remember picture,overlay]
+			\draw[anchor=west] (\Gm@lmargin+.3cm,-3cm) node [text width=15cm] {
+			\huge\sffamily\bfseries\color{maincolor}\thechapter\autodot~\color{black}#1\strut};
+			\draw[anchor=west,line width=2pt,maincolor]
+				(\Gm@lmargin+.3cm,-3cm-\chaptertitleheight/2) -- (\Gm@lmargin+22cm,-3cm-\chaptertitleheight/2);
+		\end{tikzpicture}};
+\end{tikzpicture}
+\else
+\begin{tikzpicture}[remember picture,overlay]
+	\node at (current page.north west){
+	\begin{tikzpicture}[remember picture,overlay]
+		\draw[anchor=west] (\Gm@lmargin+.3cm,-9cm) node [text width=15cm] {
+		\huge\sffamily\bfseries\color{black}#1\strut};
+		\draw[anchor=west,line width=2pt,maincolor]
+				(\Gm@lmargin+.3cm,-3cm-\chaptertitleheight/2) -- (\Gm@lmargin+22cm,-3.5cm);
+	\end{tikzpicture}};
+	\end{tikzpicture}
+\fi\fi\par\vspace*{50\p@}}}
+\makeatother
+
+% MyST passes the page titles "Chapter N: Title" / "Appendix N: Title".
+% Strip the prefix (LaTeX numbers the chapters itself) and switch to
+% appendix numbering when the first appendix is reached.
+\newif\ifqmappendix
+\let\qmorigchapter\chapter
+\RenewDocumentCommand{\chapter}{s o m}{%
+  \IfBooleanTF{#1}{\qmorigchapter*{#3}}{%
+    \IfBeginWith{#3}{Chapter }{%
+      \StrBehind{#3}{: }[\qmtitle]%
+      \expandafter\qmorigchapter\expandafter{\qmtitle}%
+    }{%
+      \IfBeginWith{#3}{Appendix }{%
+        \ifqmappendix\else\appendix\qmappendixtrue\fi%
+        \StrBehind{#3}{: }[\qmtitle]%
+        \expandafter\qmorigchapter\expandafter{\qmtitle}%
+      }{%
+        \qmorigchapter{#3}%
+      }%
+    }%
+  }%
+}
+
+%----------------------------------------------------------------------------------------
+%	BOLD TEXT IS BLUE (the \alert of the old notes)
+%----------------------------------------------------------------------------------------
+\let\qmtextbf\textbf
+\renewcommand{\textbf}[1]{\qmtextbf{\textcolor{maincolor}{#1}}}
+
+%----------------------------------------------------------------------------------------
+%	FIGURES
+%----------------------------------------------------------------------------------------
+\usepackage{flafter}            % never place a float before the text that introduces it
+\setcounter{topnumber}{3}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\arraystretch}{1.5} % breathing room in tables (they contain fractions)
+
+%----------------------------------------------------------------------------------------
+%	DATE FORMAT ON THE TITLE PAGE (as in the old notes: "Thursday 7th September, 2023")
+%----------------------------------------------------------------------------------------
+\usepackage[UKenglish]{datetime}
+\newdateformat{versiondate}{\dayofweekname{\THEDAY}{\THEMONTH}{\THEYEAR} \ordinaldate{\THEDAY} \monthname[\THEMONTH], \THEYEAR}
+
+%----------------------------------------------------------------------------------------
+%	MyST IMPORTS (packages it needs, and the math macros from myst.yml)
+%----------------------------------------------------------------------------------------
+[- IMPORTS -]
+
+%----------------------------------------------------------------------------------------
+%	LINKS
+%----------------------------------------------------------------------------------------
+\usepackage{hyperref}
+\hypersetup{hidelinks,colorlinks=true,breaklinks=true,urlcolor=maincolor,bookmarksopen=false,linkcolor=exuorange,
+  pdftitle={[-doc.title-] Lecture Notes},pdfauthor={[# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #]}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\draw[anchor=north west] (current page.north) node [fill=UoBgrey,text opacity=1,inner sep=1cm,trapezium,trapezium angle=-13+90] (p1) {
+	\Huge\bfseries\sffamily\parbox[c][][t]{0.85\paperwidth}{{\color{maincolor}\hphantom{.} \hspace{2cm} [-doc.title-]
+	\\
+	[10pt]{\huge \hphantom{.} \hspace{2.1cm}[-options.subtitle_text-]}}
+\\[10pt]{\Large \hphantom{.} \hspace{2cm}[# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #] \hspace{5.2cm} [-options.year-]{\small\mdseries \\ \hphantom{.} \hspace{1.8cm} version: \versiondate\today}}}};
+\draw [line width=0.75mm, maincolor ](p1.south west) -- ++(-12,0);
+\draw [line width=0.75mm, maincolor ](p1.south west) -- ++(12,0);
+\end{tikzpicture}
+\vspace*{120pt}
+
+{
+\hypersetup{hidelinks,colorlinks=false,breaklinks=true,urlcolor=maincolor,bookmarksopen=false,linkcolor=maincolor}
+\toccontents
+}
+
+\vfill
+\endgroup
+
+\pagestyle{fancy}
+
+%----------------------------------------------------------------------------------------
+%	CONTENT
+%----------------------------------------------------------------------------------------
+[- CONTENT -]
+
+\end{document}

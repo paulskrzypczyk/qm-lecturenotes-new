@@ -1,0 +1,32 @@
+# TeX Live packages needed to compile templates/latex/qm-notes/template.tex
+# (used by .github/workflows/deploy.yml via teatimeguest/setup-texlive-action;
+#  tlmgr resolves the dependencies of each package automatically)
+scheme-basic
+latexmk
+collection-fontsrecommended
+amsmath
+amsfonts
+amscls
+booktabs
+datetime
+fmtcount
+enumitem
+etoolbox
+fancyhdr
+framed
+geometry
+graphics
+hyperref
+kvoptions
+l3kernel
+l3packages
+mdframed
+microtype
+needspace
+pgf
+psnfss
+titlesec
+url
+xcolor
+xstring
+zref
