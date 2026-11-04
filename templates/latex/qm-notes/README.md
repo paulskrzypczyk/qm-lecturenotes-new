@@ -10,6 +10,9 @@ section numbers, Times body / Avant Garde headings, grey equation boxes,
 Requirements: `myst` (mystmd ≥ 1.12) and a TeX distribution with `latexmk`
 and `pdflatex` (TeX Live or MiKTeX; the packages used are standard:
 times, avant, mdframed, titletoc, fancyhdr, tikz, xstring, datetime, …).
+On Ubuntu/Debian: `texlive-latex-extra texlive-fonts-recommended latexmk`,
+which is what `.github/workflows/deploy.yml` installs before building the
+site, so the PDF is rebuilt on every push and never needs committing.
 No Inkscape is needed: the figures come from the vector PDFs in
 `Pictures/pdf/`.
 

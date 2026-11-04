@@ -42,13 +42,13 @@ jobs:
         run: npm install -g mystmd
 
       # --- PDF of the notes -------------------------------------------------
-      # A minimal TeX Live with the packages used by templates/latex/qm-notes/template.tex
-      # (and the ones MyST itself adds). Cached, so only the first run is slow.
+      # TeX Live from Ubuntu's packages (covers everything used by
+      # templates/latex/qm-notes/template.tex). Only GitHub's own actions are used.
       - name: Install TeX Live
-        uses: teatimeguest/setup-texlive-action@v3
-        with:
-          cache: true
-          package-file: templates/latex/qm-notes/texlive-packages.txt
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-extra texlive-fonts-recommended latexmk
       - name: Build PDF of the notes
         env:
           MYST_PDF: '1'
