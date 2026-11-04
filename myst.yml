@@ -36,6 +36,10 @@ project:
     '\Lvec': '\boldsymbol{L}'
     '\pvec': '\boldsymbol{p}'
     '\Ebox': 'E_{\text{box}}'
+  # Download button on every page: the PDF built by the GitHub Action (MYST_PDF=1 myst build --pdf)
+  downloads:
+    - file: ./exports/QM-lecture-notes.pdf
+      title: Lecture notes (PDF)
   exports:
     # PDF of the notes in the style of the old LaTeX notes.
     # Build with:  MYST_PDF=1 myst build --pdf   (the env var switches on plugins/pdf-export.mjs)
