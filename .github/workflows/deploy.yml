@@ -64,6 +64,10 @@ jobs:
 
       - name: Build HTML Assets
         run: myst build --html
+      # The PDF is linked from every page (myst.yml `downloads`) at <site>/QM-lecture-notes.pdf,
+      # so that it opens in the browser rather than being force-downloaded.
+      - name: Add the PDF to the site
+        run: cp exports/QM-lecture-notes.pdf _build/html/QM-lecture-notes.pdf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

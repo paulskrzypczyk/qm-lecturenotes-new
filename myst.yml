@@ -36,10 +36,14 @@ project:
     '\Lvec': '\boldsymbol{L}'
     '\pvec': '\boldsymbol{p}'
     '\Ebox': 'E_{\text{box}}'
-  # Download button on every page: the PDF built by the GitHub Action (MYST_PDF=1 myst build --pdf)
+  # Download button on every page: the PDF built by the GitHub Action (MYST_PDF=1 myst build --pdf).
+  # It is linked as a plain URL (static: false) rather than as a file, so that clicking it opens
+  # the PDF in the browser instead of forcing a download. The Action copies exports/QM-lecture-notes.pdf
+  # into the deployed site at this address.
   downloads:
-    - file: ./exports/QM-lecture-notes.pdf
+    - url: https://paulskrzypczyk.github.io/qm-lecturenotes-new/QM-lecture-notes.pdf
       title: Lecture notes (PDF)
+      static: false
   exports:
     # PDF of the notes in the style of the old LaTeX notes.
     # Build with:  MYST_PDF=1 myst build --pdf   (the env var switches on plugins/pdf-export.mjs)
