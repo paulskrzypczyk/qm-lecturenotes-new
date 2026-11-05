@@ -66,16 +66,16 @@ where $L > 0$ is a constant.  We will assume that **there are no forces acting o
    ```
 ````
 
-## Solutions
-
-````{tip .simple} Solutions
-:class: dropdown
-Tuesday:
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/pid-9787898-dt-content-rid-74975433_1/xid-74975433_1
-:width: 100%
-```
-Thursday:
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/pid-9787898-dt-content-rid-74975432_1/xid-74975432_1
-:width: 100%
-```
-````
+% ## Solutions
+%
+% ````{tip .simple} Solutions
+% :class: dropdown
+% Tuesday:
+% ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/pid-9787898-dt-content-rid-74975433_1/xid-74975433_1
+% :width: 100%
+% ```
+% Thursday:
+% ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/pid-9787898-dt-content-rid-74975432_1/xid-74975432_1
+% :width: 100%
+% ```
+% ````

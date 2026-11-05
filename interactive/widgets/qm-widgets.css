@@ -1,0 +1,232 @@
+/*
+ * Shared stylesheet for every interactive figure in the QM notes.
+ * Ground rules: interactive/README.md.  Edit this file, not the widgets, to change the look.
+ *
+ * Widgets render inside a shadow root (MyST's anywidget renderer), so:
+ *  - the theme's --myst-color-* custom properties are inherited from the page (they cross the boundary);
+ *  - light/dark is read from the `data-theme` attribute that the shared JS keeps in sync with `html.dark`.
+ */
+
+/* ── 1. Tokens (§2) ─────────────────────────────────────────────────────────── */
+.qm-widget {
+  --qm-surface:   var(--myst-color-bg, #fff);
+  --qm-surface-2: var(--myst-color-bg-secondary, #f9fafb);
+  --qm-border:    var(--myst-color-border, #e5e7eb);
+  --qm-ink:       var(--myst-color-prose-body, #44403c);
+  --qm-ink-muted: #6b7280;
+  --qm-focus:     var(--myst-color-focus-ring, #3b82f6);
+  --qm-accent-1:  #2563eb;   /* the state / main object */
+  --qm-accent-2:  #ea580c;   /* a second or contrasting object */
+  --qm-accent-3:  #0d9488;   /* operators and actions */
+  color-scheme: light;
+}
+.qm-widget[data-theme="dark"] {
+  --qm-ink-muted: #9ca3af;
+  --qm-accent-1:  #3b82f6;
+  color-scheme: dark;
+}
+.qm-ink      { color: var(--qm-ink); }
+.qm-muted    { color: var(--qm-ink-muted); }
+.qm-accent-1 { color: var(--qm-accent-1); }
+.qm-accent-2 { color: var(--qm-accent-2); }
+.qm-accent-3 { color: var(--qm-accent-3); }
+
+/* ── 2. Card and toolbar (§4) ───────────────────────────────────────────────── */
+.qm-widget {
+  container-type: inline-size;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 0.5rem;
+  background: var(--qm-surface);
+  color: var(--qm-ink);
+  border: 1px solid var(--qm-border);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  text-align: left;
+}
+.qm-widget *, .qm-widget *::before, .qm-widget *::after { box-sizing: border-box; }
+.qm-widget [hidden] { display: none !important; }
+
+.qm-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  border-bottom: 1px solid var(--qm-border);
+}
+.qm-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--qm-border);
+  border-radius: 999px;
+  background: var(--qm-surface-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.qm-tag svg { width: 12px; height: 12px; }
+.qm-hint { flex: 1; min-width: 0; font-size: 0.8125rem; color: var(--qm-ink-muted); }
+
+/* ── 3. Buttons and focus (§7, §8) ──────────────────────────────────────────── */
+.qm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  font: inherit;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  color: var(--qm-ink);
+  background: var(--qm-surface);
+  border: 1px solid var(--qm-border);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.qm-btn:hover { background: var(--qm-surface-2); }
+.qm-btn svg { width: 14px; height: 14px; flex: none; }
+.qm-widget :focus { outline: none; }
+.qm-widget :focus-visible { outline: 2px solid var(--qm-focus); outline-offset: 2px; }
+
+/* ── 4. Layout (§4) ─────────────────────────────────────────────────────────
+ *  narrow:  canvas / controls / readouts, stacked
+ *  ≥ 640px: canvas | controls, with the readouts in a full-width row underneath */
+.qm-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+.qm-canvas {
+  position: relative;
+  container-type: inline-size;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+@container (min-width: 640px) {
+  .qm-body { grid-template-columns: 360px minmax(0, 1fr); column-gap: 1.25rem; }
+  .qm-canvas { margin: 0; }
+  .qm-controls { align-self: center; }
+  .qm-readouts { grid-column: 1 / -1; }
+}
+
+/* ── 5. Controls (§7) ───────────────────────────────────────────────────────── */
+.qm-controls { display: flex; flex-direction: column; gap: 0.75rem; }
+.qm-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.qm-group-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--qm-ink-muted);
+}
+.qm-slider { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }   /* label above, slider below (§4) */
+.qm-slider-label { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.qm-range { width: 100%; margin: 0; accent-color: var(--qm-accent-1); cursor: pointer; }
+.qm-presets { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+.qm-preset { min-width: 2.5rem; justify-content: center; padding: 0.25rem 0.5rem; }
+.qm-preset[aria-pressed="true"] {
+  border-color: var(--qm-accent-1);
+  box-shadow: inset 0 0 0 1px var(--qm-accent-1);
+  background: color-mix(in srgb, var(--qm-accent-1) 8%, var(--qm-surface));
+}
+.qm-actions { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+.qm-action { border-color: var(--qm-accent-3); box-shadow: inset 0 0 0 1px var(--qm-accent-3); }
+.qm-action svg { color: var(--qm-accent-3); }
+.qm-action:hover { background: color-mix(in srgb, var(--qm-accent-3) 8%, var(--qm-surface)); }
+.qm-toggle { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+.qm-check { margin: 0; accent-color: var(--qm-accent-1); cursor: pointer; }
+.qm-disabled { opacity: 0.5; cursor: default; }
+.qm-disabled * { cursor: default; }
+
+/* ── 6. Readouts (§2, §3) ───────────────────────────────────────────────────── */
+.qm-readouts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: 0.5rem 1.25rem;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--qm-border);
+}
+.qm-readout { display: flex; align-items: center; gap: 0.5rem; min-width: 0; min-height: 1.75rem; }
+.qm-readout-math { min-width: 0; overflow: visible; padding: 0.125rem 0; font-variant-numeric: tabular-nums; }   /* never scrollbars: keep readouts short instead */
+.qm-readout-math .katex { font-size: 1.1em; white-space: nowrap; }
+.qm-swatch { flex: none; width: 0.75rem; height: 3px; border-radius: 2px; background: currentColor; }
+.qm-readout .qm-swatch { align-self: stretch; width: 3px; height: auto; }
+.qm-readout:not(.qm-has-swatch) { padding-left: calc(3px + 0.5rem); }
+/* Expected-versus-observed bars (statsBars in dom.js) */
+.qm-stats {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto minmax(6rem, 1fr) auto auto;
+  align-items: center;
+  gap: 0.375rem 0.75rem;
+  padding-left: calc(3px + 0.5rem);
+}
+.qm-stats-head { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; font-size: 0.8125rem; color: var(--qm-ink-muted); }
+.qm-stats-last { color: var(--qm-ink); }
+.qm-stats-label { color: var(--qm-ink); min-width: 1.75rem; }
+.qm-stats-num { font-variant-numeric: tabular-nums; color: var(--qm-ink); white-space: nowrap; text-align: right; }
+.qm-bar { position: relative; display: block; height: 14px; border-radius: 3px; background: var(--qm-surface-2); box-shadow: inset 0 0 0 1px var(--qm-border); overflow: hidden; }
+.qm-bar-exp { position: absolute; left: 0; top: 0; bottom: 0; background: currentColor; opacity: 0.25; transition: width 0.3s ease-in-out; }
+.qm-bar-obs { position: absolute; left: 0; top: 4px; bottom: 4px; background: currentColor; border-radius: 0 2px 2px 0; transition: width 0.3s ease-in-out; }
+.qm-stats-legend { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 0.375rem; font-size: 0.75rem; color: var(--qm-ink-muted); }
+.qm-key-exp, .qm-key-obs { display: inline-block; width: 1rem; background: currentColor; }
+.qm-key-exp { height: 10px; opacity: 0.25; }
+.qm-key-obs { height: 5px; margin-left: 0.5rem; }
+@media (prefers-reduced-motion: reduce) { .qm-bar-exp, .qm-bar-obs { transition: none; } }
+.qm-point-ring { fill: none; stroke: currentColor; stroke-width: 2; }
+.qm-band { fill: none; stroke: currentColor; stroke-width: 6; stroke-linecap: butt; opacity: 0.3; }
+.qm-note { grid-column: 1 / -1; padding-left: calc(3px + 0.5rem); font-size: 0.8125rem; color: var(--qm-ink-muted); }
+.qm-note .katex { color: var(--qm-ink); }
+.qm-math .katex { font-size: 1.1em; }
+
+/* ── 7. SVG marks (§5) ──────────────────────────────────────────────────────── */
+.qm-canvas svg { display: block; width: 100%; height: 100%; overflow: visible; cursor: grab; }
+.qm-canvas svg * { vector-effect: non-scaling-stroke; }
+.qm-canvas.qm-grabbing svg, .qm-canvas.qm-grabbing .qm-handle { cursor: grabbing; }
+.qm-fill-body { fill: var(--qm-ink); fill-opacity: 0.04; stroke: none; }
+.qm-outline   { fill: none; stroke: var(--qm-ink); stroke-width: 1.5; }
+.qm-geom      { fill: none; stroke: currentColor; stroke-width: 1.25; }
+.qm-axis      { fill: none; stroke: var(--qm-ink-muted); stroke-width: 1; }
+.qm-hidden    { stroke-dasharray: 4 3; opacity: 0.55; }
+.qm-construct { fill: none; stroke: currentColor; stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.7; }
+.qm-arc       { fill: none; stroke: currentColor; stroke-width: 1; }
+.qm-sweep     { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; }
+.qm-op-axis   { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.qm-faint     { opacity: 0.35; }
+.qm-vector    { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; }
+.qm-head      { fill: currentColor; stroke: currentColor; stroke-width: 1; stroke-linejoin: round; }
+.qm-point     { fill: currentColor; stroke: var(--qm-surface); stroke-width: 1.5; }
+.qm-point.qm-behind { fill: var(--qm-surface); stroke: currentColor; stroke-width: 1.5; }
+/* No CSS outline inside the SVG: it would be drawn in viewBox units (huge). Handles use .qm-ring. */
+.qm-canvas svg :focus, .qm-canvas svg :focus-visible { outline: none; }
+.qm-handle    { cursor: grab; }
+.qm-handle .qm-hit  { fill: transparent; stroke: none; }
+.qm-handle .qm-knob { fill: currentColor; stroke: var(--qm-surface); stroke-width: 2; }
+.qm-handle.qm-behind .qm-knob { fill: var(--qm-surface); stroke: currentColor; stroke-width: 2; }
+.qm-handle .qm-ring { fill: none; stroke: var(--qm-focus); stroke-width: 2; opacity: 0; }
+.qm-handle:hover .qm-ring, .qm-handle:focus-visible .qm-ring { opacity: 1; }
+
+/* In-figure labels: KaTeX in ink, positioned in % over the SVG (§3). */
+.qm-labels { position: absolute; inset: 0; pointer-events: none; font-size: clamp(0.75rem, 4.4cqw, 1.05rem); }
+.qm-label { position: absolute; left: 0; top: 0; white-space: nowrap; line-height: 1; color: var(--qm-ink); }
+.qm-label .katex { font-size: 1em; }
+.qm-label.qm-small { font-size: 0.85em; color: var(--qm-ink-muted); }
+
+/* ── 8. 2D plots (plot2d.js; ground rules §6) ───────────────────────────────── */
+.qm-canvas svg.qm-plot { cursor: default; }
+.qm-plot-axis { fill: none; stroke: var(--qm-ink); stroke-width: 1; }
+.qm-curve     { fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+.qm-density   { stroke-width: 1.5; stroke-dasharray: 4 3; opacity: 0.8; }
+.qm-area      { fill: currentColor; fill-opacity: 0.08; stroke: none; }
+.qm-plot .qm-handle { cursor: ew-resize; }

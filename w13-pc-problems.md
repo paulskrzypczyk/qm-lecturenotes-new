@@ -52,20 +52,20 @@ where $L > 0$ is a constant.
    ```
 ````
 
-## Solutions
-
-````{tip .simple} Solutions
-:class: dropdown
-Tuesday:
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2013%20Tues.pdf
-:width: 100%
-```
-Thursday:
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2013%20Thurs.pdf
-:width: 100%
-```
-````
-
+% ## Solutions
+%
+% ````{tip .simple} Solutions
+% :class: dropdown
+% Tuesday:
+% ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2013%20Tues.pdf
+% :width: 100%
+% ```
+% Thursday:
+% ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2025-6/Problem%20Class%20Solutions/Problem%20Class%20Week%2013%20Thurs.pdf
+% :width: 100%
+% ```
+% ````
+%
 ## Desmos
 
 ````{tip .simple} Desmos

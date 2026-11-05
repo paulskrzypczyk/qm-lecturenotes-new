@@ -66,6 +66,8 @@ Finally, this course was extensively updated last year, with the lecture notes l
 ```
 
 ## Changelog
+- 05/11/2026: Added the first interactive figure: [](#f-gaussian) now lets you change the width of the Gaussian and watch the momentum wavefunction respond, with the Heisenberg uncertainty principle saturated throughout.
+- 04/11/2026: The notes are now available as a PDF, via the Download button on every page.
 - 04/11/2026: Fixed a large number of typos, grammatical slips, broken cross-references and small errors in equations across all chapters and problem sheets (thanks Claude!).
 - 11/05/2026: Fixed typo in [](10-QM-in-3D) (thanks George Lowrie)
 - 23/04/2026: Fixed typo final line of in [](#e-u-fzy-eig) (Thanks anonymous)

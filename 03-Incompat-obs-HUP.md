@@ -28,13 +28,18 @@ We can illustrate the main idea behind the incompatibility of position and momen
 \psi(x) = \sqrt{\frac{1}{a\sqrt{2\pi}}} e^{-x^2/4a^2},
 ```
 with a parameter $a > 0$, which determines the **width** of the wavefunction, and where $\sqrt{\frac{1}{a\sqrt{2\pi}}}$ is a normalisation factor, which ensures that this is a normalised wavefunction (this is left as an [exercise](#ex-norm-gaussian)). This wavefunction is depicted below:
-```{figure}  ./Pictures/gaussian
+````{figure}
 :label: f-gaussian
-:alt: Picture of a gaussian function
-:width: 400px
+:placeholder: ./Pictures/gaussian-hup
+:alt: A Gaussian wavefunction and its momentum wavefunction
+:width: 320px
 :align: center
-A Gaussian wavefunction, as given by [](#e-gaussian-wf). The parameter $a>0$ determines the 'width' of the wavefunction. 
+```{anywidget} ./interactive/widgets/gaussian-hup.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{ "a": 1 }
 ```
+A Gaussian wavefunction, as given by [](#e-gaussian-wf) (top), and its momentum wavefunction [](#e-gaussian-p) (bottom). The parameter $a>0$ determines the 'width' of the wavefunction: $\Delta x = a$, while $\Delta p = \hbar/2a$, so narrowing one broadens the other. 
+````
 
 
 As we can see, it has the Bell-curve shape, and is centred at the origin. [Direct calculations](#ex-gaussian-mean-var) show that the expected position and standard deviation are 

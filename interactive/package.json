@@ -1,0 +1,14 @@
+{
+  "name": "qm-interactive-figures",
+  "private": true,
+  "type": "module",
+  "description": "Interactive figures for the Quantum Mechanics notes (see README.md)",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node test/gaussian.test.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "katex": "0.15.2"
+  }
+}

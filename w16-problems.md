@@ -21,10 +21,10 @@ numbering: false
 ![](#ex-mom-eig-3D)
 ![](#ex-comm-3D)
 
-## Solutions
-
-````{tip .simple} Solutions
-:class: dropdown
-```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Problem%20Sheets/Problem%20Sheet%20Week%2016%20Solutions.pdf
-:width: 100%
-```
+% ## Solutions
+%
+% ````{tip .simple} Solutions
+% :class: dropdown
+% ```{iframe} https://www.ole.bris.ac.uk/bbcswebdav/users/phyps/Quantum%20Mechanics/2024-5/Problem%20Sheets/Problem%20Sheet%20Week%2016%20Solutions.pdf
+% :width: 100%
+% ```
