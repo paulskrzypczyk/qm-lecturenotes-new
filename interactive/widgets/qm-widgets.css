@@ -228,5 +228,17 @@
 .qm-plot-axis { fill: none; stroke: var(--qm-ink); stroke-width: 1; }
 .qm-curve     { fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
 .qm-density   { stroke-width: 1.5; stroke-dasharray: 4 3; opacity: 0.8; }
-.qm-area      { fill: currentColor; fill-opacity: 0.08; stroke: none; }
+.qm-area      { fill: currentColor; fill-opacity: 0.15; stroke: none; }
+.qm-bars      { fill: currentColor; fill-opacity: 0.08; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; }   /* outcomes of a coarse-grained measurement */
+.qm-rect      { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; }   /* an approximating rectangle */
 .qm-plot .qm-handle { cursor: ew-resize; }
+/* Phase by hue (§2): segments of a complex curve or stripe carry their own `stroke`/`fill` in hsl(). */
+.qm-hue-seg   { fill: none; stroke-width: 2.5; stroke-linecap: butt; }
+.qm-hue-seg.qm-behind { opacity: 0.5; stroke-width: 1.75; }   /* the half of a helix behind its axis */
+.qm-hue-line  { stroke-width: 4; }   /* |psi(x)| drawn as a line of that height, coloured by phase */
+.qm-hue-ring  { fill: none; stroke-width: 5; }
+.qm-view      { fill: transparent; stroke: none; cursor: grab; }   /* the drag surface of a rotatable 3D view */
+.qm-view-group { cursor: grab; }
+.qm-canvas.qm-grabbing .qm-view, .qm-canvas.qm-grabbing .qm-view-group { cursor: grabbing; }
+.qm-axis3     { fill: none; stroke: var(--qm-ink); stroke-width: 1; }
+.qm-axis3-head { fill: var(--qm-ink); stroke: none; }

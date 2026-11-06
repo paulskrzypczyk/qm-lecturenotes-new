@@ -192,13 +192,18 @@ As you learnt in your previous unit on quantum physics, it is an inherently **pr
 
 For a state $\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx$, what is the probability to find the particle at some location $x_0$? This question in fact **doesn't make sense** as stated: the position is **continuous**, and therefore there is in fact zero probability to find the particle (precisely) somewhere. As with **any** continuous quantity, we can no longer talk about probabilities, but must rather talk about **probability densities**. That is, we can ask the question: *what is the probability to find the particle in a small region of 'width' $dx$?*. This will be the probability density[^pdf] $\pd(x_0)$ multiplied by $dx$, as depicted in the following figure:
 
-```{figure} ./Pictures/prob-density
+````{figure}
 :label: f-prob-density
-:alt: Picture of a quantum particle now anywhere on a line between $x=-\infty$ and $x=\infty$.
+:placeholder: ./Pictures/prob-density
+:alt: A wavefunction and its probability density, with a small region of width dx shaded under the density
 :width: 400px
 :align: center
-**Probability densities in quantum mechanics**. The probability density is given by $\pd(x) = |\psi(x)|^2$. The probability to find a particle in the small region $x_0 \leq x \leq x_0 + dx$ of width $dx$ around $x_0$ is $\pd(x_0)dx = |\psi(x_0)|^2dx$. In the above figure, this is the area of the shaded region. 
+```{anywidget} ./interactive/widgets/prob-density.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{ "x0": 3.6, "dx": 0.25 }
 ```
+**Probability densities in quantum mechanics**. A wavefunction $\psi(x)$ (top) and its probability density $\pd(x) = |\psi(x)|^2$ (bottom). The probability to find a particle in the small region $x_0 \leq x \leq x_0 + dx$ of width $dx$ around $x_0$ is $\pd(x_0)dx = |\psi(x_0)|^2dx$. In the above figure, this is the area of the shaded region. 
+````
 
 [^pdf]: Note that this is also referred to as the **probability density function (PDF)**. Here we will simply refer to it as the 'probability density', but the two terms are interchangeable. 
 

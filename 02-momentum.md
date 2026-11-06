@@ -38,13 +38,18 @@ where $h$ is **Planck's constant**. While this formula is part of '*old quantum 
 Ae^{2\pi i x / \lambda}
 ``` 
 where $A$ is the amplitude (which we take to be real out of convenience for the moment, and will come back to shortly). This is depicted in the following:
-```{figure} ./Pictures/complex-circ.svg
+````{figure}
 :name: f-complex-plane-wave
+:placeholder: ./Pictures/complex-circ
 :alt: Three ways of visualising a complex plane wave
 :width: 500px
 :align: center
-**Complex plane waves.** 3 different ways of visually representing a complex plane wave. (a) A plot of the real and imaginary parts of the function. We have $\mathrm{Re}(Ae^{2\pi i x/\lambda}) = A\cos (2\pi x/\lambda)$ and $\mathrm{Im}(Ae^{2\pi i x/\lambda}) = A\sin (2\pi x/\lambda)$. (b) A 3-D plot of this function, with the real and imaginary parts plotted along $y$ and $z$ axes respectively. In this representation, we see that a complex plane wave corresponds to a helix. (c) Polar representation of the function, where the phase is represented by colour. In this representation we have a stripy constant line. 
+```{anywidget} ./interactive/widgets/plane-wave.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{ "lambda": 1.2 }
 ```
+**Complex plane waves.** 3 different ways of visually representing a complex plane wave. (a) A plot of the real and imaginary parts of the function. We have $\mathrm{Re}(Ae^{2\pi i x/\lambda}) = A\cos (2\pi x/\lambda)$ and $\mathrm{Im}(Ae^{2\pi i x/\lambda}) = A\sin (2\pi x/\lambda)$. (b) A 3-D plot of this function, with the real and imaginary parts plotted along $y$ and $z$ axes respectively. In this representation, we see that a complex plane wave corresponds to a helix. (c) Polar representation of the function, where the phase is represented by colour. In this representation we have a stripy constant line. 
+````
 
 If we substitute the de Broglie relation [](#e-de-Broglie) into [](#e-complex-plane-wave), then we see that
 ```{math}

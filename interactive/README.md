@@ -1,6 +1,6 @@
 # Interactive figures — visual identity & ground rules
 
-**Version 1.0.3 · 5 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
+**Version 1.1.1 · 6 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
 
 The rules are those of the QIT notes' widgets (their README v1.4), carried over so that both sets of notes share one visual identity; §2 (colour roles) and §6 (2D plots instead of the Bloch sphere) are what differs.
 
@@ -55,7 +55,7 @@ These pass the dataviz palette checks in both modes (lightness band, chroma floo
 - **Interface text** (hints, button and checkbox labels) inherits the page font, at `0.875rem`, or `0.8125rem` for hints.
 - **All mathematics is typeset with KaTeX 0.15.2**, the same version the site uses, with the macros copied from `myst.yml` (`src/core/katex.js`). Never write maths as Unicode approximations.
 - **Numbers** have 2 decimal places (statistics 3), use `tabular-nums` and keep a fixed width so readouts don't jiggle. Negative numbers use a true minus sign (KaTeX does this).
-- **Units.** The notes keep $a$, $\hbar$, $M$ symbolic, so a widget that must show numbers measures lengths in a named reference length ($a_0$ for the Gaussian; $L$ for the box; $\ell$ for the oscillator) and momenta in $\hbar$ over it, and says so in its note. The reference never clashes with a symbol the chapter already uses.
+- **Units.** The notes keep $a$, $\hbar$, $M$ symbolic, so a widget that must show numbers measures lengths in a named reference length ($a_0$ for a general wavefunction, Chapters 1–3; $L$ for the box; $\ell$ for the oscillator) and momenta in $\hbar$ over it, and says so in its note. The reference never clashes with a symbol the chapter already uses.
 - **In-figure labels** are KaTeX in `--qm-ink`, at about 1.05× the text size (they scale with the canvas), and never sit on top of a line or a handle:
   - the function's name sits to the left of its vertical axis near the top; the variable sits under the right-hand end of its horizontal axis;
   - a marker on an axis is labelled under the axis; when two markers come close, their labels move outwards (`below-left` / `below-right`) rather than overlap;
@@ -104,7 +104,11 @@ Stroke widths are in screen pixels and never scale (`vector-effect: non-scaling-
 | marked points | 4.5px radius, filled, with a 1.5px `--qm-surface` ring |
 | draggable handle | 7px radius, role colour, 2px surface ring. Invisible 18px-radius hit area. On hover or keyboard focus, a 2px ring (radius 11px) in the theme's `focus-ring` colour. Never use a CSS `outline` inside the SVG: it is drawn in viewBox units and comes out hundreds of pixels wide. A handle that slides along an axis shows the `ew-resize` cursor |
 | vectors (where used) | role colour, 2.5px, filled triangular arrowhead (10px long) |
-| complex curves | phase by hue along the curve (§2), modulus as height |
+| complex curves | phase by hue along the curve (§2), modulus as height: the curve is drawn as short segments, each with its own `hsl()` stroke (`.qm-hue-seg`, 2.5px); the half of a helix behind its axis is thinner and fainter (`.qm-behind`: 1.75px, 50%) |
+| modulus coloured by phase | $|\psi(x)|$ drawn as a line of that height, coloured by the phase (`.qm-hue-seg.qm-hue-line`, 4px), with a ring legend (`.qm-hue-ring`, 5px) labelled $0, \pi/2, \pi, 3\pi/2$ |
+| outcomes of a coarse-grained measurement | histogram bars in accent-3: 1.5px outline, 8% fill (`.qm-bars`) |
+| an approximating rectangle | role colour, 1.5px outline, no fill (`.qm-rect`) |
+| 3D axes | ink, 1px, with a small filled arrowhead (`.qm-axis3`); the label of an axis seen end-on is hidden |
 
 ## 6. 2D plots
 
@@ -112,7 +116,9 @@ Stroke widths are in screen pixels and never scale (`vector-effect: non-scaling-
 - **Axis ranges are fixed** while the reader changes a parameter, so a change of width or height is seen as such; ranges are chosen so the extreme settings still fit (the vertical range covers the tallest curve the controls allow).
 - **Axes have no numbers.** Like the static figures, the axes carry only their variable and the markers that matter ($\pm a$, $\pm\hbar/2a$); the readouts carry the numbers.
 - **Markers on an axis are the handles.** The reader drags the quantity itself (the width $a$ at its marker), with a slider and presets as the exact, keyboard-accessible alternative (§7).
-- **Dragging empty canvas does nothing** (no view to rotate); the cursor is the default arrow.
+- **Dragging empty canvas does nothing** (no view to rotate); the cursor is the default arrow. The exception is a panel holding a **3D view** (`src/core/view3.js`: orthographic, yaw and pitch, fixed scale so nothing rescales when turned): dragging anywhere in that panel turns it (grab cursor), and a row of view presets (*oblique*, *side on*, *end on*) is the keyboard alternative.
+- **A probe** (a handle on the $x$ axis that marks the same point in every view of the figure) is drawn in ink, since it belongs to no one object; the points it marks take the colour of the object they sit on.
+- **Two handles on one axis** (the two edges of a region) may overlap; whichever knob is nearer the pointer is the one that moves.
 
 ## 7. Interaction
 
@@ -153,6 +159,7 @@ Caption.
 - **`:placeholder:`** is the static figure, which the PDF export uses (`plugins/pdf-export.mjs` swaps it for `Pictures/pdf/<name>.pdf`, so give it no extension). Once a widget renders, the shared card code hides the placeholder image; if the widget never renders, the static figure stays visible.
 - **Keep `:width:` and `:align:`**: they now only affect the placeholder, i.e. the PDF.
 - **The JSON body** sets the widget's options. Every widget lists its options, with defaults, in its own section below.
+- **Figure numbers in `aria-label`s** follow the site's numbering (chapter.figure).
 - A static figure that is redrawn for a widget lives in `Pictures/<name>.svg` with its PDF in `Pictures/pdf/<name>.pdf` (drawn with matplotlib in the style of the existing figures: Computer Modern maths, the notes' blue `#0d6efd` and orange `#ee7219`).
 
 ## 10. Engineering
@@ -160,8 +167,9 @@ Caption.
 ```
 interactive/
   README.md            ← this document
-  src/core/            ← shared code: card/controls (dom.js), KaTeX, SVG, 2D plots (plot2d.js),
-                          number formatting, motion; and the maths, one file per topic (gaussian.js)
+  src/core/            ← shared code: card/controls (dom.js), KaTeX, SVG, 2D plots (plot2d.js), 3D view
+                          (view3.js), number formatting, motion; and the maths, one file per topic
+                          (gaussian.js, density.js, planewave.js)
   src/<widget>.js      ← one file per widget
   widgets/             ← built files used by the site (committed): <widget>.mjs + qm-widgets.css
   preview/             ← one classic script with every widget + KaTeX, and test.html (not committed)
@@ -210,9 +218,46 @@ The Gaussian wavefunction $\psi(x)$ of equation (3.1) and its momentum wavefunct
   | `a_min`, `a_max` | 0.5, 2 | range of the slider and markers |
   | `densities` | false | show the probability densities when the widget loads |
 
+### `prob-density` — Figure 1.5 (Chapter 1)
+
+A wavefunction $\psi(x)$ (real, with one negative bump) above its probability density $\pd(x) = |\psi(x)|^2$, with the small region $x_0 \le x \le x_0 + dx$ shaded under the density, as in the static figure. The reader moves and widens the region and compares the exact probability (the shaded area) with the approximation $\pd(x_0)\,dx$ (the rectangle of height $\pd(x_0)$); a toggle shows all the outcomes of a position measurement with resolution $dx$.
+
+- **Objects:** $\psi(x)$ and $\pd(x)$ (accent-1); the region (accent-1 area, dashed edges); the rectangle $\pd(x_0)\,dx$ (accent-2 outline); the outcomes of the coarse-grained measurement (accent-3 bars: $\pd$ averaged over each bin of width $dx$, aligned so that one bin is the region, so a bar's area is the probability of that outcome).
+- **Interactions:** drag either edge of the region along the $x$ axis (arrow keys: $0.1\,a_0$, Shift for $0.02$); sliders $x_0$ and $dx$; presets $dx = 0.05\,a_0, 0.25\,a_0, a_0$ (animated); the toggle *all the outcomes…*.
+- **Readouts:** $\pd(x_0)$; $x_0$; $\prob(x_0 \le x \le x_0 + dx)$ (exact); $dx$; $\pd(x_0)\,dx$; with the outcomes shown, their number and the sum of their probabilities (1); a note that changes with the toggle and names the units ($a_0$, $1/a_0$).
+- **Static figure:** `Pictures/prob-density.svg` redrawn as the two panels (the original showed only $\pd(x)$); the caption mentions both.
+- **Options**
+
+  | Option | Default | Meaning |
+  |---|---|---|
+  | `x0` | 3.6 | left edge of the region, in units of $a_0$ (range $-0.5$ to $6$) |
+  | `dx` | 0.25 | width of the region ($0.05$ to $1.5$) |
+  | `outcomes` | false | show the outcomes of the coarse-grained measurement when the widget loads |
+
+### `plane-wave` — Figure 2.1 (Chapter 2)
+
+The three pictures of the complex plane wave $\psi(x) = Ae^{2\pi i x/\lambda}$ from the static figure, now linked: (a) $\mathrm{Re}\,\psi$ and $\mathrm{Im}\,\psi$ against $x$; (b) the helix traced by $(x, \mathrm{Re}\,\psi, \mathrm{Im}\,\psi)$, which can be turned; (c) the modulus $|\psi(x)| = A$ as a line of that height, coloured by the phase, with the colour wheel. A probe at a position $x$ marks the same value of $\psi(x)$ in all three (two points on the curves, a point on the helix with its radius, a point on the modulus line, and the phase on the wheel).
+
+- **Objects:** $\mathrm{Re}\,\psi$ (accent-1) and $\mathrm{Im}\,\psi$ (accent-2), told apart by the readout swatches; the helix and the modulus line in phase hue (§2); the probe in ink.
+- **Interactions:** drag the probe along the $x$ axis of (a) (arrow keys $0.1\,a_0$, Shift $0.02$); slider $\lambda$ ($0.5$ to $3\,a_0$) with presets $0.6, 1.2, 2.4\,a_0$; slider $A$ ($0.25$ to $1$); the toggle *negative momentum* ($\lambda \to -\lambda$: the helix winds the other way and the colours run backwards); drag the helix to turn it, or the view presets *oblique*, *side on*, *end on* (end on, the helix is the circle of the colour wheel).
+- **Readouts:** $x$; $\phi = 2\pi x/\lambda$ (in units of $\pi$); $\psi(x) = Ae^{i\phi}$ as a complex number; $\lambda$ and $A$; $\mathrm{Re}\,\psi(x)$; $p = h/\lambda$ (de Broglie, in $\hbar/a_0$); $\mathrm{Im}\,\psi(x)$; a note on the phase advancing by $2\pi$ per wavelength and the units.
+- **Static figure:** the existing `Pictures/complex-circ.svg`, unchanged.
+- **Options**
+
+  | Option | Default | Meaning |
+  |---|---|---|
+  | `lambda` | 1.2 | wavelength, in units of $a_0$ |
+  | `A` | 1 | amplitude |
+  | `negative` | false | start with $\lambda < 0$ |
+  | `x` | 1.5 | position of the probe |
+  | `view` | `"oblique"` | initial view of the helix: `"oblique"`, `"side"` or `"end"` |
+
 ---
 
 ## Changelog
+
+- **1.1.1 (6 Nov 2026)** — `plane-wave`: panel (c) is the modulus $|\psi(x)| = A$ drawn as a line of that height coloured by the phase, as in the static figure (it had been a stripe of fixed height, so it did not respond to $A$); its axis carries $A$ and $-A$ like panel (a). §5 updated accordingly.
+- **1.1 (5 Nov 2026)** — two more widgets, `prob-density` (Figure 1.5) and `plane-wave` (Figure 2.1), and the rules they needed: §3 the reference length $a_0$ for Chapters 1–3; §5 marks for phase-by-hue curves and stripes, histogram bars, an approximating rectangle and 3D axes; §6 a turnable 3D view (`src/core/view3.js`) with view presets, the ink probe, and overlapping handles; §9 figure numbers in `aria-label`s. `plot2d.js` gains `bars()`, `rect()`, `point()` and `dy()`. `Pictures/prob-density.svg` redrawn with $\psi(x)$ above $\pd(x)$.
 
 - **1.0.3 (5 Nov 2026)** — shaded areas are 15% of the role colour (§2, §5; 8% was too faint beside a dashed curve). `gaussian-hup`: with the densities shown, the bands $\pm\Delta x$ and $\pm\Delta p$ (one standard deviation either side of the mean, i.e. between the dashed markers) are shaded under the densities, and the probability inside each (0.68) is read out.
 - **1.0.2 (5 Nov 2026)** — readouts never scroll (§4): the sideways scrollbars showed as permanent bars on Windows. `gaussian-hup`: $a$ moved out of the $\psi(x)$ line into its own readout; $\Delta p$ and $\hbar/2$ written inline.

@@ -25,6 +25,7 @@ export class Panel {
   sy(y) { const [y0, y1] = this.yRange; return this.box.y + this.box.h - ((y - y0) / (y1 - y0)) * this.box.h; }
   /** viewBox → data (x only; used by handles on the x axis) */
   dx(sx) { const [x0, x1] = this.xRange; return x0 + ((sx - this.box.x) / this.box.w) * (x1 - x0); }
+  dy(sy) { const [y0, y1] = this.yRange; return y0 + ((this.box.y + this.box.h - sy) / this.box.h) * (y1 - y0); }
 
   /** Horizontal axis through y = 0 and vertical axis through x = 0 (where they fall in range). */
   axes() {
@@ -67,6 +68,40 @@ export class Panel {
       set(el, { d: pathD(pts, true) });
     };
     return { el, update };
+  }
+
+  /** Bars (a histogram) as one path: update([{a, b, h}]) draws a bar from x = a to b of height h. */
+  bars(role) {
+    const el = s('path', { class: `qm-bars qm-${role}` }, this.g);
+    const update = (items) => {
+      const y0 = this.sy(0);
+      let d = '';
+      for (const { a, b, h: hh } of items) {
+        const xa = this.sx(a).toFixed(3), xb = this.sx(b).toFixed(3), yt = this.sy(hh).toFixed(3);
+        d += `M${xa} ${y0.toFixed(3)}L${xa} ${yt}L${xb} ${yt}L${xb} ${y0.toFixed(3)}Z`;
+      }
+      set(el, { d });
+    };
+    return { el, update };
+  }
+
+  /** A hollow rectangle on the axis: update(xa, xb, top). */
+  rect(role) {
+    const el = s('path', { class: `qm-rect qm-${role}` }, this.g);
+    const update = (xa, xb, top) => set(el, { d: pathD([[this.sx(xa), this.sy(0)], [this.sx(xa), this.sy(top)], [this.sx(xb), this.sy(top)], [this.sx(xb), this.sy(0)]], true) });
+    return { el, update };
+  }
+
+  /** A marked point (§5: 4.5px radius, filled, with a surface ring). update(x, y); rescale() on resize. */
+  point(role) {
+    const el = s('circle', { class: `qm-point qm-${role}`, r: 1.5 }, this.g);
+    const scale = () => {
+      const r = this.svg.getBoundingClientRect();
+      set(el, { r: 4.5 * (r.width ? 100 / r.width : 0.3) });
+    };
+    const update = (x, y) => { set(el, { cx: this.sx(x), cy: this.sy(y) }); };
+    scale();
+    return { el, update, rescale: scale };
   }
 
   /** A dashed vertical marker from the axis up to y = top (construction line, §5). */
