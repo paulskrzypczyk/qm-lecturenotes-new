@@ -41,10 +41,10 @@ export class Panel {
   }
 
   /** A curve y = f(x) sampled n times across the panel. Returns {el, update(f)}. */
-  curve(role, { n = 200, cls = 'qm-curve' } = {}) {
+  curve(role, { n = 200, cls = 'qm-curve', xRange } = {}) {
     const el = s('path', { class: `${cls} qm-${role}` }, this.g);
-    const update = (f) => {
-      const [x0, x1] = this.xRange;
+    const update = (f, range) => {
+      const [x0, x1] = range || xRange || this.xRange;
       const pts = [];
       for (let i = 0; i <= n; i++) {
         const x = x0 + ((x1 - x0) * i) / n;

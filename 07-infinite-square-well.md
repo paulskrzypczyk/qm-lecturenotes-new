@@ -194,12 +194,17 @@ Note that here we have **changed notation** from $u_{E_n}(x)$ to $u_{n}(x)$. The
 
 We depict below in [](#f-isw-eigenfunctions) the first 6 energy eigenfunctions and in [](#f-isw-pd) the associated {term}`probability density` functions. 
 
-````{figure} ./Pictures/eigenstates-inf-sq-well.svg
+````{figure}
 :name: f-isw-eigenfunctions
+:placeholder: ./Pictures/eigenstates-inf-sq-well
+:alt: The energy eigenfunctions of the infinite square well
 :width: 500px
 :align: center
-
-**Eigenfunctions of the infinite square well.** The first six energy eigenfunctions $u_n(x)$ of the infinite square well. 
+```{anywidget} ./interactive/widgets/isw.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{ "n": 1 }
+```
+**Eigenfunctions of the infinite square well.** The energy eigenfunctions $u_n(x)$ of the infinite square well for $n = 1, \dots, 6$, their probability densities, and the energy ladder $E_n = n^2 E_1$. Superposing two levels shows a state that is *not* stationary: its probability density sloshes from side to side, as discussed [below](#s-isw-evolution).
 ````
 
 ````{figure} ./Pictures/probs-inf-sq-well.svg
@@ -214,6 +219,7 @@ There is clearly some structure here, and also some surprises. The first surpris
 
 Perhaps the second most surprising feature is that when a particle has a definite energy, there are certain regions within the well where **it is very unlikely to find the particle**. For example, in the so-called **first excited state** $\ket{E_2}$ (with associated energy eigenfunction $u_2(x)$) it is very unlikely to find the particle close to the middle of the well! 
 
+(s-isw-evolution)=
 ## Evolution of a particle inside an infinite square well
 
 

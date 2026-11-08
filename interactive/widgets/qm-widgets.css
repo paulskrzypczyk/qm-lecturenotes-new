@@ -242,3 +242,6 @@
 .qm-canvas.qm-grabbing .qm-view, .qm-canvas.qm-grabbing .qm-view-group { cursor: grabbing; }
 .qm-axis3     { fill: none; stroke: var(--qm-ink); stroke-width: 1; }
 .qm-axis3-head { fill: var(--qm-ink); stroke: none; }
+.qm-level      { cursor: pointer; }   /* a clickable energy level on a ladder */
+.qm-level:hover .qm-op-axis { stroke-width: 3.5; }
+.qm-level:focus-visible .qm-op-axis { stroke: var(--qm-focus); }
