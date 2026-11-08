@@ -1,6 +1,6 @@
 # Interactive figures — visual identity & ground rules
 
-**Version 1.2 · 6 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
+**Version 1.3 · 8 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
 
 The rules are those of the QIT notes' widgets (their README v1.4), carried over so that both sets of notes share one visual identity; §2 (colour roles) and §6 (2D plots instead of the Bloch sphere) are what differs.
 
@@ -109,11 +109,15 @@ Stroke widths are in screen pixels and never scale (`vector-effect: non-scaling-
 | outcomes of a coarse-grained measurement | histogram bars in accent-3: 1.5px outline, 8% fill (`.qm-bars`) |
 | an approximating rectangle | role colour, 1.5px outline, no fill (`.qm-rect`) |
 | 3D axes | ink, 1px, with a small filled arrowhead (`.qm-axis3`); the label of an axis seen end-on is hidden |
+| energy levels | accent-3 lines (dashed `.qm-construct` between the turning points of a potential, solid `.qm-op-axis` on a bare ladder); the chosen level is accent-1 and thicker; each level is a button (`.qm-level`: pointer cursor, thicker on hover, focus colour on the keyboard focus) |
+| potential and walls | accent-3 2px lines; the region where the potential is infinite or classically forbidden is an accent-3 area at 15% |
+| heat-map | a `<canvas>` drawn into an SVG `<image>`: a sequential ramp from `--qm-surface` to accent-1 (gamma 0.8), repainted when the theme changes; the panel has an ink outline |
 
 ## 6. 2D plots
 
 - **Canvas.** One SVG with a `0 0 100 100` viewBox (`src/core/plot2d.js`), holding one or more **panels**; each panel has a box in viewBox units and its own data ranges. Two 2:1 panels stacked (each 86 × 36) is the standard layout for "$x$ above, $p$ below" or "wavefunction above, density below".
 - **Axis ranges are fixed** while the reader changes a parameter, so a change of width or height is seen as such; ranges are chosen so the extreme settings still fit (the vertical range covers the tallest curve the controls allow).
+- **Energy diagrams.** A potential and its levels share one panel: the eigenfunction (or density) is drawn on its own level as a baseline, scaled so that it stays clear of its neighbours; levels are labelled $E_n$ at their right-hand end and can be clicked (or focused and pressed) to select them, the same choice as the level presets.
 - **Axes have no numbers.** Like the static figures, the axes carry only their variable and the markers that matter ($\pm a$, $\pm\hbar/2a$); the readouts carry the numbers.
 - **Markers on an axis are the handles.** The reader drags the quantity itself (the width $a$ at its marker), with a slider and presets as the exact, keyboard-accessible alternative (§7).
 - **Dragging empty canvas does nothing** (no view to rotate); the cursor is the default arrow. The exception is a panel holding a **3D view** (`src/core/view3.js`: orthographic, yaw and pitch, fixed scale so nothing rescales when turned): dragging anywhere in that panel turns it (grab cursor), and a row of view presets (*oblique*, *side on*, *end on*) is the keyboard alternative.
@@ -270,9 +274,47 @@ The free Gaussian wavepacket $\psi(x,t)$ of equation (6.x), replacing the animat
   | `M` | 1 | mass, in $M_0$ |
   | `ghost` | true | show the initial density |
 
+### `isw` — Figure 7.4 (Chapter 7)
+
+The energy eigenfunctions of the infinite square well, one at a time: $u_n(x)$ inside the well (walls and the forbidden outside in accent-3) above its density, with the energy ladder $E_n = n^2E_1$ at the right. A second mode superposes two levels, $(u_n e^{-iE_nt/\hbar} + u_m e^{-iE_mt/\hbar})/\sqrt 2$, showing $|\psi(x,t)|$ by phase with the colour wheel, the sloshing density, and $\av{x}(t)$.
+
+- **Interactions:** presets $n = 1..6$, or click a level on the ladder; toggle *superpose with a second level*, presets $m$, Play/Pause, slider $t \in [0, 2\pi]\,\hbar/E_1$.
+- **Readouts:** $u_n(x)$; $E_n$; the number of nodes; $E_1 = \pi^2\hbar^2/2ML^2$; $\av{x}$ (or $\av{x}(t)$); with a superposition: $t$, the period $T = 2\pi\hbar/(E_m - E_n)$, $E_m$ and $E_m - E_n$.
+- **Options:** `n` (1), `m` (2), `superpose` (false), `t` (0).
+- Maths in `src/core/isw.js` (tested: normalisation, orthogonality, the TISE, $\av{x}(t)$ against quadrature, the period).
+
+### `ho` — Figure 8.2 (Chapter 8)
+
+The harmonic oscillator: $V(x) = \tfrac12 M\omega^2x^2$ with the levels $E_n = \hbar\omega(n + \tfrac12)$ drawn between their turning points, and the chosen $u_n(x)$ (or $|u_n|^2$) drawn on its level. The classically forbidden region $|x| > x_t$ is shaded and the probability of finding the particle there is read out: tunnelling.
+
+- **Interactions:** presets $n = 0..5$, or click a level; toggle *probability density*.
+- **Readouts:** $E_n$; $x_t = \sqrt{2n+1}\,\ell$; $u_n(x) = N_n h_n(x/\ell)e^{-x^2/2\ell^2}$; $\prob(|x| > x_t)$ (3 d.p.); nodes; $V(x)$ in units of $\hbar\omega$ and $\ell$.
+- **Options:** `n` (0), `density` (false).
+- Maths in `src/core/ho.js` (Hermite polynomials by recurrence; tested against the table in the notes, normalisation, orthogonality, the TISE, $\mathrm{erfc}(1)$ for the ground state).
+
+### `step` — Figure 9.3 (Chapter 9)
+
+Scattering off a potential step: $|u_E^{\rR}(x)|$ coloured by its phase, with the step and the energy $E$ drawn across it (on a scale where $V_0$ is at height 1), above the curves $R(E/V_0)$ and $T(E/V_0)$ with the present energy marked by a handle. Below the step the wave is a standing wave with an evanescent tail and $R = 1$.
+
+- **Interactions:** slider $E \in [0.05, 3]\,V_0$; presets $V_0/2$, $1.2V_0$, $2V_0$; drag the marker on the $E/V_0$ axis.
+- **Readouts:** $E/V_0$; $R = |B|^2$; $k$; $T = 1 - R$; $k'$ or $\lambda$; $B$ and $C$ (or $|B|$, $|C|$ below the step). Lengths in $\ell_0 = \hbar/\sqrt{2MV_0}$.
+- **Options:** `e` (1.6), the energy in units of $V_0$.
+- Maths in `src/core/step.js` (tested: continuity of $u$ and $u'$ at the step, the TISE in both regions, $R + T = 1$, the formulas of the notes).
+
+### `box3d` — Figure 11.1 (Chapter 11)
+
+The marginal density $\pd(x,y,t)$ of the superposition $(u_{(1,1,1)} + u_{(2,2,1)})/\sqrt2$ of the text as a heat-map over the $x$–$y$ face of the box, with the one-dimensional marginals $\pd(x,t)$ and $\pd(y,t)$ beside it. Play shows the density sloshing along the diagonal while the marginals never change. A second mode shows a single eigenstate $u_{n_x}(x)u_{n_y}(y)$.
+
+- **Interactions:** Play/Pause and slider $t \in [0, 2.1]\,\hbar/\Ebox$ (two periods); toggle *a single eigenstate* with presets $n_x, n_y = 1..4$.
+- **Readouts:** the state; $t$; the energies; the period $2\pi\hbar/6\Ebox$.
+- **Options:** `t` (0), `eigenstate` (false), `nx` (2), `ny` (1).
+- Placeholder: the original GIF (filmstrip in the PDF).
+
 ---
 
 ## Changelog
+
+- **1.3 (8 Nov 2026)** — four more widgets: `isw` (7.4), `ho` (8.2), `step` (9.3), `box3d` (11.1). Rules: §5 energy levels, potentials and heat-maps; §6 energy diagrams. Shared code: `src/core/hue.js` (phase-coloured curves and the wheel legend), `Panel.curve()` takes an `xRange`, maths modules `isw.js`, `ho.js`, `step.js`.
 
 - **1.2 (6 Nov 2026)** — `wavepacket` (Figure 6.1) and the rules it needed: §3 the reference mass $M_0$ and time unit $\tau$; §7 time evolution with a Play/Pause action (`action()` in `dom.js`) and a scrubbing time slider.
 

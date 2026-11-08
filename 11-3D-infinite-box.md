@@ -305,13 +305,18 @@ and are thus **also independent of time**.
 ```
 In the following animation, you can see what this marginal probability density looks like:
 
-```{figure} ./Pictures/3D-box-p-x-y.gif
+````{figure}
 :name: 3D-example
+:placeholder: ./Pictures/3D-box-p-x-y.gif
+:alt: The probability density in the x-y plane sloshing along the diagonal of the box
 :width: 300px
 :align: center
-
-**Probability density in the $x$ and $y$ direction.**  An animation of the probability density $\pd(x,y,t)$ as given in [](#e-3D-example-pd-x-y). The $z$ axis in this plot is $\pd(x,y,t)$ (and **not** the box!). That is, we are ignoring motion along the $z$ direction, just studying the motion of the particle in the $x$ and $y$ directions only. We see that the particle oscillates, between two distributions, each of which has two large peaks. If we look along only **one** direction, we can see how the individual probability densities $\pd(x,t)$ and $\pd(y,t)$ are time independent. 
+```{anywidget} ./interactive/widgets/box3d.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{ "t": 0 }
 ```
+**Probability density in the $x$ and $y$ direction.**  The probability density $\pd(x,y,t)$ as given in [](#e-3D-example-pd-x-y), shown as a heat-map over the $x$–$y$ face of the box, with its marginals $\pd(x,t)$ and $\pd(y,t)$ beside it. The $z$ axis in this plot is $\pd(x,y,t)$ (and **not** the box!). That is, we are ignoring motion along the $z$ direction, just studying the motion of the particle in the $x$ and $y$ directions only. We see that the particle oscillates, between two distributions, each of which has two large peaks. If we look along only **one** direction, we can see how the individual probability densities $\pd(x,t)$ and $\pd(y,t)$ are time independent. 
+````
 
 As you can see, the particle **oscillates** back and forth, in a **correlated fashion**. In an [exercise](#ex-3D-box-cov), you will study this correlation using the so-called **covariance**, a measure for how **correlated** the two coordinates of the particle are, on average at any given time. You will see that the coordinates oscillate between being **correlated** (both being large and positive / negative at the same time) to being **anti-correlated** (having opposite signs at a given time). 
 
