@@ -28,7 +28,7 @@ In this chapter, after reintroducing the **equation of motion** of QM, we will s
 
 In general, if we prepare a quantum particle in the state $\ket{\psi_\init}$ at time $t = 0$, we are interested in determining its state at an arbitrary later time $t$, which we will denote by $\ket{\psi(t)}$. 
 
-The **equation of motion** in quantum physics is called the Schrödinger Equation (SE), and is given by
+The **equation of motion** in quantum physics is called the [Schrödinger Equation](wiki:Schrodinger_equation) (SE), and is given by
 ````{card}
 ```{math}
 :label: e-SE
@@ -164,7 +164,7 @@ which is **independent of time**. Therefore, no matter at what time we choose to
 
 We reach a similar conclusion about the momentum, which we leave as an [exercise](#ex-stationary-p). Namely, we find that the probability density for the particle to have momentum $p$ at time $t$ is also time-independent. 
 
-In fact, **none of the physical properties of the particle change**! For this reason, we call energy eigenstates **stationary states**. The simple evolution of acquiring a phase doesn't change any property of the state. 
+In fact, **none of the physical properties of the particle change**! For this reason, we call energy eigenstates **[stationary states](wiki:Stationary_state)**. The simple evolution of acquiring a phase doesn't change any property of the state. 
 
 This follows from a more fundamental property of quantum mechanics:
 

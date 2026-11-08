@@ -72,7 +72,7 @@ We often refer to these widths as **uncertainties**, since they tell us how unce
 What is remarkable is that what we observed above **isn't just a special property of Gaussian wavefunctions**, but is a general fact about quantum mechanics. In fact, 
 > It is impossible in quantum mechanics for a particle to simultaneously have a small uncertainty $\Delta x$ in position and a small uncertainty $\Delta p$ in momentum.
 
-The famous **Heisenberg Uncertainty Principle** makes this statement **quantitative**: it says that the **product** of the uncertainties can never be smaller than a fundamental constant:
+The famous **[Heisenberg Uncertainty Principle](wiki:Uncertainty_principle)** makes this statement **quantitative**: it says that the **product** of the uncertainties can never be smaller than a fundamental constant:
 ````{card}
 ```{math}
 :label: e-HUP
@@ -109,7 +109,7 @@ We will explain what this means in the next section.
 
 Recall that operators are things which 'act' on a quantum state. It is possible to act with **multiple** operators in a **sequence**. We can therefore ask a natural question: whether the **order** matters or not. That is, if we act with one operator and then a second, is this the same as first acting with the second operator, followed by the first? The answer in general is **no**. This is precisely what is captured by **commutation**: two operators commute if the two orders lead to the **same action**. On the other hand, two operators for which the two orders lead to different overall actions are said to **not commute**. 
 
-In order to capture this mathematically, we introduce the so-called **commutator** of two operators. We denote the commutator of (two arbitrary operators) $\hat{A}$ and $\hat{B}$ by $[\hat{A}, \hat{B}]$, and it is defined by
+In order to capture this mathematically, we introduce the so-called **[commutator](wiki:Commutator)** of two operators. We denote the commutator of (two arbitrary operators) $\hat{A}$ and $\hat{B}$ by $[\hat{A}, \hat{B}]$, and it is defined by
 ````{card}
 ```{math}
 :label: e-commutator

@@ -18,7 +18,7 @@ numbering:
 ````
 `````
 
-We now turn our attention to arguably the most important system in all of quantum mechanics — the quantum harmonic oscillator. Here we will study the quantum mechanics of a particle subject to a force of the form $F(x) = - kx$. That is, a restorative force proportional to the displacement from the origin. We know that in classical mechanics systems with such forces lead to simple harmonic motion. Our goal now is to understand the quantum mechanics of such systems.  
+We now turn our attention to arguably the most important system in all of quantum mechanics — the [quantum harmonic oscillator](wiki:Quantum_harmonic_oscillator). Here we will study the quantum mechanics of a particle subject to a force of the form $F(x) = - kx$. That is, a restorative force proportional to the displacement from the origin. We know that in classical mechanics systems with such forces lead to simple harmonic motion. Our goal now is to understand the quantum mechanics of such systems.  
 
 Why is this one of the most important systems to study? The first reason is that it provides an approximation to the behaviour of **almost all** potential wells, as we outline briefly as an aside. Second, you will see later in your degree that the quantum harmonic oscillator reappears in a huge range of situations, from describing light in quantum field theory, to describing phonons in condensed matter physics and far beyond. 
 
@@ -308,7 +308,7 @@ Repeating this procedure, what we find in general is that all of the energy eige
 \vph u_n(x) = N_n h_n(x/\ell) e^{-x^2/2\ell^2},
 ```
 ````
-where $N_n$ is a **normalisation factor**, and $h_n(y)$ are functions known as **Hermite polynomials**. These are polynomials of degree $n$ (and this is finally why we start counting at $n = 0$ and not $n = 1$), which alternate between being **even** and **odd** (with $n$). The first few Hermite polynomials (as well as the associated normalised energy eigenfunction) are given in the following table: 
+where $N_n$ is a **normalisation factor**, and $h_n(y)$ are functions known as **[Hermite polynomials](wiki:Hermite_polynomials)**. These are polynomials of degree $n$ (and this is finally why we start counting at $n = 0$ and not $n = 1$), which alternate between being **even** and **odd** (with $n$). The first few Hermite polynomials (as well as the associated normalised energy eigenfunction) are given in the following table: 
 
 ````{list-table} **Hermite polynomials and normalised energy eigenfunctions of the harmonic oscillator**. We give here the first 4 Hermite polynomials, and the corresponding normalised wavefunctions of the energy eigenstates of the quantum harmonic oscillator.
 :header-rows: 1
@@ -351,7 +351,7 @@ It is insightful to compare to corresponding plots for the eigenfunctions and pr
 
 ## Tunnelling and barrier penetration
 
-There is one new and very important aspect of quantum mechanics that arises for the harmonic oscillator, which isn't present in the infinite square well potential, known as **tunnelling** or alternatively **barrier penetration**. 
+There is one new and very important aspect of quantum mechanics that arises for the harmonic oscillator, which isn't present in the infinite square well potential, known as **[tunnelling](wiki:Quantum_tunnelling)** or alternatively **barrier penetration**. 
 
 Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from the origin, its potential energy increases quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#wf-ho) and [](#pd-ho).
 

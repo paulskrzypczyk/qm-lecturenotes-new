@@ -164,6 +164,10 @@ function transformNode(node, dir, stats) {
         }
         return [raw(`\\hyperref[${label}]{`), ...node.children, raw('}')];
       }
+      if (/^wiki:|wikipedia\.org\//.test(url)) {
+        // {wiki} hover links are a web nicety: plain text in the PDF
+        return node.children.length ? node.children : text(node.title || url);
+      }
       if (!url.startsWith('#') && !/^(https?:|mailto:)/.test(url)) {
         // internal page link
         const name = chapterNameFromUrl(url);

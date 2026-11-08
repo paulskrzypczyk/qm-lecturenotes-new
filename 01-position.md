@@ -121,7 +121,7 @@ We need to check that this is what we arrive at starting from [](#e-general-quan
 &= \left(\int_{-\infty}^{\infty} \psi^*(x')\bra{x'}dx'\right)\left(\int_{-\infty}^{\infty} \psi(x)\ket{x}dx\right),\\
 &= \int_{-\infty}^{\infty} \psi^*(x')\left[\int_{-\infty}^{\infty} \psi(x) \inner{x'}{x} dx\right]dx'.
 ```
-To simplify this expression, we need to recall the definition of the Dirac delta function, which we give below for convenience (along with its key properties, for later reference). 
+To simplify this expression, we need to recall the definition of the [Dirac delta function](wiki:Dirac_delta_function), which we give below for convenience (along with its key properties, for later reference). 
 
 ````{topic} Dirac Delta Function
 :label: dirac-delta-function

@@ -24,12 +24,12 @@ We will introduce the **momentum wavefunction** $\tilde{\psi}(p)$ (in analogy to
 
 ## The de Broglie relation and states of definite momentum
 
-Our starting point for understanding the momentum of a quantum particle will in fact be the famous **de Broglie** relationship, which states that if a particle has a momentum $p$, then it has a wavelength of $\lambda$ equal to
+Our starting point for understanding the momentum of a quantum particle will in fact be the famous **[de Broglie](wiki:Louis_de_Broglie)** relationship, which states that if a particle has a momentum $p$, then it has a wavelength of $\lambda$ equal to
 ```{math}
 :label: e-de-Broglie
 \lambda = \frac{h}{p},
 ```
-where $h$ is **Planck's constant**. While this formula is part of '*old quantum theory*' it turns out that the basic insight is ultimately correct. More concretely, what is correct in quantum mechanics is 
+where $h$ is **[Planck's constant](wiki:Planck_constant)**. While this formula is part of '*old quantum theory*' it turns out that the basic insight is ultimately correct. More concretely, what is correct in quantum mechanics is 
 >  A quantum particle with definite momentum $p$ has a wavefunction with a definite wavelength $\lambda = h/p$. 
 
 *What is a wavefunction with a definite wavelength $\lambda$?* This could potentially mean a couple of things, for example $\cos(2\pi x/\lambda)$ or $\sin(2\pi x/\lambda)$? These are both examples of plane waves of wavelength $\lambda$. Neither of these happens to be the correct answer. What we actually mean is a **complex plane wave** 
@@ -207,7 +207,7 @@ This gives the spatial wavefunction in terms of the momentum wavefunction. As an
 ````
 which gives the momentum wavefunction in terms of the spatial wavefunction. It is important to note the symmetry between these two expressions. One key **distinction** is that in the former, the exponential comes with a plus-sign, while in the latter it comes with a minus-sign. Getting this sign wrong is a very easy and common mistake!
 
-You have encountered the above type of equations before — this is nothing but the **Fourier transform** and its inverse! That is, the spatial wavefunction is the Fourier transform of the momentum wavefunction, and conversely the momentum wavefunction is the inverse Fourier transform of the spatial wavefunction! The reason why this might look unfamiliar is that instead of using the usual variable $k$, we are using the physical variable — the momentum — instead. What is $k$ usually? It is the **wavenumber** of a wave, which we can recall is related to the wavelength via $k = 2\pi/\lambda$. Substituting this into the de Broglie relation [](#e-de-Broglie), we see that $2\pi / k = h / p$, which after re-arranging gives $p = \hbar k$! A simple change of variable then takes us back to the 'standard' Fourier transform.
+You have encountered the above type of equations before — this is nothing but the **[Fourier transform](wiki:Fourier_transform)** and its inverse! That is, the spatial wavefunction is the Fourier transform of the momentum wavefunction, and conversely the momentum wavefunction is the inverse Fourier transform of the spatial wavefunction! The reason why this might look unfamiliar is that instead of using the usual variable $k$, we are using the physical variable — the momentum — instead. What is $k$ usually? It is the **wavenumber** of a wave, which we can recall is related to the wavelength via $k = 2\pi/\lambda$. Substituting this into the de Broglie relation [](#e-de-Broglie), we see that $2\pi / k = h / p$, which after re-arranging gives $p = \hbar k$! A simple change of variable then takes us back to the 'standard' Fourier transform.
 
 In hindsight, it is clear that this **had** to be the relation between the spatial and momentum wavefunctions. Why? Our starting point of this Chapter was the fact that in quantum mechanics, states of definite momentum correspond to complex plane waves. A Fourier transform is precisely the way of transforming a function $f(x)$, represented in the normal fashion — as a value at each point $x$ — into a superposition of plane waves, where $\tilde{f}(k)$ is the amplitude to have wavenumber $k$ (and hence wavelength $\lambda = 2\pi/k$). The only new ingredient for us is that in quantum mechanics a wavenumber of $k$ corresponds to a momentum of $\hbar k$, and hence when we Fourier transform the wavefunction of a particle, we directly get its momentum wavefunction $\tilde{\psi}(p)$ — the 'probability amplitude' for it to have momentum $p$. 
 

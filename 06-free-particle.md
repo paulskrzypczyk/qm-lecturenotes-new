@@ -20,7 +20,7 @@ numbering:
 
 In this chapter we will investigate the simplest possible scenario one can consider in the context of mechanics — a **free particle** — one with no forces acting upon it whatsoever. We will see that, given everything we have learnt up until this point, we can **directly** solve for the evolution of a free particle, since we can immediately find the energy eigenstates (the quantum states of a particle with a definite energy) in this simple setting. 
 
-We will see that quantum evolution is more intricate than classical evolution, ultimately due to the HUP. In particular, in a classical setting, if a particle has an initial position $x_0$ and an initial momentum $p_0$, then from the equation of motion — Newton's second law — the position of the particle at time $t$ will be
+We will see that quantum evolution is more intricate than classical evolution, ultimately due to the HUP. In particular, in a classical setting, if a particle has an initial position $x_0$ and an initial momentum $p_0$, then from the equation of motion — [Newton's second law](wiki:Newton's_laws_of_motion) — the position of the particle at time $t$ will be
 ```{math}
 x(t) = x_0 + \frac{p_0}{M}t,
 ```

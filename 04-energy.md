@@ -24,7 +24,7 @@ We will reintroduce the **Hamiltonian operator** (the total-energy operator), in
 
 ## The Hamiltonian
 
-What different types of energy can a particle have? In the context of the mechanics of a single particle, there are two primary contributions to the energy: the **kinetic energy** and the **potential energy**. The total energy of a particle is just the sum of these two. We call the total energy the **Hamiltonian** (after Hamilton), which will be
+What different types of energy can a particle have? In the context of the mechanics of a single particle, there are two primary contributions to the energy: the **kinetic energy** and the **potential energy**. The total energy of a particle is just the sum of these two. We call the total energy the **[Hamiltonian](wiki:Hamiltonian_(quantum_mechanics))** (after [Hamilton](wiki:William_Rowan_Hamilton)), which will be
 ```{math}
 H = K + V,
 ```
@@ -109,7 +109,7 @@ where $u_E(x)$ are wavefunctions of the particle corresponding to states of defi
 \op{H}u_E(x) = E u_E(x).
 ```
 ````
-For reasons that will become clear in the following chapter, this equation is often referred to as the **Time-independent Schrödinger Equation** or TISE for short. This will in fact be our **central** equation for studying the energy of a particle in quantum mechanics, essentially because of the fact that the potential energy is a function of position. 
+For reasons that will become clear in the following chapter, this equation is often referred to as the **[Time-independent Schrödinger Equation](wiki:Schrodinger_equation)** or TISE for short. This will in fact be our **central** equation for studying the energy of a particle in quantum mechanics, essentially because of the fact that the potential energy is a function of position. 
 
 ## Bound and non-bound states
 
