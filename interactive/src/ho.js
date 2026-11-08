@@ -47,9 +47,10 @@ export default {
       g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(k); } });
       return { g, line, label };
     });
-    const base = s('line', { class: 'qm-op-axis qm-accent-1' }, P.g);     // the chosen level, as the baseline of u_n
+    // the baseline of u_n: a thin ink axis through the chosen level (not accent-1, which is the eigenfunction's colour)
+    const base = s('line', { class: 'qm-plot-axis' }, P.g);
     const curveU = P.curve('accent-1', { n: 400 });
-    const curvePd = P.curve('accent-1', { n: 400, cls: 'qm-curve qm-density' });
+    const curvePd = P.curve('accent-1', { n: 400 });    // solid: it is drawn instead of u_n, not over it (§5)
     const tL = P.vmark('ink'), tR = P.vmark('ink');
     const labV = P.label('V(x)');
     const labX = P.label('x');
@@ -91,9 +92,10 @@ export default {
       else curveU.update((x) => En + SCALE * u(n, x));
       tL.update(-xt, En); tR.update(xt, En);
       labTl.update(-xt, 0, 'below', 0.4); labTr.update(xt, 0, 'below', 0.4);
-      tex(labU.el, state.density ? `\\pd(x) = |u_{${n}}(x)|^2` : `u_{${n}}(x)`);
-      labU.update(X_RANGE[1], En + SCALE * 0.75, 'left', 0.3);
-      levels.forEach((l, i) => { const on = i === n; l.g.classList.toggle('qm-accent-1', on); l.g.classList.toggle('qm-accent-3', !on); l.g.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      tex(labU.el, state.density ? `|u_{${n}}(x)|^2` : `u_{${n}}(x)`);   // short, so it clears V(x) at the left edge
+      labU.update(X_RANGE[0], En + SCALE * 0.75, 'right', 0.3);   // at the left edge, clear of the E_k labels on the right
+      // the chosen level stays accent-3 (the potential's colour) but is drawn solid and thicker (§5)
+      levels.forEach((l, i) => { const on = i === n; l.g.classList.toggle('qm-on', on); l.g.setAttribute('aria-pressed', on ? 'true' : 'false'); });
       prN.setActive(n);
       rE.set(`E_n = \\hbar\\omega(n + \\tfrac{1}{2}) = ${num(En, 1)}\\,\\hbar\\omega`);
       rT.set(`x_t = \\sqrt{(2n+1)}\\,\\ell = ${num(xt)}\\,\\ell`);

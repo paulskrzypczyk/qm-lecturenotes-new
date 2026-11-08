@@ -245,6 +245,10 @@
 .qm-level      { cursor: pointer; }   /* a clickable energy level on a ladder */
 .qm-level:hover .qm-op-axis { stroke-width: 3.5; }
 .qm-level:focus-visible .qm-op-axis { stroke: var(--qm-focus); }
+/* levels drawn across a potential (dashed): the chosen one is solid and thicker, in the same colour */
+.qm-level:hover .qm-construct { stroke-width: 2; opacity: 1; }
+.qm-level.qm-on .qm-construct { stroke-dasharray: none; stroke-width: 2.5; opacity: 1; }
+.qm-level:focus-visible .qm-construct { stroke: var(--qm-focus); }
 
 /* ── 9. Widgets without a canvas: concept checks, derivation steppers, progress (§4) ─ */
 .qm-widget.qm-no-canvas .qm-body { grid-template-columns: minmax(0, 1fr); }

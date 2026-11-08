@@ -1,6 +1,6 @@
 # Interactive figures — visual identity & ground rules
 
-**Version 1.4.1 · 9 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
+**Version 1.4.2 · 9 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
 
 The rules are those of the QIT notes' widgets (their README v1.4), carried over so that both sets of notes share one visual identity; §2 (colour roles) and §6 (2D plots instead of the Bloch sphere) are what differs.
 
@@ -99,7 +99,7 @@ Stroke widths are in screen pixels and never scale (`vector-effect: non-scaling-
 |---|---|
 | axes | `--qm-ink`, 1px (`.qm-plot-axis`); horizontal axis through $y = 0$, vertical axis through $x = 0$ |
 | curve (a wavefunction) | role colour, 2px, round joins (`.qm-curve`) |
-| probability density (shown with its wavefunction) | role colour, 1.5px, dashed `4 3`, 80% opacity (`.qm-density`) |
+| probability density (shown with its wavefunction) | role colour, 1.5px, dashed `4 3`, 80% opacity (`.qm-density`); a density drawn on its own, or *instead of* the wavefunction, is a plain solid curve |
 | construction lines (width markers, drop lines) | role colour, 1px, dashed `3 3`, 70% opacity (`.qm-construct`); a marker runs from the axis up to the curve |
 | areas (a width, a probability, a classically forbidden region) | role colour, 15% fill, no stroke (`.qm-area`) |
 | marked points | 4.5px radius, filled, with a 1.5px `--qm-surface` ring |
@@ -110,7 +110,7 @@ Stroke widths are in screen pixels and never scale (`vector-effect: non-scaling-
 | outcomes of a coarse-grained measurement | histogram bars in accent-3: 1.5px outline, 8% fill (`.qm-bars`) |
 | an approximating rectangle | role colour, 1.5px outline, no fill (`.qm-rect`) |
 | 3D axes | ink, 1px, with a small filled arrowhead (`.qm-axis3`); the label of an axis seen end-on is hidden |
-| energy levels | accent-3 lines (dashed `.qm-construct` between the turning points of a potential, solid `.qm-op-axis` on a bare ladder); the chosen level is accent-1 and thicker; each level is a button (`.qm-level`: pointer cursor, thicker on hover, focus colour on the keyboard focus) |
+| energy levels | accent-3 lines (dashed `.qm-construct` between the turning points of a potential, solid `.qm-op-axis` on a bare ladder); on a bare ladder the chosen level is accent-1 and thicker; across a potential, where the accent-1 eigenfunction is drawn on its level, the chosen level stays accent-3 but is solid and thicker (`.qm-level.qm-on`), and the function's baseline is a thin ink axis (`.qm-plot-axis`) across the panel, so that nothing blue is mistaken for the wavefunction; each level is a button (`.qm-level`: pointer cursor, thicker on hover, focus colour on the keyboard focus) |
 | potential and walls | accent-3 2px lines; the region where the potential is infinite or classically forbidden is an accent-3 area at 15% |
 | heat-map | a `<canvas>` drawn into an SVG `<image>`: a sequential ramp from `--qm-surface` to accent-1 (gamma 0.8), repainted when the theme changes; the panel has an ink outline |
 
@@ -265,7 +265,7 @@ The three pictures of the complex plane wave $\psi(x) = Ae^{2\pi i x/\lambda}$ f
 The free Gaussian wavepacket $\psi(x,t)$ of equation (6.x), replacing the animated GIF (which stays as the placeholder: the PDF shows its filmstrip). Top: $|\psi(x,t)|$ as a curve coloured by its phase, with the colour wheel, exactly the representation of the animation. Bottom: the density $\pd(x,t)$ with $\av{x} = p_0t/M$ and the band $\av{x} \pm \Delta x(t)$ marked, and the initial density as a dashed ghost. The phase comes from the exact solution (`src/core/wavepacket.js`, checked against the Schrödinger equation in `npm test`), so the colour shows the position–momentum correlation building up: it cycles faster at the front of the packet than at the back.
 
 - **Objects:** $|\psi(x,t)|$ in phase hue; $\pd(x,t)$ (accent-1) with its $\pm\Delta x$ band and markers; the ghost $\pd(x,0)$ (accent-1, dashed, faint); the centre marker in ink.
-- **Interactions:** Play/Pause (time runs at $0.5\,\tau$ per second to $3\tau$); slider $t \in [0, 3\tau]$ with presets $0, \tau, 2\tau, 3\tau$ (with $a = a_0$, $M = M_0$ these are the stills of Figure 6.2); sliders $a \in [0.5, 2]\,a_0$, $p_0 \in [0, 1.2]\,\hbar/a_0$ and the mass $M \in [0.5, 2]\,M_0$ (a narrower or lighter packet spreads faster; a heavier one moves more slowly); the toggle for the ghost.
+- **Interactions:** Play/Pause (time runs at $0.6\,\tau$ per second to $6\tau$); slider $t \in [0, 6\tau]$ with presets $0, 2\tau, 4\tau, 6\tau$ (with $a = a_0$, $M = M_0$ the first three are stills of Figure 6.2); the panels span $x \in [-5, 30]\,a_0$; sliders $a \in [0.5, 2]\,a_0$, $p_0 \in [0, 1.2]\,\hbar/a_0$ and the mass $M \in [0.5, 2]\,M_0$ (a narrower or lighter packet spreads faster; a heavier one moves more slowly); the toggle for the ghost.
 - **Readouts:** $t$; $\Delta x(t) = \alpha(t)$ with its formula; $\av{x} = p_0t/M$; $\Delta x(t)$; $v = p_0/M$; $\Delta x(0) = a$; a note on the speed, the spreading, the meaning of the colour and the units.
 - **Options**
 
@@ -288,7 +288,7 @@ The energy eigenfunctions of the infinite square well, one at a time: $u_n(x)$ i
 
 ### `ho` — Figure 8.2 (Chapter 8)
 
-The harmonic oscillator: $V(x) = \tfrac12 M\omega^2x^2$ with the levels $E_n = \hbar\omega(n + \tfrac12)$ drawn between their turning points, and the chosen $u_n(x)$ (or $|u_n|^2$) drawn on its level. The classically forbidden region $|x| > x_t$ is shaded and the probability of finding the particle there is read out: tunnelling.
+The harmonic oscillator: $V(x) = \tfrac12 M\omega^2x^2$ with the levels $E_n = \hbar\omega(n + \tfrac12)$ drawn between their turning points, and the chosen $u_n(x)$ (or $|u_n|^2$, solid, in its place) drawn on its level, whose baseline is a thin ink axis; the chosen level is solid accent-3 between the turning points. The classically forbidden region $|x| > x_t$ is shaded and the probability of finding the particle there is read out: tunnelling.
 
 - **Interactions:** presets $n = 0..5$, or click a level; toggle *probability density*.
 - **Readouts:** $E_n$; $x_t = \sqrt{2n+1}\,\ell$; $u_n(x) = N_n h_n(x/\ell)e^{-x^2/2\ell^2}$; $\prob(|x| > x_t)$ (3 d.p.); nodes; $V(x)$ in units of $\hbar\omega$ and $\ell$.
@@ -329,6 +329,7 @@ A derivation revealed one line at a time, each with its justification: `{ "title
 
 ## Changelog
 
+- **1.4.2 (9 Nov 2026)** — `ho`: the chosen level is solid accent-3 and the baseline of $u_n$ is an ink axis (no longer accent-1, which was confusable with the eigenfunction); the density is solid, since it replaces $u_n$ rather than being drawn over it (§5 table); the $u_n$ label moves to the left edge, clear of the $E_k$ labels. `wavepacket`: $x \in [-5, 30]\,a_0$ and $t \le 6\tau$ (presets $0, 2\tau, 4\tau, 6\tau$), so a packet can be followed for longer and further.
 - **1.4.1 (9 Nov 2026)** — static SVG figures are inlined with theme-following colours once a widget is on the page (§9), so they look like the widgets in dark mode.
 - **1.4 (8 Nov 2026)** — three widgets without a canvas (`quiz`, `steps`, `progress`; §4 rule) and the measurement demo in `prob-density` (`sample()` in `density.js`). `qm-widgets.css` §9.
 
