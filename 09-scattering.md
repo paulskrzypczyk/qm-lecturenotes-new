@@ -216,18 +216,24 @@ e^{ikx} + \frac{k-k'}{k+k'}e^{-ikx} &\text{ if } x < 0, \\
 ````
 This eigenfunction (for one choice of $E$) is depicted below in [](#right-moving-scatter). 
 
-````{figure} ./Pictures/right-moving-scattering-phase.png
+````{figure}
 :name: right-moving-scatter
+:placeholder: ./Pictures/right-moving-scattering-phase.png
+:alt: A right-moving energy eigenfunction of the potential step, coloured by phase
 :width: 600px
 :align: center
-
-**Right-moving energy eigenfunction of the potential step**. Colour plot of a right-moving energy eigenfunction, given in [](#e-eig-step-R-final). For illustrative purposes, we also plot the potential step, to highlight where it is in relation to the {term}`wavefunction` (the height of the step has no relation to the amplitude of the wavefunction). On the left of the step, where there is both the incoming and reflected component of the wavefunction, there is interference, leading to sinusoidal oscillations. On the right, where there is only the transmitted component, the modulus of the wavefunction is constant. 
+```{anywidget} ./interactive/widgets/step.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{ "e": 1.6 }
+```
+**Right-moving energy eigenfunction of the potential step**. Colour plot of a right-moving energy eigenfunction, given in [](#e-eig-step-R-final), for an energy $E$ that can be changed, together with the reflection and transmission coefficients $R$ and $T$ of the [next section](#s-R-T). For illustrative purposes, we also plot the potential step, to highlight where it is in relation to the {term}`wavefunction` (the height of the step has no relation to the amplitude of the wavefunction). On the left of the step, where there is both the incoming and reflected component of the wavefunction, there is interference, leading to sinusoidal oscillations. On the right, where there is only the transmitted component, the modulus of the wavefunction is constant. 
 ````
 
 As a summary of what we have achieved: in [](#e-eig-step-R-final) we have found the wavefunction of the quantum step Hamiltonian with constant energy $E$, that is 'right-moving', in the sense that when we look on the left of the step, we only have a positive momentum component. We found this by using two key **mathematical properties** of energy eigenfunctions: that they are **continuous** (as previously seen), and that they have a **continuous derivative** (which is new here). More informally, this ensured that the function has no 'jumps' and no 'kinks'. Just as with the free particle, there is a **second degenerate energy eigenfunction of energy $E$**. This corresponds to a **left-moving** particle, and you will solve for it as an [exercise](#ex-left-moving) below. 
 
 We will now analyse some of the interesting **physics** of these eigenfunctions, before briefly outlining how **they can be used** to study the dynamics of particles (although you won't be expected to do this yourself, only to appreciate qualitatively what is found). 
 
+(s-R-T)=
 ## Reflection and transmission coefficients
 
 What we would like to understand now as quantitatively as possible, is the meaning of the superposition appearing in [](#e-eig-step-R-final). We will see how to do this in terms of so-called **reflection** and **transmission** coefficients. 
