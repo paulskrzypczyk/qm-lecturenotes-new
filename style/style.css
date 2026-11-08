@@ -4,7 +4,7 @@
  * transparent background, so on the dark theme they all but vanish. Normally the interactive-
  * figure code inlines them with theme-following colours (see below); if JavaScript has not done
  * that within 1.5 s (no JavaScript, or a page with no widget), the image gets a light panel. */
-html.dark main figure img { animation: qm-figure-panel 0s 1.5s forwards; }
+html.dark main img { animation: qm-figure-panel 0s 1.5s forwards; }
 @keyframes qm-figure-panel { to { background: #f5f5f4; padding: 0.5rem; border-radius: 0.375rem; } }
 
 /* Once JavaScript runs, the interactive-figure code replaces each SVG <img> by the SVG itself

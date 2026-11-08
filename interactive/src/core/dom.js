@@ -110,7 +110,8 @@ let inlined = false;
 export function inlineStaticFigures() {
   if (inlined || typeof document === 'undefined') return;
   inlined = true;
-  const imgs = [...document.querySelectorAll('main figure > img, main figure > a > img')].filter((img) => /\.svg(\?|$)/i.test(img.currentSrc || img.src));
+  // every SVG image in the article: figures, and bare {image}s such as the delta-function spike in a dropdown
+  const imgs = [...document.querySelectorAll('main img')].filter((img) => /\.svg(\?|$)/i.test(img.currentSrc || img.src));
   imgs.forEach((img, i) => {
     fetch(img.src).then((r) => (r.ok ? r.text() : Promise.reject(r.status))).then((text) => {
       let svg = text.replace(/<\?xml[^>]*\?>\s*/i, '').replace(/<!DOCTYPE[^>]*>\s*/i, '').replace(/<metadata>[\s\S]*?<\/metadata>/gi, '');
