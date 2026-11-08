@@ -27,7 +27,7 @@ export default {
     let cancelTween = () => {};
 
     const ui = card(el, {
-      label: 'Figure 1.5: probability densities in quantum mechanics',
+      label: 'Figure 1.6: probability densities in quantum mechanics',
       hint: ['Drag the edges of the region ', { tex: 'x_0 \\leq x \\leq x_0 + dx' }, ' along the axis, or use the sliders.'],
       onReset: () => { state.outcomes = false; outToggle.set(false); state.samples = []; animateTo(opt('x0'), opt('dx')); },
     });
@@ -125,7 +125,9 @@ export default {
         if (N) {
           // observed frequency of each outcome, drawn on the same scale as the density (area = frequency)
           const counts = b.map(({ a, b: bb }) => state.samples.filter((v) => v >= a && v < bb).length);
-          histEl.update(b.map(({ a, b: bb }, i) => ({ a: Math.max(a, X_RANGE[0]), b: Math.min(bb, X_RANGE[1]), h: counts[i] / N / dx })));
+          // with few copies a single bin holds most of the frequency and its bar (frequency / dx) would
+          // leave the panel: bars are capped at the top of the panel until the sample grows
+          histEl.update(b.map(({ a, b: bb }, i) => ({ a: Math.max(a, X_RANGE[0]), b: Math.min(bb, X_RANGE[1]), h: Math.min(counts[i] / N / dx, Y_PD[1] * 0.98) })));
           const inRegion = state.samples.filter((v) => v >= x0 && v < x1).length;
           rMeas.set(`\\text{measured } ${N} \\text{ cop${N === 1 ? 'y' : 'ies'}}`);
           rMeas2.set(`\\text{found in the region: } ${inRegion}/${N} = ${num(inRegion / N, 3)}`);

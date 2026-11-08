@@ -225,7 +225,7 @@ The Gaussian wavefunction $\psi(x)$ of equation (3.1) and its momentum wavefunct
   | `a_min`, `a_max` | 0.5, 2 | range of the slider and markers |
   | `densities` | false | show the probability densities when the widget loads |
 
-### `prob-density` — Figure 1.5 (Chapter 1)
+### `prob-density` — Figure 1.6 (Chapter 1)
 
 A wavefunction $\psi(x)$ (real, with one negative bump) above its probability density $\pd(x) = |\psi(x)|^2$, with the small region $x_0 \le x \le x_0 + dx$ shaded under the density, as in the static figure. The reader moves and widens the region and compares the exact probability (the shaded area) with the approximation $\pd(x_0)\,dx$ (the rectangle of height $\pd(x_0)$); a toggle shows all the outcomes of a position measurement with resolution $dx$.
 
@@ -337,7 +337,7 @@ A derivation revealed one line at a time, each with its justification: `{ "title
 - **1.2 (6 Nov 2026)** — `wavepacket` (Figure 6.1) and the rules it needed: §3 the reference mass $M_0$ and time unit $\tau$; §7 time evolution with a Play/Pause action (`action()` in `dom.js`) and a scrubbing time slider.
 
 - **1.1.1 (6 Nov 2026)** — `plane-wave`: panel (c) is the modulus $|\psi(x)| = A$ drawn as a line of that height coloured by the phase, as in the static figure (it had been a stripe of fixed height, so it did not respond to $A$); its axis carries $A$ and $-A$ like panel (a). §5 updated accordingly.
-- **1.1 (5 Nov 2026)** — two more widgets, `prob-density` (Figure 1.5) and `plane-wave` (Figure 2.1), and the rules they needed: §3 the reference length $a_0$ for Chapters 1–3; §5 marks for phase-by-hue curves and stripes, histogram bars, an approximating rectangle and 3D axes; §6 a turnable 3D view (`src/core/view3.js`) with view presets, the ink probe, and overlapping handles; §9 figure numbers in `aria-label`s. `plot2d.js` gains `bars()`, `rect()`, `point()` and `dy()`. `Pictures/prob-density.svg` redrawn with $\psi(x)$ above $\pd(x)$.
+- **1.1 (5 Nov 2026)** — two more widgets, `prob-density` (Figure 1.6) and `plane-wave` (Figure 2.1), and the rules they needed: §3 the reference length $a_0$ for Chapters 1–3; §5 marks for phase-by-hue curves and stripes, histogram bars, an approximating rectangle and 3D axes; §6 a turnable 3D view (`src/core/view3.js`) with view presets, the ink probe, and overlapping handles; §9 figure numbers in `aria-label`s. `plot2d.js` gains `bars()`, `rect()`, `point()` and `dy()`. `Pictures/prob-density.svg` redrawn with $\psi(x)$ above $\pd(x)$.
 
 - **1.0.3 (5 Nov 2026)** — shaded areas are 15% of the role colour (§2, §5; 8% was too faint beside a dashed curve). `gaussian-hup`: with the densities shown, the bands $\pm\Delta x$ and $\pm\Delta p$ (one standard deviation either side of the mean, i.e. between the dashed markers) are shaded under the densities, and the probability inside each (0.68) is read out.
 - **1.0.2 (5 Nov 2026)** — readouts never scroll (§4): the sideways scrollbars showed as permanent bars on Windows. `gaussian-hup`: $a$ moved out of the $\psi(x)$ line into its own readout; $\Delta p$ and $\hbar/2$ written inline.

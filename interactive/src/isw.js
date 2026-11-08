@@ -34,8 +34,8 @@ export default {
 
     // ── canvas ────────────────────────────────────────────────────────────────────
     const { svg, labels } = plotCanvas(ui.canvas);
-    const top = new Panel(svg, labels, { box: { x: 8, y: 5, w: 58, h: 38 }, xRange: X_RANGE, yRange: Y_U });
-    const bot = new Panel(svg, labels, { box: { x: 8, y: 52, w: 58, h: 40 }, xRange: X_RANGE, yRange: Y_PD });
+    const top = new Panel(svg, labels, { box: { x: 8, y: 5, w: 52, h: 38 }, xRange: X_RANGE, yRange: Y_U });
+    const bot = new Panel(svg, labels, { box: { x: 8, y: 52, w: 52, h: 40 }, xRange: X_RANGE, yRange: Y_PD });
     const lad = new Panel(svg, labels, { box: { x: 78, y: 5, w: 14, h: 87 }, xRange: [0, 1], yRange: [0, 38.5] });
     // the walls of the well (accent-3: the potential), shaded outside
     for (const p of [top, bot]) {
@@ -49,7 +49,7 @@ export default {
     const hueU = hueCurve(top, { n: 300 });
     const curvePd = bot.curve('accent-1', { n: 400 });
     const markX = bot.vmark('ink');
-    const wh = wheel(svg, labels, { cx: 70, cy: 25, r: 3.8 });   // in the gap between the panels and the ladder
+    const wh = wheel(svg, labels, { cx: 69, cy: 40, r: 3.6 });   // in the clear gap between the panels (which end at x = 60) and the ladder (from 78)
     const labU = top.label('u_n(x)');
     const labX = top.label('x'), labX2 = bot.label('x');
     const lab0 = top.label('0', { small: true }), labL = top.label('L', { small: true });
