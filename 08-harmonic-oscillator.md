@@ -333,12 +333,17 @@ where $N_n$ is a **normalisation factor**, and $h_n(y)$ are functions known as *
 
 The energy eigenfunctions and corresponding {term}`probability densities <probability density>` of the first few energy eigenstates are plotted in [](#wf-ho) and [](#pd-ho) respectively.
 
-````{figure} ./Pictures/eigenstates-ho.svg
+````{figure}
 :name: wf-ho
+:placeholder: ./Pictures/eigenstates-ho
+:alt: The energy eigenfunctions of the harmonic oscillator
 :width: 500px
 :align: center
-
-**Energy eigenfunctions of the harmonic oscillator.** The first six energy eigenfunctions $u_n(x)$ of the harmonic oscillator. The two markers on the $x$ axis show where **{term}`tunnelling`** starts: the classically-allowed region is between the markers, where the total energy of the particle is more than the potential energy.
+```{anywidget} ./interactive/widgets/ho.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{ "n": 0 }
+```
+**Energy eigenfunctions of the harmonic oscillator.** The energy eigenfunctions $u_n(x)$ of the harmonic oscillator for $n = 0, \dots, 5$, each drawn on its energy level $E_n$ across the potential $V(x)$. The two markers on the $x$ axis show where **{term}`tunnelling`** starts: the classically-allowed region is between the markers, where the total energy of the particle is more than the potential energy.
 ````
 
 ````{figure} ./Pictures/probs-ho.svg
