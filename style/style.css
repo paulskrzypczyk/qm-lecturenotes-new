@@ -1,11 +1,13 @@
 /* Site stylesheet for the Quantum Mechanics notes (enabled in myst.yml: site.options.style).
  *
  * Static figures in dark mode. The figures in Pictures/ are drawn in black ink on a
- * transparent background, so on the dark theme they all but vanish. Rather than redraw
- * them, each figure image sits on a light panel in dark mode; the interactive figures
- * follow the theme on their own, and their (hidden) placeholder images are unaffected. */
-html.dark main figure img {
-  background: #f5f5f4;
-  padding: 0.5rem;
-  border-radius: 0.375rem;
-}
+ * transparent background, so on the dark theme they all but vanish. Normally the interactive-
+ * figure code inlines them with theme-following colours (see below); if JavaScript has not done
+ * that within 1.5 s (no JavaScript, or a page with no widget), the image gets a light panel. */
+html.dark main figure img { animation: qm-figure-panel 0s 1.5s forwards; }
+@keyframes qm-figure-panel { to { background: #f5f5f4; padding: 0.5rem; border-radius: 0.375rem; } }
+
+/* Once JavaScript runs, the interactive-figure code replaces each SVG <img> by the SVG itself
+ * (interactive/src/core/dom.js, inlineStaticFigures): its ink becomes the page's text colour and
+ * the panel above is no longer needed. A few dark accents in the drawings are lightened here. */
+html.dark svg.qm-static-svg { --qm-fig-navy: #93c5fd; --qm-fig-teal: #5eead4; --qm-fig-red: #f87171; }

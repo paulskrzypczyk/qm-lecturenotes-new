@@ -69,6 +69,7 @@ export function card(host, { label, hint, onReset }) {
     h('div', { class: 'qm-body' }, canvas, controls, readouts),
   );
   host.append(katexLink, root);
+  inlineStaticFigures();
 
   // Light / dark mode, following the site's `html.dark` class.
   const html = document.documentElement;
@@ -93,6 +94,45 @@ export function card(host, { label, hint, onReset }) {
     root, canvas, controls, readouts,
     destroy() { cleanups.forEach((f) => f()); root.remove(); katexLink.remove(); },
   };
+}
+
+// ── Static figures in dark mode ──────────────────────────────────────────────────
+// The SVG figures in Pictures/ are black ink on a transparent background, which the site
+// shows through <img>: an image cannot see the page's colours, so in dark mode it all but
+// vanishes. Once any widget is on the page, every SVG figure is fetched and inlined with its
+// ink turned into `currentColor` (the page's text colour) and its white into the page
+// background, so the figures follow the theme exactly as the widgets do, including the
+// toggle. Figures with a widget keep their placeholder as an <img> (the card hides it).
+const INK = /#000000\b|#000\b|rgb\(0%,0%,0%\)|rgb\(0,\s*0,\s*0\)|(?<=[:="'\s])black\b|#262626\b/gi;
+const PAPER = /#ffffff\b|#fff\b|(?<=[:="'\s])white\b/gi;
+const DARK_ACCENTS = [['#05285b', 'navy'], ['#002f5f', 'navy'], ['#00434f', 'teal'], ['#ab1f2d', 'red'], ['#b92d3a', 'red']];
+let inlined = false;
+export function inlineStaticFigures() {
+  if (inlined || typeof document === 'undefined') return;
+  inlined = true;
+  const imgs = [...document.querySelectorAll('main figure > img, main figure > a > img')].filter((img) => /\.svg(\?|$)/i.test(img.currentSrc || img.src));
+  imgs.forEach((img, i) => {
+    fetch(img.src).then((r) => (r.ok ? r.text() : Promise.reject(r.status))).then((text) => {
+      let svg = text.replace(/<\?xml[^>]*\?>\s*/i, '').replace(/<!DOCTYPE[^>]*>\s*/i, '').replace(/<metadata>[\s\S]*?<\/metadata>/gi, '');
+      svg = svg.replace(INK, 'currentColor').replace(PAPER, 'var(--myst-color-bg, #fff)');
+      // a few dark accents (box frames, curve outlines, dark red) would sink into a dark page:
+      // they become variables that style/style.css lightens in dark mode
+      for (const [hex, name] of DARK_ACCENTS) svg = svg.replace(new RegExp(hex, 'gi'), `var(--qm-fig-${name}, ${hex})`);
+      const prefix = `qmfig${i}-`;
+      svg = svg.replace(/\bid="([^"]+)"/g, (m, id) => `id="${prefix}${id}"`).replace(/url\(#([^)]+)\)/g, (m, id) => `url(#${prefix}${id})`).replace(/(xlink:)?href="#([^"]+)"/g, (m, x, id) => `${x || ''}href="#${prefix}${id}"`);
+      const doc = new DOMParser().parseFromString(svg, 'image/svg+xml');
+      const el = doc.documentElement;
+      if (!el || el.nodeName.toLowerCase() !== 'svg' || doc.querySelector('parsererror')) return;
+      if (img.style.display === 'none' || !img.isConnected) return;   // a widget's placeholder, already hidden by its card
+      el.removeAttribute('width'); el.removeAttribute('height');
+      el.classList.add('qm-static-svg');
+      el.setAttribute('role', 'img');
+      if (img.alt) el.setAttribute('aria-label', img.alt);
+      const w = img.style.width || img.getAttribute('width');
+      el.style.cssText = `${w ? `width:${/^\d+$/.test(w) ? w + 'px' : w};` : ''}max-width:100%;height:auto;display:block;margin:0 auto;color:inherit`;
+      img.replaceWith(document.adoptNode(el));
+    }).catch(() => { /* the <img> stays: the stylesheet gives it a light panel in dark mode */ });
+  });
 }
 
 /** A titled group of controls inside the panel. */

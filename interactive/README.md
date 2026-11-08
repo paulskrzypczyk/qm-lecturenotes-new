@@ -1,6 +1,6 @@
 # Interactive figures — visual identity & ground rules
 
-**Version 1.4 · 8 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
+**Version 1.4.1 · 9 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
 
 The rules are those of the QIT notes' widgets (their README v1.4), carried over so that both sets of notes share one visual identity; §2 (colour roles) and §6 (2D plots instead of the Bloch sphere) are what differs.
 
@@ -166,6 +166,7 @@ Caption.
 - **Keep `:width:` and `:align:`**: they now only affect the placeholder, i.e. the PDF.
 - **The JSON body** sets the widget's options. Every widget lists its options, with defaults, in its own section below.
 - **Figure numbers in `aria-label`s** follow the site's numbering (chapter.figure).
+- **Static figures follow the theme too.** When the first widget on a page mounts, `inlineStaticFigures()` (in `dom.js`) fetches every SVG figure on the page and inlines it with its black ink as `currentColor`, its white as the page background and a few dark accents as `--qm-fig-*` variables that `style/style.css` lightens in dark mode. The placeholder of a widget is left as the hidden `<img>`; PNG/GIF figures, and pages without a widget, fall back to a light panel in dark mode (`style/style.css`, after 1.5 s).
 - A static figure that is redrawn for a widget lives in `Pictures/<name>.svg` with its PDF in `Pictures/pdf/<name>.pdf` (drawn with matplotlib in the style of the existing figures: Computer Modern maths, the notes' blue `#0d6efd` and orange `#ee7219`).
 
 ## 10. Engineering
@@ -328,6 +329,7 @@ A derivation revealed one line at a time, each with its justification: `{ "title
 
 ## Changelog
 
+- **1.4.1 (9 Nov 2026)** — static SVG figures are inlined with theme-following colours once a widget is on the page (§9), so they look like the widgets in dark mode.
 - **1.4 (8 Nov 2026)** — three widgets without a canvas (`quiz`, `steps`, `progress`; §4 rule) and the measurement demo in `prob-density` (`sample()` in `density.js`). `qm-widgets.css` §9.
 
 - **1.3 (8 Nov 2026)** — four more widgets: `isw` (7.4), `ho` (8.2), `step` (9.3), `box3d` (11.1). Rules: §5 energy levels, potentials and heat-maps; §6 energy diagrams. Shared code: `src/core/hue.js` (phase-coloured curves and the wheel legend), `Panel.curve()` takes an `xRange`, maths modules `isw.js`, `ho.js`, `step.js`.
