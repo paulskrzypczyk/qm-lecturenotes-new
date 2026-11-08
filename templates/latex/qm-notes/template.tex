@@ -280,6 +280,7 @@ leftmargin=0cm,rightmargin=0cm,linewidth=4pt]{eqBox}
 %----------------------------------------------------------------------------------------
 %	LINKS
 %----------------------------------------------------------------------------------------
+\usepackage{natbib}   % author-year citations of the original papers (references.bib)
 \usepackage{hyperref}
 \hypersetup{hidelinks,colorlinks=true,breaklinks=true,urlcolor=maincolor,bookmarksopen=false,linkcolor=exuorange,
   pdftitle={[-doc.title-] Lecture Notes},pdfauthor={[# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #]}}
@@ -316,5 +317,19 @@ leftmargin=0cm,rightmargin=0cm,linewidth=4pt]{eqBox}
 %	CONTENT
 %----------------------------------------------------------------------------------------
 [- CONTENT -]
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY (the original papers cited in the notes; MyST copies references.bib to main.bib)
+%----------------------------------------------------------------------------------------
+[# if doc.bibliography #]
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\chapter*{Bibliography}
+\markboth{Bibliography}{Bibliography}
+\bibliographystyle{plainnat}
+\renewcommand{\bibsection}{}
+\bibliography{main}
+[# endif #]
 
 \end{document}

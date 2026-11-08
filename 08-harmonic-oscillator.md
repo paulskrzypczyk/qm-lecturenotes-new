@@ -351,7 +351,7 @@ It is insightful to compare to corresponding plots for the eigenfunctions and pr
 
 ## Tunnelling and barrier penetration
 
-There is one new and very important aspect of quantum mechanics that arises for the harmonic oscillator, which isn't present in the infinite square well potential, known as **[tunnelling](wiki:Quantum_tunnelling)** or alternatively **barrier penetration**. 
+There is one new and very important aspect of quantum mechanics that arises for the harmonic oscillator, which isn't present in the infinite square well potential, known as **[tunnelling](wiki:Quantum_tunnelling)** (first used by Gamow in 1928 to explain radioactive alpha decay {cite:p}`gamow1928`) or alternatively **barrier penetration**. 
 
 Looking back at the potential energy $V(x)$ in [](#harmonic-oscillator), it is evident that as the particle moves away from the origin, its potential energy increases quadratically. We have now found the energy eigenstates, and their corresponding energy eigenfunctions, as listed in [](#t-Hermite) and depicted in [](#wf-ho) and [](#pd-ho).
 

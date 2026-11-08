@@ -81,7 +81,7 @@ The famous **[Heisenberg Uncertainty Principle](wiki:Uncertainty_principle)** ma
 ````
 
 ```{aside}
-*We will not prove the Heisenberg Uncertainty Principle in this unit, but merely state it as a fact of quantum mechanics. An interested student will be able to find a proof in any textbook on quantum mechanics.*
+*Heisenberg's original 1927 paper {cite:p}`heisenberg1927` argued for the principle through thought experiments; the precise inequality [](#e-HUP), with the $\hbar/2$, was proved the same year by Kennard {cite:p}`kennard1927`. We will not prove the Heisenberg Uncertainty Principle in this unit, but merely state it as a fact of quantum mechanics. An interested student will be able to find a proof in any textbook on quantum mechanics.*
 ```
 
 This shows that if we have a particle in a particular quantum state $\ket{\psi}$ with corresponding spatial wavefunction $\psi(x)$, and we calculate the uncertainty in the position of the particle $\Delta x$, then even before calculating the momentum wavefunction, we already know that $\Delta p \geq \hbar/2\Delta x$. Hence if $\Delta x$ is small, then this implies that $\Delta p$ is necessarily going to be large. 

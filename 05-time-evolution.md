@@ -28,7 +28,7 @@ In this chapter, after reintroducing the **equation of motion** of QM, we will s
 
 In general, if we prepare a quantum particle in the state $\ket{\psi_\init}$ at time $t = 0$, we are interested in determining its state at an arbitrary later time $t$, which we will denote by $\ket{\psi(t)}$. 
 
-The **equation of motion** in quantum physics is called the [Schrödinger Equation](wiki:Schrodinger_equation) (SE), and is given by
+The **equation of motion** in quantum physics is called the [Schrödinger Equation](wiki:Schrodinger_equation) (SE) {cite:p}`schrodinger1926,schrodinger1926b`, and is given by
 ````{card}
 ```{math}
 :label: e-SE

@@ -12,6 +12,7 @@ doc:
     required: true
   - id: subtitle
   - id: authors
+  - id: bibliography
 options:
   - id: subtitle_text
     type: string
@@ -46,3 +47,4 @@ packages:
   - fontenc
   - inputenc
   - xstring
+  - natbib

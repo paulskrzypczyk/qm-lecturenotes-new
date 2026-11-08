@@ -14,7 +14,8 @@ project:
     - https://github.com/jupyter-book/myst-plugins/releases/download/page-last-updatedv1.1/page-last-updated.mjs
     - plugins/pdf-export.mjs
   # github:
-  # bibliography: []
+  bibliography:
+    - references.bib
   math:
     '\infint': '\int_{-\infty}^{\infty}'
     '\vph': '\vphantom{\Bigg|}'

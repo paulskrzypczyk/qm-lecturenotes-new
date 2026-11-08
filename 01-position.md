@@ -208,7 +208,7 @@ For a state $\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx$, what is t
 [^pdf]: Note that this is also referred to as the **probability density function (PDF)**. Here we will simply refer to it as the 'probability density', but the two terms are interchangeable. 
 
 
-where according to quantum mechanics, the probability density is given by 
+where according to quantum mechanics, the probability density is given by (this is the **Born rule**, after Max Born, who first interpreted $|\psi|^2$ as a probability {cite:p}`born1926`)
 ````{card}
 ```{math}
 \pd(x) = |\psi(x)|^2,

@@ -29,7 +29,7 @@ Our starting point for understanding the momentum of a quantum particle will in 
 :label: e-de-Broglie
 \lambda = \frac{h}{p},
 ```
-where $h$ is **[Planck's constant](wiki:Planck_constant)**. While this formula is part of '*old quantum theory*' it turns out that the basic insight is ultimately correct. More concretely, what is correct in quantum mechanics is 
+where $h$ is **[Planck's constant](wiki:Planck_constant)** {cite:p}`planck1901`. While this formula is part of '*old quantum theory*' (it was de Broglie's 1924 doctoral thesis {cite:p}`debroglie1925`, and electron diffraction confirmed it three years later {cite:p}`davisson1927`), it turns out that the basic insight is ultimately correct. More concretely, what is correct in quantum mechanics is 
 >  A quantum particle with definite momentum $p$ has a wavefunction with a definite wavelength $\lambda = h/p$. 
 
 *What is a wavefunction with a definite wavelength $\lambda$?* This could potentially mean a couple of things, for example $\cos(2\pi x/\lambda)$ or $\sin(2\pi x/\lambda)$? These are both examples of plane waves of wavelength $\lambda$. Neither of these happens to be the correct answer. What we actually mean is a **complex plane wave** 
