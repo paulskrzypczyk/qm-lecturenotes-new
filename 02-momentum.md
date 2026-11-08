@@ -277,6 +277,22 @@ It is also important to realise that we could have in fact started this whole ch
 
 However, for other physical properties, this won't be the case — we won't know in advance what form wavefunctions should have in order to have a definite value of a given property (e.g. to have a definite energy or angular momentum). Our general procedure in these cases will be precisely to go in the other direction: For a given operator $\hat{A}$, to start by considering the associated operator $\op{A}$ (acting on wavefunctions), find its eigenfunctions, and then use **these** to define quantum states with definite properties, that is, the eigenstates of $\hat{A}$. A key example will be to find states of definite energy (in which case the operator of interest is the **{term}`Hamiltonian`** $\hat{H}$). We will study this extensively in the following chapters. 
 
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "A particle has the wavefunction $\\psi(x) = A e^{ipx/\\hbar}$. Its momentum is", "choices": ["uncertain, with $\\Delta p = \\hbar/2a$", "exactly $p$, but its position is completely uncertain", "exactly $p$, and its position is $x = 0$"], "answer": 1, "why": "$A e^{ipx/\\hbar}$ is the momentum eigenfunction $v_p(x)$: a complex plane wave of definite wavelength $h/p$. Its modulus is the same everywhere, so the particle is equally likely to be found anywhere.", "label": "Chapter 2, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "How are the spatial and momentum wavefunctions related?", "choices": ["$\\tilde\\psi(p) = \\psi(p)$: it is the same function of a different variable", "$\\tilde\\psi(p)$ is the Fourier transform of $\\psi(x)$", "$\\tilde\\psi(p) = |\\psi(x)|^2$"], "answer": 1, "why": "$\\tilde\\psi(p) = \\inner{p}{\\psi} = \\frac{1}{\\sqrt{2\\pi\\hbar}}\\infint \\psi(x)e^{-ipx/\\hbar}dx$: the same state written in the momentum basis instead of the position basis.", "label": "Chapter 2, check 2"}
+```
+
+::::
+
 ## Exercises
 
 ````{exercise}
