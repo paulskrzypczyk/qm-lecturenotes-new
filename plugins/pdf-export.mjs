@@ -44,7 +44,11 @@ function shouldRemove(node) {
     case 'admonition':
       return node.kind === 'important' || node.kind === 'tip';
     case 'div':
-      return typeof node.class === 'string' && node.class.includes('updated-date');
+      return typeof node.class === 'string' && /updated-date|web-only/.test(node.class);
+    case 'code':
+    case 'outputs':
+    case 'output':
+      return node.executable === true || node.type !== 'code';   // live (thebe) cells are web-only
     case 'heading':
       return toText(node).trim() === 'Exercises';
     case 'paragraph':

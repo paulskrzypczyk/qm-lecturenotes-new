@@ -3,6 +3,9 @@ title: "Chapter 6: Free particle"
 short_title: "Ch. 6: Free particle"
 numbering:
   enumerator: 6.%s
+kernelspec:
+  name: python
+  display_name: Python (Pyodide)
 ---
 
 `````{important} Video: Free particle I
@@ -120,6 +123,48 @@ In general it isn't possible to **simplify** or **evaluate** analytically the ri
 ```{aside} *Numerical integration*
 *It is worth noting a couple of points about the numerical integration.* First, you will need to discretise $x$, and evaluate the double integral at a finite set of points $x_i$. The resolution you choose will depend upon the problem, and the amount of time you are willing to spend. Second, a little thought needs to be given to the limits of integration. If the initial wavefunction is localised in space, then the integration over $x'$ can be restricted to this region. Furthermore, we don't need to integrate over all momentum in general, as the particle will also only have momentum in a given range (roughly of the size of $\hbar/(\text{size of region in }x)$ due to the HUP).
 ```
+
+::::{div}
+:class: web-only
+### Try it yourself: evolving a wavefunction numerically
+
+The cell below carries out exactly the recipe above, for an initial wavefunction of your choosing, with Python running **in your browser** (press the ▶ button or the rocket icon at the top of the page to start it; the first start downloads the Python runtime, which takes a few seconds). It discretises $x$, finds $\tilde\psi_\init(p)$ with a fast Fourier transform, multiplies by $e^{-ip^2t/2M\hbar}$, and transforms back. Try a top-hat, a Gaussian with $p_0 \neq 0$, or two Gaussians, and watch the spreading.
+
+```{code-cell} python
+:tags: [hide-output]
+import numpy as np
+import matplotlib.pyplot as plt
+
+# units: hbar = M = 1;  x in units of a0,  time in units of 2 M a0^2 / hbar
+L, N = 60.0, 2048                      # the box is far bigger than the packet, so its edges never matter
+x = np.linspace(-L/2, L/2, N, endpoint=False)
+dx = x[1] - x[0]
+p = 2*np.pi*np.fft.fftfreq(N, d=dx)   # the momenta of the plane waves e^{ipx}
+
+def gaussian(x, a=1.0, p0=1.0, x0=0.0):
+    return (1/(a*np.sqrt(2*np.pi)))**0.5 * np.exp(-(x-x0)**2/(4*a**2)) * np.exp(1j*p0*x)
+
+def tophat(x, width=2.0):
+    return np.where(np.abs(x) < width/2, 1/np.sqrt(width), 0.0) + 0j
+
+psi0 = gaussian(x, a=1.0, p0=1.0)      # <- change me: try tophat(x), or gaussian(x,-3,1)+gaussian(x,3,-1)
+psi0 /= np.sqrt(np.sum(np.abs(psi0)**2)*dx)
+
+def evolve(psi0, t):
+    psi_p = np.fft.fft(psi0)                       # psi~(p):  the momentum wavefunction
+    return np.fft.ifft(psi_p*np.exp(-1j*p**2*t/2))  # each plane wave picks up e^{-i p^2 t / 2M hbar}
+
+fig, ax = plt.subplots(figsize=(7, 3))
+for t in [0, 2, 4, 6]:
+    psi = evolve(psi0, 2*t)   # the factor 2 converts the time unit 2 M a0^2/hbar to hbar = M = 1
+    ax.plot(x, np.abs(psi)**2, label=f"t = {t}")
+ax.set(xlim=(-8, 25), xlabel="x / a0", ylabel="probability density")
+ax.legend(frameon=False)
+plt.show()
+```
+
+The Gaussian case is exactly [](#f-gaussian-animation) below; for anything else there is no formula, and this is how one would find out.
+::::
 
 ##  Gaussian wavefunction
 
