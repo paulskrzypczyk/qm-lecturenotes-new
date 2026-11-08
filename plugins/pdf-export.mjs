@@ -64,6 +64,13 @@ function chapterNameFromUrl(url) {
 }
 
 /** Does the math value contain alignment (& or \\) outside any sub-environment? */
+/** A tab title like "Quantum state $\\ket{\\psi}$" as text and inlineMath children (for the bold heading). */
+function parseTitle(title) {
+  const parts = title.split(/(\$[^$]+\$)/).filter(Boolean).map((p) =>
+    p.startsWith('$') ? { type: 'inlineMath', value: p.slice(1, -1) } : { type: 'text', value: p });
+  return { type: 'strong', children: parts };
+}
+
 function needsAligned(value) {
   const trimmed = value.trim();
   if (/^\\begin\{(equation|multline|gather|align|alignat|flalign|eqnarray)\*?\}/.test(trimmed)) return false;
@@ -144,6 +151,16 @@ function transformNode(node, dir, stats) {
     }
     case 'abbreviation': {
       return node.children.length ? node.children : text(toText(node));
+    }
+    case 'tabSet': {
+      // tabs become consecutive blocks, each headed by its tab title in bold
+      const out = [];
+      for (const item of node.children || []) {
+        if (item.type !== 'tabItem') continue;
+        out.push({ type: 'paragraph', children: [parseTitle(item.title || '')] });
+        out.push(...(item.children || []));
+      }
+      return out;
     }
     case 'crossReference': {
       // glossary terms ({term} roles): the glossary page is not in the PDF, so plain text
