@@ -97,7 +97,7 @@ site:
     logo: ./Pictures/UoB_RGB_24.png
     logo_text: Quantum Mechanics
     favicon: psi.png
- #   style: ./style/style.css
+    style: ./style/style.css   # static figures get a light panel in dark mode (see the file)
     hide_authors: true
  #   hide_outline: true
   nav: 
