@@ -325,14 +325,18 @@ and the corresponding wavefunction will be
 \psi(x,t) = \int_{V_0}^\infty \phi_\init(E) u_E^\rR(x) e^{-iEt/\hbar}  dE.
 ```
 ````
-In the small animation below, we show the evolution of a **Gaussian** wavefunction:
-```{figure} ./Pictures/finite-step-scattering.gif
-:name: scattering-gaussian
-:width: 600px
+In the interactive figure below, we show the evolution of a **Gaussian** wavefunction:
+````{figure}
+:label: scattering-gaussian
+:placeholder: ./Pictures/finite-step-scattering.gif
+:alt: Animation of a Gaussian wavepacket scattering off a potential step, partly reflected and partly transmitted
 :align: center
-
-**Scattering of a Gaussian wavepacket by a potential step.**  An animation of the scattering of a Gaussian wavepacket by a step potential. In the top plot, we show the wavefunction $|\psi(x,t)|$ using a colour plot. In the bottom plot, we show the associated {term}`probability density` $\pd(x,t)$. The potential step is also plotted, for illustrative purposes only. The particle approaches the step from the left (with positive momentum), and energy larger than the potential height $V_0$. Nevertheless, the particle is partially reflected by the step, such that the final state of the particle is a superposition of a left-moving Gaussian after the step, and a right-moving Gaussian that has been reflected by the step.
+```{anywidget} ./interactive/widgets/scatter.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{ "t": 0, "e0": 1.5, "a": 1.5 }
 ```
+**Scattering of a Gaussian wavepacket by a potential step.** In the top plot, we show the wavefunction $|\psi(x,t)|$ using a colour plot. In the bottom plot, we show the associated {term}`probability density` $\pd(x,t)$. The potential step is also plotted, for illustrative purposes only. The particle approaches the step from the left (with positive momentum), and mean energy $E_0$ larger than the potential height $V_0$. Nevertheless, the particle is partially reflected by the step, such that the final state of the particle is a superposition of a left-moving Gaussian after the step, and a right-moving Gaussian that has been reflected by the step. Press play to run the evolution; the sliders set the mean energy and width of the wavepacket, and the probabilities of finding the particle on either side of the step are shown.
+````
 
 We thus see that, as stated, the particle really does partially reflect and partially transmit. In the process, we also see some interesting dynamical features — in particular we see the presence of **interference fringes** during the period before the two distinct Gaussian components of the wavefunction emerge. 
 

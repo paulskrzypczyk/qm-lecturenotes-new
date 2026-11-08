@@ -1,6 +1,6 @@
 # Interactive figures — visual identity & ground rules
 
-**Version 1.4.2 · 9 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
+**Version 1.5 · 9 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
 
 The rules are those of the QIT notes' widgets (their README v1.4), carried over so that both sets of notes share one visual identity; §2 (colour roles) and §6 (2D plots instead of the Bloch sphere) are what differs.
 
@@ -304,6 +304,16 @@ Scattering off a potential step: $|u_E^{\rR}(x)|$ coloured by its phase, with th
 - **Options:** `e` (1.6), the energy in units of $V_0$.
 - Maths in `src/core/step.js` (tested: continuity of $u$ and $u'$ at the step, the TISE in both regions, $R + T = 1$, the formulas of the notes).
 
+### `scatter` — Figure 9.5 (Chapter 9)
+
+A Gaussian wavepacket scattering off the potential step, replacing the animated GIF (which stays as the placeholder: the PDF shows its filmstrip). Top: $|\psi(x,t)|$ coloured by its phase, with the step and the mean energy $E_0$ drawn across it on the step's energy scale, and the colour wheel between the panels. Bottom: $\pd(x,t)$ with the step. The packet is the superposition $\int \phi(E)\,u_E^{\rR}(x)\,e^{-iEt/\hbar}\,dE$ of right-moving eigenstates of the notes (`src/core/scatter.js`), summed over 384 energies with a Gaussian $\phi$ and the components below $V_0$ kept, so it partly reflects and partly transmits with interference fringes while the two parts overlap; long after the collision the probability on the left settles to $\bar R = \int |\phi|^2 R\,dE$, which the readouts compare with $R(E_0)$.
+
+- **Objects:** $|\psi(x,t)|$ in phase hue; $\pd(x,t)$ (accent-1); the step (accent-3, `.qm-op-axis`) and the level $E_0$ (accent-3, dashed); the labels $\prob(x<0)$ (accent-1) and $\prob(x>0)$ (accent-2) over each side of the lower panel.
+- **Interactions:** Play/Pause (time runs at $1.5\,\tau_0$ per second to $16\tau_0$); slider $t$ with presets $0, 4\tau_0, 8\tau_0, 16\tau_0$; slider $E_0 \in [0.3, 3]\,V_0$ with presets $V_0/2$, $1.2V_0$, $2V_0$; slider $a \in [0.6, 2.5]\,\ell_0$. The packet starts at $x_0 = -8\,\ell_0$; the panels span $x \in [-14, 10]\,\ell_0$ and the probabilities are integrated on a wider grid, so they stay right after the packets leave the panel.
+- **Readouts:** $t$; $R(E_0)$, $T(E_0)$; $\prob(x<0)$; $\bar R$; $\prob(x>0)$; $E_0$ and $k_0$. Lengths in $\ell_0 = \hbar/\sqrt{2MV_0}$, time in $\tau_0 = \hbar/V_0$.
+- **Options:** `t` (0), `e0` (1.5), `a` (1.5).
+- Maths in `src/core/scatter.js` (tested: the packet starts as the free Gaussian of width $a$ at $x_0$ when $k_0 \ge 4\sigma_k$, unit norm, the time-dependent Schrödinger equation at points on both sides of the step, norm conservation, and $\prob(x<0) \to \bar R$ long after the collision). Each frame is one pass over the tabulated eigenfunctions (about 1 ms); the table is rebuilt (about 20 ms) when $E_0$ or $a$ changes.
+
 ### `box3d` — Figure 11.1 (Chapter 11)
 
 The marginal density $\pd(x,y,t)$ of the superposition $(u_{(1,1,1)} + u_{(2,2,1)})/\sqrt2$ of the text as a heat-map over the $x$–$y$ face of the box, with the one-dimensional marginals $\pd(x,t)$ and $\pd(y,t)$ beside it. Play shows the density sloshing along the diagonal while the marginals never change. A second mode shows a single eigenstate $u_{n_x}(x)u_{n_y}(y)$.
@@ -329,6 +339,7 @@ A derivation revealed one line at a time, each with its justification: `{ "title
 
 ## Changelog
 
+- **1.5 (9 Nov 2026)** — `scatter` (Figure 9.5): the scattering of a Gaussian wavepacket off the potential step, computed as the superposition of right-moving eigenstates (`src/core/scatter.js`, `test/scatter.test.mjs`).
 - **1.4.2 (9 Nov 2026)** — `ho`: the chosen level is solid accent-3 and the baseline of $u_n$ is an ink axis (no longer accent-1, which was confusable with the eigenfunction); the density is solid, since it replaces $u_n$ rather than being drawn over it (§5 table); the $u_n$ label moves to the left edge, clear of the $E_k$ labels. `wavepacket`: $x \in [-5, 30]\,a_0$ and $t \le 6\tau$ (presets $0, 2\tau, 4\tau, 6\tau$), so a packet can be followed for longer and further.
 - **1.4.1 (9 Nov 2026)** — static SVG figures are inlined with theme-following colours once a widget is on the page (§9), so they look like the widgets in dark mode.
 - **1.4 (8 Nov 2026)** — three widgets without a canvas (`quiz`, `steps`, `progress`; §4 rule) and the measurement demo in `prob-density` (`sample()` in `density.js`). `qm-widgets.css` §9.

@@ -5,7 +5,7 @@
   "description": "Interactive figures for the Quantum Mechanics notes (see README.md)",
   "scripts": {
     "build": "node build.mjs",
-    "test": "node test/gaussian.test.mjs && node test/density.test.mjs && node test/planewave.test.mjs && node test/wavepacket.test.mjs && node test/isw.test.mjs && node test/ho.test.mjs && node test/step.test.mjs"
+    "test": "node test/gaussian.test.mjs && node test/density.test.mjs && node test/planewave.test.mjs && node test/wavepacket.test.mjs && node test/isw.test.mjs && node test/ho.test.mjs && node test/step.test.mjs && node test/scatter.test.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.25.0",
