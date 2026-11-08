@@ -11,3 +11,9 @@ html.dark main img { animation: qm-figure-panel 0s 1.5s forwards; }
  * (interactive/src/core/dom.js, inlineStaticFigures): its ink becomes the page's text colour and
  * the panel above is no longer needed. A few dark accents in the drawings are lightened here. */
 html.dark svg.qm-static-svg { --qm-fig-navy: #93c5fd; --qm-fig-teal: #5eead4; --qm-fig-red: #f87171; }
+
+/* Display equations. The theme places each one in a box with overflow-y: hidden (so that a very
+ * wide equation can scroll sideways), and that box clips anything reaching above or below the
+ * line box, such as the upper limit of an integral. Room above and below fixes it for every
+ * equation (the \vph macro in the sources was a per-equation workaround for the same thing). */
+main .katex-display { padding: 0.5em 0; }
