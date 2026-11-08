@@ -88,7 +88,7 @@ with a general quantum superposition
 ````{card}
 ```{math}
 :label: e-general-quantum-state
-\vph \ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx.
+\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx.
 ```
 ````
 This state corresponds to a **superposition** of the particle having a position $x$, and we will refer to $\ket{x}$ as **{term}`position states <position state>`**. Just as previously, e.g. in [](#e-quantum-state-discrete), these states are meant to represent a quantum particle which has — with certainty — position $x$ (we will see below that we have to be slightly careful with this!). 
@@ -97,7 +97,7 @@ We can use these to introduce the **position operator** $\hat{X}$ of a particle.
 ````{card}
 ```{math}
 :label: e-position-operator
-\hat{X} = \int_{-\infty}^{\infty} x \ket{x}\bra{x} dx. \vph
+\hat{X} = \int_{-\infty}^{\infty} x \ket{x}\bra{x} dx. 
 ```
 ````
 ## Normalisation of wavefunctions
@@ -129,12 +129,12 @@ To simplify this expression, we need to recall the definition of the [Dirac delt
 The {term}`Dirac Delta function <Dirac delta function>` $\delta(y)$ is defined such that
 ```{math}
 :label: e-delta-defining-eq
-\vph \infint  f(y) \delta(y-y_0) dy = f(y_0).
+\infint  f(y) \delta(y-y_0) dy = f(y_0).
 ```
 One representation of the Dirac Delta function is
 ```{math}
 :label: e-delta
-\vph \delta(y)  = \frac{1}{2\pi} \infint e^{iay} da.
+\delta(y)  = \frac{1}{2\pi} \infint e^{iay} da.
 ```
 The delta function is an infinitely thin, infinitely tall 'spike', as depicted below:
 
@@ -242,7 +242,7 @@ Nevertheless, just as it is useful to consider position states $\ket{x}$ and wri
 One advantage of using directly the probability density $\pd(x) = |\psi(x)|^2$ is that it allows us to answer natural physical questions easily. For example, a natural question we can ask about a quantum particle is: *What is the probability to find it in the region $x_a \leq x \leq x_b$?* (for example, we might be interested in an electron, and the region might be the region close to the proton in a Hydrogen atom). We can answer this question directly: it is just the **total probability** that an idealised position measurement gives a result in this region. The answer is therefore
 ````{card}
 ```{math}
-\vph \prob(x_a \leq x \leq x_b) = \int_{x_a}^{x_b} |\psi(x)|^2 dx,
+\prob(x_a \leq x \leq x_b) = \int_{x_a}^{x_b} |\psi(x)|^2 dx,
 ```
 ````
 i.e. we integrate the probability density, just as we would for any question involving probability densities.

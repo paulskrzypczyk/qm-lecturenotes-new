@@ -72,12 +72,12 @@ We will start off considering Region I, to the left of the step. In this region 
 and so, just as we were able to do there, we can **immediately write down the energy eigenfunction**, as this is the same {term}`Hamiltonian` (and the same as the free particle also!). As we discussed in [](#s-ISW-rII), any function of the form
 ```{math}
 :label: e-scattering-rI
-\vph u_E^\rI(x) = A e^{ikx} + Be^{-ikx},
+u_E^\rI(x) = A e^{ikx} + Be^{-ikx},
 ```
 will be an eigenfunction, where $A$ and $B$ are arbitrary complex numbers, and the corresponding energy {term}`eigenvalue` is  
 ```{math}
 :label: e-k
-\vph E = \frac{\hbar^2 k^2}{2M}.
+E = \frac{\hbar^2 k^2}{2M}.
 ```
 Just as in the case of the infinite square well, we **don't yet know which {term}`superposition` of $e^{ikx}$ and $e^{-ikx}$ we should take** (i.e. how to choose $A$ and $B$). For the moment we will leave them general, and see that we can determine them later, using continuity. 
 
@@ -96,12 +96,12 @@ Since $V_0$ is just a constant, this has again **exactly the same form as for a 
 
 Given the above, we can once again **write down the solution**! In particular, the energy eigenfunction in region II will be identical in form to an energy eigenfunction **without a potential** and with energy $E'$. The solution is therefore 
 ```{math}
-\vph u_E^\rII(x) = C e^{ik'x} + De^{-ik'x},
+u_E^\rII(x) = C e^{ik'x} + De^{-ik'x},
 ```
 where $C$ and $D$ are two new constants (that we will also need to determine in due course), and 
 ```{math}
 :label: e-kp
-\vph E - V_0 = \frac{\hbar^2 k'^2}{2M}.
+E - V_0 = \frac{\hbar^2 k'^2}{2M}.
 ```
 Taking a step back (no pun intended), this makes **perfect sense**. Once the particle has passed the step, its potential energy has increased by $V_0$. The total energy is still $E$, and so the kinetic energy of the particle is now $E - V_0$. This is why we see that the energy eigenfunction has exactly the same form as an energy eigenfunction with $E' = E - V_0$. 
 
@@ -248,7 +248,7 @@ The way this is usually studied is by introducing the so-called **reflection coe
 ````{card}
 ```{math}
 :label: e-R-coeff
-R = |B|^2 = \vph \left(\frac{k-k'}{k+k'}\right)^2
+R = |B|^2 = \left(\frac{k-k'}{k+k'}\right)^2
 ```
 ````
 ```{aside} *Why is this a good definition?* 
@@ -303,7 +303,7 @@ Finally, we will briefly discuss how we can **use the energy eigenfunctions** in
 For the finite step potential, we can do **exactly the same**! In particular, we can form initial quantum states of the form
 ```{math}
 :label: e-psi-in-scattering
-\ket{\psi_\init} = \vph \int_{V_0}^\infty \phi_\init(E) \ket{E^\rR} dE,
+\ket{\psi_\init} = \int_{V_0}^\infty \phi_\init(E) \ket{E^\rR} dE,
 ```
 where 
 ```{math}
@@ -387,7 +387,7 @@ ik'(C' e^{ik'x} - D'e^{-ik'x}) &\text{ if } x \geq 0.
 ````{exercise}
 :label: ex-E-below-V0
 In this exercise we will find the energy eigenfunction when $0 < E < V_0$. In Region I the situation is identical to before, given by [](#e-scattering-rI). We will therefore begin by focusing on region II, $x \geq 0$.  
-1. Starting from the TISE in Region II (i.e. [](#e-scattering-TISE-rII)), substitute in for $\op{P}^2$, and re-arrange to show that it can be written as $$ \vph\frac{\partial^2 u_E^\rII}{\partial x^2} = \frac{2M}{\hbar^2}(V_0 - E)u_E^\rII(x).$$
+1. Starting from the TISE in Region II (i.e. [](#e-scattering-TISE-rII)), substitute in for $\op{P}^2$, and re-arrange to show that it can be written as $$ \frac{\partial^2 u_E^\rII}{\partial x^2} = \frac{2M}{\hbar^2}(V_0 - E)u_E^\rII(x).$$
 2. Since $(V_0-E)$ is now positive, define $\lambda^2 = 2M(V_0 - E)/\hbar^2$. Show that $e^{\lambda x}$ and $e^{-\lambda x}$ are both solutions to the TISE from part 1. 
 We will discount the solution $e^{\lambda x}$ on **physical grounds**: this would correspond to an exponentially increasing probability density to find the particle beyond the step, which is unreasonable. We will therefore take the solution in Region II to be $u_E^\rII(x) = Ce^{-\lambda x}$.
 3. Use continuity of the energy eigenfunction at $x = 0$ to show that $A + B = C$.

@@ -79,7 +79,7 @@ that is, the potential energy operator multiplies the wavefunction at each posit
 Putting everything together, we can now write down the Hamiltonian operator acting on wavefunctions:
 ````{card}
 ```{math}
-\vph\op{H} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} + V(x).
+\op{H} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} + V(x).
 ```
 ````
 As you will show in an [exercise](#ex-comm-K-V), the kinetic energy and potential energy **do not commute**, $[\hat{K},\hat{V}] \neq 0$ in general. This leads to a profound aspect of quantum mechanics:
@@ -100,7 +100,7 @@ A quantum state where the particle has definite energy corresponds to an **{term
 As with momentum eigenstates, we can write these eigenstates in terms of their associated wavefunctions,
 ```{math}
 :label: e-eigenstate-wf
-\vph \ket{E} = \infint u_E(x) \ket{x} dx,
+\ket{E} = \infint u_E(x) \ket{x} dx,
 ```
 where $u_E(x)$ are wavefunctions of the particle corresponding to states of definite energy. We call these the **energy eigenfunctions**. These wavefunctions will satisfy the associated eigenvalue equation
 ````{card}
@@ -187,7 +187,7 @@ In this exercise we will show that in quantum mechanics, the kinetic energy and 
 1. Calculate $\op{K}\op{V}\psi(x). $
 1. Using parts 1. and 2. show that 
 ```{math}
-\vph[\op{K},\op{V}]\psi(x) = -\frac{\hbar^2}{2M}\left(\frac{\partial^2 V}{\partial x^2}\psi(x) + 2 \frac{\partial V}{\partial x} \frac{\partial}{\partial x}\psi(x) \right)
+[\op{K},\op{V}]\psi(x) = -\frac{\hbar^2}{2M}\left(\frac{\partial^2 V}{\partial x^2}\psi(x) + 2 \frac{\partial V}{\partial x} \frac{\partial}{\partial x}\psi(x) \right)
 ```
 We will denote by $\hat{V}'$ and $\hat{V}''$ the operators satisfying
 ```{math}
@@ -196,7 +196,7 @@ We will denote by $\hat{V}'$ and $\hat{V}''$ the operators satisfying
 ```
 4. Hence, show that
 ```{math}
-\vph[\hat{K},\hat{V}] = -\frac{\hbar^2}{2M}\hat{V}'' - \frac{i\hbar}{M}\hat{V}'\hat{P}.
+[\hat{K},\hat{V}] = -\frac{\hbar^2}{2M}\hat{V}'' - \frac{i\hbar}{M}\hat{V}'\hat{P}.
 ```
 5. The operators $\hat{V}'$ and $\hat{V}''$ can vanish (can satisfy $\hat{V}'\ket{\psi} = 0$). When does this happen? This is the only case in which $[\hat{K},\hat{V}] = 0$. Does this make sense physically?
 ```{dropdown} Answers

@@ -33,13 +33,13 @@ The method we will use to find the {term}`energy eigenstates <energy eigenstate>
 ```
 
 *What is the form of the potential when the particle is close to the bottom of the well? We can **expand** the potential energy around the bottom, to obtain*
-\begin{equation}\vph
+\begin{equation}
 V(x) \approx V_0 +  \frac{dV}{dx}\bigg|_{x_0}(x-x_0) + \frac{1}{2}  \frac{d^2V}{dx^2}\bigg|_{x_0}(x-x_0)^2
 \end{equation}
 *where $V_0 = V(x_0)$.*
 
 *At $x = x_0$, the bottom of the well, the first derivative of the potential vanishes, $\frac{dV}{dx}\big|_{x_0} = 0$, since the bottom is, by definition, a **turning point**. Thus, to leading order, the potential will be approximately*
-\begin{equation}\vph
+\begin{equation}
 V(x) \approx V_0 + \frac{1}{2} \frac{d^2V}{dx^2}\bigg|_{x_0}(x-x_0)^2.
 \end{equation}
 *We can finally make two simplifications without loss of generality: First, we can **redefine the zero of the energy scale**, so that $V_0 = V(x_0) = 0$. Second, we can change our co-ordinate so that the bottom of the well corresponds to $x_0 = 0$. With these two simplifications, we arrive at*
@@ -305,7 +305,7 @@ u_1(x) &= \frac{1}{\sqrt{2}}\left(\frac{\op{X}}{\ell} - i\frac{\ell \op{P}}{\hba
 Repeating this procedure, what we find in general is that all of the energy eigenfunctions have the form
 ````{card}
 ```{math}
-\vph u_n(x) = N_n h_n(x/\ell) e^{-x^2/2\ell^2},
+u_n(x) = N_n h_n(x/\ell) e^{-x^2/2\ell^2},
 ```
 ````
 where $N_n$ is a **normalisation factor**, and $h_n(y)$ are functions known as **[Hermite polynomials](wiki:Hermite_polynomials)**. These are polynomials of degree $n$ (and this is finally why we start counting at $n = 0$ and not $n = 1$), which alternate between being **even** and **odd** (with $n$). The first few Hermite polynomials (as well as the associated normalised energy eigenfunction) are given in the following table: 
@@ -395,10 +395,10 @@ In this unit we won't go further into this fascinating effect, but just highligh
 1. The three dimensionful quantities for the quantum harmonic oscillator are the mass of the particle $M$, the angular frequency $\omega$ (which specifies the spring constant $k = M\omega^2$), and $\hbar$. Write down the dimensions of each of these quantities.
 
 2. Find a combination of these quantities that has the dimension of length.  That is, let 
-$$ \vph \ell = M^\alpha \omega^\beta \hbar^\gamma, $$
+$$ \ell = M^\alpha \omega^\beta \hbar^\gamma, $$
 and find the exponents $\alpha$, $\beta$ and $\gamma$ that give $\ell$ the dimension of length. 
 3. Find a combination of $M$, $\omega$ and $\hbar$ that has the dimension of momentum.  That is, let 
-$$ \vph q = M^\mu \omega^\nu \hbar^\lambda, $$
+$$ q = M^\mu \omega^\nu \hbar^\lambda, $$
 and find the exponents $\mu$, $\nu$ and $\lambda$ that give $q$ the dimension of momentum. 
 ```{dropdown} Answers
 1. $[M] = \mathsf{M}$, $[\omega] = \mathsf{T}^{-1}$, $[\hbar] = \mathsf{M}\mathsf{L}^{2} \mathsf{T}^{-1}$.
@@ -413,7 +413,7 @@ $$ [\hat{A} + \hat{B}, \hat{C} + \hat{D}] = [\hat{A},\hat{C}] + [\hat{A},\hat{D}
 2. Show that for arbitrary operators $\hat{A}$ and $\hat{B}$, and arbitrary complex constants $\alpha$ and $\beta$ that 
 $$ [\alpha \hat{A}, \beta \hat{B}] = \alpha\beta [\hat{A},\hat{B}].$$
 3. Using parts 1 and 2, and the explicit form of $\hat{H}$ and $\hat{a}^\dagger$, show that 
-$$\vph[\hat{H}, \hat{a}^\dagger] = \frac{1}{2\sqrt{2}M\ell}[\hat{P}^2,\hat{X}] - \frac{i\ell}{2\sqrt{2}M\hbar}[\hat{P}^2,\hat{P}] +\frac{M\omega^2}{2\sqrt{2}\ell}[\hat{X}^2,\hat{X}] - \frac{iM\omega^2 \ell}{2\sqrt{2}\hbar}[\hat{X}^2,\hat{P}].$$
+$$[\hat{H}, \hat{a}^\dagger] = \frac{1}{2\sqrt{2}M\ell}[\hat{P}^2,\hat{X}] - \frac{i\ell}{2\sqrt{2}M\hbar}[\hat{P}^2,\hat{P}] +\frac{M\omega^2}{2\sqrt{2}\ell}[\hat{X}^2,\hat{X}] - \frac{iM\omega^2 \ell}{2\sqrt{2}\hbar}[\hat{X}^2,\hat{P}].$$
 4. Using [](#e-comms-P2-X2), show that the other two commutators vanish, and use the definition of $\ell$ in [](#e-ell-QHO) to show that
 $$ [\hat{H},\hat{a}^\dagger] = \hbar \omega \hat{a}^\dagger.$$
 ```{dropdown} Answers
@@ -427,7 +427,7 @@ $$ [\hat{H},\hat{a}^\dagger] = \hbar \omega \hat{a}^\dagger.$$
 ````{exercise}
 :label: ex-comm-H-a
 1. Using parts 1 and 2 from [](#ex-comm-H-adag), show that
-$$\vph[\hat{H}, \hat{a}] = \frac{1}{2\sqrt{2}M\ell}[\hat{P}^2,\hat{X}] + \frac{i\ell}{2\sqrt{2}M\hbar}[\hat{P}^2,\hat{P}] +\frac{M\omega^2}{2\sqrt{2}\ell}[\hat{X}^2,\hat{X}] + \frac{iM\omega^2 \ell}{2\sqrt{2}\hbar}[\hat{X}^2,\hat{P}].$$
+$$[\hat{H}, \hat{a}] = \frac{1}{2\sqrt{2}M\ell}[\hat{P}^2,\hat{X}] + \frac{i\ell}{2\sqrt{2}M\hbar}[\hat{P}^2,\hat{P}] +\frac{M\omega^2}{2\sqrt{2}\ell}[\hat{X}^2,\hat{X}] + \frac{iM\omega^2 \ell}{2\sqrt{2}\hbar}[\hat{X}^2,\hat{P}].$$
 
 2. Thus show that
 $$ [\hat{H},\hat{a}] = -\hbar \omega \hat{a}.$$

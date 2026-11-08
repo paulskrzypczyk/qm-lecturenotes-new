@@ -71,7 +71,7 @@ u_E(x) = \begin{cases}
 Region I, when $x < 0$, is the region **outside and to the left** of the box. In this region, $V(x) = \infty$ and hence also $\op{H} = \infty$. This is a **strange situation**! We however already implicitly stated the solution. The entire reason for considering the infinite square well is to have the particle **confined within the region $0 \leq x \leq L$, inside the box**. A different way of phrasing this mathematically is that **the {term}`wavefunctions <wavefunction>` must necessarily always vanish outside of the well**.  Thus, we have
 ```{math}
 :label: e-isq-rI
-\vph u_E^\rI(x) = 0.
+u_E^\rI(x) = 0.
 ```
 ```{aside} *Mathematical derivation*
 *You may feel slightly uncomfortable about this, as we haven't shown it mathematically, but just **stated** it as the answer. Furthermore, it isn't clear how we can verify it to satisfy the TISE $\op{H}u_E^\rI(x) = E u_E^\rI(x)$, since in region I $\op{H} = \infty$, and so we have an indeterminate expression on the left-hand side $\infty \cdot 0$. If we however consider that the potential energy is **finite** outside the well, and equal to $V_0$, we can then confirm that we trivially satisfy $0 = 0$ in the TISE. This is ultimately the root of the mathematical justification for [](#e-isq-rI). We will however here accept it on intuitive grounds and not go into the mathematical details further.*
@@ -79,7 +79,7 @@ Region I, when $x < 0$, is the region **outside and to the left** of the box. In
 Region III, when $x > L$, is **identical** to region I, in that the potential energy is also infinite here. For the same reasons, we must also take any energy eigenfunction to vanish in this region, and so have
 ```{math}
 :label: e-isq-rIII
-\vph u_E^\rIII(x) = 0.
+u_E^\rIII(x) = 0.
 ```
 (s-ISW-rII)=
 ### Energy eigenfunctions in Region II
@@ -89,18 +89,18 @@ Region II is our primary region of interest, as this corresponds to $0\leq x\leq
 ```
 That is, inside the well, **the potential energy vanishes** and hence the particle is **essentially free** with no forces acting. We are thus in a very similar situation to [](06-free-particle). We can use this to realise that we already know what the energy eigenfunctions must be in region II: **they must coincide with momentum {term}`eigenfunctions <eigenfunction>`** — i.e. they must be **complex {term}`plane waves <plane wave>`**. We can check this directly. In particular, we can see that $e^{ikx}$ is an eigenfunction of $\op{H}$, for any value $k$, 
 ```{math}
-\vph \op{H}e^{ikx} &= -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} e^{ikx},\\
+\op{H}e^{ikx} &= -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} e^{ikx},\\
 &= \frac{\hbar^2 k^2}{2M} e^{ikx},
 ```
 and the corresponding {term}`eigenvalue` is $E = \frac{\hbar^2 k^2}{2M}$. 
 
 However, as we also saw in [](06-free-particle), we have **{term}`degeneracy`**, and the complex plane wave with $k' = -k$ is **an eigenfunction with the same energy eigenvalue** 
 ```{math}
-\vph E' = \frac{\hbar^2(k')^2}{2M} =  \frac{\hbar^2(-k)^2}{2M} = \frac{\hbar^2 k^2}{2M} = E.
+E' = \frac{\hbar^2(k')^2}{2M} =  \frac{\hbar^2(-k)^2}{2M} = \frac{\hbar^2 k^2}{2M} = E.
 ```
 Since $e^{ikx}$ and $e^{-ikx}$ are both eigenfunctions with the **same** eigenvalue, as you will confirm in an [exercise](#ex-superposition-eigenfunction), **any {term}`superposition`** of these two functions is **also** an eigenfunction with the same eigenvalue $E = \frac{\hbar^2 k^2}{2M}$. At this stage, we don't yet know **what is the correct superposition** to consider, so we will keep things general, and say that the energy eigenfunction will be of the form
 ```{math}
-\vph u_E^\rII(x) = A e^{ikx} + B e^{-ikx},
+u_E^\rII(x) = A e^{ikx} + B e^{-ikx},
 ```
 where $A$ and $B$ are **arbitrary (complex) constants** which we don't yet know, and $E = \frac{\hbar^2 k^2}{2M}$. 
 
@@ -154,7 +154,7 @@ Thus, putting everything together, the requirement of **continuity** has led us 
 ````{card}
 ```{math}
 :label: e-isw-energy-levels
-\vph E_n &= \frac{\hbar^2 \pi^2 n^2}{2M L^2},& n &=1, 2, \ldots
+E_n &= \frac{\hbar^2 \pi^2 n^2}{2M L^2},& n &=1, 2, \ldots
 ```
 ````
 These are the **only energies that the particle can have with certainty**. It is simply impossible for the particle to have any other energy! The energy levels are depicted below in [](#f-isw-levels).

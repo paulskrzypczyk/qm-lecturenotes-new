@@ -306,7 +306,7 @@ Having covered the position and momentum of a particle above, we are now ready t
 
 For the kinetic energy, the situation is slightly different, given that momentum is now a **vector** quantity in 3D. The kinetic energy depends only upon the **squared magnitude** of the momentum, that is (classically for the moment),
 ```{math}
-K = \vph\frac{p_x^2 + p_y^2 + p_z^2}{2M}
+K = \frac{p_x^2 + p_y^2 + p_z^2}{2M}
 ```
 We will thus form a kinetic energy operator by substituting each component of squared momentum by the corresponding **squared operator**, and thus arrive at the general **Hamiltonian operator**
 ````{card}
@@ -319,7 +319,7 @@ As always, a large part of our interest in 3D will be to find the eigenstates an
 The associated **operator acting on wavefunctions** is
 ````{card}
 ```{math}
-\op{H} &= \vph -\frac{\hbar^2}{2M}\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) + V(\rvec),
+\op{H} &= -\frac{\hbar^2}{2M}\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) + V(\rvec),
 \\
 &= -\frac{\hbar^2}{2M}\nabla^2 + V(\rvec).
 ```

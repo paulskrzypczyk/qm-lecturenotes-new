@@ -59,7 +59,7 @@ We can therefore restrict our attention to the **inside** of the well. In this r
 since inside the well the potential vanishes. The 3D TISE [](#e-3D-TISE) therefore reads
 ```{math}
 :label: e-TISE-3D-box
-\vph-\frac{\hbar^2}{2M}\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\right)u_E^\rI(\rvec) = Eu_E^\rI(\rvec),
+-\frac{\hbar^2}{2M}\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\right)u_E^\rI(\rvec) = Eu_E^\rI(\rvec),
 ```
 where the left-hand side is $\op{H}u_E^\rI(\rvec)$. 
 
@@ -101,7 +101,7 @@ Now, we **aren't looking for eigenfunctions of an individual component of the ki
 ````{card}
 ```{math}
 :label: e-3D-box-eigenfunctions
-\vph u_\mathbf{n}(\rvec) &= u_{n_x}(x)u_{n_y}(y)u_{n_z}(z),\\
+u_\mathbf{n}(\rvec) &= u_{n_x}(x)u_{n_y}(y)u_{n_z}(z),\\
 &= \begin{cases} \sqrt{\frac{8}{L^3}} \sin \frac{n_x \pi x}{L}\sin \frac{n_y \pi y}{L}\sin \frac{n_z \pi z}{L} &\text{ if } 0 \leq x,y,z \leq L, \\
 0 &\text{ otherwise,} \end{cases}
 ```
@@ -120,7 +120,7 @@ As an [exercise](#ex-check-eigenfunctions) you will confirm explicitly that thes
 ````{card}
 ```{math}
 :label: e-energy-eigenvalue-3D-box
-\vph E_\mathbf{n} = \frac{\hbar^2 \pi^2}{2ML^2} \left(n_x^2 + n_y^2 + n_z^2\right).
+E_\mathbf{n} = \frac{\hbar^2 \pi^2}{2ML^2} \left(n_x^2 + n_y^2 + n_z^2\right).
 ```
 ````
 In what follows, it will be convenient to give a name to the combination $\frac{\hbar^2 \pi^2}{2ML^2}$, which is a **common multiple** among all energy levels. We will denote this by
@@ -267,11 +267,11 @@ We could stop here, but what is interesting is to analyse the properties of the 
 ```
 This is the probability density in 3D, but there is nothing to stop us asking questions about the probability density of any given coordinate. This is formally a **marginal probability density**, and we can obtain it by **integrating out** the coordinates we aren't interested in (so that we get the **total probability density** for the remaining coordinate). For example, for the $x$ coordinate, we have
 ```{math}
-\pd(x,t) = \vph \infint \infint \pd(\rvec,t) dy dz. 
+\pd(x,t) = \infint \infint \pd(\rvec,t) dy dz. 
 ```
 In order to evaluate this, it will be advantageous to use the fact that the energy eigenfunctions of the 3D box are **products** of the eigenfunctions of the **1D infinite square well** (as given in [](#e-3D-box-eigenfunctions)). Focusing first on the first term on the right-hand side of [](#e-3D-pd-box-ex), we see that
 ```{math}
-\vph \infint \infint |u_{(1,1,1)}(\rvec)|^2 dy dz &= \infint \infint |u_1(x)|^2 |u_1(y)|^2 |u_1(z)|^2 dy dz, \\ 
+\infint \infint |u_{(1,1,1)}(\rvec)|^2 dy dz &= \infint \infint |u_1(x)|^2 |u_1(y)|^2 |u_1(z)|^2 dy dz, \\ 
 &= |u_1(x)|^2 \infint |u_1(y)|^2 dy \infint |u_1(z)|^2 dz, \\
 &= |u_1(x)|^2,
 ```
@@ -279,7 +279,7 @@ where in the first line we write the eigenfunction in terms of the eigenfunction
 
 We arrive at a similar conclusion for the second term on the right-hand side of [](#e-3D-pd-box-ex), and see that after integrating over $y$ and $z$, we are left with $|u_2(x)|^2$. For the last term, the situation is interesting. The relevant integral is 
 ```{math}
-\vph \infint \infint u_{(1,1,1)}(\rvec)u_{(2,2,1)}(\rvec) dy dz & = u_1(x)u_2(x) \infint u_1(y)u_2(y) dy \infint u_1(z) u_1(z) dz, \\ 
+\infint \infint u_{(1,1,1)}(\rvec)u_{(2,2,1)}(\rvec) dy dz & = u_1(x)u_2(x) \infint u_1(y)u_2(y) dy \infint u_1(z) u_1(z) dz, \\ 
 &= 0.
 ```
 *Why is this zero?* It is because of the integral over $y$. We should recall that **the energy eigenfunctions of the infinite square well are real**. This means we could equally write $u_1(y)$ as $u_1^*(y)$. The integral over $y$ is thus nothing but $\inner{E_1}{E_2}$ in disguise (as you have shown as an exercise in class, and where $\ket{E_1}$ and $\ket{E_2}$ refer to energy eigenstates of the 1D infinite square well). Since the energy levels are **orthogonal** (see [](#e-energy-levels-orthonormal)), the integral over $y$ vanishes.  
@@ -300,7 +300,7 @@ and are thus **also independent of time**.
 *What is this telling us?* It actually shows that the **motion in the different coordinates must be correlated**, as the probability density $\pd(\rvec,t)$ is definitely **not** independent of time. It is actually the $x$ and $y$ coordinates that are correlated. We can study these by integrating over $z$. As part of [](#ex-3D-box-marginal), you will show that
 ```{math}
 :label: e-3D-example-pd-x-y
-\pd(x,y,t) &= \vph \infint \pd(\rvec, t) dz, \\
+\pd(x,y,t) &= \infint \pd(\rvec, t) dz, \\
 &= \frac{1}{2}\left(|u_1(x)|^2 |u_1(y)|^2 + |u_2(x)|^2 |u_2(y)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_1(x)u_2(x)u_1(y)u_2(y)\right)
 ```
 In the following animation, you can see what this marginal probability density looks like:
@@ -385,7 +385,7 @@ where $\ket{E_{n_x}}$ is the energy eigenstate of the 1D infinite square well as
 In this exercise we will consider an **asymmetric box** with walls at $x = 0$ and $x = L_x$, $y = 0$ and $y = L_y$ and $z = 0$ and $z = L_z$. 
 1. Write down the energy eigenfunctions and eigenvalues of a 1D infinite square well, with walls at $x = 0$ and $x = L_x$. 
 2. Use part 1 to explain why a reasonable educated guess for the energy eigenfunctions of the asymmetric 3D box is 
-$$\label{e-3D-box-asym} \vph u_\mathbf{n}(\rvec) = \begin{cases} \sqrt{\frac{8}{L_x L_y L_z}} \sin \frac{n_x \pi x}{L_x}\sin \frac{n_y \pi y}{L_y}\sin \frac{n_z \pi z}{L_z} &\text{ if } 0 \leq x\leq L_x, 0\leq y \leq L_y, 0 \leq z \leq L_z, \\
+$$\label{e-3D-box-asym} u_\mathbf{n}(\rvec) = \begin{cases} \sqrt{\frac{8}{L_x L_y L_z}} \sin \frac{n_x \pi x}{L_x}\sin \frac{n_y \pi y}{L_y}\sin \frac{n_z \pi z}{L_z} &\text{ if } 0 \leq x\leq L_x, 0\leq y \leq L_y, 0 \leq z \leq L_z, \\
 0 &\text{ otherwise,} \end{cases}
 $$
 3. Confirm that [](#e-3D-box-asym) satisfies the TISE inside the asymmetric box, and determine the corresponding energy eigenvalues of the 3D box. 
@@ -417,11 +417,11 @@ n/a (show that).
 1. Starting from the wavefunction 
 ![](#e-wf-3D-ex-t)
 show that the **marginal** probability density over $x$ and $y$, 
-$$ \pd(x,y,t) = \vph\infint \pd(\rvec,t) dz,$$
+$$ \pd(x,y,t) = \infint \pd(\rvec,t) dz,$$
 is given by  
 $$\label{e-3D-box-ex-pd-x-y}\pd(x,y,t) = \frac{1}{2}\left(|u_1(x)|^2 |u_1(y)|^2 + |u_2(x)|^2 |u_2(y)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_1(x)u_2(x)u_1(y)u_2(y)\right).$$
 2. Starting again from [](#e-wf-3D-ex-t), show that the marginal probability density over $z$, 
-$$ \pd(z,t) = \vph \infint \infint \pd(\rvec,t) dx dy, $$
+$$ \pd(z,t) = \infint \infint \pd(\rvec,t) dx dy, $$
 is given by
 $$ \pd(z,t) = |u_1(z)|^2.$$
 3. Write down an expression relating the marginal densities $\pd(y,t)$ and $\pd(x,y,t)$.
@@ -441,7 +441,7 @@ $$\pd(y,t) = \frac{1}{2}\left(|u_1(y)|^2 + |u_2(y)|^2\right) $$
 In this exercise we will explore a measure of **correlation** known as the **covariance**. It is defined as
 $$ \mathrm{cov}(x,y) = \av{xy}-\av{x}\av{y},$$
 where
-$$\av{xy} = \vph \infint \infint xy \pd(x,y,t) dx dy.$$ 
+$$\av{xy} = \infint \infint xy \pd(x,y,t) dx dy.$$ 
 The covariance is the difference between the expectation value of the product, and the product of the expectation values. 
 1. For the probability density 
 ![](#e-pd-x-3D-ex)

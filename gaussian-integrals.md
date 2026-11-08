@@ -22,7 +22,7 @@ where $b > 0$ is a real and positive constant.
 ````{card}
 ```{math}
 :label: e-gaussian-y
-\vph\infint y e^{-b y^2}dy = 0,
+\infint y e^{-b y^2}dy = 0,
 ```
 where $b>0$ is a real and positive constant. 
 ````
@@ -30,7 +30,7 @@ where $b>0$ is a real and positive constant.
 ````{card}
 ```{math}
 :label: e-gaussian-y2
-\vph \infint y^2 e^{-b y^2}dy = \frac{1}{2}\sqrt{\frac{\pi}{b^3}},
+\infint y^2 e^{-b y^2}dy = \frac{1}{2}\sqrt{\frac{\pi}{b^3}},
 ```
 where $b>0$ is a real and positive constant. 
 ````

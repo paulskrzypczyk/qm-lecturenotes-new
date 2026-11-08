@@ -77,7 +77,7 @@ then it will evolve into the wavefunction $\tilde{\psi}(p,t)$ given by
 ````{card}
 ```{math}
 :label: e-free-particle-mom-evolution
-\vph \tilde{\psi}(p,t) = e^{-ip^2t/2M\hbar}\tilde{\psi}_\init(p).
+\tilde{\psi}(p,t) = e^{-ip^2t/2M\hbar}\tilde{\psi}_\init(p).
 ```
 ````
 This equation restates what we already knew, but makes it much clearer. In particular, it says that for a free particle, if we specify the state in terms of the momentum wavefunction, then the evolution is **remarkably simple**: the wavefunction just acquires a phase $e^{-ip^2t/2M\hbar}$ in time! This is because momentum eigenstates are states of definite energy — and are thus **{term}`stationary states <stationary state>`**. 
@@ -106,7 +106,7 @@ We already have all the ingredients we need, we just need to put them all togeth
 Substituting this into [](#e-free-particle-mom-evolution), we have thus half-solved our problem:
 ```{math}
 :label: e-free-particle-mom-evolution-1
-\vph \tilde{\psi}(p,t) = e^{-ip^2t/2M\hbar}\frac{1}{\sqrt{2\pi\hbar}}\infint \psi_\init(x) e^{-ipx/\hbar} dx,
+\tilde{\psi}(p,t) = e^{-ip^2t/2M\hbar}\frac{1}{\sqrt{2\pi\hbar}}\infint \psi_\init(x) e^{-ipx/\hbar} dx,
 ```
 since this now gives a momentum wavefunction at time $t$ in terms of a spatial initial wavefunction. We can finish off our goal, by performing a **second** Fourier transform (now using [](#e-psi-p-to-psi-x)), transforming the momentum wavefunction $\tilde{\psi}(p,t)$ into a spatial wavefunction $\psi(x,t)$. The one **subtlety** that we need to take care with is that we **already used $x$ as our (dummy) integration variable**, but we now want to use $x$ instead as the position variable in $\psi(x,t)$. We therefore **need to change our integration variable to $x'$ for consistency**. Altogether, after some simple re-arranging and simplifying, we obtain
 ````{card}
@@ -315,7 +315,7 @@ where $N > 0$ is a {term}`normalisation` constant.
 2. Sketch the wavefunction. 
 3. Show that the initial momentum wavefunction of the particle is 
 ```{math}
-\vph\tilde{\psi}_\init(p) = 2\sqrt{\frac{3\ell}{\pi\hbar}}\left(\frac{\sin (p\ell/2\hbar)}{p\ell/\hbar}\right)^2.
+\tilde{\psi}_\init(p) = 2\sqrt{\frac{3\ell}{\pi\hbar}}\left(\frac{\sin (p\ell/2\hbar)}{p\ell/\hbar}\right)^2.
 ```
 4. Write down the wavefunction $\psi(x,t)$. This should be in the form of an integral over $p$ (you are not expected to evaluate this integral!)
 5. (*optional*) Numerically evaluate the integral in part 4, to plot the probability density $\pd(x,t)$ for $t = 1, 2, \ldots, 5$ (assuming $\ell = \hbar = M = 1$). 

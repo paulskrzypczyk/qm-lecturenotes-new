@@ -240,7 +240,7 @@ Recall that an even function is one such that $f(-y) = f(y)$.
 
 It can be shown that the average square momentum of the particle is 
 \begin{equation*} 
-        \vph \langle p^2 \rangle = \frac{5\hbar^2}{2a^2}.
+        \langle p^2 \rangle = \frac{5\hbar^2}{2a^2}.
 \end{equation*}
 4. Calculate the standard deviation in the momentum of the particle, $\Delta p = \sqrt{\langle p^2 \rangle - \langle p \rangle^2}$.
 

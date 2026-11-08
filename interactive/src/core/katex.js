@@ -9,7 +9,6 @@ export const MACROS = {
   '\\ket': '|#1\\rangle',
   '\\bra': '\\langle #1|',
   '\\infint': '\\int_{-\\infty}^{\\infty}',
-  '\\vph': '\\vphantom{\\Bigg|}',
   '\\rI': '\\mathrm{I}',
   '\\rII': '\\mathrm{II}',
   '\\rIII': '\\mathrm{III}',

@@ -41,7 +41,7 @@ If $\ket{\psi(t)}$ satisfies [](#e-SE) with the **initial condition** $\ket{\psi
 ````{card}
 ```{math}
 :label: e-SE-wf
-\vph i\hbar \frac{\partial}{\partial t} \psi(x,t) = \op{H} \psi(x,t).
+i\hbar \frac{\partial}{\partial t} \psi(x,t) = \op{H} \psi(x,t).
 ```
 ````
 This is also referred to simply as the **{term}`Schrödinger Equation <Schrödinger equation>`**, as it is the equation of motion, now for the wavefunction, rather than the quantum state. 
@@ -96,7 +96,7 @@ i\hbar  \int_{E_B}^\infty \frac{\partial}{\partial t}\phi(E,t)\ket{E}dE &=  \int
 ```
 Finally, if we take the scalar product with $\bra{E'}$ on both sides, using [](#e-norm-non-bound-E) and [](#e-delta-defining-eq), we obtain
 ```{math}
-\vph i\hbar  \frac{\partial}{\partial t}\phi(E',t) =   E'\phi(E',t).
+i\hbar  \frac{\partial}{\partial t}\phi(E',t) =   E'\phi(E',t).
 ```
 This is however **the same differential equation you solved previously**. The solution is 
 ```{math}

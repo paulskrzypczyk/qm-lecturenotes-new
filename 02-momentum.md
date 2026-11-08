@@ -75,7 +75,7 @@ corresponding to **complex plane waves** of wavelength $\lambda = h/p$. We will 
 Using [](#e-general-quantum-state), i.e. the general relationship between a quantum state and a wavefunction, this means we can **directly write down** quantum states of definite momentum, which we will denote by $\ket{p}$ and refer to as 'momentum states' (in analogy to our notation $\ket{x}$ for {term}`position states <position state>`). These are
 ```{math}
 :label: e-momentum-state-1
-\vph\ket{p} = \infint v_p(x) \ket{x} dx = A\infint e^{ipx/\hbar} \ket{x} dx.
+\ket{p} = \infint v_p(x) \ket{x} dx = A\infint e^{ipx/\hbar} \ket{x} dx.
 ```
 We still have some ambiguity here: we haven't specified what the 'amplitude' $A$ should be. We can fix this by analogy to position states. Recall that in [](#e-position-norm) we {term}`normalised <normalisation>` position states using the [Dirac delta function](#dirac-delta-function). We will demand that momentum states satisfy the **same** normalisation (and *orthogonality*) condition:
 ````{card}
@@ -98,7 +98,7 @@ Note that due to [](#e-momentum-norm), states of definite momentum have **infini
 
 We can understand this from a second perspective. Our requirement to have a definite wavelength means that a particle has to be spread out **everywhere**. If this were possible, then what would be the {term}`probability density` $\pd(x)$ to find the particle at some location $x_0$? This would be
 ```{math}
-\vph \pd(x_0) = |v_p(x_0)|^2 &= \left| \frac{1}{\sqrt{2\pi \hbar}}e^{ipx_0/\hbar}\right|^2, \\
+\pd(x_0) = |v_p(x_0)|^2 &= \left| \frac{1}{\sqrt{2\pi \hbar}}e^{ipx_0/\hbar}\right|^2, \\
 &= \frac{1}{\sqrt{2\pi \hbar}}e^{-ipx_0/\hbar}\frac{1}{\sqrt{2\pi \hbar}}e^{ipx_0/\hbar}, \\
 &= \frac{1}{2\pi \hbar}.
 ```
@@ -137,7 +137,7 @@ where $\tilde{\psi}(p)$ is called the **momentum wavefunction**.
 Just as we saw in [](#e-norm-wavefunction), the normalisation of the quantum state, $\| \ket{\psi} \| = 1$ implies that
 ```{math}
 :label: e-mom-wv-norm
-\vph \infint |\tilde{\psi}(p)|^2 dp = 1.
+\infint |\tilde{\psi}(p)|^2 dp = 1.
 ```
 
 We also know that this is related to the normalisation of **momentum measurements**. In particular, if we were to **measure the momentum of a quantum particle** (i.e. measure $\hat{P}$), then the **probability density** to obtain the outcome $p_0$ is
@@ -167,7 +167,7 @@ It will prove useful to be able to go **directly** between the spatial wavefunct
 
 To see how, first let us consider a state $\ket{\psi}$ written as a superposition of momentum states, as in [](#e-general-state-momentum). If we consider the scalar product of $\ket{\psi}$ with a momentum state $\ket{p'}$, we find
 ```{math}
-\vph \inner{p'}{\psi} &= \infint \tilde{\psi}(p) \inner{p'}{p} dp,\\
+\inner{p'}{\psi} &= \infint \tilde{\psi}(p) \inner{p'}{p} dp,\\
 &= \infint \tilde{\psi}(p) \delta(p-p') dp,\\
 &= \tilde{\psi}(p'),
 ```
@@ -202,7 +202,7 @@ This gives the spatial wavefunction in terms of the momentum wavefunction. As an
 ````{card}
 ```{math}
 :label: e-psi-x-to-psi-p
-\vph\tilde\psi(p) = \frac{1}{\sqrt{2\pi\hbar}}\infint \psi(x) e^{-ipx/\hbar} dx,
+\tilde\psi(p) = \frac{1}{\sqrt{2\pi\hbar}}\infint \psi(x) e^{-ipx/\hbar} dx,
 ```
 ````
 which gives the momentum wavefunction in terms of the spatial wavefunction. It is important to note the symmetry between these two expressions. One key **distinction** is that in the former, the exponential comes with a plus-sign, while in the latter it comes with a minus-sign. Getting this sign wrong is a very easy and common mistake!
@@ -220,7 +220,7 @@ The final thing we would like to do in this chapter is find the operator $\op{P}
 ```
 In order to find this, we will use the relationship between $\psi(x)$ and $\tilde{\psi}(p)$. Recall from [](#e-momentum-op), that by definition $\hat{P}\ket{p} = p\ket{p}$. If we apply the momentum operator to a state written as a superposition of momentum states as in [](#e-general-state-momentum), we therefore find
 ```{math}
-\vph \hat{P}\ket{\psi} &= \hat{P}\infint \tilde{\psi}(p)\ket{p} dp, \\
+\hat{P}\ket{\psi} &= \hat{P}\infint \tilde{\psi}(p)\ket{p} dp, \\
 &= \infint \tilde{\psi}(p) \hat{P}\ket{p} dp, \\
 &= \infint \tilde{\psi}(p) p\ket{p} dp, \\
 &= \infint \tilde{\psi}'(p) \ket{p} dp, \\
@@ -232,16 +232,16 @@ The question we then need to answer is: *if a momentum wavefunction changes from
 We can answer this using [](#e-psi-p-to-psi-x):
 ```{math}
 :label: e-momentum-op-calc-1
-\vph\psi'(x) &= \frac{1}{\sqrt{2\pi\hbar}}\infint \tilde{\psi}'(p) e^{ipx/\hbar} dp,\\
+\psi'(x) &= \frac{1}{\sqrt{2\pi\hbar}}\infint \tilde{\psi}'(p) e^{ipx/\hbar} dp,\\
 &= \frac{1}{\sqrt{2\pi\hbar}}\infint p\tilde{\psi}(p) e^{ipx/\hbar} dp.\\
 ```
 At this stage we can use a fascinating 'trick'. We can notice that
 ```{math}
-\vph\frac{\partial}{\partial x} e^{ipx/\hbar} = \frac{ip}{\hbar}e^{ipx/\hbar},
+\frac{\partial}{\partial x} e^{ipx/\hbar} = \frac{ip}{\hbar}e^{ipx/\hbar},
 ```
 from which simple rearranging shows that we can write
 ```{math}
-\vph pe^{ipx/\hbar} = -i\hbar \frac{\partial}{\partial x} e^{ipx/\hbar}.
+pe^{ipx/\hbar} = -i\hbar \frac{\partial}{\partial x} e^{ipx/\hbar}.
 ```
 We can substitute this into [](#e-momentum-op-calc-1) to obtain
 ```{math}
@@ -253,7 +253,7 @@ where in the second line we used the fact that since $\tilde{\psi}(p)$ is indepe
 ````{card}
 ```{math}
 :label: e-op-P
-\vph\op{P}\psi(x) = -i\hbar \frac{\partial}{\partial x}\psi(x).
+\op{P}\psi(x) = -i\hbar \frac{\partial}{\partial x}\psi(x).
 ```
 ````
 That is, the momentum operator $\op{P}$ is the partial derivative multiplied by $-i\hbar$. In what is basically an abuse of notation, we will sometimes write $\op{P} = -i\hbar \frac{\partial}{\partial x}$. This is somewhat dangerous, as that partial derivative needs to act on something! (actually, it will act on **everything** to the right of it). Nevertheless, it is an **operator** in that it acts on a function and returns a function.
