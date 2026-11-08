@@ -18,6 +18,7 @@ parts:
     chapters:
      - file: recap
      - file: gaussian-integrals 
+     - file: glossary
   - caption: Problem Class Problems
     chapters:
      - file: w13-pc-problems.md

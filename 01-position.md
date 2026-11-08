@@ -35,12 +35,12 @@ Consider the case previously studied, where a particle can be found in one of fo
 Quantum particle that can be in one of four possible locations. Depicted is the quantum particle in the state $\ket{0}$, in the second location. Under each possible location for the particle we have written the corresponding quantum state $\ket{k}$. 
 ```
 
-In this case, the general quantum state of the particle is a superposition, given by
+In this case, the general quantum state of the particle is a {term}`superposition`, given by
 ```{math}
 :label: e-quantum-state-discrete
 \ket{\psi} = \sum_{k=-1}^2\alpha_k \ket{k}, 
 ```
-where $\alpha_k$ are complex numbers satisfying the normalisation condition $\sum_k |\alpha_k|^2 = 1$, and $\ket{k}$ is the quantum state with the particle at location $k$. Here, we will now view the labels $k$ not as abstract labels, but really as telling us, in a **coarse-grained** fashion, the position of the particle. 
+where $\alpha_k$ are complex numbers satisfying the {term}`normalisation` condition $\sum_k |\alpha_k|^2 = 1$, and $\ket{k}$ is the quantum state with the particle at location $k$. Here, we will now view the labels $k$ not as abstract labels, but really as telling us, in a **coarse-grained** fashion, the position of the particle. 
 
 Let us imagine therefore dividing each region into two, to obtain a more **fine-grained** description of the position of the particle. In this case, we would have the following situation:
 
@@ -73,7 +73,7 @@ Since we have now ended up with a **continuous** position for the particle, the 
 :label: e-contin-position
 \ket{\psi} = \int_{-2}^{2} \psi(x) \ket{x} dx.
 ```
-In [](#e-contin-position), in comparison to [](#e-discrete-position), apart from changing from a sum to an integral, we have also **renamed** the coefficients $\alpha_k$ by $\psi(x)$, and written them now as a **function**. It is useful to realise that $\alpha_k$ could also have been thought of as a (discrete) function of $k$, although it wasn't particularly useful to write it this way. Now however, it will turn out extremely useful to think of the coefficient $\psi(x)$ as a function. This is the **quantum mechanical wavefunction** of a particle. We will in fact spend the majority of this unit studying the wavefunction, as will become clear below. 
+In [](#e-contin-position), in comparison to [](#e-discrete-position), apart from changing from a sum to an integral, we have also **renamed** the coefficients $\alpha_k$ by $\psi(x)$, and written them now as a **function**. It is useful to realise that $\alpha_k$ could also have been thought of as a (discrete) function of $k$, although it wasn't particularly useful to write it this way. Now however, it will turn out extremely useful to think of the coefficient $\psi(x)$ as a function. This is the **quantum mechanical {term}`wavefunction`** of a particle. We will in fact spend the majority of this unit studying the wavefunction, as will become clear below. 
 
 In this example so far, we have ended up with a quantum mechanical particle which can be in the region $-2\leq x \leq 2$. There was nothing special about this region, and in general, we can **extend to arbitrary positions**, so that the particle can be found anywhere. In this case we would have 
 
@@ -91,9 +91,9 @@ with a general quantum superposition
 \vph \ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx.
 ```
 ````
-This state corresponds to a **superposition** of the particle having a position $x$, and we will refer to $\ket{x}$ as **position states**. Just as previously, e.g. in [](#e-quantum-state-discrete), these states are meant to represent a quantum particle which has — with certainty — position $x$ (we will see below that we have to be slightly careful with this!). 
+This state corresponds to a **superposition** of the particle having a position $x$, and we will refer to $\ket{x}$ as **{term}`position states <position state>`**. Just as previously, e.g. in [](#e-quantum-state-discrete), these states are meant to represent a quantum particle which has — with certainty — position $x$ (we will see below that we have to be slightly careful with this!). 
 
-We can use these to introduce the **position operator** $\hat{X}$ of a particle. This will be the operator which has as eigenvalue the position $x$, with corresponding eigenstate the position state $\ket{x}$. Using the **same rule as before** except replacing a sum by an integral, the position operator is given by
+We can use these to introduce the **position operator** $\hat{X}$ of a particle. This will be the {term}`operator` which has as {term}`eigenvalue` the position $x$, with corresponding {term}`eigenstate` the position state $\ket{x}$. Using the **same rule as before** except replacing a sum by an integral, the position operator is given by
 ````{card}
 ```{math}
 :label: e-position-operator
@@ -126,7 +126,7 @@ To simplify this expression, we need to recall the definition of the [Dirac delt
 ````{topic} Dirac Delta Function
 :label: dirac-delta-function
 :class: dropdown
-The Dirac Delta function $\delta(y)$ is defined such that
+The {term}`Dirac Delta function <Dirac delta function>` $\delta(y)$ is defined such that
 ```{math}
 :label: e-delta-defining-eq
 \vph \infint  f(y) \delta(y-y_0) dy = f(y_0).
@@ -190,7 +190,7 @@ Nevertheless, as we have seen in [](#e-general-quantum-state), quantum particles
 
 As you learnt in your previous unit on quantum physics, it is an inherently **probabilistic** theory. That is, quantum particles do not have definite properties, but rather we must perform measurements to learn about the properties of a particle, and in general the results will be probabilistic. This is true for the position of a particle, just as with any other property. If we want to ask where a particle is, we have to measure the position operator $\hat{X}$ from [](#e-position-operator), where $x$ are the position eigenvalues and $\ket{x}$ the associated position eigenstates. 
 
-For a state $\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx$, what is the probability to find the particle at some location $x_0$? This question in fact **doesn't make sense** as stated: the position is **continuous**, and therefore there is in fact zero probability to find the particle (precisely) somewhere. As with **any** continuous quantity, we can no longer talk about probabilities, but must rather talk about **probability densities**. That is, we can ask the question: *what is the probability to find the particle in a small region of 'width' $dx$?*. This will be the probability density[^pdf] $\pd(x_0)$ multiplied by $dx$, as depicted in the following figure:
+For a state $\ket{\psi} = \int_{-\infty}^{\infty} \psi(x) \ket{x} dx$, what is the probability to find the particle at some location $x_0$? This question in fact **doesn't make sense** as stated: the position is **continuous**, and therefore there is in fact zero probability to find the particle (precisely) somewhere. As with **any** continuous quantity, we can no longer talk about probabilities, but must rather talk about **{term}`probability densities <probability density>`**. That is, we can ask the question: *what is the probability to find the particle in a small region of 'width' $dx$?*. This will be the probability density[^pdf] $\pd(x_0)$ multiplied by $dx$, as depicted in the following figure:
 
 ````{figure}
 :label: f-prob-density

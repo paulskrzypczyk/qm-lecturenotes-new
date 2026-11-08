@@ -18,13 +18,13 @@ numbering:
 ````
 `````
 
-In this chapter we will apply what we learnt in the [previous chapter](10-QM-in-3D) to the mathematically simplest situation involving a particle confined in a three-dimensional potential well. The potential well we will consider is the direct generalisation of the **infinite square well** that we studied in [](07-infinite-square-well). We will refer to this as the **3D infinite box** potential. 
+In this chapter we will apply what we learnt in the [previous chapter](10-QM-in-3D) to the mathematically simplest situation involving a particle confined in a three-dimensional potential well. The potential well we will consider is the direct generalisation of the **{term}`infinite square well`** that we studied in [](07-infinite-square-well). We will refer to this as the **3D infinite box** potential. 
 
 As we explained in [](07-infinite-square-well), the idea that a particle could have an infinite potential energy in some region isn't particularly physical. Nevertheless, it provides us with a **clean mathematical** model which is easy to study, and it can be viewed as a fairly good approximation to a **very deep potential well**. 
 
-The main new ingredient we will encounter in this chapter is that in 3D **energy levels become [degenerate](wiki:Degenerate_energy_levels)**. This means that we will see that there are multiple different **distinct** energy eigenstates of the 3D infinite box, all with **the same energy**. While we have encountered energy degeneracy before in 1D, this only happened when the particle was **non-bound**. It is a new feature of 3D that we can have energy level degeneracy, and this is indeed a very important feature of nature (for example, the energy levels of Hydrogen are degenerate). 
+The main new ingredient we will encounter in this chapter is that in 3D **energy levels become [degenerate](wiki:Degenerate_energy_levels)**. This means that we will see that there are multiple different **distinct** {term}`energy eigenstates <energy eigenstate>` of the 3D infinite box, all with **the same energy**. While we have encountered energy {term}`degeneracy` before in 1D, this only happened when the particle was **non-bound**. It is a new feature of 3D that we can have energy level degeneracy, and this is indeed a very important feature of nature (for example, the energy levels of Hydrogen are degenerate). 
 
-We will also see that even though we are now considering a 3D problem, **what we learnt in 1D is still highly relevant**. We will in particular see how the **1D energy eigenfunctions** in fact compose to give us the **3D eigenfunctions**. This is generically the case, and highlights the importance of studying 1D problems as a means for understanding the physics of more realistic 3D problems. 
+We will also see that even though we are now considering a 3D problem, **what we learnt in 1D is still highly relevant**. We will in particular see how the **1D energy eigenfunctions** in fact compose to give us the **3D {term}`eigenfunctions <eigenfunction>`**. This is generically the case, and highlights the importance of studying 1D problems as a means for understanding the physics of more realistic 3D problems. 
 
 ## The 3D infinite box potential
 
@@ -42,7 +42,7 @@ Note that here we have chosen to take **all 3 side lengths to be equal**. This i
 
 ## Energy eigenstates of the 3D infinite box potential
 
-As always, our first goal in studying the 3D infinite box potential is to determine the **energy eigenstates** and associated **energy eigenvalues**. Since we have a particle confined inside a well, these will be **bound states** and so we expect that we will find **discrete energy levels**, just as we found in 1D. 
+As always, our first goal in studying the 3D infinite box potential is to determine the **energy eigenstates** and associated **energy {term}`eigenvalues <eigenvalue>`**. Since we have a particle confined inside a well, these will be **{term}`bound states <bound state>`** and so we expect that we will find **discrete energy levels**, just as we found in 1D. 
 
 As we spent some time arguing in 1D, due to the fact that the potential energy is **infinite** outside of the box, and given that physically we only want to consider that the particle has **finite energy**, it is natural to assume that the energy eigenfunctions will **vanish** outside of the box. That is, if we refer to the inside of the box as **region I**, and outside the box as **region II**, then we will look for energy eigenfunctions of the form
 ```{math}
@@ -50,9 +50,9 @@ u_E(\rvec) = \begin{cases} u_E^{\rI}(\rvec) &\text{if }{0 \leq x,y,z \leq L} , \
                     0 &\text{otherwise,}
         \end{cases}
 ```
-where $u_E^\rI(\rvec)$ is the function we would like to find. Since studying the infinite square well in Chapter 7, we subsequently saw in [](08-harmonic-oscillator) that particles can **tunnel** into regions where they don't have enough energy to be classically. We might therefore now be concerned about our assumption that the wavefunction vanishes outside the box. Although we don't go further into this here, it can be shown that **due to the infinite nature of the potential** the wavefunction really does vanish outside of the box, and we are again in the exceptional circumstance where there is **no tunnelling or barrier penetration**. 
+where $u_E^\rI(\rvec)$ is the function we would like to find. Since studying the infinite square well in Chapter 7, we subsequently saw in [](08-harmonic-oscillator) that particles can **tunnel** into regions where they don't have enough energy to be classically. We might therefore now be concerned about our assumption that the {term}`wavefunction` vanishes outside the box. Although we don't go further into this here, it can be shown that **due to the infinite nature of the potential** the wavefunction really does vanish outside of the box, and we are again in the exceptional circumstance where there is **no {term}`tunnelling` or barrier penetration**. 
 
-We can therefore restrict our attention to the **inside** of the well. In this region, the Hamiltonian of the particle takes the simple form
+We can therefore restrict our attention to the **inside** of the well. In this region, the {term}`Hamiltonian` of the particle takes the simple form
 ```{math}
 \hat{H} = \frac{\hat{P}^2_x + \hat{P}^2_y + \hat{P}^2_z}{2M},
 ```
@@ -106,7 +106,7 @@ Now, we **aren't looking for eigenfunctions of an individual component of the ki
 0 &\text{ otherwise,} \end{cases}
 ```
 ````
-where, just as we did in 1D, we have **changed notation** from $u_E(\rvec)$ to $u_\mathbf{n}(\rvec)$, labelling the energy eigenfunction by the **vector of quantum numbers**
+where, just as we did in 1D, we have **changed notation** from $u_E(\rvec)$ to $u_\mathbf{n}(\rvec)$, labelling the energy eigenfunction by the **vector of {term}`quantum numbers <quantum number>`**
 ````{card}
 ```{math}
 \mathbf{n} = (n_x, n_y, n_z).
@@ -209,7 +209,7 @@ We do this in the following table:
   - $14\Ebox$
   - $\sqrt{\frac{8}{L^3}} \sin \frac{3\pi x}{L}\sin \frac{2\pi y}{L}\sin \frac{\pi z}{L}$
 ````
-The reason for including so many levels in this table is so that we can get a feeling for the **complexity** that arises. In particular, what we see is that the ground state is still a so-called **non-degenerate** energy level: there is a unique state of lowest energy (equal to $3\Ebox$), just like in 1D. 
+The reason for including so many levels in this table is so that we can get a feeling for the **complexity** that arises. In particular, what we see is that the {term}`ground state` is still a so-called **non-degenerate** energy level: there is a unique state of lowest energy (equal to $3\Ebox$), just like in 1D. 
 
 In contrast, the next two energies are both **triply degenerate**, at energy $6\Ebox$ and $9\Ebox$. *Where did this 3-fold degeneracy come from?* If we look at the structure of $\mathbf{n}$, we see it arises due to **combinatorics**: there are 3 vectors which have a single 2 and two 1s. With this insight, we see that **any level** of the form $\mathbf{n} = (n,n',n')$ (i.e. with a repetition in one of the quantum numbers) will be 3-fold degenerate, just as is the case for levels of energy $9\Ebox$. 
 
@@ -240,7 +240,7 @@ In other potentials — such as Hydrogen — we will have a different degeneracy
 ````
 `````
 
-As a final topic, we will now look at the evolution of a particle confined inside a 3D box. While on the one hand, the situation is just another example of what we have already encountered (i.e. an application of the superposition principle!), we will see that studying motion in 3D allows us to see more **complex** features, such as **correlation** between the different coordinates of the particle in time. 
+As a final topic, we will now look at the evolution of a particle confined inside a 3D box. While on the one hand, the situation is just another example of what we have already encountered (i.e. an application of the {term}`superposition` principle!), we will see that studying motion in 3D allows us to see more **complex** features, such as **correlation** between the different coordinates of the particle in time. 
 
 In the previous chapter, we already gave the **general formulas** for time evolution in 3D. Specifically, we saw that an initial state of the form 
 ![](#e-psi-init-3D) 
@@ -260,7 +260,7 @@ Using the superposition principle, we can immediately write down the wavefunctio
 :label: e-wf-3D-ex-t
 \psi(\rvec,t) = \frac{1}{\sqrt{2}}\left(e^{-3i\Ebox t/\hbar}u_{(1,1,1)}(\rvec) + e^{-9i\Ebox t/\hbar} u_{(2,2,1)}(\rvec)\right).
 ```
-We could stop here, but what is interesting is to analyse the properties of the particle. First, we can calculate the **probability density** $\pd(\rvec,t) = |\psi(\rvec,t)|^2$. As you will confirm in an [exercise](#ex-3D-box-pd-ex), this is given by
+We could stop here, but what is interesting is to analyse the properties of the particle. First, we can calculate the **{term}`probability density`** $\pd(\rvec,t) = |\psi(\rvec,t)|^2$. As you will confirm in an [exercise](#ex-3D-box-pd-ex), this is given by
 ```{math}
 :label: e-3D-pd-box-ex
 \pd(\rvec,t) = \frac{1}{2}\left(|u_{(1,1,1)}(\rvec)|^2 + |u_{(2,2,1)}(\rvec)|^2 + 2\cos\frac{6\Ebox t}{\hbar} u_{(1,1,1)}(\rvec) u_{(2,2,1)}(\rvec)\right) 
@@ -275,7 +275,7 @@ In order to evaluate this, it will be advantageous to use the fact that the ener
 &= |u_1(x)|^2 \infint |u_1(y)|^2 dy \infint |u_1(z)|^2 dz, \\
 &= |u_1(x)|^2,
 ```
-where in the first line we write the eigenfunction in terms of the eigenfunctions of the 1D infinite well, in the second line we have reorganised the integrals, and in the third line we have used the fact that the **energy eigenfunctions of the 1D infinite square well are normalised**, hence the integrals evaluate to unity (without having to do any work!). 
+where in the first line we write the eigenfunction in terms of the eigenfunctions of the 1D infinite well, in the second line we have reorganised the integrals, and in the third line we have used the fact that the **energy eigenfunctions of the 1D infinite square well are {term}`normalised <normalisation>`**, hence the integrals evaluate to unity (without having to do any work!). 
 
 We arrive at a similar conclusion for the second term on the right-hand side of [](#e-3D-pd-box-ex), and see that after integrating over $y$ and $z$, we are left with $|u_2(x)|^2$. For the last term, the situation is interesting. The relevant integral is 
 ```{math}
@@ -349,7 +349,7 @@ In this exercise we will confirm that two degenerate energy eigenstates are neve
   \inner{E_{\mathbf{n}}}{E_{\mathbf{n}'}} = \inner{E_{n_x}}{E_{n_x'}}\inner{E_{n_y}}{E_{n_y'}}\inner{E_{n_z}}{E_{n_z'}},
   $$
 where $\ket{E_{n_x}}$ is the energy eigenstate of the 1D infinite square well associated to $u_{n_x}(x)$, etc. 
-4. Thus explain, using the orthogonality of the 1D eigenstates of the infinite square well, why energy eigenstates of the 3D box potential are orthogonal unless $\mathbf{n} = \mathbf{n}'$ (even if $\mathbf{n}$ and $\mathbf{n}'$ have component(s) in common).  
+4. Thus explain, using the orthogonality of the 1D {term}`eigenstates <eigenstate>` of the infinite square well, why energy eigenstates of the 3D box potential are orthogonal unless $\mathbf{n} = \mathbf{n}'$ (even if $\mathbf{n}$ and $\mathbf{n}'$ have component(s) in common).  
 
 ```{dropdown} Answers
 1. $\ket{E_\mathbf{n}} = \int_V u_\mathbf{n}(\rvec) \ket{\rvec} d^3\rvec$.

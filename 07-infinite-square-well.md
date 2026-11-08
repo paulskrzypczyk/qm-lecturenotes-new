@@ -26,7 +26,7 @@ In this chapter we will study the **simplest** example of a potential well, and 
 
 The second situation we can encounter — as we did in the previous [chapter](06-free-particle) — is when the forces do not confine a particle to a finite region of space. We will return to more interesting examples — this time involving forces — in [](09-scattering). 
 
-After introducing the infinite square well, we will show how to find the energy eigenfunctions. We will see that we need a new fact about energy eigenfunctions, relating to their **continuity**. Remarkably, it is in fact from this that the quantisation of energies will arise, as we will see in detail below. 
+After introducing the {term}`infinite square well`, we will show how to find the energy eigenfunctions. We will see that we need a new fact about energy eigenfunctions, relating to their **continuity**. Remarkably, it is in fact from this that the quantisation of energies will arise, as we will see in detail below. 
 
 We will then consider a simple example of the evolution in time of a particle inside the infinite square well, seeing that it is very different from what we saw in the previous chapter, for a free particle. 
 
@@ -54,7 +54,7 @@ This potential well is depicted in [](#f-infinite-square-well).
 
 The first question we would like to ask about the infinite square well is *what are the states of definite energy?* We are interested in this question, as always, since it is the first step towards understanding the dynamics of a particle confined inside our box. 
 
-We are thus interested in finding the energy eigenstates of the Hamiltonian, i.e. of finding solutions to [](#e-E-eigenvalue-eq). Since we have a **potential energy which depends upon position**, we will find the energy eigenstates by solving the TISE [](#e-TISE) instead. As we learnt in [](04-energy), this is a completely equivalent way of finding the energy levels and energy eigenstates, and is the natural way to do so in this situation. 
+We are thus interested in finding the {term}`energy eigenstates <energy eigenstate>` of the {term}`Hamiltonian`, i.e. of finding solutions to [](#e-E-eigenvalue-eq). Since we have a **potential energy which depends upon position**, we will find the energy eigenstates by solving the TISE [](#e-TISE) instead. As we learnt in [](04-energy), this is a completely equivalent way of finding the energy levels and energy eigenstates, and is the natural way to do so in this situation. 
 
 Because of the fact that the potential energy is specified **in pieces**, it means that the Hamiltonian operator $\op{H} = \op{K} + \op{V}$ will also be specified in pieces. What this means in practice is that **we will need to consider the different regions separately**, and then understand how to **put them together afterwards**. That is, we will need to consider the TISE in the region $x < 0$, the region $0 \leq x \leq L$, and the region $x > L$ separately. We will refer to these, respectively, as **regions I, II and III**. If we denote a generic energy eigenfunction by $u_E(x)$, then we will specify this **in pieces** accordingly, via
 ```{math}
@@ -68,7 +68,7 @@ u_E(x) = \begin{cases}
 
 
 ### Energy eigenfunctions in Regions I and III
-Region I, when $x < 0$, is the region **outside and to the left** of the box. In this region, $V(x) = \infty$ and hence also $\op{H} = \infty$. This is a **strange situation**! We however already implicitly stated the solution. The entire reason for considering the infinite square well is to have the particle **confined within the region $0 \leq x \leq L$, inside the box**. A different way of phrasing this mathematically is that **the wavefunctions must necessarily always vanish outside of the well**.  Thus, we have
+Region I, when $x < 0$, is the region **outside and to the left** of the box. In this region, $V(x) = \infty$ and hence also $\op{H} = \infty$. This is a **strange situation**! We however already implicitly stated the solution. The entire reason for considering the infinite square well is to have the particle **confined within the region $0 \leq x \leq L$, inside the box**. A different way of phrasing this mathematically is that **the {term}`wavefunctions <wavefunction>` must necessarily always vanish outside of the well**.  Thus, we have
 ```{math}
 :label: e-isq-rI
 \vph u_E^\rI(x) = 0.
@@ -87,18 +87,18 @@ Region II is our primary region of interest, as this corresponds to $0\leq x\leq
 ```{math}
 \op{H} = \op{K} = \frac{\op{P}^2}{2M} = -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2}.
 ```
-That is, inside the well, **the potential energy vanishes** and hence the particle is **essentially free** with no forces acting. We are thus in a very similar situation to [](06-free-particle). We can use this to realise that we already know what the energy eigenfunctions must be in region II: **they must coincide with momentum eigenfunctions** — i.e. they must be **complex plane waves**. We can check this directly. In particular, we can see that $e^{ikx}$ is an eigenfunction of $\op{H}$, for any value $k$, 
+That is, inside the well, **the potential energy vanishes** and hence the particle is **essentially free** with no forces acting. We are thus in a very similar situation to [](06-free-particle). We can use this to realise that we already know what the energy eigenfunctions must be in region II: **they must coincide with momentum {term}`eigenfunctions <eigenfunction>`** — i.e. they must be **complex {term}`plane waves <plane wave>`**. We can check this directly. In particular, we can see that $e^{ikx}$ is an eigenfunction of $\op{H}$, for any value $k$, 
 ```{math}
 \vph \op{H}e^{ikx} &= -\frac{\hbar^2}{2M}\frac{\partial^2}{\partial x^2} e^{ikx},\\
 &= \frac{\hbar^2 k^2}{2M} e^{ikx},
 ```
-and the corresponding eigenvalue is $E = \frac{\hbar^2 k^2}{2M}$. 
+and the corresponding {term}`eigenvalue` is $E = \frac{\hbar^2 k^2}{2M}$. 
 
-However, as we also saw in [](06-free-particle), we have **degeneracy**, and the complex plane wave with $k' = -k$ is **an eigenfunction with the same energy eigenvalue** 
+However, as we also saw in [](06-free-particle), we have **{term}`degeneracy`**, and the complex plane wave with $k' = -k$ is **an eigenfunction with the same energy eigenvalue** 
 ```{math}
 \vph E' = \frac{\hbar^2(k')^2}{2M} =  \frac{\hbar^2(-k)^2}{2M} = \frac{\hbar^2 k^2}{2M} = E.
 ```
-Since $e^{ikx}$ and $e^{-ikx}$ are both eigenfunctions with the **same** eigenvalue, as you will confirm in an [exercise](#ex-superposition-eigenfunction), **any superposition** of these two functions is **also** an eigenfunction with the same eigenvalue $E = \frac{\hbar^2 k^2}{2M}$. At this stage, we don't yet know **what is the correct superposition** to consider, so we will keep things general, and say that the energy eigenfunction will be of the form
+Since $e^{ikx}$ and $e^{-ikx}$ are both eigenfunctions with the **same** eigenvalue, as you will confirm in an [exercise](#ex-superposition-eigenfunction), **any {term}`superposition`** of these two functions is **also** an eigenfunction with the same eigenvalue $E = \frac{\hbar^2 k^2}{2M}$. At this stage, we don't yet know **what is the correct superposition** to consider, so we will keep things general, and say that the energy eigenfunction will be of the form
 ```{math}
 \vph u_E^\rII(x) = A e^{ikx} + B e^{-ikx},
 ```
@@ -138,7 +138,7 @@ Turning now to the boundary between regions II and III, the right-hand wall, in 
 ```{math}
 2iA\sin kL = 0.
 ```
-One possible solution appears to be $A = 0$, however a little thought shows that this can't be correct. If $A = 0$, then $u_E(x) = 0$, and hence we have a **trivial mathematical solution**, but not an interesting physical one. In particular, we need energy eigenfunctions — as valid quantum wavefunctions — to be **normalised**. A wavefunction that vanishes everywhere certainly isn't normalised. Hence this isn't what we are looking for. 
+One possible solution appears to be $A = 0$, however a little thought shows that this can't be correct. If $A = 0$, then $u_E(x) = 0$, and hence we have a **trivial mathematical solution**, but not an interesting physical one. In particular, we need energy eigenfunctions — as valid quantum wavefunctions — to be **{term}`normalised <normalisation>`**. A wavefunction that vanishes everywhere certainly isn't normalised. Hence this isn't what we are looking for. 
 
 The only other possibility is that $\sin kL = 0$. While this definitely **isn't true in general**, **there are special values of $k$ for which it will be true**! In particular, we know that $\sin \theta = 0$ if $\theta = 0$, $\pi$, $2\pi$, $3\pi$, $\ldots$, that is, if $\theta = n\pi$ for $n$ an integer. Thus, we must choose $k$ such that $kL = n\pi$, i.e.
 ````{card}
@@ -177,7 +177,7 @@ u_n(x) = \begin{cases}
         \end{cases}
 ```
 ````
-Note that here we have **changed notation** from $u_{E_n}(x)$ to $u_{n}(x)$. There are two reasons for doing this. The first is for brevity. The second is that it is much more **common** to label the energy levels by $n$, and leave it **implicit** that the energy is $E_n$ as given by [](#e-isw-energy-levels). In fact $n$ is often referred to as a **quantum number**, and energy levels and energy eigenfunctions are labelled solely by the quantum number, in this case $E_n$ and $u_n(x)$. 
+Note that here we have **changed notation** from $u_{E_n}(x)$ to $u_{n}(x)$. There are two reasons for doing this. The first is for brevity. The second is that it is much more **common** to label the energy levels by $n$, and leave it **implicit** that the energy is $E_n$ as given by [](#e-isw-energy-levels). In fact $n$ is often referred to as a **{term}`quantum number`**, and energy levels and energy eigenfunctions are labelled solely by the quantum number, in this case $E_n$ and $u_n(x)$. 
 
 `````{important} Video: Infinite square well II
 :class: dropdown
@@ -192,7 +192,7 @@ Note that here we have **changed notation** from $u_{E_n}(x)$ to $u_{n}(x)$. The
 ````
 `````
 
-We depict below in [](#f-isw-eigenfunctions) the first 6 energy eigenfunctions and in [](#f-isw-pd) the associated probability density functions. 
+We depict below in [](#f-isw-eigenfunctions) the first 6 energy eigenfunctions and in [](#f-isw-pd) the associated {term}`probability density` functions. 
 
 ````{figure} ./Pictures/eigenstates-inf-sq-well.svg
 :name: f-isw-eigenfunctions
@@ -209,7 +209,7 @@ We depict below in [](#f-isw-eigenfunctions) the first 6 energy eigenfunctions a
 
 **Probability densities of the infinite square well.** The probability densities $\pd(x)$ for the first six energy eigenstates of the infinite square well. 
 ````
-There is clearly some structure here, and also some surprises. The first surprising feature is that the **minimum energy the particle can have is strictly bigger than the minimum of potential energy**. That is, the lowest energy state — referred to as the **ground state** $\ket{E_1}$ — has energy $E_1 = \frac{\hbar^2\pi^2}{2ML^2} > 0 = V(x)$ inside the well. This is in stark contrast to classical physics, where a particle can be **at rest** at the **minimum of a potential well**, and hence have energy **equal** to the minimum potential energy. In quantum mechanics, in contrast, a particle has **more** energy than this. This additional energy is called the **zero-point energy**. It arises due to the HUP, and the fact that the kinetic and potential energy of a particle are incompatible properties. In particular, because the particle is **confined within the well**, it necessarily has a spread of momenta, and hence a spread of kinetic energy. So the confinement of the particle in fact demands that it will have kinetic energy! The ground state is in fact a **balance** between minimising the potential energy, and minimising the kinetic energy. 
+There is clearly some structure here, and also some surprises. The first surprising feature is that the **minimum energy the particle can have is strictly bigger than the minimum of potential energy**. That is, the lowest energy state — referred to as the **{term}`ground state`** $\ket{E_1}$ — has energy $E_1 = \frac{\hbar^2\pi^2}{2ML^2} > 0 = V(x)$ inside the well. This is in stark contrast to classical physics, where a particle can be **at rest** at the **minimum of a potential well**, and hence have energy **equal** to the minimum potential energy. In quantum mechanics, in contrast, a particle has **more** energy than this. This additional energy is called the **zero-point energy**. It arises due to the HUP, and the fact that the kinetic and potential energy of a particle are incompatible properties. In particular, because the particle is **confined within the well**, it necessarily has a spread of momenta, and hence a spread of kinetic energy. So the confinement of the particle in fact demands that it will have kinetic energy! The ground state is in fact a **balance** between minimising the potential energy, and minimising the kinetic energy. 
 
 
 Perhaps the second most surprising feature is that when a particle has a definite energy, there are certain regions within the well where **it is very unlikely to find the particle**. For example, in the so-called **first excited state** $\ket{E_2}$ (with associated energy eigenfunction $u_2(x)$) it is very unlikely to find the particle close to the middle of the well! 
@@ -242,7 +242,7 @@ In order to answer this, it is useful to go back to the full quantum state $\ket
 ```{math}
 \ket{\psi_\init} = \sum_{n=1}^\infty \alpha_n \ket{E_n},
 ```
-and we recover [](#e-init-superposition-isw) from this, by taking the scalar product on both sides with a position state $\bra{x}$, and recalling that $\inner{x}{\psi_\init} = \psi_\init(x)$ and $\inner{x}{E_n} = u_n(x)$. 
+and we recover [](#e-init-superposition-isw) from this, by taking the scalar product on both sides with a {term}`position state` $\bra{x}$, and recalling that $\inner{x}{\psi_\init} = \psi_\init(x)$ and $\inner{x}{E_n} = u_n(x)$. 
 
 If now however we take the scalar product on both sides with an energy eigenstate $\bra{E_m}$, recalling from [](#e-energy-levels-orthonormal) that the energy levels are **orthogonal quantum states**, then we see immediately that
 ```{math}
@@ -335,7 +335,7 @@ $$ \psi_\init(x) = \frac{1}{\sqrt{2}}\left(u_1(x) + u_2(x)\right).$$
 
 ````{exercise}
 :label: ex-7-4
-1. Show that the momentum wavefunction $\tilde{u}_1(p)$ of the ground state of the infinite square well is 
+1. Show that the {term}`momentum wavefunction` $\tilde{u}_1(p)$ of the ground state of the infinite square well is 
 ```{math}
 :label: e-mom-wf-isw-eig
  \tilde{u}_1(p) = \sqrt{\frac{\pi L}{\hbar}}\frac{1}{\pi^2 - p^2 L^2/\hbar^2}(1+e^{-ipL/\hbar}). 

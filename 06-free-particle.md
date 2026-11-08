@@ -18,7 +18,7 @@ numbering:
 ````
 `````
 
-In this chapter we will investigate the simplest possible scenario one can consider in the context of mechanics — a **free particle** — one with no forces acting upon it whatsoever. We will see that, given everything we have learnt up until this point, we can **directly** solve for the evolution of a free particle, since we can immediately find the energy eigenstates (the quantum states of a particle with a definite energy) in this simple setting. 
+In this chapter we will investigate the simplest possible scenario one can consider in the context of mechanics — a **free particle** — one with no forces acting upon it whatsoever. We will see that, given everything we have learnt up until this point, we can **directly** solve for the evolution of a free particle, since we can immediately find the {term}`energy eigenstates <energy eigenstate>` (the quantum states of a particle with a definite energy) in this simple setting. 
 
 We will see that quantum evolution is more intricate than classical evolution, ultimately due to the HUP. In particular, in a classical setting, if a particle has an initial position $x_0$ and an initial momentum $p_0$, then from the equation of motion — [Newton's second law](wiki:Newton's_laws_of_motion) — the position of the particle at time $t$ will be
 ```{math}
@@ -27,28 +27,28 @@ x(t) = x_0 + \frac{p_0}{M}t,
 (and the momentum is constant, $p(t) = p_0$). 
 
 
-In quantum mechanics, as we already saw, a particle must necessarily have a **superposition of momenta**. This means that it will be travelling with a superposition of speeds, and therefore after some time, it will be in a superposition of having different displacements from its initial position (i.e. of having travelled different distances). As we will see, this generically leads to **spreading out** of the wavefunction, so that at later times, a position measurement will generally have a **larger standard deviation**. 
+In quantum mechanics, as we already saw, a particle must necessarily have a **{term}`superposition` of momenta**. This means that it will be travelling with a superposition of speeds, and therefore after some time, it will be in a superposition of having different displacements from its initial position (i.e. of having travelled different distances). As we will see, this generically leads to **spreading out** of the {term}`wavefunction`, so that at later times, a position measurement will generally have a **larger {term}`standard deviation`**. 
 
 ## States of definite energy
 
-Our starting point, as will always be the case, is to ask the question *what are the energy eigenstates of a free particle?*, that is, what are the **states of definite energy?** While in general this is a subtle question, when there are no forces acting on the particle, the situation is much simpler. This is because in this case, no forces translates into a vanishing potential energy $V(x) = 0$, and hence the **Hamiltonian** becomes simply
+Our starting point, as will always be the case, is to ask the question *what are the energy eigenstates of a free particle?*, that is, what are the **states of definite energy?** While in general this is a subtle question, when there are no forces acting on the particle, the situation is much simpler. This is because in this case, no forces translates into a vanishing potential energy $V(x) = 0$, and hence the **{term}`Hamiltonian`** becomes simply
 ```{math}
 \hat{H} = \frac{\hat{P}^2}{2M},
 ```
 i.e. the **total energy** of the particle is just the **kinetic energy**. *When will a particle have a definite kinetic energy?* This is easy to answer: it will have a definite kinetic energy when it has a **definite momentum**. This therefore suggests that for a free particle
 > For a free particle, momentum eigenstates are energy eigenstates.
 
-We can directly verify that this is the case, and find the corresponding energy eigenvalue:
+We can directly verify that this is the case, and find the corresponding energy {term}`eigenvalue`:
 ```{math}
 :label: e-eig-free-particle
 \hat{H}\ket{p} &= \frac{\hat{P}^2}{2M}\ket{p}, \\
 &= \frac{p^2}{2M}\ket{p},
 ```
-where to arrive at the second line we used the fact that $\hat{P}^2\ket{p} = \hat{P}\left(\hat{P}\ket{p}\right) = p \hat{P}\ket{p} = p^2\ket{p}$, i.e. $\ket{p}$ is an eigenstate of $\hat{P}^2$ with eigenvalue $p^2$. 
+where to arrive at the second line we used the fact that $\hat{P}^2\ket{p} = \hat{P}\left(\hat{P}\ket{p}\right) = p \hat{P}\ket{p} = p^2\ket{p}$, i.e. $\ket{p}$ is an {term}`eigenstate` of $\hat{P}^2$ with eigenvalue $p^2$. 
 
 What [](#e-eig-free-particle) shows is that $\ket{p}$ is an eigenstate of $\hat{H}$ (i.e. an energy eigenstate) with energy $E = p^2/2M$. This is **exactly as it should be**, since if a particle has a definite momentum $p$, then it has a (definite) kinetic energy $K = p^2/2M$. 
 
-There are **two important points to note** at this stage. First, there are in fact **two** states each with the same energy: the state $\ket{p}$ and $\ket{-p}$ both have energy $E = p^2/2M$. This is intuitive, since the kinetic energy doesn't care about **the velocity** but only the **speed** of the particle, and is hence insensitive to the sign of the momentum. This means that **there are two energy eigenstates for every energy eigenvalue**. This is known as **degeneracy** and we will study this further once we move into 3D at the end of this unit. Because of this degeneracy in energy, it will be essential to keep track of the momentum, and hence we will work with momentum eigenstates (and momentum wavefunctions), rather than energy eigenstates. 
+There are **two important points to note** at this stage. First, there are in fact **two** states each with the same energy: the state $\ket{p}$ and $\ket{-p}$ both have energy $E = p^2/2M$. This is intuitive, since the kinetic energy doesn't care about **the velocity** but only the **speed** of the particle, and is hence insensitive to the sign of the momentum. This means that **there are two energy eigenstates for every energy eigenvalue**. This is known as **{term}`degeneracy`** and we will study this further once we move into 3D at the end of this unit. Because of this degeneracy in energy, it will be essential to keep track of the momentum, and hence we will work with momentum eigenstates (and {term}`momentum wavefunctions <momentum wavefunction>`), rather than energy eigenstates. 
 
 Second, since momentum is **continuous** we see that for a free particle, **energy is always continuous**. This is consistent with what we saw in the previous chapter: there we learnt that the energy will be continuous when the particle isn't **bound** to a potential well. Since there is no potential well for a free particle, the particle is most certainly not bound, and hence we have a continuous range of energies, as expected. 
 
@@ -77,7 +77,7 @@ then it will evolve into the wavefunction $\tilde{\psi}(p,t)$ given by
 \vph \tilde{\psi}(p,t) = e^{-ip^2t/2M\hbar}\tilde{\psi}_\init(p).
 ```
 ````
-This equation restates what we already knew, but makes it much clearer. In particular, it says that for a free particle, if we specify the state in terms of the momentum wavefunction, then the evolution is **remarkably simple**: the wavefunction just acquires a phase $e^{-ip^2t/2M\hbar}$ in time! This is because momentum eigenstates are states of definite energy — and are thus **stationary states**. 
+This equation restates what we already knew, but makes it much clearer. In particular, it says that for a free particle, if we specify the state in terms of the momentum wavefunction, then the evolution is **remarkably simple**: the wavefunction just acquires a phase $e^{-ip^2t/2M\hbar}$ in time! This is because momentum eigenstates are states of definite energy — and are thus **{term}`stationary states <stationary state>`**. 
 
 ## Time evolution of a free particle II
 
@@ -96,7 +96,7 @@ This equation restates what we already knew, but makes it much clearer. In parti
 
 Equations [](#e-free-particle-evolution) and [](#e-free-particle-mom-evolution) in principle give a **complete solution** to the evolution of a free quantum particle. Hence, in principle, we could end the chapter here (after an example maybe). However, this isn't a particularly useful place to stop. The reason for this is that usually we are interested in the **spatial wavefunction** and **its** evolution in time. What we would really like to be able to do therefore is to specify an initial spatial wavefunction $\psi_\init(x)$, and find the wavefunction $\psi(x,t)$ that it evolves into. We will do this in this section. 
 
-We already have all the ingredients we need, we just need to put them all together. First, if the initial condition is specified by a spatial wavefunction $\psi_\init(x)$, then in order to use [](#e-free-particle-mom-evolution) we need to recall how to express $\tilde{\psi}_\init(p)$ in terms of it. This is through the (inverse) Fourier transform, [](#e-psi-x-to-psi-p). That is,
+We already have all the ingredients we need, we just need to put them all together. First, if the initial condition is specified by a spatial wavefunction $\psi_\init(x)$, then in order to use [](#e-free-particle-mom-evolution) we need to recall how to express $\tilde{\psi}_\init(p)$ in terms of it. This is through the (inverse) {term}`Fourier transform`, [](#e-psi-x-to-psi-p). That is,
 ```{math}
 \tilde\psi_\init(p) = \frac{1}{\sqrt{2\pi\hbar}}\infint \psi_\init(x) e^{-ipx/\hbar} dx.
 ```
@@ -154,7 +154,7 @@ This wavefunction is remarkably similar in form to [](#e-initial-gaussian), exce
 
 3. Finally, there is a phase factor $e^{i\phi(x,t)}$. This term is complicated, but it accounts for **correlations** which build up, between **where the particle is** and **what momentum it has**. 
 
-It is insightful to plot the wavefunction as it evolves in time. We do this below, both for the wavefunction $\psi(x,t)$ and the associated probability density $\pd(x,t) = |\psi(x,t)|^2$, both as an animation and in stills:
+It is insightful to plot the wavefunction as it evolves in time. We do this below, both for the wavefunction $\psi(x,t)$ and the associated {term}`probability density` $\pd(x,t) = |\psi(x,t)|^2$, both as an animation and in stills:
 ````{figure}
 :label: f-gaussian-animation
 :placeholder: ./Pictures/Gaussian-wavepacket.gif
@@ -244,7 +244,7 @@ Consider a quantum particle with an initial wavefunction given by
 ```{math}
 \psi_\init(x) = \begin{cases} N\left(1+\frac{x}{\ell}\right) &\text{ if } -\ell \leq x \leq 0, \\ N\left(1-\frac{x}{\ell}\right) &\text{ if } 0 \leq x \leq \ell, \\ 0 &\text{ otherwise,} \end{cases}
 ```
-where $N > 0$ is a normalisation constant.
+where $N > 0$ is a {term}`normalisation` constant.
 1. Show that in order for the wavefunction to be normalised $$N = \sqrt{\frac{3}{2\ell}}.$$
 2. Sketch the wavefunction. 
 3. Show that the initial momentum wavefunction of the particle is 

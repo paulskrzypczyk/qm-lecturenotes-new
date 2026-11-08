@@ -26,7 +26,7 @@ We will largely follow the same path in 3D that we followed in 1D, and start off
 ```{math}
 \rvec = x \ivec + y \jvec + z \kvec = (x,y,z).
 ```
-Just as before we associated a quantum state to each position $x$, we will now introduce **3D position states** $\ket{\rvec}$, and an associated **3D spatial wavefunction** $\psi(\rvec)$, such that a general quantum state of a particle in three dimensions can be written as
+Just as before we associated a quantum state to each position $x$, we will now introduce **3D {term}`position states <position state>`** $\ket{\rvec}$, and an associated **3D spatial wavefunction** $\psi(\rvec)$, such that a general quantum state of a particle in three dimensions can be written as
 ````{card}
 ```{math}
 :label: e-3D-spatial-wf
@@ -42,25 +42,25 @@ which should be compared to [](#e-general-quantum-state).
 *Finally, we will often simply write $\int_V f(\rvec) d^3\rvec$ in place of $\infint \infint \infint f(\rvec) d^3\rvec$, to indicate an integration over **all space** when this will not cause any confusion.*
 ```
 
-This state corresponds to a **superposition** of the particle being at position $\rvec$. The 3D position states $\ket{\rvec}$ are **unphysical states**, which satisfy the orthogonality and normalisation condition
+This state corresponds to a **{term}`superposition`** of the particle being at position $\rvec$. The 3D position states $\ket{\rvec}$ are **unphysical states**, which satisfy the orthogonality and {term}`normalisation` condition
 ````{card}
 ```{math}
 :label: e-scalar-prod-3D-r
 \inner{\rvec'}{\rvec} = \delta^{(3)}(\rvec-\rvec'),
 ```
 ````
-where $\delta^{(3)}(\rvec-\rvec')$ is the **3D Dirac delta function**, given by
+where $\delta^{(3)}(\rvec-\rvec')$ is the **3D {term}`Dirac delta function`**, given by
 ```{math}
 \delta^{(3)}(\rvec-\rvec') = \delta(x-x')\delta(y-y')\delta(z-z'),
 ```
-i.e. it is the **product** of three delta functions, one for each coordinate. Using the 3D delta function, as an [exercise](#ex-norm-3D) you will show that the normalisation condition $\| \ket{\psi} \|^2 = 1$, in terms of the wavefunction $\psi(\rvec)$ becomes
+i.e. it is the **product** of three delta functions, one for each coordinate. Using the 3D delta function, as an [exercise](#ex-norm-3D) you will show that the normalisation condition $\| \ket{\psi} \|^2 = 1$, in terms of the {term}`wavefunction` $\psi(\rvec)$ becomes
 ````{card}
 ```{math}
 :label: e-norm-3D-wf
 \int_V|\psi(\rvec)|^2 d^3\rvec = 1,
 ```
 ````
-which should be compared to [](#e-norm-wavefunction).  The **interpretation** of this equation is in fact identical to the interpretation we gave to [](#e-norm-wavefunction). However, to arrive at this, we first need to introduce **operators** corresponding to the **coordinates** of the particle. 
+which should be compared to [](#e-norm-wavefunction).  The **interpretation** of this equation is in fact identical to the interpretation we gave to [](#e-norm-wavefunction). However, to arrive at this, we first need to introduce **{term}`operators <operator>`** corresponding to the **coordinates** of the particle. 
 
 Finally, using the 3D Dirac delta function, as an [exercise](#ex-scalar-wf-3D) you will show that we have the direct analogue of [](#e-x-scalar) in 3D, namely 
 ````{card}
@@ -73,14 +73,14 @@ which shows that the wavefunction is nothing but the scalar product between a 3D
 
 ### Position and coordinate operators
 
-One new question that arises in 3D with the introduction of **vector quantities** is *how to associate operators to them?* It turns out that the correct way to do this is to **associate a separate operator to each component of the vector**. In the context of the **position**, this means we will associate an operator to **each coordinate** of the particle. We thus introduce 3 operators, $\hat{X}$, $\hat{Y}$ and $\hat{Z}$. The position states $\ket{\rvec}$ are **joint eigenstates of all 3 operators**, satisfying the eigenvalue equations
+One new question that arises in 3D with the introduction of **vector quantities** is *how to associate operators to them?* It turns out that the correct way to do this is to **associate a separate operator to each component of the vector**. In the context of the **position**, this means we will associate an operator to **each coordinate** of the particle. We thus introduce 3 operators, $\hat{X}$, $\hat{Y}$ and $\hat{Z}$. The position states $\ket{\rvec}$ are **joint {term}`eigenstates <eigenstate>` of all 3 operators**, satisfying the {term}`eigenvalue` equations
 ````{card}
 ```{math}
 :label: e-coordinate-eigenstates
 \hat{X}\ket{\rvec} &= x \ket{\rvec},& \hat{Y}\ket{\rvec} &= y \ket{\rvec},& \hat{Z}\ket{\rvec} &= z \ket{\rvec}
 ```
 ````
-As you will confirm as an [exercise](#ex-degen-coordinate-ops), we now have a **vast amount of degeneracy** in these operators. Recall that **degeneracy** refers to the fact that there can be **multiple eigenvectors with the same eigenvalue**. We see that any two position states $\ket{\rvec}$ and $\ket{\rvec'}$ that have the same $x$ coordinate, but arbitrary $y$ and $z$ coordinates, will be degenerate as far as $\hat{X}$ is concerned (and similarly for $\hat{Y}$ and $\hat{Z}$). There are **infinitely many such states**. 
+As you will confirm as an [exercise](#ex-degen-coordinate-ops), we now have a **vast amount of {term}`degeneracy`** in these operators. Recall that **degeneracy** refers to the fact that there can be **multiple eigenvectors with the same eigenvalue**. We see that any two position states $\ket{\rvec}$ and $\ket{\rvec'}$ that have the same $x$ coordinate, but arbitrary $y$ and $z$ coordinates, will be degenerate as far as $\hat{X}$ is concerned (and similarly for $\hat{Y}$ and $\hat{Z}$). There are **infinitely many such states**. 
 
 Just as it is convenient to combine coordinates together into a vector in classical mechanics, it is also convenient and useful to combine **operators together into a vector of operators**. In particular, we can combine the coordinate operators to form a **3D position operator** $\hat{\mathbf{R}}$, given by
 ````{card}
@@ -123,7 +123,7 @@ i.e. **each component** of $\rvec$ is multiplied by the wavefunction $\psi(\rvec
 ```
 ````
 
-Finally, using the definitions of $\op{X}$, $\op{Y}$ and $\op{Z}$, it is also straightforward to see that the three coordinates are **compatible observables** that can therefore be **simultaneously measured** (in principle at least). Recall that the **mathematical** property behind compatibility is **commutativity**. We can easily check that the commutator of any two coordinate wavefunction operators vanishes, for example,
+Finally, using the definitions of $\op{X}$, $\op{Y}$ and $\op{Z}$, it is also straightforward to see that the three coordinates are **compatible observables** that can therefore be **simultaneously measured** (in principle at least). Recall that the **mathematical** property behind compatibility is **commutativity**. We can easily check that the {term}`commutator` of any two coordinate wavefunction operators vanishes, for example,
 ```{math}
 [\op{X},\op{Y}]\psi(\rvec) &= (\op{X}\op{Y} - \op{Y}\op{X})\psi(\rvec),\\
 &= \op{X}(y\psi(\rvec)) - \op{Y}(x\psi(\rvec)),\\
@@ -134,7 +134,7 @@ from which it follows that $[\hat{X}, \hat{Y}] = 0$, according to [](#e-wf-comm-
 
 ### Probability to find a particle somewhere
 
-We can now think about measuring the **position of the particle** in 3D, and ask *what is the probability to find it in an (arbitrarily small) region around $\rvec$?* That is, if we performed an arbitrarily good simultaneous measurement of the 3 coordinates of the particle. The answer is the direct generalisation of what we saw for a particle in one dimension: the **probability density** at position $\rvec$ is precisely
+We can now think about measuring the **position of the particle** in 3D, and ask *what is the probability to find it in an (arbitrarily small) region around $\rvec$?* That is, if we performed an arbitrarily good simultaneous measurement of the 3 coordinates of the particle. The answer is the direct generalisation of what we saw for a particle in one dimension: the **{term}`probability density`** at position $\rvec$ is precisely
 ````{card}
 ```{math}
 \pd(\rvec) = |\psi(\rvec)|^2,
@@ -159,7 +159,7 @@ This then allows us to interpret the normalisation condition [](#e-norm-3D-wf) i
 ````
 `````
 
-Let us now turn our attention to the **momentum** of a particle in 3D. As with the position, the momentum is now a **vector** quantity, $\pvec = (p_x, p_y, p_z)$. In [](02-momentum) we saw that if a particle had a definite momentum $p_x$ in the $x$-direction, then the spatial wavefunction was the momentum eigenfunction $v_{p_x}(x) = \frac{1}{\sqrt{2\pi\hbar}} e^{ip_x x/\hbar}$. 
+Let us now turn our attention to the **momentum** of a particle in 3D. As with the position, the momentum is now a **vector** quantity, $\pvec = (p_x, p_y, p_z)$. In [](02-momentum) we saw that if a particle had a definite momentum $p_x$ in the $x$-direction, then the spatial wavefunction was the momentum {term}`eigenfunction` $v_{p_x}(x) = \frac{1}{\sqrt{2\pi\hbar}} e^{ip_x x/\hbar}$. 
 
 Even though we are now in 3D, we still want this to be the **behaviour of the wavefunction as $x$ varies if the particle has a definite $x$ component of momentum**. We can apply the same logic along the $y$ and $z$ directions, and this suggests that **momentum eigenfunctions** of momentum $\pvec$ should be given by
 ````{card}
@@ -171,7 +171,7 @@ v_{\pvec}(\rvec) &= \frac{1}{(\sqrt{2\pi\hbar})^3}e^{ip_x x/\hbar}e^{ip_y y/\hba
 ````
 where in the second line we have realised that $p_x x + p_y y + p_z z$ (that arises when combining the exponents of the three exponential functions) can be written as the **scalar product** between $\rvec$ and $\pvec$, i.e. as $\pvec \cdot \rvec$. 
 
-In what follows, we will see that **this is the correct definition of the 3D momentum eigenfunctions**. They correspond precisely to **3D complex plane waves** with wave vector $\mathbf{k} = \pvec/\hbar$, and **definite wavelength** $\lambda = 2\pi/|\mathbf{k}| = h/|\pvec|$. This is precisely the de Broglie relation, for a particle with momentum of magnitude $|\pvec|$. 
+In what follows, we will see that **this is the correct definition of the 3D momentum eigenfunctions**. They correspond precisely to **3D complex {term}`plane waves <plane wave>`** with wave vector $\mathbf{k} = \pvec/\hbar$, and **definite wavelength** $\lambda = 2\pi/|\mathbf{k}| = h/|\pvec|$. This is precisely the de Broglie relation, for a particle with momentum of magnitude $|\pvec|$. 
 
 Having defined the momentum eigenfunctions, we can now write down — using the standard prescription — the corresponding **3D momentum eigenstates**, 
 ````{card}
@@ -188,7 +188,7 @@ These states are also **unphysical** and satisfy the same orthogonality-normalis
 ```
 ````
 
-We can use the momentum eigenstates in order to introduce the **3D momentum wavefunction**, in exact analogy to [](#e-general-state-momentum):
+We can use the momentum eigenstates in order to introduce the **3D {term}`momentum wavefunction`**, in exact analogy to [](#e-general-state-momentum):
 ````{card}
 ```{math}
 :label: e-3D-momentum-wf
@@ -260,7 +260,7 @@ where we used the fact in the third line that **we can take a partial derivative
 ````
 `````
 
-In [Chapter 3](03-Incompat-obs-HUP.md) we saw that the position and momentum operators are **incompatible observables** and satisfy the so-called **canonical commutation relation** [](#e-canonical-comm). In 3D we have already seen above that the coordinates of a particle are compatible, and that the components of momentum are also compatible. *What about the coordinates and components of momentum?* It turns out that it is only the **pairs** of coordinate and momentum component **in the same direction** that are **incompatible**, all of which obey the **canonical commutation relation**:
+In [Chapter 3](03-Incompat-obs-HUP.md) we saw that the position and momentum operators are **{term}`incompatible observables`** and satisfy the so-called **canonical commutation relation** [](#e-canonical-comm). In 3D we have already seen above that the coordinates of a particle are compatible, and that the components of momentum are also compatible. *What about the coordinates and components of momentum?* It turns out that it is only the **pairs** of coordinate and momentum component **in the same direction** that are **incompatible**, all of which obey the **canonical commutation relation**:
 ````{card}
 ```{math}
 [\hat{X},\hat{P}_x] &= i\hbar,& [\hat{Y},\hat{P}_y] &= i\hbar,& [\hat{Z},\hat{P}_z] &= i\hbar,
@@ -284,7 +284,7 @@ The physical significance of the above is that we have analogues of the HUP [](#
 and as such, a particle cannot have a very well-defined coordinate and momentum along the same axis at the same time. However, since for example the $x$-coordinate and the $y$-component of momentum commute, there is no uncertainty principle for them, and a particle can have a very well defined $x$-coordinate and a very well defined $y$-component of momentum at the same time! 
 
 ## Relationship between 3D spatial & momentum wavefunctions
-In one dimension we saw in [](#e-psi-p-to-psi-x) and [](#e-psi-x-to-psi-p) that the relationship between the position and momentum wavefunctions was that they are a **Fourier transform pair**. This is very useful, as it provides a useful way of obtaining the momentum wavefunction from the spatial wavefunction and vice versa, **without having to go via the quantum state** $\ket{\psi}$. 
+In one dimension we saw in [](#e-psi-p-to-psi-x) and [](#e-psi-x-to-psi-p) that the relationship between the position and momentum wavefunctions was that they are a **{term}`Fourier transform` pair**. This is very useful, as it provides a useful way of obtaining the momentum wavefunction from the spatial wavefunction and vice versa, **without having to go via the quantum state** $\ket{\psi}$. 
 
 In 3D (hopefully not unexpectedly at this stage of the chapter!) **the same relationship holds**: The spatial and momentum wavefunctions are **3D Fourier transform pairs**. On the one hand, starting from [](#e-3D-momentum-wf), taking the scalar product with a 3D position state $\bra{\rvec}$, and using the fact that $\inner{\rvec}{\pvec} = v_{\pvec}(\rvec)$ (as given in [](#e-3D-mom-eigenfunc)), we readily obtain
 ````{card}
@@ -302,7 +302,7 @@ Alternatively, starting from [](#e-3D-spatial-wf), taking the scalar product wit
 ## The energy of a particle in 3D
 
 
-Having covered the position and momentum of a particle above, we are now ready to consider the **energy** of a particle in 3D. The Hamiltonian still contains two contributions to the energy — kinetic and potential. The latter is rather straightforward, as we simply now have $V(\rvec)$, i.e. a potential which depends upon the (3D) position of the particle. We will study explicit examples later (e.g. a 3D 'box' and the 3D harmonic oscillator potential). 
+Having covered the position and momentum of a particle above, we are now ready to consider the **energy** of a particle in 3D. The {term}`Hamiltonian` still contains two contributions to the energy — kinetic and potential. The latter is rather straightforward, as we simply now have $V(\rvec)$, i.e. a potential which depends upon the (3D) position of the particle. We will study explicit examples later (e.g. a 3D 'box' and the 3D harmonic oscillator potential). 
 
 For the kinetic energy, the situation is slightly different, given that momentum is now a **vector** quantity in 3D. The kinetic energy depends only upon the **squared magnitude** of the momentum, that is (classically for the moment),
 ```{math}
@@ -331,11 +331,11 @@ From this we arrive at the 3D TISE,
 \op{H} u_E(\rvec) = Eu_E(\rvec),
 ```
 ````
-the **eigenvalue equation** for the Hamiltonian operator in terms of energy **eigenfunctions**. This is our **central tool** for finding the energy eigenstates in 3D, just as the 1D TISE was our central tool for finding energy eigenstates (via energy eigenfunctions) in 1D. 
+the **eigenvalue equation** for the Hamiltonian operator in terms of energy **eigenfunctions**. This is our **central tool** for finding the {term}`energy eigenstates <energy eigenstate>` in 3D, just as the 1D TISE was our central tool for finding energy eigenstates (via energy eigenfunctions) in 1D. 
 
 As in 1D, there are two **distinct** physical situations which we encounter, when a particle is either **bound** (remaining in a finite region of space), or **non-bound** (in which it can escape off to infinity). In 3D, there is a potential subtlety: what if the particle was **confined in one direction but not the others?** *What happens then?* In this case, the region that the particle can explore will **still be infinite in volume**, and as such we find that the energy of the particle varies **continuously**. Only if the particle is confined **in all three spatial dimensions** will we find **discrete energy levels**.
 
-One update is that previously we only ever encountered a **single quantum number $n$ per energy level**. That is, in both the [infinite square well](07-infinite-square-well) and the [harmonic oscillator](08-harmonic-oscillator) we were able to enumerate the energy levels using a **single** integer $n$. In 3D, in contrast, we will typically see that we have **multiple quantum numbers per energy level**. 
+One update is that previously we only ever encountered a **single {term}`quantum number` $n$ per energy level**. That is, in both the [infinite square well](07-infinite-square-well) and the [harmonic oscillator](08-harmonic-oscillator) we were able to enumerate the energy levels using a **single** integer $n$. In 3D, in contrast, we will typically see that we have **multiple quantum numbers per energy level**. 
 
 A common case is to have **three quantum numbers**, one **per degree of freedom** (i.e. each **independent** direction of travel). We will label these by $n_x$, $n_y$ and $n_z$ respectively, and sometimes collect them into the vector $\mathbf{n} = (n_x,n_y,n_z)$. 
 
@@ -354,7 +354,7 @@ A common case is to have **three quantum numbers**, one **per degree of freedom*
 ````
 `````
 
-The equation of motion of a particle in 3D is no different from the equation of motion in 1D. It is given once again by the Schrödinger Equation, which takes an **identical form** to [](#e-SE) when written out abstractly, 
+The equation of motion of a particle in 3D is no different from the equation of motion in 1D. It is given once again by the {term}`Schrödinger Equation <Schrödinger equation>`, which takes an **identical form** to [](#e-SE) when written out abstractly, 
 ![](#e-SE)
 
 In 1D we saw that we **never actually solve the SE directly** — we instead used the **superposition principle** and the fact that **energy eigenstates evolve simply** to solve it **indirectly**. In 3D, nothing will change on this front either! 
@@ -386,7 +386,7 @@ Taking the scalar product of both sides with $\bra{\rvec}$, we arrive at the evo
 \psi(\rvec,t) = \sum_{\mathbf{n}} \alpha_\mathbf{n} e^{-iE_\mathbf{n} t/\hbar} u_\mathbf{n}(\rvec),
 ```
 ````
-where we have written the energy eigenfunction $u_\mathbf{n}(\rvec) = \inner{\rvec}{E_\mathbf{n}}$ of the energy level $E_\mathbf{n}$ in the same **shorthand notation** as previously (i.e. with a subscript $\mathbf{n}$ in place of $E_\mathbf{n}$, just as we did for the energy levels of the infinite square well and harmonic oscillator). 
+where we have written the energy eigenfunction $u_\mathbf{n}(\rvec) = \inner{\rvec}{E_\mathbf{n}}$ of the energy level $E_\mathbf{n}$ in the same **shorthand notation** as previously (i.e. with a subscript $\mathbf{n}$ in place of $E_\mathbf{n}$, just as we did for the energy levels of the {term}`infinite square well` and harmonic oscillator). 
 
 *How do we write an arbitrary initial quantum state $\ket{\psi_\init}$ in the form [](#e-psi-init-3D)?* That is, how do we determine $\alpha_\mathbf{n}$? We use the direct analogy of [](#e-wf-to-energy): 
 

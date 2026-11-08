@@ -22,7 +22,7 @@ We now turn our attention to arguably the most important system in all of quantu
 
 Why is this one of the most important systems to study? The first reason is that it provides an approximation to the behaviour of **almost all** potential wells, as we outline briefly as an aside. Second, you will see later in your degree that the quantum harmonic oscillator reappears in a huge range of situations, from describing light in quantum field theory, to describing phonons in condensed matter physics and far beyond. 
 
-The method we will use to find the energy eigenstates of the quantum harmonic oscillator is also a very deep and powerful method. It is often called the **algebraic** approach, and provides a fascinating way of **turning one energy eigenstate into another**. The alternative approach is called the **analytical** approach, and relies on solving the TISE directly. Most textbooks choose one approach or the other (or present them both). Here, we will focus on the former, as it is also the approach which is widely used in other contexts. 
+The method we will use to find the {term}`energy eigenstates <energy eigenstate>` of the quantum harmonic oscillator is also a very deep and powerful method. It is often called the **algebraic** approach, and provides a fascinating way of **turning one energy eigenstate into another**. The alternative approach is called the **analytical** approach, and relies on solving the TISE directly. Most textbooks choose one approach or the other (or present them both). Here, we will focus on the former, as it is also the approach which is widely used in other contexts. 
 
 ````{aside} *Approximation of an arbitrary potential well*
 *Imagine a situation where a particle is acted on by a conservative force $F(x)$, with associated potential energy $V(x)$. Assume that this force pushes the particle back to a position $x_0$. An example is depicted below:*
@@ -52,7 +52,7 @@ V(x) \approx \frac{1}{2}\frac{d^2V}{dx^2}\bigg|_{0}x^2
 
 *This region of small $x$ is precisely the region that is explored classically by a particle with low energy. It is thus reasonable to assume that for low energies, all systems behave roughly like the harmonic oscillator, and that this is also true in quantum mechanics. Hence, by solving the quantum mechanics of a harmonic oscillator, we obtain an approximation to the quantum mechanics of any particle trapped in a potential well.*
 
-*The only caveat to the above is when $d^2V/dx^2$ vanishes. In this case, we need to go to higher-order derivatives in order to find the leading-order approximation to the potential well, and the behaviour will not be well approximated by the harmonic oscillator. The infinite square well is precisely a potential of this kind — at the bottom of the well **all derivatives $d^nV/dx^n$ vanish**. However, this indicates that there is no force on the particle whatsoever, which is a very special situation. In general, it will be the case that $d^2 V/dx^2$ does not vanish, and that the leading-order behaviour is well approximated by the harmonic oscillator.*
+*The only caveat to the above is when $d^2V/dx^2$ vanishes. In this case, we need to go to higher-order derivatives in order to find the leading-order approximation to the potential well, and the behaviour will not be well approximated by the harmonic oscillator. The {term}`infinite square well` is precisely a potential of this kind — at the bottom of the well **all derivatives $d^nV/dx^n$ vanish**. However, this indicates that there is no force on the particle whatsoever, which is a very special situation. In general, it will be the case that $d^2 V/dx^2$ does not vanish, and that the leading-order behaviour is well approximated by the harmonic oscillator.*
 
 ````
 
@@ -78,7 +78,7 @@ This is depicted below in [](#harmonic-oscillator).
 
 Our first goal, as always, is to determine the **energy eigenstates** of the quantum harmonic oscillator. In this chapter instead of going about this directly — by solving the TISE with the potential [](#e-QHO-potential) (which is in fact not very straightforward to do at all) — we are going to take a different approach. While at first sight this might seem strange, we will ultimately realise that this is a very powerful technique for finding the energy eigenstates. 
 
-The approach we will take is to find a special **pair of operators** called the **creation** and **annihilation operators**. These remarkable operators **transform one energy eigenstate into another**. In fact, we will see that the creation operator generates the next energy level up, while the annihilation operator generates the next one down. In this way, once we have found just **one** energy eigenstate (by whatever means!) we can then use the creation and annihilation operators to **find them all**!
+The approach we will take is to find a special **pair of {term}`operators <operator>`** called the **creation** and **annihilation operators**. These remarkable operators **transform one energy eigenstate into another**. In fact, we will see that the creation operator generates the next energy level up, while the annihilation operator generates the next one down. In this way, once we have found just **one** energy eigenstate (by whatever means!) we can then use the {term}`creation and annihilation operators` to **find them all**!
 
 *What are these remarkable creation and annihilation operators?* To define them, we first need to define a **characteristic length scale** and a **characteristic momentum scale** for the harmonic oscillator. As you will show in [](#ex-length-mom-scales), the **physical** quantities of the harmonic oscillator — the **mass** $M$, the **angular frequency** $\omega$ (which specifies the scale of the **force** through the spring constant), along with $\hbar$ (the key quantum constant which has dimensions) — can be uniquely combined to specify a length $\ell$ and a momentum $q = \hbar/\ell$, given by
 ````{card}
@@ -95,7 +95,7 @@ With these defined, we can now define the annihilation and creation operators, w
 \hat{a}^\dagger &= \frac{1}{\sqrt{2}}\left(\frac{\hat{X}}{\ell} - i \frac{\hat{P}}{q}\right) = \frac{1}{\sqrt{2}}\left(\frac{\hat{X}}{\ell} - i \frac{\ell\hat{P}}{\hbar}\right)& &\text{creation op.}
 ```
 ````
-That is, the creation operator is a **dimensionless** combination of the position and momentum operators, with the momentum operator multiplied by the imaginary number $i$ (and an overall normalisation factor of $1/\sqrt{2}$). 
+That is, the creation operator is a **dimensionless** combination of the position and momentum operators, with the momentum operator multiplied by the imaginary number $i$ (and an overall {term}`normalisation` factor of $1/\sqrt{2}$). 
 
 *Why did we call the creation operator $\hat{a}^\dagger$?* Because it is indeed the **Hermitian conjugate operator to $\hat{a}$**: Recall that since position and momentum are **observable quantities** the operators $\hat{X}$ and $\hat{P}$ are **Hermitian**, satisfying $\hat{X}^\dagger = \hat{X}$ and $\hat{P}^\dagger = \hat{P}$. Thus, when we take the Hermitian conjugate of $\hat{a}$, the **only** change is to the sign of the imaginary number $i$, which is precisely the definition of $\hat{a}^\dagger$. 
 
@@ -104,15 +104,15 @@ That is, the creation operator is a **dimensionless** combination of the positio
 :label: e-H-adag
 \hat{H} \left( \hat{a}^\dagger \ket{E_n}\right) = E_{n+1} \left(\hat{a}^\dagger\ket{E_n}\right),
 ```
-since if this equation is satisfied, it means that $\left(\hat{a}^\dagger\ket{E_n}\right)$ is an energy eigenstate of $\hat{H}$, with eigenvalue $E_{n+1}$, i.e. it is the next energy level. 
+since if this equation is satisfied, it means that $\left(\hat{a}^\dagger\ket{E_n}\right)$ is an energy eigenstate of $\hat{H}$, with {term}`eigenvalue` $E_{n+1}$, i.e. it is the next energy level. 
 
-In order to show [](#e-H-adag) holds, it is easiest to return to the notion of the **commutator** that we introduced previously in [](#s-commutation). In particular, if we calculate $[\hat{H},\hat{a}^\dagger]$, and find that it is equal to the operator $\hat{b}$ (which we will come to below), then this would mean that $\hat{H}\hat{a}^\dagger - \hat{a}^\dagger \hat{H} = \hat{b}$, and so by re-arranging, $\hat{H}\hat{a}^\dagger = \hat{a}^\dagger \hat{H} + \hat{b}$. We can then substitute this into the left-hand side of [](#e-H-adag) to obtain
+In order to show [](#e-H-adag) holds, it is easiest to return to the notion of the **{term}`commutator`** that we introduced previously in [](#s-commutation). In particular, if we calculate $[\hat{H},\hat{a}^\dagger]$, and find that it is equal to the operator $\hat{b}$ (which we will come to below), then this would mean that $\hat{H}\hat{a}^\dagger - \hat{a}^\dagger \hat{H} = \hat{b}$, and so by re-arranging, $\hat{H}\hat{a}^\dagger = \hat{a}^\dagger \hat{H} + \hat{b}$. We can then substitute this into the left-hand side of [](#e-H-adag) to obtain
 ```{math}
 :label: e-H-adag-1
 \hat{H} \hat{a}^\dagger \ket{E_n} &= \left(\hat{a}^\dagger \hat{H} + \hat{b}\right)\ket{E_n},\\
 &= \left(E_n \hat{a}^\dagger + \hat{b}\right)\ket{E_n}.
 ```
-At first sight this might not look too helpful. However, at this stage it is useful to determine $\hat{b}$. In [](#ex-comm-H-adag) below, by using the explicit form of $\hat{a}^\dagger$ from [](#e-creation-annihilation), as well as the explicit form of the Hamiltonian operator, with $\hat{V} = \frac{1}{2} M \omega^2 \hat{X}^2$ from [](#e-QHO-potential), and the two commutators
+At first sight this might not look too helpful. However, at this stage it is useful to determine $\hat{b}$. In [](#ex-comm-H-adag) below, by using the explicit form of $\hat{a}^\dagger$ from [](#e-creation-annihilation), as well as the explicit form of the {term}`Hamiltonian` operator, with $\hat{V} = \frac{1}{2} M \omega^2 \hat{X}^2$ from [](#e-QHO-potential), and the two commutators
 ```{math}
 :label: e-comms-P2-X2
 [\hat{P}^2,\hat{X}] &= -2i\hbar \hat{P},& [\hat{X}^2, \hat{P}] &= 2i\hbar \hat{X},
@@ -144,7 +144,7 @@ between the Hamiltonian and the **annihilation operator**. From this, you [will 
 ```
 This shows that $(\hat{a}\ket{E_n})$ is an energy eigenstate of $\hat{H}$ with energy $(E_n - \hbar \omega) = E_{n-1}$. That is, the annihilation operator transforms an energy level into the **next lowest energy level** (up to normalisation). 
 
-We thus have a procedure, starting from any given energy level $\ket{E_n}$, to create any other energy level, by either successively applying the creation operator (to **'climb up'** the energy levels) or by applying $\hat{a}$ (to **'climb down'** them). All we need is a way to find **one** eigenstate, and then we have everything we need. We will now see how we can obtain the **ground state** of the oscillator.
+We thus have a procedure, starting from any given energy level $\ket{E_n}$, to create any other energy level, by either successively applying the creation operator (to **'climb up'** the energy levels) or by applying $\hat{a}$ (to **'climb down'** them). All we need is a way to find **one** {term}`eigenstate`, and then we have everything we need. We will now see how we can obtain the **{term}`ground state`** of the oscillator.
 
 ## The ground state of the harmonic oscillator
 
@@ -165,7 +165,7 @@ You might have noticed something strange in the above — we appear to be able t
 
 A little thought shows that there is a way out of this problem: we pointed out a couple of times above that $\hat{a}\ket{E_n}$ isn't necessarily **normalised**, and in fact we will see below that it isn't, and this is the key to escaping our problem. In particular, let us imagine that we have indeed found the ground state, which we will denote by $\ket{E_0}$. According to the above, $\hat{a}\ket{E_0}$ will be **proportional** to a state of energy $E_0 - \hbar \omega$. However, if the proportionality constant **vanishes**, then our sequence **terminates**. That is, if $\hat{a}\ket{E_0} = 0$, then we **don't** obtain a new state, and hence we can no longer climb down! 
 
-Remarkably, this insight **also allows us to find the ground state $\ket{E_0}$**. More precisely, we can use it to find the ground state eigenfunction $u_0(x)$. *How do we do this?* Well, we know that eigenfunctions satisfy the same equation as eigenstates, except we have to use operators on wavefunctions instead. Therefore, $\hat{a}\ket{E_0} = 0$ is equivalent to
+Remarkably, this insight **also allows us to find the ground state $\ket{E_0}$**. More precisely, we can use it to find the ground state {term}`eigenfunction` $u_0(x)$. *How do we do this?* Well, we know that eigenfunctions satisfy the same equation as eigenstates, except we have to use operators on {term}`wavefunctions <wavefunction>` instead. Therefore, $\hat{a}\ket{E_0} = 0$ is equivalent to
 ```{math}
 \op{a} u_0(x) = 0,
 ```
@@ -177,7 +177,7 @@ It isn't too difficult to spot the solution to this: it is nothing but a Gaussia
 ```{math}
 \frac{\partial}{\partial x} \left(N_0 e^{-x^2/2\ell^2}\right) = - \frac{x}{\ell^2} N_0 e^{-x^2/2\ell^2},
 ```
-where $N_0$ is a normalisation constant, that we will fix below. This shows that the **ground state of the harmonic oscillator is a Gaussian wavefunction**, with standard deviation $\Delta x = \ell/\sqrt{2}$ (i.e. confirming that, indeed, $\ell$ is really a characteristic length scale of the harmonic oscillator). We can thus use [](#e-gaussian-wf) to fix the normalisation, and so the ground state wavefunction is
+where $N_0$ is a normalisation constant, that we will fix below. This shows that the **ground state of the harmonic oscillator is a Gaussian wavefunction**, with {term}`standard deviation` $\Delta x = \ell/\sqrt{2}$ (i.e. confirming that, indeed, $\ell$ is really a characteristic length scale of the harmonic oscillator). We can thus use [](#e-gaussian-wf) to fix the normalisation, and so the ground state wavefunction is
 ````{card}
 ```{math}
 :label: e-gs-qho
@@ -226,7 +226,7 @@ We therefore call $\hat{a}^\dagger \hat{a}$ the **number operator**,
 \hat{n} = \hat{a}^\dagger \hat{a},
 ```
 ```` 
-such that $\ket{E_n}$ are **eigenstates**, with eigenvalue $n$ — the **quantum number** of the energy level. 
+such that $\ket{E_n}$ are **eigenstates**, with eigenvalue $n$ — the **{term}`quantum number`** of the energy level. 
 
 ## Energy eigenstates of the harmonic oscillator
 
@@ -331,14 +331,14 @@ where $N_n$ is a **normalisation factor**, and $h_n(y)$ are functions known as *
   - $2\left(\frac{1}{3\ell\sqrt{\pi}}\right)^{1/2} \frac{x}{\ell}\left(\frac{x^2}{\ell^2}-\frac{3}{2}\right)e^{-x^2/2\ell^2}$	
 ````
 
-The energy eigenfunctions and corresponding probability densities of the first few energy eigenstates are plotted in [](#wf-ho) and [](#pd-ho) respectively.
+The energy eigenfunctions and corresponding {term}`probability densities <probability density>` of the first few energy eigenstates are plotted in [](#wf-ho) and [](#pd-ho) respectively.
 
 ````{figure} ./Pictures/eigenstates-ho.svg
 :name: wf-ho
 :width: 500px
 :align: center
 
-**Energy eigenfunctions of the harmonic oscillator.** The first six energy eigenfunctions $u_n(x)$ of the harmonic oscillator. The two markers on the $x$ axis show where **tunnelling** starts: the classically-allowed region is between the markers, where the total energy of the particle is more than the potential energy.
+**Energy eigenfunctions of the harmonic oscillator.** The first six energy eigenfunctions $u_n(x)$ of the harmonic oscillator. The two markers on the $x$ axis show where **{term}`tunnelling`** starts: the classically-allowed region is between the markers, where the total energy of the particle is more than the potential energy.
 ````
 
 ````{figure} ./Pictures/probs-ho.svg

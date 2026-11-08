@@ -20,7 +20,7 @@ numbering:
 
 In the previous chapter we began our investigation of the quantum mechanics of a particle moving in one dimension, focusing on the **position** of the particle. Here we will continue our development, by now considering how **momentum** is described quantum mechanically. We will see in this chapter that momentum is related to **wave-like** properties of a particle. 
 
-We will introduce the **momentum wavefunction** $\tilde{\psi}(p)$ (in analogy to the spatial wavefunction $\psi(x)$), and give the relationship to the latter, and also introduce the **momentum operator** $\hat{P}$ and its associated operator $\op{P}$ (that acts upon wavefunctions $\psi(x)$). 
+We will introduce the **{term}`momentum wavefunction`** $\tilde{\psi}(p)$ (in analogy to the spatial wavefunction $\psi(x)$), and give the relationship to the latter, and also introduce the **momentum operator** $\hat{P}$ and its associated {term}`operator` $\op{P}$ (that acts upon {term}`wavefunctions <wavefunction>` $\psi(x)$). 
 
 ## The de Broglie relation and states of definite momentum
 
@@ -32,7 +32,7 @@ Our starting point for understanding the momentum of a quantum particle will in 
 where $h$ is **[Planck's constant](wiki:Planck_constant)** {cite:p}`planck1901`. While this formula is part of '*old quantum theory*' (it was de Broglie's 1924 doctoral thesis {cite:p}`debroglie1925`, and electron diffraction confirmed it three years later {cite:p}`davisson1927`), it turns out that the basic insight is ultimately correct. More concretely, what is correct in quantum mechanics is 
 >  A quantum particle with definite momentum $p$ has a wavefunction with a definite wavelength $\lambda = h/p$. 
 
-*What is a wavefunction with a definite wavelength $\lambda$?* This could potentially mean a couple of things, for example $\cos(2\pi x/\lambda)$ or $\sin(2\pi x/\lambda)$? These are both examples of plane waves of wavelength $\lambda$. Neither of these happens to be the correct answer. What we actually mean is a **complex plane wave** 
+*What is a wavefunction with a definite wavelength $\lambda$?* This could potentially mean a couple of things, for example $\cos(2\pi x/\lambda)$ or $\sin(2\pi x/\lambda)$? These are both examples of {term}`plane waves <plane wave>` of wavelength $\lambda$. Neither of these happens to be the correct answer. What we actually mean is a **complex plane wave** 
 ```{math}
 :label: e-complex-plane-wave
 Ae^{2\pi i x / \lambda}
@@ -72,12 +72,12 @@ v_p(x) = A e^{ipx/\hbar},
 ````
 corresponding to **complex plane waves** of wavelength $\lambda = h/p$. We will take this essentially as a **postulate**, and not attempt to derive it. 
 
-Using [](#e-general-quantum-state), i.e. the general relationship between a quantum state and a wavefunction, this means we can **directly write down** quantum states of definite momentum, which we will denote by $\ket{p}$ and refer to as 'momentum states' (in analogy to our notation $\ket{x}$ for position states). These are
+Using [](#e-general-quantum-state), i.e. the general relationship between a quantum state and a wavefunction, this means we can **directly write down** quantum states of definite momentum, which we will denote by $\ket{p}$ and refer to as 'momentum states' (in analogy to our notation $\ket{x}$ for {term}`position states <position state>`). These are
 ```{math}
 :label: e-momentum-state-1
 \vph\ket{p} = \infint v_p(x) \ket{x} dx = A\infint e^{ipx/\hbar} \ket{x} dx.
 ```
-We still have some ambiguity here: we haven't specified what the 'amplitude' $A$ should be. We can fix this by analogy to position states. Recall that in [](#e-position-norm) we normalised position states using the [Dirac delta function](#dirac-delta-function). We will demand that momentum states satisfy the **same** normalisation (and *orthogonality*) condition:
+We still have some ambiguity here: we haven't specified what the 'amplitude' $A$ should be. We can fix this by analogy to position states. Recall that in [](#e-position-norm) we {term}`normalised <normalisation>` position states using the [Dirac delta function](#dirac-delta-function). We will demand that momentum states satisfy the **same** normalisation (and *orthogonality*) condition:
 ````{card}
 ```{math}
 :label: e-momentum-norm
@@ -96,7 +96,7 @@ are **quantum states of definite momentum**.
 Note that due to [](#e-momentum-norm), states of definite momentum have **infinite normalisation** (just like states of definite position). What this means is that they are, once again, **unphysical states**! We thus have another profound conclusion:
 > It is physically impossible in quantum mechanics for a particle to have a definite momentum.
 
-We can understand this from a second perspective. Our requirement to have a definite wavelength means that a particle has to be spread out **everywhere**. If this were possible, then what would be the probability density $\pd(x)$ to find the particle at some location $x_0$? This would be
+We can understand this from a second perspective. Our requirement to have a definite wavelength means that a particle has to be spread out **everywhere**. If this were possible, then what would be the {term}`probability density` $\pd(x)$ to find the particle at some location $x_0$? This would be
 ```{math}
 \vph \pd(x_0) = |v_p(x_0)|^2 &= \left| \frac{1}{\sqrt{2\pi \hbar}}e^{ipx_0/\hbar}\right|^2, \\
 &= \frac{1}{\sqrt{2\pi \hbar}}e^{-ipx_0/\hbar}\frac{1}{\sqrt{2\pi \hbar}}e^{ipx_0/\hbar}, \\
@@ -112,7 +112,7 @@ Nevertheless, just as it is extremely **useful** to use position states $\ket{x}
 
 ## The momentum operator
 
-One use of the states $\ket{p}$ is that they allow us to define the **momentum operator** $\hat{P}$. Recall that, **by definition**, this is the operator for which the momentum states $\ket{p}$ are **eigenstates**, with corresponding momentum eigenvalue $p$, 
+One use of the states $\ket{p}$ is that they allow us to define the **momentum operator** $\hat{P}$. Recall that, **by definition**, this is the operator for which the momentum states $\ket{p}$ are **{term}`eigenstates <eigenstate>`**, with corresponding momentum {term}`eigenvalue` $p$, 
 ````{card}
 ```{math}
 :label: e-momentum-op
@@ -123,7 +123,7 @@ We will return to the momentum operator shortly, and find its associated operato
 
 ## The momentum wavefunction
 
-Just as we can write any quantum state $\ket{\psi}$ as a **superposition of position states** $\ket{x}$ using the **spatial wavefunction** $\psi(x)$, we can also write it as a **superposition of momentum states** $\ket{p}$, 
+Just as we can write any quantum state $\ket{\psi}$ as a **{term}`superposition` of position states** $\ket{x}$ using the **spatial wavefunction** $\psi(x)$, we can also write it as a **superposition of momentum states** $\ket{p}$, 
 ````{card}
 ```{math}
 :label: e-general-state-momentum
@@ -207,7 +207,7 @@ This gives the spatial wavefunction in terms of the momentum wavefunction. As an
 ````
 which gives the momentum wavefunction in terms of the spatial wavefunction. It is important to note the symmetry between these two expressions. One key **distinction** is that in the former, the exponential comes with a plus-sign, while in the latter it comes with a minus-sign. Getting this sign wrong is a very easy and common mistake!
 
-You have encountered the above type of equations before — this is nothing but the **[Fourier transform](wiki:Fourier_transform)** and its inverse! That is, the spatial wavefunction is the Fourier transform of the momentum wavefunction, and conversely the momentum wavefunction is the inverse Fourier transform of the spatial wavefunction! The reason why this might look unfamiliar is that instead of using the usual variable $k$, we are using the physical variable — the momentum — instead. What is $k$ usually? It is the **wavenumber** of a wave, which we can recall is related to the wavelength via $k = 2\pi/\lambda$. Substituting this into the de Broglie relation [](#e-de-Broglie), we see that $2\pi / k = h / p$, which after re-arranging gives $p = \hbar k$! A simple change of variable then takes us back to the 'standard' Fourier transform.
+You have encountered the above type of equations before — this is nothing but the **[Fourier transform](wiki:Fourier_transform)** and its inverse! That is, the spatial wavefunction is the {term}`Fourier transform` of the momentum wavefunction, and conversely the momentum wavefunction is the inverse Fourier transform of the spatial wavefunction! The reason why this might look unfamiliar is that instead of using the usual variable $k$, we are using the physical variable — the momentum — instead. What is $k$ usually? It is the **wavenumber** of a wave, which we can recall is related to the wavelength via $k = 2\pi/\lambda$. Substituting this into the de Broglie relation [](#e-de-Broglie), we see that $2\pi / k = h / p$, which after re-arranging gives $p = \hbar k$! A simple change of variable then takes us back to the 'standard' Fourier transform.
 
 In hindsight, it is clear that this **had** to be the relation between the spatial and momentum wavefunctions. Why? Our starting point of this Chapter was the fact that in quantum mechanics, states of definite momentum correspond to complex plane waves. A Fourier transform is precisely the way of transforming a function $f(x)$, represented in the normal fashion — as a value at each point $x$ — into a superposition of plane waves, where $\tilde{f}(k)$ is the amplitude to have wavenumber $k$ (and hence wavelength $\lambda = 2\pi/k$). The only new ingredient for us is that in quantum mechanics a wavenumber of $k$ corresponds to a momentum of $\hbar k$, and hence when we Fourier transform the wavefunction of a particle, we directly get its momentum wavefunction $\tilde{\psi}(p)$ — the 'probability amplitude' for it to have momentum $p$. 
 
@@ -271,11 +271,11 @@ Therefore we have
 \op{P} v_p(x) = pv_p(x),
 ```
 ````
-which is precisely an **eigenvalue equation** for wavefunctions of definite momentum. This is a very important form of **consistency**: the wavefunctions $v_p(x)$ which correspond to states of definite momentum are seen to be eigenstates of the operator $\op{P}$ which represents the momentum operator on wavefunctions. It is important to note that we could have in fact used $\op{P}$ to **find** the states $\ket{p}$. In particular, we could have first found the eigenfunctions $v_p(x)$ of $\op{P}$, and then **defined** $\ket{p} = \infint v_p(x) \ket{x}dx$, which would be eigenstates of $\hat{P}$ (a fact you will check as an [exercise](#ex-mom-eigenstates)). 
+which is precisely an **eigenvalue equation** for wavefunctions of definite momentum. This is a very important form of **consistency**: the wavefunctions $v_p(x)$ which correspond to states of definite momentum are seen to be eigenstates of the operator $\op{P}$ which represents the momentum operator on wavefunctions. It is important to note that we could have in fact used $\op{P}$ to **find** the states $\ket{p}$. In particular, we could have first found the {term}`eigenfunctions <eigenfunction>` $v_p(x)$ of $\op{P}$, and then **defined** $\ket{p} = \infint v_p(x) \ket{x}dx$, which would be eigenstates of $\hat{P}$ (a fact you will check as an [exercise](#ex-mom-eigenstates)). 
 
 It is also important to realise that we could have in fact started this whole chapter in reverse, and **defined first** the momentum operator $\op{P}$, and used this to arrive at the momentum eigenfunctions $v_p(x)$, rather than postulate them as states of definite momentum as we did. Thanks to de Broglie, we didn't need to do this, as he already had the insight into what form the eigenfunctions should have, i.e. that they corresponded to plane waves. 
 
-However, for other physical properties, this won't be the case — we won't know in advance what form wavefunctions should have in order to have a definite value of a given property (e.g. to have a definite energy or angular momentum). Our general procedure in these cases will be precisely to go in the other direction: For a given operator $\hat{A}$, to start by considering the associated operator $\op{A}$ (acting on wavefunctions), find its eigenfunctions, and then use **these** to define quantum states with definite properties, that is, the eigenstates of $\hat{A}$. A key example will be to find states of definite energy (in which case the operator of interest is the **Hamiltonian** $\hat{H}$). We will study this extensively in the following chapters. 
+However, for other physical properties, this won't be the case — we won't know in advance what form wavefunctions should have in order to have a definite value of a given property (e.g. to have a definite energy or angular momentum). Our general procedure in these cases will be precisely to go in the other direction: For a given operator $\hat{A}$, to start by considering the associated operator $\op{A}$ (acting on wavefunctions), find its eigenfunctions, and then use **these** to define quantum states with definite properties, that is, the eigenstates of $\hat{A}$. A key example will be to find states of definite energy (in which case the operator of interest is the **{term}`Hamiltonian`** $\hat{H}$). We will study this extensively in the following chapters. 
 
 ## Exercises
 

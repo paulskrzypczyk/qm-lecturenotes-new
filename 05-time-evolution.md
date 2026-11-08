@@ -22,7 +22,7 @@ We are now ready to embark on one of the central physical questions that we are 
 
 Up until now, we have just been discussing quantum states, and their **static** properties, without making any reference to time, or how the state changes in time. That is, when we have considered a particle with a state $\ket{\psi}$, we have really meant the state at some reference time, e.g. $t=0$. If we prepare a particle in some state, we don't expect it to **remain in that state**. For example, if the particle has momentum, we know it is moving, and so know its state should change, reflecting this non-zero momentum. 
 
-In this chapter, after reintroducing the **equation of motion** of QM, we will see how writing a quantum state as a superposition of energy eigenstates allows us to **solve it directly** and **write down the state at time $t$**. 
+In this chapter, after reintroducing the **equation of motion** of QM, we will see how writing a quantum state as a {term}`superposition` of {term}`energy eigenstates <energy eigenstate>` allows us to **solve it directly** and **write down the state at time $t$**. 
 
 ## The Schrödinger Equation
 
@@ -37,14 +37,14 @@ i\hbar \frac{d}{dt}\ket{\psi(t)} = \hat{H}\ket{\psi(t)}.
 ```` 
 If $\ket{\psi(t)}$ satisfies [](#e-SE) with the **initial condition** $\ket{\psi(0)} = \ket{\psi_\init}$, then this will be what the quantum state evolves into at time $t$. 
 
-*What is the SE in terms of the wavefunction $\psi(x,t)$?* We can find this by expressing $\ket{\psi(t)}$ as in [](#e-general-quantum-state), and taking the scalar product with $\bra{x'}$. As an [exercise](#ex-SE-wf), you will show that this leads to
+*What is the SE in terms of the {term}`wavefunction` $\psi(x,t)$?* We can find this by expressing $\ket{\psi(t)}$ as in [](#e-general-quantum-state), and taking the scalar product with $\bra{x'}$. As an [exercise](#ex-SE-wf), you will show that this leads to
 ````{card}
 ```{math}
 :label: e-SE-wf
 \vph i\hbar \frac{\partial}{\partial t} \psi(x,t) = \op{H} \psi(x,t).
 ```
 ````
-This is also referred to simply as the **Schrödinger Equation**, as it is the equation of motion, now for the wavefunction, rather than the quantum state. 
+This is also referred to simply as the **{term}`Schrödinger Equation <Schrödinger equation>`**, as it is the equation of motion, now for the wavefunction, rather than the quantum state. 
 ## Evolution of bound states
 
 You saw how to solve the SE last year for a $d$-dimensional quantum system. When considering a quantum particle which is in a [**bound state**](#s-bound-states) — by which we mean **can be written as a superposition of energy eigenstates, all with energy $E<E_B$** (i.e. trapped within a potential well), then this same treatment carries over directly. 
@@ -54,7 +54,7 @@ In particular, let us assume that our initial state $\ket{\psi_\init}$ (at $t=0$
 :label: e-psi-init
 \ket{\psi_\init} = \sum_{k=1}^{d} \alpha_k \ket{E_k},
 ```
-where we consider an arbitrary Hamiltonian $\hat{H}$, with a potential $\hat{V}$ such that there are $d$ bound energy eigenstates — that satisfy $\hat{H}\ket{E_k} = E_k \ket{E_k}$ with $E_k < E_B$, and $\sum_{k} |\alpha_k|^2 = 1$ so that $\ket{\psi_\init}$ is a normalised quantum state. 
+where we consider an arbitrary {term}`Hamiltonian` $\hat{H}$, with a potential $\hat{V}$ such that there are $d$ bound energy eigenstates — that satisfy $\hat{H}\ket{E_k} = E_k \ket{E_k}$ with $E_k < E_B$, and $\sum_{k} |\alpha_k|^2 = 1$ so that $\ket{\psi_\init}$ is a {term}`normalised <normalisation>` quantum state. 
 
 Then, according to what you learnt last year, the quantum state at time $t$ will be
 ```{math}
@@ -79,7 +79,7 @@ We now turn our attention to the evolution of [**non-bound**](#s-non-bound-state
 :label: e-init-non-bound
 \ket{\psi_\init} = \int_{E_B}^\infty \phi_\init(E)\ket{E}dE,
 ```
-where now, since energies are **continuous** for [non-bound states](#s-non-bound-states), we have to integrate rather than sum to form a superposition, and where we have changed to $\phi_\init(E)$ (from $\alpha_k$), which is now a **function of energy**, just as the position and momentum wavefunctions are functions, respectively, of position and momentum. The lower limit on the integral of $E_B$ is because only in this **energy range** is the particle not bound to the well. 
+where now, since energies are **continuous** for [non-bound states](#s-non-bound-states), we have to integrate rather than sum to form a superposition, and where we have changed to $\phi_\init(E)$ (from $\alpha_k$), which is now a **function of energy**, just as the position and {term}`momentum wavefunctions <momentum wavefunction>` are functions, respectively, of position and momentum. The lower limit on the integral of $E_B$ is because only in this **energy range** is the particle not bound to the well. 
 
 Our goal now is to find the state $\ket{\psi(t)}$ which satisfies the SE [](#e-SE) and has [](#e-init-non-bound) as the initial condition. Let us **assume** that we can write $\ket{\psi(t)}$ in the same form as [](#e-init-non-bound), that is, in the form
 ```{math}
@@ -132,7 +132,7 @@ which we can readily confirm satisfies the initial condition $\ket{\psi(0)} = \k
 ````
 `````
 
-Let us return for the moment to bound states, and consider a particularly simple initial condition: that the particle has a definite energy $E_\ell$. That is, the initial state is $\ket{\psi_\init} = \ket{E_\ell}$, and so $\alpha_\ell = 1$ and $\alpha_k = 0$ for $k \neq \ell$. According to [](#e-soln-to-SE-bound) the quantum state at time $t$ will be
+Let us return for the moment to {term}`bound states <bound state>`, and consider a particularly simple initial condition: that the particle has a definite energy $E_\ell$. That is, the initial state is $\ket{\psi_\init} = \ket{E_\ell}$, and so $\alpha_\ell = 1$ and $\alpha_k = 0$ for $k \neq \ell$. According to [](#e-soln-to-SE-bound) the quantum state at time $t$ will be
 ```{math}
 :label: e-E-eigenstate-evolution
 \ket{\psi(t)} = e^{-iE_\ell t/\hbar}\ket{E_\ell}.
@@ -154,7 +154,7 @@ This is in fact what we know really **must** have been the case, since **energy 
 ```{math}
 \psi(x,t) = e^{-iE_\ell t/\hbar} u_{E_\ell}(x),
 ```
-where $u_{E_\ell}(x)$ is the wavefunction associated to the quantum state $\ket{E_\ell}$. If we measure the position of the particle at time $t$, the probability density to find it at $x$ is
+where $u_{E_\ell}(x)$ is the wavefunction associated to the quantum state $\ket{E_\ell}$. If we measure the position of the particle at time $t$, the {term}`probability density` to find it at $x$ is
 ```{math}
 \pd(x,t) &= |\psi(x,t)|^2,\\
 &= |e^{-iE_\ell t/\hbar} u_{E_\ell}(x)|^2,\\
@@ -260,7 +260,7 @@ Consider a particle with an initial state given by
 ```{math}
 \ket{\psi_\init} = \sum_{k=1}^d \alpha_k \ket{E_k} + \int_{E_B}^\infty \phi_\init(E) \ket{E}dE,
 ```
-where $\ket{E_k}$ are energy eigenstates with $E_k < E_B$, and $\ket{E}$ are eigenstates with $E > E_B$. Note that these states are **orthogonal**, $\inner{E}{E_k} = 0$. 
+where $\ket{E_k}$ are energy eigenstates with $E_k < E_B$, and $\ket{E}$ are {term}`eigenstates <eigenstate>` with $E > E_B$. Note that these states are **orthogonal**, $\inner{E}{E_k} = 0$. 
 1. Show that the normalisation condition for such superposition states is
 ```{math}
 \sum_{k=1}^d |\alpha_k|^2 + \int_{E_B}^\infty |\phi_\init(E)|^2 dE = 1.

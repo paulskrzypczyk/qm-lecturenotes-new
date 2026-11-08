@@ -145,6 +145,11 @@ function transformNode(node, dir, stats) {
     case 'abbreviation': {
       return node.children.length ? node.children : text(toText(node));
     }
+    case 'crossReference': {
+      // glossary terms ({term} roles): the glossary page is not in the PDF, so plain text
+      if (String(node.identifier || '').startsWith('term-')) return node.children || [];
+      return node;
+    }
     case 'link': {
       const url = node.url || '';
       if (url === '#dirac-delta-function') {

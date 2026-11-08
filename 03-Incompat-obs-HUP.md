@@ -18,16 +18,16 @@ numbering:
 ````
 `````
 
-In this Chapter we will learn about one of the basic aspects of quantum mechanics — **incompatible observables**. As we will see in more detail below, quantum mechanics predicts that it is **impossible for a particle to have multiple definite properties at the same time**. For example, a particle cannot have a definite position and a definite momentum simultaneously, or a definite energy and a definite position (as just two examples). In fact, we can say much more than this, and this is really the main lesson: there is a strong **trade-off** between **how well-defined** properties can be. That is, if a particle has a fairly well defined position, this necessitates it having a broad spread of momenta. This is the content of the famous **Heisenberg uncertainty principle** (HUP), which we will introduce here. This is a fundamental fact about nature, and shows that certain observable properties are **incompatible** with each other. 
+In this Chapter we will learn about one of the basic aspects of quantum mechanics — **{term}`incompatible observables`**. As we will see in more detail below, quantum mechanics predicts that it is **impossible for a particle to have multiple definite properties at the same time**. For example, a particle cannot have a definite position and a definite momentum simultaneously, or a definite energy and a definite position (as just two examples). In fact, we can say much more than this, and this is really the main lesson: there is a strong **trade-off** between **how well-defined** properties can be. That is, if a particle has a fairly well defined position, this necessitates it having a broad spread of momenta. This is the content of the famous **{term}`Heisenberg uncertainty principle`** (HUP), which we will introduce here. This is a fundamental fact about nature, and shows that certain observable properties are **incompatible** with each other. 
 
 ## Gaussian example
 
-We can illustrate the main idea behind the incompatibility of position and momentum by considering a simple example — that of a **Gaussian wavefunction**. Consider the following wavefunction 
+We can illustrate the main idea behind the incompatibility of position and momentum by considering a simple example — that of a **Gaussian {term}`wavefunction`**. Consider the following wavefunction 
 ```{math}
 :label: e-gaussian-wf
 \psi(x) = \sqrt{\frac{1}{a\sqrt{2\pi}}} e^{-x^2/4a^2},
 ```
-with a parameter $a > 0$, which determines the **width** of the wavefunction, and where $\sqrt{\frac{1}{a\sqrt{2\pi}}}$ is a normalisation factor, which ensures that this is a normalised wavefunction (this is left as an [exercise](#ex-norm-gaussian)). This wavefunction is depicted below:
+with a parameter $a > 0$, which determines the **width** of the wavefunction, and where $\sqrt{\frac{1}{a\sqrt{2\pi}}}$ is a {term}`normalisation` factor, which ensures that this is a normalised wavefunction (this is left as an [exercise](#ex-norm-gaussian)). This wavefunction is depicted below:
 ````{figure}
 :label: f-gaussian
 :placeholder: ./Pictures/gaussian-hup
@@ -38,17 +38,17 @@ with a parameter $a > 0$, which determines the **width** of the wavefunction, an
 :css: ./interactive/widgets/qm-widgets.css
 { "a": 1 }
 ```
-A Gaussian wavefunction, as given by [](#e-gaussian-wf) (top), and its momentum wavefunction [](#e-gaussian-p) (bottom). The parameter $a>0$ determines the 'width' of the wavefunction: $\Delta x = a$, while $\Delta p = \hbar/2a$, so narrowing one broadens the other. 
+A Gaussian wavefunction, as given by [](#e-gaussian-wf) (top), and its {term}`momentum wavefunction` [](#e-gaussian-p) (bottom). The parameter $a>0$ determines the 'width' of the wavefunction: $\Delta x = a$, while $\Delta p = \hbar/2a$, so narrowing one broadens the other. 
 ````
 
 
-As we can see, it has the Bell-curve shape, and is centred at the origin. [Direct calculations](#ex-gaussian-mean-var) show that the expected position and standard deviation are 
+As we can see, it has the Bell-curve shape, and is centred at the origin. [Direct calculations](#ex-gaussian-mean-var) show that the expected position and {term}`standard deviation` are 
 ```{math}
 :label: e-gaussian-x
 \av{x} &= 0,\\
 \Delta x &= \sqrt{\av{x^2} - \av{x}^2} = a.
 ```
-The fact that the standard deviation $\Delta x$ is equal to $a$ is the reason we say that $a$ determines the width (since it uniquely specifies the standard deviation, which is a very useful and common way of quantifying the width of a probability density function). What does it mean for the particle to have a small width? It means that if we were to measure the position, we would be very likely to find the particle within a small region of space (in this case, close to the origin, since this is the only region where the probability density $\pd(x) = |\psi(x)|^2$ is large). This is where we should think of the quantum particle as being located, roughly speaking. If on the other hand $a$ becomes large, then the particle will be found in a larger region of space when we measure its position. 
+The fact that the standard deviation $\Delta x$ is equal to $a$ is the reason we say that $a$ determines the width (since it uniquely specifies the standard deviation, which is a very useful and common way of quantifying the width of a {term}`probability density` function). What does it mean for the particle to have a small width? It means that if we were to measure the position, we would be very likely to find the particle within a small region of space (in this case, close to the origin, since this is the only region where the probability density $\pd(x) = |\psi(x)|^2$ is large). This is where we should think of the quantum particle as being located, roughly speaking. If on the other hand $a$ becomes large, then the particle will be found in a larger region of space when we measure its position. 
 
 The question we would now like to ask is what momentum does the particle have, as we consider varying the width of the spatial wavefunction $a$? We can answer this by finding the momentum wavefunction $\tilde{\psi}(p)$, which determines the probability density $\pd(p) = |\tilde{\psi}(p)|^2$ for the particle to have momentum $p$. 
 
@@ -90,7 +90,7 @@ Returning to our Gaussian wavefunction example from above, we saw in [](#e-gauss
 ```{math}
 \Delta x \Delta p = a \times \frac{\hbar}{2a} = \frac{\hbar}{2},
 ```
-that is, independent of $a$, a Gaussian wavefunction **saturates** the HUP: its product of uncertainties in position and momentum is in fact as small as allowed by quantum mechanics! We won't prove this, but it can be shown that **Gaussian wavefunctions are the only wavefunctions which saturate the HUP**. As we will see in numerous examples, $\Delta x \Delta p > \hbar/2$ for any other non-Gaussian wavefunction. For this reason, you will see the Gaussian wavefunction referred to as the **minimum uncertainty wavefunction** in some textbooks. We will also see later on in this unit, that the Gaussian wavefunction is very important, as it corresponds to the ground state (the energy eigenstate of lowest energy) of a harmonic oscillator — i.e. the quantum description of a mass on a spring, or a pendulum, or, in fact, the electromagnetic field!
+that is, independent of $a$, a Gaussian wavefunction **saturates** the HUP: its product of uncertainties in position and momentum is in fact as small as allowed by quantum mechanics! We won't prove this, but it can be shown that **Gaussian wavefunctions are the only wavefunctions which saturate the HUP**. As we will see in numerous examples, $\Delta x \Delta p > \hbar/2$ for any other non-Gaussian wavefunction. For this reason, you will see the Gaussian wavefunction referred to as the **minimum uncertainty wavefunction** in some textbooks. We will also see later on in this unit, that the Gaussian wavefunction is very important, as it corresponds to the {term}`ground state` (the {term}`energy eigenstate` of lowest energy) of a harmonic oscillator — i.e. the quantum description of a mass on a spring, or a pendulum, or, in fact, the electromagnetic field!
 
 ## Incompatible Observables
 
@@ -98,7 +98,7 @@ Because of the fact that position and momentum satisfy the HUP, we say that they
 
 Crucially, it is not just position and momentum which are incompatible. In fact **most observable properties are incompatible in quantum mechanics!** That is, apart from some special cases, if we consider two distinct physical properties, it is very likely that they are incompatible, and that a particle cannot have definite values for both properties simultaneously.
 
-The question we will answer in the next section is **how to determine whether two observables are incompatible or not?** We will see that this is determined by a purely **mathematical** property of the **operators** associated to each observable property, known as **commutation**:
+The question we will answer in the next section is **how to determine whether two observables are incompatible or not?** We will see that this is determined by a purely **mathematical** property of the **{term}`operators <operator>`** associated to each observable property, known as **commutation**:
 
 > Two physical observables are compatible if (and only if) their associated operators **commute**.
 
@@ -109,7 +109,7 @@ We will explain what this means in the next section.
 
 Recall that operators are things which 'act' on a quantum state. It is possible to act with **multiple** operators in a **sequence**. We can therefore ask a natural question: whether the **order** matters or not. That is, if we act with one operator and then a second, is this the same as first acting with the second operator, followed by the first? The answer in general is **no**. This is precisely what is captured by **commutation**: two operators commute if the two orders lead to the **same action**. On the other hand, two operators for which the two orders lead to different overall actions are said to **not commute**. 
 
-In order to capture this mathematically, we introduce the so-called **[commutator](wiki:Commutator)** of two operators. We denote the commutator of (two arbitrary operators) $\hat{A}$ and $\hat{B}$ by $[\hat{A}, \hat{B}]$, and it is defined by
+In order to capture this mathematically, we introduce the so-called **[commutator](wiki:Commutator)** of two operators. We denote the {term}`commutator` of (two arbitrary operators) $\hat{A}$ and $\hat{B}$ by $[\hat{A}, \hat{B}]$, and it is defined by
 ````{card}
 ```{math}
 :label: e-commutator
@@ -121,7 +121,7 @@ That is, the commutator is the **difference** between the two orders. Having int
 
 This is because the commutator will vanish if $\hat{A}\hat{B} = \hat{B}\hat{A}$, i.e. precisely when the two different orders coincide. 
 ```{aside}
-*We note that there is something that is a little strange here, and can be misleading. While commutation is about the **order** of operators, this doesn't imply that incompatibility of observables is **also** about order. This is a common misconception. The link is in fact a very mathematical one: commutation is a succinct way of determining whether two operators have common **eigenstates** (i.e. whether the eigenstates of one operator happen to coincide with the eigenstates of another operator or not). It is this property which is crucial for compatibility, and it happens that this will be the case only when operators commute.*
+*We note that there is something that is a little strange here, and can be misleading. While commutation is about the **order** of operators, this doesn't imply that incompatibility of observables is **also** about order. This is a common misconception. The link is in fact a very mathematical one: commutation is a succinct way of determining whether two operators have common **{term}`eigenstates <eigenstate>`** (i.e. whether the eigenstates of one operator happen to coincide with the eigenstates of another operator or not). It is this property which is crucial for compatibility, and it happens that this will be the case only when operators commute.*
 ```
 
 In the context of **quantum mechanics**, we are usually interested not in the operators $\hat{A}$ and $\hat{B}$ directly, but rather their associated operators $\op{A}$ and $\op{B}$ (that act on wavefunctions $\psi(x)$ rather than on quantum states $\ket{\psi}$). We will use the same notation to refer to the associated commutator in this context:

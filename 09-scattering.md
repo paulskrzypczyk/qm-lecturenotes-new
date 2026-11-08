@@ -24,9 +24,9 @@ Prior to this we studied a free particle — when there were no forces acting, a
 
 We will consider the situation where a particle **scatters** off of a target, which we model by a change in potential. This is a very important physical situation which arises in a wide range of situations, from neutrons scattering in condensed matter physics, to the scattering of particles off each other in particle detectors. Our goal here is to understand the basics of scattering in quantum mechanics. 
 
-We will consider just one simple potential — an abrupt change. The motivation for studying this is somewhat similar to our motivation for studying the infinite square well. While this is far from realistic, it is simple enough that we can solve exactly for the energy eigenstates (which are now no longer momentum eigenstates, like for the free particle). We can then use these to numerically study what happens when a wavepacket scatters off of the step. 
+We will consider just one simple potential — an abrupt change. The motivation for studying this is somewhat similar to our motivation for studying the {term}`infinite square well`. While this is far from realistic, it is simple enough that we can solve exactly for the {term}`energy eigenstates <energy eigenstate>` (which are now no longer momentum eigenstates, like for the free particle). We can then use these to numerically study what happens when a {term}`wavepacket` scatters off of the step. 
 
-We will uncover one final new aspect of quantum mechanics, which is almost the complete **opposite** of tunnelling. Whereas in tunnelling a quantum particle enters a region of space it should not have enough energy to enter, in this chapter we will see that quantum particles **reflect** off of abrupt changes in potential — **whether those changes are positive or negative**. That is, quantum particles reflect off of cliff edges, and therefore **fail to enter a region that they would definitely enter**. 
+We will uncover one final new aspect of quantum mechanics, which is almost the complete **opposite** of {term}`tunnelling`. Whereas in tunnelling a quantum particle enters a region of space it should not have enough energy to enter, in this chapter we will see that quantum particles **reflect** off of abrupt changes in potential — **whether those changes are positive or negative**. That is, quantum particles reflect off of cliff edges, and therefore **fail to enter a region that they would definitely enter**. 
 
 ## The finite step potential
 In this chapter we will consider the following potential function
@@ -49,7 +49,7 @@ depicted in [](#potential-step).
 
 This corresponds to an abrupt change in potential from $V(x) = 0$ to $V(x) = V_0$ at the origin. It is important to note that $V_0$ could be either **positive** or **negative**, meaning that the potential energy either steps up or down. We will primarily keep in the back of our mind that $V_0 > 0$, but will also discuss what happens if $V_0 < 0$. 
 
-Our goal, as always, is to find the energy eigenstates of the potential step, which we will do by solving the TISE to find the energy eigenfunctions. Since the particle isn't bound, we expect that the energy should vary **continuously** and the eigenfunctions won't be physical or normalisable. We will indeed see that this is the case below. 
+Our goal, as always, is to find the energy eigenstates of the potential step, which we will do by solving the TISE to find the energy eigenfunctions. Since the particle isn't bound, we expect that the energy should vary **continuously** and the {term}`eigenfunctions <eigenfunction>` won't be physical or normalisable. We will indeed see that this is the case below. 
 
 ## Energy eigenfunctions of the potential step
 
@@ -69,17 +69,17 @@ We will start off considering Region I, to the left of the step. In this region 
 ```{math}
 \op{H} = \frac{\op{P}^2}{2M}
 ```
-and so, just as we were able to do there, we can **immediately write down the energy eigenfunction**, as this is the same Hamiltonian (and the same as the free particle also!). As we discussed in [](#s-ISW-rII), any function of the form
+and so, just as we were able to do there, we can **immediately write down the energy eigenfunction**, as this is the same {term}`Hamiltonian` (and the same as the free particle also!). As we discussed in [](#s-ISW-rII), any function of the form
 ```{math}
 :label: e-scattering-rI
 \vph u_E^\rI(x) = A e^{ikx} + Be^{-ikx},
 ```
-will be an eigenfunction, where $A$ and $B$ are arbitrary complex numbers, and the corresponding energy eigenvalue is  
+will be an eigenfunction, where $A$ and $B$ are arbitrary complex numbers, and the corresponding energy {term}`eigenvalue` is  
 ```{math}
 :label: e-k
 \vph E = \frac{\hbar^2 k^2}{2M}.
 ```
-Just as in the case of the infinite square well, we **don't yet know which superposition of $e^{ikx}$ and $e^{-ikx}$ we should take** (i.e. how to choose $A$ and $B$). For the moment we will leave them general, and see that we can determine them later, using continuity. 
+Just as in the case of the infinite square well, we **don't yet know which {term}`superposition` of $e^{ikx}$ and $e^{-ikx}$ we should take** (i.e. how to choose $A$ and $B$). For the moment we will leave them general, and see that we can determine them later, using continuity. 
 
 ### Energy eigenfunctions in Region II
 
@@ -117,7 +117,7 @@ C e^{ik'x} + De^{-ik'x} &\text{ if } x \geq 0.
 ```
 where $A$, $B$, $C$ and $D$ are complex constants, that we need to determine,  and $k$ and $k'$ are functions of the energy and step height, specified via [](#e-k) and [](#e-kp) respectively. 
 
-In order to make progress, we first need to cast our mind back to [](06-free-particle), and the fact that we found there **two degenerate eigenstates for each energy**. *What were the two degenerate eigenstates?* They were the two momentum eigenstates with equal and opposite momentum, $\ket{p}$ and $\ket{-p}$. 
+In order to make progress, we first need to cast our mind back to [](06-free-particle), and the fact that we found there **two {term}`degenerate <degeneracy>` {term}`eigenstates <eigenstate>` for each energy**. *What were the two degenerate eigenstates?* They were the two momentum eigenstates with equal and opposite momentum, $\ket{p}$ and $\ket{-p}$. 
 
 Here we are going to have something **very similar**. What we need to understand is **what is the analogue of these two eigenstates here?** The key insight is that a momentum eigenstate with **positive momentum** represents a particle moving to the right, while an eigenstate of **negative momentum** represents one moving to the left. We thus want to identify **right-moving** and **left-moving** eigenstates of the step, as the two basic states of interest. 
 
@@ -204,7 +204,7 @@ We can use this to solve for $B$, which after a small amount of re-arranging, le
 :label: e-B-f-A-scattering
 B = \frac{k-k'}{k+k'}A.
 ```
-*What about the final constant $A$?* As always, this is in fact just an overall **normalisation constant**. Since here we are considering a **non-bound** state, energy varies continuously, and **energy eigenfunctions are unnormalisable**. We can therefore take $A = 1$ **for simplicity**. There is no real natural choice for $A$, and this is as good as any. Altogether, we therefore find that the energy eigenfunction of energy $E$ for a **right-moving** particle is
+*What about the final constant $A$?* As always, this is in fact just an overall **{term}`normalisation` constant**. Since here we are considering a **non-bound** state, energy varies continuously, and **energy eigenfunctions are unnormalisable**. We can therefore take $A = 1$ **for simplicity**. There is no real natural choice for $A$, and this is as good as any. Altogether, we therefore find that the energy eigenfunction of energy $E$ for a **right-moving** particle is
 ````{card}
 ```{math}
 :label: e-eig-step-R-final
@@ -221,7 +221,7 @@ This eigenfunction (for one choice of $E$) is depicted below in [](#right-moving
 :width: 600px
 :align: center
 
-**Right-moving energy eigenfunction of the potential step**. Colour plot of a right-moving energy eigenfunction, given in [](#e-eig-step-R-final). For illustrative purposes, we also plot the potential step, to highlight where it is in relation to the wavefunction (the height of the step has no relation to the amplitude of the wavefunction). On the left of the step, where there is both the incoming and reflected component of the wavefunction, there is interference, leading to sinusoidal oscillations. On the right, where there is only the transmitted component, the modulus of the wavefunction is constant. 
+**Right-moving energy eigenfunction of the potential step**. Colour plot of a right-moving energy eigenfunction, given in [](#e-eig-step-R-final). For illustrative purposes, we also plot the potential step, to highlight where it is in relation to the {term}`wavefunction` (the height of the step has no relation to the amplitude of the wavefunction). On the left of the step, where there is both the incoming and reflected component of the wavefunction, there is interference, leading to sinusoidal oscillations. On the right, where there is only the transmitted component, the modulus of the wavefunction is constant. 
 ````
 
 As a summary of what we have achieved: in [](#e-eig-step-R-final) we have found the wavefunction of the quantum step Hamiltonian with constant energy $E$, that is 'right-moving', in the sense that when we look on the left of the step, we only have a positive momentum component. We found this by using two key **mathematical properties** of energy eigenfunctions: that they are **continuous** (as previously seen), and that they have a **continuous derivative** (which is new here). More informally, this ensured that the function has no 'jumps' and no 'kinks'. Just as with the free particle, there is a **second degenerate energy eigenfunction of energy $E$**. This corresponds to a **left-moving** particle, and you will solve for it as an [exercise](#ex-left-moving) below. 
@@ -263,7 +263,7 @@ We already saw that $B = 0$ when $V_0 = 0$, hence $R = |B|^2 = 0$, so the reflec
 :width: 450px
 :align: center
 
-**Reflection and transmission coefficients**. Plot of reflection and transmission coefficients for the finite step, as given in [](#e-R-coeff-phys) and [](#e-T-coeff-phys). We see that the particle is perfectly reflected when $E = V_0$, and that the reflection coefficient is large only for $E$ close to $V_0$. For large values of $E/V_0$, the particle is transmitted with almost unit probability.
+**Reflection and transmission coefficients**. Plot of {term}`reflection and transmission coefficients` for the finite step, as given in [](#e-R-coeff-phys) and [](#e-T-coeff-phys). We see that the particle is perfectly reflected when $E = V_0$, and that the reflection coefficient is large only for $E$ close to $V_0$. For large values of $E/V_0$, the particle is transmitted with almost unit probability.
 ````
 
 In an [exercise](#ex-V0-neg-R), you will furthermore see that we have reflection **even when $V_0$ is negative** — where naively we would not expect to see any reflection at all, since the particle always has enough energy to pass the step. 
@@ -325,7 +325,7 @@ In the small animation below, we show the evolution of a **Gaussian** wavefuncti
 :width: 600px
 :align: center
 
-**Scattering of a Gaussian wavepacket by a potential step.**  An animation of the scattering of a Gaussian wavepacket by a step potential. In the top plot, we show the wavefunction $|\psi(x,t)|$ using a colour plot. In the bottom plot, we show the associated probability density $\pd(x,t)$. The potential step is also plotted, for illustrative purposes only. The particle approaches the step from the left (with positive momentum), and energy larger than the potential height $V_0$. Nevertheless, the particle is partially reflected by the step, such that the final state of the particle is a superposition of a left-moving Gaussian after the step, and a right-moving Gaussian that has been reflected by the step.
+**Scattering of a Gaussian wavepacket by a potential step.**  An animation of the scattering of a Gaussian wavepacket by a step potential. In the top plot, we show the wavefunction $|\psi(x,t)|$ using a colour plot. In the bottom plot, we show the associated {term}`probability density` $\pd(x,t)$. The potential step is also plotted, for illustrative purposes only. The particle approaches the step from the left (with positive momentum), and energy larger than the potential height $V_0$. Nevertheless, the particle is partially reflected by the step, such that the final state of the particle is a superposition of a left-moving Gaussian after the step, and a right-moving Gaussian that has been reflected by the step.
 ```
 
 We thus see that, as stated, the particle really does partially reflect and partially transmit. In the process, we also see some interesting dynamical features — in particular we see the presence of **interference fringes** during the period before the two distinct Gaussian components of the wavefunction emerge. 
