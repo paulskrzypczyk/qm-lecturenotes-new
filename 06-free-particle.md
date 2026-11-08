@@ -128,10 +128,10 @@ In general it isn't possible to **simplify** or **evaluate** analytically the ri
 :class: web-only
 ### Try it yourself: evolving a wavefunction numerically
 
-The cell below carries out exactly the recipe above, for an initial wavefunction of your choosing, with Python running **in your browser** (press the ▶ button or the rocket icon at the top of the page to start it; the first start downloads the Python runtime, which takes a few seconds). It discretises $x$, finds $\tilde\psi_\init(p)$ with a fast Fourier transform, multiplies by $e^{-ip^2t/2M\hbar}$, and transforms back. Try a top-hat, a Gaussian with $p_0 \neq 0$, or two Gaussians, and watch the spreading.
+The cell below carries out exactly the recipe above, for an initial wavefunction of your choosing, with Python running **in your browser**. To start it, click the power button in the small toolbar at the top right of the page: the Python runtime downloads (this takes ten seconds or so the first time), after which the ▶ button beside the cell runs it. The cell discretises $x$, finds $\tilde\psi_\init(p)$ with a fast Fourier transform, multiplies by $e^{-ip^2t/2M\hbar}$, and transforms back. Try a top-hat, a Gaussian with $p_0 \neq 0$, or two Gaussians, and watch the spreading.
+::::
 
 ```{code-cell} python
-:tags: [hide-output]
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -163,6 +163,8 @@ ax.legend(frameon=False)
 plt.show()
 ```
 
+::::{div}
+:class: web-only
 The Gaussian case is exactly [](#f-gaussian-animation) below; for anything else there is no formula, and this is how one would find out.
 ::::
 
