@@ -10,6 +10,7 @@ import { tween, lerp } from './core/motion.js';
 import { psi, density, probability, bins, sample, X_RANGE } from './core/density.js';
 
 const DEFAULTS = { x0: 3.6, dx: 0.25, outcomes: false };
+const texInt = (n) => n.toLocaleString('en-GB').replace(/,/g, '{,}');   // 10{,}000: a thin thousands separator in TeX
 const DX_MIN = 0.05, DX_MAX = 1.5;
 const X0_MIN = X_RANGE[0] + 0.25, X0_MAX = X_RANGE[1] - 0.25;   // the region stays inside the panel
 const Y_PSI = [-0.55, 0.95];   // psi ranges from -0.44 to 0.80
@@ -76,7 +77,9 @@ export default {
     const gMeasure = group(ui.controls, 'Measure');
     const measure = (n) => { if (!state.outcomes) { state.outcomes = true; outToggle.set(true); } for (let i = 0; i < n; i++) state.samples.push(sample()); draw(); };
     action(gMeasure, { label: 'Measure 1 copy', onClick: () => measure(1) });
-    action(gMeasure, { label: 'Measure 100 copies', onClick: () => measure(100) });
+    action(gMeasure, { label: '100 copies', onClick: () => measure(100) });
+    action(gMeasure, { label: '1,000 copies', onClick: () => measure(1000) });
+    action(gMeasure, { label: '10,000 copies', onClick: () => measure(10000) });
     gMeasure.querySelector('.qm-actions').append(h('button', { class: 'qm-btn', type: 'button', onclick: () => { state.samples = []; draw(); } }, 'Clear'));
 
     // ── readouts ──────────────────────────────────────────────────────────────────
@@ -129,8 +132,8 @@ export default {
           // leave the panel: bars are capped at the top of the panel until the sample grows
           histEl.update(b.map(({ a, b: bb }, i) => ({ a: Math.max(a, X_RANGE[0]), b: Math.min(bb, X_RANGE[1]), h: Math.min(counts[i] / N / dx, Y_PD[1] * 0.98) })));
           const inRegion = state.samples.filter((v) => v >= x0 && v < x1).length;
-          rMeas.set(`\\text{measured } ${N} \\text{ cop${N === 1 ? 'y' : 'ies'}}`);
-          rMeas2.set(`\\text{found in the region: } ${inRegion}/${N} = ${num(inRegion / N, 3)}`);
+          rMeas.set(`\\text{measured } ${texInt(N)} \\text{ cop${N === 1 ? 'y' : 'ies'}}`);
+          rMeas2.set(`\\text{found in the region: } ${texInt(inRegion)}/${texInt(N)} = ${num(inRegion / N, 3)}`);
         }
       }
 

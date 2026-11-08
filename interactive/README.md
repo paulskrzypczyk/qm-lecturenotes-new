@@ -232,7 +232,7 @@ A wavefunction $\psi(x)$ (real, with one negative bump) above its probability de
 - **Objects:** $\psi(x)$ and $\pd(x)$ (accent-1); the region (accent-1 area, dashed edges); the rectangle $\pd(x_0)\,dx$ (accent-2 outline); the outcomes of the coarse-grained measurement (accent-3 bars: $\pd$ averaged over each bin of width $dx$, aligned so that one bin is the region, so a bar's area is the probability of that outcome).
 - **Interactions:** drag either edge of the region along the $x$ axis (arrow keys: $0.1\,a_0$, Shift for $0.02$); sliders $x_0$ and $dx$; presets $dx = 0.05\,a_0, 0.25\,a_0, a_0$ (animated); the toggle *all the outcomes…*.
 - **Readouts:** $\pd(x_0)$; $x_0$; $\prob(x_0 \le x \le x_0 + dx)$ (exact); $dx$; $\pd(x_0)\,dx$; with the outcomes shown, their number and the sum of their probabilities (1); a note that changes with the toggle and names the units ($a_0$, $1/a_0$).
-- **Measurement demo:** *Measure 1 copy* / *Measure 100 copies* draw positions from $\pd(x)$ (inverse-CDF sampling) and build up the observed frequencies in the outcome bins (accent-2, 30%), with the number measured and the fraction found in the region read out; *Clear* empties the sample. Measuring switches the outcomes on.
+- **Measurement demo:** *Measure 1 copy* / *100* / *1,000* / *10,000 copies* draw positions from $\pd(x)$ (inverse-CDF sampling) and build up the observed frequencies in the outcome bins (accent-2, 30%), with the number measured and the fraction found in the region read out; *Clear* empties the sample. Measuring switches the outcomes on.
 - **Static figure:** `Pictures/prob-density.svg` redrawn as the two panels (the original showed only $\pd(x)$); the caption mentions both.
 - **Options**
 
