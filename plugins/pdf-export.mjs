@@ -69,10 +69,10 @@ function chapterNameFromUrl(url) {
 
 /** Does the math value contain alignment (& or \\) outside any sub-environment? */
 /** A tab title like "Quantum state $\\ket{\\psi}$" as text and inlineMath children (for the bold heading). */
-function parseTitle(title) {
-  const parts = title.split(/(\$[^$]+\$)/).filter(Boolean).map((p) =>
+function parseTitle(title, kind = 'strong') {
+  const parts = String(title).split(/(\$[^$]+\$)/).filter(Boolean).map((p) =>
     p.startsWith('$') ? { type: 'inlineMath', value: p.slice(1, -1) } : { type: 'text', value: p });
-  return { type: 'strong', children: parts };
+  return kind ? { type: kind, children: parts } : { type: 'span', children: parts };
 }
 
 function needsAligned(value) {
@@ -155,6 +155,21 @@ function transformNode(node, dir, stats) {
     }
     case 'abbreviation': {
       return node.children.length ? node.children : text(toText(node));
+    }
+    case 'anywidget': {
+      // the interactive widgets: a derivation stepper becomes its lines of maths with the
+      // justifications; everything else is web-only (figures keep their placeholder image)
+      const m = node.model || {};
+      if (Array.isArray(m.steps)) {
+        const out = [];
+        if (m.intro) out.push({ type: 'paragraph', children: [parseTitle(m.intro, 'emphasis')] });
+        for (const st of m.steps) {
+          out.push(raw(`\\begin{align*}${st.math}\\end{align*}`));   // unnumbered, so the chapter's equation numbers are unchanged
+          if (st.why) out.push({ type: 'paragraph', children: [parseTitle(st.why, 'emphasis')] });
+        }
+        return out;
+      }
+      return [];
     }
     case 'tabSet': {
       // tabs become consecutive blocks, each headed by its tab title in bold

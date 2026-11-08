@@ -303,6 +303,22 @@ More generally, we can apply the above procedure to **any quantum mechanical ope
 ````
 While this is abstract at this stage, it will hopefully become much clearer in the next [Chapter](02-momentum), when we begin to investigate the **momentum** of a particle in quantum mechanics. Here we will find a more interesting relationship between the momentum operator $\hat{P}$ and the associated wavefunction momentum operator $\op{P}$. 
 
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "For a particle with wavefunction $\\psi(x)$, the probability of finding it *exactly* at the point $x_0$ is", "choices": ["$|\\psi(x_0)|^2$", "zero: only the probability of finding it in a region of finite width makes sense", "$\\psi(x_0)$"], "answer": 1, "why": "position is continuous, so $|\\psi(x_0)|^2$ is a probability *density*: the probability of a region of width $dx$ around $x_0$ is $|\\psi(x_0)|^2dx$, which vanishes as $dx \\to 0$.", "label": "Chapter 1, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "The position states $\\ket{x}$ satisfy $\\inner{x}{x'} = \\delta(x - x')$. What does this tell us about a particle 'with a definite position'?", "choices": ["Its state is $\\ket{x}$, perfectly normalised", "No physical particle can have a definite position, since $\\ket{x}$ has infinite norm", "It can only be at $x = 0$"], "answer": 1, "why": "$\\inner{x}{x} = \\delta(0) = \\infty$: the position states are useful as a basis but are not themselves allowed states, so a particle always has a superposition of positions.", "label": "Chapter 1, check 2"}
+```
+
+::::
+
 ## Exercises
 
 ````{exercise}
@@ -369,3 +385,11 @@ Consider a particle with the following wavefunction,
    4. $\frac{a}{2}$
    ```
 ````
+
+::::{div}
+:class: web-only
+```{anywidget} ./interactive/widgets/progress.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"chapter": "01", "title": "Position"}
+```
+::::

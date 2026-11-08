@@ -290,6 +290,22 @@ Finally, just as we did for a free particle in [](#e-free-particle-evolution-spa
 ````
 This is once again a **formidable expression**, but one which is in fact very similar to [](#e-free-particle-evolution-space). The difference is that whereas energy was **continuous** for a free particle, it is now **discrete** in the infinite square well, and we see this replaces one of the integrals with a summation. We also can realise that the factor $\frac{1}{2\pi \hbar} e^{ip(x-x')/\hbar}$ is really $v_p^*(x')v_p(x)$, where $v_p(x)$ is the momentum eigenfunction [](#e-momentum-state-wavefunction), which are the **energy eigenfunctions** of a free particle. Finally, the term $e^{-ip^2t/2M\hbar}$ is $e^{-iEt/\hbar}$, with $E = p^2/2M$ the energy eigenvalue of $v_p(x)$ for a free particle. Thus the form in both cases is in fact **identical**, up to the change from continuous to discrete energies. This is reassuring, as it shows that what we have done is the same, just in a different context here. 
 
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "Why must the energy eigenfunctions of the infinite square well vanish at the walls?", "choices": ["Because the potential is zero there", "Because the eigenfunction must be continuous, and it is zero outside the well where the potential is infinite", "Because sine functions always vanish at $x = 0$"], "answer": 1, "why": "outside the well the particle would need infinite energy, so $u(x) = 0$ there; continuity then forces $u(0) = u(L) = 0$, which is what quantises the energies.", "label": "Chapter 7, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "In the first excited state $u_2(x)$ of the well, the particle is", "choices": ["most likely to be found at the centre of the well", "very unlikely to be found near the centre of the well", "equally likely to be found anywhere in the well"], "answer": 1, "why": "$u_2(x) \\propto \\sin(2\\pi x/L)$ has a node at $x = L/2$, so the probability density vanishes at the centre: a striking difference from a classical particle bouncing back and forth.", "label": "Chapter 7, check 2"}
+```
+
+::::
+
 ## Exercises
 
 ````{exercise}
@@ -389,3 +405,10 @@ $$ \alpha_n = - \frac{\sqrt{6} (-1)^n}{n\pi}.$$
 ```
 ````
 
+::::{div}
+:class: web-only
+```{anywidget} ./interactive/widgets/progress.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"chapter": "07", "title": "Infinite square well"}
+```
+::::

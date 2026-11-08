@@ -187,6 +187,11 @@ where $e^{i\phi(x,t)}$ is a **time-dependent phase factor** (which we won't actu
 \alpha(t) = a\sqrt{1+\frac{\hbar^2 t^2}{4M^2 a^4}}.
 ```
 
+```{anywidget} ./interactive/widgets/steps.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"title": "Derivation: the evolution of the Gaussian wavepacket, equation (6.12)", "intro": "The 'lengthy and fiddly calculation' behind $\\psi(x,t)$, one step at a time. Write $\\beta = a^2\\big(1 + \\frac{i\\hbar t}{2Ma^2}\\big)$ to keep the algebra short.", "steps": [{"math": "\\tilde\\psi_\\init(p) &= \\sqrt{\\frac{\\sqrt2\\,a}{\\sqrt\\pi\\,\\hbar}}\\; e^{-a^2(p - p_0)^2/\\hbar^2}", "why": "The momentum wavefunction of the initial state: the phase factor $e^{ip_0x/\\hbar}$ shifts the Gaussian of (3.3) by $p_0$ (an exercise in this chapter)."}, {"math": "\\psi(x,t) &= \\frac{1}{\\sqrt{2\\pi\\hbar}}\\infint \\tilde\\psi_\\init(p)\\, e^{ipx/\\hbar}\\, e^{-ip^2t/2M\\hbar}\\, dp", "why": "Each momentum state has energy $E_p = p^2/2M$ and evolves with $e^{-iE_pt/\\hbar}$; transforming back to $x$ gives the wavefunction at time $t$ (this is (6.10) with the $x'$ integral already done)."}, {"math": "-\\frac{a^2(p-p_0)^2}{\\hbar^2} + \\frac{ipx}{\\hbar} - \\frac{ip^2t}{2M\\hbar} &= -\\frac{\\beta}{\\hbar^2}\\,p^2 + \\frac{2a^2p_0 + i\\hbar x}{\\hbar^2}\\,p - \\frac{a^2p_0^2}{\\hbar^2}", "why": "Collect the exponent as a quadratic in $p$: the $p^2$ terms combine into $-\\beta p^2/\\hbar^2$."}, {"math": "&= -\\frac{\\beta}{\\hbar^2}\\,(p - p_c)^2 + E_c, \\qquad p_c = \\frac{2a^2p_0 + i\\hbar x}{2\\beta}, \\quad E_c = \\frac{(2a^2p_0 + i\\hbar x)^2}{4\\beta\\hbar^2} - \\frac{a^2p_0^2}{\\hbar^2}", "why": "Complete the square in $p$."}, {"math": "\\infint e^{-\\beta (p - p_c)^2/\\hbar^2}\\, dp &= \\sqrt{\\frac{\\pi\\hbar^2}{\\beta}}", "why": "A Gaussian integral with a complex coefficient (allowed since $\\mathrm{Re}\\,\\beta > 0$); the complex shift $p_c$ does not matter."}, {"math": "\\psi(x,t) &= \\sqrt{\\frac{\\sqrt2\\,a}{\\sqrt\\pi\\,\\hbar}}\\,\\frac{1}{\\sqrt{2\\pi\\hbar}}\\sqrt{\\frac{\\pi\\hbar^2}{\\beta}}\\; e^{E_c}", "why": "Put the pieces together. Everything about the shape is in $E_c$ and $\\beta$."}, {"math": "|\\psi(x,t)| &= \\Big(\\frac{1}{\\alpha(t)\\sqrt{2\\pi}}\\Big)^{1/2} e^{-(x - p_0t/M)^2/4\\alpha(t)^2}, \\qquad \\alpha(t) = a\\sqrt{1 + \\frac{\\hbar^2t^2}{4M^2a^4}}", "why": "Take the modulus: $|\\beta| = a\\,\\alpha(t)$ and $\\mathrm{Re}\\,E_c = -(x - p_0t/M)^2/4\\alpha(t)^2$ (a few lines of algebra with $\\beta = a^2 + i\\hbar t/2M$). What is left of $e^{E_c}/\\sqrt\\beta$ is a pure phase, $e^{i\\phi(x,t)}$: this is equation (6.12)."}]}
+```
+
 This wavefunction is remarkably similar in form to [](#e-initial-gaussian), except for a couple of key differences:
 
 1. The Gaussian becomes centred at $p_0t/M$ at time $t$. That is, the Gaussian is moving with **constant velocity** $v = p_0/M$. This is similar to a **classical free particle** which moves with constant velocity!
@@ -227,6 +232,22 @@ Recall from the HUP, that any initial wavefunction we consider $\psi_\init(x)$, 
 If we consider a fixed time, we therefore see that the particle will have a superposition of **displacements**. This is precisely what **leads to the spreading of wavefunctions**. We can see two interesting hallmarks of this if we look carefully. First, from the HUP, we know that in order for a particle to have an initial wavefunction which is **more localised in space** (i.e. with a smaller $\Delta x$), then it will necessarily need to have a larger spread of momentum $\Delta p$. From the above discussion, we should therefore expect it to **spread faster** in time. This is precisely what we see analytically for the Gaussian in [](#e-gaussian-spread): if we make $a$ smaller, then $\alpha(t)$ increases. 
 
 Second, this also explains why the phase factor $e^{i\phi(x,t)}$ occurs (and has a complicated form!). As we have explained above, the spreading is due to the superposition of momenta. It therefore follows that if the particle is further away (at the 'front' of the wavefunction) at later times, we would expect it to have higher momentum, and if it is closer to the initial location (at the 'back' of the wavefunction), we would expect it to have lower momentum. That is, **correlations build up in time between where the particle is and what momentum it has**. This is precisely what is captured by the phase factor, and why we should **always** expect to have some phase factor in time. 
+
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "A free Gaussian wavepacket with initial width $a$ spreads in time. A packet that starts *narrower* will", "choices": ["spread more slowly, since it has less room to move", "spread faster, since it contains a wider range of momenta", "not spread at all"], "answer": 1, "why": "by the uncertainty principle a narrow packet has a large $\\Delta p$, i.e. a superposition of many velocities, so its parts drift apart faster: $\\alpha(t) = a\\sqrt{1 + \\hbar^2t^2/4M^2a^4}$ grows faster for small $a$.", "label": "Chapter 6, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "What is the role of the phase factor $e^{ip_0x/\\hbar}$ in the initial Gaussian wavefunction?", "choices": ["It makes the probability density move: without it the packet would not spread", "It gives the particle an average momentum $p_0$, so the packet moves at speed $p_0/M$", "It has no physical effect, since it disappears from $|\\psi|^2$"], "answer": 1, "why": "the factor shifts the momentum wavefunction by $p_0$ (an exercise in this chapter), so $\\av{p} = p_0$ and the packet's centre moves at the classical speed $p_0/M$; the spreading is the same with or without it.", "label": "Chapter 6, check 2"}
+```
+
+::::
 
 ## Exercises
 
@@ -306,3 +327,11 @@ where $N > 0$ is a {term}`normalisation` constant.
 5. n/a (plot). 
 ``` 
 ````
+
+::::{div}
+:class: web-only
+```{anywidget} ./interactive/widgets/progress.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"chapter": "06", "title": "Free particle"}
+```
+::::

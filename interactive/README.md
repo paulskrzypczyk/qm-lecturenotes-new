@@ -1,6 +1,6 @@
 # Interactive figures — visual identity & ground rules
 
-**Version 1.3 · 8 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
+**Version 1.4 · 8 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
 
 The rules are those of the QIT notes' widgets (their README v1.4), carried over so that both sets of notes share one visual identity; §2 (colour roles) and §6 (2D plots instead of the Bloch sphere) are what differs.
 
@@ -86,6 +86,7 @@ Figure 3.1: caption (written in MyST, as before)
 - **Readouts** have a 3px bar in the colour of the object they describe; readouts that describe no single object have none. A readout is one short formula: it never scrolls, so a long expression is split into two readouts (the formula, then the value of its parameter).
 - **Note.** A widget may end its readouts with one full-width line of explanation: page font in muted ink, maths in KaTeX (`note()` in `src/core/dom.js`). The note also names the units (§3).
 - **Actions.** A button that *does* something, rather than set a value, is outlined in accent-3 with a ▶ icon. Presets and Reset are ordinary buttons.
+- **Widgets without a canvas** (concept checks, derivation steppers, reading progress) add the class `qm-no-canvas`: the body becomes one column and the toolbar, controls and readouts keep their places.
 - **Statistics** (`statsBars()` in `src/core/dom.js`), when a widget has random outcomes: probability as a translucent band, observed frequency as a solid bar, both to 3 decimal places.
 - **Spacing.** Multiples of 0.25rem. Inner padding is 1rem; the gap between groups is 0.75rem.
 - **Captions.** The caption stays in MyST. The hint lives in the toolbar, not in the caption.
@@ -230,6 +231,7 @@ A wavefunction $\psi(x)$ (real, with one negative bump) above its probability de
 - **Objects:** $\psi(x)$ and $\pd(x)$ (accent-1); the region (accent-1 area, dashed edges); the rectangle $\pd(x_0)\,dx$ (accent-2 outline); the outcomes of the coarse-grained measurement (accent-3 bars: $\pd$ averaged over each bin of width $dx$, aligned so that one bin is the region, so a bar's area is the probability of that outcome).
 - **Interactions:** drag either edge of the region along the $x$ axis (arrow keys: $0.1\,a_0$, Shift for $0.02$); sliders $x_0$ and $dx$; presets $dx = 0.05\,a_0, 0.25\,a_0, a_0$ (animated); the toggle *all the outcomes…*.
 - **Readouts:** $\pd(x_0)$; $x_0$; $\prob(x_0 \le x \le x_0 + dx)$ (exact); $dx$; $\pd(x_0)\,dx$; with the outcomes shown, their number and the sum of their probabilities (1); a note that changes with the toggle and names the units ($a_0$, $1/a_0$).
+- **Measurement demo:** *Measure 1 copy* / *Measure 100 copies* draw positions from $\pd(x)$ (inverse-CDF sampling) and build up the observed frequencies in the outcome bins (accent-2, 30%), with the number measured and the fraction found in the region read out; *Clear* empties the sample. Measuring switches the outcomes on.
 - **Static figure:** `Pictures/prob-density.svg` redrawn as the two panels (the original showed only $\pd(x)$); the caption mentions both.
 - **Options**
 
@@ -310,9 +312,23 @@ The marginal density $\pd(x,y,t)$ of the superposition $(u_{(1,1,1)} + u_{(2,2,1
 - **Options:** `t` (0), `eigenstate` (false), `nx` (2), `ny` (1).
 - Placeholder: the original GIF (filmstrip in the PDF).
 
+### `quiz` — concept checks (every chapter)
+
+A multiple-choice question with instant feedback, two per chapter under *Check your understanding* (web-only: the PDF drops them). Model: `{ "q", "choices": [...], "answer": index, "why", "label" }`; `$…$` in any string is typeset. The chosen answer is coloured right or wrong, the correct one is shown, and the explanation appears below. Nothing is stored.
+
+### `steps` — derivation steppers (Chapters 3 and 6)
+
+A derivation revealed one line at a time, each with its justification: `{ "title", "intro", "steps": [{ "math": "aligned rows", "why" }] }`. *Next step* / *Show all* / Reset. In the PDF the plugin prints the lines as unnumbered `align*` blocks with the justifications in italics.
+
+### `progress` — reading progress (every chapter)
+
+*I have read Chapter n* at the end of each chapter, remembered in `localStorage` (this browser only) under `qm-notes-read`, with a bar and a list of the eleven chapters. Web-only.
+
 ---
 
 ## Changelog
+
+- **1.4 (8 Nov 2026)** — three widgets without a canvas (`quiz`, `steps`, `progress`; §4 rule) and the measurement demo in `prob-density` (`sample()` in `density.js`). `qm-widgets.css` §9.
 
 - **1.3 (8 Nov 2026)** — four more widgets: `isw` (7.4), `ho` (8.2), `step` (9.3), `box3d` (11.1). Rules: §5 energy levels, potentials and heat-maps; §6 energy diagrams. Shared code: `src/core/hue.js` (phase-coloured curves and the wheel legend), `Panel.curve()` takes an `xRange`, maths modules `isw.js`, `ho.js`, `step.js`.
 

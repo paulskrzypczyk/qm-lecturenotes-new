@@ -205,6 +205,22 @@ We thus arrive at a rather important realisation: quantum mechanical evolution i
 
 This is in fact similar to what we see in many situations, for example when considering **waves on a string**, or **coupled oscillators**. The motion is complex, but there are **modes** which evolve in simple ways, and the complex motion comes merely from interference between modes. The situation is similar in quantum mechanics, the only real distinction being the introduction of complex numbers, allowing for more interesting forms of interference. 
 
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "A particle is in the energy eigenstate $\\ket{E_2}$. How does its probability density change in time?", "choices": ["It oscillates with period $2\\pi\\hbar/E_2$", "It does not change at all", "It spreads out, like a free particle"], "answer": 1, "why": "under the Schrödinger equation an energy eigenstate only acquires the phase $e^{-iE_2t/\\hbar}$, which drops out of $|\\psi|^2$: energy eigenstates are stationary states.", "label": "Chapter 5, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "The state $\\frac{1}{\\sqrt 2}(\\ket{E_1} + \\ket{E_2})$ evolves into", "choices": ["$\\frac{1}{\\sqrt 2}e^{-i(E_1+E_2)t/2\\hbar}(\\ket{E_1} + \\ket{E_2})$, so nothing observable changes", "$\\frac{1}{\\sqrt 2}(e^{-iE_1t/\\hbar}\\ket{E_1} + e^{-iE_2t/\\hbar}\\ket{E_2})$, whose probability density oscillates", "a state of energy $E_1 + E_2$"], "answer": 1, "why": "each eigenstate picks up its own phase; their *relative* phase $e^{-i(E_2-E_1)t/\\hbar}$ is observable and makes the density oscillate with period $2\\pi\\hbar/(E_2 - E_1)$.", "label": "Chapter 5, check 2"}
+```
+
+::::
+
 ## Exercises
 
 ````{exercise}
@@ -290,3 +306,10 @@ Furthermore, assume that $\psi(x,t)$ and $\psi'(x,t)$ are, respectively, solutio
 ```
 ````
 
+::::{div}
+:class: web-only
+```{anywidget} ./interactive/widgets/progress.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"chapter": "05", "title": "Time evolution"}
+```
+::::

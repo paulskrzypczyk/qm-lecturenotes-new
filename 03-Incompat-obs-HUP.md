@@ -57,6 +57,11 @@ In an [exercise](#ex-mom-wf-gaussian), you will show that
 :label: e-gaussian-p
 \tilde{\psi}(p) = \sqrt{\frac{\sqrt{2}a}{\sqrt{\pi}\hbar}}e^{-a^2p^2/\hbar^2}.
 ```
+```{anywidget} ./interactive/widgets/steps.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"title": "Derivation: the momentum wavefunction of the Gaussian, equation (3.3)", "intro": "Starting from the Gaussian wavefunction $\\psi(x)$ of (3.1), the steps below give $\\tilde\\psi(p)$. Each line is justified underneath it.", "steps": [{"math": "\\tilde\\psi(p) &= \\frac{1}{\\sqrt{2\\pi\\hbar}}\\infint \\psi(x)\\, e^{-ipx/\\hbar}\\, dx", "why": "The definition of the momentum wavefunction, equation (2.20)."}, {"math": "&= \\frac{1}{\\sqrt{2\\pi\\hbar}}\\Big(\\frac{1}{a\\sqrt{2\\pi}}\\Big)^{1/2}\\infint e^{-x^2/4a^2 - ipx/\\hbar}\\, dx", "why": "Substitute the Gaussian $\\psi(x)$ and collect the exponents."}, {"math": "-\\frac{x^2}{4a^2} - \\frac{ipx}{\\hbar} &= -\\frac{1}{4a^2}\\Big(x + \\frac{2ia^2p}{\\hbar}\\Big)^2 - \\frac{a^2p^2}{\\hbar^2}", "why": "Complete the square in $x$ (expand the bracket to check: the cross term is $-ipx/\\hbar$ and the extra constant $-a^2p^2/\\hbar^2$ cancels the bracket's $+a^2p^2/\\hbar^2$)."}, {"math": "\\infint e^{-(x + 2ia^2p/\\hbar)^2/4a^2}\\, dx &= \\sqrt{4\\pi a^2} = 2a\\sqrt{\\pi}", "why": "A Gaussian integral (Appendix A); the complex shift of $x$ does not change its value."}, {"math": "\\tilde\\psi(p) &= \\frac{1}{\\sqrt{2\\pi\\hbar}}\\Big(\\frac{1}{a\\sqrt{2\\pi}}\\Big)^{1/2} 2a\\sqrt{\\pi}\\; e^{-a^2p^2/\\hbar^2}", "why": "Put the pieces together: only the constant $e^{-a^2p^2/\\hbar^2}$ depends on $p$."}, {"math": "&= \\sqrt{\\frac{\\sqrt{2}\\,a}{\\sqrt{\\pi}\\,\\hbar}}\\; e^{-a^2p^2/\\hbar^2}", "why": "Tidy the prefactor: $\\frac{2a\\sqrt\\pi}{\\sqrt{2\\pi\\hbar}}\\big(\\frac{1}{a\\sqrt{2\\pi}}\\big)^{1/2} = \\big(\\frac{\\sqrt 2 a}{\\sqrt\\pi \\hbar}\\big)^{1/2}$. This is equation (3.3): a Gaussian in $p$ of width $\\hbar/2a$."}]}
+```
+
 (Remarkably) this is **also a Gaussian** (now in the variable $p$ instead of $x$). However, the expected momentum and standard deviation of momentum are 
 ```{math}
 :label: e-gaussian-p-av-std
@@ -157,6 +162,22 @@ That is, we calculate the commutator of $\op{A}$ and $\op{B}$ on a wavefunction 
 
 Coming back to the big picture: we see in [](#e-canonical-comm) that $\hat{X}$ and $\hat{P}$ do not commute, and hence (as we already knew in this case!) they are **incompatible observables**. If we now want to consider other pairs of properties, and want to know if they are incompatible or not, we follow the same procedure: we calculate the commutator of their associated operators (most likely the operators acting on their wavefunctions) and whether or not this vanishes answers our physical question. 
 
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "Halving the width $a$ of a Gaussian wavefunction", "choices": ["halves both $\\Delta x$ and $\\Delta p$", "halves $\\Delta x$ and doubles $\\Delta p$", "leaves $\\Delta p$ unchanged"], "answer": 1, "why": "$\\Delta x = a$ and $\\Delta p = \\hbar/2a$, so the product stays at $\\hbar/2$: squeezing the wavefunction in position spreads it in momentum.", "label": "Chapter 3, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "Two observables $\\hat A$ and $\\hat B$ are compatible (a particle can have definite values of both) exactly when", "choices": ["$[\\hat A, \\hat B] = 0$", "$\\hat A = \\hat B$", "they have the same eigenvalues"], "answer": 0, "why": "commuting operators share a complete set of eigenstates; position and momentum do not, since $[\\hat X, \\hat P] = i\\hbar$, which is the origin of the uncertainty principle.", "label": "Chapter 3, check 2"}
+```
+
+::::
+
 ## Exercises
 
 ````{exercise}
@@ -232,3 +253,11 @@ It can be shown that the average square momentum of the particle is
 5. Approx 20\% larger than HUP limit. 
 ```
 ````
+
+::::{div}
+:class: web-only
+```{anywidget} ./interactive/widgets/progress.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"chapter": "03", "title": "Incompatible observables & HUP"}
+```
+::::

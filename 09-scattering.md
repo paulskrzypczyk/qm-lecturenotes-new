@@ -340,6 +340,22 @@ The above is just one example, but captures the most important features of scatt
 
 This brings to a close our study of quantum mechanics in one dimension! In the next chapter, we will begin exploring the more physically relevant situation of the mechanics of a quantum particle in three dimensions. 
 
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "A particle with energy $E > V_0$ approaches a potential step of height $V_0$. Classically it would always pass. Quantum mechanically", "choices": ["it always passes too, since $E > V_0$", "there is a non-zero probability $R$ that it is reflected, which tends to $1$ as $E \\to V_0$", "it is always reflected"], "answer": 1, "why": "matching the eigenfunction at the step gives a reflected amplitude $B = \\frac{k-k'}{k+k'}$, so $R = |B|^2 > 0$ whenever $k \\neq k'$; as $E \\to V_0$, $k' \\to 0$ and $R \\to 1$.", "label": "Chapter 9, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "For $E < V_0$ the eigenfunction beyond the step is", "choices": ["zero, since the particle cannot be there", "an oscillating wave of smaller wavelength", "an exponentially decaying function $e^{-\\lambda x}$"], "answer": 2, "why": "with $E < V_0$ the TISE in region II has solutions $e^{\\pm\\lambda x}$ with $\\lambda = \\sqrt{2M(V_0-E)}/\\hbar$; only the decaying one is physical, and it gives a non-zero probability of finding the particle beyond the step, even though $R = 1$.", "label": "Chapter 9, check 2"}
+```
+
+::::
+
 ## Exercises
 
 ````{exercise}
@@ -422,3 +438,11 @@ $$ R = \left(\frac{\sqrt{E} - \sqrt{E-V_0}}{\sqrt{E} + \sqrt{E-V_0}}\right)^2.$$
 2. n/a (plot). 
 ```
 ````
+
+::::{div}
+:class: web-only
+```{anywidget} ./interactive/widgets/progress.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"chapter": "09", "title": "Scattering"}
+```
+::::

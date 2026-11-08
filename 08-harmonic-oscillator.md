@@ -372,6 +372,22 @@ Although we won't study it in this course, tunnelling is interesting and importa
 
 In this unit we won't go further into this fascinating effect, but just highlight its existence, and leave it for future courses to elaborate on the physical consequences of it. 
 
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "The lowest energy of the quantum harmonic oscillator is", "choices": ["$0$, the minimum of the potential", "$\\tfrac12\\hbar\\omega$", "$\\hbar\\omega$"], "answer": 1, "why": "$E_n = \\hbar\\omega(n + \\tfrac12)$ with $n = 0$ gives the zero-point energy $\\tfrac12\\hbar\\omega$: the particle cannot sit still at the bottom of the well, because that would require $\\Delta x = \\Delta p = 0$.", "label": "Chapter 8, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "Acting with the creation operator $\\hat a^\\dagger$ on the energy eigenstate $\\ket{E_n}$ gives", "choices": ["a state proportional to $\\ket{E_{n+1}}$", "a state proportional to $\\ket{E_{n-1}}$", "zero"], "answer": 0, "why": "$[\\hat H, \\hat a^\\dagger] = \\hbar\\omega\\hat a^\\dagger$ implies $\\hat H\\hat a^\\dagger\\ket{E_n} = (E_n + \\hbar\\omega)\\hat a^\\dagger\\ket{E_n}$, so $\\hat a^\\dagger$ climbs one rung of the ladder; $\\hat a$ steps down, and $\\hat a\\ket{E_0} = 0$.", "label": "Chapter 8, check 2"}
+```
+
+::::
+
 ## Exercises
 
 ````{exercise}
@@ -453,3 +469,11 @@ Starting from $u_1(x)$ as given in [](#e-u1-qho), use $\op{a}^\dagger$ to find e
 $$ u_2(x) = \sqrt{\frac{2}{\ell \sqrt{\pi}}}\left(\frac{x^2}{\ell^2} - \frac{1}{2}\right)e^{-x^2/2\ell^2}$$
 ```
 ````
+
+::::{div}
+:class: web-only
+```{anywidget} ./interactive/widgets/progress.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"chapter": "08", "title": "Harmonic oscillator"}
+```
+::::

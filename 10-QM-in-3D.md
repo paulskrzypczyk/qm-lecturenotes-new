@@ -406,6 +406,22 @@ If we wanted to, we could combine [](#e-psi-t-3D-wf) and [](#e-alpha-n-3D) to wr
 ```` 
 where we have been **careful** to change our integration variable to $\rvec'$ (as always!), and where this should be compared to [](#e-psi-x-t-isw-II). This can be used to numerically solve for the quantum wavefunction at any time $t$, given any initial wavefunction. 
 
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "The wavefunction of a particle in three dimensions is", "choices": ["three separate functions $\\psi(x)$, $\\psi(y)$, $\\psi(z)$", "a single function $\\psi(\\rvec)$ of all three coordinates, with $|\\psi(\\rvec)|^2$ the probability density per unit volume", "a vector with three components"], "answer": 1, "why": "the state is $\\ket{\\psi} = \\int \\psi(\\rvec)\\ket{\\rvec}d^3r$; in general $\\psi(\\rvec)$ does not factorise, which is exactly what allows the coordinates to be correlated.", "label": "Chapter 10, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "The 3D momentum eigenfunctions are", "choices": ["$e^{i\\pvec\\cdot\\rvec/\\hbar}$, up to normalisation: a plane wave travelling in the direction of $\\pvec$", "$e^{i|\\pvec||\\rvec|/\\hbar}$", "the same as in one dimension, $e^{ipx/\\hbar}$"], "answer": 0, "why": "each component of the momentum operator is $-i\\hbar\\partial/\\partial x_i$, and $e^{i\\pvec\\cdot\\rvec/\\hbar} = e^{ip_xx/\\hbar}e^{ip_yy/\\hbar}e^{ip_zz/\\hbar}$ is a simultaneous eigenfunction of all three.", "label": "Chapter 10, check 2"}
+```
+
+::::
+
 ## Exercises
 
 ````{exercise}
@@ -469,3 +485,11 @@ n/a (show that)
 3. This follows from [](#e-wf-comm-to-op-comm).
 ```
 ````
+
+::::{div}
+:class: web-only
+```{anywidget} ./interactive/widgets/progress.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"chapter": "10", "title": "QM in 3D"}
+```
+::::

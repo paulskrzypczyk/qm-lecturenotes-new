@@ -322,6 +322,22 @@ As you can see, the particle **oscillates** back and forth, in a **correlated fa
 
 The main message here is that even **simple superpositions** of energy eigenstates can exhibit **interesting correlated dynamics**. This example is artificial, but hopefully from it you can see a glimpse of the **rich dynamics** that quantum particles exhibit in 3D. 
 
+::::{div}
+:class: web-only
+## Check your understanding
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "In a cubic box the states $(n_x, n_y, n_z) = (2,1,1)$, $(1,2,1)$ and $(1,1,2)$", "choices": ["have different energies, since they are different states", "have the same energy $6\\Ebox$: the level is degenerate", "are the same state"], "answer": 1, "why": "$E = (n_x^2 + n_y^2 + n_z^2)\\Ebox$ depends only on the sum of the squares, so the three distinct eigenstates share the energy $6\\Ebox$. Degeneracy comes from the symmetry of the box.", "label": "Chapter 11, check 1"}
+```
+
+```{anywidget} ./interactive/widgets/quiz.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"q": "For the superposition of $u_{(1,1,1)}$ and $u_{(2,2,1)}$ studied in this chapter, the marginal density $\\pd(x,t)$", "choices": ["oscillates in time, like the full density $\\pd(\\rvec,t)$", "is independent of time, even though $\\pd(\\rvec,t)$ is not", "is zero"], "answer": 1, "why": "the cross term integrates to zero over $y$ because $u_1(y)$ and $u_2(y)$ are orthogonal; only the joint density moves, which shows that the motion in $x$ and $y$ is correlated.", "label": "Chapter 11, check 2"}
+```
+
+::::
+
 ## Exercises
 
 ````{exercise}
@@ -449,3 +465,11 @@ $$ \frac{2}{L}\int_0^Lx \sin \frac{\pi x}{L} \sin \frac{2 \pi x}{L} dx = - \frac
 4. $\mathrm{cov}(x,y) = \left(\frac{16L}{9\pi^2}\right)^2 \cos \frac{6\Ebox t}{\hbar}$
 ```
 ````
+
+::::{div}
+:class: web-only
+```{anywidget} ./interactive/widgets/progress.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{"chapter": "11", "title": "3D infinite box"}
+```
+::::
