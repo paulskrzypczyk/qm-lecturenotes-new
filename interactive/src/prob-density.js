@@ -3,11 +3,11 @@
 // The reader slides and widens the region and compares the exact probability (the shaded
 // area) with the approximation pd(x0) dx (the rectangle); a toggle shows all the outcomes of a
 // position measurement with resolution dx (bins of width dx: coarse-graining).
-import { card, group, slider, presets, toggle, readout, note, drag, rich } from './core/dom.js';
+import { card, group, slider, presets, toggle, readout, note, drag, rich, action, h } from './core/dom.js';
 import { plotCanvas, Panel } from './core/plot2d.js';
 import { num, clamp } from './core/format.js';
 import { tween, lerp } from './core/motion.js';
-import { psi, density, probability, bins, X_RANGE } from './core/density.js';
+import { psi, density, probability, bins, sample, X_RANGE } from './core/density.js';
 
 const DEFAULTS = { x0: 3.6, dx: 0.25, outcomes: false };
 const DX_MIN = 0.05, DX_MAX = 1.5;
@@ -23,13 +23,13 @@ const PRESETS = [
 export default {
   render({ model, el }) {
     const opt = (k) => (model.get(k) === undefined ? DEFAULTS[k] : model.get(k));
-    const state = { x0: opt('x0'), dx: opt('dx'), outcomes: !!opt('outcomes') };
+    const state = { x0: opt('x0'), dx: opt('dx'), outcomes: !!opt('outcomes'), samples: [] };
     let cancelTween = () => {};
 
     const ui = card(el, {
       label: 'Figure 1.5: probability densities in quantum mechanics',
       hint: ['Drag the edges of the region ', { tex: 'x_0 \\leq x \\leq x_0 + dx' }, ' along the axis, or use the sliders.'],
-      onReset: () => { state.outcomes = false; outToggle.set(false); animateTo(opt('x0'), opt('dx')); },
+      onReset: () => { state.outcomes = false; outToggle.set(false); state.samples = []; animateTo(opt('x0'), opt('dx')); },
     });
 
     // ── canvas: psi(x) above, pd(x) below ────────────────────────────────────────
@@ -38,6 +38,8 @@ export default {
     const bot = new Panel(svg, labels, { box: { x: 8, y: 57, w: 86, h: 36 }, xRange: X_RANGE, yRange: Y_PD }).axes();
 
     const barsEl = bot.bars('accent-3');
+    const histEl = bot.bars('accent-2');   // observed frequencies of the measurements
+    histEl.el.classList.add('qm-hist');
     const band = bot.area('accent-1');
     const curvePsi = top.curve('accent-1');
     const curvePd = bot.curve('accent-1');
@@ -71,6 +73,11 @@ export default {
       label: ['all the outcomes of a position measurement with resolution ', { tex: 'dx' }],
       checked: state.outcomes, onChange: (c) => { state.outcomes = c; draw(); },
     });
+    const gMeasure = group(ui.controls, 'Measure');
+    const measure = (n) => { if (!state.outcomes) { state.outcomes = true; outToggle.set(true); } for (let i = 0; i < n; i++) state.samples.push(sample()); draw(); };
+    action(gMeasure, { label: 'Measure 1 copy', onClick: () => measure(1) });
+    action(gMeasure, { label: 'Measure 100 copies', onClick: () => measure(100) });
+    gMeasure.querySelector('.qm-actions').append(h('button', { class: 'qm-btn', type: 'button', onclick: () => { state.samples = []; draw(); } }, 'Clear'));
 
     // ── readouts ──────────────────────────────────────────────────────────────────
     const rPd = readout(ui.readouts, { role: 'accent-1' });
@@ -79,6 +86,8 @@ export default {
     const rDx = readout(ui.readouts, { role: 'accent-1' });
     const rApprox = readout(ui.readouts, { role: 'accent-2' });
     const rOut = readout(ui.readouts, { role: 'accent-3' });
+    const rMeas = readout(ui.readouts, { role: 'accent-2' });
+    const rMeas2 = readout(ui.readouts, { role: 'accent-2' });
     const noteEl = note(ui.readouts, []);
     const NOTE_REGION = [
       'The shaded area is the exact probability to find the particle in the region; the rectangle of height ',
@@ -87,7 +96,8 @@ export default {
     ];
     const NOTE_OUTCOMES = [
       'A measurement with resolution ', { tex: 'dx' }, ' can only tell which region of width ', { tex: 'dx' },
-      ' the particle is in. Each bar is ', { tex: '\\pd' }, ' averaged over its region, so its area is the probability of that outcome; the areas add up to 1.',
+      ' the particle is in. Each bar is ', { tex: '\\pd' }, ' averaged over its region, so its area is the probability of that outcome; the areas add up to 1. ',
+      'Measuring many identically prepared copies builds up the observed frequencies (orange), which approach the probabilities.',
     ];
 
     // ── drawing ───────────────────────────────────────────────────────────────────
@@ -105,10 +115,21 @@ export default {
 
       barsEl.el.style.display = state.outcomes ? '' : 'none';
       rOut.setHidden(!state.outcomes);
+      const N = state.samples.length;
+      histEl.el.style.display = state.outcomes && N ? '' : 'none';
+      rMeas.setHidden(!N); rMeas2.setHidden(!N);
       if (state.outcomes) {
         const b = bins(x0, dx);
         barsEl.update(b.map(({ a, b: bb, p }) => ({ a: Math.max(a, X_RANGE[0]), b: Math.min(bb, X_RANGE[1]), h: p / dx })));
         rOut.set(`${b.length}\\text{ outcomes, probabilities summing to }${num(b.reduce((s, o) => s + o.p, 0))}`);
+        if (N) {
+          // observed frequency of each outcome, drawn on the same scale as the density (area = frequency)
+          const counts = b.map(({ a, b: bb }) => state.samples.filter((v) => v >= a && v < bb).length);
+          histEl.update(b.map(({ a, b: bb }, i) => ({ a: Math.max(a, X_RANGE[0]), b: Math.min(bb, X_RANGE[1]), h: counts[i] / N / dx })));
+          const inRegion = state.samples.filter((v) => v >= x0 && v < x1).length;
+          rMeas.set(`\\text{measured } ${N} \\text{ cop${N === 1 ? 'y' : 'ies'}}`);
+          rMeas2.set(`\\text{found in the region: } ${inRegion}/${N} = ${num(inRegion / N, 3)}`);
+        }
       }
 
       // labels (§3): x0 and x0 + dx under the axis, spread apart when the edges are close;

@@ -245,3 +245,30 @@
 .qm-level      { cursor: pointer; }   /* a clickable energy level on a ladder */
 .qm-level:hover .qm-op-axis { stroke-width: 3.5; }
 .qm-level:focus-visible .qm-op-axis { stroke: var(--qm-focus); }
+
+/* ── 9. Widgets without a canvas: concept checks, derivation steppers, progress (§4) ─ */
+.qm-widget.qm-no-canvas .qm-body { grid-template-columns: minmax(0, 1fr); }
+.qm-widget.qm-no-canvas .qm-canvas { display: none; }
+.qm-question { font-size: 0.9375rem; margin: 0 0 0.5rem; }
+.qm-choices { display: flex; flex-direction: column; gap: 0.375rem; }
+.qm-choice { display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.375rem 0.5rem; border: 1px solid var(--qm-border); border-radius: 0.375rem; cursor: pointer; font-size: 0.875rem; }
+.qm-choice:hover { background: var(--qm-surface-2); }
+.qm-choice input { margin: 0.2rem 0 0; }
+.qm-choice.qm-right { border-color: #16a34a; background: color-mix(in srgb, #16a34a 10%, var(--qm-surface)); }
+.qm-choice.qm-wrong { border-color: #dc2626; background: color-mix(in srgb, #dc2626 10%, var(--qm-surface)); }
+.qm-feedback { grid-column: 1 / -1; font-size: 0.875rem; padding: 0.5rem 0.75rem; border-left: 3px solid var(--qm-accent-3); background: var(--qm-surface-2); border-radius: 0 0.375rem 0.375rem 0; }
+.qm-feedback.qm-right { border-left-color: #16a34a; }
+.qm-feedback.qm-wrong { border-left-color: #dc2626; }
+.qm-steps { display: flex; flex-direction: column; gap: 0.5rem; }
+.qm-step { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.25rem; padding: 0.5rem 0.75rem; border-left: 3px solid var(--qm-border); }
+.qm-step.qm-current { border-left-color: var(--qm-accent-1); }
+.qm-step-why { font-size: 0.8125rem; color: var(--qm-ink-muted); }
+.qm-step-why .katex { color: var(--qm-ink); }
+.qm-step-math { overflow-x: auto; }
+.qm-progress { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; font-size: 0.875rem; }
+.qm-progress-bar { flex: 1 1 10rem; height: 8px; border-radius: 4px; background: var(--qm-surface-2); box-shadow: inset 0 0 0 1px var(--qm-border); overflow: hidden; }
+.qm-progress-fill { height: 100%; background: var(--qm-accent-1); transition: width 0.3s ease-in-out; }
+.qm-progress-list { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; font-size: 0.8125rem; color: var(--qm-ink-muted); }
+.qm-progress-list .qm-done { color: var(--qm-accent-1); }
+.qm-bars.qm-hist { fill-opacity: 0.3; stroke-width: 1; }   /* observed frequencies over the outcome bars */
+.qm-readouts > .qm-actions, .qm-readouts > .qm-progress, .qm-readouts > .qm-progress-list { grid-column: 1 / -1; }

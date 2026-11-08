@@ -45,3 +45,19 @@ export function bins(x0, dx, lo = X_RANGE[0], hi = X_RANGE[1]) {
   }
   return out;
 }
+
+/** Draw a random position from pd(x) (inverse-CDF sampling on a table built once). */
+let CDF = null;
+export function sample() {
+  if (!CDF) {
+    const n = 2000, lo = X_RANGE[0] - 1, hi = X_RANGE[1] + 1, dx = (hi - lo) / n;
+    const xs = [], cs = []; let c = 0;
+    for (let i = 0; i <= n; i++) { const x = lo + i * dx; xs.push(x); cs.push(c); c += density(x) * dx; }
+    CDF = { xs, cs: cs.map((v) => v / c) };
+  }
+  const r = Math.random();
+  let a = 0, b = CDF.cs.length - 1;
+  while (b - a > 1) { const m = (a + b) >> 1; if (CDF.cs[m] < r) a = m; else b = m; }
+  const t = (r - CDF.cs[a]) / Math.max(1e-12, CDF.cs[b] - CDF.cs[a]);
+  return CDF.xs[a] + t * (CDF.xs[b] - CDF.xs[a]);
+}
