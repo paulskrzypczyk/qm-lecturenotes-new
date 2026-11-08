@@ -12,14 +12,14 @@ import { psi, density, alpha, centre } from './core/wavepacket.js';
 import { hue } from './core/planewave.js';
 
 const DEFAULTS = { t: 0, a: 1, p0: 1, M: 1, ghost: true };
-const X_RANGE = [-3, 15];       // a0
-const T_MAX = 3;                // in units of tau = 2 M0 a0^2 / hbar
+const X_RANGE = [-5, 30];       // a0 (room for a fast, light packet to run and spread)
+const T_MAX = 6;                // in units of tau = 2 M0 a0^2 / hbar
 const A_RANGE = [0.5, 2], P_RANGE = [0, 1.2], M_RANGE = [0.5, 2];
 const Y_MOD = [0, 1.0];         // |psi| peaks at 0.89 for a = 0.5
 const Y_PD = [0, 0.9];          // pd peaks at 0.80 for a = 0.5
 const N_SEG = 300;
-const RATE = 0.5;               // tau per second when playing
-const T_PRESETS = [0, 1, 2, 3].map((v) => ({ value: v, tex: v === 0 ? '0' : v === 1 ? '\\tau' : `${v}\\tau`, words: `t equals ${v} tau` }));
+const RATE = 0.6;               // tau per second when playing (10 s for the full run)
+const T_PRESETS = [0, 2, 4, 6].map((v) => ({ value: v, tex: v === 0 ? '0' : `${v}\\tau`, words: `t equals ${v} tau` }));
 
 export default {
   render({ model, el }) {
@@ -128,7 +128,7 @@ export default {
       markR.el.style.display = inside(xc + al) ? '' : 'none';
       markC.el.style.display = inside(xc) ? '' : 'none';
       labC.update(xc, 0, 'below', 0.9);
-      labC.el.hidden = xc > X_RANGE[1] - 1.2;   // would sit on the x label (§3)
+      labC.el.hidden = xc > X_RANGE[1] - 2.5;   // would sit on the x label (§3)
 
       slT.set(t); slA.set(state.a); slP.set(state.p0); slM.set(state.M);
       prT.setActive(T_PRESETS.findIndex((p) => Math.abs(p.value - t) < 1e-9));
