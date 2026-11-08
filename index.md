@@ -66,6 +66,7 @@ Finally, this course was extensively updated last year, with the lecture notes l
 ```
 
 ## Changelog
+- 06/11/2026: [](#f-gaussian-animation) is now interactive: play the time evolution of the Gaussian wavepacket, or set $t$, the width $a$, the momentum $p_0$ and the mass $M$ yourself, and watch how the spreading depends on them.
 - 05/11/2026: Two more interactive figures: [](#f-prob-density) lets you move and widen the small region $x_0 \leq x \leq x_0 + dx$ and compare $\pd(x_0)dx$ with the exact probability (and see the outcomes of a measurement with finite resolution), and [](#f-complex-plane-wave) links the three pictures of a complex plane wave, with a helix you can turn.
 - 05/11/2026: Added the first interactive figure: [](#f-gaussian) now lets you change the width of the Gaussian and watch the momentum wavefunction respond, with the Heisenberg uncertainty principle saturated throughout.
 - 04/11/2026: The notes are now available as a PDF, via the Download button on every page.

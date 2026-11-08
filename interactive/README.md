@@ -1,6 +1,6 @@
 # Interactive figures — visual identity & ground rules
 
-**Version 1.1.1 · 6 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
+**Version 1.2 · 6 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
 
 The rules are those of the QIT notes' widgets (their README v1.4), carried over so that both sets of notes share one visual identity; §2 (colour roles) and §6 (2D plots instead of the Bloch sphere) are what differs.
 
@@ -55,7 +55,7 @@ These pass the dataviz palette checks in both modes (lightness band, chroma floo
 - **Interface text** (hints, button and checkbox labels) inherits the page font, at `0.875rem`, or `0.8125rem` for hints.
 - **All mathematics is typeset with KaTeX 0.15.2**, the same version the site uses, with the macros copied from `myst.yml` (`src/core/katex.js`). Never write maths as Unicode approximations.
 - **Numbers** have 2 decimal places (statistics 3), use `tabular-nums` and keep a fixed width so readouts don't jiggle. Negative numbers use a true minus sign (KaTeX does this).
-- **Units.** The notes keep $a$, $\hbar$, $M$ symbolic, so a widget that must show numbers measures lengths in a named reference length ($a_0$ for a general wavefunction, Chapters 1–3; $L$ for the box; $\ell$ for the oscillator) and momenta in $\hbar$ over it, and says so in its note. The reference never clashes with a symbol the chapter already uses.
+- **Units.** The notes keep $a$, $\hbar$, $M$ symbolic, so a widget that must show numbers measures lengths in a named reference length ($a_0$ for a general wavefunction, Chapters 1–3 and 6; $L$ for the box; $\ell$ for the oscillator) and momenta in $\hbar$ over it; where the mass or time appear, masses are in a reference mass $M_0$ and time in $\tau = 2M_0a_0^2/\hbar$ (so that the Gaussian's width is $a_0\sqrt{1+t^2}$ for $a = a_0$, $M = M_0$). The note says so. The reference never clashes with a symbol the chapter already uses.
 - **In-figure labels** are KaTeX in `--qm-ink`, at about 1.05× the text size (they scale with the canvas), and never sit on top of a line or a handle:
   - the function's name sits to the left of its vertical axis near the top; the variable sits under the right-hand end of its horizontal axis;
   - a marker on an axis is labelled under the axis; when two markers come close, their labels move outwards (`below-left` / `below-right`) rather than overlap;
@@ -128,6 +128,7 @@ Stroke widths are in screen pixels and never scale (`vector-effect: non-scaling-
 - **Presets** are a row of small buttons for the standard values. The active one is highlighted with accent-1.
 - **Keyboard.** Every control is focusable in reading order. A focused handle responds to the arrow keys (one slider step, or a fine step with Shift), Home/End go to the ends, and the focus ring is always visible.
 - **Motion.** Jumping to a preset animates over 300ms (ease-in-out). Dragging is immediate. A *demonstration* (an action that shows a process happening) takes 1.2s; its readouts update when it ends. With `prefers-reduced-motion`, nothing animates: the end state appears at once.
+- **Time evolution** (`action()` in `src/core/dom.js`): a figure that shows a process in time has a **Play/Pause** action button (▶ / ❚❚, `aria-pressed`) and a time slider that scrubs; play runs at a fixed rate (a few seconds for the whole range), stops at the end, and starts again from zero on the next press. The readouts update every frame. Moving any other control pauses nothing but is shown live; dragging the time slider pauses. Because the reader starts it deliberately, play still runs under `prefers-reduced-motion`, but in coarse steps (every half second) instead of smoothly.
 - **No hidden state.** Every quantity that changes is shown in a readout.
 - **Randomness.** Random outcomes use `Math.random()` and are revealed only when a demonstration ends.
 
@@ -252,9 +253,28 @@ The three pictures of the complex plane wave $\psi(x) = Ae^{2\pi i x/\lambda}$ f
   | `x` | 1.5 | position of the probe |
   | `view` | `"oblique"` | initial view of the helix: `"oblique"`, `"side"` or `"end"` |
 
+### `wavepacket` — Figure 6.1 (Chapter 6)
+
+The free Gaussian wavepacket $\psi(x,t)$ of equation (6.x), replacing the animated GIF (which stays as the placeholder: the PDF shows its filmstrip). Top: $|\psi(x,t)|$ as a curve coloured by its phase, with the colour wheel, exactly the representation of the animation. Bottom: the density $\pd(x,t)$ with $\av{x} = p_0t/M$ and the band $\av{x} \pm \Delta x(t)$ marked, and the initial density as a dashed ghost. The phase comes from the exact solution (`src/core/wavepacket.js`, checked against the Schrödinger equation in `npm test`), so the colour shows the position–momentum correlation building up: it cycles faster at the front of the packet than at the back.
+
+- **Objects:** $|\psi(x,t)|$ in phase hue; $\pd(x,t)$ (accent-1) with its $\pm\Delta x$ band and markers; the ghost $\pd(x,0)$ (accent-1, dashed, faint); the centre marker in ink.
+- **Interactions:** Play/Pause (time runs at $0.5\,\tau$ per second to $3\tau$); slider $t \in [0, 3\tau]$ with presets $0, \tau, 2\tau, 3\tau$ (with $a = a_0$, $M = M_0$ these are the stills of Figure 6.2); sliders $a \in [0.5, 2]\,a_0$, $p_0 \in [0, 1.2]\,\hbar/a_0$ and the mass $M \in [0.5, 2]\,M_0$ (a narrower or lighter packet spreads faster; a heavier one moves more slowly); the toggle for the ghost.
+- **Readouts:** $t$; $\Delta x(t) = \alpha(t)$ with its formula; $\av{x} = p_0t/M$; $\Delta x(t)$; $v = p_0/M$; $\Delta x(0) = a$; a note on the speed, the spreading, the meaning of the colour and the units.
+- **Options**
+
+  | Option | Default | Meaning |
+  |---|---|---|
+  | `t` | 0 | time, in units of $\tau$ |
+  | `a` | 1 | initial width, in $a_0$ |
+  | `p0` | 1 | average momentum, in $\hbar/a_0$ |
+  | `M` | 1 | mass, in $M_0$ |
+  | `ghost` | true | show the initial density |
+
 ---
 
 ## Changelog
+
+- **1.2 (6 Nov 2026)** — `wavepacket` (Figure 6.1) and the rules it needed: §3 the reference mass $M_0$ and time unit $\tau$; §7 time evolution with a Play/Pause action (`action()` in `dom.js`) and a scrubbing time slider.
 
 - **1.1.1 (6 Nov 2026)** — `plane-wave`: panel (c) is the modulus $|\psi(x)| = A$ drawn as a line of that height coloured by the phase, as in the static figure (it had been a stripe of fixed height, so it did not respond to $A$); its axis carries $A$ and $-A$ like panel (a). §5 updated accordingly.
 - **1.1 (5 Nov 2026)** — two more widgets, `prob-density` (Figure 1.5) and `plane-wave` (Figure 2.1), and the rules they needed: §3 the reference length $a_0$ for Chapters 1–3; §5 marks for phase-by-hue curves and stripes, histogram bars, an approximating rectangle and 3D axes; §6 a turnable 3D view (`src/core/view3.js`) with view presets, the ink probe, and overlapping handles; §9 figure numbers in `aria-label`s. `plot2d.js` gains `bars()`, `rect()`, `point()` and `dy()`. `Pictures/prob-density.svg` redrawn with $\psi(x)$ above $\pd(x)$.

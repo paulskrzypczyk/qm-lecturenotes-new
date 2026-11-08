@@ -155,12 +155,17 @@ This wavefunction is remarkably similar in form to [](#e-initial-gaussian), exce
 3. Finally, there is a phase factor $e^{i\phi(x,t)}$. This term is complicated, but it accounts for **correlations** which build up, between **where the particle is** and **what momentum it has**. 
 
 It is insightful to plot the wavefunction as it evolves in time. We do this below, both for the wavefunction $\psi(x,t)$ and the associated probability density $\pd(x,t) = |\psi(x,t)|^2$, both as an animation and in stills:
-```{figure}  ./Pictures/Gaussian-wavepacket.gif
+````{figure}
 :label: f-gaussian-animation
-:alt: Picture of a Gaussian function
+:placeholder: ./Pictures/Gaussian-wavepacket.gif
+:alt: Animation of a Gaussian wavefunction moving to the right and spreading
 :align: center
-Time evolution of a Gaussian wavefunction, as given in [](#e-gaussian-time-t). The parameter $a>0$ determines the 'width' of the wavefunction. Here we represent the complex number $\psi(x,t)$ at each location $x$ and time $t$ in polar form, in terms of the amplitude $|\psi(x,t)|$ (the height), and phase, represented by the colour (with the colour-wheel legend at the top). The particle has a non-zero average momentum $p_0 > 0$, and moves to the right at constant speed, spreading out as it moves.
+```{anywidget} ./interactive/widgets/wavepacket.mjs
+:css: ./interactive/widgets/qm-widgets.css
+{ "t": 0, "a": 1, "p0": 1, "M": 1 }
 ```
+Time evolution of a Gaussian wavefunction, as given in [](#e-gaussian-time-t). The parameter $a>0$ determines the initial 'width' of the wavefunction. Here we represent the complex number $\psi(x,t)$ at each location $x$ and time $t$ in polar form, in terms of the amplitude $|\psi(x,t)|$ (the height), and phase, represented by the colour (with the colour-wheel legend), and below it the probability density $\pd(x,t)$ with the spread $\Delta x(t)$ marked. The particle has a non-zero average momentum $p_0 > 0$, and moves to the right at constant speed, spreading out as it moves.
+````
 
 ```{figure}  ./Pictures/gaussian-x-t
 :label: f-gaussian-time-evolution

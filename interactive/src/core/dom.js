@@ -143,6 +143,24 @@ export function presets(parent, items, onPick) {
   };
 }
 
+const ICON_PLAY = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>';
+const ICON_PAUSE = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z" fill="currentColor"/></svg>';
+
+/**
+ * An action button (§4: outlined in accent-3, with a ▶ icon): something that *does*
+ * something rather than sets a value. With `pauseLabel` it is a play/pause switch:
+ * setPlaying(true) shows the pause icon and label.
+ */
+export function action(parent, { label, pauseLabel, onClick }) {
+  const row = parent.querySelector(':scope > .qm-actions') || h('div', { class: 'qm-actions' });
+  if (!row.parentNode) parent.append(row);
+  const btn = h('button', { class: 'qm-btn qm-action', type: 'button', onclick: () => onClick() });
+  const show = (playing) => { btn.innerHTML = playing ? ICON_PAUSE : ICON_PLAY; btn.append(playing ? pauseLabel : label); btn.setAttribute('aria-pressed', playing ? 'true' : 'false'); };
+  show(false);
+  row.append(btn);
+  return { el: btn, setPlaying: show, setDisabled(d) { btn.disabled = d; } };
+}
+
 /** Checkbox toggle with a rich label. */
 export function toggle(parent, { label, checked, onChange, role }) {
   const id = uid('toggle');
