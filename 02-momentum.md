@@ -277,59 +277,6 @@ It is also important to realise that we could have in fact started this whole ch
 
 However, for other physical properties, this won't be the case — we won't know in advance what form wavefunctions should have in order to have a definite value of a given property (e.g. to have a definite energy or angular momentum). Our general procedure in these cases will be precisely to go in the other direction: For a given operator $\hat{A}$, to start by considering the associated operator $\op{A}$ (acting on wavefunctions), find its eigenfunctions, and then use **these** to define quantum states with definite properties, that is, the eigenstates of $\hat{A}$. A key example will be to find states of definite energy (in which case the operator of interest is the **{term}`Hamiltonian`** $\hat{H}$). We will study this extensively in the following chapters. 
 
-## Summary: three ways of writing the same state
-
-Everything in this chapter and the last can be said in three equivalent languages: in terms of the abstract quantum state $\ket{\psi}$, in terms of the spatial wavefunction $\psi(x)$, or in terms of the momentum wavefunction $\tilde\psi(p)$. The main statements are collected side by side below.
-
-`````{tab-set}
-````{tab-item} Quantum state $\ket{\psi}$
-```{math}
-\begin{aligned}
-&\text{normalisation:} & \inner{\psi}{\psi} &= 1, \\
-&\text{position states:} & \inner{x}{x'} &= \delta(x - x'), & \hat{X}\ket{x} &= x\ket{x}, \\
-&\text{momentum states:} & \inner{p}{p'} &= \delta(p - p'), & \hat{P}\ket{p} &= p\ket{p}, \\
-&\text{the two bases:} & \inner{x}{p} &= \frac{1}{\sqrt{2\pi\hbar}}\, e^{ipx/\hbar}.
-\end{aligned}
-```
-````
-````{tab-item} Spatial wavefunction $\psi(x)$
-```{math}
-\begin{aligned}
-&\text{definition:} & \psi(x) &= \inner{x}{\psi}, & \ket{\psi} &= \infint \psi(x)\ket{x}dx, \\
-&\text{normalisation:} & \infint |\psi(x)|^2 dx &= 1, \\
-&\text{operators:} & \op{X}\psi(x) &= x\,\psi(x), & \op{P}\psi(x) &= -i\hbar\frac{\partial}{\partial x}\psi(x), \\
-&\text{definite momentum:} & v_p(x) &= \frac{1}{\sqrt{2\pi\hbar}}\, e^{ipx/\hbar}.
-\end{aligned}
-```
-````
-````{tab-item} Momentum wavefunction $\tilde\psi(p)$
-```{math}
-\begin{aligned}
-&\text{definition:} & \tilde\psi(p) &= \inner{p}{\psi}, & \ket{\psi} &= \infint \tilde\psi(p)\ket{p}dp, \\
-&\text{normalisation:} & \infint |\tilde\psi(p)|^2 dp &= 1, \\
-&\text{from } \psi(x)\text{:} & \tilde\psi(p) &= \frac{1}{\sqrt{2\pi\hbar}}\infint \psi(x)\, e^{-ipx/\hbar} dx, \\
-&\text{back to } \psi(x)\text{:} & \psi(x) &= \frac{1}{\sqrt{2\pi\hbar}}\infint \tilde\psi(p)\, e^{ipx/\hbar} dp.
-\end{aligned}
-```
-````
-`````
-
-::::{div}
-:class: web-only
-## Check your understanding
-
-```{anywidget} ./interactive/widgets/quiz.mjs
-:css: ./interactive/widgets/qm-widgets.css
-{"q": "A particle has the wavefunction $\\psi(x) = A e^{ipx/\\hbar}$. Its momentum is", "choices": ["uncertain, with $\\Delta p = \\hbar/2a$", "exactly $p$, but its position is completely uncertain", "exactly $p$, and its position is $x = 0$"], "answer": 1, "why": "$A e^{ipx/\\hbar}$ is the momentum eigenfunction $v_p(x)$: a complex plane wave of definite wavelength $h/p$. Its modulus is the same everywhere, so the particle is equally likely to be found anywhere.", "label": "Chapter 2, check 1"}
-```
-
-```{anywidget} ./interactive/widgets/quiz.mjs
-:css: ./interactive/widgets/qm-widgets.css
-{"q": "How are the spatial and momentum wavefunctions related?", "choices": ["$\\tilde\\psi(p) = \\psi(p)$: it is the same function of a different variable", "$\\tilde\\psi(p)$ is the Fourier transform of $\\psi(x)$", "$\\tilde\\psi(p) = |\\psi(x)|^2$"], "answer": 1, "why": "$\\tilde\\psi(p) = \\inner{p}{\\psi} = \\frac{1}{\\sqrt{2\\pi\\hbar}}\\infint \\psi(x)e^{-ipx/\\hbar}dx$: the same state written in the momentum basis instead of the position basis.", "label": "Chapter 2, check 2"}
-```
-
-::::
-
 ## Exercises
 
 ````{exercise}
