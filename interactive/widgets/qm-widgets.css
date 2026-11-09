@@ -243,7 +243,8 @@
 .qm-axis3     { fill: none; stroke: var(--qm-ink); stroke-width: 1; }
 .qm-axis3-head { fill: var(--qm-ink); stroke: none; }
 .qm-level      { cursor: pointer; }   /* a clickable energy level on a ladder */
-.qm-level:hover .qm-op-axis { stroke-width: 3.5; }
+.qm-level .qm-op-axis { opacity: 0.55; }              /* the other levels of a ladder recede */
+.qm-level:hover .qm-op-axis, .qm-level.qm-on .qm-op-axis { stroke-width: 3.5; opacity: 1; }
 .qm-level:focus-visible .qm-op-axis { stroke: var(--qm-focus); }
 /* levels drawn across a potential (dashed): the chosen one is solid and thicker, in the same colour */
 .qm-level:hover .qm-construct { stroke-width: 2; opacity: 1; }

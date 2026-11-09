@@ -118,7 +118,7 @@ export default {
       levels.forEach((l, i) => {
         const k = i + 1;
         const on = k === n || (sup && k === m);
-        l.g.classList.toggle('qm-accent-1', on); l.g.classList.toggle('qm-accent-3', !on);
+        l.g.classList.toggle('qm-on', on);          // stays accent-3 (the ladder's colour), drawn thicker and at full opacity (§5)
         l.line.style.strokeWidth = on ? '3.5' : '';
         l.g.setAttribute('aria-pressed', on ? 'true' : 'false');
       });

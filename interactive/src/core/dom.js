@@ -105,7 +105,11 @@ export function card(host, { label, hint, onReset }) {
 // toggle. Figures with a widget keep their placeholder as an <img> (the card hides it).
 const INK = /#000000\b|#000\b|rgb\(0%,0%,0%\)|rgb\(0,\s*0,\s*0\)|(?<=[:="'\s])black\b|#262626\b/gi;
 const PAPER = /#ffffff\b|#fff\b|(?<=[:="'\s])white\b/gi;
-const DARK_ACCENTS = [['#05285b', 'navy'], ['#002f5f', 'navy'], ['#00434f', 'teal'], ['#ab1f2d', 'red'], ['#b92d3a', 'red']];
+// The static figures use the widget palette (interactive/README.md §2: accent-1 for a wavefunction or
+// density, accent-3 for a potential or energy level, accent-2 for a second object); accent-1 has a
+// lighter dark-mode value, set in style/style.css. The navy/teal/red entries cover the few remaining
+// original colours (the position-basis diagrams, labels).
+const DARK_ACCENTS = [['#2563eb', 'accent-1'], ['#ea580c', 'accent-2'], ['#0d9488', 'accent-3'], ['#05285b', 'navy'], ['#002f5f', 'navy'], ['#00434f', 'teal'], ['#ab1f2d', 'red'], ['#b92d3a', 'red']];
 let inlined = false;
 export function inlineStaticFigures() {
   if (inlined || typeof document === 'undefined') return;
