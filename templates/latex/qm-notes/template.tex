@@ -37,7 +37,7 @@
 \definecolor{UoBbrightblue}{HTML}{0CC6DE}
 \definecolor{exuorange}{HTML}{FF582D}
 \definecolor{webblue}{HTML}{0076df}
-\colorlet{maincolor}{webblue}
+\definecolor{maincolor}{HTML}{1D4ED8}   % a shade deeper than the figures' wavefunction blue (#2563EB); chosen 9 Nov 2026
 
 \newcommand\alert[1]{\textcolor{maincolor}{\textbf{#1}}}
 \newcommand\lesson[1]{\textcolor{maincolor}{\textit{#1}}}
@@ -61,7 +61,7 @@
 %	FONTS: Times for the body, Avant Garde for headings
 %----------------------------------------------------------------------------------------
 \usepackage{times}
-\usepackage{avant}
+\usepackage{FiraSans}   % headings and labels (texlive-fonts-extra); the body stays Times
 
 %----------------------------------------------------------------------------------------
 %	MAIN TABLE OF CONTENTS
@@ -227,6 +227,21 @@ leftmargin=0cm,rightmargin=0cm,linewidth=4pt]{eqBox}
 	\end{tikzpicture}};
 	\end{tikzpicture}
 \fi\fi\par\vspace*{50\p@}}}
+% unnumbered chapters (the Bibliography) get the same banner, without a number
+\def\@makeschapterhead#1{%
+{\parindent \z@ \raggedright \normalfont
+\setbox\chaptertitlebox=\hbox{\parbox{15cm}{\huge\sffamily\bfseries\color{black}#1\strut}}
+\setlength\chaptertitleheight{\dimexpr\ht\chaptertitlebox+\dp\chaptertitlebox}
+\begin{tikzpicture}[remember picture,overlay]
+	\node at (current page.north west){
+		\begin{tikzpicture}[remember picture,overlay]
+			\draw[anchor=west] (\Gm@lmargin+.3cm,-3cm) node [text width=15cm] {
+			\huge\sffamily\bfseries\color{black}#1\strut};
+			\draw[anchor=west,line width=2pt,maincolor]
+				(\Gm@lmargin+.3cm,-3cm-\chaptertitleheight/2) -- (\Gm@lmargin+22cm,-3cm-\chaptertitleheight/2);
+		\end{tikzpicture}};
+\end{tikzpicture}
+\par\vspace*{50\p@}}}
 \makeatother
 
 % MyST passes the page titles "Chapter N: Title" / "Appendix N: Title".

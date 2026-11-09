@@ -48,7 +48,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            texlive-latex-extra texlive-fonts-recommended latexmk
+            texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra latexmk
       - name: Build PDF of the notes
         env:
           MYST_PDF: '1'
