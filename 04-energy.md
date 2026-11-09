@@ -168,12 +168,12 @@ We end by noting that in general, a quantum particle could be in a superposition
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "The time-independent Schrödinger equation $\\op{H} u(x) = E u(x)$ is", "choices": ["an equation whose solutions are the wavefunctions of definite energy, and the energies $E$ they can have", "the equation of motion that tells us how $\\psi(x,t)$ changes in time", "only valid for a free particle"], "answer": 0, "why": "it is the eigenvalue equation of the Hamiltonian acting on wavefunctions: its normalisable solutions are the energy eigenfunctions, and the values of $E$ for which they exist are the allowed energies.", "label": "Chapter 4, check 1"}
+{"q": "The time-independent Schrödinger equation $\\op{H} u(x) = E u(x)$ is", "choices": ["an equation whose solutions are the wavefunctions of definite energy, and the energies $E$ they can have", "the equation of motion that tells us how $\\psi(x,t)$ changes in time", "only valid for a free particle"], "answer": 0, "why": "It is the eigenvalue equation of the Hamiltonian, acting on wavefunctions. Its normalisable solutions are the energy eigenfunctions, and the values of $E$ for which they exist are the allowed energies.", "label": "Chapter 4, check 1"}
 ```
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "For a particle in a bound state the allowed energies are", "choices": ["any value above the minimum of the potential", "a discrete set of levels", "always equal to the minimum of the potential"], "answer": 1, "why": "when a particle cannot escape to infinity, the TISE has normalisable solutions only for particular energies: the famous energy levels.", "label": "Chapter 4, check 2"}
+{"q": "For a particle in a bound state the allowed energies are", "choices": ["any value above the minimum of the potential", "a discrete set of levels", "always equal to the minimum of the potential"], "answer": 1, "why": "When a particle cannot escape to infinity, the TISE has normalisable solutions only for particular energies, which are the famous energy levels.", "label": "Chapter 4, check 2"}
 ```
 
 ::::

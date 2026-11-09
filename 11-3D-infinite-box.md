@@ -328,12 +328,12 @@ The main message here is that even **simple superpositions** of energy eigenstat
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "In a cubic box the states $(n_x, n_y, n_z) = (2,1,1)$, $(1,2,1)$ and $(1,1,2)$", "choices": ["have different energies, since they are different states", "have the same energy $6\\Ebox$: the level is degenerate", "are the same state"], "answer": 1, "why": "$E = (n_x^2 + n_y^2 + n_z^2)\\Ebox$ depends only on the sum of the squares, so the three distinct eigenstates share the energy $6\\Ebox$. Degeneracy comes from the symmetry of the box.", "label": "Chapter 11, check 1"}
+{"q": "In a cubic box the states $(n_x, n_y, n_z) = (2,1,1)$, $(1,2,1)$ and $(1,1,2)$", "choices": ["have different energies, since they are different states", "have the same energy $6\\Ebox$, so that the level is degenerate", "are the same state"], "answer": 1, "why": "$E = (n_x^2 + n_y^2 + n_z^2)\\Ebox$ depends only on the sum of the squares, so the three distinct eigenstates share the energy $6\\Ebox$. This degeneracy comes from the symmetry of the box.", "label": "Chapter 11, check 1"}
 ```
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "For the superposition of $u_{(1,1,1)}$ and $u_{(2,2,1)}$ studied in this chapter, the marginal density $\\pd(x,t)$", "choices": ["oscillates in time, like the full density $\\pd(\\rvec,t)$", "is independent of time, even though $\\pd(\\rvec,t)$ is not", "is zero"], "answer": 1, "why": "the cross term integrates to zero over $y$ because $u_1(y)$ and $u_2(y)$ are orthogonal; only the joint density moves, which shows that the motion in $x$ and $y$ is correlated.", "label": "Chapter 11, check 2"}
+{"q": "For the superposition of $u_{(1,1,1)}$ and $u_{(2,2,1)}$ studied in this chapter, the marginal density $\\pd(x,t)$", "choices": ["oscillates in time, like the full density $\\pd(\\rvec,t)$", "is independent of time, even though $\\pd(\\rvec,t)$ is not", "is zero"], "answer": 1, "why": "The cross term integrates to zero over $y$ because $u_1(y)$ and $u_2(y)$ are orthogonal. Only the joint density moves, which shows that the motion in $x$ and that in $y$ are correlated.", "label": "Chapter 11, check 2"}
 ```
 
 ::::

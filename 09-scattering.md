@@ -335,7 +335,7 @@ In the interactive figure below, we show the evolution of a **Gaussian** wavefun
 :css: ./interactive/widgets/qm-widgets.css
 { "t": 0, "e0": 1.5, "a": 4 }
 ```
-**Scattering of a Gaussian wavepacket by a potential step.** In the top plot, we show the wavefunction $|\psi(x,t)|$ using a colour plot. In the bottom plot, we show the associated {term}`probability density` $\pd(x,t)$. The potential step is also plotted, for illustrative purposes only. The particle approaches the step from the left (with positive momentum), and mean energy $E_0$ larger than the potential height $V_0$. Nevertheless, the particle is partially reflected by the step, such that the final state of the particle is a superposition of a left-moving Gaussian after the step, and a right-moving Gaussian that has been reflected by the step. Press play to run the evolution; the sliders set the mean energy and width of the wavepacket, and the probabilities of finding the particle on either side of the step are shown.
+**Scattering of a Gaussian wavepacket by a potential step.** In the top plot, we show the wavefunction $|\psi(x,t)|$ using a colour plot. In the bottom plot, we show the associated {term}`probability density` $\pd(x,t)$. The potential step is also plotted, for illustrative purposes only. The particle approaches the step from the left (with positive momentum), and mean energy $E_0$ larger than the potential height $V_0$. Nevertheless, the particle is partially reflected by the step, such that the final state of the particle is a superposition of a left-moving Gaussian after the step, and a right-moving Gaussian that has been reflected by the step. Press play to run the evolution. The sliders set the mean energy and the width of the wavepacket, and the probabilities of finding the particle on either side of the step are shown.
 ````
 
 We thus see that, as stated, the particle really does partially reflect and partially transmit. In the process, we also see some interesting dynamical features — in particular we see the presence of **interference fringes** during the period before the two distinct Gaussian components of the wavefunction emerge. 
@@ -350,12 +350,12 @@ This brings to a close our study of quantum mechanics in one dimension! In the n
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "A particle with energy $E > V_0$ approaches a potential step of height $V_0$. Classically it would always pass. Quantum mechanically", "choices": ["it always passes too, since $E > V_0$", "there is a non-zero probability $R$ that it is reflected, which tends to $1$ as $E \\to V_0$", "it is always reflected"], "answer": 1, "why": "matching the eigenfunction at the step gives a reflected amplitude $B = \\frac{k-k'}{k+k'}$, so $R = |B|^2 > 0$ whenever $k \\neq k'$; as $E \\to V_0$, $k' \\to 0$ and $R \\to 1$.", "label": "Chapter 9, check 1"}
+{"q": "A particle with energy $E > V_0$ approaches a potential step of height $V_0$. Classically it would always pass. Quantum mechanically", "choices": ["it always passes too, since $E > V_0$", "there is a non-zero probability $R$ that it is reflected, which tends to $1$ as $E \\to V_0$", "it is always reflected"], "answer": 1, "why": "Matching the eigenfunction at the step gives a reflected amplitude $B = \\frac{k-k'}{k+k'}$, so that $R = |B|^2 > 0$ whenever $k \\neq k'$. As $E \\to V_0$ we have $k' \\to 0$, and so $R \\to 1$.", "label": "Chapter 9, check 1"}
 ```
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "For $E < V_0$ the eigenfunction beyond the step is", "choices": ["zero, since the particle cannot be there", "an oscillating wave of smaller wavelength", "an exponentially decaying function $e^{-\\lambda x}$"], "answer": 2, "why": "with $E < V_0$ the TISE in region II has solutions $e^{\\pm\\lambda x}$ with $\\lambda = \\sqrt{2M(V_0-E)}/\\hbar$; only the decaying one is physical, and it gives a non-zero probability of finding the particle beyond the step, even though $R = 1$.", "label": "Chapter 9, check 2"}
+{"q": "For $E < V_0$ the eigenfunction beyond the step is", "choices": ["zero, since the particle cannot be there", "an oscillating wave of smaller wavelength", "an exponentially decaying function $e^{-\\lambda x}$"], "answer": 2, "why": "With $E < V_0$ the TISE in region II has the solutions $e^{\\pm\\lambda x}$ with $\\lambda = \\sqrt{2M(V_0-E)}/\\hbar$. Only the decaying one is physical, and it gives a non-zero probability of finding the particle beyond the step, even though $R = 1$.", "label": "Chapter 9, check 2"}
 ```
 
 ::::

@@ -296,12 +296,12 @@ This is once again a **formidable expression**, but one which is in fact very si
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "Why must the energy eigenfunctions of the infinite square well vanish at the walls?", "choices": ["Because the potential is zero there", "Because the eigenfunction must be continuous, and it is zero outside the well where the potential is infinite", "Because sine functions always vanish at $x = 0$"], "answer": 1, "why": "outside the well the particle would need infinite energy, so $u(x) = 0$ there; continuity then forces $u(0) = u(L) = 0$, which is what quantises the energies.", "label": "Chapter 7, check 1"}
+{"q": "Why must the energy eigenfunctions of the infinite square well vanish at the walls?", "choices": ["Because the potential is zero there", "Because the eigenfunction must be continuous, and it is zero outside the well where the potential is infinite", "Because sine functions always vanish at $x = 0$"], "answer": 1, "why": "Outside the well the particle would need infinite energy, so $u(x) = 0$ there. Continuity then forces $u(0) = u(L) = 0$, and it is this condition that quantises the energies.", "label": "Chapter 7, check 1"}
 ```
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "In the first excited state $u_2(x)$ of the well, the particle is", "choices": ["most likely to be found at the centre of the well", "very unlikely to be found near the centre of the well", "equally likely to be found anywhere in the well"], "answer": 1, "why": "$u_2(x) \\propto \\sin(2\\pi x/L)$ has a node at $x = L/2$, so the probability density vanishes at the centre: a striking difference from a classical particle bouncing back and forth.", "label": "Chapter 7, check 2"}
+{"q": "In the first excited state $u_2(x)$ of the well, the particle is", "choices": ["most likely to be found at the centre of the well", "very unlikely to be found near the centre of the well", "equally likely to be found anywhere in the well"], "answer": 1, "why": "$u_2(x) \\propto \\sin(2\\pi x/L)$ has a node at $x = L/2$, so the probability density vanishes at the centre. This is a striking difference from a classical particle bouncing back and forth.", "label": "Chapter 7, check 2"}
 ```
 
 ::::

@@ -309,12 +309,12 @@ While this is abstract at this stage, it will hopefully become much clearer in t
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "For a particle with wavefunction $\\psi(x)$, the probability of finding it *exactly* at the point $x_0$ is", "choices": ["$|\\psi(x_0)|^2$", "zero: only the probability of finding it in a region of finite width makes sense", "$\\psi(x_0)$"], "answer": 1, "why": "position is continuous, so $|\\psi(x_0)|^2$ is a probability *density*: the probability of a region of width $dx$ around $x_0$ is $|\\psi(x_0)|^2dx$, which vanishes as $dx \\to 0$.", "label": "Chapter 1, check 1"}
+{"q": "For a particle with wavefunction $\\psi(x)$, the probability of finding it *exactly* at the point $x_0$ is", "choices": ["$|\\psi(x_0)|^2$", "zero, since only the probability of finding it in a region of finite width makes sense", "$\\psi(x_0)$"], "answer": 1, "why": "Position is continuous, so $|\\psi(x_0)|^2$ is a probability *density*. The probability of finding the particle in a region of width $dx$ around $x_0$ is $|\\psi(x_0)|^2dx$, which vanishes as $dx \\to 0$.", "label": "Chapter 1, check 1"}
 ```
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "The position states $\\ket{x}$ satisfy $\\inner{x}{x'} = \\delta(x - x')$. What does this tell us about a particle 'with a definite position'?", "choices": ["Its state is $\\ket{x}$, perfectly normalised", "No physical particle can have a definite position, since $\\ket{x}$ has infinite norm", "It can only be at $x = 0$"], "answer": 1, "why": "$\\inner{x}{x} = \\delta(0) = \\infty$: the position states are useful as a basis but are not themselves allowed states, so a particle always has a superposition of positions.", "label": "Chapter 1, check 2"}
+{"q": "The position states $\\ket{x}$ satisfy $\\inner{x}{x'} = \\delta(x - x')$. What does this tell us about a particle 'with a definite position'?", "choices": ["Its state is $\\ket{x}$, perfectly normalised", "No physical particle can have a definite position, since $\\ket{x}$ has infinite norm", "It can only be at $x = 0$"], "answer": 1, "why": "Since $\\inner{x}{x} = \\delta(0) = \\infty$, the position states are useful as a basis but are not themselves allowed states. A particle is therefore always in a superposition of positions.", "label": "Chapter 1, check 2"}
 ```
 
 ::::

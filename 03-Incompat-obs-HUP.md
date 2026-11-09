@@ -163,12 +163,12 @@ Coming back to the big picture: we see in [](#e-canonical-comm) that $\hat{X}$ a
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "Halving the width $a$ of a Gaussian wavefunction", "choices": ["halves both $\\Delta x$ and $\\Delta p$", "halves $\\Delta x$ and doubles $\\Delta p$", "leaves $\\Delta p$ unchanged"], "answer": 1, "why": "$\\Delta x = a$ and $\\Delta p = \\hbar/2a$, so the product stays at $\\hbar/2$: squeezing the wavefunction in position spreads it in momentum.", "label": "Chapter 3, check 1"}
+{"q": "Halving the width $a$ of a Gaussian wavefunction", "choices": ["halves both $\\Delta x$ and $\\Delta p$", "halves $\\Delta x$ and doubles $\\Delta p$", "leaves $\\Delta p$ unchanged"], "answer": 1, "why": "$\\Delta x = a$ and $\\Delta p = \\hbar/2a$, so the product stays at $\\hbar/2$. Squeezing the wavefunction in position spreads it out in momentum.", "label": "Chapter 3, check 1"}
 ```
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "Two observables $\\hat A$ and $\\hat B$ are compatible (a particle can have definite values of both) exactly when", "choices": ["$[\\hat A, \\hat B] = 0$", "$\\hat A = \\hat B$", "they have the same eigenvalues"], "answer": 0, "why": "commuting operators share a complete set of eigenstates; position and momentum do not, since $[\\hat X, \\hat P] = i\\hbar$, which is the origin of the uncertainty principle.", "label": "Chapter 3, check 2"}
+{"q": "Two observables $\\hat A$ and $\\hat B$ are compatible (a particle can have definite values of both) exactly when", "choices": ["$[\\hat A, \\hat B] = 0$", "$\\hat A = \\hat B$", "they have the same eigenvalues"], "answer": 0, "why": "Commuting operators share a complete set of eigenstates. Position and momentum do not, since $[\\hat X, \\hat P] = i\\hbar$, and this is the origin of the uncertainty principle.", "label": "Chapter 3, check 2"}
 ```
 
 ::::

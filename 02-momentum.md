@@ -283,12 +283,12 @@ However, for other physical properties, this won't be the case — we won't know
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "A particle has the wavefunction $\\psi(x) = A e^{ipx/\\hbar}$. Its momentum is", "choices": ["uncertain, with $\\Delta p = \\hbar/2a$", "exactly $p$, but its position is completely uncertain", "exactly $p$, and its position is $x = 0$"], "answer": 1, "why": "$A e^{ipx/\\hbar}$ is the momentum eigenfunction $v_p(x)$: a complex plane wave of definite wavelength $h/p$. Its modulus is the same everywhere, so the particle is equally likely to be found anywhere.", "label": "Chapter 2, check 1"}
+{"q": "A particle has the wavefunction $\\psi(x) = A e^{ipx/\\hbar}$. Its momentum is", "choices": ["uncertain, with $\\Delta p = \\hbar/2a$", "exactly $p$, but its position is completely uncertain", "exactly $p$, and its position is $x = 0$"], "answer": 1, "why": "$A e^{ipx/\\hbar}$ is the momentum eigenfunction $v_p(x)$, a complex plane wave of definite wavelength $h/p$. Its modulus is the same everywhere, and so the particle is equally likely to be found anywhere.", "label": "Chapter 2, check 1"}
 ```
 
 ```{anywidget} ./interactive/widgets/quiz.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{"q": "How are the spatial and momentum wavefunctions related?", "choices": ["$\\tilde\\psi(p) = \\psi(p)$: it is the same function of a different variable", "$\\tilde\\psi(p)$ is the Fourier transform of $\\psi(x)$", "$\\tilde\\psi(p) = |\\psi(x)|^2$"], "answer": 1, "why": "$\\tilde\\psi(p) = \\inner{p}{\\psi} = \\frac{1}{\\sqrt{2\\pi\\hbar}}\\infint \\psi(x)e^{-ipx/\\hbar}dx$: the same state written in the momentum basis instead of the position basis.", "label": "Chapter 2, check 2"}
+{"q": "How are the spatial and momentum wavefunctions related?", "choices": ["$\\tilde\\psi(p) = \\psi(p)$, the same function of a different variable", "$\\tilde\\psi(p)$ is the Fourier transform of $\\psi(x)$", "$\\tilde\\psi(p) = |\\psi(x)|^2$"], "answer": 1, "why": "$\\tilde\\psi(p) = \\inner{p}{\\psi} = \\frac{1}{\\sqrt{2\\pi\\hbar}}\\infint \\psi(x)e^{-ipx/\\hbar}dx$ is the same state written in the momentum basis instead of the position basis.", "label": "Chapter 2, check 2"}
 ```
 
 ::::
