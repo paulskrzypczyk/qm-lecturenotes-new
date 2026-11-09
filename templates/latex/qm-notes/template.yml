@@ -4,7 +4,7 @@ description: Paul Skrzypczyk's lecture-notes style, adapted from the Legrand Ora
 version: '0.1.0'
 authors:
   - name: Paul Skrzypczyk
-license: CC-BY-NC-SA-3.0
+license: CC-BY-NC-ND-4.0
 tags:
   - book
 doc:
@@ -26,6 +26,7 @@ build:
   engine: -pdf
 files:
   - template.tex
+  - UoB_RGB_24.png
 packages:
   - amsmath
   - amssymb

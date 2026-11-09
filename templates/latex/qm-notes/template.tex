@@ -112,7 +112,10 @@
 \fancyhead[R]{\sffamily\normalsize\thepage}
 \fancyhead[L]{\leftmark}
 \renewcommand{\headrulewidth}{0.5pt}
-\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}}
+% every page carries the licence, so that a page on its own still says what it is and whose it is
+\newcommand{\licenceline}{\sffamily\scriptsize\color{gray}[-doc.title-] [-options.subtitle_text-] \textperiodcentered\ \textcopyright\ [# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #] \textperiodcentered\ CC BY-NC-ND 4.0 \textperiodcentered\ \url{https://paulskrzypczyk.github.io/qm-lecturenotes-new/}}
+\fancyfoot[C]{\licenceline}
+\fancypagestyle{plain}{\fancyhead{}\fancyfoot[C]{\licenceline}\renewcommand{\headrulewidth}{0pt}}
 
 %----------------------------------------------------------------------------------------
 %	THEOREM STYLES
@@ -307,6 +310,7 @@ leftmargin=0cm,rightmargin=0cm,linewidth=4pt]{eqBox}
 %----------------------------------------------------------------------------------------
 \begingroup
 \thispagestyle{empty}
+\enlargethispage{-3.4cm}   % keep the contents list clear of the licence and logo at the foot of the title page
 \begin{tikzpicture}[remember picture,overlay]
 \draw[anchor=north west] (current page.north) node [fill=UoBgrey,text opacity=1,inner sep=1cm,trapezium,trapezium angle=-13+90] (p1) {
 	\Huge\bfseries\sffamily\parbox[c][][t]{0.85\paperwidth}{{\color{maincolor}\hphantom{.} \hspace{2cm} [-doc.title-]
@@ -315,6 +319,11 @@ leftmargin=0cm,rightmargin=0cm,linewidth=4pt]{eqBox}
 \\[10pt]{\Large \hphantom{.} \hspace{2cm}[# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #] \hspace{5.2cm} [-options.year-]{\small\mdseries \\ \hphantom{.} \hspace{1.8cm} version: \versiondate\today}}}};
 \draw [line width=0.75mm, maincolor ](p1.south west) -- ++(-12,0);
 \draw [line width=0.75mm, maincolor ](p1.south west) -- ++(12,0);
+% the University's logo, bottom right of the title page, beside the licence
+\node[anchor=south east, inner sep=0pt] at ([xshift=-2.2cm, yshift=1.7cm]current page.south east) {\includegraphics[width=4.6cm]{UoB_RGB_24.png}};
+% the licence, bottom left of the title page
+\node[anchor=south west, inner sep=0pt, text width=0.55\paperwidth] at ([xshift=2.2cm, yshift=1.6cm]current page.south west) {\sffamily\small\color{gray}%
+  \textcopyright\ [# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #], School of Physics, University of Bristol. These notes are released under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence (CC BY-NC-ND 4.0): see the final page. The current version is always at \url{https://paulskrzypczyk.github.io/qm-lecturenotes-new/}.};
 \end{tikzpicture}
 \vspace*{120pt}
 
@@ -346,5 +355,28 @@ leftmargin=0cm,rightmargin=0cm,linewidth=4pt]{eqBox}
 \renewcommand{\bibsection}{}
 \bibliography{main}
 [# endif #]
+
+%----------------------------------------------------------------------------------------
+%	LICENCE (the last page; the full legal code is on the website's licence page)
+%----------------------------------------------------------------------------------------
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Licence}
+\chapter*{Licence}
+\markboth{Licence}{Licence}
+\noindent These lecture notes, \emph{[-doc.title-] [-options.subtitle_text-]}, are \textcopyright\ [# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #], School of Physics, University of Bristol, and are released under the \textbf{Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International} licence (CC BY-NC-ND 4.0).
+
+\medskip\noindent Under this licence you are free to \textbf{share} the notes: to copy and redistribute them in any medium or format, for any non-commercial purpose, including in a teaching setting. In return you must keep to the following terms.
+\begin{description}[leftmargin=4.3cm, style=sameline]
+  \item[Attribution] You must give appropriate credit (the author, the title and the address below), provide a link to the licence, and indicate if any changes were made. You may do so in any reasonable manner, but not in any way that suggests the author endorses you or your use.
+  \item[NonCommercial] You may not use the material for commercial purposes.
+  \item[NoDerivatives] If you remix, transform or build upon the material, you may not distribute the modified material.
+  \item[No further restrictions] You may not apply legal terms or technological measures that legally restrict others from doing anything the licence permits.
+\end{description}
+\noindent The licence does not restrict uses that are permitted anyway by an exception or limitation to copyright, such as fair dealing for private study or criticism, and it gives no warranties. The full legal text of the licence is at \url{https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode}, and is reproduced on the licence page of the online notes.
+
+\medskip\noindent The notes are maintained online at \url{https://paulskrzypczyk.github.io/qm-lecturenotes-new/}, where the figures are interactive and where corrections and comments can be submitted; this PDF is a snapshot of that site, dated on the title page. The University of Bristol logo is a trade mark of the University of Bristol and is not covered by the licence.
+
+\medskip\noindent\textbf{Suggested citation.} [# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #], \emph{[-doc.title-]: [-options.subtitle_text-]}, University of Bristol, [-options.year-], \url{https://paulskrzypczyk.github.io/qm-lecturenotes-new/}.
 
 \end{document}
