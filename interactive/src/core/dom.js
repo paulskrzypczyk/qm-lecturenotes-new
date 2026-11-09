@@ -110,15 +110,28 @@ const PAPER = /#ffffff\b|#fff\b|(?<=[:="'\s])white\b/gi;
 // lighter dark-mode value, set in style/style.css. The navy/teal/red entries cover the few remaining
 // original colours (the position-basis diagrams, labels).
 const DARK_ACCENTS = [['#2563eb', 'accent-1'], ['#ea580c', 'accent-2'], ['#0d9488', 'accent-3'], ['#05285b', 'navy'], ['#002f5f', 'navy'], ['#00434f', 'teal'], ['#ab1f2d', 'red'], ['#b92d3a', 'red']];
-let inlined = false;
+// The page is a React app: when its content is re-rendered (the dev server's live reload, or a
+// navigation that keeps the widgets mounted) the <img> elements come back and the inlined SVGs are
+// gone. So this does not run once: it processes every SVG image not yet handled, and a MutationObserver
+// on the article calls it again whenever new images appear. Each image is marked when it is taken on.
+let watching = false, figCount = 0, pending = 0;
 export function inlineStaticFigures() {
-  if (inlined || typeof document === 'undefined') return;
-  inlined = true;
+  if (typeof document === 'undefined') return;
+  if (!watching && !window.__qmInlineWatch) {     // one observer per page, however many widget modules are loaded
+    watching = true; window.__qmInlineWatch = true;
+    const main = document.querySelector('main') || document.body;
+    new MutationObserver(() => {
+      if (pending) return;
+      pending = setTimeout(() => { pending = 0; inlineStaticFigures(); }, 50);
+    }).observe(main, { childList: true, subtree: true });
+  }
   // every SVG image in the article: figures, and bare {image}s such as the delta-function spike in a dropdown
-  const imgs = [...document.querySelectorAll('main img')].filter((img) => /\.svg(\?|$)/i.test(img.currentSrc || img.src));
-  imgs.forEach((img, i) => {
+  const imgs = [...document.querySelectorAll('main img')].filter((img) => !img.dataset.qmInline && /\.svg(\?|$)/i.test(img.currentSrc || img.src));
+  imgs.forEach((img) => {
+    img.dataset.qmInline = '1';
+    const i = figCount++;
     fetch(img.src).then((r) => (r.ok ? r.text() : Promise.reject(r.status))).then((text) => {
-      let svg = text.replace(/<\?xml[^>]*\?>\s*/i, '').replace(/<!DOCTYPE[^>]*>\s*/i, '').replace(/<metadata>[\s\S]*?<\/metadata>/gi, '');
+      let svg = text.replace(/<\?xml[^>]*\?>\s*/i, '').replace(/<!DOCTYPE[^>]*>\s*/i, '').replace(/<metadata\b[^>]*>[\s\S]*?<\/metadata>/gi, '');
       svg = svg.replace(INK, 'currentColor').replace(PAPER, 'var(--myst-color-bg, #fff)');
       // a few dark accents (box frames, curve outlines, dark red) would sink into a dark page:
       // they become variables that style/style.css lightens in dark mode

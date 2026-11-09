@@ -1,6 +1,6 @@
 # Interactive figures — visual identity & ground rules
 
-**Version 1.6.1 · 9 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
+**Version 1.6.2 · 9 Nov 2026** (see the changelog at the end). This document is the single source of truth for every interactive element in the QM notes. Each new widget follows it. When a widget needs something the rules don't cover, the rule is added or changed here first, and then applied to *all* existing widgets.
 
 The rules are those of the QIT notes' widgets (their README v1.4), carried over so that both sets of notes share one visual identity; §2 (colour roles) and §6 (2D plots instead of the Bloch sphere) are what differs.
 
@@ -342,6 +342,7 @@ A derivation revealed one line at a time, each with its justification: `{ "title
 
 ## Changelog
 
+- **1.6.2 (9 Nov 2026)** — `inlineStaticFigures()` no longer runs once: it marks the images it has handled and a MutationObserver on the article re-runs it whenever new `<img>`s appear, so the figures survive a React re-render (the dev server's live reload brought the `<img>`s back and the dark-mode fallback panel with them). It also strips a `<metadata …>` element with attributes (the delivered SVGs carry a C2PA manifest in one).
 - **1.6.1 (9 Nov 2026)** — `scatter`: the lower limit of $a$ follows $E_0$ ($a \ge 2/k_0$, i.e. $\Delta p \le p_0/4$) so that no combination gives a packet that is not a right-moving Gaussian; `slider().setRange()` in dom.js. The $\av{x}$ readouts show each part's probability.
 - **1.6 (9 Nov 2026)** — `scatter`: $\av{x}$ markers for the incident, reflected and transmitted parts (toggle, off by default); $E_0$ down to $0.1V_0$ and $t$ up to $80\tau_0$; readouts split so none overflows. Colour consistency pass: the chosen level on a ladder (`isw`) is accent-3 and thicker, no longer accent-1 (§5 table); the **static figures in `Pictures/`** are recoloured to this palette (wavefunctions and densities accent-1, potentials and energy levels accent-3, a second object accent-2; §2 note) and their PDF copies regenerated; `inlineStaticFigures()` maps the palette to CSS variables so accent-1 lightens in dark mode (`style/style.css`).
 - **1.5.1 (9 Nov 2026)** — `scatter`: after an independent split-operator check (the maths was right) the packet is made narrow in energy — $a \in [2.5, 6]$, default 4, start at $x_0 = -4a$, panels $[-44, 16]$, $t \le 40\tau_0$ with auto-stop — so the reflected and transmitted parts come out as clean packets; `probability()` clips the cell at $x = 0$ (the readouts used to miss up to 6% mid-collision); $\Delta E$ readout.
