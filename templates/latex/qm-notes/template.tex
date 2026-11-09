@@ -38,6 +38,8 @@
 \definecolor{exuorange}{HTML}{FF582D}
 \definecolor{webblue}{HTML}{0076df}
 \definecolor{maincolor}{HTML}{1D4ED8}   % a shade deeper than the figures' wavefunction blue (#2563EB); chosen 9 Nov 2026
+\definecolor{linkorange}{HTML}{EA580C}  % internal links: the figures' accent-2 (the old exuorange, #FF582D, was its near neighbour)
+\definecolor{citeteal}{HTML}{0D9488}    % citations of the original papers: the figures' accent-3
 
 \newcommand\alert[1]{\textcolor{maincolor}{\textbf{#1}}}
 \newcommand\lesson[1]{\textcolor{maincolor}{\textit{#1}}}
@@ -53,7 +55,7 @@
 	left=2.5cm,
 	right=2.5cm,
 	headheight=14pt,
-	footskip=0cm,
+	footskip=1.1cm,   % room between the text and the licence line in the footer
 	headsep=10pt,
 }
 
@@ -300,7 +302,7 @@ leftmargin=0cm,rightmargin=0cm,linewidth=4pt]{eqBox}
 %----------------------------------------------------------------------------------------
 \usepackage{natbib}   % author-year citations of the original papers (references.bib)
 \usepackage{hyperref}
-\hypersetup{hidelinks,colorlinks=true,breaklinks=true,urlcolor=maincolor,bookmarksopen=false,linkcolor=exuorange,
+\hypersetup{hidelinks,colorlinks=true,breaklinks=true,urlcolor=maincolor,bookmarksopen=false,linkcolor=linkorange,citecolor=citeteal,
   pdftitle={[-doc.title-] Lecture Notes},pdfauthor={[# for author in doc.authors #][-author.name-][# if not loop.last #], [# endif #][# endfor #]}}
 
 \begin{document}
