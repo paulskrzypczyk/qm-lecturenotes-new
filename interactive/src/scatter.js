@@ -126,6 +126,7 @@ export default {
     const rPR = readout(ui.readouts, { role: 'accent-2' });
     const rK = readout(ui.readouts);
     const rDE = readout(ui.readouts);
+    const rWarn = readout(ui.readouts);   // shown only when a is too small for the packet to start as a Gaussian
     const rMIn = readout(ui.readouts), rMR = readout(ui.readouts), rMT = readout(ui.readouts);   // shown with the <x> toggle
     note(ui.readouts, [
       'The packet is the superposition ', { tex: '\\int \\phi(E)\\,u_E^{\\rR}(x)\\,e^{-iEt/\\hbar}\\,dE' }, ' of right-moving eigenstates, a Gaussian of width ',
@@ -174,7 +175,8 @@ export default {
           lab.update(m.mean, 0, 'below', row ? 2.1 : 0.9);
           prevX = m.mean; prevRow = row;
         }
-        const part = (name, m) => (m.p >= P_MARK ? `\\av{x}_{\\mathrm{${name}}} = ${num(m.mean, 1)}\\,\\ell_0` : `\\av{x}_{\\mathrm{${name}}}\\text{: —}`);
+        // the part's probability is shown beside its mean, so that a marker lingering on a slow tail explains itself
+        const part = (name, m) => (m.p >= P_MARK ? `\\av{x}_{\\mathrm{${name}}} = ${num(m.mean, 1)}\\,\\ell_0\\;(${Math.round(m.p * 100)}\\%)` : `\\av{x}_{\\mathrm{${name}}}\\text{: —}`);
         rMIn.set(part('in', ms[0])); rMR.set(part('R', ms[1])); rMT.set(part('T', ms[2]));
       } else hideMarks();
       rMIn.setHidden(!state.means); rMR.setHidden(!state.means); rMT.setHidden(!state.means);
@@ -184,7 +186,9 @@ export default {
       prE.setActive(E_PRESETS.findIndex((p) => Math.abs(p.value - e0) < 1e-9));
       rT.set(`t = ${num(t)}\\,\\tau_0`);
       rK.set(`k_0 = \\sqrt{2ME_0}/\\hbar = ${num(packet.k0)}\\,/\\ell_0`);
-      rDE.set(`\\Delta E \\approx p_0\\,\\Delta p/M = ${num(packet.k0 / a)}\\,V_0` + (packet.k0 * a < 2 ? '\\;\\text{(widen } a\\text{: not yet a Gaussian)}' : ''));
+      rDE.set(`\\Delta E \\approx p_0\\,\\Delta p/M = ${num(packet.k0 / a)}\\,V_0`);
+      rWarn.setHidden(packet.k0 * a >= 2);
+      rWarn.set('\\text{widen } a\\text{: } \\Delta p > p_0/4\\text{, not yet a Gaussian}');
       rRT.set(`R(E_0) = ${num(R(e0), 3)},\\quad T(E_0) = ${num(T(e0), 3)}`);
       rRbar.set(`\\bar R = \\int |\\phi|^2 R\\,dE = ${num(packet.rbar, 3)}`);
       rPL.set(`\\prob(x < 0) = ${num(pL, 3)}`);
