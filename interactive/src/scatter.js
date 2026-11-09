@@ -18,8 +18,9 @@ const DEFAULTS = { t: 0, e0: 1.5, a: 4, means: false };
 const X0_PER_A = -4;               // the packet starts at x0 = -4a, clear of the step, in ell0 = hbar / sqrt(2 M V0)
 const X_RANGE = [-44, 16];         // room for a packet of width up to 6 ell0 starting at -24 ell0
 const T_MAX = 80;                  // tau0 = hbar / V0 (the slowest packet, E0 = 0.1 V0 from x0 = -24, is back where it started by then)
-const E_RANGE = [0.1, 3], A_RANGE = [2.5, 6];   // the packet is a Gaussian of width a only when k0 >= 4 sigma_k = 2/a (the readout
-                                   // says so when it is not), and it spreads little before the collision when a k0 is large
+const E_RANGE = [0.12, 3], A_RANGE = [2.5, 6];  // the packet is the advertised Gaussian of width a only when Delta p <= p0/4, i.e.
+                                   // a >= aMin(e0) = 2/k0 (5.8 at E0 = 0.12 V0): the a slider's lower limit follows E0
+const aMin = (e0) => Math.min(A_RANGE[1], Math.max(A_RANGE[0], 2 / Math.sqrt(e0)));
 const Y_MOD = [0, 0.75];           // |psi| peaks at 0.45 for a = 2.5 (the standing wave at the step reaches twice that: clipped)
 const Y_PD = [0, 0.5];             // pd peaks at 0.2 for a = 2.5 (up to 0.8 in the standing wave: clipped)
 const V_STEP = 0.3 * Y_MOD[1];     // the height the step is drawn at in the top panel (V0 on its energy scale)
@@ -105,11 +106,11 @@ export default {
     const gPk = group(ui.controls, 'Wavepacket');
     const slE = slider(gPk, {
       symbol: 'E_0', name: 'mean energy E nought', min: E_RANGE[0], max: E_RANGE[1], step: 0.01, value: state.e0,
-      fmt: (v) => `${num(v)}\\,V_0`, words: (v) => `${num(v)} V nought`, onInput: (v) => { cancelTween(); state.e0 = v; draw(); },
+      fmt: (v) => `${num(v)}\\,V_0`, words: (v) => `${num(v)} V nought`, onInput: (v) => { cancelTween(); state.e0 = v; state.a = Math.max(state.a, aMin(v)); draw(); },
     });
-    const prE = presets(gPk, E_PRESETS, (i) => animateTo({ e0: E_PRESETS[i].value }));
+    const prE = presets(gPk, E_PRESETS, (i) => animateTo({ e0: E_PRESETS[i].value, a: Math.max(state.a, aMin(E_PRESETS[i].value)) }));
     const slA = slider(gPk, {
-      symbol: 'a', name: 'width a', min: A_RANGE[0], max: A_RANGE[1], step: 0.01, value: state.a,
+      symbol: 'a', name: 'width a (its lower limit follows E nought)', min: aMin(state.e0), max: A_RANGE[1], step: 0.01, value: state.a,
       fmt: (v) => `${num(v)}\\,\\ell_0`, words: (v) => `${num(v)} ell nought`, onInput: (v) => { cancelTween(); state.a = v; draw(); },
     });
     const gShow = group(ui.controls, 'Show');
@@ -126,18 +127,19 @@ export default {
     const rPR = readout(ui.readouts, { role: 'accent-2' });
     const rK = readout(ui.readouts);
     const rDE = readout(ui.readouts);
-    const rWarn = readout(ui.readouts);   // shown only when a is too small for the packet to start as a Gaussian
     const rMIn = readout(ui.readouts), rMR = readout(ui.readouts), rMT = readout(ui.readouts);   // shown with the <x> toggle
     note(ui.readouts, [
       'The packet is the superposition ', { tex: '\\int \\phi(E)\\,u_E^{\\rR}(x)\\,e^{-iEt/\\hbar}\\,dE' }, ' of right-moving eigenstates, a Gaussian of width ',
       { tex: 'a' }, ' starting at ', { tex: 'x = -4a' }, '. It carries a spread of energies ', { tex: '\\Delta E' }, ', so long after the collision the probability on the left settles to ',
       { tex: '\\bar R' }, ', the reflection coefficient averaged over that spread: close to ', { tex: 'R(E_0)' }, ' when ', { tex: '\\Delta E' }, ' is small compared with ', { tex: '|E_0 - V_0|' },
-      ' (a wide packet, or ', { tex: 'E_0' }, ' well away from ', { tex: 'V_0' }, '). The fringes are the incoming and reflected parts interfering, and the packet spreads as it travels, as in Chapter 6. Lengths are in units of ',
+      ' (a wide packet, or ', { tex: 'E_0' }, ' well away from ', { tex: 'V_0' }, '). The width cannot be made smaller than ', { tex: '2\\ell_0^2/k_0' }, ', so that ', { tex: '\\Delta p \\le p_0/4' }, ': a narrower packet would contain momenta pointing away from the step, and could not be built from right-moving eigenstates. The fringes are the incoming and reflected parts interfering, and the packet spreads as it travels, as in Chapter 6. Lengths are in units of ',
       { tex: '\\ell_0 = \\hbar/\\sqrt{2MV_0}' }, ' and time in ', { tex: '\\tau_0 = \\hbar/V_0' }, '.',
     ]);
 
     // ── drawing ────────────────────────────────────────────────────────────────────
     function draw() {
+      state.a = Math.max(state.a, aMin(state.e0));          // the packet must stay a Gaussian (Delta p <= p0/4)
+      slA.setRange(aMin(state.e0));
       rebuild();
       const { t, e0, a } = state;
       evolve(packet, tabDraw, t, outDraw);
@@ -187,8 +189,6 @@ export default {
       rT.set(`t = ${num(t)}\\,\\tau_0`);
       rK.set(`k_0 = \\sqrt{2ME_0}/\\hbar = ${num(packet.k0)}\\,/\\ell_0`);
       rDE.set(`\\Delta E \\approx p_0\\,\\Delta p/M = ${num(packet.k0 / a)}\\,V_0`);
-      rWarn.setHidden(packet.k0 * a >= 2);
-      rWarn.set('\\text{widen } a\\text{: } \\Delta p > p_0/4\\text{, not yet a Gaussian}');
       rRT.set(`R(E_0) = ${num(R(e0), 3)},\\quad T(E_0) = ${num(T(e0), 3)}`);
       rRbar.set(`\\bar R = \\int |\\phi|^2 R\\,dE = ${num(packet.rbar, 3)}`);
       rPL.set(`\\prob(x < 0) = ${num(pL, 3)}`);

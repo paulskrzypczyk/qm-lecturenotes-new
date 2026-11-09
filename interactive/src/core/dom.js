@@ -167,6 +167,8 @@ export function slider(parent, { symbol, name, min, max, step, value, fmt, words
   return {
     el: row, input,
     set(v) { input.value = v; show(v); },
+    /** change the allowed range (e.g. a lower limit that depends on another parameter) */
+    setRange(lo, hi) { if (lo !== undefined) input.min = lo; if (hi !== undefined) input.max = hi; },
     setDisabled(d) { input.disabled = d; row.classList.toggle('qm-disabled', d); },
     setHidden(x) { row.hidden = x; },
   };
