@@ -8,7 +8,7 @@
 //   preview/qm-widgets.js  One classic script with every widget + KaTeX, for the offline preview
 //                           (pages opened from disk can't load ES modules). Exposes window.QMWidgets.
 import * as esbuild from 'esbuild';
-import { readdirSync, statSync } from 'node:fs';
+import { readdirSync, statSync, writeFileSync, cpSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -61,3 +61,29 @@ await esbuild.build({
   format: 'iife',
   plugins: [localKatex],
 });
+
+// 3. The preview harness beside the bundle: a test page (…/preview/test.html?w=<widget>&model=<json>&dark=1)
+//    and KaTeX's stylesheet and fonts from node_modules, so that the page works from file:// with no
+//    network. The whole preview/ folder is generated and git-ignored; stills.mjs uses it for the PDF.
+mkdirSync(path.join(here, 'preview'), { recursive: true });
+cpSync(path.join(here, 'node_modules/katex/dist/katex.min.css'), path.join(here, 'preview/katex.min.css'));
+cpSync(path.join(here, 'node_modules/katex/dist/fonts'), path.join(here, 'preview/fonts'), { recursive: true });
+writeFileSync(path.join(here, 'preview/test.html'), String.raw`<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="katex.min.css">
+<style>
+  :root { --myst-color-bg:#fff; --myst-color-bg-secondary:#f9fafb; --myst-color-border:#e5e7eb; --myst-color-prose-body:#44403c; --myst-color-focus-ring:#3b82f6; }
+  html.dark { --myst-color-bg:#1c1917; --myst-color-bg-secondary:#292524; --myst-color-border:#44403c; --myst-color-prose-body:#d6d3d1; --myst-color-focus-ring:#60a5fa; background:#1c1917; }
+  body { margin:0; padding:16px; font-family: system-ui, sans-serif; background: var(--myst-color-bg); color: var(--myst-color-prose-body); }
+  figure { margin: 0 auto; max-width: 800px; }
+  figcaption { font-size: 0.9rem; margin-top: .5rem; }
+</style></head><body>
+<figure><img id="ph" src="../../Pictures/gaussian.svg" alt="placeholder" style="width:400px"><div id="host"></div>
+<figcaption>Caption…</figcaption></figure>
+<script src="qm-widgets.js"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  if (params.get('dark')) document.documentElement.classList.add('dark');
+  const model = params.get('model') ? JSON.parse(params.get('model')) : {};
+  const name = params.get('w') || 'gaussian-hup';
+  window.cleanup = QMWidgets.mount(document.getElementById('host'), name, model, '../widgets/qm-widgets.css');
+</script></body></html>`);

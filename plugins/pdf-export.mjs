@@ -93,6 +93,14 @@ function rewriteImage(url, dir) {
   if (!url || /^https?:/.test(url)) return null;
   const ext = path.extname(url).toLowerCase();
   const base = path.basename(url, ext);
+  // a figure that is interactive on the site: stills of the widget itself (made by stills.mjs), with a
+  // sidecar JSON giving the caption note and the number of frames
+  const still = `./Pictures/pdf/${base}-widget.png`;
+  if (fs.existsSync(path.join(dir, still))) {
+    let meta = {};
+    try { meta = JSON.parse(fs.readFileSync(path.join(dir, `./Pictures/pdf/${base}-widget.json`), 'utf8')); } catch { /* no sidecar */ }
+    return { url: still, widget: true, frames: meta.frames ?? 1, note: meta.note ?? 'A still of the interactive figure in the online notes.' };
+  }
   if (ext === '.gif') {
     const candidate = `./Pictures/pdf/${base}-filmstrip.png`;
     if (fs.existsSync(path.join(dir, candidate))) return { url: candidate, filmstrip: true };
@@ -234,17 +242,33 @@ function transformNode(node, dir, stats) {
           node.filmstrip = true;
           stats.filmstrips++;
         }
+        if (r.widget) {
+          node.width = r.frames > 1 ? '85%' : '60%';
+          node.widgetNote = r.note;
+          stats.filmstrips++;
+        }
         stats.images++;
       }
       return node;
     }
     case 'container': {
       // Add a note to the caption of filmstrip figures
-      const img = node.children.find((c) => c.type === 'image' && c.filmstrip);
+      const img = node.children.find((c) => c.type === 'image' && (c.filmstrip || c.widgetNote));
       if (img) {
         const cap = node.children.find((c) => c.type === 'caption');
         const para = cap?.children?.find((c) => c.type === 'paragraph');
-        if (para) para.children.push(text(' Four stills from the animation in the online notes.'));
+        if (para) {
+          const note = img.widgetNote ?? 'Four stills from the animation in the online notes.';
+          // the note may contain $...$ maths
+          const parts = note.split(/(\$[^$]+\$)/);
+          for (const part of parts) {
+            if (!part) continue;
+            if (part.startsWith('$')) para.children.push({ type: 'inlineMath', value: part.slice(1, -1) });
+            else para.children.push(text(part));
+          }
+          para.children.unshift(...[]);
+          para.children.splice(para.children.length - parts.filter(Boolean).length, 0, text(' '));
+        }
       }
       return node;
     }
