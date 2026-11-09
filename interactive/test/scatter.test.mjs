@@ -37,5 +37,19 @@ for (const [e0, a] of [[1.6, 2], [2.5, 1.5], [0.8, 3], [4, 1]]) {   // k0 >= 4 s
   close(`norm late e0=${e0} a=${a}`, probability(xs, out, -150, 150), 1, 5e-3);
   close(`P(x<0) late = rbar e0=${e0} a=${a}`, probability(xs, out, -150, 0), P.rbar, 1e-2);
 }
+
+// probability() on a grid without a point at x = 0: the straddling cell is clipped, so P(x<0) + P(x>0) = 1
+{
+  const P = makePacket({ e0: 1.5, a: 4, x0: -16, nk: 384 });
+  const xe = grid(-160, 160, 1066);      // even: points at +-0.15, none at 0
+  const tab = tabulate(P, xe);
+  const o = { re: new Float64Array(xe.length), im: new Float64Array(xe.length) };
+  for (const t of [0, 11, 16, 40]) {
+    evolve(P, tab, t, o);
+    const pl = probability(xe, o, -160, 0), pr = probability(xe, o, 0, 160);
+    close(`P(x<0)+P(x>0) even grid t=${t}`, pl + pr, probability(xe, o, -160, 160), 1e-9);
+    close(`norm even grid t=${t}`, pl + pr, 1, 5e-3);
+  }
+}
 console.log(fails ? `${fails} failure(s)` : 'scatter: all checks pass');
 process.exit(fails ? 1 : 0);

@@ -333,7 +333,7 @@ In the interactive figure below, we show the evolution of a **Gaussian** wavefun
 :align: center
 ```{anywidget} ./interactive/widgets/scatter.mjs
 :css: ./interactive/widgets/qm-widgets.css
-{ "t": 0, "e0": 1.5, "a": 1.5 }
+{ "t": 0, "e0": 1.5, "a": 4 }
 ```
 **Scattering of a Gaussian wavepacket by a potential step.** In the top plot, we show the wavefunction $|\psi(x,t)|$ using a colour plot. In the bottom plot, we show the associated {term}`probability density` $\pd(x,t)$. The potential step is also plotted, for illustrative purposes only. The particle approaches the step from the left (with positive momentum), and mean energy $E_0$ larger than the potential height $V_0$. Nevertheless, the particle is partially reflected by the step, such that the final state of the particle is a superposition of a left-moving Gaussian after the step, and a right-moving Gaussian that has been reflected by the step. Press play to run the evolution; the sliders set the mean energy and width of the wavepacket, and the probabilities of finding the particle on either side of the step are shown.
 ````

@@ -108,13 +108,19 @@ export function psiAt(packet, x, t) {
   return { re, im, mod: Math.hypot(re, im), phase: ((Math.atan2(im, re) % TAU) + TAU) % TAU };
 }
 
-/** The probability INT |psi|^2 dx over the grid points with lo <= x <= hi (trapezoid rule). */
+/**
+ * The probability INT_lo^hi |psi|^2 dx on the grid (trapezoid rule). A cell that straddles lo or hi is
+ * clipped, with the density interpolated linearly to the limit, so that P(x<0) + P(x>0) = 1 whether
+ * or not x = 0 is a grid point.
+ */
 export function probability(xs, out, lo, hi) {
   let p = 0;
   for (let i = 1; i < xs.length; i++) {
-    const x0 = xs[i - 1], x1 = xs[i];
-    if (x0 < lo || x1 > hi) continue;
-    const d0 = out.re[i - 1] ** 2 + out.im[i - 1] ** 2, d1 = out.re[i] ** 2 + out.im[i] ** 2;
+    let x0 = xs[i - 1], x1 = xs[i];
+    if (x1 <= lo || x0 >= hi) continue;
+    let d0 = out.re[i - 1] ** 2 + out.im[i - 1] ** 2, d1 = out.re[i] ** 2 + out.im[i] ** 2;
+    if (x0 < lo) { d0 = d0 + ((d1 - d0) * (lo - x0)) / (x1 - x0); x0 = lo; }
+    if (x1 > hi) { d1 = d0 + ((d1 - d0) * (hi - x0)) / (x1 - x0); x1 = hi; }
     p += ((d0 + d1) / 2) * (x1 - x0);
   }
   return p;

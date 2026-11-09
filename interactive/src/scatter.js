@@ -14,20 +14,22 @@ import { R, T } from './core/step.js';
 import { makePacket, tabulate, evolve, probability, grid } from './core/scatter.js';
 import { hueCurve, wheel } from './core/hue.js';
 
-const DEFAULTS = { t: 0, e0: 1.5, a: 1.5 };
-const X0 = -8;                     // where the packet starts, in ell0
-const X_RANGE = [-14, 10];         // ell0 = hbar / sqrt(2 M V0)
-const T_MAX = 16;                  // tau0 = hbar / V0
-const E_RANGE = [0.3, 3], A_RANGE = [0.6, 2.5];
-const Y_MOD = [0, 1.3];            // |psi| peaks at 0.82 for a = 0.6 (the standing wave at the step can reach twice that: clipped)
-const Y_PD = [0, 0.8];             // pd peaks at 0.66 for a = 0.6 (clipped at the step for the narrowest packets)
+const DEFAULTS = { t: 0, e0: 1.5, a: 4 };
+const X0_PER_A = -4;               // the packet starts at x0 = -4a, clear of the step, in ell0 = hbar / sqrt(2 M V0)
+const X_RANGE = [-44, 16];         // room for a packet of width up to 6 ell0 starting at -24 ell0
+const T_MAX = 40;                  // tau0 = hbar / V0 (the slowest packet, E0 = 0.4 V0, is back where it started by then)
+const E_RANGE = [0.4, 3], A_RANGE = [2.5, 6];   // a >= 2.5 keeps the packet narrow in energy: it is a Gaussian of width a
+                                   // only when k0 > 4 sigma_k = 2/a, and it spreads little before the collision
+const Y_MOD = [0, 0.75];           // |psi| peaks at 0.45 for a = 2.5 (the standing wave at the step reaches twice that: clipped)
+const Y_PD = [0, 0.5];             // pd peaks at 0.2 for a = 2.5 (up to 0.8 in the standing wave: clipped)
 const V_STEP = 0.3 * Y_MOD[1];     // the height the step is drawn at in the top panel (V0 on its energy scale)
 const N_SEG = 300;                 // segments of the phase-coloured curve; psi is computed at their ends and midpoints
-const N_WIDE = 480;                // points of the wide grid the probabilities are integrated on
-const X_WIDE = [-72, 72];          // wide enough for everything that leaves the panel before T_MAX
-const N_K = 384;                   // energies in the superposition (the grid's periodic images stay beyond X_WIDE)
-const RATE = 1.5;                  // tau0 per second when playing
-const T_PRESETS = [0, 4, 8, 16].map((v) => ({ value: v, tex: v === 0 ? '0' : `${v}\\tau_0`, words: `t equals ${v} tau nought` }));
+const N_WIDE = 1067;               // points of the wide grid the probabilities are integrated on (odd: x = 0 is a point)
+const X_WIDE = [-160, 160];        // wide enough for everything that leaves the panel before T_MAX
+const N_K = 384;                   // energies in the superposition (the k grid's periodic images, 2 pi / dk, stay beyond X_WIDE)
+const RATE = 3;                    // tau0 per second when playing
+const P_GONE = 0.02;               // play stops once less than this much probability is left in the panel
+const T_PRESETS = [0, 10, 20, 40].map((v) => ({ value: v, tex: v === 0 ? '0' : `${v}\\tau_0`, words: `t equals ${v} tau nought` }));
 const E_PRESETS = [
   { value: 0.5, tex: 'V_0/2', words: 'E nought equals half V nought' },
   { value: 1.2, tex: '1.2\\,V_0', words: 'E nought equals 1.2 V nought' },
@@ -77,7 +79,7 @@ export default {
     let packet = null, tabDraw = null, tabWide = null, built = { e0: NaN, a: NaN };
     function rebuild() {
       if (built.e0 === state.e0 && built.a === state.a) return;
-      packet = makePacket({ e0: state.e0, a: state.a, x0: X0, nk: N_K });
+      packet = makePacket({ e0: state.e0, a: state.a, x0: X0_PER_A * state.a, nk: N_K });
       tabDraw = tabulate(packet, xsDraw);
       tabWide = tabulate(packet, xsWide);
       built = { e0: state.e0, a: state.a };
@@ -112,10 +114,11 @@ export default {
     const rPR = readout(ui.readouts, { role: 'accent-2' });
     const rK = readout(ui.readouts);
     note(ui.readouts, [
-      'The packet is the superposition ', { tex: '\\int \\phi(E)\\,u_E^{\\rR}(x)\\,e^{-iEt/\\hbar}\\,dE' }, ' of right-moving eigenstates, so it carries a spread of energies: ',
-      'long after the collision the probability on the left settles to ', { tex: '\\bar R' }, ', the reflection coefficient averaged over that spread, which is close to ',
-      { tex: 'R(E_0)' }, ' only when the packet is wide (narrow in energy) and ', { tex: 'E_0' }, ' is not too close to ', { tex: 'V_0' },
-      '. The fringes are the incoming and reflected parts interfering. Lengths are in units of ', { tex: '\\ell_0 = \\hbar/\\sqrt{2MV_0}' }, ' and time in ', { tex: '\\tau_0 = \\hbar/V_0' }, '.',
+      'The packet is the superposition ', { tex: '\\int \\phi(E)\\,u_E^{\\rR}(x)\\,e^{-iEt/\\hbar}\\,dE' }, ' of right-moving eigenstates, a Gaussian of width ',
+      { tex: 'a' }, ' starting at ', { tex: 'x = -4a' }, '. It carries a spread of energies ', { tex: '\\Delta E' }, ', so long after the collision the probability on the left settles to ',
+      { tex: '\\bar R' }, ', the reflection coefficient averaged over that spread: close to ', { tex: 'R(E_0)' }, ' when ', { tex: '\\Delta E' }, ' is small compared with ', { tex: '|E_0 - V_0|' },
+      ' (a wide packet, or ', { tex: 'E_0' }, ' well away from ', { tex: 'V_0' }, '). The fringes are the incoming and reflected parts interfering, and the packet spreads as it travels, as in Chapter 6. Lengths are in units of ',
+      { tex: '\\ell_0 = \\hbar/\\sqrt{2MV_0}' }, ' and time in ', { tex: '\\tau_0 = \\hbar/V_0' }, '.',
     ]);
 
     // ── drawing ────────────────────────────────────────────────────────────────────
@@ -141,7 +144,7 @@ export default {
       prT.setActive(T_PRESETS.findIndex((p) => Math.abs(p.value - t) < 1e-9));
       prE.setActive(E_PRESETS.findIndex((p) => Math.abs(p.value - e0) < 1e-9));
       rT.set(`t = ${num(t)}\\,\\tau_0`);
-      rK.set(`E_0 = ${num(e0)}\\,V_0,\\quad k_0 = \\sqrt{2ME_0}/\\hbar = ${num(packet.k0)}\\,/\\ell_0`);
+      rK.set(`k_0 = \\sqrt{2ME_0}/\\hbar = ${num(packet.k0)}\\,/\\ell_0,\\quad \\Delta E \\approx p_0\\,\\Delta p/M = ${num(packet.k0 / a)}\\,V_0`);
       rRT.set(`R(E_0) = ${num(R(e0), 3)},\\quad T(E_0) = ${num(T(e0), 3)}`);
       rRbar.set(`\\bar R = \\int |\\phi(E)|^2 R(E)\\,dE = ${num(packet.rbar, 3)}`);
       rPL.set(`\\prob(x < 0) = ${num(pL, 3)}`);
@@ -179,7 +182,7 @@ export default {
         const dt = ((now - last) / 1000) * RATE;
         if (reducedMotion()) { if (dt >= 1) { state.t = clamp(state.t + 1, 0, T_MAX); last = now; draw(); } }
         else { state.t = clamp(state.t + dt, 0, T_MAX); last = now; draw(); }
-        if (state.t >= T_MAX - 1e-9) { stop(); return; }
+        if (state.t >= T_MAX - 1e-9 || probability(xsDraw, outDraw, X_RANGE[0], X_RANGE[1]) < P_GONE) { stop(); return; }
         raf = requestAnimationFrame(step);
       };
       raf = requestAnimationFrame(step);
