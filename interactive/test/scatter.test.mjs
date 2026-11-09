@@ -1,5 +1,5 @@
 // node test/scatter.test.mjs — checks src/core/scatter.js (Chapter 9, the scattering packet).
-import { makePacket, tabulate, evolve, psiAt, probability, grid } from '../src/core/scatter.js';
+import { makePacket, tabulate, tabulateParts, evolve, psiAt, probability, meanX, grid } from '../src/core/scatter.js';
 let fails = 0;
 const close = (name, got, want, tol = 1e-6) => { if (Math.abs(got - want) > tol) { fails++; console.log(`FAIL ${name}: got ${got}, want ${want}`); } };
 
@@ -50,6 +50,32 @@ for (const [e0, a] of [[1.6, 2], [2.5, 1.5], [0.8, 3], [4, 1]]) {   // k0 >= 4 s
     close(`P(x<0)+P(x>0) even grid t=${t}`, pl + pr, probability(xe, o, -160, 160), 1e-9);
     close(`norm even grid t=${t}`, pl + pr, 1, 5e-3);
   }
+}
+
+// the incident and reflected parts add up to psi for x < 0, and before the collision the incident part
+// moves at the group velocity 2 k0 from x0 while the transmitted and reflected weights are negligible
+{
+  const P = makePacket({ e0: 1.5, a: 4, x0: -16, nk: 384 });
+  const xw = grid(-160, 160, 1067);
+  const tab = tabulate(P, xw), { inc, ref } = tabulateParts(P, xw);
+  const o = { re: new Float64Array(xw.length), im: new Float64Array(xw.length) };
+  const oi = { re: new Float64Array(xw.length), im: new Float64Array(xw.length) };
+  const orf = { re: new Float64Array(xw.length), im: new Float64Array(xw.length) };
+  for (const t of [0, 2, 6.5, 12]) {
+    evolve(P, tab, t, o); evolve(P, inc, t, oi); evolve(P, ref, t, orf);
+    let md = 0;
+    for (let i = 0; i < xw.length; i++) if (xw[i] < 0) md = Math.max(md, Math.abs(o.re[i] - oi.re[i] - orf.re[i]), Math.abs(o.im[i] - oi.im[i] - orf.im[i]));
+    close(`psi = psi_in + psi_ref (x<0) t=${t}`, md, 0, 1e-9);
+  }
+  evolve(P, inc, 2, oi);
+  const { p, mean } = meanX(xw, oi, -160, 0);
+  close('incident weight before the collision', p, 1, 1e-2);
+  close('incident <x> = x0 + 2 k0 t', mean, -16 + 2 * P.k0 * 2, 0.05);
+  evolve(P, ref, 2, orf);
+  close('reflected weight before the collision', meanX(xw, orf, -160, 0).p, 0, 2e-3);
+  // the whole packet's <x> from meanX agrees with probability-weighted sums
+  evolve(P, tab, 0, o);
+  close('meanX at t=0', meanX(xw, o, -160, 160).mean, -16, 0.1);   // the threshold components leave a ~0.1% precursor tail at x > 0
 }
 console.log(fails ? `${fails} failure(s)` : 'scatter: all checks pass');
 process.exit(fails ? 1 : 0);

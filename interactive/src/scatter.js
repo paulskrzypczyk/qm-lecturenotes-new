@@ -5,32 +5,34 @@
 // transmits, with interference fringes while the incoming and reflected parts overlap; the probability
 // on each side of the step is read out and, long after the collision, settles to R and T averaged over
 // the packet's energies.
-import { card, group, slider, presets, readout, note, action } from './core/dom.js';
+import { card, group, slider, presets, toggle, readout, note, action } from './core/dom.js';
 import { plotCanvas, Panel } from './core/plot2d.js';
 import { s, set, pathD } from './core/svg.js';
 import { num, clamp } from './core/format.js';
 import { tween, lerp, reducedMotion } from './core/motion.js';
 import { R, T } from './core/step.js';
-import { makePacket, tabulate, evolve, probability, grid } from './core/scatter.js';
+import { makePacket, tabulate, tabulateParts, evolve, probability, meanX, grid } from './core/scatter.js';
 import { hueCurve, wheel } from './core/hue.js';
 
-const DEFAULTS = { t: 0, e0: 1.5, a: 4 };
+const DEFAULTS = { t: 0, e0: 1.5, a: 4, means: false };
 const X0_PER_A = -4;               // the packet starts at x0 = -4a, clear of the step, in ell0 = hbar / sqrt(2 M V0)
 const X_RANGE = [-44, 16];         // room for a packet of width up to 6 ell0 starting at -24 ell0
-const T_MAX = 40;                  // tau0 = hbar / V0 (the slowest packet, E0 = 0.4 V0, is back where it started by then)
-const E_RANGE = [0.4, 3], A_RANGE = [2.5, 6];   // a >= 2.5 keeps the packet narrow in energy: it is a Gaussian of width a
-                                   // only when k0 > 4 sigma_k = 2/a, and it spreads little before the collision
+const T_MAX = 80;                  // tau0 = hbar / V0 (the slowest packet, E0 = 0.1 V0 from x0 = -24, is back where it started by then)
+const E_RANGE = [0.1, 3], A_RANGE = [2.5, 6];   // the packet is a Gaussian of width a only when k0 >= 4 sigma_k = 2/a (the readout
+                                   // says so when it is not), and it spreads little before the collision when a k0 is large
 const Y_MOD = [0, 0.75];           // |psi| peaks at 0.45 for a = 2.5 (the standing wave at the step reaches twice that: clipped)
 const Y_PD = [0, 0.5];             // pd peaks at 0.2 for a = 2.5 (up to 0.8 in the standing wave: clipped)
 const V_STEP = 0.3 * Y_MOD[1];     // the height the step is drawn at in the top panel (V0 on its energy scale)
 const N_SEG = 300;                 // segments of the phase-coloured curve; psi is computed at their ends and midpoints
-const N_WIDE = 1067;               // points of the wide grid the probabilities are integrated on (odd: x = 0 is a point)
-const X_WIDE = [-160, 160];        // wide enough for everything that leaves the panel before T_MAX
+const N_WIDE = 2401;               // points of the wide grid the probabilities are integrated on (odd: x = 0 is a point; 0.3 ell0 apart)
+const X_WIDE = [-360, 360];        // wide enough for everything that leaves the panel before T_MAX (E0 = 3 V0: 3.5 ell0 per tau0)
 const N_K = 384;                   // energies in the superposition (the k grid's periodic images, 2 pi / dk, stay beyond X_WIDE)
-const RATE = 3;                    // tau0 per second when playing
+const RATE = 4;                    // tau0 per second when playing (20 s for the full run; play stops earlier when the packets have left)
 const P_GONE = 0.02;               // play stops once less than this much probability is left in the panel
-const T_PRESETS = [0, 10, 20, 40].map((v) => ({ value: v, tex: v === 0 ? '0' : `${v}\\tau_0`, words: `t equals ${v} tau nought` }));
+const P_MARK = 0.02;               // a part's <x> marker is shown only while that part carries at least this much probability
+const T_PRESETS = [0, 20, 40, 80].map((v) => ({ value: v, tex: v === 0 ? '0' : `${v}\\tau_0`, words: `t equals ${v} tau nought` }));
 const E_PRESETS = [
+  { value: 0.25, tex: 'V_0/4', words: 'E nought equals a quarter of V nought' },
   { value: 0.5, tex: 'V_0/2', words: 'E nought equals half V nought' },
   { value: 1.2, tex: '1.2\\,V_0', words: 'E nought equals 1.2 V nought' },
   { value: 2, tex: '2V_0', words: 'E nought equals 2 V nought' },
@@ -39,13 +41,13 @@ const E_PRESETS = [
 export default {
   render({ model, el }) {
     const opt = (k) => (model.get(k) === undefined ? DEFAULTS[k] : model.get(k));
-    const state = { t: opt('t'), e0: opt('e0'), a: opt('a') };
+    const state = { t: opt('t'), e0: opt('e0'), a: opt('a'), means: !!opt('means') };
     let cancelTween = () => {}, raf = 0, playing = false;
 
     const ui = card(el, {
       label: 'Figure 9.5: scattering of a Gaussian wavepacket by a potential step',
       hint: ['Press play or drag ', { tex: 't' }, '; ', { tex: 'E_0' }, ' and ', { tex: 'a' }, ' set the packet\u2019s mean energy and width. Even with ', { tex: 'E_0 > V_0' }, ' part of it is reflected; a wide packet with ', { tex: 'E_0 < V_0' }, ' is reflected entirely.'],
-      onReset: () => { stop(); animateTo({ t: opt('t'), e0: opt('e0'), a: opt('a') }); },
+      onReset: () => { stop(); state.means = !!DEFAULTS.means; meansToggle.set(state.means); animateTo({ t: opt('t'), e0: opt('e0'), a: opt('a') }); },
     });
 
     // ── canvas ─────────────────────────────────────────────────────────────────────
@@ -69,6 +71,9 @@ export default {
     const labX = bot.label('x');
     const labL = bot.label('\\prob(x<0)', { small: true, role: 'accent-1' });
     const labR = bot.label('\\prob(x>0)', { small: true, role: 'accent-2' });
+    // <x> of the incident, reflected and transmitted parts (shown by the toggle), as in Figure 7.4
+    const markIn = bot.vmark('ink'), markRef = bot.vmark('ink'), markTr = bot.vmark('ink');
+    const labIn = bot.label('\\mathrm{in}', { small: true }), labRef = bot.label('\\mathrm{R}', { small: true }), labTr = bot.label('\\mathrm{T}', { small: true });   // the readout gives the values
 
     // ── the maths: psi on the drawing grid (segment ends and midpoints) and on a wide grid for the probabilities
     const xsDraw = grid(X_RANGE[0], X_RANGE[1], 2 * N_SEG + 1);
@@ -76,12 +81,14 @@ export default {
     const outDraw = { re: new Float64Array(xsDraw.length), im: new Float64Array(xsDraw.length) };
     const outWide = { re: new Float64Array(N_WIDE), im: new Float64Array(N_WIDE) };
     const hDraw = (X_RANGE[1] - X_RANGE[0]) / (2 * N_SEG);
-    let packet = null, tabDraw = null, tabWide = null, built = { e0: NaN, a: NaN };
+    let packet = null, tabDraw = null, tabWide = null, parts = null, built = { e0: NaN, a: NaN };
+    const outIn = { re: new Float64Array(N_WIDE), im: new Float64Array(N_WIDE) }, outRef = { re: new Float64Array(N_WIDE), im: new Float64Array(N_WIDE) };
     function rebuild() {
       if (built.e0 === state.e0 && built.a === state.a) return;
       packet = makePacket({ e0: state.e0, a: state.a, x0: X0_PER_A * state.a, nk: N_K });
       tabDraw = tabulate(packet, xsDraw);
       tabWide = tabulate(packet, xsWide);
+      parts = null;                                      // the incident/reflected tables are built when first needed
       built = { e0: state.e0, a: state.a };
     }
     const at = (x) => { const i = clamp(Math.round((x - X_RANGE[0]) / hDraw), 0, xsDraw.length - 1); return { re: outDraw.re[i], im: outDraw.im[i] }; };
@@ -105,6 +112,11 @@ export default {
       symbol: 'a', name: 'width a', min: A_RANGE[0], max: A_RANGE[1], step: 0.01, value: state.a,
       fmt: (v) => `${num(v)}\\,\\ell_0`, words: (v) => `${num(v)} ell nought`, onInput: (v) => { cancelTween(); state.a = v; draw(); },
     });
+    const gShow = group(ui.controls, 'Show');
+    const meansToggle = toggle(gShow, {
+      label: ['the mean position ', { tex: '\\av{x}' }, ' of the incident, reflected and transmitted parts'],
+      checked: state.means, onChange: (c) => { state.means = c; draw(); },
+    });
 
     // ── readouts ───────────────────────────────────────────────────────────────────
     const rT = readout(ui.readouts);
@@ -113,6 +125,8 @@ export default {
     const rRbar = readout(ui.readouts, { role: 'accent-3' });
     const rPR = readout(ui.readouts, { role: 'accent-2' });
     const rK = readout(ui.readouts);
+    const rDE = readout(ui.readouts);
+    const rMIn = readout(ui.readouts), rMR = readout(ui.readouts), rMT = readout(ui.readouts);   // shown with the <x> toggle
     note(ui.readouts, [
       'The packet is the superposition ', { tex: '\\int \\phi(E)\\,u_E^{\\rR}(x)\\,e^{-iEt/\\hbar}\\,dE' }, ' of right-moving eigenstates, a Gaussian of width ',
       { tex: 'a' }, ' starting at ', { tex: 'x = -4a' }, '. It carries a spread of energies ', { tex: '\\Delta E' }, ', so long after the collision the probability on the left settles to ',
@@ -139,14 +153,40 @@ export default {
       labE.el.hidden = !showE;
       labE.update(X_RANGE[0], eh, 'above-right', 0.15);
       const pL = probability(xsWide, outWide, X_WIDE[0], 0), pR = probability(xsWide, outWide, 0, X_WIDE[1]);
+      // <x> of the three parts: the incident and reflected waves are the e^{ikx} and B e^{-ikx} components
+      // of the superposition for x < 0; the transmitted part is everything at x > 0
+      const marks = [[markIn, labIn, 'in'], [markRef, labRef, 'R'], [markTr, labTr, 'T']];
+      const hideMarks = () => marks.forEach(([mark, lab]) => { mark.el.style.display = 'none'; lab.el.hidden = true; });
+      if (state.means) {
+        if (!parts) parts = tabulateParts(packet, xsWide);
+        evolve(packet, parts.inc, t, outIn); evolve(packet, parts.ref, t, outRef);
+        const ms = [meanX(xsWide, outIn, X_WIDE[0], 0), meanX(xsWide, outRef, X_WIDE[0], 0), meanX(xsWide, outWide, 0, X_WIDE[1])];
+        hideMarks();
+        // visible markers, left to right; a label within 3.5 ell0 of the previous one drops to a second row
+        const vis = marks.map((mk, i) => ({ mk, m: ms[i] })).filter(({ m }) => m.p >= P_MARK && m.mean >= X_RANGE[0] && m.mean <= X_RANGE[1]).sort((u, v) => u.m.mean - v.m.mean);
+        let prevX = -Infinity, prevRow = 0;
+        for (const { mk: [mark, lab], m } of vis) {
+          const { re, im } = at(m.mean);
+          mark.el.style.display = '';
+          mark.update(m.mean, Math.min(re * re + im * im, Y_PD[1]));
+          const row = m.mean - prevX < 3.5 && prevRow === 0 ? 1 : 0;
+          lab.el.hidden = m.mean > X_RANGE[1] - 2.5;          // would sit on the x label
+          lab.update(m.mean, 0, 'below', row ? 2.1 : 0.9);
+          prevX = m.mean; prevRow = row;
+        }
+        const part = (name, m) => (m.p >= P_MARK ? `\\av{x}_{\\mathrm{${name}}} = ${num(m.mean, 1)}\\,\\ell_0` : `\\av{x}_{\\mathrm{${name}}}\\text{: —}`);
+        rMIn.set(part('in', ms[0])); rMR.set(part('R', ms[1])); rMT.set(part('T', ms[2]));
+      } else hideMarks();
+      rMIn.setHidden(!state.means); rMR.setHidden(!state.means); rMT.setHidden(!state.means);
 
       slT.set(t); slE.set(e0); slA.set(a);
       prT.setActive(T_PRESETS.findIndex((p) => Math.abs(p.value - t) < 1e-9));
       prE.setActive(E_PRESETS.findIndex((p) => Math.abs(p.value - e0) < 1e-9));
       rT.set(`t = ${num(t)}\\,\\tau_0`);
-      rK.set(`k_0 = \\sqrt{2ME_0}/\\hbar = ${num(packet.k0)}\\,/\\ell_0,\\quad \\Delta E \\approx p_0\\,\\Delta p/M = ${num(packet.k0 / a)}\\,V_0`);
+      rK.set(`k_0 = \\sqrt{2ME_0}/\\hbar = ${num(packet.k0)}\\,/\\ell_0`);
+      rDE.set(`\\Delta E \\approx p_0\\,\\Delta p/M = ${num(packet.k0 / a)}\\,V_0` + (packet.k0 * a < 2 ? '\\;\\text{(widen } a\\text{: not yet a Gaussian)}' : ''));
       rRT.set(`R(E_0) = ${num(R(e0), 3)},\\quad T(E_0) = ${num(T(e0), 3)}`);
-      rRbar.set(`\\bar R = \\int |\\phi(E)|^2 R(E)\\,dE = ${num(packet.rbar, 3)}`);
+      rRbar.set(`\\bar R = \\int |\\phi|^2 R\\,dE = ${num(packet.rbar, 3)}`);
       rPL.set(`\\prob(x < 0) = ${num(pL, 3)}`);
       rPR.set(`\\prob(x > 0) = ${num(pR, 3)}`);
     }

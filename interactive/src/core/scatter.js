@@ -126,5 +126,45 @@ export function probability(xs, out, lo, hi) {
   return p;
 }
 
+
+/**
+ * The incident and reflected parts of the packet, tabulated separately on the grid xs for x < 0:
+ * e^{ikx} (the incoming plane waves) and B e^{-ikx} (the reflected ones), so that evolve() with
+ * either table gives psi_in(x, t) or psi_ref(x, t) there. (For x >= 0 both are zero.)
+ */
+export function tabulateParts(packet, xs) {
+  const nk = packet.ks.length, nx = xs.length;
+  const inc = { ure: new Float64Array(nk * nx), uim: new Float64Array(nk * nx), nx };
+  const ref = { ure: new Float64Array(nk * nx), uim: new Float64Array(nk * nx), nx };
+  for (let j = 0; j < nk; j++) {
+    const kk = packet.ks[j], { B } = amplitudes(kk * kk), off = j * nx;
+    for (let i = 0; i < nx; i++) {
+      const x = xs[i];
+      if (x >= 0) continue;
+      const c = Math.cos(kk * x), sn = Math.sin(kk * x);
+      inc.ure[off + i] = c; inc.uim[off + i] = sn;
+      ref.ure[off + i] = B.re * c + B.im * sn;      // B e^{-ikx}
+      ref.uim[off + i] = B.im * c - B.re * sn;
+    }
+  }
+  return { inc, ref };
+}
+
+/** The weight p = INT_lo^hi |psi|^2 dx and the mean position <x> = INT x |psi|^2 dx / p on the grid. */
+export function meanX(xs, out, lo, hi) {
+  let p = 0, m = 0;
+  for (let i = 1; i < xs.length; i++) {
+    let x0 = xs[i - 1], x1 = xs[i];
+    if (x1 <= lo || x0 >= hi) continue;
+    let d0 = out.re[i - 1] ** 2 + out.im[i - 1] ** 2, d1 = out.re[i] ** 2 + out.im[i] ** 2;
+    if (x0 < lo) { d0 = d0 + ((d1 - d0) * (lo - x0)) / (x1 - x0); x0 = lo; }
+    if (x1 > hi) { d1 = d0 + ((d1 - d0) * (hi - x0)) / (x1 - x0); x1 = hi; }
+    const w = x1 - x0;
+    p += ((d0 + d1) / 2) * w;
+    m += ((d0 * x0 + d1 * x1) / 2) * w;
+  }
+  return { p, mean: p > 0 ? m / p : NaN };
+}
+
 /** An equally spaced grid of n points from x0 to x1 (inclusive). */
 export const grid = (x0, x1, n) => Float64Array.from({ length: n }, (_, i) => x0 + ((x1 - x0) * i) / (n - 1));
