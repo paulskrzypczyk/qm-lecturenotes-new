@@ -3,3 +3,5 @@ _build/
 _build
 # PDF export: built by the GitHub Action (and by MYST_PDF=1 myst build --pdf locally)
 exports/
+# Files Claude sends to the chat are saved here by the desktop app: not part of the notes
+Claude outputs/
